@@ -8,12 +8,15 @@ Method | HTTP request | Description
 [**bulk_delete_inboxes_using_delete**](ExtraOperationsApi.md#bulk_delete_inboxes_using_delete) | **DELETE** /bulk/inboxes | Bulk Delete Inboxes
 [**bulk_send_emails_using_post**](ExtraOperationsApi.md#bulk_send_emails_using_post) | **POST** /bulk/send | Bulk Send Emails
 [**create_inbox_using_post**](ExtraOperationsApi.md#create_inbox_using_post) | **POST** /inboxes | Create an Inbox (email address)
+[**create_inbox_webhook_using_post**](ExtraOperationsApi.md#create_inbox_webhook_using_post) | **POST** /inboxes/{inboxId}/webhooks | Attach a webhook URL to an inbox
 [**delete_email_using_delete**](ExtraOperationsApi.md#delete_email_using_delete) | **DELETE** /emails/{emailId} | Delete Email
 [**delete_inbox_using_delete**](ExtraOperationsApi.md#delete_inbox_using_delete) | **DELETE** /inboxes/{inboxId} | Delete Inbox
 [**get_email_attachment_using_get**](ExtraOperationsApi.md#get_email_attachment_using_get) | **GET** /emails/{emailId}/attachments/{attachmentId} | Get email attachment
 [**get_email_using_get**](ExtraOperationsApi.md#get_email_using_get) | **GET** /emails/{emailId} | Get Email Content
 [**get_emails_using_get**](ExtraOperationsApi.md#get_emails_using_get) | **GET** /inboxes/{inboxId}/emails | List an Inbox&#39;s Emails
 [**get_inbox_using_get**](ExtraOperationsApi.md#get_inbox_using_get) | **GET** /inboxes/{inboxId} | Get Inbox
+[**get_inbox_webhooks_using_delete**](ExtraOperationsApi.md#get_inbox_webhooks_using_delete) | **DELETE** /inboxes/{inboxId}/webhooks/{webhookId} | Delete and disable a webhook for an inbox
+[**get_inbox_webhooks_using_get**](ExtraOperationsApi.md#get_inbox_webhooks_using_get) | **GET** /inboxes/{inboxId}/webhooks | Get all webhooks for an inbox
 [**get_inboxes_using_get**](ExtraOperationsApi.md#get_inboxes_using_get) | **GET** /inboxes | List Inboxes
 [**get_raw_email_using_get**](ExtraOperationsApi.md#get_raw_email_using_get) | **GET** /emails/{emailId}/raw | Get Raw Email Content
 [**send_email_using_post**](ExtraOperationsApi.md#send_email_using_post) | **POST** /inboxes/{inboxId} | Send Email
@@ -233,6 +236,64 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_inbox_webhook_using_post**
+> Webhook create_inbox_webhook_using_post(inbox_id, create_webhook_options)
+
+Attach a webhook URL to an inbox
+
+Get notified whenever an inbox receives an email via a webhook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
+
+### Example
+
+* Api Key Authentication (API_KEY): 
+```python
+from __future__ import print_function
+import time
+import mailslurp_client
+from mailslurp_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API_KEY
+configuration = mailslurp_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = mailslurp_client.ExtraOperationsApi(mailslurp_client.ApiClient(configuration))
+inbox_id = 'inbox_id_example' # str | inboxId
+create_webhook_options = mailslurp_client.CreateWebhookOptions() # CreateWebhookOptions | options
+
+try:
+    # Attach a webhook URL to an inbox
+    api_response = api_instance.create_inbox_webhook_using_post(inbox_id, create_webhook_options)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtraOperationsApi->create_inbox_webhook_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inbox_id** | [**str**](.md)| inboxId | 
+ **create_webhook_options** | [**CreateWebhookOptions**](CreateWebhookOptions.md)| options | 
+
+### Return type
+
+[**Webhook**](Webhook.md)
+
+### Authorization
+
+[API_KEY](../README.md#API_KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -568,6 +629,115 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Inbox**](Inbox.md)
+
+### Authorization
+
+[API_KEY](../README.md#API_KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_inbox_webhooks_using_delete**
+> get_inbox_webhooks_using_delete(inbox_id, webhook_id)
+
+Delete and disable a webhook for an inbox
+
+### Example
+
+* Api Key Authentication (API_KEY): 
+```python
+from __future__ import print_function
+import time
+import mailslurp_client
+from mailslurp_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API_KEY
+configuration = mailslurp_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = mailslurp_client.ExtraOperationsApi(mailslurp_client.ApiClient(configuration))
+inbox_id = 'inbox_id_example' # str | inboxId
+webhook_id = 'webhook_id_example' # str | webhookId
+
+try:
+    # Delete and disable a webhook for an inbox
+    api_instance.get_inbox_webhooks_using_delete(inbox_id, webhook_id)
+except ApiException as e:
+    print("Exception when calling ExtraOperationsApi->get_inbox_webhooks_using_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inbox_id** | [**str**](.md)| inboxId | 
+ **webhook_id** | [**str**](.md)| webhookId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[API_KEY](../README.md#API_KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_inbox_webhooks_using_get**
+> list[Webhook] get_inbox_webhooks_using_get(inbox_id)
+
+Get all webhooks for an inbox
+
+### Example
+
+* Api Key Authentication (API_KEY): 
+```python
+from __future__ import print_function
+import time
+import mailslurp_client
+from mailslurp_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API_KEY
+configuration = mailslurp_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = mailslurp_client.ExtraOperationsApi(mailslurp_client.ApiClient(configuration))
+inbox_id = 'inbox_id_example' # str | inboxId
+
+try:
+    # Get all webhooks for an inbox
+    api_response = api_instance.get_inbox_webhooks_using_get(inbox_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtraOperationsApi->get_inbox_webhooks_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inbox_id** | [**str**](.md)| inboxId | 
+
+### Return type
+
+[**list[Webhook]**](Webhook.md)
 
 ### Authorization
 

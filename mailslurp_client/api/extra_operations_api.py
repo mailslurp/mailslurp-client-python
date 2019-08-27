@@ -409,6 +409,114 @@ class ExtraOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_inbox_webhook_using_post(self, inbox_id, create_webhook_options, **kwargs):  # noqa: E501
+        """Attach a webhook URL to an inbox  # noqa: E501
+
+        Get notified whenever an inbox receives an email via a webhook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_inbox_webhook_using_post(inbox_id, create_webhook_options, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str inbox_id: inboxId (required)
+        :param CreateWebhookOptions create_webhook_options: options (required)
+        :return: Webhook
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_inbox_webhook_using_post_with_http_info(inbox_id, create_webhook_options, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_inbox_webhook_using_post_with_http_info(inbox_id, create_webhook_options, **kwargs)  # noqa: E501
+            return data
+
+    def create_inbox_webhook_using_post_with_http_info(self, inbox_id, create_webhook_options, **kwargs):  # noqa: E501
+        """Attach a webhook URL to an inbox  # noqa: E501
+
+        Get notified whenever an inbox receives an email via a webhook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_inbox_webhook_using_post_with_http_info(inbox_id, create_webhook_options, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str inbox_id: inboxId (required)
+        :param CreateWebhookOptions create_webhook_options: options (required)
+        :return: Webhook
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['inbox_id', 'create_webhook_options']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_inbox_webhook_using_post" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'inbox_id' is set
+        if ('inbox_id' not in local_var_params or
+                local_var_params['inbox_id'] is None):
+            raise ValueError("Missing the required parameter `inbox_id` when calling `create_inbox_webhook_using_post`")  # noqa: E501
+        # verify the required parameter 'create_webhook_options' is set
+        if ('create_webhook_options' not in local_var_params or
+                local_var_params['create_webhook_options'] is None):
+            raise ValueError("Missing the required parameter `create_webhook_options` when calling `create_inbox_webhook_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'inbox_id' in local_var_params:
+            path_params['inboxId'] = local_var_params['inbox_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_webhook_options' in local_var_params:
+            body_params = local_var_params['create_webhook_options']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/inboxes/{inboxId}/webhooks', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Webhook',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_email_using_delete(self, email_id, **kwargs):  # noqa: E501
         """Delete Email  # noqa: E501
 
@@ -990,6 +1098,198 @@ class ExtraOperationsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Inbox',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_inbox_webhooks_using_delete(self, inbox_id, webhook_id, **kwargs):  # noqa: E501
+        """Delete and disable a webhook for an inbox  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_inbox_webhooks_using_delete(inbox_id, webhook_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str inbox_id: inboxId (required)
+        :param str webhook_id: webhookId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_inbox_webhooks_using_delete_with_http_info(inbox_id, webhook_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_inbox_webhooks_using_delete_with_http_info(inbox_id, webhook_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_inbox_webhooks_using_delete_with_http_info(self, inbox_id, webhook_id, **kwargs):  # noqa: E501
+        """Delete and disable a webhook for an inbox  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_inbox_webhooks_using_delete_with_http_info(inbox_id, webhook_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str inbox_id: inboxId (required)
+        :param str webhook_id: webhookId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['inbox_id', 'webhook_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_inbox_webhooks_using_delete" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'inbox_id' is set
+        if ('inbox_id' not in local_var_params or
+                local_var_params['inbox_id'] is None):
+            raise ValueError("Missing the required parameter `inbox_id` when calling `get_inbox_webhooks_using_delete`")  # noqa: E501
+        # verify the required parameter 'webhook_id' is set
+        if ('webhook_id' not in local_var_params or
+                local_var_params['webhook_id'] is None):
+            raise ValueError("Missing the required parameter `webhook_id` when calling `get_inbox_webhooks_using_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'inbox_id' in local_var_params:
+            path_params['inboxId'] = local_var_params['inbox_id']  # noqa: E501
+        if 'webhook_id' in local_var_params:
+            path_params['webhookId'] = local_var_params['webhook_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/inboxes/{inboxId}/webhooks/{webhookId}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_inbox_webhooks_using_get(self, inbox_id, **kwargs):  # noqa: E501
+        """Get all webhooks for an inbox  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_inbox_webhooks_using_get(inbox_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str inbox_id: inboxId (required)
+        :return: list[Webhook]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_inbox_webhooks_using_get_with_http_info(inbox_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_inbox_webhooks_using_get_with_http_info(inbox_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_inbox_webhooks_using_get_with_http_info(self, inbox_id, **kwargs):  # noqa: E501
+        """Get all webhooks for an inbox  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_inbox_webhooks_using_get_with_http_info(inbox_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str inbox_id: inboxId (required)
+        :return: list[Webhook]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['inbox_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_inbox_webhooks_using_get" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'inbox_id' is set
+        if ('inbox_id' not in local_var_params or
+                local_var_params['inbox_id'] is None):
+            raise ValueError("Missing the required parameter `inbox_id` when calling `get_inbox_webhooks_using_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'inbox_id' in local_var_params:
+            path_params['inboxId'] = local_var_params['inbox_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/inboxes/{inboxId}/webhooks', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[Webhook]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
