@@ -32,24 +32,85 @@ class EmailPreview(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'bcc': 'list[str]',
+        'cc': 'list[str]',
         'created': 'datetime',
-        'id': 'str'
+        'id': 'str',
+        'subject': 'str',
+        'to': 'list[str]'
     }
 
     attribute_map = {
+        'bcc': 'bcc',
+        'cc': 'cc',
         'created': 'created',
-        'id': 'id'
+        'id': 'id',
+        'subject': 'subject',
+        'to': 'to'
     }
 
-    def __init__(self, created=None, id=None):  # noqa: E501
+    def __init__(self, bcc=None, cc=None, created=None, id=None, subject=None, to=None):  # noqa: E501
         """EmailPreview - a model defined in OpenAPI"""  # noqa: E501
 
+        self._bcc = None
+        self._cc = None
         self._created = None
         self._id = None
+        self._subject = None
+        self._to = None
         self.discriminator = None
 
+        if bcc is not None:
+            self.bcc = bcc
+        if cc is not None:
+            self.cc = cc
         self.created = created
         self.id = id
+        if subject is not None:
+            self.subject = subject
+        self.to = to
+
+    @property
+    def bcc(self):
+        """Gets the bcc of this EmailPreview.  # noqa: E501
+
+
+        :return: The bcc of this EmailPreview.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._bcc
+
+    @bcc.setter
+    def bcc(self, bcc):
+        """Sets the bcc of this EmailPreview.
+
+
+        :param bcc: The bcc of this EmailPreview.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._bcc = bcc
+
+    @property
+    def cc(self):
+        """Gets the cc of this EmailPreview.  # noqa: E501
+
+
+        :return: The cc of this EmailPreview.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._cc
+
+    @cc.setter
+    def cc(self, cc):
+        """Sets the cc of this EmailPreview.
+
+
+        :param cc: The cc of this EmailPreview.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._cc = cc
 
     @property
     def created(self):
@@ -96,6 +157,50 @@ class EmailPreview(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def subject(self):
+        """Gets the subject of this EmailPreview.  # noqa: E501
+
+
+        :return: The subject of this EmailPreview.  # noqa: E501
+        :rtype: str
+        """
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject):
+        """Sets the subject of this EmailPreview.
+
+
+        :param subject: The subject of this EmailPreview.  # noqa: E501
+        :type: str
+        """
+
+        self._subject = subject
+
+    @property
+    def to(self):
+        """Gets the to of this EmailPreview.  # noqa: E501
+
+
+        :return: The to of this EmailPreview.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._to
+
+    @to.setter
+    def to(self, to):
+        """Sets the to of this EmailPreview.
+
+
+        :param to: The to of this EmailPreview.  # noqa: E501
+        :type: list[str]
+        """
+        if to is None:
+            raise ValueError("Invalid value for `to`, must not be `None`")  # noqa: E501
+
+        self._to = to
 
     def to_dict(self):
         """Returns the model properties as a dict"""

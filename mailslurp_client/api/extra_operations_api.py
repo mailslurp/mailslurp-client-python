@@ -517,13 +517,13 @@ class ExtraOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_email(self, email_id, **kwargs):  # noqa: E501
+    def delete_email1(self, email_id, **kwargs):  # noqa: E501
         """Delete Email  # noqa: E501
 
         Deletes an email and removes it from the inbox  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_email(email_id, async_req=True)
+        >>> thread = api.delete_email1(email_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -534,18 +534,18 @@ class ExtraOperationsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_email_with_http_info(email_id, **kwargs)  # noqa: E501
+            return self.delete_email1_with_http_info(email_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_email_with_http_info(email_id, **kwargs)  # noqa: E501
+            (data) = self.delete_email1_with_http_info(email_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_email_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    def delete_email1_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Delete Email  # noqa: E501
 
         Deletes an email and removes it from the inbox  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_email_with_http_info(email_id, async_req=True)
+        >>> thread = api.delete_email1_with_http_info(email_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -567,14 +567,14 @@ class ExtraOperationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_email" % key
+                    " to method delete_email1" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'email_id' is set
         if ('email_id' not in local_var_params or
                 local_var_params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `delete_email`")  # noqa: E501
+            raise ValueError("Missing the required parameter `email_id` when calling `delete_email1`")  # noqa: E501
 
         collection_formats = {}
 
