@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**bulk_send_emails**](ExtraOperationsApi.md#bulk_send_emails) | **POST** /bulk/send | Bulk Send Emails
 [**create_inbox**](ExtraOperationsApi.md#create_inbox) | **POST** /inboxes | Create an Inbox (email address)
 [**create_webhook**](ExtraOperationsApi.md#create_webhook) | **POST** /inboxes/{inboxId}/webhooks | Attach a WebHook URL to an inbox
-[**delete_email**](ExtraOperationsApi.md#delete_email) | **DELETE** /emails/{emailId} | Delete Email
+[**delete_email1**](ExtraOperationsApi.md#delete_email1) | **DELETE** /emails/{emailId} | Delete Email
 [**delete_inbox**](ExtraOperationsApi.md#delete_inbox) | **DELETE** /inboxes/{inboxId} | Delete Inbox / Email Address
 [**delete_webhook**](ExtraOperationsApi.md#delete_webhook) | **DELETE** /inboxes/{inboxId}/webhooks/{webhookId} | Delete and disable a WebHook for an Inbox
 [**download_attachment**](ExtraOperationsApi.md#download_attachment) | **GET** /emails/{emailId}/attachments/{attachmentId} | Get email attachment
@@ -20,6 +20,8 @@ Method | HTTP request | Description
 [**get_raw_email_contents**](ExtraOperationsApi.md#get_raw_email_contents) | **GET** /emails/{emailId}/raw | Get Raw Email Content
 [**get_webhooks**](ExtraOperationsApi.md#get_webhooks) | **GET** /inboxes/{inboxId}/webhooks | Get all WebHooks for an Inbox
 [**send_email**](ExtraOperationsApi.md#send_email) | **POST** /inboxes/{inboxId} | Send Email
+[**upload_attachment**](ExtraOperationsApi.md#upload_attachment) | **POST** /attachments | Upload an attachment for sending
+[**upload_multipart_form**](ExtraOperationsApi.md#upload_multipart_form) | **POST** /attachments/multipart | Upload an attachment for sending using Multipart Form
 
 
 # **bulk_create_inboxes**
@@ -298,8 +300,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_email**
-> delete_email(email_id)
+# **delete_email1**
+> delete_email1(email_id)
 
 Delete Email
 
@@ -327,9 +329,9 @@ email_id = 'email_id_example' # str | emailId
 
 try:
     # Delete Email
-    api_instance.delete_email(email_id)
+    api_instance.delete_email1(email_id)
 except ApiException as e:
-    print("Exception when calling ExtraOperationsApi->delete_email: %s\n" % e)
+    print("Exception when calling ExtraOperationsApi->delete_email1: %s\n" % e)
 ```
 
 ### Parameters
@@ -912,6 +914,122 @@ void (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_attachment**
+> str upload_attachment(upload_attachment_options)
+
+Upload an attachment for sending
+
+When sending emails with attachments first upload each attachment with this endpoint. Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email. This means that attachments can easily be reused.
+
+### Example
+
+* Api Key Authentication (API_KEY): 
+```python
+from __future__ import print_function
+import time
+import mailslurp_client
+from mailslurp_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API_KEY
+configuration = mailslurp_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = mailslurp_client.ExtraOperationsApi(mailslurp_client.ApiClient(configuration))
+upload_attachment_options = mailslurp_client.UploadAttachmentOptions() # UploadAttachmentOptions | uploadOptions
+
+try:
+    # Upload an attachment for sending
+    api_response = api_instance.upload_attachment(upload_attachment_options)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtraOperationsApi->upload_attachment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **upload_attachment_options** | [**UploadAttachmentOptions**](UploadAttachmentOptions.md)| uploadOptions | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[API_KEY](../README.md#API_KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_multipart_form**
+> str upload_multipart_form(file, content_type=content_type, filename=filename)
+
+Upload an attachment for sending using Multipart Form
+
+When sending emails with attachments first upload each attachment with this endpoint. Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email. This means that attachments can easily be reused.
+
+### Example
+
+* Api Key Authentication (API_KEY): 
+```python
+from __future__ import print_function
+import time
+import mailslurp_client
+from mailslurp_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API_KEY
+configuration = mailslurp_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = mailslurp_client.ExtraOperationsApi(mailslurp_client.ApiClient(configuration))
+file = '/path/to/file' # file | file
+content_type = 'content_type_example' # str | contentType (optional)
+filename = 'filename_example' # str | filename (optional)
+
+try:
+    # Upload an attachment for sending using Multipart Form
+    api_response = api_instance.upload_multipart_form(file, content_type=content_type, filename=filename)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtraOperationsApi->upload_multipart_form: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **file**| file | 
+ **content_type** | **str**| contentType | [optional] 
+ **filename** | **str**| filename | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[API_KEY](../README.md#API_KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

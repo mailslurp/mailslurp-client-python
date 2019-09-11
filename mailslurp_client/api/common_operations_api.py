@@ -121,6 +121,98 @@ class CommonOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def delete_email(self, email_id, **kwargs):  # noqa: E501
+        """Delete an email  # noqa: E501
+
+        Deletes an email  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_email(email_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str email_id: emailId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_email_with_http_info(email_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_email_with_http_info(email_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_email_with_http_info(self, email_id, **kwargs):  # noqa: E501
+        """Delete an email  # noqa: E501
+
+        Deletes an email  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_email_with_http_info(email_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str email_id: emailId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['email_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_email" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'email_id' is set
+        if ('email_id' not in local_var_params or
+                local_var_params['email_id'] is None):
+            raise ValueError("Missing the required parameter `email_id` when calling `delete_email`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'email_id' in local_var_params:
+            query_params.append(('emailId', local_var_params['email_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/deleteEmail', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_email_address(self, inbox_id, **kwargs):  # noqa: E501
         """Delete email address and its emails  # noqa: E501
 
@@ -199,6 +291,98 @@ class CommonOperationsApi(object):
 
         return self.api_client.call_api(
             '/deleteEmailAddress', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def empty_inbox(self, inbox_id, **kwargs):  # noqa: E501
+        """Delete all emails in an inbox  # noqa: E501
+
+        Deletes all emails  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.empty_inbox(inbox_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str inbox_id: inboxId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.empty_inbox_with_http_info(inbox_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.empty_inbox_with_http_info(inbox_id, **kwargs)  # noqa: E501
+            return data
+
+    def empty_inbox_with_http_info(self, inbox_id, **kwargs):  # noqa: E501
+        """Delete all emails in an inbox  # noqa: E501
+
+        Deletes all emails  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.empty_inbox_with_http_info(inbox_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str inbox_id: inboxId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['inbox_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method empty_inbox" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'inbox_id' is set
+        if ('inbox_id' not in local_var_params or
+                local_var_params['inbox_id'] is None):
+            raise ValueError("Missing the required parameter `inbox_id` when calling `empty_inbox`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'inbox_id' in local_var_params:
+            query_params.append(('inboxId', local_var_params['inbox_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/emptyInbox', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -309,6 +493,106 @@ class CommonOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def wait_for_email_count(self, **kwargs):  # noqa: E501
+        """Wait for and return count number of emails   # noqa: E501
+
+        Will only wait if count is greater that the found emails in given inbox.If you need to wait for an email for a non-empty inbox see the other receive methods.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.wait_for_email_count(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int count: Number of emails to wait for. Must be greater that 1
+        :param str inbox_id: Id of the inbox we are fetching emails from
+        :param int timeout: Max milliseconds to wait
+        :return: list[EmailPreview]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.wait_for_email_count_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.wait_for_email_count_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def wait_for_email_count_with_http_info(self, **kwargs):  # noqa: E501
+        """Wait for and return count number of emails   # noqa: E501
+
+        Will only wait if count is greater that the found emails in given inbox.If you need to wait for an email for a non-empty inbox see the other receive methods.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.wait_for_email_count_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int count: Number of emails to wait for. Must be greater that 1
+        :param str inbox_id: Id of the inbox we are fetching emails from
+        :param int timeout: Max milliseconds to wait
+        :return: list[EmailPreview]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['count', 'inbox_id', 'timeout']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method wait_for_email_count" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'count' in local_var_params:
+            query_params.append(('count', local_var_params['count']))  # noqa: E501
+        if 'inbox_id' in local_var_params:
+            query_params.append(('inboxId', local_var_params['inbox_id']))  # noqa: E501
+        if 'timeout' in local_var_params:
+            query_params.append(('timeout', local_var_params['timeout']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/waitForEmailCount', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[EmailPreview]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def wait_for_latest_email(self, **kwargs):  # noqa: E501
         """Fetch inbox's latest email or if empty wait for email to arrive  # noqa: E501
 
@@ -319,8 +603,8 @@ class CommonOperationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str inbox_email_address: Email address of the inbox we are fetching emails from
         :param str inbox_id: Id of the inbox we are fetching emails from
+        :param int timeout: Max milliseconds to wait
         :return: Email
                  If the method is called asynchronously,
                  returns the request thread.
@@ -342,8 +626,8 @@ class CommonOperationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str inbox_email_address: Email address of the inbox we are fetching emails from
         :param str inbox_id: Id of the inbox we are fetching emails from
+        :param int timeout: Max milliseconds to wait
         :return: Email
                  If the method is called asynchronously,
                  returns the request thread.
@@ -351,7 +635,7 @@ class CommonOperationsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['inbox_email_address', 'inbox_id']  # noqa: E501
+        all_params = ['inbox_id', 'timeout']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -371,10 +655,10 @@ class CommonOperationsApi(object):
         path_params = {}
 
         query_params = []
-        if 'inbox_email_address' in local_var_params:
-            query_params.append(('inboxEmailAddress', local_var_params['inbox_email_address']))  # noqa: E501
         if 'inbox_id' in local_var_params:
             query_params.append(('inboxId', local_var_params['inbox_id']))  # noqa: E501
+        if 'timeout' in local_var_params:
+            query_params.append(('timeout', local_var_params['timeout']))  # noqa: E501
 
         header_params = {}
 
@@ -390,7 +674,7 @@ class CommonOperationsApi(object):
         auth_settings = ['API_KEY']  # noqa: E501
 
         return self.api_client.call_api(
-            '/fetchLatestEmail', 'GET',
+            '/waitForLatestEmail', 'GET',
             path_params,
             query_params,
             header_params,
@@ -398,6 +682,118 @@ class CommonOperationsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Email',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def wait_for_matching_email(self, match_options, **kwargs):  # noqa: E501
+        """Wait or return list of emails that match simple matching patterns  # noqa: E501
+
+        Results must also meet provided count. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.wait_for_matching_email(match_options, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param MatchOptions match_options: matchOptions (required)
+        :param int count: Number of emails to wait for. Must be greater that 1
+        :param str inbox_id: Id of the inbox we are fetching emails from
+        :param int timeout: Max milliseconds to wait
+        :return: list[EmailPreview]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.wait_for_matching_email_with_http_info(match_options, **kwargs)  # noqa: E501
+        else:
+            (data) = self.wait_for_matching_email_with_http_info(match_options, **kwargs)  # noqa: E501
+            return data
+
+    def wait_for_matching_email_with_http_info(self, match_options, **kwargs):  # noqa: E501
+        """Wait or return list of emails that match simple matching patterns  # noqa: E501
+
+        Results must also meet provided count. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.wait_for_matching_email_with_http_info(match_options, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param MatchOptions match_options: matchOptions (required)
+        :param int count: Number of emails to wait for. Must be greater that 1
+        :param str inbox_id: Id of the inbox we are fetching emails from
+        :param int timeout: Max milliseconds to wait
+        :return: list[EmailPreview]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['match_options', 'count', 'inbox_id', 'timeout']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method wait_for_matching_email" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'match_options' is set
+        if ('match_options' not in local_var_params or
+                local_var_params['match_options'] is None):
+            raise ValueError("Missing the required parameter `match_options` when calling `wait_for_matching_email`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'count' in local_var_params:
+            query_params.append(('count', local_var_params['count']))  # noqa: E501
+        if 'inbox_id' in local_var_params:
+            query_params.append(('inboxId', local_var_params['inbox_id']))  # noqa: E501
+        if 'timeout' in local_var_params:
+            query_params.append(('timeout', local_var_params['timeout']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'match_options' in local_var_params:
+            body_params = local_var_params['match_options']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/waitForMatchingEmails', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[EmailPreview]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -416,6 +812,7 @@ class CommonOperationsApi(object):
         :param async_req bool
         :param str inbox_id: Id of the inbox we are fetching emails from
         :param int index: Zero based index of the email to wait for
+        :param int timeout: Max milliseconds to wait
         :return: Email
                  If the method is called asynchronously,
                  returns the request thread.
@@ -438,6 +835,7 @@ class CommonOperationsApi(object):
         :param async_req bool
         :param str inbox_id: Id of the inbox we are fetching emails from
         :param int index: Zero based index of the email to wait for
+        :param int timeout: Max milliseconds to wait
         :return: Email
                  If the method is called asynchronously,
                  returns the request thread.
@@ -445,7 +843,7 @@ class CommonOperationsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['inbox_id', 'index']  # noqa: E501
+        all_params = ['inbox_id', 'index', 'timeout']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -469,6 +867,8 @@ class CommonOperationsApi(object):
             query_params.append(('inboxId', local_var_params['inbox_id']))  # noqa: E501
         if 'index' in local_var_params:
             query_params.append(('index', local_var_params['index']))  # noqa: E501
+        if 'timeout' in local_var_params:
+            query_params.append(('timeout', local_var_params['timeout']))  # noqa: E501
 
         header_params = {}
 

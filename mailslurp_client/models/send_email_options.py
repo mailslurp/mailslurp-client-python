@@ -32,6 +32,7 @@ class SendEmailOptions(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'attachments': 'list[str]',
         'bcc': 'list[str]',
         'body': 'str',
         'cc': 'list[str]',
@@ -44,6 +45,7 @@ class SendEmailOptions(object):
     }
 
     attribute_map = {
+        'attachments': 'attachments',
         'bcc': 'bcc',
         'body': 'body',
         'cc': 'cc',
@@ -55,9 +57,10 @@ class SendEmailOptions(object):
         'to': 'to'
     }
 
-    def __init__(self, bcc=None, body=None, cc=None, charset=None, _from=None, html=None, reply_to=None, subject=None, to=None):  # noqa: E501
+    def __init__(self, attachments=None, bcc=None, body=None, cc=None, charset=None, _from=None, html=None, reply_to=None, subject=None, to=None):  # noqa: E501
         """SendEmailOptions - a model defined in OpenAPI"""  # noqa: E501
 
+        self._attachments = None
         self._bcc = None
         self._body = None
         self._cc = None
@@ -69,6 +72,8 @@ class SendEmailOptions(object):
         self._to = None
         self.discriminator = None
 
+        if attachments is not None:
+            self.attachments = attachments
         if bcc is not None:
             self.bcc = bcc
         if body is not None:
@@ -86,6 +91,29 @@ class SendEmailOptions(object):
         if subject is not None:
             self.subject = subject
         self.to = to
+
+    @property
+    def attachments(self):
+        """Gets the attachments of this SendEmailOptions.  # noqa: E501
+
+        Optional list of attachment IDs to send with this email  # noqa: E501
+
+        :return: The attachments of this SendEmailOptions.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        """Sets the attachments of this SendEmailOptions.
+
+        Optional list of attachment IDs to send with this email  # noqa: E501
+
+        :param attachments: The attachments of this SendEmailOptions.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._attachments = attachments
 
     @property
     def bcc(self):

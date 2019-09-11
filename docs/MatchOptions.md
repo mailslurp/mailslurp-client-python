@@ -1,14 +1,9 @@
-# EmailPreview
+# MatchOptions
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bcc** | **list[str]** |  | [optional] 
-**cc** | **list[str]** |  | [optional] 
-**created** | **datetime** |  | 
-**id** | **str** |  | 
-**subject** | **str** |  | [optional] 
-**to** | **list[str]** |  | 
+**matches** | [**list[MatchOption]**](MatchOption.md) | 1 or more match options. Options are additive so if one does not match the email is excluded from results | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

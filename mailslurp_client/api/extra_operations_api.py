@@ -517,13 +517,13 @@ class ExtraOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_email(self, email_id, **kwargs):  # noqa: E501
+    def delete_email1(self, email_id, **kwargs):  # noqa: E501
         """Delete Email  # noqa: E501
 
         Deletes an email and removes it from the inbox  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_email(email_id, async_req=True)
+        >>> thread = api.delete_email1(email_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -534,18 +534,18 @@ class ExtraOperationsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_email_with_http_info(email_id, **kwargs)  # noqa: E501
+            return self.delete_email1_with_http_info(email_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_email_with_http_info(email_id, **kwargs)  # noqa: E501
+            (data) = self.delete_email1_with_http_info(email_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_email_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    def delete_email1_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Delete Email  # noqa: E501
 
         Deletes an email and removes it from the inbox  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_email_with_http_info(email_id, async_req=True)
+        >>> thread = api.delete_email1_with_http_info(email_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -567,14 +567,14 @@ class ExtraOperationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_email" % key
+                    " to method delete_email1" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'email_id' is set
         if ('email_id' not in local_var_params or
                 local_var_params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `delete_email`")  # noqa: E501
+            raise ValueError("Missing the required parameter `email_id` when calling `delete_email1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1578,6 +1578,214 @@ class ExtraOperationsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def upload_attachment(self, upload_attachment_options, **kwargs):  # noqa: E501
+        """Upload an attachment for sending  # noqa: E501
+
+        When sending emails with attachments first upload each attachment with this endpoint. Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email. This means that attachments can easily be reused.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upload_attachment(upload_attachment_options, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UploadAttachmentOptions upload_attachment_options: uploadOptions (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.upload_attachment_with_http_info(upload_attachment_options, **kwargs)  # noqa: E501
+        else:
+            (data) = self.upload_attachment_with_http_info(upload_attachment_options, **kwargs)  # noqa: E501
+            return data
+
+    def upload_attachment_with_http_info(self, upload_attachment_options, **kwargs):  # noqa: E501
+        """Upload an attachment for sending  # noqa: E501
+
+        When sending emails with attachments first upload each attachment with this endpoint. Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email. This means that attachments can easily be reused.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upload_attachment_with_http_info(upload_attachment_options, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UploadAttachmentOptions upload_attachment_options: uploadOptions (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['upload_attachment_options']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method upload_attachment" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'upload_attachment_options' is set
+        if ('upload_attachment_options' not in local_var_params or
+                local_var_params['upload_attachment_options'] is None):
+            raise ValueError("Missing the required parameter `upload_attachment_options` when calling `upload_attachment`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'upload_attachment_options' in local_var_params:
+            body_params = local_var_params['upload_attachment_options']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/attachments', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def upload_multipart_form(self, file, **kwargs):  # noqa: E501
+        """Upload an attachment for sending using Multipart Form  # noqa: E501
+
+        When sending emails with attachments first upload each attachment with this endpoint. Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email. This means that attachments can easily be reused.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upload_multipart_form(file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file file: file (required)
+        :param str content_type: contentType
+        :param str filename: filename
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.upload_multipart_form_with_http_info(file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.upload_multipart_form_with_http_info(file, **kwargs)  # noqa: E501
+            return data
+
+    def upload_multipart_form_with_http_info(self, file, **kwargs):  # noqa: E501
+        """Upload an attachment for sending using Multipart Form  # noqa: E501
+
+        When sending emails with attachments first upload each attachment with this endpoint. Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email. This means that attachments can easily be reused.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upload_multipart_form_with_http_info(file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file file: file (required)
+        :param str content_type: contentType
+        :param str filename: filename
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['file', 'content_type', 'filename']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method upload_multipart_form" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'file' is set
+        if ('file' not in local_var_params or
+                local_var_params['file'] is None):
+            raise ValueError("Missing the required parameter `file` when calling `upload_multipart_form`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'content_type' in local_var_params:
+            query_params.append(('contentType', local_var_params['content_type']))  # noqa: E501
+        if 'filename' in local_var_params:
+            query_params.append(('filename', local_var_params['filename']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'file' in local_var_params:
+            local_var_files['file'] = local_var_params['file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['API_KEY']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/attachments/multipart', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

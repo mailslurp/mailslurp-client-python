@@ -22,5 +22,8 @@ from mailslurp_client.models.email import Email
 from mailslurp_client.models.email_analysis import EmailAnalysis
 from mailslurp_client.models.email_preview import EmailPreview
 from mailslurp_client.models.inbox import Inbox
+from mailslurp_client.models.match_option import MatchOption
+from mailslurp_client.models.match_options import MatchOptions
 from mailslurp_client.models.send_email_options import SendEmailOptions
+from mailslurp_client.models.upload_attachment_options import UploadAttachmentOptions
 from mailslurp_client.models.webhook import Webhook
