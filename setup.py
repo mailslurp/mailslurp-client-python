@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "mailslurp-client"
-VERSION = "4.8.0"
+VERSION = "4.8.1"
 # To install the library, run the following
 #
 # python setup.py install

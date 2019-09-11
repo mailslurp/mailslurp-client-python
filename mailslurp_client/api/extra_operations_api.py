@@ -1596,7 +1596,7 @@ class ExtraOperationsApi(object):
 
         :param async_req bool
         :param UploadAttachmentOptions upload_attachment_options: uploadOptions (required)
-        :return: str
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1618,7 +1618,7 @@ class ExtraOperationsApi(object):
 
         :param async_req bool
         :param UploadAttachmentOptions upload_attachment_options: uploadOptions (required)
-        :return: str
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1677,7 +1677,7 @@ class ExtraOperationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='list[str]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -1698,7 +1698,7 @@ class ExtraOperationsApi(object):
         :param file file: file (required)
         :param str content_type: contentType
         :param str filename: filename
-        :return: str
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1722,7 +1722,7 @@ class ExtraOperationsApi(object):
         :param file file: file (required)
         :param str content_type: contentType
         :param str filename: filename
-        :return: str
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1785,7 +1785,7 @@ class ExtraOperationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='list[str]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.8.0"
+__version__ = "4.8.1"
 
 # import apis into sdk package
 from mailslurp_client.api.common_operations_api import CommonOperationsApi
