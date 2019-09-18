@@ -37,9 +37,11 @@ class Email(object):
         'bcc': 'list[str]',
         'body': 'str',
         'cc': 'list[str]',
+        'charset': 'str',
         'created_at': 'datetime',
         '_from': 'str',
         'headers': 'dict(str, str)',
+        'html': 'bool',
         'id': 'str',
         'inbox_id': 'str',
         'raw_url': 'str',
@@ -55,9 +57,11 @@ class Email(object):
         'bcc': 'bcc',
         'body': 'body',
         'cc': 'cc',
+        'charset': 'charset',
         'created_at': 'createdAt',
         '_from': 'from',
         'headers': 'headers',
+        'html': 'html',
         'id': 'id',
         'inbox_id': 'inboxId',
         'raw_url': 'rawUrl',
@@ -67,7 +71,7 @@ class Email(object):
         'user_id': 'userId'
     }
 
-    def __init__(self, analysis=None, attachments=None, bcc=None, body=None, cc=None, created_at=None, _from=None, headers=None, id=None, inbox_id=None, raw_url=None, subject=None, to=None, updated_at=None, user_id=None):  # noqa: E501
+    def __init__(self, analysis=None, attachments=None, bcc=None, body=None, cc=None, charset=None, created_at=None, _from=None, headers=None, html=None, id=None, inbox_id=None, raw_url=None, subject=None, to=None, updated_at=None, user_id=None):  # noqa: E501
         """Email - a model defined in OpenAPI"""  # noqa: E501
 
         self._analysis = None
@@ -75,9 +79,11 @@ class Email(object):
         self._bcc = None
         self._body = None
         self._cc = None
+        self._charset = None
         self._created_at = None
         self.__from = None
         self._headers = None
+        self._html = None
         self._id = None
         self._inbox_id = None
         self._raw_url = None
@@ -97,11 +103,15 @@ class Email(object):
             self.body = body
         if cc is not None:
             self.cc = cc
+        if charset is not None:
+            self.charset = charset
         self.created_at = created_at
         if _from is not None:
             self._from = _from
         if headers is not None:
             self.headers = headers
+        if html is not None:
+            self.html = html
         self.id = id
         self.inbox_id = inbox_id
         if raw_url is not None:
@@ -218,6 +228,27 @@ class Email(object):
         self._cc = cc
 
     @property
+    def charset(self):
+        """Gets the charset of this Email.  # noqa: E501
+
+
+        :return: The charset of this Email.  # noqa: E501
+        :rtype: str
+        """
+        return self._charset
+
+    @charset.setter
+    def charset(self, charset):
+        """Sets the charset of this Email.
+
+
+        :param charset: The charset of this Email.  # noqa: E501
+        :type: str
+        """
+
+        self._charset = charset
+
+    @property
     def created_at(self):
         """Gets the created_at of this Email.  # noqa: E501
 
@@ -281,6 +312,27 @@ class Email(object):
         """
 
         self._headers = headers
+
+    @property
+    def html(self):
+        """Gets the html of this Email.  # noqa: E501
+
+
+        :return: The html of this Email.  # noqa: E501
+        :rtype: bool
+        """
+        return self._html
+
+    @html.setter
+    def html(self, html):
+        """Sets the html of this Email.
+
+
+        :param html: The html of this Email.  # noqa: E501
+        :type: bool
+        """
+
+        self._html = html
 
     @property
     def id(self):

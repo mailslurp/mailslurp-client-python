@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 **bcc** | **list[str]** |  | [optional] 
 **body** | **str** |  | [optional] 
 **cc** | **list[str]** |  | [optional] 
+**charset** | **str** |  | [optional] 
 **created_at** | **datetime** |  | 
 **_from** | **str** |  | [optional] 
 **headers** | **dict(str, str)** |  | [optional] 
+**html** | **bool** |  | [optional] 
 **id** | **str** |  | 
 **inbox_id** | **str** |  | 
 **raw_url** | **str** |  | [optional] 

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**delete_inbox**](ExtraOperationsApi.md#delete_inbox) | **DELETE** /inboxes/{inboxId} | Delete Inbox / Email Address
 [**delete_webhook**](ExtraOperationsApi.md#delete_webhook) | **DELETE** /inboxes/{inboxId}/webhooks/{webhookId} | Delete and disable a WebHook for an Inbox
 [**download_attachment**](ExtraOperationsApi.md#download_attachment) | **GET** /emails/{emailId}/attachments/{attachmentId} | Get email attachment
+[**forward_email**](ExtraOperationsApi.md#forward_email) | **POST** /emails/{emailId}/forward | Forward Email
 [**get_email**](ExtraOperationsApi.md#get_email) | **GET** /emails/{emailId} | Get Email Content
 [**get_emails**](ExtraOperationsApi.md#get_emails) | **GET** /inboxes/{inboxId}/emails | List Emails in an Inbox / EmailAddress
 [**get_inbox**](ExtraOperationsApi.md#get_inbox) | **GET** /inboxes/{inboxId} | Get Inbox / EmailAddress
@@ -518,6 +519,63 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **forward_email**
+> forward_email(email_id, forward_email_options)
+
+Forward Email
+
+Forward email content to given recipients
+
+### Example
+
+* Api Key Authentication (API_KEY): 
+```python
+from __future__ import print_function
+import time
+import mailslurp_client
+from mailslurp_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API_KEY
+configuration = mailslurp_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = mailslurp_client.ExtraOperationsApi(mailslurp_client.ApiClient(configuration))
+email_id = 'email_id_example' # str | emailId
+forward_email_options = mailslurp_client.ForwardEmailOptions() # ForwardEmailOptions | forwardEmailOptions
+
+try:
+    # Forward Email
+    api_instance.forward_email(email_id, forward_email_options)
+except ApiException as e:
+    print("Exception when calling ExtraOperationsApi->forward_email: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email_id** | [**str**](.md)| emailId | 
+ **forward_email_options** | [**ForwardEmailOptions**](ForwardEmailOptions.md)| forwardEmailOptions | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[API_KEY](../README.md#API_KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

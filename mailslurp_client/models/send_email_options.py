@@ -41,6 +41,7 @@ class SendEmailOptions(object):
         'html': 'bool',
         'reply_to': 'str',
         'subject': 'str',
+        'template_variables': 'object',
         'to': 'list[str]'
     }
 
@@ -54,10 +55,11 @@ class SendEmailOptions(object):
         'html': 'html',
         'reply_to': 'replyTo',
         'subject': 'subject',
+        'template_variables': 'templateVariables',
         'to': 'to'
     }
 
-    def __init__(self, attachments=None, bcc=None, body=None, cc=None, charset=None, _from=None, html=None, reply_to=None, subject=None, to=None):  # noqa: E501
+    def __init__(self, attachments=None, bcc=None, body=None, cc=None, charset=None, _from=None, html=None, reply_to=None, subject=None, template_variables=None, to=None):  # noqa: E501
         """SendEmailOptions - a model defined in OpenAPI"""  # noqa: E501
 
         self._attachments = None
@@ -69,6 +71,7 @@ class SendEmailOptions(object):
         self._html = None
         self._reply_to = None
         self._subject = None
+        self._template_variables = None
         self._to = None
         self.discriminator = None
 
@@ -90,13 +93,15 @@ class SendEmailOptions(object):
             self.reply_to = reply_to
         if subject is not None:
             self.subject = subject
+        if template_variables is not None:
+            self.template_variables = template_variables
         self.to = to
 
     @property
     def attachments(self):
         """Gets the attachments of this SendEmailOptions.  # noqa: E501
 
-        Optional list of attachment IDs to send with this email  # noqa: E501
+        Optional list of attachment IDs to send with this email. You must first upload each attachment separately in order to obtain attachment IDs  # noqa: E501
 
         :return: The attachments of this SendEmailOptions.  # noqa: E501
         :rtype: list[str]
@@ -107,7 +112,7 @@ class SendEmailOptions(object):
     def attachments(self, attachments):
         """Sets the attachments of this SendEmailOptions.
 
-        Optional list of attachment IDs to send with this email  # noqa: E501
+        Optional list of attachment IDs to send with this email. You must first upload each attachment separately in order to obtain attachment IDs  # noqa: E501
 
         :param attachments: The attachments of this SendEmailOptions.  # noqa: E501
         :type: list[str]
@@ -142,7 +147,7 @@ class SendEmailOptions(object):
     def body(self):
         """Gets the body of this SendEmailOptions.  # noqa: E501
 
-        Contents of email  # noqa: E501
+        Contents of email. If HTML set isHTML to true. You can use moustache templates here if you provide a templateVariables option  # noqa: E501
 
         :return: The body of this SendEmailOptions.  # noqa: E501
         :rtype: str
@@ -153,7 +158,7 @@ class SendEmailOptions(object):
     def body(self, body):
         """Sets the body of this SendEmailOptions.
 
-        Contents of email  # noqa: E501
+        Contents of email. If HTML set isHTML to true. You can use moustache templates here if you provide a templateVariables option  # noqa: E501
 
         :param body: The body of this SendEmailOptions.  # noqa: E501
         :type: str
@@ -296,6 +301,29 @@ class SendEmailOptions(object):
         """
 
         self._subject = subject
+
+    @property
+    def template_variables(self):
+        """Gets the template_variables of this SendEmailOptions.  # noqa: E501
+
+        Optional map of template variables. Will replace moustache syntax variables in subject or body with the associated values  # noqa: E501
+
+        :return: The template_variables of this SendEmailOptions.  # noqa: E501
+        :rtype: object
+        """
+        return self._template_variables
+
+    @template_variables.setter
+    def template_variables(self, template_variables):
+        """Sets the template_variables of this SendEmailOptions.
+
+        Optional map of template variables. Will replace moustache syntax variables in subject or body with the associated values  # noqa: E501
+
+        :param template_variables: The template_variables of this SendEmailOptions.  # noqa: E501
+        :type: object
+        """
+
+        self._template_variables = template_variables
 
     @property
     def to(self):
