@@ -17,7 +17,10 @@ from __future__ import absolute_import
 # import models into model package
 from mailslurp_client.models.basic_auth_options import BasicAuthOptions
 from mailslurp_client.models.bulk_send_email_options import BulkSendEmailOptions
+from mailslurp_client.models.create_domain_options import CreateDomainOptions
 from mailslurp_client.models.create_webhook_options import CreateWebhookOptions
+from mailslurp_client.models.domain_plus_verification_records_and_status import DomainPlusVerificationRecordsAndStatus
+from mailslurp_client.models.domain_preview import DomainPreview
 from mailslurp_client.models.email import Email
 from mailslurp_client.models.email_analysis import EmailAnalysis
 from mailslurp_client.models.email_preview import EmailPreview

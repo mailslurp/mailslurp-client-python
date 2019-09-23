@@ -1,14 +1,9 @@
-# EmailPreview
+# CreateDomainOptions
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bcc** | **list[str]** |  | [optional] 
-**cc** | **list[str]** |  | [optional] 
-**created** | **datetime** |  | 
-**id** | **str** | ID of the Email. | [optional] 
-**subject** | **str** |  | [optional] 
-**to** | **list[str]** |  | 
+**domain** | **str** | The top level domain you wish to use with MailSlurp | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

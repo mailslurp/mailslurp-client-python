@@ -65,7 +65,8 @@ class EmailPreview(object):
         if cc is not None:
             self.cc = cc
         self.created = created
-        self.id = id
+        if id is not None:
+            self.id = id
         if subject is not None:
             self.subject = subject
         self.to = to
@@ -139,6 +140,7 @@ class EmailPreview(object):
     def id(self):
         """Gets the id of this EmailPreview.  # noqa: E501
 
+        ID of the Email.  # noqa: E501
 
         :return: The id of this EmailPreview.  # noqa: E501
         :rtype: str
@@ -149,12 +151,11 @@ class EmailPreview(object):
     def id(self, id):
         """Sets the id of this EmailPreview.
 
+        ID of the Email.  # noqa: E501
 
         :param id: The id of this EmailPreview.  # noqa: E501
         :type: str
         """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
 

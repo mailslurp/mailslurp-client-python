@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.9.0"
+__version__ = "5.1.0"
 
 # import apis into sdk package
 from mailslurp_client.api.common_operations_api import CommonOperationsApi
@@ -27,7 +27,10 @@ from mailslurp_client.configuration import Configuration
 # import models into sdk package
 from mailslurp_client.models.basic_auth_options import BasicAuthOptions
 from mailslurp_client.models.bulk_send_email_options import BulkSendEmailOptions
+from mailslurp_client.models.create_domain_options import CreateDomainOptions
 from mailslurp_client.models.create_webhook_options import CreateWebhookOptions
+from mailslurp_client.models.domain_plus_verification_records_and_status import DomainPlusVerificationRecordsAndStatus
+from mailslurp_client.models.domain_preview import DomainPreview
 from mailslurp_client.models.email import Email
 from mailslurp_client.models.email_analysis import EmailAnalysis
 from mailslurp_client.models.email_preview import EmailPreview
