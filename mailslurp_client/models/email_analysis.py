@@ -57,11 +57,16 @@ class EmailAnalysis(object):
         self._virus_verdict = None
         self.discriminator = None
 
-        self.dkim_verdict = dkim_verdict
-        self.dmarc_verdict = dmarc_verdict
-        self.spam_verdict = spam_verdict
-        self.spf_verdict = spf_verdict
-        self.virus_verdict = virus_verdict
+        if dkim_verdict is not None:
+            self.dkim_verdict = dkim_verdict
+        if dmarc_verdict is not None:
+            self.dmarc_verdict = dmarc_verdict
+        if spam_verdict is not None:
+            self.spam_verdict = spam_verdict
+        if spf_verdict is not None:
+            self.spf_verdict = spf_verdict
+        if virus_verdict is not None:
+            self.virus_verdict = virus_verdict
 
     @property
     def dkim_verdict(self):
@@ -81,8 +86,6 @@ class EmailAnalysis(object):
         :param dkim_verdict: The dkim_verdict of this EmailAnalysis.  # noqa: E501
         :type: str
         """
-        if dkim_verdict is None:
-            raise ValueError("Invalid value for `dkim_verdict`, must not be `None`")  # noqa: E501
 
         self._dkim_verdict = dkim_verdict
 
@@ -104,8 +107,6 @@ class EmailAnalysis(object):
         :param dmarc_verdict: The dmarc_verdict of this EmailAnalysis.  # noqa: E501
         :type: str
         """
-        if dmarc_verdict is None:
-            raise ValueError("Invalid value for `dmarc_verdict`, must not be `None`")  # noqa: E501
 
         self._dmarc_verdict = dmarc_verdict
 
@@ -127,8 +128,6 @@ class EmailAnalysis(object):
         :param spam_verdict: The spam_verdict of this EmailAnalysis.  # noqa: E501
         :type: str
         """
-        if spam_verdict is None:
-            raise ValueError("Invalid value for `spam_verdict`, must not be `None`")  # noqa: E501
 
         self._spam_verdict = spam_verdict
 
@@ -150,8 +149,6 @@ class EmailAnalysis(object):
         :param spf_verdict: The spf_verdict of this EmailAnalysis.  # noqa: E501
         :type: str
         """
-        if spf_verdict is None:
-            raise ValueError("Invalid value for `spf_verdict`, must not be `None`")  # noqa: E501
 
         self._spf_verdict = spf_verdict
 
@@ -173,8 +170,6 @@ class EmailAnalysis(object):
         :param virus_verdict: The virus_verdict of this EmailAnalysis.  # noqa: E501
         :type: str
         """
-        if virus_verdict is None:
-            raise ValueError("Invalid value for `virus_verdict`, must not be `None`")  # noqa: E501
 
         self._virus_verdict = virus_verdict
 

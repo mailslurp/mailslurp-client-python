@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**get_domains**](ExtraOperationsApi.md#get_domains) | **GET** /domains | Get domains
 [**get_email**](ExtraOperationsApi.md#get_email) | **GET** /emails/{emailId} | Get Email Content
 [**get_emails**](ExtraOperationsApi.md#get_emails) | **GET** /inboxes/{inboxId}/emails | List Emails in an Inbox / EmailAddress
+[**get_emails_paginated**](ExtraOperationsApi.md#get_emails_paginated) | **GET** /emails | Get all emails
 [**get_inbox**](ExtraOperationsApi.md#get_inbox) | **GET** /inboxes/{inboxId} | Get Inbox / EmailAddress
 [**get_inboxes**](ExtraOperationsApi.md#get_inboxes) | **GET** /inboxes | List Inboxes / Email Addresses
 [**get_raw_email_contents**](ExtraOperationsApi.md#get_raw_email_contents) | **GET** /emails/{emailId}/raw | Get Raw Email Content
@@ -584,7 +585,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_attachment**
-> download_attachment(attachment_id, email_id)
+> download_attachment(attachment_id, email_id, api_key=api_key)
 
 Get email attachment
 
@@ -610,10 +611,11 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = mailslurp_client.ExtraOperationsApi(mailslurp_client.ApiClient(configuration))
 attachment_id = 'attachment_id_example' # str | attachmentId
 email_id = 'email_id_example' # str | emailId
+api_key = 'api_key_example' # str | Can pass apiKey in url for this request if you wish to download the file in a browser (optional)
 
 try:
     # Get email attachment
-    api_instance.download_attachment(attachment_id, email_id)
+    api_instance.download_attachment(attachment_id, email_id, api_key=api_key)
 except ApiException as e:
     print("Exception when calling ExtraOperationsApi->download_attachment: %s\n" % e)
 ```
@@ -624,6 +626,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **attachment_id** | **str**| attachmentId | 
  **email_id** | [**str**](.md)| emailId | 
+ **api_key** | **str**| Can pass apiKey in url for this request if you wish to download the file in a browser | [optional] 
 
 ### Return type
 
@@ -923,6 +926,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_emails_paginated**
+> PageEmailProjection get_emails_paginated(page=page, size=size)
+
+Get all emails
+
+Responses are paginated
+
+### Example
+
+* Api Key Authentication (API_KEY): 
+```python
+from __future__ import print_function
+import time
+import mailslurp_client
+from mailslurp_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API_KEY
+configuration = mailslurp_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = mailslurp_client.ExtraOperationsApi(mailslurp_client.ApiClient(configuration))
+page = 0 # int | Optional page index in email list pagination (optional) (default to 0)
+size = 20 # int | Optional page size in email list pagination (optional) (default to 20)
+
+try:
+    # Get all emails
+    api_response = api_instance.get_emails_paginated(page=page, size=size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtraOperationsApi->get_emails_paginated: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Optional page index in email list pagination | [optional] [default to 0]
+ **size** | **int**| Optional page size in email list pagination | [optional] [default to 20]
+
+### Return type
+
+[**PageEmailProjection**](PageEmailProjection.md)
+
+### Authorization
+
+[API_KEY](../README.md#API_KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_inbox**
 > Inbox get_inbox(inbox_id)
 
@@ -1083,7 +1144,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
