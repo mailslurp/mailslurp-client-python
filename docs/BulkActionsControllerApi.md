@@ -14,8 +14,6 @@ Method | HTTP request | Description
 
 Bulk create Inboxes (email addresses)
 
-Enterprise Plan Required
-
 ### Example
 
 * Api Key Authentication (API_KEY):
@@ -81,8 +79,6 @@ Name | Type | Description  | Notes
 
 Bulk Delete Inboxes
 
-Enterprise Plan Required
-
 ### Example
 
 * Api Key Authentication (API_KEY):
@@ -145,8 +141,6 @@ void (empty response body)
 > bulk_send_emails(bulk_send_email_options)
 
 Bulk Send Emails
-
-Enterprise Plan Required
 
 ### Example
 

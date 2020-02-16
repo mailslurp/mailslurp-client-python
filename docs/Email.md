@@ -1,27 +1,26 @@
 # Email
 
-Representation of an email
+Representation of an email received by an inbox. Use the ID to access more properties of an email using the EmailController endpoints.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **analysis** | [**EmailAnalysis**](EmailAnalysis.md) |  | [optional] 
-**attachments** | **list[str]** |  | [optional] 
-**bcc** | **list[str]** |  | [optional] 
-**body** | **str** |  | [optional] 
-**cc** | **list[str]** |  | [optional] 
-**charset** | **str** |  | [optional] 
-**created_at** | **datetime** |  | 
-**_from** | **str** |  | [optional] 
+**attachments** | **list[str]** | List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension. | [optional] 
+**bcc** | **list[str]** | List of &#x60;BCC&#x60; recipients email was addressed to | [optional] 
+**body** | **str** | The body of the email message | [optional] 
+**cc** | **list[str]** | List of &#x60;CC&#x60; recipients email was addressed to | [optional] 
+**charset** | **str** | Detected character set of the email body such as UTF-8 | [optional] 
+**created_at** | **datetime** | When was the email received by MailSlurp | [optional] 
+**_from** | **str** | Who was the email sent from | [optional] 
 **headers** | **dict(str, str)** |  | [optional] 
-**id** | **str** |  | 
-**inbox_id** | **str** |  | 
-**is_html** | **bool** |  | [optional] 
-**raw_url** | **str** |  | [optional] 
+**id** | **str** | ID of the email | [optional] 
+**inbox_id** | **str** | ID of the inbox that received the email | [optional] 
+**is_html** | **bool** | Was HTML sent in the email body | [optional] 
 **read** | **bool** | Has the email been viewed ever | [optional] 
-**subject** | **str** |  | [optional] 
-**to** | **list[str]** |  | 
-**updated_at** | **datetime** |  | 
-**user_id** | **str** |  | 
+**subject** | **str** | The subject line of the email message | [optional] 
+**to** | **list[str]** | List of &#x60;To&#x60; recipients email was addressed to | [optional] 
+**updated_at** | **datetime** | When was the email last updated | [optional] 
+**user_id** | **str** | ID of user that email belongs | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

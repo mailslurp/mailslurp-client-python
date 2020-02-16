@@ -575,7 +575,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_email**
-> send_email(inbox_id, send_email_options)
+> send_email(inbox_id, send_email_options=send_email_options)
 
 Send Email
 
@@ -602,12 +602,12 @@ configuration.host = "https://api.mailslurp.com"
 with mailslurp_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mailslurp_client.InboxControllerApi(api_client)
-    inbox_id = 'inbox_id_example' # str | inboxId
-send_email_options = mailslurp_client.SendEmailOptions() # SendEmailOptions | sendEmailOptions
+    inbox_id = 'inbox_id_example' # str | ID of the inbox you want to send the email from
+send_email_options = mailslurp_client.SendEmailOptions() # SendEmailOptions | Options for the email (optional)
 
     try:
         # Send Email
-        api_instance.send_email(inbox_id, send_email_options)
+        api_instance.send_email(inbox_id, send_email_options=send_email_options)
     except ApiException as e:
         print("Exception when calling InboxControllerApi->send_email: %s\n" % e)
 ```
@@ -616,8 +616,8 @@ send_email_options = mailslurp_client.SendEmailOptions() # SendEmailOptions | se
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inbox_id** | [**str**](.md)| inboxId | 
- **send_email_options** | [**SendEmailOptions**](SendEmailOptions.md)| sendEmailOptions | 
+ **inbox_id** | [**str**](.md)| ID of the inbox you want to send the email from | 
+ **send_email_options** | [**SendEmailOptions**](SendEmailOptions.md)| Options for the email | [optional] 
 
 ### Return type
 

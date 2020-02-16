@@ -453,7 +453,7 @@ configuration.host = "https://api.mailslurp.com"
 with mailslurp_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mailslurp_client.CommonActionsControllerApi(api_client)
-    inbox_id = 'inbox_id_example' # str | Id of the inbox we are fetching emails from (optional)
+    inbox_id = 'inbox_id_example' # str | Id of the inbox you are fetching emails from (optional)
 index = 56 # int | Zero based index of the email to wait for (optional)
 timeout = 56 # int | Max milliseconds to wait (optional)
 unread_only = False # bool | Optional filter for unread only (optional) (default to False)
@@ -470,7 +470,7 @@ unread_only = False # bool | Optional filter for unread only (optional) (default
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inbox_id** | [**str**](.md)| Id of the inbox we are fetching emails from | [optional] 
+ **inbox_id** | [**str**](.md)| Id of the inbox you are fetching emails from | [optional] 
  **index** | **int**| Zero based index of the email to wait for | [optional] 
  **timeout** | **int**| Max milliseconds to wait | [optional] 
  **unread_only** | **bool**| Optional filter for unread only | [optional] [default to False]

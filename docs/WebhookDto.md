@@ -1,6 +1,6 @@
 # WebhookDto
 
-Representation of a webhook for an inbox. The URL that 
+Representation of a webhook for an inbox. The URL specified will be using by MailSlurp whenever an email is received by the attached inbox.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

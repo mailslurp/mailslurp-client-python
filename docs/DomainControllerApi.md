@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_domain**
-> DomainPlusVerificationRecordsAndStatus create_domain(domain_options)
+> DomainDto create_domain(domain_options)
 
 Create Domain
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DomainPlusVerificationRecordsAndStatus**](DomainPlusVerificationRecordsAndStatus.md)
+[**DomainDto**](DomainDto.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_domain**
-> DomainPlusVerificationRecordsAndStatus get_domain(id)
+> DomainDto get_domain(id)
 
 Get a domain
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DomainPlusVerificationRecordsAndStatus**](DomainPlusVerificationRecordsAndStatus.md)
+[**DomainDto**](DomainDto.md)
 
 ### Authorization
 
