@@ -1,5 +1,6 @@
 # MatchOptions
 
+Optional filter for matching emails based on fields
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

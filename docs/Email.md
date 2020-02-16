@@ -1,5 +1,6 @@
 # Email
 
+Representation of an email
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -8,12 +9,15 @@ Name | Type | Description | Notes
 **bcc** | **list[str]** |  | [optional] 
 **body** | **str** |  | [optional] 
 **cc** | **list[str]** |  | [optional] 
+**charset** | **str** |  | [optional] 
 **created_at** | **datetime** |  | 
 **_from** | **str** |  | [optional] 
 **headers** | **dict(str, str)** |  | [optional] 
 **id** | **str** |  | 
 **inbox_id** | **str** |  | 
+**is_html** | **bool** |  | [optional] 
 **raw_url** | **str** |  | [optional] 
+**read** | **bool** | Has the email been viewed ever | [optional] 
 **subject** | **str** |  | [optional] 
 **to** | **list[str]** |  | 
 **updated_at** | **datetime** |  | 

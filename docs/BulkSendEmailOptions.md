@@ -1,5 +1,6 @@
 # BulkSendEmailOptions
 
+Bulk sending options
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -3,5 +3,13 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
-from mailslurp_client.api.common_operations_api import CommonOperationsApi
-from mailslurp_client.api.extra_operations_api import ExtraOperationsApi
+from mailslurp_client.api.attachment_controller_api import AttachmentControllerApi
+from mailslurp_client.api.bulk_actions_controller_api import BulkActionsControllerApi
+from mailslurp_client.api.common_actions_controller_api import CommonActionsControllerApi
+from mailslurp_client.api.contact_controller_api import ContactControllerApi
+from mailslurp_client.api.domain_controller_api import DomainControllerApi
+from mailslurp_client.api.email_controller_api import EmailControllerApi
+from mailslurp_client.api.group_controller_api import GroupControllerApi
+from mailslurp_client.api.inbox_controller_api import InboxControllerApi
+from mailslurp_client.api.template_controller_api import TemplateControllerApi
+from mailslurp_client.api.webhook_controller_api import WebhookControllerApi
