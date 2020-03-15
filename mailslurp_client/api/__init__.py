@@ -12,4 +12,5 @@ from mailslurp_client.api.email_controller_api import EmailControllerApi
 from mailslurp_client.api.group_controller_api import GroupControllerApi
 from mailslurp_client.api.inbox_controller_api import InboxControllerApi
 from mailslurp_client.api.template_controller_api import TemplateControllerApi
+from mailslurp_client.api.wait_for_controller_api import WaitForControllerApi
 from mailslurp_client.api.webhook_controller_api import WebhookControllerApi
