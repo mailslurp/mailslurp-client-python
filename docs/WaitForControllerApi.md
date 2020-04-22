@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 Fetch inbox's latest email or if empty wait for an email to arrive
 
-Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox see the other receive methods such as waitForNthEmail or waitForEmailCount.
+Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
 
 ### Example
 
@@ -182,7 +182,7 @@ with mailslurp_client.ApiClient(configuration) as api_client:
     api_instance = mailslurp_client.WaitForControllerApi(api_client)
     inbox_id = 'inbox_id_example' # str | Id of the inbox we are fetching emails from (optional)
 timeout = 56 # int | Max milliseconds to wait (optional)
-unread_only = False # bool | Optional filter for unread only (optional) (default to False)
+unread_only = False # bool | Optional filter for unread only. (optional) (default to False)
 
     try:
         # Fetch inbox's latest email or if empty wait for an email to arrive
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **inbox_id** | [**str**](.md)| Id of the inbox we are fetching emails from | [optional] 
  **timeout** | **int**| Max milliseconds to wait | [optional] 
- **unread_only** | **bool**| Optional filter for unread only | [optional] [default to False]
+ **unread_only** | **bool**| Optional filter for unread only. | [optional] [default to False]
 
 ### Return type
 

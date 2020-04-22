@@ -1,6 +1,6 @@
 # MatchOptions
 
-Optional filter for matching emails based on fields
+Optional filter for matching emails based on fields. For instance filter results to only include emails whose `SUBJECT` value does `CONTAIN` given match value.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

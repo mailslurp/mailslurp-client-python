@@ -1,6 +1,6 @@
 # EmailPreview
 
-Preview of an email message. For full message call the email endpoints with the provided email id.
+Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

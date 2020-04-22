@@ -1,6 +1,6 @@
 # UploadAttachmentOptions
 
-Options for uploading files for attachments. When sending emails with the API that require attachments first upload each attachment. Then use the returned attachment ID in your SendEmailOptions when sending an email. This way you can use attachments multiple times once they have been uploaded.
+Options for uploading files for attachments. When sending emails with the API that require attachments first upload each attachment. Then use the returned attachment ID in your `SendEmailOptions` when sending an email. This way you can use attachments multiple times once they have been uploaded.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

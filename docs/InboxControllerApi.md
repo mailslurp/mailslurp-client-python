@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_emails**](InboxControllerApi.md#get_emails) | **GET** /inboxes/{inboxId}/emails | Get emails in an Inbox
 [**get_inbox**](InboxControllerApi.md#get_inbox) | **GET** /inboxes/{inboxId} | Get Inbox
 [**get_inbox_emails_paginated**](InboxControllerApi.md#get_inbox_emails_paginated) | **GET** /inboxes/{inboxId}/emails/paginated | Get inbox emails paginated
+[**get_inbox_tags**](InboxControllerApi.md#get_inbox_tags) | **GET** /inboxes/tags | Get inbox tags
 [**get_inboxes**](InboxControllerApi.md#get_inboxes) | **GET** /inboxes | List Inboxes / Email Addresses
 [**send_email**](InboxControllerApi.md#send_email) | **POST** /inboxes/{inboxId} | Send Email
 [**set_inbox_favourited**](InboxControllerApi.md#set_inbox_favourited) | **PUT** /inboxes/{inboxId}/favourite | Set inbox favourited state
@@ -221,7 +222,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_inboxes**
-> PageInboxProjection get_all_inboxes(favourite=favourite, page=page, search=search, size=size, sort=sort)
+> PageInboxProjection get_all_inboxes(favourite=favourite, page=page, search=search, size=size, sort=sort, tag=tag)
 
 List Inboxes Paginated
 
@@ -253,10 +254,11 @@ page = 0 # int | Optional page index in inbox list pagination (optional) (defaul
 search = 'search_example' # str | Optionally filter by search words partial matching ID, tags, name, and email address (optional)
 size = 20 # int | Optional page size in inbox list pagination (optional) (default to 20)
 sort = 'ASC' # str | Optional createdAt sort direction ASC or DESC (optional) (default to 'ASC')
+tag = 'tag_example' # str | Optionally filter by tags (optional)
 
     try:
         # List Inboxes Paginated
-        api_response = api_instance.get_all_inboxes(favourite=favourite, page=page, search=search, size=size, sort=sort)
+        api_response = api_instance.get_all_inboxes(favourite=favourite, page=page, search=search, size=size, sort=sort, tag=tag)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling InboxControllerApi->get_all_inboxes: %s\n" % e)
@@ -271,6 +273,7 @@ Name | Type | Description  | Notes
  **search** | **str**| Optionally filter by search words partial matching ID, tags, name, and email address | [optional] 
  **size** | **int**| Optional page size in inbox list pagination | [optional] [default to 20]
  **sort** | **str**| Optional createdAt sort direction ASC or DESC | [optional] [default to &#39;ASC&#39;]
+ **tag** | **str**| Optionally filter by tags | [optional] 
 
 ### Return type
 
@@ -492,6 +495,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PageEmailPreview**](PageEmailPreview.md)
+
+### Authorization
+
+[API_KEY](../README.md#API_KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_inbox_tags**
+> list[str] get_inbox_tags()
+
+Get inbox tags
+
+Get all inbox tags
+
+### Example
+
+* Api Key Authentication (API_KEY):
+```python
+from __future__ import print_function
+import time
+import mailslurp_client
+from mailslurp_client.rest import ApiException
+from pprint import pprint
+configuration = mailslurp_client.Configuration()
+# Configure API key authorization: API_KEY
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# Defining host is optional and default to https://api.mailslurp.com
+configuration.host = "https://api.mailslurp.com"
+# Enter a context with an instance of the API client
+with mailslurp_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mailslurp_client.InboxControllerApi(api_client)
+    
+    try:
+        # Get inbox tags
+        api_response = api_instance.get_inbox_tags()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling InboxControllerApi->get_inbox_tags: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**list[str]**
 
 ### Authorization
 

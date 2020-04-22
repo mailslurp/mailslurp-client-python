@@ -1,6 +1,6 @@
 # Email
 
-Representation of an email received by an inbox. Use the ID to access more properties of an email using the EmailController endpoints.
+Email model (also referred to as EmailDto). Represents an email that was received by an inbox. If you want the original SMTP message see the `getRawEmail` endpoint.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

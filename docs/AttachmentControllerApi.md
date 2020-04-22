@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_multipart_form**
-> list[str] upload_multipart_form(file, content_type=content_type, filename=filename)
+> list[str] upload_multipart_form(file, content_type=content_type, filename=filename, x_filename=x_filename)
 
 Upload an attachment for sending using Multipart Form
 
@@ -106,10 +106,11 @@ with mailslurp_client.ApiClient(configuration) as api_client:
     file = '/path/to/file' # file | file
 content_type = 'content_type_example' # str | contentType (optional)
 filename = 'filename_example' # str | filename (optional)
+x_filename = 'x_filename_example' # str | x-filename (optional)
 
     try:
         # Upload an attachment for sending using Multipart Form
-        api_response = api_instance.upload_multipart_form(file, content_type=content_type, filename=filename)
+        api_response = api_instance.upload_multipart_form(file, content_type=content_type, filename=filename, x_filename=x_filename)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AttachmentControllerApi->upload_multipart_form: %s\n" % e)
@@ -122,6 +123,7 @@ Name | Type | Description  | Notes
  **file** | **file**| file | 
  **content_type** | **str**| contentType | [optional] 
  **filename** | **str**| filename | [optional] 
+ **x_filename** | **str**| x-filename | [optional] 
 
 ### Return type
 
