@@ -1,0 +1,20 @@
+# ContactDto
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**company** | **str** |  | [optional] 
+**created_at** | **datetime** |  | 
+**email_addresses** | **list[str]** |  | 
+**first_name** | **str** |  | [optional] 
+**group_id** | **str** |  | [optional] 
+**id** | **str** |  | 
+**last_name** | **str** |  | [optional] 
+**meta_data** | [**object**]() |  | [optional] 
+**opt_out** | **bool** |  | [optional] 
+**primary_email_address** | **str** |  | [optional] 
+**tags** | **list[str]** |  | 
+
+[[Back to Model list]](../README#documentation-for-models) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to README]](../README)
+
+
