@@ -1,0 +1,1944 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>mailslurp_client.api_client API documentation</title>
+<meta name="description" content="MailSlurp API …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.api_client</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># coding: utf-8
+&#34;&#34;&#34;
+    MailSlurp API
+
+    MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It&#39;s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository  # noqa: E501
+
+    The version of the OpenAPI document: 6.5.2
+    Contact: contact@mailslurp.dev
+    Generated by: https://openapi-generator.tech
+&#34;&#34;&#34;
+
+from __future__ import absolute_import
+
+import atexit
+import datetime
+from dateutil.parser import parse
+import json
+import mimetypes
+from multiprocessing.pool import ThreadPool
+import os
+import re
+import tempfile
+
+# python 2 and python 3 compatibility library
+import six
+from six.moves.urllib.parse import quote
+
+from mailslurp_client.configuration import Configuration
+import mailslurp_client.models
+from mailslurp_client import rest
+from mailslurp_client.exceptions import ApiValueError, ApiException
+
+
+class ApiClient(object):
+    &#34;&#34;&#34;Generic API client for OpenAPI client library builds.
+
+    OpenAPI generic API client. This client handles the client-
+    server communication, and is invariant across implementations. Specifics of
+    the methods and models for each application are generated from the OpenAPI
+    templates.
+
+    NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+    Do not edit the class manually.
+
+    :param configuration: .Configuration object for this client
+    :param header_name: a header to pass when making calls to the API.
+    :param header_value: a header value to pass when making calls to
+        the API.
+    :param cookie: a cookie to include in the header when making calls
+        to the API
+    :param pool_threads: The number of threads to use for async requests
+        to the API. More threads means more concurrent API requests.
+    &#34;&#34;&#34;
+
+    PRIMITIVE_TYPES = (float, bool, bytes, six.text_type) + six.integer_types
+    NATIVE_TYPES_MAPPING = {
+        &#39;int&#39;: int,
+        &#39;long&#39;: int if six.PY3 else long,  # noqa: F821
+        &#39;float&#39;: float,
+        &#39;str&#39;: str,
+        &#39;bool&#39;: bool,
+        &#39;date&#39;: datetime.date,
+        &#39;datetime&#39;: datetime.datetime,
+        &#39;object&#39;: object,
+    }
+    _pool = None
+
+    def __init__(self, configuration=None, header_name=None, header_value=None,
+                 cookie=None, pool_threads=1):
+        if configuration is None:
+            configuration = Configuration.get_default_copy()
+        self.configuration = configuration
+        self.pool_threads = pool_threads
+
+        self.rest_client = rest.RESTClientObject(configuration)
+        self.default_headers = {}
+        if header_name is not None:
+            self.default_headers[header_name] = header_value
+        self.cookie = cookie
+        # Set default User-Agent.
+        self.user_agent = &#39;OpenAPI-Generator/15.17.16/python&#39;
+        self.client_side_validation = configuration.client_side_validation
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.close()
+
+    def close(self):
+        if self._pool:
+            self._pool.close()
+            self._pool.join()
+            self._pool = None
+            if hasattr(atexit, &#39;unregister&#39;):
+                atexit.unregister(self.close)
+
+    @property
+    def pool(self):
+        &#34;&#34;&#34;Create thread pool on first request
+         avoids instantiating unused threadpool for blocking clients.
+        &#34;&#34;&#34;
+        if self._pool is None:
+            atexit.register(self.close)
+            self._pool = ThreadPool(self.pool_threads)
+        return self._pool
+
+    @property
+    def user_agent(self):
+        &#34;&#34;&#34;User agent for this API client&#34;&#34;&#34;
+        return self.default_headers[&#39;User-Agent&#39;]
+
+    @user_agent.setter
+    def user_agent(self, value):
+        self.default_headers[&#39;User-Agent&#39;] = value
+
+    def set_default_header(self, header_name, header_value):
+        self.default_headers[header_name] = header_value
+
+    def __call_api(
+            self, resource_path, method, path_params=None,
+            query_params=None, header_params=None, body=None, post_params=None,
+            files=None, response_type=None, auth_settings=None,
+            _return_http_data_only=None, collection_formats=None,
+            _preload_content=True, _request_timeout=None, _host=None):
+
+        config = self.configuration
+
+        # header parameters
+        header_params = header_params or {}
+        header_params.update(self.default_headers)
+        if self.cookie:
+            header_params[&#39;Cookie&#39;] = self.cookie
+        if header_params:
+            header_params = self.sanitize_for_serialization(header_params)
+            header_params = dict(self.parameters_to_tuples(header_params,
+                                                           collection_formats))
+
+        # path parameters
+        if path_params:
+            path_params = self.sanitize_for_serialization(path_params)
+            path_params = self.parameters_to_tuples(path_params,
+                                                    collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                resource_path = resource_path.replace(
+                    &#39;{%s}&#39; % k,
+                    quote(str(v), safe=config.safe_chars_for_path_param)
+                )
+
+        # query parameters
+        if query_params:
+            query_params = self.sanitize_for_serialization(query_params)
+            query_params = self.parameters_to_tuples(query_params,
+                                                     collection_formats)
+
+        # post parameters
+        if post_params or files:
+            post_params = post_params if post_params else []
+            post_params = self.sanitize_for_serialization(post_params)
+            post_params = self.parameters_to_tuples(post_params,
+                                                    collection_formats)
+            post_params.extend(self.files_parameters(files))
+
+        # auth setting
+        self.update_params_for_auth(header_params, query_params, auth_settings)
+
+        # body
+        if body:
+            body = self.sanitize_for_serialization(body)
+
+        # request url
+        if _host is None:
+            url = self.configuration.host + resource_path
+        else:
+            # use server/host defined in path or operation instead
+            url = _host + resource_path
+
+        try:
+            # perform request and return response
+            response_data = self.request(
+                method, url, query_params=query_params, headers=header_params,
+                post_params=post_params, body=body,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout)
+        except ApiException as e:
+            e.body = e.body.decode(&#39;utf-8&#39;) if six.PY3 else e.body
+            raise e
+
+        content_type = response_data.getheader(&#39;content-type&#39;)
+
+        self.last_response = response_data
+
+        return_data = response_data
+
+        if not _preload_content:
+            return return_data
+
+        if six.PY3 and response_type not in [&#34;file&#34;, &#34;bytes&#34;]:
+            match = None
+            if content_type is not None:
+                match = re.search(r&#34;charset=([a-zA-Z\-\d]+)[\s\;]?&#34;, content_type)
+            encoding = match.group(1) if match else &#34;utf-8&#34;
+            response_data.data = response_data.data.decode(encoding)
+
+        # deserialize response data
+        if response_type:
+            return_data = self.deserialize(response_data, response_type)
+        else:
+            return_data = None
+
+        if _return_http_data_only:
+            return (return_data)
+        else:
+            return (return_data, response_data.status,
+                    response_data.getheaders())
+
+    def sanitize_for_serialization(self, obj):
+        &#34;&#34;&#34;Builds a JSON POST object.
+
+        If obj is None, return None.
+        If obj is str, int, long, float, bool, return directly.
+        If obj is datetime.datetime, datetime.date
+            convert to string in iso8601 format.
+        If obj is list, sanitize each element in the list.
+        If obj is dict, return the dict.
+        If obj is OpenAPI model, return the properties dict.
+
+        :param obj: The data to serialize.
+        :return: The serialized form of data.
+        &#34;&#34;&#34;
+        if obj is None:
+            return None
+        elif isinstance(obj, self.PRIMITIVE_TYPES):
+            return obj
+        elif isinstance(obj, list):
+            return [self.sanitize_for_serialization(sub_obj)
+                    for sub_obj in obj]
+        elif isinstance(obj, tuple):
+            return tuple(self.sanitize_for_serialization(sub_obj)
+                         for sub_obj in obj)
+        elif isinstance(obj, (datetime.datetime, datetime.date)):
+            return obj.isoformat()
+
+        if isinstance(obj, dict):
+            obj_dict = obj
+        else:
+            # Convert model obj to dict except
+            # attributes `openapi_types`, `attribute_map`
+            # and attributes which value is not None.
+            # Convert attribute name to json key in
+            # model definition for request.
+            obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
+                        for attr, _ in six.iteritems(obj.openapi_types)
+                        if getattr(obj, attr) is not None}
+
+        return {key: self.sanitize_for_serialization(val)
+                for key, val in six.iteritems(obj_dict)}
+
+    def deserialize(self, response, response_type):
+        &#34;&#34;&#34;Deserializes response into an object.
+
+        :param response: RESTResponse object to be deserialized.
+        :param response_type: class literal for
+            deserialized object, or string of class name.
+
+        :return: deserialized object.
+        &#34;&#34;&#34;
+        # handle file downloading
+        # save response body into a tmp file and return the instance
+        if response_type == &#34;file&#34;:
+            return self.__deserialize_file(response)
+
+        # fetch data from response object
+        try:
+            data = json.loads(response.data)
+        except ValueError:
+            data = response.data
+
+        return self.__deserialize(data, response_type)
+
+    def __deserialize(self, data, klass):
+        &#34;&#34;&#34;Deserializes dict, list, str into an object.
+
+        :param data: dict, list or str.
+        :param klass: class literal, or string of class name.
+
+        :return: object.
+        &#34;&#34;&#34;
+        if data is None:
+            return None
+
+        if type(klass) == str:
+            if klass.startswith(&#39;list[&#39;):
+                sub_kls = re.match(r&#39;list\[(.*)\]&#39;, klass).group(1)
+                return [self.__deserialize(sub_data, sub_kls)
+                        for sub_data in data]
+
+            if klass.startswith(&#39;dict(&#39;):
+                sub_kls = re.match(r&#39;dict\(([^,]*), (.*)\)&#39;, klass).group(2)
+                return {k: self.__deserialize(v, sub_kls)
+                        for k, v in six.iteritems(data)}
+
+            # convert str to class
+            if klass in self.NATIVE_TYPES_MAPPING:
+                klass = self.NATIVE_TYPES_MAPPING[klass]
+            else:
+                klass = getattr(mailslurp_client.models, klass)
+
+        if klass in self.PRIMITIVE_TYPES:
+            return self.__deserialize_primitive(data, klass)
+        elif klass == object:
+            return self.__deserialize_object(data)
+        elif klass == datetime.date:
+            return self.__deserialize_date(data)
+        elif klass == datetime.datetime:
+            return self.__deserialize_datetime(data)
+        else:
+            return self.__deserialize_model(data, klass)
+
+    def call_api(self, resource_path, method,
+                 path_params=None, query_params=None, header_params=None,
+                 body=None, post_params=None, files=None,
+                 response_type=None, auth_settings=None, async_req=None,
+                 _return_http_data_only=None, collection_formats=None,
+                 _preload_content=True, _request_timeout=None, _host=None):
+        &#34;&#34;&#34;Makes the HTTP request (synchronous) and returns deserialized data.
+
+        To make an async_req request, set the async_req parameter.
+
+        :param resource_path: Path to method endpoint.
+        :param method: Method to call.
+        :param path_params: Path parameters in the url.
+        :param query_params: Query parameters in the url.
+        :param header_params: Header parameters to be
+            placed in the request header.
+        :param body: Request body.
+        :param post_params dict: Request post form parameters,
+            for `application/x-www-form-urlencoded`, `multipart/form-data`.
+        :param auth_settings list: Auth Settings names for the request.
+        :param response: Response data type.
+        :param files dict: key -&gt; filename, value -&gt; filepath,
+            for `multipart/form-data`.
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param collection_formats: dict of collection formats for path, query,
+            header, and post parameters.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return:
+            If async_req parameter is True,
+            the request will be called asynchronously.
+            The method will return the request thread.
+            If parameter async_req is False or missing,
+            then the method will return the response directly.
+        &#34;&#34;&#34;
+        if not async_req:
+            return self.__call_api(resource_path, method,
+                                   path_params, query_params, header_params,
+                                   body, post_params, files,
+                                   response_type, auth_settings,
+                                   _return_http_data_only, collection_formats,
+                                   _preload_content, _request_timeout, _host)
+
+        return self.pool.apply_async(self.__call_api, (resource_path,
+                                                       method, path_params,
+                                                       query_params,
+                                                       header_params, body,
+                                                       post_params, files,
+                                                       response_type,
+                                                       auth_settings,
+                                                       _return_http_data_only,
+                                                       collection_formats,
+                                                       _preload_content,
+                                                       _request_timeout,
+                                                       _host))
+
+    def request(self, method, url, query_params=None, headers=None,
+                post_params=None, body=None, _preload_content=True,
+                _request_timeout=None):
+        &#34;&#34;&#34;Makes the HTTP request using RESTClient.&#34;&#34;&#34;
+        if method == &#34;GET&#34;:
+            return self.rest_client.GET(url,
+                                        query_params=query_params,
+                                        _preload_content=_preload_content,
+                                        _request_timeout=_request_timeout,
+                                        headers=headers)
+        elif method == &#34;HEAD&#34;:
+            return self.rest_client.HEAD(url,
+                                         query_params=query_params,
+                                         _preload_content=_preload_content,
+                                         _request_timeout=_request_timeout,
+                                         headers=headers)
+        elif method == &#34;OPTIONS&#34;:
+            return self.rest_client.OPTIONS(url,
+                                            query_params=query_params,
+                                            headers=headers,
+                                            _preload_content=_preload_content,
+                                            _request_timeout=_request_timeout)
+        elif method == &#34;POST&#34;:
+            return self.rest_client.POST(url,
+                                         query_params=query_params,
+                                         headers=headers,
+                                         post_params=post_params,
+                                         _preload_content=_preload_content,
+                                         _request_timeout=_request_timeout,
+                                         body=body)
+        elif method == &#34;PUT&#34;:
+            return self.rest_client.PUT(url,
+                                        query_params=query_params,
+                                        headers=headers,
+                                        post_params=post_params,
+                                        _preload_content=_preload_content,
+                                        _request_timeout=_request_timeout,
+                                        body=body)
+        elif method == &#34;PATCH&#34;:
+            return self.rest_client.PATCH(url,
+                                          query_params=query_params,
+                                          headers=headers,
+                                          post_params=post_params,
+                                          _preload_content=_preload_content,
+                                          _request_timeout=_request_timeout,
+                                          body=body)
+        elif method == &#34;DELETE&#34;:
+            return self.rest_client.DELETE(url,
+                                           query_params=query_params,
+                                           headers=headers,
+                                           _preload_content=_preload_content,
+                                           _request_timeout=_request_timeout,
+                                           body=body)
+        else:
+            raise ApiValueError(
+                &#34;http method must be `GET`, `HEAD`, `OPTIONS`,&#34;
+                &#34; `POST`, `PATCH`, `PUT` or `DELETE`.&#34;
+            )
+
+    def parameters_to_tuples(self, params, collection_formats):
+        &#34;&#34;&#34;Get parameters as list of tuples, formatting collections.
+
+        :param params: Parameters as dict or list of two-tuples
+        :param dict collection_formats: Parameter collection formats
+        :return: Parameters as list of tuples, collections formatted
+        &#34;&#34;&#34;
+        new_params = []
+        if collection_formats is None:
+            collection_formats = {}
+        for k, v in six.iteritems(params) if isinstance(params, dict) else params:  # noqa: E501
+            if k in collection_formats:
+                collection_format = collection_formats[k]
+                if collection_format == &#39;multi&#39;:
+                    new_params.extend((k, value) for value in v)
+                else:
+                    if collection_format == &#39;ssv&#39;:
+                        delimiter = &#39; &#39;
+                    elif collection_format == &#39;tsv&#39;:
+                        delimiter = &#39;\t&#39;
+                    elif collection_format == &#39;pipes&#39;:
+                        delimiter = &#39;|&#39;
+                    else:  # csv is the default
+                        delimiter = &#39;,&#39;
+                    new_params.append(
+                        (k, delimiter.join(str(value) for value in v)))
+            else:
+                new_params.append((k, v))
+        return new_params
+
+    def files_parameters(self, files=None):
+        &#34;&#34;&#34;Builds form parameters.
+
+        :param files: File parameters.
+        :return: Form parameters with files.
+        &#34;&#34;&#34;
+        params = []
+
+        if files:
+            for k, v in six.iteritems(files):
+                if not v:
+                    continue
+                file_names = v if type(v) is list else [v]
+                for n in file_names:
+                    with open(n, &#39;rb&#39;) as f:
+                        filename = os.path.basename(f.name)
+                        filedata = f.read()
+                        mimetype = (mimetypes.guess_type(filename)[0] or
+                                    &#39;application/octet-stream&#39;)
+                        params.append(
+                            tuple([k, tuple([filename, filedata, mimetype])]))
+
+        return params
+
+    def select_header_accept(self, accepts):
+        &#34;&#34;&#34;Returns `Accept` based on an array of accepts provided.
+
+        :param accepts: List of headers.
+        :return: Accept (e.g. application/json).
+        &#34;&#34;&#34;
+        if not accepts:
+            return
+
+        accepts = [x.lower() for x in accepts]
+
+        if &#39;application/json&#39; in accepts:
+            return &#39;application/json&#39;
+        else:
+            return &#39;, &#39;.join(accepts)
+
+    def select_header_content_type(self, content_types):
+        &#34;&#34;&#34;Returns `Content-Type` based on an array of content_types provided.
+
+        :param content_types: List of content-types.
+        :return: Content-Type (e.g. application/json).
+        &#34;&#34;&#34;
+        if not content_types:
+            return &#39;application/json&#39;
+
+        content_types = [x.lower() for x in content_types]
+
+        if &#39;application/json&#39; in content_types or &#39;*/*&#39; in content_types:
+            return &#39;application/json&#39;
+        else:
+            return content_types[0]
+
+    def update_params_for_auth(self, headers, querys, auth_settings):
+        &#34;&#34;&#34;Updates header and query params based on authentication setting.
+
+        :param headers: Header parameters dict to be updated.
+        :param querys: Query parameters tuple list to be updated.
+        :param auth_settings: Authentication setting identifiers list.
+        &#34;&#34;&#34;
+        if not auth_settings:
+            return
+
+        for auth in auth_settings:
+            auth_setting = self.configuration.auth_settings().get(auth)
+            if auth_setting:
+                if auth_setting[&#39;in&#39;] == &#39;cookie&#39;:
+                    headers[&#39;Cookie&#39;] = auth_setting[&#39;value&#39;]
+                elif auth_setting[&#39;in&#39;] == &#39;header&#39;:
+                    headers[auth_setting[&#39;key&#39;]] = auth_setting[&#39;value&#39;]
+                elif auth_setting[&#39;in&#39;] == &#39;query&#39;:
+                    querys.append((auth_setting[&#39;key&#39;], auth_setting[&#39;value&#39;]))
+                else:
+                    raise ApiValueError(
+                        &#39;Authentication token must be in `query` or `header`&#39;
+                    )
+
+    def __deserialize_file(self, response):
+        &#34;&#34;&#34;Deserializes body to file
+
+        Saves response body into a file in a temporary folder,
+        using the filename from the `Content-Disposition` header if provided.
+
+        :param response:  RESTResponse.
+        :return: file path.
+        &#34;&#34;&#34;
+        fd, path = tempfile.mkstemp(dir=self.configuration.temp_folder_path)
+        os.close(fd)
+        os.remove(path)
+
+        content_disposition = response.getheader(&#34;Content-Disposition&#34;)
+        if content_disposition:
+            filename = re.search(r&#39;filename=[\&#39;&#34;]?([^\&#39;&#34;\s]+)[\&#39;&#34;]?&#39;,
+                                 content_disposition).group(1)
+            path = os.path.join(os.path.dirname(path), filename)
+
+        with open(path, &#34;wb&#34;) as f:
+            f.write(response.data)
+
+        return path
+
+    def __deserialize_primitive(self, data, klass):
+        &#34;&#34;&#34;Deserializes string to primitive type.
+
+        :param data: str.
+        :param klass: class literal.
+
+        :return: int, long, float, str, bool.
+        &#34;&#34;&#34;
+        try:
+            return klass(data)
+        except UnicodeEncodeError:
+            return six.text_type(data)
+        except TypeError:
+            return data
+
+    def __deserialize_object(self, value):
+        &#34;&#34;&#34;Return an original value.
+
+        :return: object.
+        &#34;&#34;&#34;
+        return value
+
+    def __deserialize_date(self, string):
+        &#34;&#34;&#34;Deserializes string to date.
+
+        :param string: str.
+        :return: date.
+        &#34;&#34;&#34;
+        try:
+            return parse(string).date()
+        except ImportError:
+            return string
+        except ValueError:
+            raise rest.ApiException(
+                status=0,
+                reason=&#34;Failed to parse `{0}` as date object&#34;.format(string)
+            )
+
+    def __deserialize_datetime(self, string):
+        &#34;&#34;&#34;Deserializes string to datetime.
+
+        The string should be in iso8601 datetime format.
+
+        :param string: str.
+        :return: datetime.
+        &#34;&#34;&#34;
+        try:
+            return parse(string)
+        except ImportError:
+            return string
+        except ValueError:
+            raise rest.ApiException(
+                status=0,
+                reason=(
+                    &#34;Failed to parse `{0}` as datetime object&#34;
+                    .format(string)
+                )
+            )
+
+    def __deserialize_model(self, data, klass):
+        &#34;&#34;&#34;Deserializes list or dict to model.
+
+        :param data: dict, list.
+        :param klass: class literal.
+        :return: model object.
+        &#34;&#34;&#34;
+        has_discriminator = False
+        if (hasattr(klass, &#39;get_real_child_model&#39;)
+                and klass.discriminator_value_class_map):
+            has_discriminator = True
+
+        if not klass.openapi_types and has_discriminator is False:
+            return data
+
+        kwargs = {}
+        if (data is not None and
+                klass.openapi_types is not None and
+                isinstance(data, (list, dict))):
+            for attr, attr_type in six.iteritems(klass.openapi_types):
+                if klass.attribute_map[attr] in data:
+                    value = data[klass.attribute_map[attr]]
+                    kwargs[attr] = self.__deserialize(value, attr_type)
+
+        instance = klass(**kwargs)
+
+        if has_discriminator:
+            klass_name = instance.get_real_child_model(data)
+            if klass_name:
+                instance = self.__deserialize(data, klass_name)
+        return instance</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.api_client.ApiClient"><code class="flex name class">
+<span>class <span class="ident">ApiClient</span></span>
+<span>(</span><span>configuration=None, header_name=None, header_value=None, cookie=None, pool_threads=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generic API client for OpenAPI client library builds.</p>
+<p>OpenAPI generic API client. This client handles the client-
+server communication, and is invariant across implementations. Specifics of
+the methods and models for each application are generated from the OpenAPI
+templates.</p>
+<p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a>
+Do not edit the class manually.</p>
+<p>:param configuration: .Configuration object for this client
+:param header_name: a header to pass when making calls to the API.
+:param header_value: a header value to pass when making calls to
+the API.
+:param cookie: a cookie to include in the header when making calls
+to the API
+:param pool_threads: The number of threads to use for async requests
+to the API. More threads means more concurrent API requests.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ApiClient(object):
+    &#34;&#34;&#34;Generic API client for OpenAPI client library builds.
+
+    OpenAPI generic API client. This client handles the client-
+    server communication, and is invariant across implementations. Specifics of
+    the methods and models for each application are generated from the OpenAPI
+    templates.
+
+    NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+    Do not edit the class manually.
+
+    :param configuration: .Configuration object for this client
+    :param header_name: a header to pass when making calls to the API.
+    :param header_value: a header value to pass when making calls to
+        the API.
+    :param cookie: a cookie to include in the header when making calls
+        to the API
+    :param pool_threads: The number of threads to use for async requests
+        to the API. More threads means more concurrent API requests.
+    &#34;&#34;&#34;
+
+    PRIMITIVE_TYPES = (float, bool, bytes, six.text_type) + six.integer_types
+    NATIVE_TYPES_MAPPING = {
+        &#39;int&#39;: int,
+        &#39;long&#39;: int if six.PY3 else long,  # noqa: F821
+        &#39;float&#39;: float,
+        &#39;str&#39;: str,
+        &#39;bool&#39;: bool,
+        &#39;date&#39;: datetime.date,
+        &#39;datetime&#39;: datetime.datetime,
+        &#39;object&#39;: object,
+    }
+    _pool = None
+
+    def __init__(self, configuration=None, header_name=None, header_value=None,
+                 cookie=None, pool_threads=1):
+        if configuration is None:
+            configuration = Configuration.get_default_copy()
+        self.configuration = configuration
+        self.pool_threads = pool_threads
+
+        self.rest_client = rest.RESTClientObject(configuration)
+        self.default_headers = {}
+        if header_name is not None:
+            self.default_headers[header_name] = header_value
+        self.cookie = cookie
+        # Set default User-Agent.
+        self.user_agent = &#39;OpenAPI-Generator/15.17.16/python&#39;
+        self.client_side_validation = configuration.client_side_validation
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.close()
+
+    def close(self):
+        if self._pool:
+            self._pool.close()
+            self._pool.join()
+            self._pool = None
+            if hasattr(atexit, &#39;unregister&#39;):
+                atexit.unregister(self.close)
+
+    @property
+    def pool(self):
+        &#34;&#34;&#34;Create thread pool on first request
+         avoids instantiating unused threadpool for blocking clients.
+        &#34;&#34;&#34;
+        if self._pool is None:
+            atexit.register(self.close)
+            self._pool = ThreadPool(self.pool_threads)
+        return self._pool
+
+    @property
+    def user_agent(self):
+        &#34;&#34;&#34;User agent for this API client&#34;&#34;&#34;
+        return self.default_headers[&#39;User-Agent&#39;]
+
+    @user_agent.setter
+    def user_agent(self, value):
+        self.default_headers[&#39;User-Agent&#39;] = value
+
+    def set_default_header(self, header_name, header_value):
+        self.default_headers[header_name] = header_value
+
+    def __call_api(
+            self, resource_path, method, path_params=None,
+            query_params=None, header_params=None, body=None, post_params=None,
+            files=None, response_type=None, auth_settings=None,
+            _return_http_data_only=None, collection_formats=None,
+            _preload_content=True, _request_timeout=None, _host=None):
+
+        config = self.configuration
+
+        # header parameters
+        header_params = header_params or {}
+        header_params.update(self.default_headers)
+        if self.cookie:
+            header_params[&#39;Cookie&#39;] = self.cookie
+        if header_params:
+            header_params = self.sanitize_for_serialization(header_params)
+            header_params = dict(self.parameters_to_tuples(header_params,
+                                                           collection_formats))
+
+        # path parameters
+        if path_params:
+            path_params = self.sanitize_for_serialization(path_params)
+            path_params = self.parameters_to_tuples(path_params,
+                                                    collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                resource_path = resource_path.replace(
+                    &#39;{%s}&#39; % k,
+                    quote(str(v), safe=config.safe_chars_for_path_param)
+                )
+
+        # query parameters
+        if query_params:
+            query_params = self.sanitize_for_serialization(query_params)
+            query_params = self.parameters_to_tuples(query_params,
+                                                     collection_formats)
+
+        # post parameters
+        if post_params or files:
+            post_params = post_params if post_params else []
+            post_params = self.sanitize_for_serialization(post_params)
+            post_params = self.parameters_to_tuples(post_params,
+                                                    collection_formats)
+            post_params.extend(self.files_parameters(files))
+
+        # auth setting
+        self.update_params_for_auth(header_params, query_params, auth_settings)
+
+        # body
+        if body:
+            body = self.sanitize_for_serialization(body)
+
+        # request url
+        if _host is None:
+            url = self.configuration.host + resource_path
+        else:
+            # use server/host defined in path or operation instead
+            url = _host + resource_path
+
+        try:
+            # perform request and return response
+            response_data = self.request(
+                method, url, query_params=query_params, headers=header_params,
+                post_params=post_params, body=body,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout)
+        except ApiException as e:
+            e.body = e.body.decode(&#39;utf-8&#39;) if six.PY3 else e.body
+            raise e
+
+        content_type = response_data.getheader(&#39;content-type&#39;)
+
+        self.last_response = response_data
+
+        return_data = response_data
+
+        if not _preload_content:
+            return return_data
+
+        if six.PY3 and response_type not in [&#34;file&#34;, &#34;bytes&#34;]:
+            match = None
+            if content_type is not None:
+                match = re.search(r&#34;charset=([a-zA-Z\-\d]+)[\s\;]?&#34;, content_type)
+            encoding = match.group(1) if match else &#34;utf-8&#34;
+            response_data.data = response_data.data.decode(encoding)
+
+        # deserialize response data
+        if response_type:
+            return_data = self.deserialize(response_data, response_type)
+        else:
+            return_data = None
+
+        if _return_http_data_only:
+            return (return_data)
+        else:
+            return (return_data, response_data.status,
+                    response_data.getheaders())
+
+    def sanitize_for_serialization(self, obj):
+        &#34;&#34;&#34;Builds a JSON POST object.
+
+        If obj is None, return None.
+        If obj is str, int, long, float, bool, return directly.
+        If obj is datetime.datetime, datetime.date
+            convert to string in iso8601 format.
+        If obj is list, sanitize each element in the list.
+        If obj is dict, return the dict.
+        If obj is OpenAPI model, return the properties dict.
+
+        :param obj: The data to serialize.
+        :return: The serialized form of data.
+        &#34;&#34;&#34;
+        if obj is None:
+            return None
+        elif isinstance(obj, self.PRIMITIVE_TYPES):
+            return obj
+        elif isinstance(obj, list):
+            return [self.sanitize_for_serialization(sub_obj)
+                    for sub_obj in obj]
+        elif isinstance(obj, tuple):
+            return tuple(self.sanitize_for_serialization(sub_obj)
+                         for sub_obj in obj)
+        elif isinstance(obj, (datetime.datetime, datetime.date)):
+            return obj.isoformat()
+
+        if isinstance(obj, dict):
+            obj_dict = obj
+        else:
+            # Convert model obj to dict except
+            # attributes `openapi_types`, `attribute_map`
+            # and attributes which value is not None.
+            # Convert attribute name to json key in
+            # model definition for request.
+            obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
+                        for attr, _ in six.iteritems(obj.openapi_types)
+                        if getattr(obj, attr) is not None}
+
+        return {key: self.sanitize_for_serialization(val)
+                for key, val in six.iteritems(obj_dict)}
+
+    def deserialize(self, response, response_type):
+        &#34;&#34;&#34;Deserializes response into an object.
+
+        :param response: RESTResponse object to be deserialized.
+        :param response_type: class literal for
+            deserialized object, or string of class name.
+
+        :return: deserialized object.
+        &#34;&#34;&#34;
+        # handle file downloading
+        # save response body into a tmp file and return the instance
+        if response_type == &#34;file&#34;:
+            return self.__deserialize_file(response)
+
+        # fetch data from response object
+        try:
+            data = json.loads(response.data)
+        except ValueError:
+            data = response.data
+
+        return self.__deserialize(data, response_type)
+
+    def __deserialize(self, data, klass):
+        &#34;&#34;&#34;Deserializes dict, list, str into an object.
+
+        :param data: dict, list or str.
+        :param klass: class literal, or string of class name.
+
+        :return: object.
+        &#34;&#34;&#34;
+        if data is None:
+            return None
+
+        if type(klass) == str:
+            if klass.startswith(&#39;list[&#39;):
+                sub_kls = re.match(r&#39;list\[(.*)\]&#39;, klass).group(1)
+                return [self.__deserialize(sub_data, sub_kls)
+                        for sub_data in data]
+
+            if klass.startswith(&#39;dict(&#39;):
+                sub_kls = re.match(r&#39;dict\(([^,]*), (.*)\)&#39;, klass).group(2)
+                return {k: self.__deserialize(v, sub_kls)
+                        for k, v in six.iteritems(data)}
+
+            # convert str to class
+            if klass in self.NATIVE_TYPES_MAPPING:
+                klass = self.NATIVE_TYPES_MAPPING[klass]
+            else:
+                klass = getattr(mailslurp_client.models, klass)
+
+        if klass in self.PRIMITIVE_TYPES:
+            return self.__deserialize_primitive(data, klass)
+        elif klass == object:
+            return self.__deserialize_object(data)
+        elif klass == datetime.date:
+            return self.__deserialize_date(data)
+        elif klass == datetime.datetime:
+            return self.__deserialize_datetime(data)
+        else:
+            return self.__deserialize_model(data, klass)
+
+    def call_api(self, resource_path, method,
+                 path_params=None, query_params=None, header_params=None,
+                 body=None, post_params=None, files=None,
+                 response_type=None, auth_settings=None, async_req=None,
+                 _return_http_data_only=None, collection_formats=None,
+                 _preload_content=True, _request_timeout=None, _host=None):
+        &#34;&#34;&#34;Makes the HTTP request (synchronous) and returns deserialized data.
+
+        To make an async_req request, set the async_req parameter.
+
+        :param resource_path: Path to method endpoint.
+        :param method: Method to call.
+        :param path_params: Path parameters in the url.
+        :param query_params: Query parameters in the url.
+        :param header_params: Header parameters to be
+            placed in the request header.
+        :param body: Request body.
+        :param post_params dict: Request post form parameters,
+            for `application/x-www-form-urlencoded`, `multipart/form-data`.
+        :param auth_settings list: Auth Settings names for the request.
+        :param response: Response data type.
+        :param files dict: key -&gt; filename, value -&gt; filepath,
+            for `multipart/form-data`.
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param collection_formats: dict of collection formats for path, query,
+            header, and post parameters.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return:
+            If async_req parameter is True,
+            the request will be called asynchronously.
+            The method will return the request thread.
+            If parameter async_req is False or missing,
+            then the method will return the response directly.
+        &#34;&#34;&#34;
+        if not async_req:
+            return self.__call_api(resource_path, method,
+                                   path_params, query_params, header_params,
+                                   body, post_params, files,
+                                   response_type, auth_settings,
+                                   _return_http_data_only, collection_formats,
+                                   _preload_content, _request_timeout, _host)
+
+        return self.pool.apply_async(self.__call_api, (resource_path,
+                                                       method, path_params,
+                                                       query_params,
+                                                       header_params, body,
+                                                       post_params, files,
+                                                       response_type,
+                                                       auth_settings,
+                                                       _return_http_data_only,
+                                                       collection_formats,
+                                                       _preload_content,
+                                                       _request_timeout,
+                                                       _host))
+
+    def request(self, method, url, query_params=None, headers=None,
+                post_params=None, body=None, _preload_content=True,
+                _request_timeout=None):
+        &#34;&#34;&#34;Makes the HTTP request using RESTClient.&#34;&#34;&#34;
+        if method == &#34;GET&#34;:
+            return self.rest_client.GET(url,
+                                        query_params=query_params,
+                                        _preload_content=_preload_content,
+                                        _request_timeout=_request_timeout,
+                                        headers=headers)
+        elif method == &#34;HEAD&#34;:
+            return self.rest_client.HEAD(url,
+                                         query_params=query_params,
+                                         _preload_content=_preload_content,
+                                         _request_timeout=_request_timeout,
+                                         headers=headers)
+        elif method == &#34;OPTIONS&#34;:
+            return self.rest_client.OPTIONS(url,
+                                            query_params=query_params,
+                                            headers=headers,
+                                            _preload_content=_preload_content,
+                                            _request_timeout=_request_timeout)
+        elif method == &#34;POST&#34;:
+            return self.rest_client.POST(url,
+                                         query_params=query_params,
+                                         headers=headers,
+                                         post_params=post_params,
+                                         _preload_content=_preload_content,
+                                         _request_timeout=_request_timeout,
+                                         body=body)
+        elif method == &#34;PUT&#34;:
+            return self.rest_client.PUT(url,
+                                        query_params=query_params,
+                                        headers=headers,
+                                        post_params=post_params,
+                                        _preload_content=_preload_content,
+                                        _request_timeout=_request_timeout,
+                                        body=body)
+        elif method == &#34;PATCH&#34;:
+            return self.rest_client.PATCH(url,
+                                          query_params=query_params,
+                                          headers=headers,
+                                          post_params=post_params,
+                                          _preload_content=_preload_content,
+                                          _request_timeout=_request_timeout,
+                                          body=body)
+        elif method == &#34;DELETE&#34;:
+            return self.rest_client.DELETE(url,
+                                           query_params=query_params,
+                                           headers=headers,
+                                           _preload_content=_preload_content,
+                                           _request_timeout=_request_timeout,
+                                           body=body)
+        else:
+            raise ApiValueError(
+                &#34;http method must be `GET`, `HEAD`, `OPTIONS`,&#34;
+                &#34; `POST`, `PATCH`, `PUT` or `DELETE`.&#34;
+            )
+
+    def parameters_to_tuples(self, params, collection_formats):
+        &#34;&#34;&#34;Get parameters as list of tuples, formatting collections.
+
+        :param params: Parameters as dict or list of two-tuples
+        :param dict collection_formats: Parameter collection formats
+        :return: Parameters as list of tuples, collections formatted
+        &#34;&#34;&#34;
+        new_params = []
+        if collection_formats is None:
+            collection_formats = {}
+        for k, v in six.iteritems(params) if isinstance(params, dict) else params:  # noqa: E501
+            if k in collection_formats:
+                collection_format = collection_formats[k]
+                if collection_format == &#39;multi&#39;:
+                    new_params.extend((k, value) for value in v)
+                else:
+                    if collection_format == &#39;ssv&#39;:
+                        delimiter = &#39; &#39;
+                    elif collection_format == &#39;tsv&#39;:
+                        delimiter = &#39;\t&#39;
+                    elif collection_format == &#39;pipes&#39;:
+                        delimiter = &#39;|&#39;
+                    else:  # csv is the default
+                        delimiter = &#39;,&#39;
+                    new_params.append(
+                        (k, delimiter.join(str(value) for value in v)))
+            else:
+                new_params.append((k, v))
+        return new_params
+
+    def files_parameters(self, files=None):
+        &#34;&#34;&#34;Builds form parameters.
+
+        :param files: File parameters.
+        :return: Form parameters with files.
+        &#34;&#34;&#34;
+        params = []
+
+        if files:
+            for k, v in six.iteritems(files):
+                if not v:
+                    continue
+                file_names = v if type(v) is list else [v]
+                for n in file_names:
+                    with open(n, &#39;rb&#39;) as f:
+                        filename = os.path.basename(f.name)
+                        filedata = f.read()
+                        mimetype = (mimetypes.guess_type(filename)[0] or
+                                    &#39;application/octet-stream&#39;)
+                        params.append(
+                            tuple([k, tuple([filename, filedata, mimetype])]))
+
+        return params
+
+    def select_header_accept(self, accepts):
+        &#34;&#34;&#34;Returns `Accept` based on an array of accepts provided.
+
+        :param accepts: List of headers.
+        :return: Accept (e.g. application/json).
+        &#34;&#34;&#34;
+        if not accepts:
+            return
+
+        accepts = [x.lower() for x in accepts]
+
+        if &#39;application/json&#39; in accepts:
+            return &#39;application/json&#39;
+        else:
+            return &#39;, &#39;.join(accepts)
+
+    def select_header_content_type(self, content_types):
+        &#34;&#34;&#34;Returns `Content-Type` based on an array of content_types provided.
+
+        :param content_types: List of content-types.
+        :return: Content-Type (e.g. application/json).
+        &#34;&#34;&#34;
+        if not content_types:
+            return &#39;application/json&#39;
+
+        content_types = [x.lower() for x in content_types]
+
+        if &#39;application/json&#39; in content_types or &#39;*/*&#39; in content_types:
+            return &#39;application/json&#39;
+        else:
+            return content_types[0]
+
+    def update_params_for_auth(self, headers, querys, auth_settings):
+        &#34;&#34;&#34;Updates header and query params based on authentication setting.
+
+        :param headers: Header parameters dict to be updated.
+        :param querys: Query parameters tuple list to be updated.
+        :param auth_settings: Authentication setting identifiers list.
+        &#34;&#34;&#34;
+        if not auth_settings:
+            return
+
+        for auth in auth_settings:
+            auth_setting = self.configuration.auth_settings().get(auth)
+            if auth_setting:
+                if auth_setting[&#39;in&#39;] == &#39;cookie&#39;:
+                    headers[&#39;Cookie&#39;] = auth_setting[&#39;value&#39;]
+                elif auth_setting[&#39;in&#39;] == &#39;header&#39;:
+                    headers[auth_setting[&#39;key&#39;]] = auth_setting[&#39;value&#39;]
+                elif auth_setting[&#39;in&#39;] == &#39;query&#39;:
+                    querys.append((auth_setting[&#39;key&#39;], auth_setting[&#39;value&#39;]))
+                else:
+                    raise ApiValueError(
+                        &#39;Authentication token must be in `query` or `header`&#39;
+                    )
+
+    def __deserialize_file(self, response):
+        &#34;&#34;&#34;Deserializes body to file
+
+        Saves response body into a file in a temporary folder,
+        using the filename from the `Content-Disposition` header if provided.
+
+        :param response:  RESTResponse.
+        :return: file path.
+        &#34;&#34;&#34;
+        fd, path = tempfile.mkstemp(dir=self.configuration.temp_folder_path)
+        os.close(fd)
+        os.remove(path)
+
+        content_disposition = response.getheader(&#34;Content-Disposition&#34;)
+        if content_disposition:
+            filename = re.search(r&#39;filename=[\&#39;&#34;]?([^\&#39;&#34;\s]+)[\&#39;&#34;]?&#39;,
+                                 content_disposition).group(1)
+            path = os.path.join(os.path.dirname(path), filename)
+
+        with open(path, &#34;wb&#34;) as f:
+            f.write(response.data)
+
+        return path
+
+    def __deserialize_primitive(self, data, klass):
+        &#34;&#34;&#34;Deserializes string to primitive type.
+
+        :param data: str.
+        :param klass: class literal.
+
+        :return: int, long, float, str, bool.
+        &#34;&#34;&#34;
+        try:
+            return klass(data)
+        except UnicodeEncodeError:
+            return six.text_type(data)
+        except TypeError:
+            return data
+
+    def __deserialize_object(self, value):
+        &#34;&#34;&#34;Return an original value.
+
+        :return: object.
+        &#34;&#34;&#34;
+        return value
+
+    def __deserialize_date(self, string):
+        &#34;&#34;&#34;Deserializes string to date.
+
+        :param string: str.
+        :return: date.
+        &#34;&#34;&#34;
+        try:
+            return parse(string).date()
+        except ImportError:
+            return string
+        except ValueError:
+            raise rest.ApiException(
+                status=0,
+                reason=&#34;Failed to parse `{0}` as date object&#34;.format(string)
+            )
+
+    def __deserialize_datetime(self, string):
+        &#34;&#34;&#34;Deserializes string to datetime.
+
+        The string should be in iso8601 datetime format.
+
+        :param string: str.
+        :return: datetime.
+        &#34;&#34;&#34;
+        try:
+            return parse(string)
+        except ImportError:
+            return string
+        except ValueError:
+            raise rest.ApiException(
+                status=0,
+                reason=(
+                    &#34;Failed to parse `{0}` as datetime object&#34;
+                    .format(string)
+                )
+            )
+
+    def __deserialize_model(self, data, klass):
+        &#34;&#34;&#34;Deserializes list or dict to model.
+
+        :param data: dict, list.
+        :param klass: class literal.
+        :return: model object.
+        &#34;&#34;&#34;
+        has_discriminator = False
+        if (hasattr(klass, &#39;get_real_child_model&#39;)
+                and klass.discriminator_value_class_map):
+            has_discriminator = True
+
+        if not klass.openapi_types and has_discriminator is False:
+            return data
+
+        kwargs = {}
+        if (data is not None and
+                klass.openapi_types is not None and
+                isinstance(data, (list, dict))):
+            for attr, attr_type in six.iteritems(klass.openapi_types):
+                if klass.attribute_map[attr] in data:
+                    value = data[klass.attribute_map[attr]]
+                    kwargs[attr] = self.__deserialize(value, attr_type)
+
+        instance = klass(**kwargs)
+
+        if has_discriminator:
+            klass_name = instance.get_real_child_model(data)
+            if klass_name:
+                instance = self.__deserialize(data, klass_name)
+        return instance</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.api_client.ApiClient.NATIVE_TYPES_MAPPING"><code class="name">var <span class="ident">NATIVE_TYPES_MAPPING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.PRIMITIVE_TYPES"><code class="name">var <span class="ident">PRIMITIVE_TYPES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.api_client.ApiClient.pool"><code class="name">var <span class="ident">pool</span></code></dt>
+<dd>
+<div class="desc"><p>Create thread pool on first request
+avoids instantiating unused threadpool for blocking clients.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def pool(self):
+    &#34;&#34;&#34;Create thread pool on first request
+     avoids instantiating unused threadpool for blocking clients.
+    &#34;&#34;&#34;
+    if self._pool is None:
+        atexit.register(self.close)
+        self._pool = ThreadPool(self.pool_threads)
+    return self._pool</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.user_agent"><code class="name">var <span class="ident">user_agent</span></code></dt>
+<dd>
+<div class="desc"><p>User agent for this API client</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def user_agent(self):
+    &#34;&#34;&#34;User agent for this API client&#34;&#34;&#34;
+    return self.default_headers[&#39;User-Agent&#39;]</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.api_client.ApiClient.call_api"><code class="name flex">
+<span>def <span class="ident">call_api</span></span>(<span>self, resource_path, method, path_params=None, query_params=None, header_params=None, body=None, post_params=None, files=None, response_type=None, auth_settings=None, async_req=None, collection_formats=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes the HTTP request (synchronous) and returns deserialized data.</p>
+<p>To make an async_req request, set the async_req parameter.</p>
+<p>:param resource_path: Path to method endpoint.
+:param method: Method to call.
+:param path_params: Path parameters in the url.
+:param query_params: Query parameters in the url.
+:param header_params: Header parameters to be
+placed in the request header.
+:param body: Request body.
+:param post_params dict: Request post form parameters,
+for <code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code>.
+:param auth_settings list: Auth Settings names for the request.
+:param response: Response data type.
+:param files dict: key -&gt; filename, value -&gt; filepath,
+for <code>multipart/form-data</code>.
+:param async_req bool: execute request asynchronously
+:param _return_http_data_only: response data without head status code
+and headers
+:param collection_formats: dict of collection formats for path, query,
+header, and post parameters.
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return:
+If async_req parameter is True,
+the request will be called asynchronously.
+The method will return the request thread.
+If parameter async_req is False or missing,
+then the method will return the response directly.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def call_api(self, resource_path, method,
+             path_params=None, query_params=None, header_params=None,
+             body=None, post_params=None, files=None,
+             response_type=None, auth_settings=None, async_req=None,
+             _return_http_data_only=None, collection_formats=None,
+             _preload_content=True, _request_timeout=None, _host=None):
+    &#34;&#34;&#34;Makes the HTTP request (synchronous) and returns deserialized data.
+
+    To make an async_req request, set the async_req parameter.
+
+    :param resource_path: Path to method endpoint.
+    :param method: Method to call.
+    :param path_params: Path parameters in the url.
+    :param query_params: Query parameters in the url.
+    :param header_params: Header parameters to be
+        placed in the request header.
+    :param body: Request body.
+    :param post_params dict: Request post form parameters,
+        for `application/x-www-form-urlencoded`, `multipart/form-data`.
+    :param auth_settings list: Auth Settings names for the request.
+    :param response: Response data type.
+    :param files dict: key -&gt; filename, value -&gt; filepath,
+        for `multipart/form-data`.
+    :param async_req bool: execute request asynchronously
+    :param _return_http_data_only: response data without head status code
+                                   and headers
+    :param collection_formats: dict of collection formats for path, query,
+        header, and post parameters.
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return:
+        If async_req parameter is True,
+        the request will be called asynchronously.
+        The method will return the request thread.
+        If parameter async_req is False or missing,
+        then the method will return the response directly.
+    &#34;&#34;&#34;
+    if not async_req:
+        return self.__call_api(resource_path, method,
+                               path_params, query_params, header_params,
+                               body, post_params, files,
+                               response_type, auth_settings,
+                               _return_http_data_only, collection_formats,
+                               _preload_content, _request_timeout, _host)
+
+    return self.pool.apply_async(self.__call_api, (resource_path,
+                                                   method, path_params,
+                                                   query_params,
+                                                   header_params, body,
+                                                   post_params, files,
+                                                   response_type,
+                                                   auth_settings,
+                                                   _return_http_data_only,
+                                                   collection_formats,
+                                                   _preload_content,
+                                                   _request_timeout,
+                                                   _host))</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.close"><code class="name flex">
+<span>def <span class="ident">close</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def close(self):
+    if self._pool:
+        self._pool.close()
+        self._pool.join()
+        self._pool = None
+        if hasattr(atexit, &#39;unregister&#39;):
+            atexit.unregister(self.close)</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.deserialize"><code class="name flex">
+<span>def <span class="ident">deserialize</span></span>(<span>self, response, response_type)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deserializes response into an object.</p>
+<p>:param response: RESTResponse object to be deserialized.
+:param response_type: class literal for
+deserialized object, or string of class name.</p>
+<p>:return: deserialized object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def deserialize(self, response, response_type):
+    &#34;&#34;&#34;Deserializes response into an object.
+
+    :param response: RESTResponse object to be deserialized.
+    :param response_type: class literal for
+        deserialized object, or string of class name.
+
+    :return: deserialized object.
+    &#34;&#34;&#34;
+    # handle file downloading
+    # save response body into a tmp file and return the instance
+    if response_type == &#34;file&#34;:
+        return self.__deserialize_file(response)
+
+    # fetch data from response object
+    try:
+        data = json.loads(response.data)
+    except ValueError:
+        data = response.data
+
+    return self.__deserialize(data, response_type)</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.files_parameters"><code class="name flex">
+<span>def <span class="ident">files_parameters</span></span>(<span>self, files=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Builds form parameters.</p>
+<p>:param files: File parameters.
+:return: Form parameters with files.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def files_parameters(self, files=None):
+    &#34;&#34;&#34;Builds form parameters.
+
+    :param files: File parameters.
+    :return: Form parameters with files.
+    &#34;&#34;&#34;
+    params = []
+
+    if files:
+        for k, v in six.iteritems(files):
+            if not v:
+                continue
+            file_names = v if type(v) is list else [v]
+            for n in file_names:
+                with open(n, &#39;rb&#39;) as f:
+                    filename = os.path.basename(f.name)
+                    filedata = f.read()
+                    mimetype = (mimetypes.guess_type(filename)[0] or
+                                &#39;application/octet-stream&#39;)
+                    params.append(
+                        tuple([k, tuple([filename, filedata, mimetype])]))
+
+    return params</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.parameters_to_tuples"><code class="name flex">
+<span>def <span class="ident">parameters_to_tuples</span></span>(<span>self, params, collection_formats)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get parameters as list of tuples, formatting collections.</p>
+<p>:param params: Parameters as dict or list of two-tuples
+:param dict collection_formats: Parameter collection formats
+:return: Parameters as list of tuples, collections formatted</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parameters_to_tuples(self, params, collection_formats):
+    &#34;&#34;&#34;Get parameters as list of tuples, formatting collections.
+
+    :param params: Parameters as dict or list of two-tuples
+    :param dict collection_formats: Parameter collection formats
+    :return: Parameters as list of tuples, collections formatted
+    &#34;&#34;&#34;
+    new_params = []
+    if collection_formats is None:
+        collection_formats = {}
+    for k, v in six.iteritems(params) if isinstance(params, dict) else params:  # noqa: E501
+        if k in collection_formats:
+            collection_format = collection_formats[k]
+            if collection_format == &#39;multi&#39;:
+                new_params.extend((k, value) for value in v)
+            else:
+                if collection_format == &#39;ssv&#39;:
+                    delimiter = &#39; &#39;
+                elif collection_format == &#39;tsv&#39;:
+                    delimiter = &#39;\t&#39;
+                elif collection_format == &#39;pipes&#39;:
+                    delimiter = &#39;|&#39;
+                else:  # csv is the default
+                    delimiter = &#39;,&#39;
+                new_params.append(
+                    (k, delimiter.join(str(value) for value in v)))
+        else:
+            new_params.append((k, v))
+    return new_params</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.request"><code class="name flex">
+<span>def <span class="ident">request</span></span>(<span>self, method, url, query_params=None, headers=None, post_params=None, body=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes the HTTP request using RESTClient.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def request(self, method, url, query_params=None, headers=None,
+            post_params=None, body=None, _preload_content=True,
+            _request_timeout=None):
+    &#34;&#34;&#34;Makes the HTTP request using RESTClient.&#34;&#34;&#34;
+    if method == &#34;GET&#34;:
+        return self.rest_client.GET(url,
+                                    query_params=query_params,
+                                    _preload_content=_preload_content,
+                                    _request_timeout=_request_timeout,
+                                    headers=headers)
+    elif method == &#34;HEAD&#34;:
+        return self.rest_client.HEAD(url,
+                                     query_params=query_params,
+                                     _preload_content=_preload_content,
+                                     _request_timeout=_request_timeout,
+                                     headers=headers)
+    elif method == &#34;OPTIONS&#34;:
+        return self.rest_client.OPTIONS(url,
+                                        query_params=query_params,
+                                        headers=headers,
+                                        _preload_content=_preload_content,
+                                        _request_timeout=_request_timeout)
+    elif method == &#34;POST&#34;:
+        return self.rest_client.POST(url,
+                                     query_params=query_params,
+                                     headers=headers,
+                                     post_params=post_params,
+                                     _preload_content=_preload_content,
+                                     _request_timeout=_request_timeout,
+                                     body=body)
+    elif method == &#34;PUT&#34;:
+        return self.rest_client.PUT(url,
+                                    query_params=query_params,
+                                    headers=headers,
+                                    post_params=post_params,
+                                    _preload_content=_preload_content,
+                                    _request_timeout=_request_timeout,
+                                    body=body)
+    elif method == &#34;PATCH&#34;:
+        return self.rest_client.PATCH(url,
+                                      query_params=query_params,
+                                      headers=headers,
+                                      post_params=post_params,
+                                      _preload_content=_preload_content,
+                                      _request_timeout=_request_timeout,
+                                      body=body)
+    elif method == &#34;DELETE&#34;:
+        return self.rest_client.DELETE(url,
+                                       query_params=query_params,
+                                       headers=headers,
+                                       _preload_content=_preload_content,
+                                       _request_timeout=_request_timeout,
+                                       body=body)
+    else:
+        raise ApiValueError(
+            &#34;http method must be `GET`, `HEAD`, `OPTIONS`,&#34;
+            &#34; `POST`, `PATCH`, `PUT` or `DELETE`.&#34;
+        )</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.sanitize_for_serialization"><code class="name flex">
+<span>def <span class="ident">sanitize_for_serialization</span></span>(<span>self, obj)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Builds a JSON POST object.</p>
+<p>If obj is None, return None.
+If obj is str, int, long, float, bool, return directly.
+If obj is datetime.datetime, datetime.date
+convert to string in iso8601 format.
+If obj is list, sanitize each element in the list.
+If obj is dict, return the dict.
+If obj is OpenAPI model, return the properties dict.</p>
+<p>:param obj: The data to serialize.
+:return: The serialized form of data.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sanitize_for_serialization(self, obj):
+    &#34;&#34;&#34;Builds a JSON POST object.
+
+    If obj is None, return None.
+    If obj is str, int, long, float, bool, return directly.
+    If obj is datetime.datetime, datetime.date
+        convert to string in iso8601 format.
+    If obj is list, sanitize each element in the list.
+    If obj is dict, return the dict.
+    If obj is OpenAPI model, return the properties dict.
+
+    :param obj: The data to serialize.
+    :return: The serialized form of data.
+    &#34;&#34;&#34;
+    if obj is None:
+        return None
+    elif isinstance(obj, self.PRIMITIVE_TYPES):
+        return obj
+    elif isinstance(obj, list):
+        return [self.sanitize_for_serialization(sub_obj)
+                for sub_obj in obj]
+    elif isinstance(obj, tuple):
+        return tuple(self.sanitize_for_serialization(sub_obj)
+                     for sub_obj in obj)
+    elif isinstance(obj, (datetime.datetime, datetime.date)):
+        return obj.isoformat()
+
+    if isinstance(obj, dict):
+        obj_dict = obj
+    else:
+        # Convert model obj to dict except
+        # attributes `openapi_types`, `attribute_map`
+        # and attributes which value is not None.
+        # Convert attribute name to json key in
+        # model definition for request.
+        obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
+                    for attr, _ in six.iteritems(obj.openapi_types)
+                    if getattr(obj, attr) is not None}
+
+    return {key: self.sanitize_for_serialization(val)
+            for key, val in six.iteritems(obj_dict)}</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.select_header_accept"><code class="name flex">
+<span>def <span class="ident">select_header_accept</span></span>(<span>self, accepts)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns <code>Accept</code> based on an array of accepts provided.</p>
+<p>:param accepts: List of headers.
+:return: Accept (e.g. application/json).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select_header_accept(self, accepts):
+    &#34;&#34;&#34;Returns `Accept` based on an array of accepts provided.
+
+    :param accepts: List of headers.
+    :return: Accept (e.g. application/json).
+    &#34;&#34;&#34;
+    if not accepts:
+        return
+
+    accepts = [x.lower() for x in accepts]
+
+    if &#39;application/json&#39; in accepts:
+        return &#39;application/json&#39;
+    else:
+        return &#39;, &#39;.join(accepts)</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.select_header_content_type"><code class="name flex">
+<span>def <span class="ident">select_header_content_type</span></span>(<span>self, content_types)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns <code>Content-Type</code> based on an array of content_types provided.</p>
+<p>:param content_types: List of content-types.
+:return: Content-Type (e.g. application/json).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select_header_content_type(self, content_types):
+    &#34;&#34;&#34;Returns `Content-Type` based on an array of content_types provided.
+
+    :param content_types: List of content-types.
+    :return: Content-Type (e.g. application/json).
+    &#34;&#34;&#34;
+    if not content_types:
+        return &#39;application/json&#39;
+
+    content_types = [x.lower() for x in content_types]
+
+    if &#39;application/json&#39; in content_types or &#39;*/*&#39; in content_types:
+        return &#39;application/json&#39;
+    else:
+        return content_types[0]</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.set_default_header"><code class="name flex">
+<span>def <span class="ident">set_default_header</span></span>(<span>self, header_name, header_value)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_default_header(self, header_name, header_value):
+    self.default_headers[header_name] = header_value</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api_client.ApiClient.update_params_for_auth"><code class="name flex">
+<span>def <span class="ident">update_params_for_auth</span></span>(<span>self, headers, querys, auth_settings)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates header and query params based on authentication setting.</p>
+<p>:param headers: Header parameters dict to be updated.
+:param querys: Query parameters tuple list to be updated.
+:param auth_settings: Authentication setting identifiers list.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_params_for_auth(self, headers, querys, auth_settings):
+    &#34;&#34;&#34;Updates header and query params based on authentication setting.
+
+    :param headers: Header parameters dict to be updated.
+    :param querys: Query parameters tuple list to be updated.
+    :param auth_settings: Authentication setting identifiers list.
+    &#34;&#34;&#34;
+    if not auth_settings:
+        return
+
+    for auth in auth_settings:
+        auth_setting = self.configuration.auth_settings().get(auth)
+        if auth_setting:
+            if auth_setting[&#39;in&#39;] == &#39;cookie&#39;:
+                headers[&#39;Cookie&#39;] = auth_setting[&#39;value&#39;]
+            elif auth_setting[&#39;in&#39;] == &#39;header&#39;:
+                headers[auth_setting[&#39;key&#39;]] = auth_setting[&#39;value&#39;]
+            elif auth_setting[&#39;in&#39;] == &#39;query&#39;:
+                querys.append((auth_setting[&#39;key&#39;], auth_setting[&#39;value&#39;]))
+            else:
+                raise ApiValueError(
+                    &#39;Authentication token must be in `query` or `header`&#39;
+                )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client" href="index.html">mailslurp_client</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.api_client.ApiClient" href="#mailslurp_client.api_client.ApiClient">ApiClient</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.api_client.ApiClient.NATIVE_TYPES_MAPPING" href="#mailslurp_client.api_client.ApiClient.NATIVE_TYPES_MAPPING">NATIVE_TYPES_MAPPING</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.PRIMITIVE_TYPES" href="#mailslurp_client.api_client.ApiClient.PRIMITIVE_TYPES">PRIMITIVE_TYPES</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.call_api" href="#mailslurp_client.api_client.ApiClient.call_api">call_api</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.close" href="#mailslurp_client.api_client.ApiClient.close">close</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.deserialize" href="#mailslurp_client.api_client.ApiClient.deserialize">deserialize</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.files_parameters" href="#mailslurp_client.api_client.ApiClient.files_parameters">files_parameters</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.parameters_to_tuples" href="#mailslurp_client.api_client.ApiClient.parameters_to_tuples">parameters_to_tuples</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.pool" href="#mailslurp_client.api_client.ApiClient.pool">pool</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.request" href="#mailslurp_client.api_client.ApiClient.request">request</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.sanitize_for_serialization" href="#mailslurp_client.api_client.ApiClient.sanitize_for_serialization">sanitize_for_serialization</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.select_header_accept" href="#mailslurp_client.api_client.ApiClient.select_header_accept">select_header_accept</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.select_header_content_type" href="#mailslurp_client.api_client.ApiClient.select_header_content_type">select_header_content_type</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.set_default_header" href="#mailslurp_client.api_client.ApiClient.set_default_header">set_default_header</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.update_params_for_auth" href="#mailslurp_client.api_client.ApiClient.update_params_for_auth">update_params_for_auth</a></code></li>
+<li><code><a title="mailslurp_client.api_client.ApiClient.user_agent" href="#mailslurp_client.api_client.ApiClient.user_agent">user_agent</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
