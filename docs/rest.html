@@ -77,11 +77,11 @@ class RESTResponse(io.IOBase):
 
     def getheaders(self):
         &#34;&#34;&#34;Returns a dictionary of the response headers.&#34;&#34;&#34;
-        return self.urllib3_response.getheaders()
+        return self.urllib3_response.headers
 
     def getheader(self, name, default=None):
         &#34;&#34;&#34;Returns a given response header.&#34;&#34;&#34;
-        return self.urllib3_response.getheader(name, default)
+        return self.urllib3_response.headers.get(name, default)
 
 
 class RESTClientObject(object):
@@ -915,11 +915,11 @@ fp.write('Spam and eggs!')</p></div>
 
     def getheaders(self):
         &#34;&#34;&#34;Returns a dictionary of the response headers.&#34;&#34;&#34;
-        return self.urllib3_response.getheaders()
+        return self.urllib3_response.headers
 
     def getheader(self, name, default=None):
         &#34;&#34;&#34;Returns a given response header.&#34;&#34;&#34;
-        return self.urllib3_response.getheader(name, default)</code></pre>
+        return self.urllib3_response.headers.get(name, default)</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -939,7 +939,7 @@ fp.write('Spam and eggs!')</p></div>
 </summary>
 <pre><code class="python">def getheader(self, name, default=None):
     &#34;&#34;&#34;Returns a given response header.&#34;&#34;&#34;
-    return self.urllib3_response.getheader(name, default)</code></pre>
+    return self.urllib3_response.headers.get(name, default)</code></pre>
 </details>
 </dd>
 <dt id="mailslurp_client.rest.RESTResponse.getheaders"><code class="name flex">
@@ -953,7 +953,7 @@ fp.write('Spam and eggs!')</p></div>
 </summary>
 <pre><code class="python">def getheaders(self):
     &#34;&#34;&#34;Returns a dictionary of the response headers.&#34;&#34;&#34;
-    return self.urllib3_response.getheaders()</code></pre>
+    return self.urllib3_response.headers</code></pre>
 </details>
 </dd>
 </dl>
