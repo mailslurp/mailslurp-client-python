@@ -173,6 +173,7 @@ class InboxControllerApi(object):
         :param str inbox_type: HTTP (default) or SMTP inbox type. HTTP inboxes are default and best solution for most cases. SMTP inboxes are more reliable for public inbound email consumption (but do not support sending emails). When using custom domains the domain type must match the inbox type. HTTP inboxes are processed by AWS SES while SMTP inboxes use a custom mail server running at `mx.mailslurp.com`.
         :param bool virtual_inbox: Virtual inbox prevents any outbound emails from being sent. It creates sent email records but will never send real emails to recipients. Great for testing and faking email sending.
         :param bool use_short_address: Use a shorter email address under 31 characters
+        :param str Prefix to add before the email address for easier labelling or identification
         :param str domain_id: ID of custom domain to use for email address.
         :param str domain_name: FQDN domain name for the domain you have verified. Will be appended with a randomly assigned recipient name. Use the `emailAddress` option instead to specify the full custom inbox.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -243,7 +244,8 @@ class InboxControllerApi(object):
             'virtual_inbox',
             'use_short_address',
             'domain_id',
-            'domain_name'
+            'domain_name',
+            'prefix'
         ]
         all_params.extend(
             [
@@ -297,6 +299,8 @@ class InboxControllerApi(object):
             query_params.append(('domainId', local_var_params['domain_id']))  # noqa: E501
         if 'domain_name' in local_var_params and local_var_params['domain_name'] is not None:  # noqa: E501
             query_params.append(('domainName', local_var_params['domain_name']))  # noqa: E501
+        if 'prefix' in local_var_params and local_var_params['prefix'] is not None:  # noqa: E501
+            query_params.append(('prefix', local_var_params['prefix']))  # noqa: E501
 
         header_params = {}
 
