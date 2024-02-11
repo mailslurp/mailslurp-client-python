@@ -1,0 +1,1662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>mailslurp_client.models API documentation</title>
+<meta name="description" content="MailSlurp API …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># coding: utf-8
+
+# flake8: noqa
+&#34;&#34;&#34;
+    MailSlurp API
+
+    MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It&#39;s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository  # noqa: E501
+
+    The version of the OpenAPI document: 6.5.2
+    Contact: contact@mailslurp.dev
+    Generated by: https://openapi-generator.tech
+&#34;&#34;&#34;
+
+
+from __future__ import absolute_import
+
+# import models into model package
+from mailslurp_client.models.abstract_webhook_payload import AbstractWebhookPayload
+from mailslurp_client.models.account_bounce_block_dto import AccountBounceBlockDto
+from mailslurp_client.models.alias_dto import AliasDto
+from mailslurp_client.models.alias_projection import AliasProjection
+from mailslurp_client.models.attachment_entity import AttachmentEntity
+from mailslurp_client.models.attachment_meta_data import AttachmentMetaData
+from mailslurp_client.models.attachment_projection import AttachmentProjection
+from mailslurp_client.models.basic_auth_options import BasicAuthOptions
+from mailslurp_client.models.bounce_projection import BounceProjection
+from mailslurp_client.models.bounce_recipient_projection import BounceRecipientProjection
+from mailslurp_client.models.bounced_email_dto import BouncedEmailDto
+from mailslurp_client.models.bounced_recipient_dto import BouncedRecipientDto
+from mailslurp_client.models.bulk_send_email_options import BulkSendEmailOptions
+from mailslurp_client.models.can_send_email_results import CanSendEmailResults
+from mailslurp_client.models.check_email_body_feature_support_results import CheckEmailBodyFeatureSupportResults
+from mailslurp_client.models.check_email_client_support_options import CheckEmailClientSupportOptions
+from mailslurp_client.models.check_email_client_support_results import CheckEmailClientSupportResults
+from mailslurp_client.models.check_email_features_client_support_options import CheckEmailFeaturesClientSupportOptions
+from mailslurp_client.models.check_email_features_client_support_results import CheckEmailFeaturesClientSupportResults
+from mailslurp_client.models.complaint import Complaint
+from mailslurp_client.models.condition_option import ConditionOption
+from mailslurp_client.models.connector_dto import ConnectorDto
+from mailslurp_client.models.connector_projection import ConnectorProjection
+from mailslurp_client.models.connector_sync_event_dto import ConnectorSyncEventDto
+from mailslurp_client.models.connector_sync_event_projection import ConnectorSyncEventProjection
+from mailslurp_client.models.connector_sync_request_result import ConnectorSyncRequestResult
+from mailslurp_client.models.connector_sync_request_result_exception import ConnectorSyncRequestResultException
+from mailslurp_client.models.connector_sync_request_result_exception_cause import ConnectorSyncRequestResultExceptionCause
+from mailslurp_client.models.connector_sync_request_result_exception_cause_stack_trace import ConnectorSyncRequestResultExceptionCauseStackTrace
+from mailslurp_client.models.connector_sync_result import ConnectorSyncResult
+from mailslurp_client.models.contact_dto import ContactDto
+from mailslurp_client.models.contact_projection import ContactProjection
+from mailslurp_client.models.content_match_options import ContentMatchOptions
+from mailslurp_client.models.count_dto import CountDto
+from mailslurp_client.models.create_alias_options import CreateAliasOptions
+from mailslurp_client.models.create_connector_imap_fetch_options import CreateConnectorImapFetchOptions
+from mailslurp_client.models.create_connector_imap_options import CreateConnectorImapOptions
+from mailslurp_client.models.create_connector_options import CreateConnectorOptions
+from mailslurp_client.models.create_contact_options import CreateContactOptions
+from mailslurp_client.models.create_domain_options import CreateDomainOptions
+from mailslurp_client.models.create_emergency_address_options import CreateEmergencyAddressOptions
+from mailslurp_client.models.create_group_options import CreateGroupOptions
+from mailslurp_client.models.create_inbox_dto import CreateInboxDto
+from mailslurp_client.models.create_inbox_forwarder_options import CreateInboxForwarderOptions
+from mailslurp_client.models.create_inbox_replier_options import CreateInboxReplierOptions
+from mailslurp_client.models.create_inbox_ruleset_options import CreateInboxRulesetOptions
+from mailslurp_client.models.create_template_options import CreateTemplateOptions
+from mailslurp_client.models.create_tracking_pixel_options import CreateTrackingPixelOptions
+from mailslurp_client.models.create_webhook_options import CreateWebhookOptions
+from mailslurp_client.models.dns_lookup_options import DNSLookupOptions
+from mailslurp_client.models.dns_lookup_result import DNSLookupResult
+from mailslurp_client.models.dns_lookup_results import DNSLookupResults
+from mailslurp_client.models.delivery_status_dto import DeliveryStatusDto
+from mailslurp_client.models.describe_domain_options import DescribeDomainOptions
+from mailslurp_client.models.describe_mail_server_domain_result import DescribeMailServerDomainResult
+from mailslurp_client.models.domain_dto import DomainDto
+from mailslurp_client.models.domain_issues_dto import DomainIssuesDto
+from mailslurp_client.models.domain_name_record import DomainNameRecord
+from mailslurp_client.models.domain_preview import DomainPreview
+from mailslurp_client.models.download_attachment_dto import DownloadAttachmentDto
+from mailslurp_client.models.email import Email
+from mailslurp_client.models.email_analysis import EmailAnalysis
+from mailslurp_client.models.email_content_match_result import EmailContentMatchResult
+from mailslurp_client.models.email_content_part_result import EmailContentPartResult
+from mailslurp_client.models.email_feature_category_name import EmailFeatureCategoryName
+from mailslurp_client.models.email_feature_family_name import EmailFeatureFamilyName
+from mailslurp_client.models.email_feature_family_statistics import EmailFeatureFamilyStatistics
+from mailslurp_client.models.email_feature_names import EmailFeatureNames
+from mailslurp_client.models.email_feature_overview import EmailFeatureOverview
+from mailslurp_client.models.email_feature_platform_name import EmailFeaturePlatformName
+from mailslurp_client.models.email_feature_platform_statistics import EmailFeaturePlatformStatistics
+from mailslurp_client.models.email_feature_support_flags import EmailFeatureSupportFlags
+from mailslurp_client.models.email_feature_support_result import EmailFeatureSupportResult
+from mailslurp_client.models.email_feature_support_status_percentage import EmailFeatureSupportStatusPercentage
+from mailslurp_client.models.email_feature_version_statistics import EmailFeatureVersionStatistics
+from mailslurp_client.models.email_html_dto import EmailHtmlDto
+from mailslurp_client.models.email_links_result import EmailLinksResult
+from mailslurp_client.models.email_preview import EmailPreview
+from mailslurp_client.models.email_preview_urls import EmailPreviewUrls
+from mailslurp_client.models.email_projection import EmailProjection
+from mailslurp_client.models.email_recipients import EmailRecipients
+from mailslurp_client.models.email_text_lines_result import EmailTextLinesResult
+from mailslurp_client.models.email_validation_request_dto import EmailValidationRequestDto
+from mailslurp_client.models.email_verification_result import EmailVerificationResult
+from mailslurp_client.models.emergency_address import EmergencyAddress
+from mailslurp_client.models.emergency_address_dto import EmergencyAddressDto
+from mailslurp_client.models.empty_response_dto import EmptyResponseDto
+from mailslurp_client.models.expiration_defaults import ExpirationDefaults
+from mailslurp_client.models.expired_inbox_dto import ExpiredInboxDto
+from mailslurp_client.models.expired_inbox_record_projection import ExpiredInboxRecordProjection
+from mailslurp_client.models.export_link import ExportLink
+from mailslurp_client.models.export_options import ExportOptions
+from mailslurp_client.models.filter_bounced_recipients_options import FilterBouncedRecipientsOptions
+from mailslurp_client.models.filter_bounced_recipients_result import FilterBouncedRecipientsResult
+from mailslurp_client.models.flush_expired_inboxes_result import FlushExpiredInboxesResult
+from mailslurp_client.models.forward_email_options import ForwardEmailOptions
+from mailslurp_client.models.generate_bimi_record_options import GenerateBimiRecordOptions
+from mailslurp_client.models.generate_bimi_record_results import GenerateBimiRecordResults
+from mailslurp_client.models.generate_dmarc_record_options import GenerateDmarcRecordOptions
+from mailslurp_client.models.generate_dmarc_record_results import GenerateDmarcRecordResults
+from mailslurp_client.models.generate_mta_sts_record_options import GenerateMtaStsRecordOptions
+from mailslurp_client.models.generate_mta_sts_record_results import GenerateMtaStsRecordResults
+from mailslurp_client.models.generate_tls_reporting_record_options import GenerateTlsReportingRecordOptions
+from mailslurp_client.models.generate_tls_reporting_record_results import GenerateTlsReportingRecordResults
+from mailslurp_client.models.gravatar_url import GravatarUrl
+from mailslurp_client.models.group_contacts_dto import GroupContactsDto
+from mailslurp_client.models.group_dto import GroupDto
+from mailslurp_client.models.group_projection import GroupProjection
+from mailslurp_client.models.html_validation_result import HTMLValidationResult
+from mailslurp_client.models.ip_address_result import IPAddressResult
+from mailslurp_client.models.imap_flag_operation_options import ImapFlagOperationOptions
+from mailslurp_client.models.imap_smtp_access_details import ImapSmtpAccessDetails
+from mailslurp_client.models.inbox_by_email_address_result import InboxByEmailAddressResult
+from mailslurp_client.models.inbox_by_name_result import InboxByNameResult
+from mailslurp_client.models.inbox_dto import InboxDto
+from mailslurp_client.models.inbox_exists_dto import InboxExistsDto
+from mailslurp_client.models.inbox_forwarder_dto import InboxForwarderDto
+from mailslurp_client.models.inbox_forwarder_event_dto import InboxForwarderEventDto
+from mailslurp_client.models.inbox_forwarder_event_projection import InboxForwarderEventProjection
+from mailslurp_client.models.inbox_forwarder_test_options import InboxForwarderTestOptions
+from mailslurp_client.models.inbox_forwarder_test_result import InboxForwarderTestResult
+from mailslurp_client.models.inbox_id_item import InboxIdItem
+from mailslurp_client.models.inbox_ids_result import InboxIdsResult
+from mailslurp_client.models.inbox_preview import InboxPreview
+from mailslurp_client.models.inbox_replier_dto import InboxReplierDto
+from mailslurp_client.models.inbox_replier_event_projection import InboxReplierEventProjection
+from mailslurp_client.models.inbox_ruleset_dto import InboxRulesetDto
+from mailslurp_client.models.inbox_ruleset_test_options import InboxRulesetTestOptions
+from mailslurp_client.models.inbox_ruleset_test_result import InboxRulesetTestResult
+from mailslurp_client.models.inline_object import InlineObject
+from mailslurp_client.models.json_schema_dto import JSONSchemaDto
+from mailslurp_client.models.list_unsubscribe_recipient_projection import ListUnsubscribeRecipientProjection
+from mailslurp_client.models.lookup_bimi_domain_options import LookupBimiDomainOptions
+from mailslurp_client.models.lookup_bimi_domain_results import LookupBimiDomainResults
+from mailslurp_client.models.lookup_dmarc_domain_options import LookupDmarcDomainOptions
+from mailslurp_client.models.lookup_dmarc_domain_results import LookupDmarcDomainResults
+from mailslurp_client.models.lookup_mta_sts_domain_options import LookupMtaStsDomainOptions
+from mailslurp_client.models.lookup_mta_sts_domain_results import LookupMtaStsDomainResults
+from mailslurp_client.models.lookup_tls_reporting_domain_options import LookupTlsReportingDomainOptions
+from mailslurp_client.models.lookup_tls_reporting_domain_results import LookupTlsReportingDomainResults
+from mailslurp_client.models.match_option import MatchOption
+from mailslurp_client.models.match_options import MatchOptions
+from mailslurp_client.models.missed_email_dto import MissedEmailDto
+from mailslurp_client.models.missed_email_projection import MissedEmailProjection
+from mailslurp_client.models.name_server_record import NameServerRecord
+from mailslurp_client.models.organization_inbox_projection import OrganizationInboxProjection
+from mailslurp_client.models.page_alias import PageAlias
+from mailslurp_client.models.page_attachment_entity import PageAttachmentEntity
+from mailslurp_client.models.page_bounced_email import PageBouncedEmail
+from mailslurp_client.models.page_bounced_recipients import PageBouncedRecipients
+from mailslurp_client.models.page_complaint import PageComplaint
+from mailslurp_client.models.page_connector import PageConnector
+from mailslurp_client.models.page_connector_sync_events import PageConnectorSyncEvents
+from mailslurp_client.models.page_contact_projection import PageContactProjection
+from mailslurp_client.models.page_delivery_status import PageDeliveryStatus
+from mailslurp_client.models.page_email_preview import PageEmailPreview
+from mailslurp_client.models.page_email_projection import PageEmailProjection
+from mailslurp_client.models.page_email_validation_request import PageEmailValidationRequest
+from mailslurp_client.models.page_expired_inbox_record_projection import PageExpiredInboxRecordProjection
+from mailslurp_client.models.page_group_projection import PageGroupProjection
+from mailslurp_client.models.page_inbox_forwarder_dto import PageInboxForwarderDto
+from mailslurp_client.models.page_inbox_forwarder_events import PageInboxForwarderEvents
+from mailslurp_client.models.page_inbox_projection import PageInboxProjection
+from mailslurp_client.models.page_inbox_replier_dto import PageInboxReplierDto
+from mailslurp_client.models.page_inbox_replier_events import PageInboxReplierEvents
+from mailslurp_client.models.page_inbox_ruleset_dto import PageInboxRulesetDto
+from mailslurp_client.models.page_list_unsubscribe_recipients import PageListUnsubscribeRecipients
+from mailslurp_client.models.page_missed_email_projection import PageMissedEmailProjection
+from mailslurp_client.models.page_organization_inbox_projection import PageOrganizationInboxProjection
+from mailslurp_client.models.page_phone_number_projection import PagePhoneNumberProjection
+from mailslurp_client.models.page_scheduled_jobs import PageScheduledJobs
+from mailslurp_client.models.page_sent_email_projection import PageSentEmailProjection
+from mailslurp_client.models.page_sent_email_with_queue_projection import PageSentEmailWithQueueProjection
+from mailslurp_client.models.page_sms_projection import PageSmsProjection
+from mailslurp_client.models.page_template_projection import PageTemplateProjection
+from mailslurp_client.models.page_thread_projection import PageThreadProjection
+from mailslurp_client.models.page_tracking_pixel_projection import PageTrackingPixelProjection
+from mailslurp_client.models.page_unknown_missed_email_projection import PageUnknownMissedEmailProjection
+from mailslurp_client.models.page_webhook_projection import PageWebhookProjection
+from mailslurp_client.models.page_webhook_result import PageWebhookResult
+from mailslurp_client.models.pageable_object import PageableObject
+from mailslurp_client.models.phone_number_dto import PhoneNumberDto
+from mailslurp_client.models.phone_number_projection import PhoneNumberProjection
+from mailslurp_client.models.phone_plan_dto import PhonePlanDto
+from mailslurp_client.models.raw_email_json import RawEmailJson
+from mailslurp_client.models.recipient import Recipient
+from mailslurp_client.models.reply_for_sms import ReplyForSms
+from mailslurp_client.models.reply_to_alias_email_options import ReplyToAliasEmailOptions
+from mailslurp_client.models.reply_to_email_options import ReplyToEmailOptions
+from mailslurp_client.models.scheduled_job import ScheduledJob
+from mailslurp_client.models.scheduled_job_dto import ScheduledJobDto
+from mailslurp_client.models.search_emails_options import SearchEmailsOptions
+from mailslurp_client.models.search_inboxes_options import SearchInboxesOptions
+from mailslurp_client.models.send_email_body_part import SendEmailBodyPart
+from mailslurp_client.models.send_email_options import SendEmailOptions
+from mailslurp_client.models.send_smtp_envelope_options import SendSMTPEnvelopeOptions
+from mailslurp_client.models.send_with_queue_result import SendWithQueueResult
+from mailslurp_client.models.sender import Sender
+from mailslurp_client.models.sent_email_dto import SentEmailDto
+from mailslurp_client.models.sent_email_projection import SentEmailProjection
+from mailslurp_client.models.sent_sms_dto import SentSmsDto
+from mailslurp_client.models.set_inbox_favourited_options import SetInboxFavouritedOptions
+from mailslurp_client.models.simple_send_email_options import SimpleSendEmailOptions
+from mailslurp_client.models.sms_dto import SmsDto
+from mailslurp_client.models.sms_match_option import SmsMatchOption
+from mailslurp_client.models.sms_preview import SmsPreview
+from mailslurp_client.models.sms_projection import SmsProjection
+from mailslurp_client.models.sms_reply_options import SmsReplyOptions
+from mailslurp_client.models.sort_object import SortObject
+from mailslurp_client.models.template_dto import TemplateDto
+from mailslurp_client.models.template_preview import TemplatePreview
+from mailslurp_client.models.template_projection import TemplateProjection
+from mailslurp_client.models.template_variable import TemplateVariable
+from mailslurp_client.models.test_inbox_ruleset_receiving_options import TestInboxRulesetReceivingOptions
+from mailslurp_client.models.test_inbox_ruleset_receiving_result import TestInboxRulesetReceivingResult
+from mailslurp_client.models.test_inbox_ruleset_sending_options import TestInboxRulesetSendingOptions
+from mailslurp_client.models.test_inbox_ruleset_sending_result import TestInboxRulesetSendingResult
+from mailslurp_client.models.test_new_inbox_forwarder_options import TestNewInboxForwarderOptions
+from mailslurp_client.models.test_new_inbox_ruleset_options import TestNewInboxRulesetOptions
+from mailslurp_client.models.test_phone_number_options import TestPhoneNumberOptions
+from mailslurp_client.models.thread_projection import ThreadProjection
+from mailslurp_client.models.tracking_pixel_dto import TrackingPixelDto
+from mailslurp_client.models.tracking_pixel_projection import TrackingPixelProjection
+from mailslurp_client.models.unknown_missed_email_projection import UnknownMissedEmailProjection
+from mailslurp_client.models.unread_count import UnreadCount
+from mailslurp_client.models.unseen_error_count_dto import UnseenErrorCountDto
+from mailslurp_client.models.update_alias_options import UpdateAliasOptions
+from mailslurp_client.models.update_domain_options import UpdateDomainOptions
+from mailslurp_client.models.update_group_contacts import UpdateGroupContacts
+from mailslurp_client.models.update_inbox_options import UpdateInboxOptions
+from mailslurp_client.models.update_inbox_replier_options import UpdateInboxReplierOptions
+from mailslurp_client.models.upload_attachment_options import UploadAttachmentOptions
+from mailslurp_client.models.user_info_dto import UserInfoDto
+from mailslurp_client.models.validate_email_address_list_options import ValidateEmailAddressListOptions
+from mailslurp_client.models.validate_email_address_list_result import ValidateEmailAddressListResult
+from mailslurp_client.models.validation_dto import ValidationDto
+from mailslurp_client.models.validation_message import ValidationMessage
+from mailslurp_client.models.verify_email_address_options import VerifyEmailAddressOptions
+from mailslurp_client.models.verify_webhook_signature_options import VerifyWebhookSignatureOptions
+from mailslurp_client.models.verify_webhook_signature_results import VerifyWebhookSignatureResults
+from mailslurp_client.models.wait_for_conditions import WaitForConditions
+from mailslurp_client.models.wait_for_single_sms_options import WaitForSingleSmsOptions
+from mailslurp_client.models.wait_for_sms_conditions import WaitForSmsConditions
+from mailslurp_client.models.webhook_bounce_payload import WebhookBouncePayload
+from mailslurp_client.models.webhook_bounce_recipient_payload import WebhookBounceRecipientPayload
+from mailslurp_client.models.webhook_delivery_status_payload import WebhookDeliveryStatusPayload
+from mailslurp_client.models.webhook_dto import WebhookDto
+from mailslurp_client.models.webhook_email_opened_payload import WebhookEmailOpenedPayload
+from mailslurp_client.models.webhook_email_read_payload import WebhookEmailReadPayload
+from mailslurp_client.models.webhook_header_name_value import WebhookHeaderNameValue
+from mailslurp_client.models.webhook_headers import WebhookHeaders
+from mailslurp_client.models.webhook_new_attachment_payload import WebhookNewAttachmentPayload
+from mailslurp_client.models.webhook_new_contact_payload import WebhookNewContactPayload
+from mailslurp_client.models.webhook_new_email_payload import WebhookNewEmailPayload
+from mailslurp_client.models.webhook_new_sms_payload import WebhookNewSmsPayload
+from mailslurp_client.models.webhook_projection import WebhookProjection
+from mailslurp_client.models.webhook_redrive_all_result import WebhookRedriveAllResult
+from mailslurp_client.models.webhook_redrive_result import WebhookRedriveResult
+from mailslurp_client.models.webhook_result_dto import WebhookResultDto
+from mailslurp_client.models.webhook_test_request import WebhookTestRequest
+from mailslurp_client.models.webhook_test_response import WebhookTestResponse
+from mailslurp_client.models.webhook_test_result import WebhookTestResult</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="mailslurp_client.models.abstract_webhook_payload" href="abstract_webhook_payload.html">mailslurp_client.models.abstract_webhook_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.account_bounce_block_dto" href="account_bounce_block_dto.html">mailslurp_client.models.account_bounce_block_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.alias_dto" href="alias_dto.html">mailslurp_client.models.alias_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.alias_projection" href="alias_projection.html">mailslurp_client.models.alias_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.attachment_entity" href="attachment_entity.html">mailslurp_client.models.attachment_entity</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.attachment_meta_data" href="attachment_meta_data.html">mailslurp_client.models.attachment_meta_data</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.attachment_projection" href="attachment_projection.html">mailslurp_client.models.attachment_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.basic_auth_options" href="basic_auth_options.html">mailslurp_client.models.basic_auth_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.bounce_projection" href="bounce_projection.html">mailslurp_client.models.bounce_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.bounce_recipient_projection" href="bounce_recipient_projection.html">mailslurp_client.models.bounce_recipient_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.bounced_email_dto" href="bounced_email_dto.html">mailslurp_client.models.bounced_email_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.bounced_recipient_dto" href="bounced_recipient_dto.html">mailslurp_client.models.bounced_recipient_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.bulk_send_email_options" href="bulk_send_email_options.html">mailslurp_client.models.bulk_send_email_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.can_send_email_results" href="can_send_email_results.html">mailslurp_client.models.can_send_email_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.check_email_body_feature_support_results" href="check_email_body_feature_support_results.html">mailslurp_client.models.check_email_body_feature_support_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.check_email_client_support_options" href="check_email_client_support_options.html">mailslurp_client.models.check_email_client_support_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.check_email_client_support_results" href="check_email_client_support_results.html">mailslurp_client.models.check_email_client_support_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.check_email_features_client_support_options" href="check_email_features_client_support_options.html">mailslurp_client.models.check_email_features_client_support_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.check_email_features_client_support_results" href="check_email_features_client_support_results.html">mailslurp_client.models.check_email_features_client_support_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.complaint" href="complaint.html">mailslurp_client.models.complaint</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.condition_option" href="condition_option.html">mailslurp_client.models.condition_option</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_dto" href="connector_dto.html">mailslurp_client.models.connector_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_projection" href="connector_projection.html">mailslurp_client.models.connector_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_sync_event_dto" href="connector_sync_event_dto.html">mailslurp_client.models.connector_sync_event_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_sync_event_projection" href="connector_sync_event_projection.html">mailslurp_client.models.connector_sync_event_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_sync_request_result" href="connector_sync_request_result.html">mailslurp_client.models.connector_sync_request_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_sync_request_result_exception" href="connector_sync_request_result_exception.html">mailslurp_client.models.connector_sync_request_result_exception</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_sync_request_result_exception_cause" href="connector_sync_request_result_exception_cause.html">mailslurp_client.models.connector_sync_request_result_exception_cause</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_sync_request_result_exception_cause_stack_trace" href="connector_sync_request_result_exception_cause_stack_trace.html">mailslurp_client.models.connector_sync_request_result_exception_cause_stack_trace</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.connector_sync_result" href="connector_sync_result.html">mailslurp_client.models.connector_sync_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.contact_dto" href="contact_dto.html">mailslurp_client.models.contact_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.contact_projection" href="contact_projection.html">mailslurp_client.models.contact_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.content_match_options" href="content_match_options.html">mailslurp_client.models.content_match_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.count_dto" href="count_dto.html">mailslurp_client.models.count_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_alias_options" href="create_alias_options.html">mailslurp_client.models.create_alias_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_connector_imap_fetch_options" href="create_connector_imap_fetch_options.html">mailslurp_client.models.create_connector_imap_fetch_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_connector_imap_options" href="create_connector_imap_options.html">mailslurp_client.models.create_connector_imap_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_connector_options" href="create_connector_options.html">mailslurp_client.models.create_connector_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_contact_options" href="create_contact_options.html">mailslurp_client.models.create_contact_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_domain_options" href="create_domain_options.html">mailslurp_client.models.create_domain_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_emergency_address_options" href="create_emergency_address_options.html">mailslurp_client.models.create_emergency_address_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_group_options" href="create_group_options.html">mailslurp_client.models.create_group_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_inbox_dto" href="create_inbox_dto.html">mailslurp_client.models.create_inbox_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_inbox_forwarder_options" href="create_inbox_forwarder_options.html">mailslurp_client.models.create_inbox_forwarder_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_inbox_replier_options" href="create_inbox_replier_options.html">mailslurp_client.models.create_inbox_replier_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_inbox_ruleset_options" href="create_inbox_ruleset_options.html">mailslurp_client.models.create_inbox_ruleset_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_template_options" href="create_template_options.html">mailslurp_client.models.create_template_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_tracking_pixel_options" href="create_tracking_pixel_options.html">mailslurp_client.models.create_tracking_pixel_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.create_webhook_options" href="create_webhook_options.html">mailslurp_client.models.create_webhook_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.delivery_status_dto" href="delivery_status_dto.html">mailslurp_client.models.delivery_status_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.describe_domain_options" href="describe_domain_options.html">mailslurp_client.models.describe_domain_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.describe_mail_server_domain_result" href="describe_mail_server_domain_result.html">mailslurp_client.models.describe_mail_server_domain_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.dns_lookup_options" href="dns_lookup_options.html">mailslurp_client.models.dns_lookup_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.dns_lookup_result" href="dns_lookup_result.html">mailslurp_client.models.dns_lookup_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.dns_lookup_results" href="dns_lookup_results.html">mailslurp_client.models.dns_lookup_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.domain_dto" href="domain_dto.html">mailslurp_client.models.domain_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.domain_issues_dto" href="domain_issues_dto.html">mailslurp_client.models.domain_issues_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.domain_name_record" href="domain_name_record.html">mailslurp_client.models.domain_name_record</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.domain_preview" href="domain_preview.html">mailslurp_client.models.domain_preview</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.download_attachment_dto" href="download_attachment_dto.html">mailslurp_client.models.download_attachment_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email" href="email.html">mailslurp_client.models.email</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_analysis" href="email_analysis.html">mailslurp_client.models.email_analysis</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_content_match_result" href="email_content_match_result.html">mailslurp_client.models.email_content_match_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_content_part_result" href="email_content_part_result.html">mailslurp_client.models.email_content_part_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_category_name" href="email_feature_category_name.html">mailslurp_client.models.email_feature_category_name</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_family_name" href="email_feature_family_name.html">mailslurp_client.models.email_feature_family_name</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_family_statistics" href="email_feature_family_statistics.html">mailslurp_client.models.email_feature_family_statistics</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_names" href="email_feature_names.html">mailslurp_client.models.email_feature_names</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_overview" href="email_feature_overview.html">mailslurp_client.models.email_feature_overview</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_platform_name" href="email_feature_platform_name.html">mailslurp_client.models.email_feature_platform_name</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_platform_statistics" href="email_feature_platform_statistics.html">mailslurp_client.models.email_feature_platform_statistics</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_support_flags" href="email_feature_support_flags.html">mailslurp_client.models.email_feature_support_flags</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_support_result" href="email_feature_support_result.html">mailslurp_client.models.email_feature_support_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_support_status_percentage" href="email_feature_support_status_percentage.html">mailslurp_client.models.email_feature_support_status_percentage</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_feature_version_statistics" href="email_feature_version_statistics.html">mailslurp_client.models.email_feature_version_statistics</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_html_dto" href="email_html_dto.html">mailslurp_client.models.email_html_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_links_result" href="email_links_result.html">mailslurp_client.models.email_links_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_preview" href="email_preview.html">mailslurp_client.models.email_preview</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_preview_urls" href="email_preview_urls.html">mailslurp_client.models.email_preview_urls</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_projection" href="email_projection.html">mailslurp_client.models.email_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_recipients" href="email_recipients.html">mailslurp_client.models.email_recipients</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_text_lines_result" href="email_text_lines_result.html">mailslurp_client.models.email_text_lines_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_validation_request_dto" href="email_validation_request_dto.html">mailslurp_client.models.email_validation_request_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.email_verification_result" href="email_verification_result.html">mailslurp_client.models.email_verification_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.emergency_address" href="emergency_address.html">mailslurp_client.models.emergency_address</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.emergency_address_dto" href="emergency_address_dto.html">mailslurp_client.models.emergency_address_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.empty_response_dto" href="empty_response_dto.html">mailslurp_client.models.empty_response_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.expiration_defaults" href="expiration_defaults.html">mailslurp_client.models.expiration_defaults</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.expired_inbox_dto" href="expired_inbox_dto.html">mailslurp_client.models.expired_inbox_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.expired_inbox_record_projection" href="expired_inbox_record_projection.html">mailslurp_client.models.expired_inbox_record_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.export_link" href="export_link.html">mailslurp_client.models.export_link</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.export_options" href="export_options.html">mailslurp_client.models.export_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.filter_bounced_recipients_options" href="filter_bounced_recipients_options.html">mailslurp_client.models.filter_bounced_recipients_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.filter_bounced_recipients_result" href="filter_bounced_recipients_result.html">mailslurp_client.models.filter_bounced_recipients_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.flush_expired_inboxes_result" href="flush_expired_inboxes_result.html">mailslurp_client.models.flush_expired_inboxes_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.forward_email_options" href="forward_email_options.html">mailslurp_client.models.forward_email_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.generate_bimi_record_options" href="generate_bimi_record_options.html">mailslurp_client.models.generate_bimi_record_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.generate_bimi_record_results" href="generate_bimi_record_results.html">mailslurp_client.models.generate_bimi_record_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.generate_dmarc_record_options" href="generate_dmarc_record_options.html">mailslurp_client.models.generate_dmarc_record_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.generate_dmarc_record_results" href="generate_dmarc_record_results.html">mailslurp_client.models.generate_dmarc_record_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.generate_mta_sts_record_options" href="generate_mta_sts_record_options.html">mailslurp_client.models.generate_mta_sts_record_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.generate_mta_sts_record_results" href="generate_mta_sts_record_results.html">mailslurp_client.models.generate_mta_sts_record_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.generate_tls_reporting_record_options" href="generate_tls_reporting_record_options.html">mailslurp_client.models.generate_tls_reporting_record_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.generate_tls_reporting_record_results" href="generate_tls_reporting_record_results.html">mailslurp_client.models.generate_tls_reporting_record_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.gravatar_url" href="gravatar_url.html">mailslurp_client.models.gravatar_url</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.group_contacts_dto" href="group_contacts_dto.html">mailslurp_client.models.group_contacts_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.group_dto" href="group_dto.html">mailslurp_client.models.group_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.group_projection" href="group_projection.html">mailslurp_client.models.group_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.html_validation_result" href="html_validation_result.html">mailslurp_client.models.html_validation_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.imap_flag_operation_options" href="imap_flag_operation_options.html">mailslurp_client.models.imap_flag_operation_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.imap_smtp_access_details" href="imap_smtp_access_details.html">mailslurp_client.models.imap_smtp_access_details</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_by_email_address_result" href="inbox_by_email_address_result.html">mailslurp_client.models.inbox_by_email_address_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_by_name_result" href="inbox_by_name_result.html">mailslurp_client.models.inbox_by_name_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_dto" href="inbox_dto.html">mailslurp_client.models.inbox_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_exists_dto" href="inbox_exists_dto.html">mailslurp_client.models.inbox_exists_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_forwarder_dto" href="inbox_forwarder_dto.html">mailslurp_client.models.inbox_forwarder_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_forwarder_event_dto" href="inbox_forwarder_event_dto.html">mailslurp_client.models.inbox_forwarder_event_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_forwarder_event_projection" href="inbox_forwarder_event_projection.html">mailslurp_client.models.inbox_forwarder_event_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_forwarder_test_options" href="inbox_forwarder_test_options.html">mailslurp_client.models.inbox_forwarder_test_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_forwarder_test_result" href="inbox_forwarder_test_result.html">mailslurp_client.models.inbox_forwarder_test_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_id_item" href="inbox_id_item.html">mailslurp_client.models.inbox_id_item</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_ids_result" href="inbox_ids_result.html">mailslurp_client.models.inbox_ids_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_preview" href="inbox_preview.html">mailslurp_client.models.inbox_preview</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_replier_dto" href="inbox_replier_dto.html">mailslurp_client.models.inbox_replier_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_replier_event_projection" href="inbox_replier_event_projection.html">mailslurp_client.models.inbox_replier_event_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_ruleset_dto" href="inbox_ruleset_dto.html">mailslurp_client.models.inbox_ruleset_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_ruleset_test_options" href="inbox_ruleset_test_options.html">mailslurp_client.models.inbox_ruleset_test_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inbox_ruleset_test_result" href="inbox_ruleset_test_result.html">mailslurp_client.models.inbox_ruleset_test_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.inline_object" href="inline_object.html">mailslurp_client.models.inline_object</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.ip_address_result" href="ip_address_result.html">mailslurp_client.models.ip_address_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.json_schema_dto" href="json_schema_dto.html">mailslurp_client.models.json_schema_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.list_unsubscribe_recipient_projection" href="list_unsubscribe_recipient_projection.html">mailslurp_client.models.list_unsubscribe_recipient_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.lookup_bimi_domain_options" href="lookup_bimi_domain_options.html">mailslurp_client.models.lookup_bimi_domain_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.lookup_bimi_domain_results" href="lookup_bimi_domain_results.html">mailslurp_client.models.lookup_bimi_domain_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.lookup_dmarc_domain_options" href="lookup_dmarc_domain_options.html">mailslurp_client.models.lookup_dmarc_domain_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.lookup_dmarc_domain_results" href="lookup_dmarc_domain_results.html">mailslurp_client.models.lookup_dmarc_domain_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.lookup_mta_sts_domain_options" href="lookup_mta_sts_domain_options.html">mailslurp_client.models.lookup_mta_sts_domain_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.lookup_mta_sts_domain_results" href="lookup_mta_sts_domain_results.html">mailslurp_client.models.lookup_mta_sts_domain_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.lookup_tls_reporting_domain_options" href="lookup_tls_reporting_domain_options.html">mailslurp_client.models.lookup_tls_reporting_domain_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.lookup_tls_reporting_domain_results" href="lookup_tls_reporting_domain_results.html">mailslurp_client.models.lookup_tls_reporting_domain_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.match_option" href="match_option.html">mailslurp_client.models.match_option</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.match_options" href="match_options.html">mailslurp_client.models.match_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.missed_email_dto" href="missed_email_dto.html">mailslurp_client.models.missed_email_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.missed_email_projection" href="missed_email_projection.html">mailslurp_client.models.missed_email_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.name_server_record" href="name_server_record.html">mailslurp_client.models.name_server_record</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.organization_inbox_projection" href="organization_inbox_projection.html">mailslurp_client.models.organization_inbox_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_alias" href="page_alias.html">mailslurp_client.models.page_alias</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_attachment_entity" href="page_attachment_entity.html">mailslurp_client.models.page_attachment_entity</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_bounced_email" href="page_bounced_email.html">mailslurp_client.models.page_bounced_email</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_bounced_recipients" href="page_bounced_recipients.html">mailslurp_client.models.page_bounced_recipients</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_complaint" href="page_complaint.html">mailslurp_client.models.page_complaint</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_connector" href="page_connector.html">mailslurp_client.models.page_connector</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_connector_sync_events" href="page_connector_sync_events.html">mailslurp_client.models.page_connector_sync_events</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_contact_projection" href="page_contact_projection.html">mailslurp_client.models.page_contact_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_delivery_status" href="page_delivery_status.html">mailslurp_client.models.page_delivery_status</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_email_preview" href="page_email_preview.html">mailslurp_client.models.page_email_preview</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_email_projection" href="page_email_projection.html">mailslurp_client.models.page_email_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_email_validation_request" href="page_email_validation_request.html">mailslurp_client.models.page_email_validation_request</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_expired_inbox_record_projection" href="page_expired_inbox_record_projection.html">mailslurp_client.models.page_expired_inbox_record_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_group_projection" href="page_group_projection.html">mailslurp_client.models.page_group_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_inbox_forwarder_dto" href="page_inbox_forwarder_dto.html">mailslurp_client.models.page_inbox_forwarder_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_inbox_forwarder_events" href="page_inbox_forwarder_events.html">mailslurp_client.models.page_inbox_forwarder_events</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_inbox_projection" href="page_inbox_projection.html">mailslurp_client.models.page_inbox_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_inbox_replier_dto" href="page_inbox_replier_dto.html">mailslurp_client.models.page_inbox_replier_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_inbox_replier_events" href="page_inbox_replier_events.html">mailslurp_client.models.page_inbox_replier_events</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_inbox_ruleset_dto" href="page_inbox_ruleset_dto.html">mailslurp_client.models.page_inbox_ruleset_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_list_unsubscribe_recipients" href="page_list_unsubscribe_recipients.html">mailslurp_client.models.page_list_unsubscribe_recipients</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_missed_email_projection" href="page_missed_email_projection.html">mailslurp_client.models.page_missed_email_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_organization_inbox_projection" href="page_organization_inbox_projection.html">mailslurp_client.models.page_organization_inbox_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_phone_number_projection" href="page_phone_number_projection.html">mailslurp_client.models.page_phone_number_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_scheduled_jobs" href="page_scheduled_jobs.html">mailslurp_client.models.page_scheduled_jobs</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_sent_email_projection" href="page_sent_email_projection.html">mailslurp_client.models.page_sent_email_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_sent_email_with_queue_projection" href="page_sent_email_with_queue_projection.html">mailslurp_client.models.page_sent_email_with_queue_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_sms_projection" href="page_sms_projection.html">mailslurp_client.models.page_sms_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_template_projection" href="page_template_projection.html">mailslurp_client.models.page_template_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_thread_projection" href="page_thread_projection.html">mailslurp_client.models.page_thread_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_tracking_pixel_projection" href="page_tracking_pixel_projection.html">mailslurp_client.models.page_tracking_pixel_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_unknown_missed_email_projection" href="page_unknown_missed_email_projection.html">mailslurp_client.models.page_unknown_missed_email_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_webhook_projection" href="page_webhook_projection.html">mailslurp_client.models.page_webhook_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.page_webhook_result" href="page_webhook_result.html">mailslurp_client.models.page_webhook_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.pageable_object" href="pageable_object.html">mailslurp_client.models.pageable_object</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.phone_number_dto" href="phone_number_dto.html">mailslurp_client.models.phone_number_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.phone_number_projection" href="phone_number_projection.html">mailslurp_client.models.phone_number_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.phone_plan_dto" href="phone_plan_dto.html">mailslurp_client.models.phone_plan_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.raw_email_json" href="raw_email_json.html">mailslurp_client.models.raw_email_json</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.recipient" href="recipient.html">mailslurp_client.models.recipient</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.reply_for_sms" href="reply_for_sms.html">mailslurp_client.models.reply_for_sms</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.reply_to_alias_email_options" href="reply_to_alias_email_options.html">mailslurp_client.models.reply_to_alias_email_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.reply_to_email_options" href="reply_to_email_options.html">mailslurp_client.models.reply_to_email_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.scheduled_job" href="scheduled_job.html">mailslurp_client.models.scheduled_job</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.scheduled_job_dto" href="scheduled_job_dto.html">mailslurp_client.models.scheduled_job_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.search_emails_options" href="search_emails_options.html">mailslurp_client.models.search_emails_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.search_inboxes_options" href="search_inboxes_options.html">mailslurp_client.models.search_inboxes_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.send_email_body_part" href="send_email_body_part.html">mailslurp_client.models.send_email_body_part</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.send_email_options" href="send_email_options.html">mailslurp_client.models.send_email_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.send_smtp_envelope_options" href="send_smtp_envelope_options.html">mailslurp_client.models.send_smtp_envelope_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.send_with_queue_result" href="send_with_queue_result.html">mailslurp_client.models.send_with_queue_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sender" href="sender.html">mailslurp_client.models.sender</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sent_email_dto" href="sent_email_dto.html">mailslurp_client.models.sent_email_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sent_email_projection" href="sent_email_projection.html">mailslurp_client.models.sent_email_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sent_sms_dto" href="sent_sms_dto.html">mailslurp_client.models.sent_sms_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.set_inbox_favourited_options" href="set_inbox_favourited_options.html">mailslurp_client.models.set_inbox_favourited_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.simple_send_email_options" href="simple_send_email_options.html">mailslurp_client.models.simple_send_email_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sms_dto" href="sms_dto.html">mailslurp_client.models.sms_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sms_match_option" href="sms_match_option.html">mailslurp_client.models.sms_match_option</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sms_preview" href="sms_preview.html">mailslurp_client.models.sms_preview</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sms_projection" href="sms_projection.html">mailslurp_client.models.sms_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sms_reply_options" href="sms_reply_options.html">mailslurp_client.models.sms_reply_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.sort_object" href="sort_object.html">mailslurp_client.models.sort_object</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.template_dto" href="template_dto.html">mailslurp_client.models.template_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.template_preview" href="template_preview.html">mailslurp_client.models.template_preview</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.template_projection" href="template_projection.html">mailslurp_client.models.template_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.template_variable" href="template_variable.html">mailslurp_client.models.template_variable</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.test_inbox_ruleset_receiving_options" href="test_inbox_ruleset_receiving_options.html">mailslurp_client.models.test_inbox_ruleset_receiving_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.test_inbox_ruleset_receiving_result" href="test_inbox_ruleset_receiving_result.html">mailslurp_client.models.test_inbox_ruleset_receiving_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.test_inbox_ruleset_sending_options" href="test_inbox_ruleset_sending_options.html">mailslurp_client.models.test_inbox_ruleset_sending_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.test_inbox_ruleset_sending_result" href="test_inbox_ruleset_sending_result.html">mailslurp_client.models.test_inbox_ruleset_sending_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.test_new_inbox_forwarder_options" href="test_new_inbox_forwarder_options.html">mailslurp_client.models.test_new_inbox_forwarder_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.test_new_inbox_ruleset_options" href="test_new_inbox_ruleset_options.html">mailslurp_client.models.test_new_inbox_ruleset_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.test_phone_number_options" href="test_phone_number_options.html">mailslurp_client.models.test_phone_number_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.thread_projection" href="thread_projection.html">mailslurp_client.models.thread_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.tracking_pixel_dto" href="tracking_pixel_dto.html">mailslurp_client.models.tracking_pixel_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.tracking_pixel_projection" href="tracking_pixel_projection.html">mailslurp_client.models.tracking_pixel_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.unknown_missed_email_projection" href="unknown_missed_email_projection.html">mailslurp_client.models.unknown_missed_email_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.unread_count" href="unread_count.html">mailslurp_client.models.unread_count</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.unseen_error_count_dto" href="unseen_error_count_dto.html">mailslurp_client.models.unseen_error_count_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.update_alias_options" href="update_alias_options.html">mailslurp_client.models.update_alias_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.update_domain_options" href="update_domain_options.html">mailslurp_client.models.update_domain_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.update_group_contacts" href="update_group_contacts.html">mailslurp_client.models.update_group_contacts</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.update_inbox_options" href="update_inbox_options.html">mailslurp_client.models.update_inbox_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.update_inbox_replier_options" href="update_inbox_replier_options.html">mailslurp_client.models.update_inbox_replier_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.upload_attachment_options" href="upload_attachment_options.html">mailslurp_client.models.upload_attachment_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.user_info_dto" href="user_info_dto.html">mailslurp_client.models.user_info_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.validate_email_address_list_options" href="validate_email_address_list_options.html">mailslurp_client.models.validate_email_address_list_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.validate_email_address_list_result" href="validate_email_address_list_result.html">mailslurp_client.models.validate_email_address_list_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.validation_dto" href="validation_dto.html">mailslurp_client.models.validation_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.validation_message" href="validation_message.html">mailslurp_client.models.validation_message</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.verify_email_address_options" href="verify_email_address_options.html">mailslurp_client.models.verify_email_address_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.verify_webhook_signature_options" href="verify_webhook_signature_options.html">mailslurp_client.models.verify_webhook_signature_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.verify_webhook_signature_results" href="verify_webhook_signature_results.html">mailslurp_client.models.verify_webhook_signature_results</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.wait_for_conditions" href="wait_for_conditions.html">mailslurp_client.models.wait_for_conditions</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.wait_for_single_sms_options" href="wait_for_single_sms_options.html">mailslurp_client.models.wait_for_single_sms_options</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.wait_for_sms_conditions" href="wait_for_sms_conditions.html">mailslurp_client.models.wait_for_sms_conditions</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_bounce_payload" href="webhook_bounce_payload.html">mailslurp_client.models.webhook_bounce_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_bounce_recipient_payload" href="webhook_bounce_recipient_payload.html">mailslurp_client.models.webhook_bounce_recipient_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_delivery_status_payload" href="webhook_delivery_status_payload.html">mailslurp_client.models.webhook_delivery_status_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_dto" href="webhook_dto.html">mailslurp_client.models.webhook_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_email_opened_payload" href="webhook_email_opened_payload.html">mailslurp_client.models.webhook_email_opened_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_email_read_payload" href="webhook_email_read_payload.html">mailslurp_client.models.webhook_email_read_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_header_name_value" href="webhook_header_name_value.html">mailslurp_client.models.webhook_header_name_value</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_headers" href="webhook_headers.html">mailslurp_client.models.webhook_headers</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_new_attachment_payload" href="webhook_new_attachment_payload.html">mailslurp_client.models.webhook_new_attachment_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_new_contact_payload" href="webhook_new_contact_payload.html">mailslurp_client.models.webhook_new_contact_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_new_email_payload" href="webhook_new_email_payload.html">mailslurp_client.models.webhook_new_email_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_new_sms_payload" href="webhook_new_sms_payload.html">mailslurp_client.models.webhook_new_sms_payload</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_projection" href="webhook_projection.html">mailslurp_client.models.webhook_projection</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_redrive_all_result" href="webhook_redrive_all_result.html">mailslurp_client.models.webhook_redrive_all_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_redrive_result" href="webhook_redrive_result.html">mailslurp_client.models.webhook_redrive_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_result_dto" href="webhook_result_dto.html">mailslurp_client.models.webhook_result_dto</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_test_request" href="webhook_test_request.html">mailslurp_client.models.webhook_test_request</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_test_response" href="webhook_test_response.html">mailslurp_client.models.webhook_test_response</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+<dt><code class="name"><a title="mailslurp_client.models.webhook_test_result" href="webhook_test_result.html">mailslurp_client.models.webhook_test_result</a></code></dt>
+<dd>
+<div class="desc"><p>MailSlurp API …</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client" href="../index.html">mailslurp_client</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="mailslurp_client.models.abstract_webhook_payload" href="abstract_webhook_payload.html">mailslurp_client.models.abstract_webhook_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.account_bounce_block_dto" href="account_bounce_block_dto.html">mailslurp_client.models.account_bounce_block_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.alias_dto" href="alias_dto.html">mailslurp_client.models.alias_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.alias_projection" href="alias_projection.html">mailslurp_client.models.alias_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.attachment_entity" href="attachment_entity.html">mailslurp_client.models.attachment_entity</a></code></li>
+<li><code><a title="mailslurp_client.models.attachment_meta_data" href="attachment_meta_data.html">mailslurp_client.models.attachment_meta_data</a></code></li>
+<li><code><a title="mailslurp_client.models.attachment_projection" href="attachment_projection.html">mailslurp_client.models.attachment_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.basic_auth_options" href="basic_auth_options.html">mailslurp_client.models.basic_auth_options</a></code></li>
+<li><code><a title="mailslurp_client.models.bounce_projection" href="bounce_projection.html">mailslurp_client.models.bounce_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.bounce_recipient_projection" href="bounce_recipient_projection.html">mailslurp_client.models.bounce_recipient_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.bounced_email_dto" href="bounced_email_dto.html">mailslurp_client.models.bounced_email_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.bounced_recipient_dto" href="bounced_recipient_dto.html">mailslurp_client.models.bounced_recipient_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.bulk_send_email_options" href="bulk_send_email_options.html">mailslurp_client.models.bulk_send_email_options</a></code></li>
+<li><code><a title="mailslurp_client.models.can_send_email_results" href="can_send_email_results.html">mailslurp_client.models.can_send_email_results</a></code></li>
+<li><code><a title="mailslurp_client.models.check_email_body_feature_support_results" href="check_email_body_feature_support_results.html">mailslurp_client.models.check_email_body_feature_support_results</a></code></li>
+<li><code><a title="mailslurp_client.models.check_email_client_support_options" href="check_email_client_support_options.html">mailslurp_client.models.check_email_client_support_options</a></code></li>
+<li><code><a title="mailslurp_client.models.check_email_client_support_results" href="check_email_client_support_results.html">mailslurp_client.models.check_email_client_support_results</a></code></li>
+<li><code><a title="mailslurp_client.models.check_email_features_client_support_options" href="check_email_features_client_support_options.html">mailslurp_client.models.check_email_features_client_support_options</a></code></li>
+<li><code><a title="mailslurp_client.models.check_email_features_client_support_results" href="check_email_features_client_support_results.html">mailslurp_client.models.check_email_features_client_support_results</a></code></li>
+<li><code><a title="mailslurp_client.models.complaint" href="complaint.html">mailslurp_client.models.complaint</a></code></li>
+<li><code><a title="mailslurp_client.models.condition_option" href="condition_option.html">mailslurp_client.models.condition_option</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_dto" href="connector_dto.html">mailslurp_client.models.connector_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_projection" href="connector_projection.html">mailslurp_client.models.connector_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_sync_event_dto" href="connector_sync_event_dto.html">mailslurp_client.models.connector_sync_event_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_sync_event_projection" href="connector_sync_event_projection.html">mailslurp_client.models.connector_sync_event_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_sync_request_result" href="connector_sync_request_result.html">mailslurp_client.models.connector_sync_request_result</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_sync_request_result_exception" href="connector_sync_request_result_exception.html">mailslurp_client.models.connector_sync_request_result_exception</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_sync_request_result_exception_cause" href="connector_sync_request_result_exception_cause.html">mailslurp_client.models.connector_sync_request_result_exception_cause</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_sync_request_result_exception_cause_stack_trace" href="connector_sync_request_result_exception_cause_stack_trace.html">mailslurp_client.models.connector_sync_request_result_exception_cause_stack_trace</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_sync_result" href="connector_sync_result.html">mailslurp_client.models.connector_sync_result</a></code></li>
+<li><code><a title="mailslurp_client.models.contact_dto" href="contact_dto.html">mailslurp_client.models.contact_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.contact_projection" href="contact_projection.html">mailslurp_client.models.contact_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.content_match_options" href="content_match_options.html">mailslurp_client.models.content_match_options</a></code></li>
+<li><code><a title="mailslurp_client.models.count_dto" href="count_dto.html">mailslurp_client.models.count_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.create_alias_options" href="create_alias_options.html">mailslurp_client.models.create_alias_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_connector_imap_fetch_options" href="create_connector_imap_fetch_options.html">mailslurp_client.models.create_connector_imap_fetch_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_connector_imap_options" href="create_connector_imap_options.html">mailslurp_client.models.create_connector_imap_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_connector_options" href="create_connector_options.html">mailslurp_client.models.create_connector_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_contact_options" href="create_contact_options.html">mailslurp_client.models.create_contact_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_domain_options" href="create_domain_options.html">mailslurp_client.models.create_domain_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_emergency_address_options" href="create_emergency_address_options.html">mailslurp_client.models.create_emergency_address_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_group_options" href="create_group_options.html">mailslurp_client.models.create_group_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_inbox_dto" href="create_inbox_dto.html">mailslurp_client.models.create_inbox_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.create_inbox_forwarder_options" href="create_inbox_forwarder_options.html">mailslurp_client.models.create_inbox_forwarder_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_inbox_replier_options" href="create_inbox_replier_options.html">mailslurp_client.models.create_inbox_replier_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_inbox_ruleset_options" href="create_inbox_ruleset_options.html">mailslurp_client.models.create_inbox_ruleset_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_template_options" href="create_template_options.html">mailslurp_client.models.create_template_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_tracking_pixel_options" href="create_tracking_pixel_options.html">mailslurp_client.models.create_tracking_pixel_options</a></code></li>
+<li><code><a title="mailslurp_client.models.create_webhook_options" href="create_webhook_options.html">mailslurp_client.models.create_webhook_options</a></code></li>
+<li><code><a title="mailslurp_client.models.delivery_status_dto" href="delivery_status_dto.html">mailslurp_client.models.delivery_status_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.describe_domain_options" href="describe_domain_options.html">mailslurp_client.models.describe_domain_options</a></code></li>
+<li><code><a title="mailslurp_client.models.describe_mail_server_domain_result" href="describe_mail_server_domain_result.html">mailslurp_client.models.describe_mail_server_domain_result</a></code></li>
+<li><code><a title="mailslurp_client.models.dns_lookup_options" href="dns_lookup_options.html">mailslurp_client.models.dns_lookup_options</a></code></li>
+<li><code><a title="mailslurp_client.models.dns_lookup_result" href="dns_lookup_result.html">mailslurp_client.models.dns_lookup_result</a></code></li>
+<li><code><a title="mailslurp_client.models.dns_lookup_results" href="dns_lookup_results.html">mailslurp_client.models.dns_lookup_results</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_dto" href="domain_dto.html">mailslurp_client.models.domain_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_issues_dto" href="domain_issues_dto.html">mailslurp_client.models.domain_issues_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_name_record" href="domain_name_record.html">mailslurp_client.models.domain_name_record</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_preview" href="domain_preview.html">mailslurp_client.models.domain_preview</a></code></li>
+<li><code><a title="mailslurp_client.models.download_attachment_dto" href="download_attachment_dto.html">mailslurp_client.models.download_attachment_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.email" href="email.html">mailslurp_client.models.email</a></code></li>
+<li><code><a title="mailslurp_client.models.email_analysis" href="email_analysis.html">mailslurp_client.models.email_analysis</a></code></li>
+<li><code><a title="mailslurp_client.models.email_content_match_result" href="email_content_match_result.html">mailslurp_client.models.email_content_match_result</a></code></li>
+<li><code><a title="mailslurp_client.models.email_content_part_result" href="email_content_part_result.html">mailslurp_client.models.email_content_part_result</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_category_name" href="email_feature_category_name.html">mailslurp_client.models.email_feature_category_name</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_family_name" href="email_feature_family_name.html">mailslurp_client.models.email_feature_family_name</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_family_statistics" href="email_feature_family_statistics.html">mailslurp_client.models.email_feature_family_statistics</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_names" href="email_feature_names.html">mailslurp_client.models.email_feature_names</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_overview" href="email_feature_overview.html">mailslurp_client.models.email_feature_overview</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_platform_name" href="email_feature_platform_name.html">mailslurp_client.models.email_feature_platform_name</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_platform_statistics" href="email_feature_platform_statistics.html">mailslurp_client.models.email_feature_platform_statistics</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_flags" href="email_feature_support_flags.html">mailslurp_client.models.email_feature_support_flags</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_result" href="email_feature_support_result.html">mailslurp_client.models.email_feature_support_result</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_status_percentage" href="email_feature_support_status_percentage.html">mailslurp_client.models.email_feature_support_status_percentage</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_version_statistics" href="email_feature_version_statistics.html">mailslurp_client.models.email_feature_version_statistics</a></code></li>
+<li><code><a title="mailslurp_client.models.email_html_dto" href="email_html_dto.html">mailslurp_client.models.email_html_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.email_links_result" href="email_links_result.html">mailslurp_client.models.email_links_result</a></code></li>
+<li><code><a title="mailslurp_client.models.email_preview" href="email_preview.html">mailslurp_client.models.email_preview</a></code></li>
+<li><code><a title="mailslurp_client.models.email_preview_urls" href="email_preview_urls.html">mailslurp_client.models.email_preview_urls</a></code></li>
+<li><code><a title="mailslurp_client.models.email_projection" href="email_projection.html">mailslurp_client.models.email_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.email_recipients" href="email_recipients.html">mailslurp_client.models.email_recipients</a></code></li>
+<li><code><a title="mailslurp_client.models.email_text_lines_result" href="email_text_lines_result.html">mailslurp_client.models.email_text_lines_result</a></code></li>
+<li><code><a title="mailslurp_client.models.email_validation_request_dto" href="email_validation_request_dto.html">mailslurp_client.models.email_validation_request_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.email_verification_result" href="email_verification_result.html">mailslurp_client.models.email_verification_result</a></code></li>
+<li><code><a title="mailslurp_client.models.emergency_address" href="emergency_address.html">mailslurp_client.models.emergency_address</a></code></li>
+<li><code><a title="mailslurp_client.models.emergency_address_dto" href="emergency_address_dto.html">mailslurp_client.models.emergency_address_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.empty_response_dto" href="empty_response_dto.html">mailslurp_client.models.empty_response_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.expiration_defaults" href="expiration_defaults.html">mailslurp_client.models.expiration_defaults</a></code></li>
+<li><code><a title="mailslurp_client.models.expired_inbox_dto" href="expired_inbox_dto.html">mailslurp_client.models.expired_inbox_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.expired_inbox_record_projection" href="expired_inbox_record_projection.html">mailslurp_client.models.expired_inbox_record_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.export_link" href="export_link.html">mailslurp_client.models.export_link</a></code></li>
+<li><code><a title="mailslurp_client.models.export_options" href="export_options.html">mailslurp_client.models.export_options</a></code></li>
+<li><code><a title="mailslurp_client.models.filter_bounced_recipients_options" href="filter_bounced_recipients_options.html">mailslurp_client.models.filter_bounced_recipients_options</a></code></li>
+<li><code><a title="mailslurp_client.models.filter_bounced_recipients_result" href="filter_bounced_recipients_result.html">mailslurp_client.models.filter_bounced_recipients_result</a></code></li>
+<li><code><a title="mailslurp_client.models.flush_expired_inboxes_result" href="flush_expired_inboxes_result.html">mailslurp_client.models.flush_expired_inboxes_result</a></code></li>
+<li><code><a title="mailslurp_client.models.forward_email_options" href="forward_email_options.html">mailslurp_client.models.forward_email_options</a></code></li>
+<li><code><a title="mailslurp_client.models.generate_bimi_record_options" href="generate_bimi_record_options.html">mailslurp_client.models.generate_bimi_record_options</a></code></li>
+<li><code><a title="mailslurp_client.models.generate_bimi_record_results" href="generate_bimi_record_results.html">mailslurp_client.models.generate_bimi_record_results</a></code></li>
+<li><code><a title="mailslurp_client.models.generate_dmarc_record_options" href="generate_dmarc_record_options.html">mailslurp_client.models.generate_dmarc_record_options</a></code></li>
+<li><code><a title="mailslurp_client.models.generate_dmarc_record_results" href="generate_dmarc_record_results.html">mailslurp_client.models.generate_dmarc_record_results</a></code></li>
+<li><code><a title="mailslurp_client.models.generate_mta_sts_record_options" href="generate_mta_sts_record_options.html">mailslurp_client.models.generate_mta_sts_record_options</a></code></li>
+<li><code><a title="mailslurp_client.models.generate_mta_sts_record_results" href="generate_mta_sts_record_results.html">mailslurp_client.models.generate_mta_sts_record_results</a></code></li>
+<li><code><a title="mailslurp_client.models.generate_tls_reporting_record_options" href="generate_tls_reporting_record_options.html">mailslurp_client.models.generate_tls_reporting_record_options</a></code></li>
+<li><code><a title="mailslurp_client.models.generate_tls_reporting_record_results" href="generate_tls_reporting_record_results.html">mailslurp_client.models.generate_tls_reporting_record_results</a></code></li>
+<li><code><a title="mailslurp_client.models.gravatar_url" href="gravatar_url.html">mailslurp_client.models.gravatar_url</a></code></li>
+<li><code><a title="mailslurp_client.models.group_contacts_dto" href="group_contacts_dto.html">mailslurp_client.models.group_contacts_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.group_dto" href="group_dto.html">mailslurp_client.models.group_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.group_projection" href="group_projection.html">mailslurp_client.models.group_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.html_validation_result" href="html_validation_result.html">mailslurp_client.models.html_validation_result</a></code></li>
+<li><code><a title="mailslurp_client.models.imap_flag_operation_options" href="imap_flag_operation_options.html">mailslurp_client.models.imap_flag_operation_options</a></code></li>
+<li><code><a title="mailslurp_client.models.imap_smtp_access_details" href="imap_smtp_access_details.html">mailslurp_client.models.imap_smtp_access_details</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_by_email_address_result" href="inbox_by_email_address_result.html">mailslurp_client.models.inbox_by_email_address_result</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_by_name_result" href="inbox_by_name_result.html">mailslurp_client.models.inbox_by_name_result</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_dto" href="inbox_dto.html">mailslurp_client.models.inbox_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_exists_dto" href="inbox_exists_dto.html">mailslurp_client.models.inbox_exists_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_forwarder_dto" href="inbox_forwarder_dto.html">mailslurp_client.models.inbox_forwarder_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_forwarder_event_dto" href="inbox_forwarder_event_dto.html">mailslurp_client.models.inbox_forwarder_event_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_forwarder_event_projection" href="inbox_forwarder_event_projection.html">mailslurp_client.models.inbox_forwarder_event_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_forwarder_test_options" href="inbox_forwarder_test_options.html">mailslurp_client.models.inbox_forwarder_test_options</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_forwarder_test_result" href="inbox_forwarder_test_result.html">mailslurp_client.models.inbox_forwarder_test_result</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_id_item" href="inbox_id_item.html">mailslurp_client.models.inbox_id_item</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_ids_result" href="inbox_ids_result.html">mailslurp_client.models.inbox_ids_result</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_preview" href="inbox_preview.html">mailslurp_client.models.inbox_preview</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_replier_dto" href="inbox_replier_dto.html">mailslurp_client.models.inbox_replier_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_replier_event_projection" href="inbox_replier_event_projection.html">mailslurp_client.models.inbox_replier_event_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_ruleset_dto" href="inbox_ruleset_dto.html">mailslurp_client.models.inbox_ruleset_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_ruleset_test_options" href="inbox_ruleset_test_options.html">mailslurp_client.models.inbox_ruleset_test_options</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_ruleset_test_result" href="inbox_ruleset_test_result.html">mailslurp_client.models.inbox_ruleset_test_result</a></code></li>
+<li><code><a title="mailslurp_client.models.inline_object" href="inline_object.html">mailslurp_client.models.inline_object</a></code></li>
+<li><code><a title="mailslurp_client.models.ip_address_result" href="ip_address_result.html">mailslurp_client.models.ip_address_result</a></code></li>
+<li><code><a title="mailslurp_client.models.json_schema_dto" href="json_schema_dto.html">mailslurp_client.models.json_schema_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.list_unsubscribe_recipient_projection" href="list_unsubscribe_recipient_projection.html">mailslurp_client.models.list_unsubscribe_recipient_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.lookup_bimi_domain_options" href="lookup_bimi_domain_options.html">mailslurp_client.models.lookup_bimi_domain_options</a></code></li>
+<li><code><a title="mailslurp_client.models.lookup_bimi_domain_results" href="lookup_bimi_domain_results.html">mailslurp_client.models.lookup_bimi_domain_results</a></code></li>
+<li><code><a title="mailslurp_client.models.lookup_dmarc_domain_options" href="lookup_dmarc_domain_options.html">mailslurp_client.models.lookup_dmarc_domain_options</a></code></li>
+<li><code><a title="mailslurp_client.models.lookup_dmarc_domain_results" href="lookup_dmarc_domain_results.html">mailslurp_client.models.lookup_dmarc_domain_results</a></code></li>
+<li><code><a title="mailslurp_client.models.lookup_mta_sts_domain_options" href="lookup_mta_sts_domain_options.html">mailslurp_client.models.lookup_mta_sts_domain_options</a></code></li>
+<li><code><a title="mailslurp_client.models.lookup_mta_sts_domain_results" href="lookup_mta_sts_domain_results.html">mailslurp_client.models.lookup_mta_sts_domain_results</a></code></li>
+<li><code><a title="mailslurp_client.models.lookup_tls_reporting_domain_options" href="lookup_tls_reporting_domain_options.html">mailslurp_client.models.lookup_tls_reporting_domain_options</a></code></li>
+<li><code><a title="mailslurp_client.models.lookup_tls_reporting_domain_results" href="lookup_tls_reporting_domain_results.html">mailslurp_client.models.lookup_tls_reporting_domain_results</a></code></li>
+<li><code><a title="mailslurp_client.models.match_option" href="match_option.html">mailslurp_client.models.match_option</a></code></li>
+<li><code><a title="mailslurp_client.models.match_options" href="match_options.html">mailslurp_client.models.match_options</a></code></li>
+<li><code><a title="mailslurp_client.models.missed_email_dto" href="missed_email_dto.html">mailslurp_client.models.missed_email_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.missed_email_projection" href="missed_email_projection.html">mailslurp_client.models.missed_email_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.name_server_record" href="name_server_record.html">mailslurp_client.models.name_server_record</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection" href="organization_inbox_projection.html">mailslurp_client.models.organization_inbox_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_alias" href="page_alias.html">mailslurp_client.models.page_alias</a></code></li>
+<li><code><a title="mailslurp_client.models.page_attachment_entity" href="page_attachment_entity.html">mailslurp_client.models.page_attachment_entity</a></code></li>
+<li><code><a title="mailslurp_client.models.page_bounced_email" href="page_bounced_email.html">mailslurp_client.models.page_bounced_email</a></code></li>
+<li><code><a title="mailslurp_client.models.page_bounced_recipients" href="page_bounced_recipients.html">mailslurp_client.models.page_bounced_recipients</a></code></li>
+<li><code><a title="mailslurp_client.models.page_complaint" href="page_complaint.html">mailslurp_client.models.page_complaint</a></code></li>
+<li><code><a title="mailslurp_client.models.page_connector" href="page_connector.html">mailslurp_client.models.page_connector</a></code></li>
+<li><code><a title="mailslurp_client.models.page_connector_sync_events" href="page_connector_sync_events.html">mailslurp_client.models.page_connector_sync_events</a></code></li>
+<li><code><a title="mailslurp_client.models.page_contact_projection" href="page_contact_projection.html">mailslurp_client.models.page_contact_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_delivery_status" href="page_delivery_status.html">mailslurp_client.models.page_delivery_status</a></code></li>
+<li><code><a title="mailslurp_client.models.page_email_preview" href="page_email_preview.html">mailslurp_client.models.page_email_preview</a></code></li>
+<li><code><a title="mailslurp_client.models.page_email_projection" href="page_email_projection.html">mailslurp_client.models.page_email_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_email_validation_request" href="page_email_validation_request.html">mailslurp_client.models.page_email_validation_request</a></code></li>
+<li><code><a title="mailslurp_client.models.page_expired_inbox_record_projection" href="page_expired_inbox_record_projection.html">mailslurp_client.models.page_expired_inbox_record_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_group_projection" href="page_group_projection.html">mailslurp_client.models.page_group_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_inbox_forwarder_dto" href="page_inbox_forwarder_dto.html">mailslurp_client.models.page_inbox_forwarder_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.page_inbox_forwarder_events" href="page_inbox_forwarder_events.html">mailslurp_client.models.page_inbox_forwarder_events</a></code></li>
+<li><code><a title="mailslurp_client.models.page_inbox_projection" href="page_inbox_projection.html">mailslurp_client.models.page_inbox_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_inbox_replier_dto" href="page_inbox_replier_dto.html">mailslurp_client.models.page_inbox_replier_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.page_inbox_replier_events" href="page_inbox_replier_events.html">mailslurp_client.models.page_inbox_replier_events</a></code></li>
+<li><code><a title="mailslurp_client.models.page_inbox_ruleset_dto" href="page_inbox_ruleset_dto.html">mailslurp_client.models.page_inbox_ruleset_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.page_list_unsubscribe_recipients" href="page_list_unsubscribe_recipients.html">mailslurp_client.models.page_list_unsubscribe_recipients</a></code></li>
+<li><code><a title="mailslurp_client.models.page_missed_email_projection" href="page_missed_email_projection.html">mailslurp_client.models.page_missed_email_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_organization_inbox_projection" href="page_organization_inbox_projection.html">mailslurp_client.models.page_organization_inbox_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_phone_number_projection" href="page_phone_number_projection.html">mailslurp_client.models.page_phone_number_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_scheduled_jobs" href="page_scheduled_jobs.html">mailslurp_client.models.page_scheduled_jobs</a></code></li>
+<li><code><a title="mailslurp_client.models.page_sent_email_projection" href="page_sent_email_projection.html">mailslurp_client.models.page_sent_email_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_sent_email_with_queue_projection" href="page_sent_email_with_queue_projection.html">mailslurp_client.models.page_sent_email_with_queue_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_sms_projection" href="page_sms_projection.html">mailslurp_client.models.page_sms_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_template_projection" href="page_template_projection.html">mailslurp_client.models.page_template_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_thread_projection" href="page_thread_projection.html">mailslurp_client.models.page_thread_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_tracking_pixel_projection" href="page_tracking_pixel_projection.html">mailslurp_client.models.page_tracking_pixel_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_unknown_missed_email_projection" href="page_unknown_missed_email_projection.html">mailslurp_client.models.page_unknown_missed_email_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_webhook_projection" href="page_webhook_projection.html">mailslurp_client.models.page_webhook_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.page_webhook_result" href="page_webhook_result.html">mailslurp_client.models.page_webhook_result</a></code></li>
+<li><code><a title="mailslurp_client.models.pageable_object" href="pageable_object.html">mailslurp_client.models.pageable_object</a></code></li>
+<li><code><a title="mailslurp_client.models.phone_number_dto" href="phone_number_dto.html">mailslurp_client.models.phone_number_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.phone_number_projection" href="phone_number_projection.html">mailslurp_client.models.phone_number_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.phone_plan_dto" href="phone_plan_dto.html">mailslurp_client.models.phone_plan_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.raw_email_json" href="raw_email_json.html">mailslurp_client.models.raw_email_json</a></code></li>
+<li><code><a title="mailslurp_client.models.recipient" href="recipient.html">mailslurp_client.models.recipient</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_for_sms" href="reply_for_sms.html">mailslurp_client.models.reply_for_sms</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_alias_email_options" href="reply_to_alias_email_options.html">mailslurp_client.models.reply_to_alias_email_options</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options" href="reply_to_email_options.html">mailslurp_client.models.reply_to_email_options</a></code></li>
+<li><code><a title="mailslurp_client.models.scheduled_job" href="scheduled_job.html">mailslurp_client.models.scheduled_job</a></code></li>
+<li><code><a title="mailslurp_client.models.scheduled_job_dto" href="scheduled_job_dto.html">mailslurp_client.models.scheduled_job_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.search_emails_options" href="search_emails_options.html">mailslurp_client.models.search_emails_options</a></code></li>
+<li><code><a title="mailslurp_client.models.search_inboxes_options" href="search_inboxes_options.html">mailslurp_client.models.search_inboxes_options</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_body_part" href="send_email_body_part.html">mailslurp_client.models.send_email_body_part</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options" href="send_email_options.html">mailslurp_client.models.send_email_options</a></code></li>
+<li><code><a title="mailslurp_client.models.send_smtp_envelope_options" href="send_smtp_envelope_options.html">mailslurp_client.models.send_smtp_envelope_options</a></code></li>
+<li><code><a title="mailslurp_client.models.send_with_queue_result" href="send_with_queue_result.html">mailslurp_client.models.send_with_queue_result</a></code></li>
+<li><code><a title="mailslurp_client.models.sender" href="sender.html">mailslurp_client.models.sender</a></code></li>
+<li><code><a title="mailslurp_client.models.sent_email_dto" href="sent_email_dto.html">mailslurp_client.models.sent_email_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.sent_email_projection" href="sent_email_projection.html">mailslurp_client.models.sent_email_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.sent_sms_dto" href="sent_sms_dto.html">mailslurp_client.models.sent_sms_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.set_inbox_favourited_options" href="set_inbox_favourited_options.html">mailslurp_client.models.set_inbox_favourited_options</a></code></li>
+<li><code><a title="mailslurp_client.models.simple_send_email_options" href="simple_send_email_options.html">mailslurp_client.models.simple_send_email_options</a></code></li>
+<li><code><a title="mailslurp_client.models.sms_dto" href="sms_dto.html">mailslurp_client.models.sms_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.sms_match_option" href="sms_match_option.html">mailslurp_client.models.sms_match_option</a></code></li>
+<li><code><a title="mailslurp_client.models.sms_preview" href="sms_preview.html">mailslurp_client.models.sms_preview</a></code></li>
+<li><code><a title="mailslurp_client.models.sms_projection" href="sms_projection.html">mailslurp_client.models.sms_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.sms_reply_options" href="sms_reply_options.html">mailslurp_client.models.sms_reply_options</a></code></li>
+<li><code><a title="mailslurp_client.models.sort_object" href="sort_object.html">mailslurp_client.models.sort_object</a></code></li>
+<li><code><a title="mailslurp_client.models.template_dto" href="template_dto.html">mailslurp_client.models.template_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.template_preview" href="template_preview.html">mailslurp_client.models.template_preview</a></code></li>
+<li><code><a title="mailslurp_client.models.template_projection" href="template_projection.html">mailslurp_client.models.template_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.template_variable" href="template_variable.html">mailslurp_client.models.template_variable</a></code></li>
+<li><code><a title="mailslurp_client.models.test_inbox_ruleset_receiving_options" href="test_inbox_ruleset_receiving_options.html">mailslurp_client.models.test_inbox_ruleset_receiving_options</a></code></li>
+<li><code><a title="mailslurp_client.models.test_inbox_ruleset_receiving_result" href="test_inbox_ruleset_receiving_result.html">mailslurp_client.models.test_inbox_ruleset_receiving_result</a></code></li>
+<li><code><a title="mailslurp_client.models.test_inbox_ruleset_sending_options" href="test_inbox_ruleset_sending_options.html">mailslurp_client.models.test_inbox_ruleset_sending_options</a></code></li>
+<li><code><a title="mailslurp_client.models.test_inbox_ruleset_sending_result" href="test_inbox_ruleset_sending_result.html">mailslurp_client.models.test_inbox_ruleset_sending_result</a></code></li>
+<li><code><a title="mailslurp_client.models.test_new_inbox_forwarder_options" href="test_new_inbox_forwarder_options.html">mailslurp_client.models.test_new_inbox_forwarder_options</a></code></li>
+<li><code><a title="mailslurp_client.models.test_new_inbox_ruleset_options" href="test_new_inbox_ruleset_options.html">mailslurp_client.models.test_new_inbox_ruleset_options</a></code></li>
+<li><code><a title="mailslurp_client.models.test_phone_number_options" href="test_phone_number_options.html">mailslurp_client.models.test_phone_number_options</a></code></li>
+<li><code><a title="mailslurp_client.models.thread_projection" href="thread_projection.html">mailslurp_client.models.thread_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.tracking_pixel_dto" href="tracking_pixel_dto.html">mailslurp_client.models.tracking_pixel_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.tracking_pixel_projection" href="tracking_pixel_projection.html">mailslurp_client.models.tracking_pixel_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.unknown_missed_email_projection" href="unknown_missed_email_projection.html">mailslurp_client.models.unknown_missed_email_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.unread_count" href="unread_count.html">mailslurp_client.models.unread_count</a></code></li>
+<li><code><a title="mailslurp_client.models.unseen_error_count_dto" href="unseen_error_count_dto.html">mailslurp_client.models.unseen_error_count_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.update_alias_options" href="update_alias_options.html">mailslurp_client.models.update_alias_options</a></code></li>
+<li><code><a title="mailslurp_client.models.update_domain_options" href="update_domain_options.html">mailslurp_client.models.update_domain_options</a></code></li>
+<li><code><a title="mailslurp_client.models.update_group_contacts" href="update_group_contacts.html">mailslurp_client.models.update_group_contacts</a></code></li>
+<li><code><a title="mailslurp_client.models.update_inbox_options" href="update_inbox_options.html">mailslurp_client.models.update_inbox_options</a></code></li>
+<li><code><a title="mailslurp_client.models.update_inbox_replier_options" href="update_inbox_replier_options.html">mailslurp_client.models.update_inbox_replier_options</a></code></li>
+<li><code><a title="mailslurp_client.models.upload_attachment_options" href="upload_attachment_options.html">mailslurp_client.models.upload_attachment_options</a></code></li>
+<li><code><a title="mailslurp_client.models.user_info_dto" href="user_info_dto.html">mailslurp_client.models.user_info_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.validate_email_address_list_options" href="validate_email_address_list_options.html">mailslurp_client.models.validate_email_address_list_options</a></code></li>
+<li><code><a title="mailslurp_client.models.validate_email_address_list_result" href="validate_email_address_list_result.html">mailslurp_client.models.validate_email_address_list_result</a></code></li>
+<li><code><a title="mailslurp_client.models.validation_dto" href="validation_dto.html">mailslurp_client.models.validation_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.validation_message" href="validation_message.html">mailslurp_client.models.validation_message</a></code></li>
+<li><code><a title="mailslurp_client.models.verify_email_address_options" href="verify_email_address_options.html">mailslurp_client.models.verify_email_address_options</a></code></li>
+<li><code><a title="mailslurp_client.models.verify_webhook_signature_options" href="verify_webhook_signature_options.html">mailslurp_client.models.verify_webhook_signature_options</a></code></li>
+<li><code><a title="mailslurp_client.models.verify_webhook_signature_results" href="verify_webhook_signature_results.html">mailslurp_client.models.verify_webhook_signature_results</a></code></li>
+<li><code><a title="mailslurp_client.models.wait_for_conditions" href="wait_for_conditions.html">mailslurp_client.models.wait_for_conditions</a></code></li>
+<li><code><a title="mailslurp_client.models.wait_for_single_sms_options" href="wait_for_single_sms_options.html">mailslurp_client.models.wait_for_single_sms_options</a></code></li>
+<li><code><a title="mailslurp_client.models.wait_for_sms_conditions" href="wait_for_sms_conditions.html">mailslurp_client.models.wait_for_sms_conditions</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_bounce_payload" href="webhook_bounce_payload.html">mailslurp_client.models.webhook_bounce_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_bounce_recipient_payload" href="webhook_bounce_recipient_payload.html">mailslurp_client.models.webhook_bounce_recipient_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_delivery_status_payload" href="webhook_delivery_status_payload.html">mailslurp_client.models.webhook_delivery_status_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_dto" href="webhook_dto.html">mailslurp_client.models.webhook_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_email_opened_payload" href="webhook_email_opened_payload.html">mailslurp_client.models.webhook_email_opened_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_email_read_payload" href="webhook_email_read_payload.html">mailslurp_client.models.webhook_email_read_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_header_name_value" href="webhook_header_name_value.html">mailslurp_client.models.webhook_header_name_value</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_headers" href="webhook_headers.html">mailslurp_client.models.webhook_headers</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_new_attachment_payload" href="webhook_new_attachment_payload.html">mailslurp_client.models.webhook_new_attachment_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_new_contact_payload" href="webhook_new_contact_payload.html">mailslurp_client.models.webhook_new_contact_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_new_email_payload" href="webhook_new_email_payload.html">mailslurp_client.models.webhook_new_email_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_new_sms_payload" href="webhook_new_sms_payload.html">mailslurp_client.models.webhook_new_sms_payload</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_projection" href="webhook_projection.html">mailslurp_client.models.webhook_projection</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_redrive_all_result" href="webhook_redrive_all_result.html">mailslurp_client.models.webhook_redrive_all_result</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_redrive_result" href="webhook_redrive_result.html">mailslurp_client.models.webhook_redrive_result</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_result_dto" href="webhook_result_dto.html">mailslurp_client.models.webhook_result_dto</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_test_request" href="webhook_test_request.html">mailslurp_client.models.webhook_test_request</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_test_response" href="webhook_test_response.html">mailslurp_client.models.webhook_test_response</a></code></li>
+<li><code><a title="mailslurp_client.models.webhook_test_result" href="webhook_test_result.html">mailslurp_client.models.webhook_test_result</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
