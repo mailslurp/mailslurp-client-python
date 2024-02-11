@@ -1,0 +1,3053 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>mailslurp_client.api.common_actions_controller_api API documentation</title>
+<meta name="description" content="MailSlurp API …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.api.common_actions_controller_api</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># coding: utf-8
+
+&#34;&#34;&#34;
+    MailSlurp API
+
+    MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It&#39;s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository  # noqa: E501
+
+    The version of the OpenAPI document: 6.5.2
+    Contact: contact@mailslurp.dev
+    Generated by: https://openapi-generator.tech
+&#34;&#34;&#34;
+
+
+from __future__ import absolute_import
+
+import re  # noqa: F401
+
+# python 2 and python 3 compatibility library
+import six
+
+from mailslurp_client.api_client import ApiClient
+from mailslurp_client.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
+
+
+class CommonActionsControllerApi(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
+
+    def create_new_email_address(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+        Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_new_email_address(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param bool allow_team_access:
+        :param bool use_domain_pool:
+        :param datetime expires_at:
+        :param int expires_in:
+        :param str email_address:
+        :param str inbox_type:
+        :param str description:
+        :param str name:
+        :param list[str] tags:
+        :param bool favourite:
+        :param bool virtual_inbox:
+        :param bool use_short_address:
+        :param str domain_name:
+        :param str domain_id:
+        :param str prefix:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: InboxDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_new_email_address_with_http_info(**kwargs)  # noqa: E501
+
+    def create_new_email_address_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+        Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_new_email_address_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param bool allow_team_access:
+        :param bool use_domain_pool:
+        :param datetime expires_at:
+        :param int expires_in:
+        :param str email_address:
+        :param str inbox_type:
+        :param str description:
+        :param str name:
+        :param list[str] tags:
+        :param bool favourite:
+        :param bool virtual_inbox:
+        :param bool use_short_address:
+        :param str domain_name:
+        :param str domain_id:
+        :param str prefix:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(InboxDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;allow_team_access&#39;,
+            &#39;use_domain_pool&#39;,
+            &#39;expires_at&#39;,
+            &#39;expires_in&#39;,
+            &#39;email_address&#39;,
+            &#39;inbox_type&#39;,
+            &#39;description&#39;,
+            &#39;name&#39;,
+            &#39;tags&#39;,
+            &#39;favourite&#39;,
+            &#39;virtual_inbox&#39;,
+            &#39;use_short_address&#39;,
+            &#39;domain_name&#39;,
+            &#39;domain_id&#39;,
+            &#39;prefix&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_new_email_address&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;allow_team_access&#39; in local_var_params and local_var_params[&#39;allow_team_access&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;allowTeamAccess&#39;, local_var_params[&#39;allow_team_access&#39;]))  # noqa: E501
+        if &#39;use_domain_pool&#39; in local_var_params and local_var_params[&#39;use_domain_pool&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;useDomainPool&#39;, local_var_params[&#39;use_domain_pool&#39;]))  # noqa: E501
+        if &#39;expires_at&#39; in local_var_params and local_var_params[&#39;expires_at&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;expiresAt&#39;, local_var_params[&#39;expires_at&#39;]))  # noqa: E501
+        if &#39;expires_in&#39; in local_var_params and local_var_params[&#39;expires_in&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;expiresIn&#39;, local_var_params[&#39;expires_in&#39;]))  # noqa: E501
+        if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+        if &#39;inbox_type&#39; in local_var_params and local_var_params[&#39;inbox_type&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;inboxType&#39;, local_var_params[&#39;inbox_type&#39;]))  # noqa: E501
+        if &#39;description&#39; in local_var_params and local_var_params[&#39;description&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;description&#39;, local_var_params[&#39;description&#39;]))  # noqa: E501
+        if &#39;name&#39; in local_var_params and local_var_params[&#39;name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;name&#39;, local_var_params[&#39;name&#39;]))  # noqa: E501
+        if &#39;tags&#39; in local_var_params and local_var_params[&#39;tags&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;tags&#39;, local_var_params[&#39;tags&#39;]))  # noqa: E501
+            collection_formats[&#39;tags&#39;] = &#39;multi&#39;  # noqa: E501
+        if &#39;favourite&#39; in local_var_params and local_var_params[&#39;favourite&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;favourite&#39;, local_var_params[&#39;favourite&#39;]))  # noqa: E501
+        if &#39;virtual_inbox&#39; in local_var_params and local_var_params[&#39;virtual_inbox&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;virtualInbox&#39;, local_var_params[&#39;virtual_inbox&#39;]))  # noqa: E501
+        if &#39;use_short_address&#39; in local_var_params and local_var_params[&#39;use_short_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;useShortAddress&#39;, local_var_params[&#39;use_short_address&#39;]))  # noqa: E501
+        if &#39;domain_name&#39; in local_var_params and local_var_params[&#39;domain_name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;domainName&#39;, local_var_params[&#39;domain_name&#39;]))  # noqa: E501
+        if &#39;domain_id&#39; in local_var_params and local_var_params[&#39;domain_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;domainId&#39;, local_var_params[&#39;domain_id&#39;]))  # noqa: E501
+        if &#39;prefix&#39; in local_var_params and local_var_params[&#39;prefix&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;prefix&#39;, local_var_params[&#39;prefix&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/newEmailAddress&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;InboxDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def create_random_inbox(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+        Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_random_inbox(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param bool allow_team_access:
+        :param bool use_domain_pool:
+        :param datetime expires_at:
+        :param int expires_in:
+        :param str email_address:
+        :param str inbox_type:
+        :param str description:
+        :param str name:
+        :param list[str] tags:
+        :param bool favourite:
+        :param bool virtual_inbox:
+        :param bool use_short_address:
+        :param str domain_name:
+        :param str domain_id:
+        :param str prefix:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: InboxDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_random_inbox_with_http_info(**kwargs)  # noqa: E501
+
+    def create_random_inbox_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+        Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_random_inbox_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param bool allow_team_access:
+        :param bool use_domain_pool:
+        :param datetime expires_at:
+        :param int expires_in:
+        :param str email_address:
+        :param str inbox_type:
+        :param str description:
+        :param str name:
+        :param list[str] tags:
+        :param bool favourite:
+        :param bool virtual_inbox:
+        :param bool use_short_address:
+        :param str domain_name:
+        :param str domain_id:
+        :param str prefix:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(InboxDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;allow_team_access&#39;,
+            &#39;use_domain_pool&#39;,
+            &#39;expires_at&#39;,
+            &#39;expires_in&#39;,
+            &#39;email_address&#39;,
+            &#39;inbox_type&#39;,
+            &#39;description&#39;,
+            &#39;name&#39;,
+            &#39;tags&#39;,
+            &#39;favourite&#39;,
+            &#39;virtual_inbox&#39;,
+            &#39;use_short_address&#39;,
+            &#39;domain_name&#39;,
+            &#39;domain_id&#39;,
+            &#39;prefix&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_random_inbox&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;allow_team_access&#39; in local_var_params and local_var_params[&#39;allow_team_access&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;allowTeamAccess&#39;, local_var_params[&#39;allow_team_access&#39;]))  # noqa: E501
+        if &#39;use_domain_pool&#39; in local_var_params and local_var_params[&#39;use_domain_pool&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;useDomainPool&#39;, local_var_params[&#39;use_domain_pool&#39;]))  # noqa: E501
+        if &#39;expires_at&#39; in local_var_params and local_var_params[&#39;expires_at&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;expiresAt&#39;, local_var_params[&#39;expires_at&#39;]))  # noqa: E501
+        if &#39;expires_in&#39; in local_var_params and local_var_params[&#39;expires_in&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;expiresIn&#39;, local_var_params[&#39;expires_in&#39;]))  # noqa: E501
+        if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+        if &#39;inbox_type&#39; in local_var_params and local_var_params[&#39;inbox_type&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;inboxType&#39;, local_var_params[&#39;inbox_type&#39;]))  # noqa: E501
+        if &#39;description&#39; in local_var_params and local_var_params[&#39;description&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;description&#39;, local_var_params[&#39;description&#39;]))  # noqa: E501
+        if &#39;name&#39; in local_var_params and local_var_params[&#39;name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;name&#39;, local_var_params[&#39;name&#39;]))  # noqa: E501
+        if &#39;tags&#39; in local_var_params and local_var_params[&#39;tags&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;tags&#39;, local_var_params[&#39;tags&#39;]))  # noqa: E501
+            collection_formats[&#39;tags&#39;] = &#39;multi&#39;  # noqa: E501
+        if &#39;favourite&#39; in local_var_params and local_var_params[&#39;favourite&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;favourite&#39;, local_var_params[&#39;favourite&#39;]))  # noqa: E501
+        if &#39;virtual_inbox&#39; in local_var_params and local_var_params[&#39;virtual_inbox&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;virtualInbox&#39;, local_var_params[&#39;virtual_inbox&#39;]))  # noqa: E501
+        if &#39;use_short_address&#39; in local_var_params and local_var_params[&#39;use_short_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;useShortAddress&#39;, local_var_params[&#39;use_short_address&#39;]))  # noqa: E501
+        if &#39;domain_name&#39; in local_var_params and local_var_params[&#39;domain_name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;domainName&#39;, local_var_params[&#39;domain_name&#39;]))  # noqa: E501
+        if &#39;domain_id&#39; in local_var_params and local_var_params[&#39;domain_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;domainId&#39;, local_var_params[&#39;domain_id&#39;]))  # noqa: E501
+        if &#39;prefix&#39; in local_var_params and local_var_params[&#39;prefix&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;prefix&#39;, local_var_params[&#39;prefix&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/createInbox&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;InboxDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def delete_email_address(self, inbox_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete inbox email address by inbox id  # noqa: E501
+
+        Deletes inbox email address  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_email_address(inbox_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str inbox_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.delete_email_address_with_http_info(inbox_id, **kwargs)  # noqa: E501
+
+    def delete_email_address_with_http_info(self, inbox_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete inbox email address by inbox id  # noqa: E501
+
+        Deletes inbox email address  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_email_address_with_http_info(inbox_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str inbox_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;inbox_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method delete_email_address&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;inbox_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;inbox_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;inbox_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `inbox_id` when calling `delete_email_address`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;inbox_id&#39; in local_var_params and local_var_params[&#39;inbox_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;inboxId&#39;, local_var_params[&#39;inbox_id&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/deleteEmailAddress&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def empty_inbox(self, inbox_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete all emails in an inbox  # noqa: E501
+
+        Deletes all emails  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.empty_inbox(inbox_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str inbox_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.empty_inbox_with_http_info(inbox_id, **kwargs)  # noqa: E501
+
+    def empty_inbox_with_http_info(self, inbox_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete all emails in an inbox  # noqa: E501
+
+        Deletes all emails  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.empty_inbox_with_http_info(inbox_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str inbox_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;inbox_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method empty_inbox&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;inbox_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;inbox_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;inbox_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `inbox_id` when calling `empty_inbox`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;inbox_id&#39; in local_var_params and local_var_params[&#39;inbox_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;inboxId&#39;, local_var_params[&#39;inbox_id&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/emptyInbox&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def send_email_query(self, to, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an email using query parameters  # noqa: E501
+
+        If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.send_email_query(to, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str to: Email address to send to (required)
+        :param str sender_id: ID of inbox to send from. If null an inbox will be created for sending
+        :param str body: Body of the email message. Supports HTML
+        :param str subject: Subject line of the email
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.send_email_query_with_http_info(to, **kwargs)  # noqa: E501
+
+    def send_email_query_with_http_info(self, to, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an email using query parameters  # noqa: E501
+
+        If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.send_email_query_with_http_info(to, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str to: Email address to send to (required)
+        :param str sender_id: ID of inbox to send from. If null an inbox will be created for sending
+        :param str body: Body of the email message. Supports HTML
+        :param str subject: Subject line of the email
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;to&#39;,
+            &#39;sender_id&#39;,
+            &#39;body&#39;,
+            &#39;subject&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method send_email_query&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;to&#39; is set
+        if self.api_client.client_side_validation and (&#39;to&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;to&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `to` when calling `send_email_query`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;sender_id&#39; in local_var_params and local_var_params[&#39;sender_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;senderId&#39;, local_var_params[&#39;sender_id&#39;]))  # noqa: E501
+        if &#39;to&#39; in local_var_params and local_var_params[&#39;to&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;to&#39;, local_var_params[&#39;to&#39;]))  # noqa: E501
+        if &#39;body&#39; in local_var_params and local_var_params[&#39;body&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;body&#39;, local_var_params[&#39;body&#39;]))  # noqa: E501
+        if &#39;subject&#39; in local_var_params and local_var_params[&#39;subject&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;subject&#39;, local_var_params[&#39;subject&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sendEmailQuery&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def send_email_simple(self, simple_send_email_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an email  # noqa: E501
+
+        If no senderId or inboxId provided a random email address will be used to send from.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.send_email_simple(simple_send_email_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param SimpleSendEmailOptions simple_send_email_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.send_email_simple_with_http_info(simple_send_email_options, **kwargs)  # noqa: E501
+
+    def send_email_simple_with_http_info(self, simple_send_email_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an email  # noqa: E501
+
+        If no senderId or inboxId provided a random email address will be used to send from.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.send_email_simple_with_http_info(simple_send_email_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param SimpleSendEmailOptions simple_send_email_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;simple_send_email_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method send_email_simple&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;simple_send_email_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;simple_send_email_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;simple_send_email_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `simple_send_email_options` when calling `send_email_simple`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;simple_send_email_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;simple_send_email_options&#39;]
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sendEmail&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi"><code class="flex name class">
+<span>class <span class="ident">CommonActionsControllerApi</span></span>
+<span>(</span><span>api_client=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CommonActionsControllerApi(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
+
+    def create_new_email_address(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+        Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_new_email_address(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param bool allow_team_access:
+        :param bool use_domain_pool:
+        :param datetime expires_at:
+        :param int expires_in:
+        :param str email_address:
+        :param str inbox_type:
+        :param str description:
+        :param str name:
+        :param list[str] tags:
+        :param bool favourite:
+        :param bool virtual_inbox:
+        :param bool use_short_address:
+        :param str domain_name:
+        :param str domain_id:
+        :param str prefix:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: InboxDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_new_email_address_with_http_info(**kwargs)  # noqa: E501
+
+    def create_new_email_address_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+        Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_new_email_address_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param bool allow_team_access:
+        :param bool use_domain_pool:
+        :param datetime expires_at:
+        :param int expires_in:
+        :param str email_address:
+        :param str inbox_type:
+        :param str description:
+        :param str name:
+        :param list[str] tags:
+        :param bool favourite:
+        :param bool virtual_inbox:
+        :param bool use_short_address:
+        :param str domain_name:
+        :param str domain_id:
+        :param str prefix:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(InboxDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;allow_team_access&#39;,
+            &#39;use_domain_pool&#39;,
+            &#39;expires_at&#39;,
+            &#39;expires_in&#39;,
+            &#39;email_address&#39;,
+            &#39;inbox_type&#39;,
+            &#39;description&#39;,
+            &#39;name&#39;,
+            &#39;tags&#39;,
+            &#39;favourite&#39;,
+            &#39;virtual_inbox&#39;,
+            &#39;use_short_address&#39;,
+            &#39;domain_name&#39;,
+            &#39;domain_id&#39;,
+            &#39;prefix&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_new_email_address&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;allow_team_access&#39; in local_var_params and local_var_params[&#39;allow_team_access&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;allowTeamAccess&#39;, local_var_params[&#39;allow_team_access&#39;]))  # noqa: E501
+        if &#39;use_domain_pool&#39; in local_var_params and local_var_params[&#39;use_domain_pool&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;useDomainPool&#39;, local_var_params[&#39;use_domain_pool&#39;]))  # noqa: E501
+        if &#39;expires_at&#39; in local_var_params and local_var_params[&#39;expires_at&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;expiresAt&#39;, local_var_params[&#39;expires_at&#39;]))  # noqa: E501
+        if &#39;expires_in&#39; in local_var_params and local_var_params[&#39;expires_in&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;expiresIn&#39;, local_var_params[&#39;expires_in&#39;]))  # noqa: E501
+        if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+        if &#39;inbox_type&#39; in local_var_params and local_var_params[&#39;inbox_type&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;inboxType&#39;, local_var_params[&#39;inbox_type&#39;]))  # noqa: E501
+        if &#39;description&#39; in local_var_params and local_var_params[&#39;description&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;description&#39;, local_var_params[&#39;description&#39;]))  # noqa: E501
+        if &#39;name&#39; in local_var_params and local_var_params[&#39;name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;name&#39;, local_var_params[&#39;name&#39;]))  # noqa: E501
+        if &#39;tags&#39; in local_var_params and local_var_params[&#39;tags&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;tags&#39;, local_var_params[&#39;tags&#39;]))  # noqa: E501
+            collection_formats[&#39;tags&#39;] = &#39;multi&#39;  # noqa: E501
+        if &#39;favourite&#39; in local_var_params and local_var_params[&#39;favourite&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;favourite&#39;, local_var_params[&#39;favourite&#39;]))  # noqa: E501
+        if &#39;virtual_inbox&#39; in local_var_params and local_var_params[&#39;virtual_inbox&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;virtualInbox&#39;, local_var_params[&#39;virtual_inbox&#39;]))  # noqa: E501
+        if &#39;use_short_address&#39; in local_var_params and local_var_params[&#39;use_short_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;useShortAddress&#39;, local_var_params[&#39;use_short_address&#39;]))  # noqa: E501
+        if &#39;domain_name&#39; in local_var_params and local_var_params[&#39;domain_name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;domainName&#39;, local_var_params[&#39;domain_name&#39;]))  # noqa: E501
+        if &#39;domain_id&#39; in local_var_params and local_var_params[&#39;domain_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;domainId&#39;, local_var_params[&#39;domain_id&#39;]))  # noqa: E501
+        if &#39;prefix&#39; in local_var_params and local_var_params[&#39;prefix&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;prefix&#39;, local_var_params[&#39;prefix&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/newEmailAddress&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;InboxDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def create_random_inbox(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+        Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_random_inbox(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param bool allow_team_access:
+        :param bool use_domain_pool:
+        :param datetime expires_at:
+        :param int expires_in:
+        :param str email_address:
+        :param str inbox_type:
+        :param str description:
+        :param str name:
+        :param list[str] tags:
+        :param bool favourite:
+        :param bool virtual_inbox:
+        :param bool use_short_address:
+        :param str domain_name:
+        :param str domain_id:
+        :param str prefix:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: InboxDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_random_inbox_with_http_info(**kwargs)  # noqa: E501
+
+    def create_random_inbox_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+        Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_random_inbox_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param bool allow_team_access:
+        :param bool use_domain_pool:
+        :param datetime expires_at:
+        :param int expires_in:
+        :param str email_address:
+        :param str inbox_type:
+        :param str description:
+        :param str name:
+        :param list[str] tags:
+        :param bool favourite:
+        :param bool virtual_inbox:
+        :param bool use_short_address:
+        :param str domain_name:
+        :param str domain_id:
+        :param str prefix:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(InboxDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;allow_team_access&#39;,
+            &#39;use_domain_pool&#39;,
+            &#39;expires_at&#39;,
+            &#39;expires_in&#39;,
+            &#39;email_address&#39;,
+            &#39;inbox_type&#39;,
+            &#39;description&#39;,
+            &#39;name&#39;,
+            &#39;tags&#39;,
+            &#39;favourite&#39;,
+            &#39;virtual_inbox&#39;,
+            &#39;use_short_address&#39;,
+            &#39;domain_name&#39;,
+            &#39;domain_id&#39;,
+            &#39;prefix&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_random_inbox&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;allow_team_access&#39; in local_var_params and local_var_params[&#39;allow_team_access&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;allowTeamAccess&#39;, local_var_params[&#39;allow_team_access&#39;]))  # noqa: E501
+        if &#39;use_domain_pool&#39; in local_var_params and local_var_params[&#39;use_domain_pool&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;useDomainPool&#39;, local_var_params[&#39;use_domain_pool&#39;]))  # noqa: E501
+        if &#39;expires_at&#39; in local_var_params and local_var_params[&#39;expires_at&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;expiresAt&#39;, local_var_params[&#39;expires_at&#39;]))  # noqa: E501
+        if &#39;expires_in&#39; in local_var_params and local_var_params[&#39;expires_in&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;expiresIn&#39;, local_var_params[&#39;expires_in&#39;]))  # noqa: E501
+        if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+        if &#39;inbox_type&#39; in local_var_params and local_var_params[&#39;inbox_type&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;inboxType&#39;, local_var_params[&#39;inbox_type&#39;]))  # noqa: E501
+        if &#39;description&#39; in local_var_params and local_var_params[&#39;description&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;description&#39;, local_var_params[&#39;description&#39;]))  # noqa: E501
+        if &#39;name&#39; in local_var_params and local_var_params[&#39;name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;name&#39;, local_var_params[&#39;name&#39;]))  # noqa: E501
+        if &#39;tags&#39; in local_var_params and local_var_params[&#39;tags&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;tags&#39;, local_var_params[&#39;tags&#39;]))  # noqa: E501
+            collection_formats[&#39;tags&#39;] = &#39;multi&#39;  # noqa: E501
+        if &#39;favourite&#39; in local_var_params and local_var_params[&#39;favourite&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;favourite&#39;, local_var_params[&#39;favourite&#39;]))  # noqa: E501
+        if &#39;virtual_inbox&#39; in local_var_params and local_var_params[&#39;virtual_inbox&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;virtualInbox&#39;, local_var_params[&#39;virtual_inbox&#39;]))  # noqa: E501
+        if &#39;use_short_address&#39; in local_var_params and local_var_params[&#39;use_short_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;useShortAddress&#39;, local_var_params[&#39;use_short_address&#39;]))  # noqa: E501
+        if &#39;domain_name&#39; in local_var_params and local_var_params[&#39;domain_name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;domainName&#39;, local_var_params[&#39;domain_name&#39;]))  # noqa: E501
+        if &#39;domain_id&#39; in local_var_params and local_var_params[&#39;domain_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;domainId&#39;, local_var_params[&#39;domain_id&#39;]))  # noqa: E501
+        if &#39;prefix&#39; in local_var_params and local_var_params[&#39;prefix&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;prefix&#39;, local_var_params[&#39;prefix&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/createInbox&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;InboxDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def delete_email_address(self, inbox_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete inbox email address by inbox id  # noqa: E501
+
+        Deletes inbox email address  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_email_address(inbox_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str inbox_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.delete_email_address_with_http_info(inbox_id, **kwargs)  # noqa: E501
+
+    def delete_email_address_with_http_info(self, inbox_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete inbox email address by inbox id  # noqa: E501
+
+        Deletes inbox email address  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_email_address_with_http_info(inbox_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str inbox_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;inbox_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method delete_email_address&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;inbox_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;inbox_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;inbox_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `inbox_id` when calling `delete_email_address`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;inbox_id&#39; in local_var_params and local_var_params[&#39;inbox_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;inboxId&#39;, local_var_params[&#39;inbox_id&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/deleteEmailAddress&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def empty_inbox(self, inbox_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete all emails in an inbox  # noqa: E501
+
+        Deletes all emails  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.empty_inbox(inbox_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str inbox_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.empty_inbox_with_http_info(inbox_id, **kwargs)  # noqa: E501
+
+    def empty_inbox_with_http_info(self, inbox_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete all emails in an inbox  # noqa: E501
+
+        Deletes all emails  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.empty_inbox_with_http_info(inbox_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str inbox_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;inbox_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method empty_inbox&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;inbox_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;inbox_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;inbox_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `inbox_id` when calling `empty_inbox`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;inbox_id&#39; in local_var_params and local_var_params[&#39;inbox_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;inboxId&#39;, local_var_params[&#39;inbox_id&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/emptyInbox&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def send_email_query(self, to, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an email using query parameters  # noqa: E501
+
+        If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.send_email_query(to, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str to: Email address to send to (required)
+        :param str sender_id: ID of inbox to send from. If null an inbox will be created for sending
+        :param str body: Body of the email message. Supports HTML
+        :param str subject: Subject line of the email
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.send_email_query_with_http_info(to, **kwargs)  # noqa: E501
+
+    def send_email_query_with_http_info(self, to, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an email using query parameters  # noqa: E501
+
+        If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.send_email_query_with_http_info(to, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str to: Email address to send to (required)
+        :param str sender_id: ID of inbox to send from. If null an inbox will be created for sending
+        :param str body: Body of the email message. Supports HTML
+        :param str subject: Subject line of the email
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;to&#39;,
+            &#39;sender_id&#39;,
+            &#39;body&#39;,
+            &#39;subject&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method send_email_query&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;to&#39; is set
+        if self.api_client.client_side_validation and (&#39;to&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;to&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `to` when calling `send_email_query`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;sender_id&#39; in local_var_params and local_var_params[&#39;sender_id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;senderId&#39;, local_var_params[&#39;sender_id&#39;]))  # noqa: E501
+        if &#39;to&#39; in local_var_params and local_var_params[&#39;to&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;to&#39;, local_var_params[&#39;to&#39;]))  # noqa: E501
+        if &#39;body&#39; in local_var_params and local_var_params[&#39;body&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;body&#39;, local_var_params[&#39;body&#39;]))  # noqa: E501
+        if &#39;subject&#39; in local_var_params and local_var_params[&#39;subject&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;subject&#39;, local_var_params[&#39;subject&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sendEmailQuery&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def send_email_simple(self, simple_send_email_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an email  # noqa: E501
+
+        If no senderId or inboxId provided a random email address will be used to send from.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.send_email_simple(simple_send_email_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param SimpleSendEmailOptions simple_send_email_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.send_email_simple_with_http_info(simple_send_email_options, **kwargs)  # noqa: E501
+
+    def send_email_simple_with_http_info(self, simple_send_email_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an email  # noqa: E501
+
+        If no senderId or inboxId provided a random email address will be used to send from.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.send_email_simple_with_http_info(simple_send_email_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param SimpleSendEmailOptions simple_send_email_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;simple_send_email_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method send_email_simple&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;simple_send_email_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;simple_send_email_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;simple_send_email_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `simple_send_email_options` when calling `send_email_simple`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;simple_send_email_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;simple_send_email_options&#39;]
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sendEmail&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_new_email_address"><code class="name flex">
+<span>def <span class="ident">create_new_email_address</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create new random inbox
+# noqa: E501</p>
+<p>Returns an Inbox with an <code>id</code> and an <code>emailAddress</code>
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_new_email_address(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param bool allow_team_access:
+:param bool use_domain_pool:
+:param datetime expires_at:
+:param int expires_in:
+:param str email_address:
+:param str inbox_type:
+:param str description:
+:param str name:
+:param list[str] tags:
+:param bool favourite:
+:param bool virtual_inbox:
+:param bool use_short_address:
+:param str domain_name:
+:param str domain_id:
+:param str prefix:
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: InboxDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_new_email_address(self, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+    Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.create_new_email_address(async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param bool allow_team_access:
+    :param bool use_domain_pool:
+    :param datetime expires_at:
+    :param int expires_in:
+    :param str email_address:
+    :param str inbox_type:
+    :param str description:
+    :param str name:
+    :param list[str] tags:
+    :param bool favourite:
+    :param bool virtual_inbox:
+    :param bool use_short_address:
+    :param str domain_name:
+    :param str domain_id:
+    :param str prefix:
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: InboxDto
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+    kwargs[&#39;_return_http_data_only&#39;] = True
+    return self.create_new_email_address_with_http_info(**kwargs)  # noqa: E501</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_new_email_address_with_http_info"><code class="name flex">
+<span>def <span class="ident">create_new_email_address_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create new random inbox
+# noqa: E501</p>
+<p>Returns an Inbox with an <code>id</code> and an <code>emailAddress</code>
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_new_email_address_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param bool allow_team_access:
+:param bool use_domain_pool:
+:param datetime expires_at:
+:param int expires_in:
+:param str email_address:
+:param str inbox_type:
+:param str description:
+:param str name:
+:param list[str] tags:
+:param bool favourite:
+:param bool virtual_inbox:
+:param bool use_short_address:
+:param str domain_name:
+:param str domain_id:
+:param str prefix:
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(InboxDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_new_email_address_with_http_info(self, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+    Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.create_new_email_address_with_http_info(async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param bool allow_team_access:
+    :param bool use_domain_pool:
+    :param datetime expires_at:
+    :param int expires_in:
+    :param str email_address:
+    :param str inbox_type:
+    :param str description:
+    :param str name:
+    :param list[str] tags:
+    :param bool favourite:
+    :param bool virtual_inbox:
+    :param bool use_short_address:
+    :param str domain_name:
+    :param str domain_id:
+    :param str prefix:
+    :param _return_http_data_only: response data without head status code
+                                   and headers
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: tuple(InboxDto, status_code(int), headers(HTTPHeaderDict))
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+
+    local_var_params = locals()
+
+    all_params = [
+        &#39;allow_team_access&#39;,
+        &#39;use_domain_pool&#39;,
+        &#39;expires_at&#39;,
+        &#39;expires_in&#39;,
+        &#39;email_address&#39;,
+        &#39;inbox_type&#39;,
+        &#39;description&#39;,
+        &#39;name&#39;,
+        &#39;tags&#39;,
+        &#39;favourite&#39;,
+        &#39;virtual_inbox&#39;,
+        &#39;use_short_address&#39;,
+        &#39;domain_name&#39;,
+        &#39;domain_id&#39;,
+        &#39;prefix&#39;
+    ]
+    all_params.extend(
+        [
+            &#39;async_req&#39;,
+            &#39;_return_http_data_only&#39;,
+            &#39;_preload_content&#39;,
+            &#39;_request_timeout&#39;
+        ]
+    )
+
+    for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+        if key not in all_params:
+            raise ApiTypeError(
+                &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                &#34; to method create_new_email_address&#34; % key
+            )
+        local_var_params[key] = val
+    del local_var_params[&#39;kwargs&#39;]
+
+    collection_formats = {}
+
+    path_params = {}
+
+    query_params = []
+    if &#39;allow_team_access&#39; in local_var_params and local_var_params[&#39;allow_team_access&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;allowTeamAccess&#39;, local_var_params[&#39;allow_team_access&#39;]))  # noqa: E501
+    if &#39;use_domain_pool&#39; in local_var_params and local_var_params[&#39;use_domain_pool&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;useDomainPool&#39;, local_var_params[&#39;use_domain_pool&#39;]))  # noqa: E501
+    if &#39;expires_at&#39; in local_var_params and local_var_params[&#39;expires_at&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;expiresAt&#39;, local_var_params[&#39;expires_at&#39;]))  # noqa: E501
+    if &#39;expires_in&#39; in local_var_params and local_var_params[&#39;expires_in&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;expiresIn&#39;, local_var_params[&#39;expires_in&#39;]))  # noqa: E501
+    if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+    if &#39;inbox_type&#39; in local_var_params and local_var_params[&#39;inbox_type&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;inboxType&#39;, local_var_params[&#39;inbox_type&#39;]))  # noqa: E501
+    if &#39;description&#39; in local_var_params and local_var_params[&#39;description&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;description&#39;, local_var_params[&#39;description&#39;]))  # noqa: E501
+    if &#39;name&#39; in local_var_params and local_var_params[&#39;name&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;name&#39;, local_var_params[&#39;name&#39;]))  # noqa: E501
+    if &#39;tags&#39; in local_var_params and local_var_params[&#39;tags&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;tags&#39;, local_var_params[&#39;tags&#39;]))  # noqa: E501
+        collection_formats[&#39;tags&#39;] = &#39;multi&#39;  # noqa: E501
+    if &#39;favourite&#39; in local_var_params and local_var_params[&#39;favourite&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;favourite&#39;, local_var_params[&#39;favourite&#39;]))  # noqa: E501
+    if &#39;virtual_inbox&#39; in local_var_params and local_var_params[&#39;virtual_inbox&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;virtualInbox&#39;, local_var_params[&#39;virtual_inbox&#39;]))  # noqa: E501
+    if &#39;use_short_address&#39; in local_var_params and local_var_params[&#39;use_short_address&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;useShortAddress&#39;, local_var_params[&#39;use_short_address&#39;]))  # noqa: E501
+    if &#39;domain_name&#39; in local_var_params and local_var_params[&#39;domain_name&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;domainName&#39;, local_var_params[&#39;domain_name&#39;]))  # noqa: E501
+    if &#39;domain_id&#39; in local_var_params and local_var_params[&#39;domain_id&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;domainId&#39;, local_var_params[&#39;domain_id&#39;]))  # noqa: E501
+    if &#39;prefix&#39; in local_var_params and local_var_params[&#39;prefix&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;prefix&#39;, local_var_params[&#39;prefix&#39;]))  # noqa: E501
+
+    header_params = {}
+
+    form_params = []
+    local_var_files = {}
+
+    body_params = None
+    # HTTP header `Accept`
+    header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+        [&#39;*/*&#39;])  # noqa: E501
+
+    # Authentication setting
+    auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+    return self.api_client.call_api(
+        &#39;/newEmailAddress&#39;, &#39;POST&#39;,
+        path_params,
+        query_params,
+        header_params,
+        body=body_params,
+        post_params=form_params,
+        files=local_var_files,
+        response_type=&#39;InboxDto&#39;,  # noqa: E501
+        auth_settings=auth_settings,
+        async_req=local_var_params.get(&#39;async_req&#39;),
+        _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+        _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+        _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+        collection_formats=collection_formats)</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_random_inbox"><code class="name flex">
+<span>def <span class="ident">create_random_inbox</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create new random inbox
+# noqa: E501</p>
+<p>Returns an Inbox with an <code>id</code> and an <code>emailAddress</code>
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_random_inbox(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param bool allow_team_access:
+:param bool use_domain_pool:
+:param datetime expires_at:
+:param int expires_in:
+:param str email_address:
+:param str inbox_type:
+:param str description:
+:param str name:
+:param list[str] tags:
+:param bool favourite:
+:param bool virtual_inbox:
+:param bool use_short_address:
+:param str domain_name:
+:param str domain_id:
+:param str prefix:
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: InboxDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_random_inbox(self, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+    Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.create_random_inbox(async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param bool allow_team_access:
+    :param bool use_domain_pool:
+    :param datetime expires_at:
+    :param int expires_in:
+    :param str email_address:
+    :param str inbox_type:
+    :param str description:
+    :param str name:
+    :param list[str] tags:
+    :param bool favourite:
+    :param bool virtual_inbox:
+    :param bool use_short_address:
+    :param str domain_name:
+    :param str domain_id:
+    :param str prefix:
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: InboxDto
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+    kwargs[&#39;_return_http_data_only&#39;] = True
+    return self.create_random_inbox_with_http_info(**kwargs)  # noqa: E501</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_random_inbox_with_http_info"><code class="name flex">
+<span>def <span class="ident">create_random_inbox_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create new random inbox
+# noqa: E501</p>
+<p>Returns an Inbox with an <code>id</code> and an <code>emailAddress</code>
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_random_inbox_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param bool allow_team_access:
+:param bool use_domain_pool:
+:param datetime expires_at:
+:param int expires_in:
+:param str email_address:
+:param str inbox_type:
+:param str description:
+:param str name:
+:param list[str] tags:
+:param bool favourite:
+:param bool virtual_inbox:
+:param bool use_short_address:
+:param str domain_name:
+:param str domain_id:
+:param str prefix:
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(InboxDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_random_inbox_with_http_info(self, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Create new random inbox  # noqa: E501
+
+    Returns an Inbox with an `id` and an `emailAddress`  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.create_random_inbox_with_http_info(async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param bool allow_team_access:
+    :param bool use_domain_pool:
+    :param datetime expires_at:
+    :param int expires_in:
+    :param str email_address:
+    :param str inbox_type:
+    :param str description:
+    :param str name:
+    :param list[str] tags:
+    :param bool favourite:
+    :param bool virtual_inbox:
+    :param bool use_short_address:
+    :param str domain_name:
+    :param str domain_id:
+    :param str prefix:
+    :param _return_http_data_only: response data without head status code
+                                   and headers
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: tuple(InboxDto, status_code(int), headers(HTTPHeaderDict))
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+
+    local_var_params = locals()
+
+    all_params = [
+        &#39;allow_team_access&#39;,
+        &#39;use_domain_pool&#39;,
+        &#39;expires_at&#39;,
+        &#39;expires_in&#39;,
+        &#39;email_address&#39;,
+        &#39;inbox_type&#39;,
+        &#39;description&#39;,
+        &#39;name&#39;,
+        &#39;tags&#39;,
+        &#39;favourite&#39;,
+        &#39;virtual_inbox&#39;,
+        &#39;use_short_address&#39;,
+        &#39;domain_name&#39;,
+        &#39;domain_id&#39;,
+        &#39;prefix&#39;
+    ]
+    all_params.extend(
+        [
+            &#39;async_req&#39;,
+            &#39;_return_http_data_only&#39;,
+            &#39;_preload_content&#39;,
+            &#39;_request_timeout&#39;
+        ]
+    )
+
+    for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+        if key not in all_params:
+            raise ApiTypeError(
+                &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                &#34; to method create_random_inbox&#34; % key
+            )
+        local_var_params[key] = val
+    del local_var_params[&#39;kwargs&#39;]
+
+    collection_formats = {}
+
+    path_params = {}
+
+    query_params = []
+    if &#39;allow_team_access&#39; in local_var_params and local_var_params[&#39;allow_team_access&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;allowTeamAccess&#39;, local_var_params[&#39;allow_team_access&#39;]))  # noqa: E501
+    if &#39;use_domain_pool&#39; in local_var_params and local_var_params[&#39;use_domain_pool&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;useDomainPool&#39;, local_var_params[&#39;use_domain_pool&#39;]))  # noqa: E501
+    if &#39;expires_at&#39; in local_var_params and local_var_params[&#39;expires_at&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;expiresAt&#39;, local_var_params[&#39;expires_at&#39;]))  # noqa: E501
+    if &#39;expires_in&#39; in local_var_params and local_var_params[&#39;expires_in&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;expiresIn&#39;, local_var_params[&#39;expires_in&#39;]))  # noqa: E501
+    if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+    if &#39;inbox_type&#39; in local_var_params and local_var_params[&#39;inbox_type&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;inboxType&#39;, local_var_params[&#39;inbox_type&#39;]))  # noqa: E501
+    if &#39;description&#39; in local_var_params and local_var_params[&#39;description&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;description&#39;, local_var_params[&#39;description&#39;]))  # noqa: E501
+    if &#39;name&#39; in local_var_params and local_var_params[&#39;name&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;name&#39;, local_var_params[&#39;name&#39;]))  # noqa: E501
+    if &#39;tags&#39; in local_var_params and local_var_params[&#39;tags&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;tags&#39;, local_var_params[&#39;tags&#39;]))  # noqa: E501
+        collection_formats[&#39;tags&#39;] = &#39;multi&#39;  # noqa: E501
+    if &#39;favourite&#39; in local_var_params and local_var_params[&#39;favourite&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;favourite&#39;, local_var_params[&#39;favourite&#39;]))  # noqa: E501
+    if &#39;virtual_inbox&#39; in local_var_params and local_var_params[&#39;virtual_inbox&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;virtualInbox&#39;, local_var_params[&#39;virtual_inbox&#39;]))  # noqa: E501
+    if &#39;use_short_address&#39; in local_var_params and local_var_params[&#39;use_short_address&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;useShortAddress&#39;, local_var_params[&#39;use_short_address&#39;]))  # noqa: E501
+    if &#39;domain_name&#39; in local_var_params and local_var_params[&#39;domain_name&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;domainName&#39;, local_var_params[&#39;domain_name&#39;]))  # noqa: E501
+    if &#39;domain_id&#39; in local_var_params and local_var_params[&#39;domain_id&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;domainId&#39;, local_var_params[&#39;domain_id&#39;]))  # noqa: E501
+    if &#39;prefix&#39; in local_var_params and local_var_params[&#39;prefix&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;prefix&#39;, local_var_params[&#39;prefix&#39;]))  # noqa: E501
+
+    header_params = {}
+
+    form_params = []
+    local_var_files = {}
+
+    body_params = None
+    # HTTP header `Accept`
+    header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+        [&#39;*/*&#39;])  # noqa: E501
+
+    # Authentication setting
+    auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+    return self.api_client.call_api(
+        &#39;/createInbox&#39;, &#39;POST&#39;,
+        path_params,
+        query_params,
+        header_params,
+        body=body_params,
+        post_params=form_params,
+        files=local_var_files,
+        response_type=&#39;InboxDto&#39;,  # noqa: E501
+        auth_settings=auth_settings,
+        async_req=local_var_params.get(&#39;async_req&#39;),
+        _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+        _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+        _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+        collection_formats=collection_formats)</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.delete_email_address"><code class="name flex">
+<span>def <span class="ident">delete_email_address</span></span>(<span>self, inbox_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete inbox email address by inbox id
+# noqa: E501</p>
+<p>Deletes inbox email address
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_email_address(inbox_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str inbox_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_email_address(self, inbox_id, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Delete inbox email address by inbox id  # noqa: E501
+
+    Deletes inbox email address  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.delete_email_address(inbox_id, async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param str inbox_id: (required)
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: None
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+    kwargs[&#39;_return_http_data_only&#39;] = True
+    return self.delete_email_address_with_http_info(inbox_id, **kwargs)  # noqa: E501</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.delete_email_address_with_http_info"><code class="name flex">
+<span>def <span class="ident">delete_email_address_with_http_info</span></span>(<span>self, inbox_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete inbox email address by inbox id
+# noqa: E501</p>
+<p>Deletes inbox email address
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_email_address_with_http_info(inbox_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str inbox_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_email_address_with_http_info(self, inbox_id, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Delete inbox email address by inbox id  # noqa: E501
+
+    Deletes inbox email address  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.delete_email_address_with_http_info(inbox_id, async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param str inbox_id: (required)
+    :param _return_http_data_only: response data without head status code
+                                   and headers
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: None
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+
+    local_var_params = locals()
+
+    all_params = [
+        &#39;inbox_id&#39;
+    ]
+    all_params.extend(
+        [
+            &#39;async_req&#39;,
+            &#39;_return_http_data_only&#39;,
+            &#39;_preload_content&#39;,
+            &#39;_request_timeout&#39;
+        ]
+    )
+
+    for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+        if key not in all_params:
+            raise ApiTypeError(
+                &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                &#34; to method delete_email_address&#34; % key
+            )
+        local_var_params[key] = val
+    del local_var_params[&#39;kwargs&#39;]
+    # verify the required parameter &#39;inbox_id&#39; is set
+    if self.api_client.client_side_validation and (&#39;inbox_id&#39; not in local_var_params or  # noqa: E501
+                                                    local_var_params[&#39;inbox_id&#39;] is None):  # noqa: E501
+        raise ApiValueError(&#34;Missing the required parameter `inbox_id` when calling `delete_email_address`&#34;)  # noqa: E501
+
+    collection_formats = {}
+
+    path_params = {}
+
+    query_params = []
+    if &#39;inbox_id&#39; in local_var_params and local_var_params[&#39;inbox_id&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;inboxId&#39;, local_var_params[&#39;inbox_id&#39;]))  # noqa: E501
+
+    header_params = {}
+
+    form_params = []
+    local_var_files = {}
+
+    body_params = None
+    # Authentication setting
+    auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+    return self.api_client.call_api(
+        &#39;/deleteEmailAddress&#39;, &#39;DELETE&#39;,
+        path_params,
+        query_params,
+        header_params,
+        body=body_params,
+        post_params=form_params,
+        files=local_var_files,
+        response_type=None,  # noqa: E501
+        auth_settings=auth_settings,
+        async_req=local_var_params.get(&#39;async_req&#39;),
+        _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+        _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+        _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+        collection_formats=collection_formats)</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.empty_inbox"><code class="name flex">
+<span>def <span class="ident">empty_inbox</span></span>(<span>self, inbox_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete all emails in an inbox
+# noqa: E501</p>
+<p>Deletes all emails
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.empty_inbox(inbox_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str inbox_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def empty_inbox(self, inbox_id, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Delete all emails in an inbox  # noqa: E501
+
+    Deletes all emails  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.empty_inbox(inbox_id, async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param str inbox_id: (required)
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: None
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+    kwargs[&#39;_return_http_data_only&#39;] = True
+    return self.empty_inbox_with_http_info(inbox_id, **kwargs)  # noqa: E501</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.empty_inbox_with_http_info"><code class="name flex">
+<span>def <span class="ident">empty_inbox_with_http_info</span></span>(<span>self, inbox_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete all emails in an inbox
+# noqa: E501</p>
+<p>Deletes all emails
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.empty_inbox_with_http_info(inbox_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str inbox_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def empty_inbox_with_http_info(self, inbox_id, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Delete all emails in an inbox  # noqa: E501
+
+    Deletes all emails  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.empty_inbox_with_http_info(inbox_id, async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param str inbox_id: (required)
+    :param _return_http_data_only: response data without head status code
+                                   and headers
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: None
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+
+    local_var_params = locals()
+
+    all_params = [
+        &#39;inbox_id&#39;
+    ]
+    all_params.extend(
+        [
+            &#39;async_req&#39;,
+            &#39;_return_http_data_only&#39;,
+            &#39;_preload_content&#39;,
+            &#39;_request_timeout&#39;
+        ]
+    )
+
+    for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+        if key not in all_params:
+            raise ApiTypeError(
+                &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                &#34; to method empty_inbox&#34; % key
+            )
+        local_var_params[key] = val
+    del local_var_params[&#39;kwargs&#39;]
+    # verify the required parameter &#39;inbox_id&#39; is set
+    if self.api_client.client_side_validation and (&#39;inbox_id&#39; not in local_var_params or  # noqa: E501
+                                                    local_var_params[&#39;inbox_id&#39;] is None):  # noqa: E501
+        raise ApiValueError(&#34;Missing the required parameter `inbox_id` when calling `empty_inbox`&#34;)  # noqa: E501
+
+    collection_formats = {}
+
+    path_params = {}
+
+    query_params = []
+    if &#39;inbox_id&#39; in local_var_params and local_var_params[&#39;inbox_id&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;inboxId&#39;, local_var_params[&#39;inbox_id&#39;]))  # noqa: E501
+
+    header_params = {}
+
+    form_params = []
+    local_var_files = {}
+
+    body_params = None
+    # Authentication setting
+    auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+    return self.api_client.call_api(
+        &#39;/emptyInbox&#39;, &#39;DELETE&#39;,
+        path_params,
+        query_params,
+        header_params,
+        body=body_params,
+        post_params=form_params,
+        files=local_var_files,
+        response_type=None,  # noqa: E501
+        auth_settings=auth_settings,
+        async_req=local_var_params.get(&#39;async_req&#39;),
+        _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+        _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+        _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+        collection_formats=collection_formats)</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_query"><code class="name flex">
+<span>def <span class="ident">send_email_query</span></span>(<span>self, to, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send an email using query parameters
+# noqa: E501</p>
+<p>If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.send_email_query(to, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str to: Email address to send to (required)
+:param str sender_id: ID of inbox to send from. If null an inbox will be created for sending
+:param str body: Body of the email message. Supports HTML
+:param str subject: Subject line of the email
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_email_query(self, to, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Send an email using query parameters  # noqa: E501
+
+    If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.send_email_query(to, async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param str to: Email address to send to (required)
+    :param str sender_id: ID of inbox to send from. If null an inbox will be created for sending
+    :param str body: Body of the email message. Supports HTML
+    :param str subject: Subject line of the email
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: None
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+    kwargs[&#39;_return_http_data_only&#39;] = True
+    return self.send_email_query_with_http_info(to, **kwargs)  # noqa: E501</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_query_with_http_info"><code class="name flex">
+<span>def <span class="ident">send_email_query_with_http_info</span></span>(<span>self, to, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send an email using query parameters
+# noqa: E501</p>
+<p>If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.send_email_query_with_http_info(to, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str to: Email address to send to (required)
+:param str sender_id: ID of inbox to send from. If null an inbox will be created for sending
+:param str body: Body of the email message. Supports HTML
+:param str subject: Subject line of the email
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_email_query_with_http_info(self, to, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Send an email using query parameters  # noqa: E501
+
+    If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.send_email_query_with_http_info(to, async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param str to: Email address to send to (required)
+    :param str sender_id: ID of inbox to send from. If null an inbox will be created for sending
+    :param str body: Body of the email message. Supports HTML
+    :param str subject: Subject line of the email
+    :param _return_http_data_only: response data without head status code
+                                   and headers
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: None
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+
+    local_var_params = locals()
+
+    all_params = [
+        &#39;to&#39;,
+        &#39;sender_id&#39;,
+        &#39;body&#39;,
+        &#39;subject&#39;
+    ]
+    all_params.extend(
+        [
+            &#39;async_req&#39;,
+            &#39;_return_http_data_only&#39;,
+            &#39;_preload_content&#39;,
+            &#39;_request_timeout&#39;
+        ]
+    )
+
+    for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+        if key not in all_params:
+            raise ApiTypeError(
+                &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                &#34; to method send_email_query&#34; % key
+            )
+        local_var_params[key] = val
+    del local_var_params[&#39;kwargs&#39;]
+    # verify the required parameter &#39;to&#39; is set
+    if self.api_client.client_side_validation and (&#39;to&#39; not in local_var_params or  # noqa: E501
+                                                    local_var_params[&#39;to&#39;] is None):  # noqa: E501
+        raise ApiValueError(&#34;Missing the required parameter `to` when calling `send_email_query`&#34;)  # noqa: E501
+
+    collection_formats = {}
+
+    path_params = {}
+
+    query_params = []
+    if &#39;sender_id&#39; in local_var_params and local_var_params[&#39;sender_id&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;senderId&#39;, local_var_params[&#39;sender_id&#39;]))  # noqa: E501
+    if &#39;to&#39; in local_var_params and local_var_params[&#39;to&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;to&#39;, local_var_params[&#39;to&#39;]))  # noqa: E501
+    if &#39;body&#39; in local_var_params and local_var_params[&#39;body&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;body&#39;, local_var_params[&#39;body&#39;]))  # noqa: E501
+    if &#39;subject&#39; in local_var_params and local_var_params[&#39;subject&#39;] is not None:  # noqa: E501
+        query_params.append((&#39;subject&#39;, local_var_params[&#39;subject&#39;]))  # noqa: E501
+
+    header_params = {}
+
+    form_params = []
+    local_var_files = {}
+
+    body_params = None
+    # Authentication setting
+    auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+    return self.api_client.call_api(
+        &#39;/sendEmailQuery&#39;, &#39;POST&#39;,
+        path_params,
+        query_params,
+        header_params,
+        body=body_params,
+        post_params=form_params,
+        files=local_var_files,
+        response_type=None,  # noqa: E501
+        auth_settings=auth_settings,
+        async_req=local_var_params.get(&#39;async_req&#39;),
+        _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+        _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+        _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+        collection_formats=collection_formats)</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_simple"><code class="name flex">
+<span>def <span class="ident">send_email_simple</span></span>(<span>self, simple_send_email_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send an email
+# noqa: E501</p>
+<p>If no senderId or inboxId provided a random email address will be used to send from.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.send_email_simple(simple_send_email_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param SimpleSendEmailOptions simple_send_email_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_email_simple(self, simple_send_email_options, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Send an email  # noqa: E501
+
+    If no senderId or inboxId provided a random email address will be used to send from.  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.send_email_simple(simple_send_email_options, async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param SimpleSendEmailOptions simple_send_email_options: (required)
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: None
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+    kwargs[&#39;_return_http_data_only&#39;] = True
+    return self.send_email_simple_with_http_info(simple_send_email_options, **kwargs)  # noqa: E501</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_simple_with_http_info"><code class="name flex">
+<span>def <span class="ident">send_email_simple_with_http_info</span></span>(<span>self, simple_send_email_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send an email
+# noqa: E501</p>
+<p>If no senderId or inboxId provided a random email address will be used to send from.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.send_email_simple_with_http_info(simple_send_email_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param SimpleSendEmailOptions simple_send_email_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_email_simple_with_http_info(self, simple_send_email_options, **kwargs):  # noqa: E501
+    &#34;&#34;&#34;Send an email  # noqa: E501
+
+    If no senderId or inboxId provided a random email address will be used to send from.  # noqa: E501
+    This method makes a synchronous HTTP request by default. To make an
+    asynchronous HTTP request, please pass async_req=True
+    &gt;&gt;&gt; thread = api.send_email_simple_with_http_info(simple_send_email_options, async_req=True)
+    &gt;&gt;&gt; result = thread.get()
+
+    :param async_req bool: execute request asynchronously
+    :param SimpleSendEmailOptions simple_send_email_options: (required)
+    :param _return_http_data_only: response data without head status code
+                                   and headers
+    :param _preload_content: if False, the urllib3.HTTPResponse object will
+                             be returned without reading/decoding response
+                             data. Default is True.
+    :param _request_timeout: timeout setting for this request. If one
+                             number provided, it will be total request
+                             timeout. It can also be a pair (tuple) of
+                             (connection, read) timeouts.
+    :return: None
+             If the method is called asynchronously,
+             returns the request thread.
+    &#34;&#34;&#34;
+
+    local_var_params = locals()
+
+    all_params = [
+        &#39;simple_send_email_options&#39;
+    ]
+    all_params.extend(
+        [
+            &#39;async_req&#39;,
+            &#39;_return_http_data_only&#39;,
+            &#39;_preload_content&#39;,
+            &#39;_request_timeout&#39;
+        ]
+    )
+
+    for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+        if key not in all_params:
+            raise ApiTypeError(
+                &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                &#34; to method send_email_simple&#34; % key
+            )
+        local_var_params[key] = val
+    del local_var_params[&#39;kwargs&#39;]
+    # verify the required parameter &#39;simple_send_email_options&#39; is set
+    if self.api_client.client_side_validation and (&#39;simple_send_email_options&#39; not in local_var_params or  # noqa: E501
+                                                    local_var_params[&#39;simple_send_email_options&#39;] is None):  # noqa: E501
+        raise ApiValueError(&#34;Missing the required parameter `simple_send_email_options` when calling `send_email_simple`&#34;)  # noqa: E501
+
+    collection_formats = {}
+
+    path_params = {}
+
+    query_params = []
+
+    header_params = {}
+
+    form_params = []
+    local_var_files = {}
+
+    body_params = None
+    if &#39;simple_send_email_options&#39; in local_var_params:
+        body_params = local_var_params[&#39;simple_send_email_options&#39;]
+    # HTTP header `Content-Type`
+    header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+        [&#39;application/json&#39;])  # noqa: E501
+
+    # Authentication setting
+    auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+    return self.api_client.call_api(
+        &#39;/sendEmail&#39;, &#39;POST&#39;,
+        path_params,
+        query_params,
+        header_params,
+        body=body_params,
+        post_params=form_params,
+        files=local_var_files,
+        response_type=None,  # noqa: E501
+        auth_settings=auth_settings,
+        async_req=local_var_params.get(&#39;async_req&#39;),
+        _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+        _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+        _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+        collection_formats=collection_formats)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.api" href="index.html">mailslurp_client.api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi">CommonActionsControllerApi</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_new_email_address" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_new_email_address">create_new_email_address</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_new_email_address_with_http_info" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_new_email_address_with_http_info">create_new_email_address_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_random_inbox" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_random_inbox">create_random_inbox</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_random_inbox_with_http_info" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.create_random_inbox_with_http_info">create_random_inbox_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.delete_email_address" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.delete_email_address">delete_email_address</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.delete_email_address_with_http_info" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.delete_email_address_with_http_info">delete_email_address_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.empty_inbox" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.empty_inbox">empty_inbox</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.empty_inbox_with_http_info" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.empty_inbox_with_http_info">empty_inbox_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_query" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_query">send_email_query</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_query_with_http_info" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_query_with_http_info">send_email_query_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_simple" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_simple">send_email_simple</a></code></li>
+<li><code><a title="mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_simple_with_http_info" href="#mailslurp_client.api.common_actions_controller_api.CommonActionsControllerApi.send_email_simple_with_http_info">send_email_simple_with_http_info</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
