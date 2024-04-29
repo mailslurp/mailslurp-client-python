@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>mailslurp_client.models.email_feature_support_result API documentation</title>
+<meta name="description" content="MailSlurp API …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.email_feature_support_result</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># coding: utf-8
+
+&#34;&#34;&#34;
+    MailSlurp API
+
+    MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It&#39;s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository  # noqa: E501
+
+    The version of the OpenAPI document: 6.5.2
+    Contact: contact@mailslurp.dev
+    Generated by: https://openapi-generator.tech
+&#34;&#34;&#34;
+
+
+import pprint
+import re  # noqa: F401
+
+import six
+
+from mailslurp_client.configuration import Configuration
+
+
+class EmailFeatureSupportResult(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;names&#39;: &#39;EmailFeatureNames&#39;,
+        &#39;detected_features&#39;: &#39;list[str]&#39;,
+        &#39;feature_overviews&#39;: &#39;list[EmailFeatureOverview]&#39;,
+        &#39;feature_percentages&#39;: &#39;list[EmailFeatureSupportStatusPercentage]&#39;
+    }
+
+    attribute_map = {
+        &#39;names&#39;: &#39;names&#39;,
+        &#39;detected_features&#39;: &#39;detectedFeatures&#39;,
+        &#39;feature_overviews&#39;: &#39;featureOverviews&#39;,
+        &#39;feature_percentages&#39;: &#39;featurePercentages&#39;
+    }
+
+    def __init__(self, names=None, detected_features=None, feature_overviews=None, feature_percentages=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;EmailFeatureSupportResult - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._names = None
+        self._detected_features = None
+        self._feature_overviews = None
+        self._feature_percentages = None
+        self.discriminator = None
+
+        self.names = names
+        self.detected_features = detected_features
+        self.feature_overviews = feature_overviews
+        self.feature_percentages = feature_percentages
+
+    @property
+    def names(self):
+        &#34;&#34;&#34;Gets the names of this EmailFeatureSupportResult.  # noqa: E501
+
+
+        :return: The names of this EmailFeatureSupportResult.  # noqa: E501
+        :rtype: EmailFeatureNames
+        &#34;&#34;&#34;
+        return self._names
+
+    @names.setter
+    def names(self, names):
+        &#34;&#34;&#34;Sets the names of this EmailFeatureSupportResult.
+
+
+        :param names: The names of this EmailFeatureSupportResult.  # noqa: E501
+        :type: EmailFeatureNames
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and names is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `names`, must not be `None`&#34;)  # noqa: E501
+
+        self._names = names
+
+    @property
+    def detected_features(self):
+        &#34;&#34;&#34;Gets the detected_features of this EmailFeatureSupportResult.  # noqa: E501
+
+
+        :return: The detected_features of this EmailFeatureSupportResult.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._detected_features
+
+    @detected_features.setter
+    def detected_features(self, detected_features):
+        &#34;&#34;&#34;Sets the detected_features of this EmailFeatureSupportResult.
+
+
+        :param detected_features: The detected_features of this EmailFeatureSupportResult.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and detected_features is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `detected_features`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;amp&#34;, &#34;css-accent-color&#34;, &#34;css-align-items&#34;, &#34;css-animation&#34;, &#34;css-aspect-ratio&#34;, &#34;css-at-font-face&#34;, &#34;css-at-import&#34;, &#34;css-at-keyframes&#34;, &#34;css-at-media&#34;, &#34;css-at-supports&#34;, &#34;css-background-blend-mode&#34;, &#34;css-background-clip&#34;, &#34;css-background-color&#34;, &#34;css-background-image&#34;, &#34;css-background-origin&#34;, &#34;css-background-position&#34;, &#34;css-background-repeat&#34;, &#34;css-background-size&#34;, &#34;css-background&#34;, &#34;css-block-inline-size&#34;, &#34;css-border-image&#34;, &#34;css-border-inline-block-individual&#34;, &#34;css-border-inline-block-longhand&#34;, &#34;css-border-inline-block&#34;, &#34;css-border-radius-logical&#34;, &#34;css-border-radius&#34;, &#34;css-border&#34;, &#34;css-box-shadow&#34;, &#34;css-box-sizing&#34;, &#34;css-caption-side&#34;, &#34;css-clip-path&#34;, &#34;css-column-count&#34;, &#34;css-column-layout-properties&#34;, &#34;css-direction&#34;, &#34;css-display-flex&#34;, &#34;css-display-grid&#34;, &#34;css-display-none&#34;, &#34;css-display&#34;, &#34;css-filter&#34;, &#34;css-flex-direction&#34;, &#34;css-flex-wrap&#34;, &#34;css-float&#34;, &#34;css-font-kerning&#34;, &#34;css-font-weight&#34;, &#34;css-font&#34;, &#34;css-gap&#34;, &#34;css-grid-template&#34;, &#34;css-height&#34;, &#34;css-hyphens&#34;, &#34;css-inline-size&#34;, &#34;css-justify-content&#34;, &#34;css-left-right-top-bottom&#34;, &#34;css-letter-spacing&#34;, &#34;css-line-height&#34;, &#34;css-list-style-image&#34;, &#34;css-list-style-position&#34;, &#34;css-list-style-type&#34;, &#34;css-list-style&#34;, &#34;css-margin-block-start-end&#34;, &#34;css-margin-inline-block&#34;, &#34;css-margin-inline-start-end&#34;, &#34;css-margin-inline&#34;, &#34;css-margin&#34;, &#34;css-max-block-size&#34;, &#34;css-max-height&#34;, &#34;css-max-width&#34;, &#34;css-min-height&#34;, &#34;css-min-inline-size&#34;, &#34;css-min-width&#34;, &#34;css-mix-blend-mode&#34;, &#34;css-object-fit&#34;, &#34;css-object-position&#34;, &#34;css-opacity&#34;, &#34;css-outline-offset&#34;, &#34;css-outline&#34;, &#34;css-overflow-wrap&#34;, &#34;css-overflow&#34;, &#34;css-padding-block-start-end&#34;, &#34;css-padding-inline-block&#34;, &#34;css-padding-inline-start-end&#34;, &#34;css-padding&#34;, &#34;css-position&#34;, &#34;css-tab-size&#34;, &#34;css-table-layout&#34;, &#34;css-text-align-last&#34;, &#34;css-text-align&#34;, &#34;css-text-decoration-color&#34;, &#34;css-text-decoration-thickness&#34;, &#34;css-text-decoration&#34;, &#34;css-text-emphasis-position&#34;, &#34;css-text-emphasis&#34;, &#34;css-text-indent&#34;, &#34;css-text-overflow&#34;, &#34;css-text-shadow&#34;, &#34;css-text-transform&#34;, &#34;css-text-underline-offset&#34;, &#34;css-transform&#34;, &#34;css-vertical-align&#34;, &#34;css-visibility&#34;, &#34;css-white-space&#34;, &#34;css-width&#34;, &#34;css-word-break&#34;, &#34;css-writing-mode&#34;, &#34;css-z-index&#34;, &#34;html-abbr&#34;, &#34;html-address&#34;, &#34;html-align&#34;, &#34;html-anchor-links&#34;, &#34;html-aria-describedby&#34;, &#34;html-aria-hidden&#34;, &#34;html-aria-label&#34;, &#34;html-aria-labelledby&#34;, &#34;html-aria-live&#34;, &#34;html-audio&#34;, &#34;html-background&#34;, &#34;html-base&#34;, &#34;html-blockquote&#34;, &#34;html-body&#34;, &#34;html-button-reset&#34;, &#34;html-button-submit&#34;, &#34;html-code&#34;, &#34;html-del&#34;, &#34;html-dfn&#34;, &#34;html-dialog&#34;, &#34;html-dir&#34;, &#34;html-div&#34;, &#34;html-doctype&#34;, &#34;html-form&#34;, &#34;html-h1-h6&#34;, &#34;html-height&#34;, &#34;html-image-maps&#34;, &#34;html-input-checkbox&#34;, &#34;html-input-hidden&#34;, &#34;html-input-radio&#34;, &#34;html-input-reset&#34;, &#34;html-input-submit&#34;, &#34;html-input-text&#34;, &#34;html-lang&#34;, &#34;html-link&#34;, &#34;html-lists&#34;, &#34;html-loading-attribute&#34;, &#34;html-mailto-links&#34;, &#34;html-marquee&#34;, &#34;html-meter&#34;, &#34;html-object&#34;, &#34;html-p&#34;, &#34;html-picture&#34;, &#34;html-pre&#34;, &#34;html-progress&#34;, &#34;html-required&#34;, &#34;html-role&#34;, &#34;html-rp&#34;, &#34;html-rt&#34;, &#34;html-ruby&#34;, &#34;html-select&#34;, &#34;html-semantics&#34;, &#34;html-small&#34;, &#34;html-span&#34;, &#34;html-srcset&#34;, &#34;html-strike&#34;, &#34;html-strong&#34;, &#34;html-style&#34;, &#34;html-svg&#34;, &#34;html-table&#34;, &#34;html-target&#34;, &#34;html-textarea&#34;, &#34;html-valign&#34;, &#34;html-video&#34;, &#34;html-wbr&#34;, &#34;html-width&#34;, &#34;image-avif&#34;, &#34;image-base64&#34;, &#34;image-bmp&#34;, &#34;image-gif&#34;, &#34;image-ico&#34;, &#34;image-jpg&#34;, &#34;image-png&#34;, &#34;image-svg&#34;, &#34;image-webp&#34;, &#34;unsupported&#34;]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(detected_features).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                &#34;Invalid values for `detected_features` [{0}], must be a subset of [{1}]&#34;  # noqa: E501
+                .format(&#34;, &#34;.join(map(str, set(detected_features) - set(allowed_values))),  # noqa: E501
+                        &#34;, &#34;.join(map(str, allowed_values)))
+            )
+
+        self._detected_features = detected_features
+
+    @property
+    def feature_overviews(self):
+        &#34;&#34;&#34;Gets the feature_overviews of this EmailFeatureSupportResult.  # noqa: E501
+
+
+        :return: The feature_overviews of this EmailFeatureSupportResult.  # noqa: E501
+        :rtype: list[EmailFeatureOverview]
+        &#34;&#34;&#34;
+        return self._feature_overviews
+
+    @feature_overviews.setter
+    def feature_overviews(self, feature_overviews):
+        &#34;&#34;&#34;Sets the feature_overviews of this EmailFeatureSupportResult.
+
+
+        :param feature_overviews: The feature_overviews of this EmailFeatureSupportResult.  # noqa: E501
+        :type: list[EmailFeatureOverview]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and feature_overviews is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `feature_overviews`, must not be `None`&#34;)  # noqa: E501
+
+        self._feature_overviews = feature_overviews
+
+    @property
+    def feature_percentages(self):
+        &#34;&#34;&#34;Gets the feature_percentages of this EmailFeatureSupportResult.  # noqa: E501
+
+
+        :return: The feature_percentages of this EmailFeatureSupportResult.  # noqa: E501
+        :rtype: list[EmailFeatureSupportStatusPercentage]
+        &#34;&#34;&#34;
+        return self._feature_percentages
+
+    @feature_percentages.setter
+    def feature_percentages(self, feature_percentages):
+        &#34;&#34;&#34;Sets the feature_percentages of this EmailFeatureSupportResult.
+
+
+        :param feature_percentages: The feature_percentages of this EmailFeatureSupportResult.  # noqa: E501
+        :type: list[EmailFeatureSupportStatusPercentage]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and feature_percentages is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `feature_percentages`, must not be `None`&#34;)  # noqa: E501
+
+        self._feature_percentages = feature_percentages
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, EmailFeatureSupportResult):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, EmailFeatureSupportResult):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult"><code class="flex name class">
+<span>class <span class="ident">EmailFeatureSupportResult</span></span>
+<span>(</span><span>names=None, detected_features=None, feature_overviews=None, feature_percentages=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>EmailFeatureSupportResult - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EmailFeatureSupportResult(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;names&#39;: &#39;EmailFeatureNames&#39;,
+        &#39;detected_features&#39;: &#39;list[str]&#39;,
+        &#39;feature_overviews&#39;: &#39;list[EmailFeatureOverview]&#39;,
+        &#39;feature_percentages&#39;: &#39;list[EmailFeatureSupportStatusPercentage]&#39;
+    }
+
+    attribute_map = {
+        &#39;names&#39;: &#39;names&#39;,
+        &#39;detected_features&#39;: &#39;detectedFeatures&#39;,
+        &#39;feature_overviews&#39;: &#39;featureOverviews&#39;,
+        &#39;feature_percentages&#39;: &#39;featurePercentages&#39;
+    }
+
+    def __init__(self, names=None, detected_features=None, feature_overviews=None, feature_percentages=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;EmailFeatureSupportResult - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._names = None
+        self._detected_features = None
+        self._feature_overviews = None
+        self._feature_percentages = None
+        self.discriminator = None
+
+        self.names = names
+        self.detected_features = detected_features
+        self.feature_overviews = feature_overviews
+        self.feature_percentages = feature_percentages
+
+    @property
+    def names(self):
+        &#34;&#34;&#34;Gets the names of this EmailFeatureSupportResult.  # noqa: E501
+
+
+        :return: The names of this EmailFeatureSupportResult.  # noqa: E501
+        :rtype: EmailFeatureNames
+        &#34;&#34;&#34;
+        return self._names
+
+    @names.setter
+    def names(self, names):
+        &#34;&#34;&#34;Sets the names of this EmailFeatureSupportResult.
+
+
+        :param names: The names of this EmailFeatureSupportResult.  # noqa: E501
+        :type: EmailFeatureNames
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and names is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `names`, must not be `None`&#34;)  # noqa: E501
+
+        self._names = names
+
+    @property
+    def detected_features(self):
+        &#34;&#34;&#34;Gets the detected_features of this EmailFeatureSupportResult.  # noqa: E501
+
+
+        :return: The detected_features of this EmailFeatureSupportResult.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._detected_features
+
+    @detected_features.setter
+    def detected_features(self, detected_features):
+        &#34;&#34;&#34;Sets the detected_features of this EmailFeatureSupportResult.
+
+
+        :param detected_features: The detected_features of this EmailFeatureSupportResult.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and detected_features is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `detected_features`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;amp&#34;, &#34;css-accent-color&#34;, &#34;css-align-items&#34;, &#34;css-animation&#34;, &#34;css-aspect-ratio&#34;, &#34;css-at-font-face&#34;, &#34;css-at-import&#34;, &#34;css-at-keyframes&#34;, &#34;css-at-media&#34;, &#34;css-at-supports&#34;, &#34;css-background-blend-mode&#34;, &#34;css-background-clip&#34;, &#34;css-background-color&#34;, &#34;css-background-image&#34;, &#34;css-background-origin&#34;, &#34;css-background-position&#34;, &#34;css-background-repeat&#34;, &#34;css-background-size&#34;, &#34;css-background&#34;, &#34;css-block-inline-size&#34;, &#34;css-border-image&#34;, &#34;css-border-inline-block-individual&#34;, &#34;css-border-inline-block-longhand&#34;, &#34;css-border-inline-block&#34;, &#34;css-border-radius-logical&#34;, &#34;css-border-radius&#34;, &#34;css-border&#34;, &#34;css-box-shadow&#34;, &#34;css-box-sizing&#34;, &#34;css-caption-side&#34;, &#34;css-clip-path&#34;, &#34;css-column-count&#34;, &#34;css-column-layout-properties&#34;, &#34;css-direction&#34;, &#34;css-display-flex&#34;, &#34;css-display-grid&#34;, &#34;css-display-none&#34;, &#34;css-display&#34;, &#34;css-filter&#34;, &#34;css-flex-direction&#34;, &#34;css-flex-wrap&#34;, &#34;css-float&#34;, &#34;css-font-kerning&#34;, &#34;css-font-weight&#34;, &#34;css-font&#34;, &#34;css-gap&#34;, &#34;css-grid-template&#34;, &#34;css-height&#34;, &#34;css-hyphens&#34;, &#34;css-inline-size&#34;, &#34;css-justify-content&#34;, &#34;css-left-right-top-bottom&#34;, &#34;css-letter-spacing&#34;, &#34;css-line-height&#34;, &#34;css-list-style-image&#34;, &#34;css-list-style-position&#34;, &#34;css-list-style-type&#34;, &#34;css-list-style&#34;, &#34;css-margin-block-start-end&#34;, &#34;css-margin-inline-block&#34;, &#34;css-margin-inline-start-end&#34;, &#34;css-margin-inline&#34;, &#34;css-margin&#34;, &#34;css-max-block-size&#34;, &#34;css-max-height&#34;, &#34;css-max-width&#34;, &#34;css-min-height&#34;, &#34;css-min-inline-size&#34;, &#34;css-min-width&#34;, &#34;css-mix-blend-mode&#34;, &#34;css-object-fit&#34;, &#34;css-object-position&#34;, &#34;css-opacity&#34;, &#34;css-outline-offset&#34;, &#34;css-outline&#34;, &#34;css-overflow-wrap&#34;, &#34;css-overflow&#34;, &#34;css-padding-block-start-end&#34;, &#34;css-padding-inline-block&#34;, &#34;css-padding-inline-start-end&#34;, &#34;css-padding&#34;, &#34;css-position&#34;, &#34;css-tab-size&#34;, &#34;css-table-layout&#34;, &#34;css-text-align-last&#34;, &#34;css-text-align&#34;, &#34;css-text-decoration-color&#34;, &#34;css-text-decoration-thickness&#34;, &#34;css-text-decoration&#34;, &#34;css-text-emphasis-position&#34;, &#34;css-text-emphasis&#34;, &#34;css-text-indent&#34;, &#34;css-text-overflow&#34;, &#34;css-text-shadow&#34;, &#34;css-text-transform&#34;, &#34;css-text-underline-offset&#34;, &#34;css-transform&#34;, &#34;css-vertical-align&#34;, &#34;css-visibility&#34;, &#34;css-white-space&#34;, &#34;css-width&#34;, &#34;css-word-break&#34;, &#34;css-writing-mode&#34;, &#34;css-z-index&#34;, &#34;html-abbr&#34;, &#34;html-address&#34;, &#34;html-align&#34;, &#34;html-anchor-links&#34;, &#34;html-aria-describedby&#34;, &#34;html-aria-hidden&#34;, &#34;html-aria-label&#34;, &#34;html-aria-labelledby&#34;, &#34;html-aria-live&#34;, &#34;html-audio&#34;, &#34;html-background&#34;, &#34;html-base&#34;, &#34;html-blockquote&#34;, &#34;html-body&#34;, &#34;html-button-reset&#34;, &#34;html-button-submit&#34;, &#34;html-code&#34;, &#34;html-del&#34;, &#34;html-dfn&#34;, &#34;html-dialog&#34;, &#34;html-dir&#34;, &#34;html-div&#34;, &#34;html-doctype&#34;, &#34;html-form&#34;, &#34;html-h1-h6&#34;, &#34;html-height&#34;, &#34;html-image-maps&#34;, &#34;html-input-checkbox&#34;, &#34;html-input-hidden&#34;, &#34;html-input-radio&#34;, &#34;html-input-reset&#34;, &#34;html-input-submit&#34;, &#34;html-input-text&#34;, &#34;html-lang&#34;, &#34;html-link&#34;, &#34;html-lists&#34;, &#34;html-loading-attribute&#34;, &#34;html-mailto-links&#34;, &#34;html-marquee&#34;, &#34;html-meter&#34;, &#34;html-object&#34;, &#34;html-p&#34;, &#34;html-picture&#34;, &#34;html-pre&#34;, &#34;html-progress&#34;, &#34;html-required&#34;, &#34;html-role&#34;, &#34;html-rp&#34;, &#34;html-rt&#34;, &#34;html-ruby&#34;, &#34;html-select&#34;, &#34;html-semantics&#34;, &#34;html-small&#34;, &#34;html-span&#34;, &#34;html-srcset&#34;, &#34;html-strike&#34;, &#34;html-strong&#34;, &#34;html-style&#34;, &#34;html-svg&#34;, &#34;html-table&#34;, &#34;html-target&#34;, &#34;html-textarea&#34;, &#34;html-valign&#34;, &#34;html-video&#34;, &#34;html-wbr&#34;, &#34;html-width&#34;, &#34;image-avif&#34;, &#34;image-base64&#34;, &#34;image-bmp&#34;, &#34;image-gif&#34;, &#34;image-ico&#34;, &#34;image-jpg&#34;, &#34;image-png&#34;, &#34;image-svg&#34;, &#34;image-webp&#34;, &#34;unsupported&#34;]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(detected_features).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                &#34;Invalid values for `detected_features` [{0}], must be a subset of [{1}]&#34;  # noqa: E501
+                .format(&#34;, &#34;.join(map(str, set(detected_features) - set(allowed_values))),  # noqa: E501
+                        &#34;, &#34;.join(map(str, allowed_values)))
+            )
+
+        self._detected_features = detected_features
+
+    @property
+    def feature_overviews(self):
+        &#34;&#34;&#34;Gets the feature_overviews of this EmailFeatureSupportResult.  # noqa: E501
+
+
+        :return: The feature_overviews of this EmailFeatureSupportResult.  # noqa: E501
+        :rtype: list[EmailFeatureOverview]
+        &#34;&#34;&#34;
+        return self._feature_overviews
+
+    @feature_overviews.setter
+    def feature_overviews(self, feature_overviews):
+        &#34;&#34;&#34;Sets the feature_overviews of this EmailFeatureSupportResult.
+
+
+        :param feature_overviews: The feature_overviews of this EmailFeatureSupportResult.  # noqa: E501
+        :type: list[EmailFeatureOverview]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and feature_overviews is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `feature_overviews`, must not be `None`&#34;)  # noqa: E501
+
+        self._feature_overviews = feature_overviews
+
+    @property
+    def feature_percentages(self):
+        &#34;&#34;&#34;Gets the feature_percentages of this EmailFeatureSupportResult.  # noqa: E501
+
+
+        :return: The feature_percentages of this EmailFeatureSupportResult.  # noqa: E501
+        :rtype: list[EmailFeatureSupportStatusPercentage]
+        &#34;&#34;&#34;
+        return self._feature_percentages
+
+    @feature_percentages.setter
+    def feature_percentages(self, feature_percentages):
+        &#34;&#34;&#34;Sets the feature_percentages of this EmailFeatureSupportResult.
+
+
+        :param feature_percentages: The feature_percentages of this EmailFeatureSupportResult.  # noqa: E501
+        :type: list[EmailFeatureSupportStatusPercentage]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and feature_percentages is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `feature_percentages`, must not be `None`&#34;)  # noqa: E501
+
+        self._feature_percentages = feature_percentages
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, EmailFeatureSupportResult):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, EmailFeatureSupportResult):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.detected_features"><code class="name">var <span class="ident">detected_features</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the detected_features of this EmailFeatureSupportResult.
+# noqa: E501</p>
+<p>:return: The detected_features of this EmailFeatureSupportResult.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def detected_features(self):
+    &#34;&#34;&#34;Gets the detected_features of this EmailFeatureSupportResult.  # noqa: E501
+
+
+    :return: The detected_features of this EmailFeatureSupportResult.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._detected_features</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.feature_overviews"><code class="name">var <span class="ident">feature_overviews</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the feature_overviews of this EmailFeatureSupportResult.
+# noqa: E501</p>
+<p>:return: The feature_overviews of this EmailFeatureSupportResult.
+# noqa: E501
+:rtype: list[EmailFeatureOverview]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def feature_overviews(self):
+    &#34;&#34;&#34;Gets the feature_overviews of this EmailFeatureSupportResult.  # noqa: E501
+
+
+    :return: The feature_overviews of this EmailFeatureSupportResult.  # noqa: E501
+    :rtype: list[EmailFeatureOverview]
+    &#34;&#34;&#34;
+    return self._feature_overviews</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.feature_percentages"><code class="name">var <span class="ident">feature_percentages</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the feature_percentages of this EmailFeatureSupportResult.
+# noqa: E501</p>
+<p>:return: The feature_percentages of this EmailFeatureSupportResult.
+# noqa: E501
+:rtype: list[EmailFeatureSupportStatusPercentage]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def feature_percentages(self):
+    &#34;&#34;&#34;Gets the feature_percentages of this EmailFeatureSupportResult.  # noqa: E501
+
+
+    :return: The feature_percentages of this EmailFeatureSupportResult.  # noqa: E501
+    :rtype: list[EmailFeatureSupportStatusPercentage]
+    &#34;&#34;&#34;
+    return self._feature_percentages</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.names"><code class="name">var <span class="ident">names</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the names of this EmailFeatureSupportResult.
+# noqa: E501</p>
+<p>:return: The names of this EmailFeatureSupportResult.
+# noqa: E501
+:rtype: EmailFeatureNames</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def names(self):
+    &#34;&#34;&#34;Gets the names of this EmailFeatureSupportResult.  # noqa: E501
+
+
+    :return: The names of this EmailFeatureSupportResult.  # noqa: E501
+    :rtype: EmailFeatureNames
+    &#34;&#34;&#34;
+    return self._names</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self):
+    &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+    result = {}
+
+    for attr, _ in six.iteritems(self.openapi_types):
+        value = getattr(self, attr)
+        if isinstance(value, list):
+            result[attr] = list(map(
+                lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                value
+            ))
+        elif hasattr(value, &#34;to_dict&#34;):
+            result[attr] = value.to_dict()
+        elif isinstance(value, dict):
+            result[attr] = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], &#34;to_dict&#34;) else item,
+                value.items()
+            ))
+        else:
+            result[attr] = value
+
+    return result</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_str(self):
+    &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+    return pprint.pformat(self.to_dict())</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult">EmailFeatureSupportResult</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.attribute_map" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.detected_features" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.detected_features">detected_features</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.feature_overviews" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.feature_overviews">feature_overviews</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.feature_percentages" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.feature_percentages">feature_percentages</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.names" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.names">names</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.openapi_types" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.to_dict" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.to_str" href="#mailslurp_client.models.email_feature_support_result.EmailFeatureSupportResult.to_str">to_str</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
