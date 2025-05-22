@@ -1,0 +1,1508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.send_email_options API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.send_email_options</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions"><code class="flex name class">
+<span>class <span class="ident">SendEmailOptions</span></span>
+<span>(</span><span>to_contacts=None, to_group=None, to=None, from_name=None, cc=None, bcc=None, subject=None, reply_to=None, custom_headers=None, body=None, html=None, is_html=None, charset=None, attachments=None, template_variables=None, template=None, send_strategy=None, use_inbox_name=None, add_tracking_pixel=None, filter_bounced_recipients=None, validate_email_addresses=None, ignore_empty_recipients=None, is_x_amp_html=None, body_parts=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>SendEmailOptions - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SendEmailOptions(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;to_contacts&#39;: &#39;list[str]&#39;,
+        &#39;to_group&#39;: &#39;str&#39;,
+        &#39;to&#39;: &#39;list[str]&#39;,
+        &#39;_from&#39;: &#39;str&#39;,
+        &#39;from_name&#39;: &#39;str&#39;,
+        &#39;cc&#39;: &#39;list[str]&#39;,
+        &#39;bcc&#39;: &#39;list[str]&#39;,
+        &#39;subject&#39;: &#39;str&#39;,
+        &#39;reply_to&#39;: &#39;str&#39;,
+        &#39;custom_headers&#39;: &#39;dict(str, str)&#39;,
+        &#39;body&#39;: &#39;str&#39;,
+        &#39;html&#39;: &#39;bool&#39;,
+        &#39;is_html&#39;: &#39;bool&#39;,
+        &#39;charset&#39;: &#39;str&#39;,
+        &#39;attachments&#39;: &#39;list[str]&#39;,
+        &#39;template_variables&#39;: &#39;dict(str, object)&#39;,
+        &#39;template&#39;: &#39;str&#39;,
+        &#39;send_strategy&#39;: &#39;str&#39;,
+        &#39;use_inbox_name&#39;: &#39;bool&#39;,
+        &#39;add_tracking_pixel&#39;: &#39;bool&#39;,
+        &#39;filter_bounced_recipients&#39;: &#39;bool&#39;,
+        &#39;validate_email_addresses&#39;: &#39;str&#39;,
+        &#39;ignore_empty_recipients&#39;: &#39;bool&#39;,
+        &#39;is_x_amp_html&#39;: &#39;bool&#39;,
+        &#39;body_parts&#39;: &#39;list[SendEmailBodyPart]&#39;
+    }
+
+    attribute_map = {
+        &#39;to_contacts&#39;: &#39;toContacts&#39;,
+        &#39;to_group&#39;: &#39;toGroup&#39;,
+        &#39;to&#39;: &#39;to&#39;,
+        &#39;_from&#39;: &#39;from&#39;,
+        &#39;from_name&#39;: &#39;fromName&#39;,
+        &#39;cc&#39;: &#39;cc&#39;,
+        &#39;bcc&#39;: &#39;bcc&#39;,
+        &#39;subject&#39;: &#39;subject&#39;,
+        &#39;reply_to&#39;: &#39;replyTo&#39;,
+        &#39;custom_headers&#39;: &#39;customHeaders&#39;,
+        &#39;body&#39;: &#39;body&#39;,
+        &#39;html&#39;: &#39;html&#39;,
+        &#39;is_html&#39;: &#39;isHTML&#39;,
+        &#39;charset&#39;: &#39;charset&#39;,
+        &#39;attachments&#39;: &#39;attachments&#39;,
+        &#39;template_variables&#39;: &#39;templateVariables&#39;,
+        &#39;template&#39;: &#39;template&#39;,
+        &#39;send_strategy&#39;: &#39;sendStrategy&#39;,
+        &#39;use_inbox_name&#39;: &#39;useInboxName&#39;,
+        &#39;add_tracking_pixel&#39;: &#39;addTrackingPixel&#39;,
+        &#39;filter_bounced_recipients&#39;: &#39;filterBouncedRecipients&#39;,
+        &#39;validate_email_addresses&#39;: &#39;validateEmailAddresses&#39;,
+        &#39;ignore_empty_recipients&#39;: &#39;ignoreEmptyRecipients&#39;,
+        &#39;is_x_amp_html&#39;: &#39;isXAmpHtml&#39;,
+        &#39;body_parts&#39;: &#39;bodyParts&#39;
+    }
+
+    def __init__(self, to_contacts=None, to_group=None, to=None, _from=None, from_name=None, cc=None, bcc=None, subject=None, reply_to=None, custom_headers=None, body=None, html=None, is_html=None, charset=None, attachments=None, template_variables=None, template=None, send_strategy=None, use_inbox_name=None, add_tracking_pixel=None, filter_bounced_recipients=None, validate_email_addresses=None, ignore_empty_recipients=None, is_x_amp_html=None, body_parts=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;SendEmailOptions - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._to_contacts = None
+        self._to_group = None
+        self._to = None
+        self.__from = None
+        self._from_name = None
+        self._cc = None
+        self._bcc = None
+        self._subject = None
+        self._reply_to = None
+        self._custom_headers = None
+        self._body = None
+        self._html = None
+        self._is_html = None
+        self._charset = None
+        self._attachments = None
+        self._template_variables = None
+        self._template = None
+        self._send_strategy = None
+        self._use_inbox_name = None
+        self._add_tracking_pixel = None
+        self._filter_bounced_recipients = None
+        self._validate_email_addresses = None
+        self._ignore_empty_recipients = None
+        self._is_x_amp_html = None
+        self._body_parts = None
+        self.discriminator = None
+
+        self.to_contacts = to_contacts
+        self.to_group = to_group
+        self.to = to
+        self._from = _from
+        self.from_name = from_name
+        self.cc = cc
+        self.bcc = bcc
+        self.subject = subject
+        self.reply_to = reply_to
+        self.custom_headers = custom_headers
+        self.body = body
+        self.html = html
+        self.is_html = is_html
+        self.charset = charset
+        self.attachments = attachments
+        self.template_variables = template_variables
+        self.template = template
+        self.send_strategy = send_strategy
+        self.use_inbox_name = use_inbox_name
+        self.add_tracking_pixel = add_tracking_pixel
+        self.filter_bounced_recipients = filter_bounced_recipients
+        self.validate_email_addresses = validate_email_addresses
+        self.ignore_empty_recipients = ignore_empty_recipients
+        self.is_x_amp_html = is_x_amp_html
+        self.body_parts = body_parts
+
+    @property
+    def to_contacts(self):
+        &#34;&#34;&#34;Gets the to_contacts of this SendEmailOptions.  # noqa: E501
+
+        Optional list of contact IDs to send email to. Manage your contacts via the API or dashboard. When contacts are used the email is sent to each contact separately so they will not see other recipients.  # noqa: E501
+
+        :return: The to_contacts of this SendEmailOptions.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._to_contacts
+
+    @to_contacts.setter
+    def to_contacts(self, to_contacts):
+        &#34;&#34;&#34;Sets the to_contacts of this SendEmailOptions.
+
+        Optional list of contact IDs to send email to. Manage your contacts via the API or dashboard. When contacts are used the email is sent to each contact separately so they will not see other recipients.  # noqa: E501
+
+        :param to_contacts: The to_contacts of this SendEmailOptions.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._to_contacts = to_contacts
+
+    @property
+    def to_group(self):
+        &#34;&#34;&#34;Gets the to_group of this SendEmailOptions.  # noqa: E501
+
+        Optional contact group ID to send email to. You can create contacts and contact groups in the API or dashboard and use them for email campaigns. When contact groups are used the email is sent to each contact separately so they will not see other recipients  # noqa: E501
+
+        :return: The to_group of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._to_group
+
+    @to_group.setter
+    def to_group(self, to_group):
+        &#34;&#34;&#34;Sets the to_group of this SendEmailOptions.
+
+        Optional contact group ID to send email to. You can create contacts and contact groups in the API or dashboard and use them for email campaigns. When contact groups are used the email is sent to each contact separately so they will not see other recipients  # noqa: E501
+
+        :param to_group: The to_group of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._to_group = to_group
+
+    @property
+    def to(self):
+        &#34;&#34;&#34;Gets the to of this SendEmailOptions.  # noqa: E501
+
+        List of destination email addresses. Each email address must be RFC 5322 format. Even single recipients must be in array form. Maximum recipients per email depends on your plan. If you need to send many emails try using contacts or contact groups or use a non standard sendStrategy to ensure that spam filters are not triggered (many recipients in one email can affect your spam rating). Be cautious when sending emails that your recipients exist. High bounce rates (meaning a high percentage of emails cannot be delivered because an address does not exist) can result in account freezing.  # noqa: E501
+
+        :return: The to of this SendEmailOptions.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._to
+
+    @to.setter
+    def to(self, to):
+        &#34;&#34;&#34;Sets the to of this SendEmailOptions.
+
+        List of destination email addresses. Each email address must be RFC 5322 format. Even single recipients must be in array form. Maximum recipients per email depends on your plan. If you need to send many emails try using contacts or contact groups or use a non standard sendStrategy to ensure that spam filters are not triggered (many recipients in one email can affect your spam rating). Be cautious when sending emails that your recipients exist. High bounce rates (meaning a high percentage of emails cannot be delivered because an address does not exist) can result in account freezing.  # noqa: E501
+
+        :param to: The to of this SendEmailOptions.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._to = to
+
+    @property
+    def _from(self):
+        &#34;&#34;&#34;Gets the _from of this SendEmailOptions.  # noqa: E501
+
+        Optional from address. Email address is RFC 5322 format and may include a display name and email in angle brackets (`my@address.com` or `My inbox &lt;my@address.com&gt;`). If no sender is set the source inbox address will be used for this field. If you set `useInboxName` to `true` the from field will include the inbox name as a display name: `inbox_name &lt;inbox@address.com&gt;`. For this to work use the name field when creating an inbox. Beware of potential spam penalties when setting the from field to an address not used by the inbox. Your emails may get blocked by services if you impersonate another address. To use a custom email addresses use a custom domain. You can create domains with the DomainController. The domain must be verified in the dashboard before it can be used.  # noqa: E501
+
+        :return: The _from of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self.__from
+
+    @_from.setter
+    def _from(self, _from):
+        &#34;&#34;&#34;Sets the _from of this SendEmailOptions.
+
+        Optional from address. Email address is RFC 5322 format and may include a display name and email in angle brackets (`my@address.com` or `My inbox &lt;my@address.com&gt;`). If no sender is set the source inbox address will be used for this field. If you set `useInboxName` to `true` the from field will include the inbox name as a display name: `inbox_name &lt;inbox@address.com&gt;`. For this to work use the name field when creating an inbox. Beware of potential spam penalties when setting the from field to an address not used by the inbox. Your emails may get blocked by services if you impersonate another address. To use a custom email addresses use a custom domain. You can create domains with the DomainController. The domain must be verified in the dashboard before it can be used.  # noqa: E501
+
+        :param _from: The _from of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self.__from = _from
+
+    @property
+    def from_name(self):
+        &#34;&#34;&#34;Gets the from_name of this SendEmailOptions.  # noqa: E501
+
+        Optional from name if not passed with address. If you set `useInboxName` to `true` the from field will include the inbox name as a display name  # noqa: E501
+
+        :return: The from_name of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._from_name
+
+    @from_name.setter
+    def from_name(self, from_name):
+        &#34;&#34;&#34;Sets the from_name of this SendEmailOptions.
+
+        Optional from name if not passed with address. If you set `useInboxName` to `true` the from field will include the inbox name as a display name  # noqa: E501
+
+        :param from_name: The from_name of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._from_name = from_name
+
+    @property
+    def cc(self):
+        &#34;&#34;&#34;Gets the cc of this SendEmailOptions.  # noqa: E501
+
+        Optional list of cc destination email addresses  # noqa: E501
+
+        :return: The cc of this SendEmailOptions.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._cc
+
+    @cc.setter
+    def cc(self, cc):
+        &#34;&#34;&#34;Sets the cc of this SendEmailOptions.
+
+        Optional list of cc destination email addresses  # noqa: E501
+
+        :param cc: The cc of this SendEmailOptions.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._cc = cc
+
+    @property
+    def bcc(self):
+        &#34;&#34;&#34;Gets the bcc of this SendEmailOptions.  # noqa: E501
+
+        Optional list of bcc destination email addresses  # noqa: E501
+
+        :return: The bcc of this SendEmailOptions.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._bcc
+
+    @bcc.setter
+    def bcc(self, bcc):
+        &#34;&#34;&#34;Sets the bcc of this SendEmailOptions.
+
+        Optional list of bcc destination email addresses  # noqa: E501
+
+        :param bcc: The bcc of this SendEmailOptions.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._bcc = bcc
+
+    @property
+    def subject(self):
+        &#34;&#34;&#34;Gets the subject of this SendEmailOptions.  # noqa: E501
+
+        Optional email subject line  # noqa: E501
+
+        :return: The subject of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject):
+        &#34;&#34;&#34;Sets the subject of this SendEmailOptions.
+
+        Optional email subject line  # noqa: E501
+
+        :param subject: The subject of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._subject = subject
+
+    @property
+    def reply_to(self):
+        &#34;&#34;&#34;Gets the reply_to of this SendEmailOptions.  # noqa: E501
+
+        Optional replyTo header  # noqa: E501
+
+        :return: The reply_to of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._reply_to
+
+    @reply_to.setter
+    def reply_to(self, reply_to):
+        &#34;&#34;&#34;Sets the reply_to of this SendEmailOptions.
+
+        Optional replyTo header  # noqa: E501
+
+        :param reply_to: The reply_to of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._reply_to = reply_to
+
+    @property
+    def custom_headers(self):
+        &#34;&#34;&#34;Gets the custom_headers of this SendEmailOptions.  # noqa: E501
+
+        Optional custom headers  # noqa: E501
+
+        :return: The custom_headers of this SendEmailOptions.  # noqa: E501
+        :rtype: dict(str, str)
+        &#34;&#34;&#34;
+        return self._custom_headers
+
+    @custom_headers.setter
+    def custom_headers(self, custom_headers):
+        &#34;&#34;&#34;Sets the custom_headers of this SendEmailOptions.
+
+        Optional custom headers  # noqa: E501
+
+        :param custom_headers: The custom_headers of this SendEmailOptions.  # noqa: E501
+        :type: dict(str, str)
+        &#34;&#34;&#34;
+
+        self._custom_headers = custom_headers
+
+    @property
+    def body(self):
+        &#34;&#34;&#34;Gets the body of this SendEmailOptions.  # noqa: E501
+
+        Optional contents of email. If body contains HTML then set `isHTML` to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with `toGroup` contact variables or `templateVariables` data. If you need more templating control consider creating a template and using the `template` property instead of the body.  # noqa: E501
+
+        :return: The body of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._body
+
+    @body.setter
+    def body(self, body):
+        &#34;&#34;&#34;Sets the body of this SendEmailOptions.
+
+        Optional contents of email. If body contains HTML then set `isHTML` to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with `toGroup` contact variables or `templateVariables` data. If you need more templating control consider creating a template and using the `template` property instead of the body.  # noqa: E501
+
+        :param body: The body of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._body = body
+
+    @property
+    def html(self):
+        &#34;&#34;&#34;Gets the html of this SendEmailOptions.  # noqa: E501
+
+        Optional HTML flag to indicate that contents is HTML. Set&#39;s a `content-type: text/html` for email. (Deprecated: use `isHTML` instead.)  # noqa: E501
+
+        :return: The html of this SendEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._html
+
+    @html.setter
+    def html(self, html):
+        &#34;&#34;&#34;Sets the html of this SendEmailOptions.
+
+        Optional HTML flag to indicate that contents is HTML. Set&#39;s a `content-type: text/html` for email. (Deprecated: use `isHTML` instead.)  # noqa: E501
+
+        :param html: The html of this SendEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._html = html
+
+    @property
+    def is_html(self):
+        &#34;&#34;&#34;Gets the is_html of this SendEmailOptions.  # noqa: E501
+
+        Optional HTML flag. If true the `content-type` of the email will be `text/html`. Set to true when sending HTML to ensure proper rending on email clients  # noqa: E501
+
+        :return: The is_html of this SendEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._is_html
+
+    @is_html.setter
+    def is_html(self, is_html):
+        &#34;&#34;&#34;Sets the is_html of this SendEmailOptions.
+
+        Optional HTML flag. If true the `content-type` of the email will be `text/html`. Set to true when sending HTML to ensure proper rending on email clients  # noqa: E501
+
+        :param is_html: The is_html of this SendEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._is_html = is_html
+
+    @property
+    def charset(self):
+        &#34;&#34;&#34;Gets the charset of this SendEmailOptions.  # noqa: E501
+
+        Optional charset  # noqa: E501
+
+        :return: The charset of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._charset
+
+    @charset.setter
+    def charset(self, charset):
+        &#34;&#34;&#34;Sets the charset of this SendEmailOptions.
+
+        Optional charset  # noqa: E501
+
+        :param charset: The charset of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._charset = charset
+
+    @property
+    def attachments(self):
+        &#34;&#34;&#34;Gets the attachments of this SendEmailOptions.  # noqa: E501
+
+        Optional list of attachment IDs to send with this email. You must first upload each attachment separately via method call or dashboard in order to obtain attachment IDs. This way you can reuse attachments with different emails once uploaded. There are several ways to upload that support `multi-part form`, `base64 file encoding`, and octet stream binary uploads. See the `UploadController` for available methods.   # noqa: E501
+
+        :return: The attachments of this SendEmailOptions.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        &#34;&#34;&#34;Sets the attachments of this SendEmailOptions.
+
+        Optional list of attachment IDs to send with this email. You must first upload each attachment separately via method call or dashboard in order to obtain attachment IDs. This way you can reuse attachments with different emails once uploaded. There are several ways to upload that support `multi-part form`, `base64 file encoding`, and octet stream binary uploads. See the `UploadController` for available methods.   # noqa: E501
+
+        :param attachments: The attachments of this SendEmailOptions.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._attachments = attachments
+
+    @property
+    def template_variables(self):
+        &#34;&#34;&#34;Gets the template_variables of this SendEmailOptions.  # noqa: E501
+
+        Optional map of template variables. Will replace moustache syntax variables in subject and body or template with the associated values if found.  # noqa: E501
+
+        :return: The template_variables of this SendEmailOptions.  # noqa: E501
+        :rtype: dict(str, object)
+        &#34;&#34;&#34;
+        return self._template_variables
+
+    @template_variables.setter
+    def template_variables(self, template_variables):
+        &#34;&#34;&#34;Sets the template_variables of this SendEmailOptions.
+
+        Optional map of template variables. Will replace moustache syntax variables in subject and body or template with the associated values if found.  # noqa: E501
+
+        :param template_variables: The template_variables of this SendEmailOptions.  # noqa: E501
+        :type: dict(str, object)
+        &#34;&#34;&#34;
+
+        self._template_variables = template_variables
+
+    @property
+    def template(self):
+        &#34;&#34;&#34;Gets the template of this SendEmailOptions.  # noqa: E501
+
+        Optional template ID to use for body. Will override body if provided. When using a template make sure you pass the corresponding map of `templateVariables`. You can find which variables are needed by fetching the template itself or viewing it in the dashboard.  # noqa: E501
+
+        :return: The template of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._template
+
+    @template.setter
+    def template(self, template):
+        &#34;&#34;&#34;Sets the template of this SendEmailOptions.
+
+        Optional template ID to use for body. Will override body if provided. When using a template make sure you pass the corresponding map of `templateVariables`. You can find which variables are needed by fetching the template itself or viewing it in the dashboard.  # noqa: E501
+
+        :param template: The template of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._template = template
+
+    @property
+    def send_strategy(self):
+        &#34;&#34;&#34;Gets the send_strategy of this SendEmailOptions.  # noqa: E501
+
+        How an email should be sent based on its recipients  # noqa: E501
+
+        :return: The send_strategy of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._send_strategy
+
+    @send_strategy.setter
+    def send_strategy(self, send_strategy):
+        &#34;&#34;&#34;Sets the send_strategy of this SendEmailOptions.
+
+        How an email should be sent based on its recipients  # noqa: E501
+
+        :param send_strategy: The send_strategy of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;SINGLE_MESSAGE&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and send_strategy not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `send_strategy` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(send_strategy, allowed_values)
+            )
+
+        self._send_strategy = send_strategy
+
+    @property
+    def use_inbox_name(self):
+        &#34;&#34;&#34;Gets the use_inbox_name of this SendEmailOptions.  # noqa: E501
+
+        Use name of inbox as sender email address name. Will construct RFC 5322 email address with `Inbox name &lt;inbox@address.com&gt;` if the inbox has a name.  # noqa: E501
+
+        :return: The use_inbox_name of this SendEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._use_inbox_name
+
+    @use_inbox_name.setter
+    def use_inbox_name(self, use_inbox_name):
+        &#34;&#34;&#34;Sets the use_inbox_name of this SendEmailOptions.
+
+        Use name of inbox as sender email address name. Will construct RFC 5322 email address with `Inbox name &lt;inbox@address.com&gt;` if the inbox has a name.  # noqa: E501
+
+        :param use_inbox_name: The use_inbox_name of this SendEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._use_inbox_name = use_inbox_name
+
+    @property
+    def add_tracking_pixel(self):
+        &#34;&#34;&#34;Gets the add_tracking_pixel of this SendEmailOptions.  # noqa: E501
+
+        Add tracking pixel to email  # noqa: E501
+
+        :return: The add_tracking_pixel of this SendEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._add_tracking_pixel
+
+    @add_tracking_pixel.setter
+    def add_tracking_pixel(self, add_tracking_pixel):
+        &#34;&#34;&#34;Sets the add_tracking_pixel of this SendEmailOptions.
+
+        Add tracking pixel to email  # noqa: E501
+
+        :param add_tracking_pixel: The add_tracking_pixel of this SendEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._add_tracking_pixel = add_tracking_pixel
+
+    @property
+    def filter_bounced_recipients(self):
+        &#34;&#34;&#34;Gets the filter_bounced_recipients of this SendEmailOptions.  # noqa: E501
+
+        Filter recipients to remove any bounced recipients from to, bcc, and cc before sending  # noqa: E501
+
+        :return: The filter_bounced_recipients of this SendEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._filter_bounced_recipients
+
+    @filter_bounced_recipients.setter
+    def filter_bounced_recipients(self, filter_bounced_recipients):
+        &#34;&#34;&#34;Sets the filter_bounced_recipients of this SendEmailOptions.
+
+        Filter recipients to remove any bounced recipients from to, bcc, and cc before sending  # noqa: E501
+
+        :param filter_bounced_recipients: The filter_bounced_recipients of this SendEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._filter_bounced_recipients = filter_bounced_recipients
+
+    @property
+    def validate_email_addresses(self):
+        &#34;&#34;&#34;Gets the validate_email_addresses of this SendEmailOptions.  # noqa: E501
+
+        Validate recipient email addresses before sending  # noqa: E501
+
+        :return: The validate_email_addresses of this SendEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._validate_email_addresses
+
+    @validate_email_addresses.setter
+    def validate_email_addresses(self, validate_email_addresses):
+        &#34;&#34;&#34;Sets the validate_email_addresses of this SendEmailOptions.
+
+        Validate recipient email addresses before sending  # noqa: E501
+
+        :param validate_email_addresses: The validate_email_addresses of this SendEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;VALIDATE_FILTER_REMOVE_INVALID&#34;, &#34;VALIDATE_ERROR_IF_INVALID&#34;, &#34;NO_VALIDATION&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and validate_email_addresses not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `validate_email_addresses` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(validate_email_addresses, allowed_values)
+            )
+
+        self._validate_email_addresses = validate_email_addresses
+
+    @property
+    def ignore_empty_recipients(self):
+        &#34;&#34;&#34;Gets the ignore_empty_recipients of this SendEmailOptions.  # noqa: E501
+
+        Ignore empty recipients after validation removes all recipients as invalid and fail silently  # noqa: E501
+
+        :return: The ignore_empty_recipients of this SendEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._ignore_empty_recipients
+
+    @ignore_empty_recipients.setter
+    def ignore_empty_recipients(self, ignore_empty_recipients):
+        &#34;&#34;&#34;Sets the ignore_empty_recipients of this SendEmailOptions.
+
+        Ignore empty recipients after validation removes all recipients as invalid and fail silently  # noqa: E501
+
+        :param ignore_empty_recipients: The ignore_empty_recipients of this SendEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._ignore_empty_recipients = ignore_empty_recipients
+
+    @property
+    def is_x_amp_html(self):
+        &#34;&#34;&#34;Gets the is_x_amp_html of this SendEmailOptions.  # noqa: E501
+
+        Is content AMP4EMAIL compatible. If set will send as x-amp-html part.  # noqa: E501
+
+        :return: The is_x_amp_html of this SendEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._is_x_amp_html
+
+    @is_x_amp_html.setter
+    def is_x_amp_html(self, is_x_amp_html):
+        &#34;&#34;&#34;Sets the is_x_amp_html of this SendEmailOptions.
+
+        Is content AMP4EMAIL compatible. If set will send as x-amp-html part.  # noqa: E501
+
+        :param is_x_amp_html: The is_x_amp_html of this SendEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._is_x_amp_html = is_x_amp_html
+
+    @property
+    def body_parts(self):
+        &#34;&#34;&#34;Gets the body_parts of this SendEmailOptions.  # noqa: E501
+
+        Email body content parts for multipart mime message. Will override body.  # noqa: E501
+
+        :return: The body_parts of this SendEmailOptions.  # noqa: E501
+        :rtype: list[SendEmailBodyPart]
+        &#34;&#34;&#34;
+        return self._body_parts
+
+    @body_parts.setter
+    def body_parts(self, body_parts):
+        &#34;&#34;&#34;Sets the body_parts of this SendEmailOptions.
+
+        Email body content parts for multipart mime message. Will override body.  # noqa: E501
+
+        :param body_parts: The body_parts of this SendEmailOptions.  # noqa: E501
+        :type: list[SendEmailBodyPart]
+        &#34;&#34;&#34;
+
+        self._body_parts = body_parts
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, SendEmailOptions):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, SendEmailOptions):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.add_tracking_pixel"><code class="name">prop <span class="ident">add_tracking_pixel</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the add_tracking_pixel of this SendEmailOptions.
+# noqa: E501</p>
+<p>Add tracking pixel to email
+# noqa: E501</p>
+<p>:return: The add_tracking_pixel of this SendEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def add_tracking_pixel(self):
+    &#34;&#34;&#34;Gets the add_tracking_pixel of this SendEmailOptions.  # noqa: E501
+
+    Add tracking pixel to email  # noqa: E501
+
+    :return: The add_tracking_pixel of this SendEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._add_tracking_pixel</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.attachments"><code class="name">prop <span class="ident">attachments</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the attachments of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional list of attachment IDs to send with this email. You must first upload each attachment separately via method call or dashboard in order to obtain attachment IDs. This way you can reuse attachments with different emails once uploaded. There are several ways to upload that support <code>multi-part form</code>, <code>base64 file encoding</code>, and octet stream binary uploads. See the <code>UploadController</code> for available methods.
+# noqa: E501</p>
+<p>:return: The attachments of this SendEmailOptions.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def attachments(self):
+    &#34;&#34;&#34;Gets the attachments of this SendEmailOptions.  # noqa: E501
+
+    Optional list of attachment IDs to send with this email. You must first upload each attachment separately via method call or dashboard in order to obtain attachment IDs. This way you can reuse attachments with different emails once uploaded. There are several ways to upload that support `multi-part form`, `base64 file encoding`, and octet stream binary uploads. See the `UploadController` for available methods.   # noqa: E501
+
+    :return: The attachments of this SendEmailOptions.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._attachments</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.bcc"><code class="name">prop <span class="ident">bcc</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the bcc of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional list of bcc destination email addresses
+# noqa: E501</p>
+<p>:return: The bcc of this SendEmailOptions.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bcc(self):
+    &#34;&#34;&#34;Gets the bcc of this SendEmailOptions.  # noqa: E501
+
+    Optional list of bcc destination email addresses  # noqa: E501
+
+    :return: The bcc of this SendEmailOptions.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._bcc</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.body"><code class="name">prop <span class="ident">body</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the body of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional contents of email. If body contains HTML then set <code>isHTML</code> to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with <code>toGroup</code> contact variables or <code>templateVariables</code> data. If you need more templating control consider creating a template and using the <code>template</code> property instead of the body.
+# noqa: E501</p>
+<p>:return: The body of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def body(self):
+    &#34;&#34;&#34;Gets the body of this SendEmailOptions.  # noqa: E501
+
+    Optional contents of email. If body contains HTML then set `isHTML` to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with `toGroup` contact variables or `templateVariables` data. If you need more templating control consider creating a template and using the `template` property instead of the body.  # noqa: E501
+
+    :return: The body of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._body</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.body_parts"><code class="name">prop <span class="ident">body_parts</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the body_parts of this SendEmailOptions.
+# noqa: E501</p>
+<p>Email body content parts for multipart mime message. Will override body.
+# noqa: E501</p>
+<p>:return: The body_parts of this SendEmailOptions.
+# noqa: E501
+:rtype: list[SendEmailBodyPart]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def body_parts(self):
+    &#34;&#34;&#34;Gets the body_parts of this SendEmailOptions.  # noqa: E501
+
+    Email body content parts for multipart mime message. Will override body.  # noqa: E501
+
+    :return: The body_parts of this SendEmailOptions.  # noqa: E501
+    :rtype: list[SendEmailBodyPart]
+    &#34;&#34;&#34;
+    return self._body_parts</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.cc"><code class="name">prop <span class="ident">cc</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the cc of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional list of cc destination email addresses
+# noqa: E501</p>
+<p>:return: The cc of this SendEmailOptions.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def cc(self):
+    &#34;&#34;&#34;Gets the cc of this SendEmailOptions.  # noqa: E501
+
+    Optional list of cc destination email addresses  # noqa: E501
+
+    :return: The cc of this SendEmailOptions.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._cc</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.charset"><code class="name">prop <span class="ident">charset</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the charset of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional charset
+# noqa: E501</p>
+<p>:return: The charset of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def charset(self):
+    &#34;&#34;&#34;Gets the charset of this SendEmailOptions.  # noqa: E501
+
+    Optional charset  # noqa: E501
+
+    :return: The charset of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._charset</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.custom_headers"><code class="name">prop <span class="ident">custom_headers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the custom_headers of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional custom headers
+# noqa: E501</p>
+<p>:return: The custom_headers of this SendEmailOptions.
+# noqa: E501
+:rtype: dict(str, str)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def custom_headers(self):
+    &#34;&#34;&#34;Gets the custom_headers of this SendEmailOptions.  # noqa: E501
+
+    Optional custom headers  # noqa: E501
+
+    :return: The custom_headers of this SendEmailOptions.  # noqa: E501
+    :rtype: dict(str, str)
+    &#34;&#34;&#34;
+    return self._custom_headers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.filter_bounced_recipients"><code class="name">prop <span class="ident">filter_bounced_recipients</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the filter_bounced_recipients of this SendEmailOptions.
+# noqa: E501</p>
+<p>Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
+# noqa: E501</p>
+<p>:return: The filter_bounced_recipients of this SendEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def filter_bounced_recipients(self):
+    &#34;&#34;&#34;Gets the filter_bounced_recipients of this SendEmailOptions.  # noqa: E501
+
+    Filter recipients to remove any bounced recipients from to, bcc, and cc before sending  # noqa: E501
+
+    :return: The filter_bounced_recipients of this SendEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._filter_bounced_recipients</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.from_name"><code class="name">prop <span class="ident">from_name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the from_name of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional from name if not passed with address. If you set <code>useInboxName</code> to <code>true</code> the from field will include the inbox name as a display name
+# noqa: E501</p>
+<p>:return: The from_name of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def from_name(self):
+    &#34;&#34;&#34;Gets the from_name of this SendEmailOptions.  # noqa: E501
+
+    Optional from name if not passed with address. If you set `useInboxName` to `true` the from field will include the inbox name as a display name  # noqa: E501
+
+    :return: The from_name of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._from_name</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.html"><code class="name">prop <span class="ident">html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the html of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional HTML flag to indicate that contents is HTML. Set's a <code>content-type: text/html</code> for email. (Deprecated: use <code>isHTML</code> instead.)
+# noqa: E501</p>
+<p>:return: The html of this SendEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def html(self):
+    &#34;&#34;&#34;Gets the html of this SendEmailOptions.  # noqa: E501
+
+    Optional HTML flag to indicate that contents is HTML. Set&#39;s a `content-type: text/html` for email. (Deprecated: use `isHTML` instead.)  # noqa: E501
+
+    :return: The html of this SendEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._html</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.ignore_empty_recipients"><code class="name">prop <span class="ident">ignore_empty_recipients</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the ignore_empty_recipients of this SendEmailOptions.
+# noqa: E501</p>
+<p>Ignore empty recipients after validation removes all recipients as invalid and fail silently
+# noqa: E501</p>
+<p>:return: The ignore_empty_recipients of this SendEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ignore_empty_recipients(self):
+    &#34;&#34;&#34;Gets the ignore_empty_recipients of this SendEmailOptions.  # noqa: E501
+
+    Ignore empty recipients after validation removes all recipients as invalid and fail silently  # noqa: E501
+
+    :return: The ignore_empty_recipients of this SendEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._ignore_empty_recipients</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.is_html"><code class="name">prop <span class="ident">is_html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the is_html of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional HTML flag. If true the <code>content-type</code> of the email will be <code>text/html</code>. Set to true when sending HTML to ensure proper rending on email clients
+# noqa: E501</p>
+<p>:return: The is_html of this SendEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_html(self):
+    &#34;&#34;&#34;Gets the is_html of this SendEmailOptions.  # noqa: E501
+
+    Optional HTML flag. If true the `content-type` of the email will be `text/html`. Set to true when sending HTML to ensure proper rending on email clients  # noqa: E501
+
+    :return: The is_html of this SendEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._is_html</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.is_x_amp_html"><code class="name">prop <span class="ident">is_x_amp_html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the is_x_amp_html of this SendEmailOptions.
+# noqa: E501</p>
+<p>Is content AMP4EMAIL compatible. If set will send as x-amp-html part.
+# noqa: E501</p>
+<p>:return: The is_x_amp_html of this SendEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_x_amp_html(self):
+    &#34;&#34;&#34;Gets the is_x_amp_html of this SendEmailOptions.  # noqa: E501
+
+    Is content AMP4EMAIL compatible. If set will send as x-amp-html part.  # noqa: E501
+
+    :return: The is_x_amp_html of this SendEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._is_x_amp_html</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.reply_to"><code class="name">prop <span class="ident">reply_to</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the reply_to of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional replyTo header
+# noqa: E501</p>
+<p>:return: The reply_to of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def reply_to(self):
+    &#34;&#34;&#34;Gets the reply_to of this SendEmailOptions.  # noqa: E501
+
+    Optional replyTo header  # noqa: E501
+
+    :return: The reply_to of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._reply_to</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.send_strategy"><code class="name">prop <span class="ident">send_strategy</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the send_strategy of this SendEmailOptions.
+# noqa: E501</p>
+<p>How an email should be sent based on its recipients
+# noqa: E501</p>
+<p>:return: The send_strategy of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def send_strategy(self):
+    &#34;&#34;&#34;Gets the send_strategy of this SendEmailOptions.  # noqa: E501
+
+    How an email should be sent based on its recipients  # noqa: E501
+
+    :return: The send_strategy of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._send_strategy</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.subject"><code class="name">prop <span class="ident">subject</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the subject of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional email subject line
+# noqa: E501</p>
+<p>:return: The subject of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def subject(self):
+    &#34;&#34;&#34;Gets the subject of this SendEmailOptions.  # noqa: E501
+
+    Optional email subject line  # noqa: E501
+
+    :return: The subject of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._subject</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.template"><code class="name">prop <span class="ident">template</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the template of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional template ID to use for body. Will override body if provided. When using a template make sure you pass the corresponding map of <code>templateVariables</code>. You can find which variables are needed by fetching the template itself or viewing it in the dashboard.
+# noqa: E501</p>
+<p>:return: The template of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def template(self):
+    &#34;&#34;&#34;Gets the template of this SendEmailOptions.  # noqa: E501
+
+    Optional template ID to use for body. Will override body if provided. When using a template make sure you pass the corresponding map of `templateVariables`. You can find which variables are needed by fetching the template itself or viewing it in the dashboard.  # noqa: E501
+
+    :return: The template of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._template</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.template_variables"><code class="name">prop <span class="ident">template_variables</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the template_variables of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional map of template variables. Will replace moustache syntax variables in subject and body or template with the associated values if found.
+# noqa: E501</p>
+<p>:return: The template_variables of this SendEmailOptions.
+# noqa: E501
+:rtype: dict(str, object)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def template_variables(self):
+    &#34;&#34;&#34;Gets the template_variables of this SendEmailOptions.  # noqa: E501
+
+    Optional map of template variables. Will replace moustache syntax variables in subject and body or template with the associated values if found.  # noqa: E501
+
+    :return: The template_variables of this SendEmailOptions.  # noqa: E501
+    :rtype: dict(str, object)
+    &#34;&#34;&#34;
+    return self._template_variables</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.to"><code class="name">prop <span class="ident">to</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the to of this SendEmailOptions.
+# noqa: E501</p>
+<p>List of destination email addresses. Each email address must be RFC 5322 format. Even single recipients must be in array form. Maximum recipients per email depends on your plan. If you need to send many emails try using contacts or contact groups or use a non standard sendStrategy to ensure that spam filters are not triggered (many recipients in one email can affect your spam rating). Be cautious when sending emails that your recipients exist. High bounce rates (meaning a high percentage of emails cannot be delivered because an address does not exist) can result in account freezing.
+# noqa: E501</p>
+<p>:return: The to of this SendEmailOptions.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def to(self):
+    &#34;&#34;&#34;Gets the to of this SendEmailOptions.  # noqa: E501
+
+    List of destination email addresses. Each email address must be RFC 5322 format. Even single recipients must be in array form. Maximum recipients per email depends on your plan. If you need to send many emails try using contacts or contact groups or use a non standard sendStrategy to ensure that spam filters are not triggered (many recipients in one email can affect your spam rating). Be cautious when sending emails that your recipients exist. High bounce rates (meaning a high percentage of emails cannot be delivered because an address does not exist) can result in account freezing.  # noqa: E501
+
+    :return: The to of this SendEmailOptions.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._to</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.to_contacts"><code class="name">prop <span class="ident">to_contacts</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the to_contacts of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional list of contact IDs to send email to. Manage your contacts via the API or dashboard. When contacts are used the email is sent to each contact separately so they will not see other recipients.
+# noqa: E501</p>
+<p>:return: The to_contacts of this SendEmailOptions.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def to_contacts(self):
+    &#34;&#34;&#34;Gets the to_contacts of this SendEmailOptions.  # noqa: E501
+
+    Optional list of contact IDs to send email to. Manage your contacts via the API or dashboard. When contacts are used the email is sent to each contact separately so they will not see other recipients.  # noqa: E501
+
+    :return: The to_contacts of this SendEmailOptions.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._to_contacts</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.to_group"><code class="name">prop <span class="ident">to_group</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the to_group of this SendEmailOptions.
+# noqa: E501</p>
+<p>Optional contact group ID to send email to. You can create contacts and contact groups in the API or dashboard and use them for email campaigns. When contact groups are used the email is sent to each contact separately so they will not see other recipients
+# noqa: E501</p>
+<p>:return: The to_group of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def to_group(self):
+    &#34;&#34;&#34;Gets the to_group of this SendEmailOptions.  # noqa: E501
+
+    Optional contact group ID to send email to. You can create contacts and contact groups in the API or dashboard and use them for email campaigns. When contact groups are used the email is sent to each contact separately so they will not see other recipients  # noqa: E501
+
+    :return: The to_group of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._to_group</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.use_inbox_name"><code class="name">prop <span class="ident">use_inbox_name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the use_inbox_name of this SendEmailOptions.
+# noqa: E501</p>
+<p>Use name of inbox as sender email address name. Will construct RFC 5322 email address with <code>Inbox name &lt;inbox@address.com&gt;</code> if the inbox has a name.
+# noqa: E501</p>
+<p>:return: The use_inbox_name of this SendEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def use_inbox_name(self):
+    &#34;&#34;&#34;Gets the use_inbox_name of this SendEmailOptions.  # noqa: E501
+
+    Use name of inbox as sender email address name. Will construct RFC 5322 email address with `Inbox name &lt;inbox@address.com&gt;` if the inbox has a name.  # noqa: E501
+
+    :return: The use_inbox_name of this SendEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._use_inbox_name</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.validate_email_addresses"><code class="name">prop <span class="ident">validate_email_addresses</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the validate_email_addresses of this SendEmailOptions.
+# noqa: E501</p>
+<p>Validate recipient email addresses before sending
+# noqa: E501</p>
+<p>:return: The validate_email_addresses of this SendEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def validate_email_addresses(self):
+    &#34;&#34;&#34;Gets the validate_email_addresses of this SendEmailOptions.  # noqa: E501
+
+    Validate recipient email addresses before sending  # noqa: E501
+
+    :return: The validate_email_addresses of this SendEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._validate_email_addresses</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.send_email_options.SendEmailOptions.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions" href="#mailslurp_client.models.send_email_options.SendEmailOptions">SendEmailOptions</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.add_tracking_pixel" href="#mailslurp_client.models.send_email_options.SendEmailOptions.add_tracking_pixel">add_tracking_pixel</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.attachments" href="#mailslurp_client.models.send_email_options.SendEmailOptions.attachments">attachments</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.attribute_map" href="#mailslurp_client.models.send_email_options.SendEmailOptions.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.bcc" href="#mailslurp_client.models.send_email_options.SendEmailOptions.bcc">bcc</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.body" href="#mailslurp_client.models.send_email_options.SendEmailOptions.body">body</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.body_parts" href="#mailslurp_client.models.send_email_options.SendEmailOptions.body_parts">body_parts</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.cc" href="#mailslurp_client.models.send_email_options.SendEmailOptions.cc">cc</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.charset" href="#mailslurp_client.models.send_email_options.SendEmailOptions.charset">charset</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.custom_headers" href="#mailslurp_client.models.send_email_options.SendEmailOptions.custom_headers">custom_headers</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.filter_bounced_recipients" href="#mailslurp_client.models.send_email_options.SendEmailOptions.filter_bounced_recipients">filter_bounced_recipients</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.from_name" href="#mailslurp_client.models.send_email_options.SendEmailOptions.from_name">from_name</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.html" href="#mailslurp_client.models.send_email_options.SendEmailOptions.html">html</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.ignore_empty_recipients" href="#mailslurp_client.models.send_email_options.SendEmailOptions.ignore_empty_recipients">ignore_empty_recipients</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.is_html" href="#mailslurp_client.models.send_email_options.SendEmailOptions.is_html">is_html</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.is_x_amp_html" href="#mailslurp_client.models.send_email_options.SendEmailOptions.is_x_amp_html">is_x_amp_html</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.openapi_types" href="#mailslurp_client.models.send_email_options.SendEmailOptions.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.reply_to" href="#mailslurp_client.models.send_email_options.SendEmailOptions.reply_to">reply_to</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.send_strategy" href="#mailslurp_client.models.send_email_options.SendEmailOptions.send_strategy">send_strategy</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.subject" href="#mailslurp_client.models.send_email_options.SendEmailOptions.subject">subject</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.template" href="#mailslurp_client.models.send_email_options.SendEmailOptions.template">template</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.template_variables" href="#mailslurp_client.models.send_email_options.SendEmailOptions.template_variables">template_variables</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.to" href="#mailslurp_client.models.send_email_options.SendEmailOptions.to">to</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.to_contacts" href="#mailslurp_client.models.send_email_options.SendEmailOptions.to_contacts">to_contacts</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.to_dict" href="#mailslurp_client.models.send_email_options.SendEmailOptions.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.to_group" href="#mailslurp_client.models.send_email_options.SendEmailOptions.to_group">to_group</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.to_str" href="#mailslurp_client.models.send_email_options.SendEmailOptions.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.use_inbox_name" href="#mailslurp_client.models.send_email_options.SendEmailOptions.use_inbox_name">use_inbox_name</a></code></li>
+<li><code><a title="mailslurp_client.models.send_email_options.SendEmailOptions.validate_email_addresses" href="#mailslurp_client.models.send_email_options.SendEmailOptions.validate_email_addresses">validate_email_addresses</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>
