@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.connector_imap_connection_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.connector_imap_connection_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto"><code class="flex name class">
+<span>class <span class="ident">ConnectorImapConnectionDto</span></span>
+<span>(</span><span>connector_id=None, imap_host=None, imap_port=None, imap_username=None, imap_password=None, imap_ssl=None, select_folder=None, search_terms=None, start_tls=None, proxy_host=None, proxy_port=None, proxy_enabled=None, local_host_name=None, mechanisms=None, ssl_protocols=None, ssl_trust=None, enabled=None, created_at=None, id=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>ConnectorImapConnectionDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ConnectorImapConnectionDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;connector_id&#39;: &#39;str&#39;,
+        &#39;imap_host&#39;: &#39;str&#39;,
+        &#39;imap_port&#39;: &#39;int&#39;,
+        &#39;imap_username&#39;: &#39;str&#39;,
+        &#39;imap_password&#39;: &#39;str&#39;,
+        &#39;imap_ssl&#39;: &#39;bool&#39;,
+        &#39;select_folder&#39;: &#39;str&#39;,
+        &#39;search_terms&#39;: &#39;str&#39;,
+        &#39;start_tls&#39;: &#39;bool&#39;,
+        &#39;proxy_host&#39;: &#39;str&#39;,
+        &#39;proxy_port&#39;: &#39;int&#39;,
+        &#39;proxy_enabled&#39;: &#39;bool&#39;,
+        &#39;local_host_name&#39;: &#39;str&#39;,
+        &#39;mechanisms&#39;: &#39;list[str]&#39;,
+        &#39;ssl_protocols&#39;: &#39;list[str]&#39;,
+        &#39;ssl_trust&#39;: &#39;str&#39;,
+        &#39;enabled&#39;: &#39;bool&#39;,
+        &#39;created_at&#39;: &#39;datetime&#39;,
+        &#39;id&#39;: &#39;str&#39;
+    }
+
+    attribute_map = {
+        &#39;connector_id&#39;: &#39;connectorId&#39;,
+        &#39;imap_host&#39;: &#39;imapHost&#39;,
+        &#39;imap_port&#39;: &#39;imapPort&#39;,
+        &#39;imap_username&#39;: &#39;imapUsername&#39;,
+        &#39;imap_password&#39;: &#39;imapPassword&#39;,
+        &#39;imap_ssl&#39;: &#39;imapSsl&#39;,
+        &#39;select_folder&#39;: &#39;selectFolder&#39;,
+        &#39;search_terms&#39;: &#39;searchTerms&#39;,
+        &#39;start_tls&#39;: &#39;startTls&#39;,
+        &#39;proxy_host&#39;: &#39;proxyHost&#39;,
+        &#39;proxy_port&#39;: &#39;proxyPort&#39;,
+        &#39;proxy_enabled&#39;: &#39;proxyEnabled&#39;,
+        &#39;local_host_name&#39;: &#39;localHostName&#39;,
+        &#39;mechanisms&#39;: &#39;mechanisms&#39;,
+        &#39;ssl_protocols&#39;: &#39;sslProtocols&#39;,
+        &#39;ssl_trust&#39;: &#39;sslTrust&#39;,
+        &#39;enabled&#39;: &#39;enabled&#39;,
+        &#39;created_at&#39;: &#39;createdAt&#39;,
+        &#39;id&#39;: &#39;id&#39;
+    }
+
+    def __init__(self, connector_id=None, imap_host=None, imap_port=None, imap_username=None, imap_password=None, imap_ssl=None, select_folder=None, search_terms=None, start_tls=None, proxy_host=None, proxy_port=None, proxy_enabled=None, local_host_name=None, mechanisms=None, ssl_protocols=None, ssl_trust=None, enabled=None, created_at=None, id=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;ConnectorImapConnectionDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._connector_id = None
+        self._imap_host = None
+        self._imap_port = None
+        self._imap_username = None
+        self._imap_password = None
+        self._imap_ssl = None
+        self._select_folder = None
+        self._search_terms = None
+        self._start_tls = None
+        self._proxy_host = None
+        self._proxy_port = None
+        self._proxy_enabled = None
+        self._local_host_name = None
+        self._mechanisms = None
+        self._ssl_protocols = None
+        self._ssl_trust = None
+        self._enabled = None
+        self._created_at = None
+        self._id = None
+        self.discriminator = None
+
+        self.connector_id = connector_id
+        self.imap_host = imap_host
+        if imap_port is not None:
+            self.imap_port = imap_port
+        if imap_username is not None:
+            self.imap_username = imap_username
+        if imap_password is not None:
+            self.imap_password = imap_password
+        if imap_ssl is not None:
+            self.imap_ssl = imap_ssl
+        if select_folder is not None:
+            self.select_folder = select_folder
+        if search_terms is not None:
+            self.search_terms = search_terms
+        if start_tls is not None:
+            self.start_tls = start_tls
+        if proxy_host is not None:
+            self.proxy_host = proxy_host
+        if proxy_port is not None:
+            self.proxy_port = proxy_port
+        if proxy_enabled is not None:
+            self.proxy_enabled = proxy_enabled
+        if local_host_name is not None:
+            self.local_host_name = local_host_name
+        if mechanisms is not None:
+            self.mechanisms = mechanisms
+        if ssl_protocols is not None:
+            self.ssl_protocols = ssl_protocols
+        if ssl_trust is not None:
+            self.ssl_trust = ssl_trust
+        if enabled is not None:
+            self.enabled = enabled
+        self.created_at = created_at
+        self.id = id
+
+    @property
+    def connector_id(self):
+        &#34;&#34;&#34;Gets the connector_id of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The connector_id of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._connector_id
+
+    @connector_id.setter
+    def connector_id(self, connector_id):
+        &#34;&#34;&#34;Sets the connector_id of this ConnectorImapConnectionDto.
+
+
+        :param connector_id: The connector_id of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and connector_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `connector_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._connector_id = connector_id
+
+    @property
+    def imap_host(self):
+        &#34;&#34;&#34;Gets the imap_host of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The imap_host of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._imap_host
+
+    @imap_host.setter
+    def imap_host(self, imap_host):
+        &#34;&#34;&#34;Sets the imap_host of this ConnectorImapConnectionDto.
+
+
+        :param imap_host: The imap_host of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and imap_host is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `imap_host`, must not be `None`&#34;)  # noqa: E501
+
+        self._imap_host = imap_host
+
+    @property
+    def imap_port(self):
+        &#34;&#34;&#34;Gets the imap_port of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The imap_port of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._imap_port
+
+    @imap_port.setter
+    def imap_port(self, imap_port):
+        &#34;&#34;&#34;Sets the imap_port of this ConnectorImapConnectionDto.
+
+
+        :param imap_port: The imap_port of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+
+        self._imap_port = imap_port
+
+    @property
+    def imap_username(self):
+        &#34;&#34;&#34;Gets the imap_username of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The imap_username of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._imap_username
+
+    @imap_username.setter
+    def imap_username(self, imap_username):
+        &#34;&#34;&#34;Sets the imap_username of this ConnectorImapConnectionDto.
+
+
+        :param imap_username: The imap_username of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._imap_username = imap_username
+
+    @property
+    def imap_password(self):
+        &#34;&#34;&#34;Gets the imap_password of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The imap_password of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._imap_password
+
+    @imap_password.setter
+    def imap_password(self, imap_password):
+        &#34;&#34;&#34;Sets the imap_password of this ConnectorImapConnectionDto.
+
+
+        :param imap_password: The imap_password of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._imap_password = imap_password
+
+    @property
+    def imap_ssl(self):
+        &#34;&#34;&#34;Gets the imap_ssl of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The imap_ssl of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._imap_ssl
+
+    @imap_ssl.setter
+    def imap_ssl(self, imap_ssl):
+        &#34;&#34;&#34;Sets the imap_ssl of this ConnectorImapConnectionDto.
+
+
+        :param imap_ssl: The imap_ssl of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._imap_ssl = imap_ssl
+
+    @property
+    def select_folder(self):
+        &#34;&#34;&#34;Gets the select_folder of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The select_folder of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._select_folder
+
+    @select_folder.setter
+    def select_folder(self, select_folder):
+        &#34;&#34;&#34;Sets the select_folder of this ConnectorImapConnectionDto.
+
+
+        :param select_folder: The select_folder of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._select_folder = select_folder
+
+    @property
+    def search_terms(self):
+        &#34;&#34;&#34;Gets the search_terms of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The search_terms of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._search_terms
+
+    @search_terms.setter
+    def search_terms(self, search_terms):
+        &#34;&#34;&#34;Sets the search_terms of this ConnectorImapConnectionDto.
+
+
+        :param search_terms: The search_terms of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._search_terms = search_terms
+
+    @property
+    def start_tls(self):
+        &#34;&#34;&#34;Gets the start_tls of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The start_tls of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._start_tls
+
+    @start_tls.setter
+    def start_tls(self, start_tls):
+        &#34;&#34;&#34;Sets the start_tls of this ConnectorImapConnectionDto.
+
+
+        :param start_tls: The start_tls of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._start_tls = start_tls
+
+    @property
+    def proxy_host(self):
+        &#34;&#34;&#34;Gets the proxy_host of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The proxy_host of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._proxy_host
+
+    @proxy_host.setter
+    def proxy_host(self, proxy_host):
+        &#34;&#34;&#34;Sets the proxy_host of this ConnectorImapConnectionDto.
+
+
+        :param proxy_host: The proxy_host of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._proxy_host = proxy_host
+
+    @property
+    def proxy_port(self):
+        &#34;&#34;&#34;Gets the proxy_port of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The proxy_port of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._proxy_port
+
+    @proxy_port.setter
+    def proxy_port(self, proxy_port):
+        &#34;&#34;&#34;Sets the proxy_port of this ConnectorImapConnectionDto.
+
+
+        :param proxy_port: The proxy_port of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+
+        self._proxy_port = proxy_port
+
+    @property
+    def proxy_enabled(self):
+        &#34;&#34;&#34;Gets the proxy_enabled of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The proxy_enabled of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._proxy_enabled
+
+    @proxy_enabled.setter
+    def proxy_enabled(self, proxy_enabled):
+        &#34;&#34;&#34;Sets the proxy_enabled of this ConnectorImapConnectionDto.
+
+
+        :param proxy_enabled: The proxy_enabled of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._proxy_enabled = proxy_enabled
+
+    @property
+    def local_host_name(self):
+        &#34;&#34;&#34;Gets the local_host_name of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The local_host_name of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._local_host_name
+
+    @local_host_name.setter
+    def local_host_name(self, local_host_name):
+        &#34;&#34;&#34;Sets the local_host_name of this ConnectorImapConnectionDto.
+
+
+        :param local_host_name: The local_host_name of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._local_host_name = local_host_name
+
+    @property
+    def mechanisms(self):
+        &#34;&#34;&#34;Gets the mechanisms of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The mechanisms of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._mechanisms
+
+    @mechanisms.setter
+    def mechanisms(self, mechanisms):
+        &#34;&#34;&#34;Sets the mechanisms of this ConnectorImapConnectionDto.
+
+
+        :param mechanisms: The mechanisms of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._mechanisms = mechanisms
+
+    @property
+    def ssl_protocols(self):
+        &#34;&#34;&#34;Gets the ssl_protocols of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The ssl_protocols of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._ssl_protocols
+
+    @ssl_protocols.setter
+    def ssl_protocols(self, ssl_protocols):
+        &#34;&#34;&#34;Sets the ssl_protocols of this ConnectorImapConnectionDto.
+
+
+        :param ssl_protocols: The ssl_protocols of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._ssl_protocols = ssl_protocols
+
+    @property
+    def ssl_trust(self):
+        &#34;&#34;&#34;Gets the ssl_trust of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The ssl_trust of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._ssl_trust
+
+    @ssl_trust.setter
+    def ssl_trust(self, ssl_trust):
+        &#34;&#34;&#34;Sets the ssl_trust of this ConnectorImapConnectionDto.
+
+
+        :param ssl_trust: The ssl_trust of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._ssl_trust = ssl_trust
+
+    @property
+    def enabled(self):
+        &#34;&#34;&#34;Gets the enabled of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The enabled of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, enabled):
+        &#34;&#34;&#34;Sets the enabled of this ConnectorImapConnectionDto.
+
+
+        :param enabled: The enabled of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._enabled = enabled
+
+    @property
+    def created_at(self):
+        &#34;&#34;&#34;Gets the created_at of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The created_at of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        &#34;&#34;&#34;Sets the created_at of this ConnectorImapConnectionDto.
+
+
+        :param created_at: The created_at of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and created_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `created_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._created_at = created_at
+
+    @property
+    def id(self):
+        &#34;&#34;&#34;Gets the id of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+        :return: The id of this ConnectorImapConnectionDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        &#34;&#34;&#34;Sets the id of this ConnectorImapConnectionDto.
+
+
+        :param id: The id of this ConnectorImapConnectionDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `id`, must not be `None`&#34;)  # noqa: E501
+
+        self._id = id
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, ConnectorImapConnectionDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, ConnectorImapConnectionDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.connector_id"><code class="name">prop <span class="ident">connector_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the connector_id of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The connector_id of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def connector_id(self):
+    &#34;&#34;&#34;Gets the connector_id of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The connector_id of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._connector_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.created_at"><code class="name">prop <span class="ident">created_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the created_at of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The created_at of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def created_at(self):
+    &#34;&#34;&#34;Gets the created_at of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The created_at of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._created_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.enabled"><code class="name">prop <span class="ident">enabled</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the enabled of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The enabled of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def enabled(self):
+    &#34;&#34;&#34;Gets the enabled of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The enabled of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._enabled</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.id"><code class="name">prop <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the id of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The id of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def id(self):
+    &#34;&#34;&#34;Gets the id of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The id of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_host"><code class="name">prop <span class="ident">imap_host</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the imap_host of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The imap_host of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def imap_host(self):
+    &#34;&#34;&#34;Gets the imap_host of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The imap_host of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._imap_host</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_password"><code class="name">prop <span class="ident">imap_password</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the imap_password of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The imap_password of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def imap_password(self):
+    &#34;&#34;&#34;Gets the imap_password of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The imap_password of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._imap_password</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_port"><code class="name">prop <span class="ident">imap_port</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the imap_port of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The imap_port of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def imap_port(self):
+    &#34;&#34;&#34;Gets the imap_port of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The imap_port of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._imap_port</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_ssl"><code class="name">prop <span class="ident">imap_ssl</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the imap_ssl of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The imap_ssl of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def imap_ssl(self):
+    &#34;&#34;&#34;Gets the imap_ssl of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The imap_ssl of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._imap_ssl</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_username"><code class="name">prop <span class="ident">imap_username</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the imap_username of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The imap_username of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def imap_username(self):
+    &#34;&#34;&#34;Gets the imap_username of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The imap_username of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._imap_username</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.local_host_name"><code class="name">prop <span class="ident">local_host_name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the local_host_name of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The local_host_name of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def local_host_name(self):
+    &#34;&#34;&#34;Gets the local_host_name of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The local_host_name of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._local_host_name</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.mechanisms"><code class="name">prop <span class="ident">mechanisms</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the mechanisms of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The mechanisms of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def mechanisms(self):
+    &#34;&#34;&#34;Gets the mechanisms of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The mechanisms of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._mechanisms</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_enabled"><code class="name">prop <span class="ident">proxy_enabled</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the proxy_enabled of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The proxy_enabled of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def proxy_enabled(self):
+    &#34;&#34;&#34;Gets the proxy_enabled of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The proxy_enabled of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._proxy_enabled</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_host"><code class="name">prop <span class="ident">proxy_host</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the proxy_host of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The proxy_host of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def proxy_host(self):
+    &#34;&#34;&#34;Gets the proxy_host of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The proxy_host of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._proxy_host</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_port"><code class="name">prop <span class="ident">proxy_port</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the proxy_port of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The proxy_port of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def proxy_port(self):
+    &#34;&#34;&#34;Gets the proxy_port of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The proxy_port of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._proxy_port</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.search_terms"><code class="name">prop <span class="ident">search_terms</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the search_terms of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The search_terms of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def search_terms(self):
+    &#34;&#34;&#34;Gets the search_terms of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The search_terms of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._search_terms</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.select_folder"><code class="name">prop <span class="ident">select_folder</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the select_folder of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The select_folder of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def select_folder(self):
+    &#34;&#34;&#34;Gets the select_folder of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The select_folder of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._select_folder</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.ssl_protocols"><code class="name">prop <span class="ident">ssl_protocols</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the ssl_protocols of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The ssl_protocols of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ssl_protocols(self):
+    &#34;&#34;&#34;Gets the ssl_protocols of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The ssl_protocols of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._ssl_protocols</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.ssl_trust"><code class="name">prop <span class="ident">ssl_trust</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the ssl_trust of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The ssl_trust of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ssl_trust(self):
+    &#34;&#34;&#34;Gets the ssl_trust of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The ssl_trust of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._ssl_trust</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.start_tls"><code class="name">prop <span class="ident">start_tls</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the start_tls of this ConnectorImapConnectionDto.
+# noqa: E501</p>
+<p>:return: The start_tls of this ConnectorImapConnectionDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def start_tls(self):
+    &#34;&#34;&#34;Gets the start_tls of this ConnectorImapConnectionDto.  # noqa: E501
+
+
+    :return: The start_tls of this ConnectorImapConnectionDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._start_tls</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto">ConnectorImapConnectionDto</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.attribute_map" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.connector_id" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.connector_id">connector_id</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.created_at" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.created_at">created_at</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.enabled" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.enabled">enabled</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.id" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.id">id</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_host" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_host">imap_host</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_password" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_password">imap_password</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_port" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_port">imap_port</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_ssl" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_ssl">imap_ssl</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_username" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.imap_username">imap_username</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.local_host_name" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.local_host_name">local_host_name</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.mechanisms" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.mechanisms">mechanisms</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.openapi_types" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_enabled" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_enabled">proxy_enabled</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_host" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_host">proxy_host</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_port" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.proxy_port">proxy_port</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.search_terms" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.search_terms">search_terms</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.select_folder" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.select_folder">select_folder</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.ssl_protocols" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.ssl_protocols">ssl_protocols</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.ssl_trust" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.ssl_trust">ssl_trust</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.start_tls" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.start_tls">start_tls</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.to_dict" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.to_str" href="#mailslurp_client.models.connector_imap_connection_dto.ConnectorImapConnectionDto.to_str">to_str</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

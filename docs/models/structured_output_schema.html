@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.structured_output_schema API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.structured_output_schema</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema"><code class="flex name class">
+<span>class <span class="ident">StructuredOutputSchema</span></span>
+<span>(</span><span>any_of=None, default=None, description=None, enum=None, example=None, format=None, items=None, max_items=None, min_items=None, max_length=None, min_length=None, pattern=None, properties=None, property_ordering=None, required=None, max_properties=None, min_properties=None, maximum=None, minimum=None, nullable=None, title=None, type=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>StructuredOutputSchema - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StructuredOutputSchema(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;any_of&#39;: &#39;list[StructuredOutputSchema]&#39;,
+        &#39;default&#39;: &#39;object&#39;,
+        &#39;description&#39;: &#39;str&#39;,
+        &#39;enum&#39;: &#39;list[str]&#39;,
+        &#39;example&#39;: &#39;object&#39;,
+        &#39;format&#39;: &#39;str&#39;,
+        &#39;items&#39;: &#39;StructuredOutputSchema&#39;,
+        &#39;max_items&#39;: &#39;int&#39;,
+        &#39;min_items&#39;: &#39;int&#39;,
+        &#39;max_length&#39;: &#39;int&#39;,
+        &#39;min_length&#39;: &#39;int&#39;,
+        &#39;pattern&#39;: &#39;str&#39;,
+        &#39;properties&#39;: &#39;dict(str, StructuredOutputSchema)&#39;,
+        &#39;property_ordering&#39;: &#39;list[str]&#39;,
+        &#39;required&#39;: &#39;list[str]&#39;,
+        &#39;max_properties&#39;: &#39;int&#39;,
+        &#39;min_properties&#39;: &#39;int&#39;,
+        &#39;maximum&#39;: &#39;float&#39;,
+        &#39;minimum&#39;: &#39;float&#39;,
+        &#39;nullable&#39;: &#39;bool&#39;,
+        &#39;title&#39;: &#39;str&#39;,
+        &#39;type&#39;: &#39;str&#39;
+    }
+
+    attribute_map = {
+        &#39;any_of&#39;: &#39;anyOf&#39;,
+        &#39;default&#39;: &#39;default&#39;,
+        &#39;description&#39;: &#39;description&#39;,
+        &#39;enum&#39;: &#39;enum&#39;,
+        &#39;example&#39;: &#39;example&#39;,
+        &#39;format&#39;: &#39;format&#39;,
+        &#39;items&#39;: &#39;items&#39;,
+        &#39;max_items&#39;: &#39;maxItems&#39;,
+        &#39;min_items&#39;: &#39;minItems&#39;,
+        &#39;max_length&#39;: &#39;maxLength&#39;,
+        &#39;min_length&#39;: &#39;minLength&#39;,
+        &#39;pattern&#39;: &#39;pattern&#39;,
+        &#39;properties&#39;: &#39;properties&#39;,
+        &#39;property_ordering&#39;: &#39;propertyOrdering&#39;,
+        &#39;required&#39;: &#39;required&#39;,
+        &#39;max_properties&#39;: &#39;maxProperties&#39;,
+        &#39;min_properties&#39;: &#39;minProperties&#39;,
+        &#39;maximum&#39;: &#39;maximum&#39;,
+        &#39;minimum&#39;: &#39;minimum&#39;,
+        &#39;nullable&#39;: &#39;nullable&#39;,
+        &#39;title&#39;: &#39;title&#39;,
+        &#39;type&#39;: &#39;type&#39;
+    }
+
+    def __init__(self, any_of=None, default=None, description=None, enum=None, example=None, format=None, items=None, max_items=None, min_items=None, max_length=None, min_length=None, pattern=None, properties=None, property_ordering=None, required=None, max_properties=None, min_properties=None, maximum=None, minimum=None, nullable=None, title=None, type=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;StructuredOutputSchema - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._any_of = None
+        self._default = None
+        self._description = None
+        self._enum = None
+        self._example = None
+        self._format = None
+        self._items = None
+        self._max_items = None
+        self._min_items = None
+        self._max_length = None
+        self._min_length = None
+        self._pattern = None
+        self._properties = None
+        self._property_ordering = None
+        self._required = None
+        self._max_properties = None
+        self._min_properties = None
+        self._maximum = None
+        self._minimum = None
+        self._nullable = None
+        self._title = None
+        self._type = None
+        self.discriminator = None
+
+        if any_of is not None:
+            self.any_of = any_of
+        self.default = default
+        if description is not None:
+            self.description = description
+        if enum is not None:
+            self.enum = enum
+        self.example = example
+        if format is not None:
+            self.format = format
+        if items is not None:
+            self.items = items
+        if max_items is not None:
+            self.max_items = max_items
+        if min_items is not None:
+            self.min_items = min_items
+        if max_length is not None:
+            self.max_length = max_length
+        if min_length is not None:
+            self.min_length = min_length
+        if pattern is not None:
+            self.pattern = pattern
+        if properties is not None:
+            self.properties = properties
+        if property_ordering is not None:
+            self.property_ordering = property_ordering
+        if required is not None:
+            self.required = required
+        if max_properties is not None:
+            self.max_properties = max_properties
+        if min_properties is not None:
+            self.min_properties = min_properties
+        if maximum is not None:
+            self.maximum = maximum
+        if minimum is not None:
+            self.minimum = minimum
+        if nullable is not None:
+            self.nullable = nullable
+        if title is not None:
+            self.title = title
+        if type is not None:
+            self.type = type
+
+    @property
+    def any_of(self):
+        &#34;&#34;&#34;Gets the any_of of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The any_of of this StructuredOutputSchema.  # noqa: E501
+        :rtype: list[StructuredOutputSchema]
+        &#34;&#34;&#34;
+        return self._any_of
+
+    @any_of.setter
+    def any_of(self, any_of):
+        &#34;&#34;&#34;Sets the any_of of this StructuredOutputSchema.
+
+
+        :param any_of: The any_of of this StructuredOutputSchema.  # noqa: E501
+        :type: list[StructuredOutputSchema]
+        &#34;&#34;&#34;
+
+        self._any_of = any_of
+
+    @property
+    def default(self):
+        &#34;&#34;&#34;Gets the default of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The default of this StructuredOutputSchema.  # noqa: E501
+        :rtype: object
+        &#34;&#34;&#34;
+        return self._default
+
+    @default.setter
+    def default(self, default):
+        &#34;&#34;&#34;Sets the default of this StructuredOutputSchema.
+
+
+        :param default: The default of this StructuredOutputSchema.  # noqa: E501
+        :type: object
+        &#34;&#34;&#34;
+
+        self._default = default
+
+    @property
+    def description(self):
+        &#34;&#34;&#34;Gets the description of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The description of this StructuredOutputSchema.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        &#34;&#34;&#34;Sets the description of this StructuredOutputSchema.
+
+
+        :param description: The description of this StructuredOutputSchema.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._description = description
+
+    @property
+    def enum(self):
+        &#34;&#34;&#34;Gets the enum of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The enum of this StructuredOutputSchema.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._enum
+
+    @enum.setter
+    def enum(self, enum):
+        &#34;&#34;&#34;Sets the enum of this StructuredOutputSchema.
+
+
+        :param enum: The enum of this StructuredOutputSchema.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._enum = enum
+
+    @property
+    def example(self):
+        &#34;&#34;&#34;Gets the example of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The example of this StructuredOutputSchema.  # noqa: E501
+        :rtype: object
+        &#34;&#34;&#34;
+        return self._example
+
+    @example.setter
+    def example(self, example):
+        &#34;&#34;&#34;Sets the example of this StructuredOutputSchema.
+
+
+        :param example: The example of this StructuredOutputSchema.  # noqa: E501
+        :type: object
+        &#34;&#34;&#34;
+
+        self._example = example
+
+    @property
+    def format(self):
+        &#34;&#34;&#34;Gets the format of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The format of this StructuredOutputSchema.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        &#34;&#34;&#34;Sets the format of this StructuredOutputSchema.
+
+
+        :param format: The format of this StructuredOutputSchema.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._format = format
+
+    @property
+    def items(self):
+        &#34;&#34;&#34;Gets the items of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The items of this StructuredOutputSchema.  # noqa: E501
+        :rtype: StructuredOutputSchema
+        &#34;&#34;&#34;
+        return self._items
+
+    @items.setter
+    def items(self, items):
+        &#34;&#34;&#34;Sets the items of this StructuredOutputSchema.
+
+
+        :param items: The items of this StructuredOutputSchema.  # noqa: E501
+        :type: StructuredOutputSchema
+        &#34;&#34;&#34;
+
+        self._items = items
+
+    @property
+    def max_items(self):
+        &#34;&#34;&#34;Gets the max_items of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The max_items of this StructuredOutputSchema.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._max_items
+
+    @max_items.setter
+    def max_items(self, max_items):
+        &#34;&#34;&#34;Sets the max_items of this StructuredOutputSchema.
+
+
+        :param max_items: The max_items of this StructuredOutputSchema.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if (self.local_vars_configuration.client_side_validation and
+                max_items is not None and max_items &lt; 0):  # noqa: E501
+            raise ValueError(&#34;Invalid value for `max_items`, must be a value greater than or equal to `0`&#34;)  # noqa: E501
+
+        self._max_items = max_items
+
+    @property
+    def min_items(self):
+        &#34;&#34;&#34;Gets the min_items of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The min_items of this StructuredOutputSchema.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._min_items
+
+    @min_items.setter
+    def min_items(self, min_items):
+        &#34;&#34;&#34;Sets the min_items of this StructuredOutputSchema.
+
+
+        :param min_items: The min_items of this StructuredOutputSchema.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if (self.local_vars_configuration.client_side_validation and
+                min_items is not None and min_items &lt; 0):  # noqa: E501
+            raise ValueError(&#34;Invalid value for `min_items`, must be a value greater than or equal to `0`&#34;)  # noqa: E501
+
+        self._min_items = min_items
+
+    @property
+    def max_length(self):
+        &#34;&#34;&#34;Gets the max_length of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The max_length of this StructuredOutputSchema.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._max_length
+
+    @max_length.setter
+    def max_length(self, max_length):
+        &#34;&#34;&#34;Sets the max_length of this StructuredOutputSchema.
+
+
+        :param max_length: The max_length of this StructuredOutputSchema.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if (self.local_vars_configuration.client_side_validation and
+                max_length is not None and max_length &lt; 0):  # noqa: E501
+            raise ValueError(&#34;Invalid value for `max_length`, must be a value greater than or equal to `0`&#34;)  # noqa: E501
+
+        self._max_length = max_length
+
+    @property
+    def min_length(self):
+        &#34;&#34;&#34;Gets the min_length of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The min_length of this StructuredOutputSchema.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._min_length
+
+    @min_length.setter
+    def min_length(self, min_length):
+        &#34;&#34;&#34;Sets the min_length of this StructuredOutputSchema.
+
+
+        :param min_length: The min_length of this StructuredOutputSchema.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if (self.local_vars_configuration.client_side_validation and
+                min_length is not None and min_length &lt; 0):  # noqa: E501
+            raise ValueError(&#34;Invalid value for `min_length`, must be a value greater than or equal to `0`&#34;)  # noqa: E501
+
+        self._min_length = min_length
+
+    @property
+    def pattern(self):
+        &#34;&#34;&#34;Gets the pattern of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The pattern of this StructuredOutputSchema.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._pattern
+
+    @pattern.setter
+    def pattern(self, pattern):
+        &#34;&#34;&#34;Sets the pattern of this StructuredOutputSchema.
+
+
+        :param pattern: The pattern of this StructuredOutputSchema.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._pattern = pattern
+
+    @property
+    def properties(self):
+        &#34;&#34;&#34;Gets the properties of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The properties of this StructuredOutputSchema.  # noqa: E501
+        :rtype: dict(str, StructuredOutputSchema)
+        &#34;&#34;&#34;
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        &#34;&#34;&#34;Sets the properties of this StructuredOutputSchema.
+
+
+        :param properties: The properties of this StructuredOutputSchema.  # noqa: E501
+        :type: dict(str, StructuredOutputSchema)
+        &#34;&#34;&#34;
+
+        self._properties = properties
+
+    @property
+    def property_ordering(self):
+        &#34;&#34;&#34;Gets the property_ordering of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The property_ordering of this StructuredOutputSchema.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._property_ordering
+
+    @property_ordering.setter
+    def property_ordering(self, property_ordering):
+        &#34;&#34;&#34;Sets the property_ordering of this StructuredOutputSchema.
+
+
+        :param property_ordering: The property_ordering of this StructuredOutputSchema.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._property_ordering = property_ordering
+
+    @property
+    def required(self):
+        &#34;&#34;&#34;Gets the required of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The required of this StructuredOutputSchema.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._required
+
+    @required.setter
+    def required(self, required):
+        &#34;&#34;&#34;Sets the required of this StructuredOutputSchema.
+
+
+        :param required: The required of this StructuredOutputSchema.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._required = required
+
+    @property
+    def max_properties(self):
+        &#34;&#34;&#34;Gets the max_properties of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The max_properties of this StructuredOutputSchema.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._max_properties
+
+    @max_properties.setter
+    def max_properties(self, max_properties):
+        &#34;&#34;&#34;Sets the max_properties of this StructuredOutputSchema.
+
+
+        :param max_properties: The max_properties of this StructuredOutputSchema.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if (self.local_vars_configuration.client_side_validation and
+                max_properties is not None and max_properties &lt; 0):  # noqa: E501
+            raise ValueError(&#34;Invalid value for `max_properties`, must be a value greater than or equal to `0`&#34;)  # noqa: E501
+
+        self._max_properties = max_properties
+
+    @property
+    def min_properties(self):
+        &#34;&#34;&#34;Gets the min_properties of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The min_properties of this StructuredOutputSchema.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._min_properties
+
+    @min_properties.setter
+    def min_properties(self, min_properties):
+        &#34;&#34;&#34;Sets the min_properties of this StructuredOutputSchema.
+
+
+        :param min_properties: The min_properties of this StructuredOutputSchema.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if (self.local_vars_configuration.client_side_validation and
+                min_properties is not None and min_properties &lt; 0):  # noqa: E501
+            raise ValueError(&#34;Invalid value for `min_properties`, must be a value greater than or equal to `0`&#34;)  # noqa: E501
+
+        self._min_properties = min_properties
+
+    @property
+    def maximum(self):
+        &#34;&#34;&#34;Gets the maximum of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The maximum of this StructuredOutputSchema.  # noqa: E501
+        :rtype: float
+        &#34;&#34;&#34;
+        return self._maximum
+
+    @maximum.setter
+    def maximum(self, maximum):
+        &#34;&#34;&#34;Sets the maximum of this StructuredOutputSchema.
+
+
+        :param maximum: The maximum of this StructuredOutputSchema.  # noqa: E501
+        :type: float
+        &#34;&#34;&#34;
+
+        self._maximum = maximum
+
+    @property
+    def minimum(self):
+        &#34;&#34;&#34;Gets the minimum of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The minimum of this StructuredOutputSchema.  # noqa: E501
+        :rtype: float
+        &#34;&#34;&#34;
+        return self._minimum
+
+    @minimum.setter
+    def minimum(self, minimum):
+        &#34;&#34;&#34;Sets the minimum of this StructuredOutputSchema.
+
+
+        :param minimum: The minimum of this StructuredOutputSchema.  # noqa: E501
+        :type: float
+        &#34;&#34;&#34;
+
+        self._minimum = minimum
+
+    @property
+    def nullable(self):
+        &#34;&#34;&#34;Gets the nullable of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The nullable of this StructuredOutputSchema.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._nullable
+
+    @nullable.setter
+    def nullable(self, nullable):
+        &#34;&#34;&#34;Sets the nullable of this StructuredOutputSchema.
+
+
+        :param nullable: The nullable of this StructuredOutputSchema.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._nullable = nullable
+
+    @property
+    def title(self):
+        &#34;&#34;&#34;Gets the title of this StructuredOutputSchema.  # noqa: E501
+
+
+        :return: The title of this StructuredOutputSchema.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        &#34;&#34;&#34;Sets the title of this StructuredOutputSchema.
+
+
+        :param title: The title of this StructuredOutputSchema.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._title = title
+
+    @property
+    def type(self):
+        &#34;&#34;&#34;Gets the type of this StructuredOutputSchema.  # noqa: E501
+
+        Primitive JSON schema types with a fallback CUSTOM for unknown values.  # noqa: E501
+
+        :return: The type of this StructuredOutputSchema.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        &#34;&#34;&#34;Sets the type of this StructuredOutputSchema.
+
+        Primitive JSON schema types with a fallback CUSTOM for unknown values.  # noqa: E501
+
+        :param type: The type of this StructuredOutputSchema.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [&#34;string&#34;, &#34;number&#34;, &#34;integer&#34;, &#34;boolean&#34;, &#34;object&#34;, &#34;array&#34;, &#34;null&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `type` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(type, allowed_values)
+            )
+
+        self._type = type
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, StructuredOutputSchema):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, StructuredOutputSchema):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.any_of"><code class="name">prop <span class="ident">any_of</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the any_of of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The any_of of this StructuredOutputSchema.
+# noqa: E501
+:rtype: list[StructuredOutputSchema]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def any_of(self):
+    &#34;&#34;&#34;Gets the any_of of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The any_of of this StructuredOutputSchema.  # noqa: E501
+    :rtype: list[StructuredOutputSchema]
+    &#34;&#34;&#34;
+    return self._any_of</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.default"><code class="name">prop <span class="ident">default</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the default of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The default of this StructuredOutputSchema.
+# noqa: E501
+:rtype: object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def default(self):
+    &#34;&#34;&#34;Gets the default of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The default of this StructuredOutputSchema.  # noqa: E501
+    :rtype: object
+    &#34;&#34;&#34;
+    return self._default</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.description"><code class="name">prop <span class="ident">description</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the description of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The description of this StructuredOutputSchema.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def description(self):
+    &#34;&#34;&#34;Gets the description of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The description of this StructuredOutputSchema.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._description</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.enum"><code class="name">prop <span class="ident">enum</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the enum of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The enum of this StructuredOutputSchema.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def enum(self):
+    &#34;&#34;&#34;Gets the enum of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The enum of this StructuredOutputSchema.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._enum</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.example"><code class="name">prop <span class="ident">example</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the example of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The example of this StructuredOutputSchema.
+# noqa: E501
+:rtype: object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def example(self):
+    &#34;&#34;&#34;Gets the example of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The example of this StructuredOutputSchema.  # noqa: E501
+    :rtype: object
+    &#34;&#34;&#34;
+    return self._example</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.format"><code class="name">prop <span class="ident">format</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the format of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The format of this StructuredOutputSchema.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def format(self):
+    &#34;&#34;&#34;Gets the format of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The format of this StructuredOutputSchema.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._format</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.items"><code class="name">prop <span class="ident">items</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the items of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The items of this StructuredOutputSchema.
+# noqa: E501
+:rtype: StructuredOutputSchema</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def items(self):
+    &#34;&#34;&#34;Gets the items of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The items of this StructuredOutputSchema.  # noqa: E501
+    :rtype: StructuredOutputSchema
+    &#34;&#34;&#34;
+    return self._items</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_items"><code class="name">prop <span class="ident">max_items</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the max_items of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The max_items of this StructuredOutputSchema.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def max_items(self):
+    &#34;&#34;&#34;Gets the max_items of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The max_items of this StructuredOutputSchema.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._max_items</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_length"><code class="name">prop <span class="ident">max_length</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the max_length of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The max_length of this StructuredOutputSchema.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def max_length(self):
+    &#34;&#34;&#34;Gets the max_length of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The max_length of this StructuredOutputSchema.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._max_length</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_properties"><code class="name">prop <span class="ident">max_properties</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the max_properties of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The max_properties of this StructuredOutputSchema.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def max_properties(self):
+    &#34;&#34;&#34;Gets the max_properties of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The max_properties of this StructuredOutputSchema.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._max_properties</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.maximum"><code class="name">prop <span class="ident">maximum</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the maximum of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The maximum of this StructuredOutputSchema.
+# noqa: E501
+:rtype: float</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def maximum(self):
+    &#34;&#34;&#34;Gets the maximum of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The maximum of this StructuredOutputSchema.  # noqa: E501
+    :rtype: float
+    &#34;&#34;&#34;
+    return self._maximum</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_items"><code class="name">prop <span class="ident">min_items</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the min_items of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The min_items of this StructuredOutputSchema.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def min_items(self):
+    &#34;&#34;&#34;Gets the min_items of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The min_items of this StructuredOutputSchema.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._min_items</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_length"><code class="name">prop <span class="ident">min_length</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the min_length of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The min_length of this StructuredOutputSchema.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def min_length(self):
+    &#34;&#34;&#34;Gets the min_length of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The min_length of this StructuredOutputSchema.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._min_length</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_properties"><code class="name">prop <span class="ident">min_properties</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the min_properties of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The min_properties of this StructuredOutputSchema.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def min_properties(self):
+    &#34;&#34;&#34;Gets the min_properties of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The min_properties of this StructuredOutputSchema.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._min_properties</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.minimum"><code class="name">prop <span class="ident">minimum</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the minimum of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The minimum of this StructuredOutputSchema.
+# noqa: E501
+:rtype: float</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def minimum(self):
+    &#34;&#34;&#34;Gets the minimum of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The minimum of this StructuredOutputSchema.  # noqa: E501
+    :rtype: float
+    &#34;&#34;&#34;
+    return self._minimum</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.nullable"><code class="name">prop <span class="ident">nullable</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the nullable of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The nullable of this StructuredOutputSchema.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def nullable(self):
+    &#34;&#34;&#34;Gets the nullable of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The nullable of this StructuredOutputSchema.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._nullable</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.pattern"><code class="name">prop <span class="ident">pattern</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the pattern of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The pattern of this StructuredOutputSchema.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def pattern(self):
+    &#34;&#34;&#34;Gets the pattern of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The pattern of this StructuredOutputSchema.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._pattern</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.properties"><code class="name">prop <span class="ident">properties</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the properties of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The properties of this StructuredOutputSchema.
+# noqa: E501
+:rtype: dict(str, StructuredOutputSchema)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def properties(self):
+    &#34;&#34;&#34;Gets the properties of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The properties of this StructuredOutputSchema.  # noqa: E501
+    :rtype: dict(str, StructuredOutputSchema)
+    &#34;&#34;&#34;
+    return self._properties</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.property_ordering"><code class="name">prop <span class="ident">property_ordering</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the property_ordering of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The property_ordering of this StructuredOutputSchema.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def property_ordering(self):
+    &#34;&#34;&#34;Gets the property_ordering of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The property_ordering of this StructuredOutputSchema.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._property_ordering</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.required"><code class="name">prop <span class="ident">required</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the required of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The required of this StructuredOutputSchema.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def required(self):
+    &#34;&#34;&#34;Gets the required of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The required of this StructuredOutputSchema.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._required</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.title"><code class="name">prop <span class="ident">title</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the title of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>:return: The title of this StructuredOutputSchema.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def title(self):
+    &#34;&#34;&#34;Gets the title of this StructuredOutputSchema.  # noqa: E501
+
+
+    :return: The title of this StructuredOutputSchema.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._title</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.type"><code class="name">prop <span class="ident">type</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the type of this StructuredOutputSchema.
+# noqa: E501</p>
+<p>Primitive JSON schema types with a fallback CUSTOM for unknown values.
+# noqa: E501</p>
+<p>:return: The type of this StructuredOutputSchema.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def type(self):
+    &#34;&#34;&#34;Gets the type of this StructuredOutputSchema.  # noqa: E501
+
+    Primitive JSON schema types with a fallback CUSTOM for unknown values.  # noqa: E501
+
+    :return: The type of this StructuredOutputSchema.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._type</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema">StructuredOutputSchema</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.any_of" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.any_of">any_of</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.attribute_map" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.default" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.default">default</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.description" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.description">description</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.enum" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.enum">enum</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.example" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.example">example</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.format" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.format">format</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.items" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.items">items</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_items" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_items">max_items</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_length" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_length">max_length</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_properties" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.max_properties">max_properties</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.maximum" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.maximum">maximum</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_items" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_items">min_items</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_length" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_length">min_length</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_properties" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.min_properties">min_properties</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.minimum" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.minimum">minimum</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.nullable" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.nullable">nullable</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.openapi_types" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.pattern" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.pattern">pattern</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.properties" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.properties">properties</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.property_ordering" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.property_ordering">property_ordering</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.required" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.required">required</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.title" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.title">title</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.to_dict" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.to_str" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.structured_output_schema.StructuredOutputSchema.type" href="#mailslurp_client.models.structured_output_schema.StructuredOutputSchema.type">type</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>
