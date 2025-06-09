@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.api.form_controller_api API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.api.form_controller_api</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.api.form_controller_api.FormControllerApi"><code class="flex name class">
+<span>class <span class="ident">FormControllerApi</span></span>
+<span>(</span><span>api_client=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FormControllerApi(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
+
+    def submit_form(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Submit a form to be parsed and sent as an email to an address determined by the form fields  # noqa: E501
+
+        This endpoint allows you to submit HTML forms and receive the field values and files via email.   #### Parameters The endpoint looks for special meta parameters in the form fields OR in the URL request parameters. The meta parameters can be used to specify the behaviour of the email.   You must provide at-least a `_to` email address to tell the endpoint where the form should be emailed. These can be submitted as hidden HTML input fields with the corresponding `name` attributes or as URL query parameters such as `?_to=test@example.com`  The endpoint takes all other form fields that are named and includes them in the message body of the email. Files are sent as attachments.  #### Submitting This endpoint accepts form submission via POST method. It accepts `application/x-www-form-urlencoded`, and `multipart/form-data` content-types.  #### HTML Example ```html &lt;form    action=\&#34;https://python.api.mailslurp.com/forms\&#34;   method=\&#34;post\&#34; &gt;   &lt;input name=\&#34;_to\&#34; type=\&#34;hidden\&#34; value=\&#34;test@example.com\&#34;/&gt;   &lt;textarea name=\&#34;feedback\&#34;&gt;&lt;/textarea&gt;   &lt;button type=\&#34;submit\&#34;&gt;Submit&lt;/button&gt; &lt;/form&gt; ```  #### URL Example ```html &lt;form    action=\&#34;https://python.api.mailslurp.com/forms?_to=test@example.com\&#34;   method=\&#34;post\&#34; &gt;   &lt;textarea name=\&#34;feedback\&#34;&gt;&lt;/textarea&gt;   &lt;button type=\&#34;submit\&#34;&gt;Submit&lt;/button&gt; &lt;/form&gt; ```    The email address is specified by a `_to` field OR is extracted from an email alias specified by a `_toAlias` field (see the alias controller for more information).  Endpoint accepts .  You can specify a content type in HTML forms using the `enctype` attribute, for instance: `&lt;form enctype=\&#34;multipart/form-data\&#34;&gt;`.    # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.submit_form(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str to: The email address that submitted form should be sent to.
+        :param str subject: Optional subject of the email that will be sent.
+        :param str redirect_to: Optional URL to redirect form submitter to after submission. If not present user will see a success message.
+        :param str email_address: Email address of the submitting user. Include this if you wish to record the submitters email address and reply to it later.
+        :param str success_message: Optional success message to display if no _redirectTo present.
+        :param str spam_check: Optional but recommended field that catches spammers out. Include as a hidden form field but LEAVE EMPTY. Spam-bots will usually fill every field. If the _spamCheck field is filled the form submission will be ignored.
+        :param str other_parameters: All other parameters or fields will be accepted and attached to the sent email. This includes files and any HTML form field with a name. These fields will become the body of the email that is sent.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.submit_form_with_http_info(**kwargs)  # noqa: E501
+
+    def submit_form_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Submit a form to be parsed and sent as an email to an address determined by the form fields  # noqa: E501
+
+        This endpoint allows you to submit HTML forms and receive the field values and files via email.   #### Parameters The endpoint looks for special meta parameters in the form fields OR in the URL request parameters. The meta parameters can be used to specify the behaviour of the email.   You must provide at-least a `_to` email address to tell the endpoint where the form should be emailed. These can be submitted as hidden HTML input fields with the corresponding `name` attributes or as URL query parameters such as `?_to=test@example.com`  The endpoint takes all other form fields that are named and includes them in the message body of the email. Files are sent as attachments.  #### Submitting This endpoint accepts form submission via POST method. It accepts `application/x-www-form-urlencoded`, and `multipart/form-data` content-types.  #### HTML Example ```html &lt;form    action=\&#34;https://python.api.mailslurp.com/forms\&#34;   method=\&#34;post\&#34; &gt;   &lt;input name=\&#34;_to\&#34; type=\&#34;hidden\&#34; value=\&#34;test@example.com\&#34;/&gt;   &lt;textarea name=\&#34;feedback\&#34;&gt;&lt;/textarea&gt;   &lt;button type=\&#34;submit\&#34;&gt;Submit&lt;/button&gt; &lt;/form&gt; ```  #### URL Example ```html &lt;form    action=\&#34;https://python.api.mailslurp.com/forms?_to=test@example.com\&#34;   method=\&#34;post\&#34; &gt;   &lt;textarea name=\&#34;feedback\&#34;&gt;&lt;/textarea&gt;   &lt;button type=\&#34;submit\&#34;&gt;Submit&lt;/button&gt; &lt;/form&gt; ```    The email address is specified by a `_to` field OR is extracted from an email alias specified by a `_toAlias` field (see the alias controller for more information).  Endpoint accepts .  You can specify a content type in HTML forms using the `enctype` attribute, for instance: `&lt;form enctype=\&#34;multipart/form-data\&#34;&gt;`.    # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.submit_form_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str to: The email address that submitted form should be sent to.
+        :param str subject: Optional subject of the email that will be sent.
+        :param str redirect_to: Optional URL to redirect form submitter to after submission. If not present user will see a success message.
+        :param str email_address: Email address of the submitting user. Include this if you wish to record the submitters email address and reply to it later.
+        :param str success_message: Optional success message to display if no _redirectTo present.
+        :param str spam_check: Optional but recommended field that catches spammers out. Include as a hidden form field but LEAVE EMPTY. Spam-bots will usually fill every field. If the _spamCheck field is filled the form submission will be ignored.
+        :param str other_parameters: All other parameters or fields will be accepted and attached to the sent email. This includes files and any HTML form field with a name. These fields will become the body of the email that is sent.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(str, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;to&#39;,
+            &#39;subject&#39;,
+            &#39;redirect_to&#39;,
+            &#39;email_address&#39;,
+            &#39;success_message&#39;,
+            &#39;spam_check&#39;,
+            &#39;other_parameters&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method submit_form&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;to&#39; in local_var_params and local_var_params[&#39;to&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;_to&#39;, local_var_params[&#39;to&#39;]))  # noqa: E501
+        if &#39;subject&#39; in local_var_params and local_var_params[&#39;subject&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;_subject&#39;, local_var_params[&#39;subject&#39;]))  # noqa: E501
+        if &#39;redirect_to&#39; in local_var_params and local_var_params[&#39;redirect_to&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;_redirectTo&#39;, local_var_params[&#39;redirect_to&#39;]))  # noqa: E501
+        if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;_emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+        if &#39;success_message&#39; in local_var_params and local_var_params[&#39;success_message&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;_successMessage&#39;, local_var_params[&#39;success_message&#39;]))  # noqa: E501
+        if &#39;spam_check&#39; in local_var_params and local_var_params[&#39;spam_check&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;_spamCheck&#39;, local_var_params[&#39;spam_check&#39;]))  # noqa: E501
+        if &#39;other_parameters&#39; in local_var_params and local_var_params[&#39;other_parameters&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;otherParameters&#39;, local_var_params[&#39;other_parameters&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/forms&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;str&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.api.form_controller_api.FormControllerApi.submit_form"><code class="name flex">
+<span>def <span class="ident">submit_form</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Submit a form to be parsed and sent as an email to an address determined by the form fields
+# noqa: E501</p>
+<p>This endpoint allows you to submit HTML forms and receive the field values and files via email.
+#### Parameters The endpoint looks for special meta parameters in the form fields OR in the URL request parameters. The meta parameters can be used to specify the behaviour of the email.
+You must provide at-least a <code>_to</code> email address to tell the endpoint where the form should be emailed. These can be submitted as hidden HTML input fields with the corresponding <code>name</code> attributes or as URL query parameters such as <code>?_to=test@example.com</code>
+The endpoint takes all other form fields that are named and includes them in the message body of the email. Files are sent as attachments.
+#### Submitting This endpoint accepts form submission via POST method. It accepts <code>application/x-www-form-urlencoded</code>, and <code>multipart/form-data</code> content-types.
+#### HTML Example <code>html &lt;form
+action="https://python.api.mailslurp.com/forms"
+method="post" &gt;
+&lt;input name="_to" type="hidden" value="test@example.com"/&gt;
+&lt;textarea name="feedback"&gt;&lt;/textarea&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt; &lt;/form&gt;</code>
+#### URL Example <code>html &lt;form
+action="https://python.api.mailslurp.com/forms?_to=test@example.com"
+method="post" &gt;
+&lt;textarea name="feedback"&gt;&lt;/textarea&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt; &lt;/form&gt;</code>
+The email address is specified by a <code>_to</code> field OR is extracted from an email alias specified by a <code>_toAlias</code> field (see the alias controller for more information).
+Endpoint accepts .
+You can specify a content type in HTML forms using the <code>enctype</code> attribute, for instance: <code>&lt;form enctype="multipart/form-data"&gt;</code>.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.submit_form(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str to: The email address that submitted form should be sent to.
+:param str subject: Optional subject of the email that will be sent.
+:param str redirect_to: Optional URL to redirect form submitter to after submission. If not present user will see a success message.
+:param str email_address: Email address of the submitting user. Include this if you wish to record the submitters email address and reply to it later.
+:param str success_message: Optional success message to display if no _redirectTo present.
+:param str spam_check: Optional but recommended field that catches spammers out. Include as a hidden form field but LEAVE EMPTY. Spam-bots will usually fill every field. If the _spamCheck field is filled the form submission will be ignored.
+:param str other_parameters: All other parameters or fields will be accepted and attached to the sent email. This includes files and any HTML form field with a name. These fields will become the body of the email that is sent.
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: str
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.form_controller_api.FormControllerApi.submit_form_with_http_info"><code class="name flex">
+<span>def <span class="ident">submit_form_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Submit a form to be parsed and sent as an email to an address determined by the form fields
+# noqa: E501</p>
+<p>This endpoint allows you to submit HTML forms and receive the field values and files via email.
+#### Parameters The endpoint looks for special meta parameters in the form fields OR in the URL request parameters. The meta parameters can be used to specify the behaviour of the email.
+You must provide at-least a <code>_to</code> email address to tell the endpoint where the form should be emailed. These can be submitted as hidden HTML input fields with the corresponding <code>name</code> attributes or as URL query parameters such as <code>?_to=test@example.com</code>
+The endpoint takes all other form fields that are named and includes them in the message body of the email. Files are sent as attachments.
+#### Submitting This endpoint accepts form submission via POST method. It accepts <code>application/x-www-form-urlencoded</code>, and <code>multipart/form-data</code> content-types.
+#### HTML Example <code>html &lt;form
+action="https://python.api.mailslurp.com/forms"
+method="post" &gt;
+&lt;input name="_to" type="hidden" value="test@example.com"/&gt;
+&lt;textarea name="feedback"&gt;&lt;/textarea&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt; &lt;/form&gt;</code>
+#### URL Example <code>html &lt;form
+action="https://python.api.mailslurp.com/forms?_to=test@example.com"
+method="post" &gt;
+&lt;textarea name="feedback"&gt;&lt;/textarea&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt; &lt;/form&gt;</code>
+The email address is specified by a <code>_to</code> field OR is extracted from an email alias specified by a <code>_toAlias</code> field (see the alias controller for more information).
+Endpoint accepts .
+You can specify a content type in HTML forms using the <code>enctype</code> attribute, for instance: <code>&lt;form enctype="multipart/form-data"&gt;</code>.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.submit_form_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str to: The email address that submitted form should be sent to.
+:param str subject: Optional subject of the email that will be sent.
+:param str redirect_to: Optional URL to redirect form submitter to after submission. If not present user will see a success message.
+:param str email_address: Email address of the submitting user. Include this if you wish to record the submitters email address and reply to it later.
+:param str success_message: Optional success message to display if no _redirectTo present.
+:param str spam_check: Optional but recommended field that catches spammers out. Include as a hidden form field but LEAVE EMPTY. Spam-bots will usually fill every field. If the _spamCheck field is filled the form submission will be ignored.
+:param str other_parameters: All other parameters or fields will be accepted and attached to the sent email. This includes files and any HTML form field with a name. These fields will become the body of the email that is sent.
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(str, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.api" href="index.html">mailslurp_client.api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.api.form_controller_api.FormControllerApi" href="#mailslurp_client.api.form_controller_api.FormControllerApi">FormControllerApi</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.api.form_controller_api.FormControllerApi.submit_form" href="#mailslurp_client.api.form_controller_api.FormControllerApi.submit_form">submit_form</a></code></li>
+<li><code><a title="mailslurp_client.api.form_controller_api.FormControllerApi.submit_form_with_http_info" href="#mailslurp_client.api.form_controller_api.FormControllerApi.submit_form_with_http_info">submit_form_with_http_info</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

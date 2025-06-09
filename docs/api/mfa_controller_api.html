@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.api.mfa_controller_api API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.api.mfa_controller_api</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi"><code class="flex name class">
+<span>class <span class="ident">MFAControllerApi</span></span>
+<span>(</span><span>api_client=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MFAControllerApi(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
+
+    def create_totp_device_for_custom(self, create_totp_device_otp_auth_url_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a TOTP device from custom options  # noqa: E501
+
+        Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_totp_device_for_custom(create_totp_device_otp_auth_url_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateTotpDeviceOtpAuthUrlOptions create_totp_device_otp_auth_url_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TotpDeviceDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_totp_device_for_custom_with_http_info(create_totp_device_otp_auth_url_options, **kwargs)  # noqa: E501
+
+    def create_totp_device_for_custom_with_http_info(self, create_totp_device_otp_auth_url_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a TOTP device from custom options  # noqa: E501
+
+        Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_totp_device_for_custom_with_http_info(create_totp_device_otp_auth_url_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateTotpDeviceOtpAuthUrlOptions create_totp_device_otp_auth_url_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TotpDeviceDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;create_totp_device_otp_auth_url_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_totp_device_for_custom&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;create_totp_device_otp_auth_url_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;create_totp_device_otp_auth_url_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;create_totp_device_otp_auth_url_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `create_totp_device_otp_auth_url_options` when calling `create_totp_device_for_custom`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;create_totp_device_otp_auth_url_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;create_totp_device_otp_auth_url_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/mfa/totp/device/custom&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;TotpDeviceDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def create_totp_device_for_otp_auth_url(self, create_totp_device_otp_auth_url_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a TOTP device from an OTP Auth URL  # noqa: E501
+
+        Create a virtual TOTP device for a given OTP Auth URL such as otpauth://totp/MyApp:alice@example.com?secret=ABC123&amp;issuer=MyApp&amp;period=30&amp;digits=6&amp;algorithm=SHA1. You can provider overrides in the options for each component of the URL.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_totp_device_for_otp_auth_url(create_totp_device_otp_auth_url_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateTotpDeviceOtpAuthUrlOptions create_totp_device_otp_auth_url_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TotpDeviceDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_totp_device_for_otp_auth_url_with_http_info(create_totp_device_otp_auth_url_options, **kwargs)  # noqa: E501
+
+    def create_totp_device_for_otp_auth_url_with_http_info(self, create_totp_device_otp_auth_url_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a TOTP device from an OTP Auth URL  # noqa: E501
+
+        Create a virtual TOTP device for a given OTP Auth URL such as otpauth://totp/MyApp:alice@example.com?secret=ABC123&amp;issuer=MyApp&amp;period=30&amp;digits=6&amp;algorithm=SHA1. You can provider overrides in the options for each component of the URL.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_totp_device_for_otp_auth_url_with_http_info(create_totp_device_otp_auth_url_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateTotpDeviceOtpAuthUrlOptions create_totp_device_otp_auth_url_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TotpDeviceDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;create_totp_device_otp_auth_url_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_totp_device_for_otp_auth_url&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;create_totp_device_otp_auth_url_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;create_totp_device_otp_auth_url_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;create_totp_device_otp_auth_url_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `create_totp_device_otp_auth_url_options` when calling `create_totp_device_for_otp_auth_url`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;create_totp_device_otp_auth_url_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;create_totp_device_otp_auth_url_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/mfa/totp/device/otpAuthUrl&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;TotpDeviceDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_totp_device(self, id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a TOTP device by ID  # noqa: E501
+
+        Get Time-Based One-Time Password (TOTP) device by its ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_totp_device(id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TotpDeviceDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_totp_device_with_http_info(id, **kwargs)  # noqa: E501
+
+    def get_totp_device_with_http_info(self, id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a TOTP device by ID  # noqa: E501
+
+        Get Time-Based One-Time Password (TOTP) device by its ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_totp_device_with_http_info(id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TotpDeviceDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_totp_device&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;id&#39; is set
+        if self.api_client.client_side_validation and (&#39;id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `id` when calling `get_totp_device`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;id&#39; in local_var_params:
+            path_params[&#39;id&#39;] = local_var_params[&#39;id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/mfa/totp/device/{id}&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;TotpDeviceDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_totp_device_by(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a TOTP device by username, issuer, or name. Returns empty if not found.  # noqa: E501
+
+        Get Time-Based One-Time Password (TOTP) device by its username and issuer mapping.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_totp_device_by(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str name: Optional name filter
+        :param str issuer: Optional issuer filter
+        :param str username: Optional username filter
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TotpDeviceOptionalDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_totp_device_by_with_http_info(**kwargs)  # noqa: E501
+
+    def get_totp_device_by_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a TOTP device by username, issuer, or name. Returns empty if not found.  # noqa: E501
+
+        Get Time-Based One-Time Password (TOTP) device by its username and issuer mapping.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_totp_device_by_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str name: Optional name filter
+        :param str issuer: Optional issuer filter
+        :param str username: Optional username filter
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TotpDeviceOptionalDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;name&#39;,
+            &#39;issuer&#39;,
+            &#39;username&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_totp_device_by&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;name&#39; in local_var_params and local_var_params[&#39;name&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;name&#39;, local_var_params[&#39;name&#39;]))  # noqa: E501
+        if &#39;issuer&#39; in local_var_params and local_var_params[&#39;issuer&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;issuer&#39;, local_var_params[&#39;issuer&#39;]))  # noqa: E501
+        if &#39;username&#39; in local_var_params and local_var_params[&#39;username&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;username&#39;, local_var_params[&#39;username&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/mfa/totp/device/by&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;TotpDeviceOptionalDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_totp_device_code(self, id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a TOTP device code by device ID  # noqa: E501
+
+        Get Time-Based One-Time Password for a device by its ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_totp_device_code(id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: (required)
+        :param datetime at:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TotpDeviceCodeDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_totp_device_code_with_http_info(id, **kwargs)  # noqa: E501
+
+    def get_totp_device_code_with_http_info(self, id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a TOTP device code by device ID  # noqa: E501
+
+        Get Time-Based One-Time Password for a device by its ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_totp_device_code_with_http_info(id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: (required)
+        :param datetime at:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TotpDeviceCodeDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;id&#39;,
+            &#39;at&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_totp_device_code&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;id&#39; is set
+        if self.api_client.client_side_validation and (&#39;id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `id` when calling `get_totp_device_code`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;id&#39; in local_var_params:
+            path_params[&#39;id&#39;] = local_var_params[&#39;id&#39;]  # noqa: E501
+
+        query_params = []
+        if &#39;at&#39; in local_var_params and local_var_params[&#39;at&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;at&#39;, local_var_params[&#39;at&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/mfa/totp/device/{id}/code&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;TotpDeviceCodeDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_custom"><code class="name flex">
+<span>def <span class="ident">create_totp_device_for_custom</span></span>(<span>self, create_totp_device_otp_auth_url_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a TOTP device from custom options
+# noqa: E501</p>
+<p>Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_totp_device_for_custom(create_totp_device_otp_auth_url_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CreateTotpDeviceOtpAuthUrlOptions create_totp_device_otp_auth_url_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: TotpDeviceDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_custom_with_http_info"><code class="name flex">
+<span>def <span class="ident">create_totp_device_for_custom_with_http_info</span></span>(<span>self, create_totp_device_otp_auth_url_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a TOTP device from custom options
+# noqa: E501</p>
+<p>Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_totp_device_for_custom_with_http_info(create_totp_device_otp_auth_url_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CreateTotpDeviceOtpAuthUrlOptions create_totp_device_otp_auth_url_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(TotpDeviceDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_otp_auth_url"><code class="name flex">
+<span>def <span class="ident">create_totp_device_for_otp_auth_url</span></span>(<span>self, create_totp_device_otp_auth_url_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a TOTP device from an OTP Auth URL
+# noqa: E501</p>
+<p>Create a virtual TOTP device for a given OTP Auth URL such as otpauth://totp/MyApp:alice@example.com?secret=ABC123&amp;issuer=MyApp&amp;period=30&amp;digits=6&amp;algorithm=SHA1. You can provider overrides in the options for each component of the URL.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_totp_device_for_otp_auth_url(create_totp_device_otp_auth_url_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CreateTotpDeviceOtpAuthUrlOptions create_totp_device_otp_auth_url_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: TotpDeviceDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_otp_auth_url_with_http_info"><code class="name flex">
+<span>def <span class="ident">create_totp_device_for_otp_auth_url_with_http_info</span></span>(<span>self, create_totp_device_otp_auth_url_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a TOTP device from an OTP Auth URL
+# noqa: E501</p>
+<p>Create a virtual TOTP device for a given OTP Auth URL such as otpauth://totp/MyApp:alice@example.com?secret=ABC123&amp;issuer=MyApp&amp;period=30&amp;digits=6&amp;algorithm=SHA1. You can provider overrides in the options for each component of the URL.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_totp_device_for_otp_auth_url_with_http_info(create_totp_device_otp_auth_url_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CreateTotpDeviceOtpAuthUrlOptions create_totp_device_otp_auth_url_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(TotpDeviceDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device"><code class="name flex">
+<span>def <span class="ident">get_totp_device</span></span>(<span>self, id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a TOTP device by ID
+# noqa: E501</p>
+<p>Get Time-Based One-Time Password (TOTP) device by its ID.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_totp_device(id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: TotpDeviceDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_by"><code class="name flex">
+<span>def <span class="ident">get_totp_device_by</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a TOTP device by username, issuer, or name. Returns empty if not found.
+# noqa: E501</p>
+<p>Get Time-Based One-Time Password (TOTP) device by its username and issuer mapping.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_totp_device_by(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str name: Optional name filter
+:param str issuer: Optional issuer filter
+:param str username: Optional username filter
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: TotpDeviceOptionalDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_by_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_totp_device_by_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a TOTP device by username, issuer, or name. Returns empty if not found.
+# noqa: E501</p>
+<p>Get Time-Based One-Time Password (TOTP) device by its username and issuer mapping.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_totp_device_by_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str name: Optional name filter
+:param str issuer: Optional issuer filter
+:param str username: Optional username filter
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(TotpDeviceOptionalDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_code"><code class="name flex">
+<span>def <span class="ident">get_totp_device_code</span></span>(<span>self, id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a TOTP device code by device ID
+# noqa: E501</p>
+<p>Get Time-Based One-Time Password for a device by its ID.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_totp_device_code(id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str id: (required)
+:param datetime at:
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: TotpDeviceCodeDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_code_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_totp_device_code_with_http_info</span></span>(<span>self, id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a TOTP device code by device ID
+# noqa: E501</p>
+<p>Get Time-Based One-Time Password for a device by its ID.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_totp_device_code_with_http_info(id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str id: (required)
+:param datetime at:
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(TotpDeviceCodeDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_totp_device_with_http_info</span></span>(<span>self, id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a TOTP device by ID
+# noqa: E501</p>
+<p>Get Time-Based One-Time Password (TOTP) device by its ID.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_totp_device_with_http_info(id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(TotpDeviceDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.api" href="index.html">mailslurp_client.api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi">MFAControllerApi</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_custom" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_custom">create_totp_device_for_custom</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_custom_with_http_info" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_custom_with_http_info">create_totp_device_for_custom_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_otp_auth_url" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_otp_auth_url">create_totp_device_for_otp_auth_url</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_otp_auth_url_with_http_info" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.create_totp_device_for_otp_auth_url_with_http_info">create_totp_device_for_otp_auth_url_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device">get_totp_device</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_by" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_by">get_totp_device_by</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_by_with_http_info" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_by_with_http_info">get_totp_device_by_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_code" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_code">get_totp_device_code</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_code_with_http_info" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_code_with_http_info">get_totp_device_code_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_with_http_info" href="#mailslurp_client.api.mfa_controller_api.MFAControllerApi.get_totp_device_with_http_info">get_totp_device_with_http_info</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

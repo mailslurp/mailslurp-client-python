@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.organization_inbox_projection API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.organization_inbox_projection</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection"><code class="flex name class">
+<span>class <span class="ident">OrganizationInboxProjection</span></span>
+<span>(</span><span>id=None, domain_id=None, created_at=None, name=None, email_address=None, favourite=None, tags=None, team_access=None, inbox_type=None, read_only=None, virtual_inbox=None, functions_as=None, user_id=None, description=None, expires_at=None, account_region=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>OrganizationInboxProjection - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class OrganizationInboxProjection(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;id&#39;: &#39;str&#39;,
+        &#39;domain_id&#39;: &#39;str&#39;,
+        &#39;created_at&#39;: &#39;datetime&#39;,
+        &#39;name&#39;: &#39;str&#39;,
+        &#39;email_address&#39;: &#39;str&#39;,
+        &#39;favourite&#39;: &#39;bool&#39;,
+        &#39;tags&#39;: &#39;list[str]&#39;,
+        &#39;team_access&#39;: &#39;bool&#39;,
+        &#39;inbox_type&#39;: &#39;str&#39;,
+        &#39;read_only&#39;: &#39;bool&#39;,
+        &#39;virtual_inbox&#39;: &#39;bool&#39;,
+        &#39;functions_as&#39;: &#39;str&#39;,
+        &#39;user_id&#39;: &#39;str&#39;,
+        &#39;description&#39;: &#39;str&#39;,
+        &#39;expires_at&#39;: &#39;datetime&#39;,
+        &#39;account_region&#39;: &#39;str&#39;
+    }
+
+    attribute_map = {
+        &#39;id&#39;: &#39;id&#39;,
+        &#39;domain_id&#39;: &#39;domainId&#39;,
+        &#39;created_at&#39;: &#39;createdAt&#39;,
+        &#39;name&#39;: &#39;name&#39;,
+        &#39;email_address&#39;: &#39;emailAddress&#39;,
+        &#39;favourite&#39;: &#39;favourite&#39;,
+        &#39;tags&#39;: &#39;tags&#39;,
+        &#39;team_access&#39;: &#39;teamAccess&#39;,
+        &#39;inbox_type&#39;: &#39;inboxType&#39;,
+        &#39;read_only&#39;: &#39;readOnly&#39;,
+        &#39;virtual_inbox&#39;: &#39;virtualInbox&#39;,
+        &#39;functions_as&#39;: &#39;functionsAs&#39;,
+        &#39;user_id&#39;: &#39;userId&#39;,
+        &#39;description&#39;: &#39;description&#39;,
+        &#39;expires_at&#39;: &#39;expiresAt&#39;,
+        &#39;account_region&#39;: &#39;accountRegion&#39;
+    }
+
+    def __init__(self, id=None, domain_id=None, created_at=None, name=None, email_address=None, favourite=None, tags=None, team_access=None, inbox_type=None, read_only=None, virtual_inbox=None, functions_as=None, user_id=None, description=None, expires_at=None, account_region=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;OrganizationInboxProjection - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._id = None
+        self._domain_id = None
+        self._created_at = None
+        self._name = None
+        self._email_address = None
+        self._favourite = None
+        self._tags = None
+        self._team_access = None
+        self._inbox_type = None
+        self._read_only = None
+        self._virtual_inbox = None
+        self._functions_as = None
+        self._user_id = None
+        self._description = None
+        self._expires_at = None
+        self._account_region = None
+        self.discriminator = None
+
+        self.id = id
+        self.domain_id = domain_id
+        self.created_at = created_at
+        self.name = name
+        self.email_address = email_address
+        self.favourite = favourite
+        self.tags = tags
+        self.team_access = team_access
+        self.inbox_type = inbox_type
+        self.read_only = read_only
+        self.virtual_inbox = virtual_inbox
+        self.functions_as = functions_as
+        self.user_id = user_id
+        self.description = description
+        self.expires_at = expires_at
+        self.account_region = account_region
+
+    @property
+    def id(self):
+        &#34;&#34;&#34;Gets the id of this OrganizationInboxProjection.  # noqa: E501
+
+        ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to Inbox and Email Controller endpoints. See the emailAddress property for the email address or the inbox. To get emails in an inbox use the WaitFor and Inbox Controller methods `waitForLatestEmail` and `getEmails` methods respectively. Inboxes can be used with aliases to forward emails automatically.  # noqa: E501
+
+        :return: The id of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        &#34;&#34;&#34;Sets the id of this OrganizationInboxProjection.
+
+        ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to Inbox and Email Controller endpoints. See the emailAddress property for the email address or the inbox. To get emails in an inbox use the WaitFor and Inbox Controller methods `waitForLatestEmail` and `getEmails` methods respectively. Inboxes can be used with aliases to forward emails automatically.  # noqa: E501
+
+        :param id: The id of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `id`, must not be `None`&#34;)  # noqa: E501
+
+        self._id = id
+
+    @property
+    def domain_id(self):
+        &#34;&#34;&#34;Gets the domain_id of this OrganizationInboxProjection.  # noqa: E501
+
+        ID of custom domain used by the inbox if any  # noqa: E501
+
+        :return: The domain_id of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._domain_id
+
+    @domain_id.setter
+    def domain_id(self, domain_id):
+        &#34;&#34;&#34;Sets the domain_id of this OrganizationInboxProjection.
+
+        ID of custom domain used by the inbox if any  # noqa: E501
+
+        :param domain_id: The domain_id of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._domain_id = domain_id
+
+    @property
+    def created_at(self):
+        &#34;&#34;&#34;Gets the created_at of this OrganizationInboxProjection.  # noqa: E501
+
+        When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.  # noqa: E501
+
+        :return: The created_at of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        &#34;&#34;&#34;Sets the created_at of this OrganizationInboxProjection.
+
+        When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.  # noqa: E501
+
+        :param created_at: The created_at of this OrganizationInboxProjection.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and created_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `created_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._created_at = created_at
+
+    @property
+    def name(self):
+        &#34;&#34;&#34;Gets the name of this OrganizationInboxProjection.  # noqa: E501
+
+        Name of the inbox and used as the sender name when sending emails .Displayed in the dashboard for easier search  # noqa: E501
+
+        :return: The name of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        &#34;&#34;&#34;Sets the name of this OrganizationInboxProjection.
+
+        Name of the inbox and used as the sender name when sending emails .Displayed in the dashboard for easier search  # noqa: E501
+
+        :param name: The name of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._name = name
+
+    @property
+    def email_address(self):
+        &#34;&#34;&#34;Gets the email_address of this OrganizationInboxProjection.  # noqa: E501
+
+        The inbox&#39;s email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.  # noqa: E501
+
+        :return: The email_address of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._email_address
+
+    @email_address.setter
+    def email_address(self, email_address):
+        &#34;&#34;&#34;Sets the email_address of this OrganizationInboxProjection.
+
+        The inbox&#39;s email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.  # noqa: E501
+
+        :param email_address: The email_address of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._email_address = email_address
+
+    @property
+    def favourite(self):
+        &#34;&#34;&#34;Gets the favourite of this OrganizationInboxProjection.  # noqa: E501
+
+        Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering  # noqa: E501
+
+        :return: The favourite of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._favourite
+
+    @favourite.setter
+    def favourite(self, favourite):
+        &#34;&#34;&#34;Sets the favourite of this OrganizationInboxProjection.
+
+        Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering  # noqa: E501
+
+        :param favourite: The favourite of this OrganizationInboxProjection.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and favourite is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `favourite`, must not be `None`&#34;)  # noqa: E501
+
+        self._favourite = favourite
+
+    @property
+    def tags(self):
+        &#34;&#34;&#34;Gets the tags of this OrganizationInboxProjection.  # noqa: E501
+
+        Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.  # noqa: E501
+
+        :return: The tags of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        &#34;&#34;&#34;Sets the tags of this OrganizationInboxProjection.
+
+        Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.  # noqa: E501
+
+        :param tags: The tags of this OrganizationInboxProjection.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._tags = tags
+
+    @property
+    def team_access(self):
+        &#34;&#34;&#34;Gets the team_access of this OrganizationInboxProjection.  # noqa: E501
+
+        Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/  # noqa: E501
+
+        :return: The team_access of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._team_access
+
+    @team_access.setter
+    def team_access(self, team_access):
+        &#34;&#34;&#34;Sets the team_access of this OrganizationInboxProjection.
+
+        Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/  # noqa: E501
+
+        :param team_access: The team_access of this OrganizationInboxProjection.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and team_access is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `team_access`, must not be `None`&#34;)  # noqa: E501
+
+        self._team_access = team_access
+
+    @property
+    def inbox_type(self):
+        &#34;&#34;&#34;Gets the inbox_type of this OrganizationInboxProjection.  # noqa: E501
+
+        Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).  # noqa: E501
+
+        :return: The inbox_type of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._inbox_type
+
+    @inbox_type.setter
+    def inbox_type(self, inbox_type):
+        &#34;&#34;&#34;Sets the inbox_type of this OrganizationInboxProjection.
+
+        Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).  # noqa: E501
+
+        :param inbox_type: The inbox_type of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;HTTP_INBOX&#34;, &#34;SMTP_INBOX&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and inbox_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `inbox_type` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(inbox_type, allowed_values)
+            )
+
+        self._inbox_type = inbox_type
+
+    @property
+    def read_only(self):
+        &#34;&#34;&#34;Gets the read_only of this OrganizationInboxProjection.  # noqa: E501
+
+        Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.  # noqa: E501
+
+        :return: The read_only of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._read_only
+
+    @read_only.setter
+    def read_only(self, read_only):
+        &#34;&#34;&#34;Sets the read_only of this OrganizationInboxProjection.
+
+        Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.  # noqa: E501
+
+        :param read_only: The read_only of this OrganizationInboxProjection.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and read_only is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `read_only`, must not be `None`&#34;)  # noqa: E501
+
+        self._read_only = read_only
+
+    @property
+    def virtual_inbox(self):
+        &#34;&#34;&#34;Gets the virtual_inbox of this OrganizationInboxProjection.  # noqa: E501
+
+        Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.  # noqa: E501
+
+        :return: The virtual_inbox of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._virtual_inbox
+
+    @virtual_inbox.setter
+    def virtual_inbox(self, virtual_inbox):
+        &#34;&#34;&#34;Sets the virtual_inbox of this OrganizationInboxProjection.
+
+        Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.  # noqa: E501
+
+        :param virtual_inbox: The virtual_inbox of this OrganizationInboxProjection.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and virtual_inbox is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `virtual_inbox`, must not be `None`&#34;)  # noqa: E501
+
+        self._virtual_inbox = virtual_inbox
+
+    @property
+    def functions_as(self):
+        &#34;&#34;&#34;Gets the functions_as of this OrganizationInboxProjection.  # noqa: E501
+
+        Inbox function if used as a primitive for another system.  # noqa: E501
+
+        :return: The functions_as of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._functions_as
+
+    @functions_as.setter
+    def functions_as(self, functions_as):
+        &#34;&#34;&#34;Sets the functions_as of this OrganizationInboxProjection.
+
+        Inbox function if used as a primitive for another system.  # noqa: E501
+
+        :param functions_as: The functions_as of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;ALIAS&#34;, &#34;THREAD&#34;, &#34;CATCH_ALL&#34;, &#34;CONNECTOR&#34;, &#34;ACCOUNT&#34;, &#34;GUEST&#34;, &#34;OAUTH_CONNECTION_GMAIL&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and functions_as not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `functions_as` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(functions_as, allowed_values)
+            )
+
+        self._functions_as = functions_as
+
+    @property
+    def user_id(self):
+        &#34;&#34;&#34;Gets the user_id of this OrganizationInboxProjection.  # noqa: E501
+
+        ID of user that inbox belongs to  # noqa: E501
+
+        :return: The user_id of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        &#34;&#34;&#34;Sets the user_id of this OrganizationInboxProjection.
+
+        ID of user that inbox belongs to  # noqa: E501
+
+        :param user_id: The user_id of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and user_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `user_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._user_id = user_id
+
+    @property
+    def description(self):
+        &#34;&#34;&#34;Gets the description of this OrganizationInboxProjection.  # noqa: E501
+
+        Description of an inbox for labelling and searching purposes  # noqa: E501
+
+        :return: The description of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        &#34;&#34;&#34;Sets the description of this OrganizationInboxProjection.
+
+        Description of an inbox for labelling and searching purposes  # noqa: E501
+
+        :param description: The description of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._description = description
+
+    @property
+    def expires_at(self):
+        &#34;&#34;&#34;Gets the expires_at of this OrganizationInboxProjection.  # noqa: E501
+
+        Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won&#39;t be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.  # noqa: E501
+
+        :return: The expires_at of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._expires_at
+
+    @expires_at.setter
+    def expires_at(self, expires_at):
+        &#34;&#34;&#34;Sets the expires_at of this OrganizationInboxProjection.
+
+        Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won&#39;t be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.  # noqa: E501
+
+        :param expires_at: The expires_at of this OrganizationInboxProjection.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._expires_at = expires_at
+
+    @property
+    def account_region(self):
+        &#34;&#34;&#34;Gets the account_region of this OrganizationInboxProjection.  # noqa: E501
+
+        Region of the inbox  # noqa: E501
+
+        :return: The account_region of this OrganizationInboxProjection.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._account_region
+
+    @account_region.setter
+    def account_region(self, account_region):
+        &#34;&#34;&#34;Sets the account_region of this OrganizationInboxProjection.
+
+        Region of the inbox  # noqa: E501
+
+        :param account_region: The account_region of this OrganizationInboxProjection.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;US_WEST_2&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and account_region not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `account_region` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(account_region, allowed_values)
+            )
+
+        self._account_region = account_region
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, OrganizationInboxProjection):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, OrganizationInboxProjection):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.account_region"><code class="name">prop <span class="ident">account_region</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the account_region of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Region of the inbox
+# noqa: E501</p>
+<p>:return: The account_region of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def account_region(self):
+    &#34;&#34;&#34;Gets the account_region of this OrganizationInboxProjection.  # noqa: E501
+
+    Region of the inbox  # noqa: E501
+
+    :return: The account_region of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._account_region</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.created_at"><code class="name">prop <span class="ident">created_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the created_at of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>When the inbox was created. Time stamps are in ISO DateTime Format <code>yyyy-MM-dd'T'HH:mm:ss.SSSXXX</code> e.g. <code>2000-10-31T01:30:00.000-05:00</code>.
+# noqa: E501</p>
+<p>:return: The created_at of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def created_at(self):
+    &#34;&#34;&#34;Gets the created_at of this OrganizationInboxProjection.  # noqa: E501
+
+    When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.  # noqa: E501
+
+    :return: The created_at of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._created_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.description"><code class="name">prop <span class="ident">description</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the description of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Description of an inbox for labelling and searching purposes
+# noqa: E501</p>
+<p>:return: The description of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def description(self):
+    &#34;&#34;&#34;Gets the description of this OrganizationInboxProjection.  # noqa: E501
+
+    Description of an inbox for labelling and searching purposes  # noqa: E501
+
+    :return: The description of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._description</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.domain_id"><code class="name">prop <span class="ident">domain_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the domain_id of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>ID of custom domain used by the inbox if any
+# noqa: E501</p>
+<p>:return: The domain_id of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def domain_id(self):
+    &#34;&#34;&#34;Gets the domain_id of this OrganizationInboxProjection.  # noqa: E501
+
+    ID of custom domain used by the inbox if any  # noqa: E501
+
+    :return: The domain_id of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._domain_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.email_address"><code class="name">prop <span class="ident">email_address</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the email_address of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so <code>+123</code> additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
+# noqa: E501</p>
+<p>:return: The email_address of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def email_address(self):
+    &#34;&#34;&#34;Gets the email_address of this OrganizationInboxProjection.  # noqa: E501
+
+    The inbox&#39;s email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.  # noqa: E501
+
+    :return: The email_address of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._email_address</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.expires_at"><code class="name">prop <span class="ident">expires_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the expires_at of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
+# noqa: E501</p>
+<p>:return: The expires_at of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def expires_at(self):
+    &#34;&#34;&#34;Gets the expires_at of this OrganizationInboxProjection.  # noqa: E501
+
+    Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won&#39;t be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.  # noqa: E501
+
+    :return: The expires_at of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._expires_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.favourite"><code class="name">prop <span class="ident">favourite</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the favourite of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
+# noqa: E501</p>
+<p>:return: The favourite of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def favourite(self):
+    &#34;&#34;&#34;Gets the favourite of this OrganizationInboxProjection.  # noqa: E501
+
+    Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering  # noqa: E501
+
+    :return: The favourite of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._favourite</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.functions_as"><code class="name">prop <span class="ident">functions_as</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the functions_as of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Inbox function if used as a primitive for another system.
+# noqa: E501</p>
+<p>:return: The functions_as of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def functions_as(self):
+    &#34;&#34;&#34;Gets the functions_as of this OrganizationInboxProjection.  # noqa: E501
+
+    Inbox function if used as a primitive for another system.  # noqa: E501
+
+    :return: The functions_as of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._functions_as</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.id"><code class="name">prop <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the id of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to Inbox and Email Controller endpoints. See the emailAddress property for the email address or the inbox. To get emails in an inbox use the WaitFor and Inbox Controller methods <code>waitForLatestEmail</code> and <code>getEmails</code> methods respectively. Inboxes can be used with aliases to forward emails automatically.
+# noqa: E501</p>
+<p>:return: The id of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def id(self):
+    &#34;&#34;&#34;Gets the id of this OrganizationInboxProjection.  # noqa: E501
+
+    ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to Inbox and Email Controller endpoints. See the emailAddress property for the email address or the inbox. To get emails in an inbox use the WaitFor and Inbox Controller methods `waitForLatestEmail` and `getEmails` methods respectively. Inboxes can be used with aliases to forward emails automatically.  # noqa: E501
+
+    :return: The id of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.inbox_type"><code class="name">prop <span class="ident">inbox_type</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the inbox_type of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
+# noqa: E501</p>
+<p>:return: The inbox_type of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def inbox_type(self):
+    &#34;&#34;&#34;Gets the inbox_type of this OrganizationInboxProjection.  # noqa: E501
+
+    Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).  # noqa: E501
+
+    :return: The inbox_type of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._inbox_type</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.name"><code class="name">prop <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the name of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Name of the inbox and used as the sender name when sending emails .Displayed in the dashboard for easier search
+# noqa: E501</p>
+<p>:return: The name of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def name(self):
+    &#34;&#34;&#34;Gets the name of this OrganizationInboxProjection.  # noqa: E501
+
+    Name of the inbox and used as the sender name when sending emails .Displayed in the dashboard for easier search  # noqa: E501
+
+    :return: The name of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._name</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.read_only"><code class="name">prop <span class="ident">read_only</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the read_only of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.
+# noqa: E501</p>
+<p>:return: The read_only of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def read_only(self):
+    &#34;&#34;&#34;Gets the read_only of this OrganizationInboxProjection.  # noqa: E501
+
+    Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.  # noqa: E501
+
+    :return: The read_only of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._read_only</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.tags"><code class="name">prop <span class="ident">tags</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the tags of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
+# noqa: E501</p>
+<p>:return: The tags of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def tags(self):
+    &#34;&#34;&#34;Gets the tags of this OrganizationInboxProjection.  # noqa: E501
+
+    Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.  # noqa: E501
+
+    :return: The tags of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._tags</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.team_access"><code class="name">prop <span class="ident">team_access</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the team_access of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at <a href="https://www.mailslurp.com/guides/team-email-account-sharing/">https://www.mailslurp.com/guides/team-email-account-sharing/</a>
+# noqa: E501</p>
+<p>:return: The team_access of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def team_access(self):
+    &#34;&#34;&#34;Gets the team_access of this OrganizationInboxProjection.  # noqa: E501
+
+    Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/  # noqa: E501
+
+    :return: The team_access of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._team_access</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.user_id"><code class="name">prop <span class="ident">user_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the user_id of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>ID of user that inbox belongs to
+# noqa: E501</p>
+<p>:return: The user_id of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def user_id(self):
+    &#34;&#34;&#34;Gets the user_id of this OrganizationInboxProjection.  # noqa: E501
+
+    ID of user that inbox belongs to  # noqa: E501
+
+    :return: The user_id of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._user_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.virtual_inbox"><code class="name">prop <span class="ident">virtual_inbox</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the virtual_inbox of this OrganizationInboxProjection.
+# noqa: E501</p>
+<p>Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
+# noqa: E501</p>
+<p>:return: The virtual_inbox of this OrganizationInboxProjection.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def virtual_inbox(self):
+    &#34;&#34;&#34;Gets the virtual_inbox of this OrganizationInboxProjection.  # noqa: E501
+
+    Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.  # noqa: E501
+
+    :return: The virtual_inbox of this OrganizationInboxProjection.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._virtual_inbox</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection">OrganizationInboxProjection</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.account_region" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.account_region">account_region</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.attribute_map" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.created_at" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.created_at">created_at</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.description" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.description">description</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.domain_id" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.domain_id">domain_id</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.email_address" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.email_address">email_address</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.expires_at" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.expires_at">expires_at</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.favourite" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.favourite">favourite</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.functions_as" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.functions_as">functions_as</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.id" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.id">id</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.inbox_type" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.inbox_type">inbox_type</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.name" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.name">name</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.openapi_types" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.read_only" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.read_only">read_only</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.tags" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.tags">tags</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.team_access" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.team_access">team_access</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.to_dict" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.to_str" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.user_id" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.user_id">user_id</a></code></li>
+<li><code><a title="mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.virtual_inbox" href="#mailslurp_client.models.organization_inbox_projection.OrganizationInboxProjection.virtual_inbox">virtual_inbox</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

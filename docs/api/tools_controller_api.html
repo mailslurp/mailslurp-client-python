@@ -1,0 +1,2615 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.api.tools_controller_api API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.api.tools_controller_api</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi"><code class="flex name class">
+<span>class <span class="ident">ToolsControllerApi</span></span>
+<span>(</span><span>api_client=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ToolsControllerApi(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
+
+    def check_email_features_client_support(self, check_email_features_client_support_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Check email client support for email HTML and CSS features  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.check_email_features_client_support(check_email_features_client_support_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CheckEmailFeaturesClientSupportOptions check_email_features_client_support_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: CheckEmailFeaturesClientSupportResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.check_email_features_client_support_with_http_info(check_email_features_client_support_options, **kwargs)  # noqa: E501
+
+    def check_email_features_client_support_with_http_info(self, check_email_features_client_support_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Check email client support for email HTML and CSS features  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.check_email_features_client_support_with_http_info(check_email_features_client_support_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CheckEmailFeaturesClientSupportOptions check_email_features_client_support_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(CheckEmailFeaturesClientSupportResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;check_email_features_client_support_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method check_email_features_client_support&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;check_email_features_client_support_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;check_email_features_client_support_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;check_email_features_client_support_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `check_email_features_client_support_options` when calling `check_email_features_client_support`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;check_email_features_client_support_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;check_email_features_client_support_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/check-email-features-client-support&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;CheckEmailFeaturesClientSupportResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def create_new_fake_email_address(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a new email address using the fake email domains  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_new_fake_email_address(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: NewFakeEmailAddressResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_new_fake_email_address_with_http_info(**kwargs)  # noqa: E501
+
+    def create_new_fake_email_address_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a new email address using the fake email domains  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_new_fake_email_address_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(NewFakeEmailAddressResult, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_new_fake_email_address&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/fake-email&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;NewFakeEmailAddressResult&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def delete_new_fake_email_address(self, email_address, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete a fake email address using the fake email domains  # noqa: E501
+
+        Delete a fake email address using the fake email domains  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_new_fake_email_address(email_address, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str email_address: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.delete_new_fake_email_address_with_http_info(email_address, **kwargs)  # noqa: E501
+
+    def delete_new_fake_email_address_with_http_info(self, email_address, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete a fake email address using the fake email domains  # noqa: E501
+
+        Delete a fake email address using the fake email domains  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_new_fake_email_address_with_http_info(email_address, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str email_address: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;email_address&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method delete_new_fake_email_address&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;email_address&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_address&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_address&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_address` when calling `delete_new_fake_email_address`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/fake-email&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def generate_bimi_record(self, generate_bimi_record_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a BIMI record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.generate_bimi_record(generate_bimi_record_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateBimiRecordOptions generate_bimi_record_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: GenerateBimiRecordResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.generate_bimi_record_with_http_info(generate_bimi_record_options, **kwargs)  # noqa: E501
+
+    def generate_bimi_record_with_http_info(self, generate_bimi_record_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a BIMI record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.generate_bimi_record_with_http_info(generate_bimi_record_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateBimiRecordOptions generate_bimi_record_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(GenerateBimiRecordResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;generate_bimi_record_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method generate_bimi_record&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;generate_bimi_record_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;generate_bimi_record_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;generate_bimi_record_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `generate_bimi_record_options` when calling `generate_bimi_record`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;generate_bimi_record_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;generate_bimi_record_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/generate-bimi-record&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;GenerateBimiRecordResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def generate_dmarc_record(self, generate_dmarc_record_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a DMARC record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.generate_dmarc_record(generate_dmarc_record_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateDmarcRecordOptions generate_dmarc_record_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: GenerateDmarcRecordResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.generate_dmarc_record_with_http_info(generate_dmarc_record_options, **kwargs)  # noqa: E501
+
+    def generate_dmarc_record_with_http_info(self, generate_dmarc_record_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a DMARC record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.generate_dmarc_record_with_http_info(generate_dmarc_record_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateDmarcRecordOptions generate_dmarc_record_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(GenerateDmarcRecordResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;generate_dmarc_record_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method generate_dmarc_record&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;generate_dmarc_record_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;generate_dmarc_record_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;generate_dmarc_record_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `generate_dmarc_record_options` when calling `generate_dmarc_record`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;generate_dmarc_record_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;generate_dmarc_record_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/generate-dmarc-record&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;GenerateDmarcRecordResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def generate_mta_sts_record(self, generate_mta_sts_record_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a TLS reporting record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.generate_mta_sts_record(generate_mta_sts_record_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateMtaStsRecordOptions generate_mta_sts_record_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: GenerateMtaStsRecordResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.generate_mta_sts_record_with_http_info(generate_mta_sts_record_options, **kwargs)  # noqa: E501
+
+    def generate_mta_sts_record_with_http_info(self, generate_mta_sts_record_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a TLS reporting record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.generate_mta_sts_record_with_http_info(generate_mta_sts_record_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateMtaStsRecordOptions generate_mta_sts_record_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(GenerateMtaStsRecordResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;generate_mta_sts_record_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method generate_mta_sts_record&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;generate_mta_sts_record_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;generate_mta_sts_record_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;generate_mta_sts_record_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `generate_mta_sts_record_options` when calling `generate_mta_sts_record`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;generate_mta_sts_record_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;generate_mta_sts_record_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/generate-mta-sts-record&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;GenerateMtaStsRecordResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def generate_tls_reporting_record(self, generate_tls_reporting_record_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a TLS reporting record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.generate_tls_reporting_record(generate_tls_reporting_record_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateTlsReportingRecordOptions generate_tls_reporting_record_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: GenerateTlsReportingRecordResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.generate_tls_reporting_record_with_http_info(generate_tls_reporting_record_options, **kwargs)  # noqa: E501
+
+    def generate_tls_reporting_record_with_http_info(self, generate_tls_reporting_record_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a TLS reporting record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.generate_tls_reporting_record_with_http_info(generate_tls_reporting_record_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateTlsReportingRecordOptions generate_tls_reporting_record_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(GenerateTlsReportingRecordResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;generate_tls_reporting_record_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method generate_tls_reporting_record&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;generate_tls_reporting_record_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;generate_tls_reporting_record_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;generate_tls_reporting_record_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `generate_tls_reporting_record_options` when calling `generate_tls_reporting_record`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;generate_tls_reporting_record_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;generate_tls_reporting_record_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/generate-tls-reporting-record&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;GenerateTlsReportingRecordResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_fake_email_by_email_address(self, email_address, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;get_fake_email_by_email_address  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_fake_email_by_email_address(email_address, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str email_address: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: FakeEmailResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_fake_email_by_email_address_with_http_info(email_address, **kwargs)  # noqa: E501
+
+    def get_fake_email_by_email_address_with_http_info(self, email_address, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;get_fake_email_by_email_address  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_fake_email_by_email_address_with_http_info(email_address, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str email_address: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(FakeEmailResult, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;email_address&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_fake_email_by_email_address&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;email_address&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_address&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_address&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_address` when calling `get_fake_email_by_email_address`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/fake-email/byEmailAddress&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;FakeEmailResult&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_fake_email_by_id(self, id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a fake email by its ID  # noqa: E501
+
+        Get a fake email by its ID  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_fake_email_by_id(id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: FakeEmailResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_fake_email_by_id_with_http_info(id, **kwargs)  # noqa: E501
+
+    def get_fake_email_by_id_with_http_info(self, id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a fake email by its ID  # noqa: E501
+
+        Get a fake email by its ID  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_fake_email_by_id_with_http_info(id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(FakeEmailResult, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_fake_email_by_id&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;id&#39; is set
+        if self.api_client.client_side_validation and (&#39;id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `id` when calling `get_fake_email_by_id`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;id&#39; in local_var_params and local_var_params[&#39;id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;id&#39;, local_var_params[&#39;id&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/fake-email&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;FakeEmailResult&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_fake_email_raw(self, id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get raw fake email content  # noqa: E501
+
+        Retrieve the raw content of a fake email by its ID  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_fake_email_raw(id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_fake_email_raw_with_http_info(id, **kwargs)  # noqa: E501
+
+    def get_fake_email_raw_with_http_info(self, id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get raw fake email content  # noqa: E501
+
+        Retrieve the raw content of a fake email by its ID  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_fake_email_raw_with_http_info(id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(str, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_fake_email_raw&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;id&#39; is set
+        if self.api_client.client_side_validation and (&#39;id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `id` when calling `get_fake_email_raw`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;id&#39; in local_var_params and local_var_params[&#39;id&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;id&#39;, local_var_params[&#39;id&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;text/plain;charset=utf-8&#39;, &#39;text/html;charset=utf-8&#39;, &#39;text/plain; charset=utf-8&#39;, &#39;text/html; charset=utf-8&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/fake-email/html&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;str&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_fake_emails_for_address(self, email_address, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get fake emails for an address  # noqa: E501
+
+        Get fake emails for an address  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_fake_emails_for_address(email_address, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str email_address: (required)
+        :param int page:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: list[FakeEmailPreview]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_fake_emails_for_address_with_http_info(email_address, **kwargs)  # noqa: E501
+
+    def get_fake_emails_for_address_with_http_info(self, email_address, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get fake emails for an address  # noqa: E501
+
+        Get fake emails for an address  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_fake_emails_for_address_with_http_info(email_address, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str email_address: (required)
+        :param int page:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[FakeEmailPreview], status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;email_address&#39;,
+            &#39;page&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_fake_emails_for_address&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;email_address&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_address&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_address&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_address` when calling `get_fake_emails_for_address`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;page&#39; in local_var_params and local_var_params[&#39;page&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;page&#39;, local_var_params[&#39;page&#39;]))  # noqa: E501
+        if &#39;email_address&#39; in local_var_params and local_var_params[&#39;email_address&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;emailAddress&#39;, local_var_params[&#39;email_address&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/fake-emails&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;list[FakeEmailPreview]&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def lookup_bimi_domain(self, lookup_bimi_domain_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Lookup a BIMI record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.lookup_bimi_domain(lookup_bimi_domain_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param LookupBimiDomainOptions lookup_bimi_domain_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: LookupBimiDomainResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.lookup_bimi_domain_with_http_info(lookup_bimi_domain_options, **kwargs)  # noqa: E501
+
+    def lookup_bimi_domain_with_http_info(self, lookup_bimi_domain_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Lookup a BIMI record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.lookup_bimi_domain_with_http_info(lookup_bimi_domain_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param LookupBimiDomainOptions lookup_bimi_domain_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(LookupBimiDomainResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;lookup_bimi_domain_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method lookup_bimi_domain&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;lookup_bimi_domain_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;lookup_bimi_domain_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;lookup_bimi_domain_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `lookup_bimi_domain_options` when calling `lookup_bimi_domain`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;lookup_bimi_domain_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;lookup_bimi_domain_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/lookup-bimi-domain&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;LookupBimiDomainResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def lookup_dmarc_domain(self, lookup_dmarc_domain_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Lookup a DMARC record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.lookup_dmarc_domain(lookup_dmarc_domain_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param LookupDmarcDomainOptions lookup_dmarc_domain_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: LookupDmarcDomainResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.lookup_dmarc_domain_with_http_info(lookup_dmarc_domain_options, **kwargs)  # noqa: E501
+
+    def lookup_dmarc_domain_with_http_info(self, lookup_dmarc_domain_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Lookup a DMARC record policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.lookup_dmarc_domain_with_http_info(lookup_dmarc_domain_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param LookupDmarcDomainOptions lookup_dmarc_domain_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(LookupDmarcDomainResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;lookup_dmarc_domain_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method lookup_dmarc_domain&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;lookup_dmarc_domain_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;lookup_dmarc_domain_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;lookup_dmarc_domain_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `lookup_dmarc_domain_options` when calling `lookup_dmarc_domain`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;lookup_dmarc_domain_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;lookup_dmarc_domain_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/lookup-dmarc-domain&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;LookupDmarcDomainResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def lookup_mta_sts_domain(self, lookup_mta_sts_domain_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Lookup a MTA-STS domain policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.lookup_mta_sts_domain(lookup_mta_sts_domain_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param LookupMtaStsDomainOptions lookup_mta_sts_domain_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: LookupMtaStsDomainResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.lookup_mta_sts_domain_with_http_info(lookup_mta_sts_domain_options, **kwargs)  # noqa: E501
+
+    def lookup_mta_sts_domain_with_http_info(self, lookup_mta_sts_domain_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Lookup a MTA-STS domain policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.lookup_mta_sts_domain_with_http_info(lookup_mta_sts_domain_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param LookupMtaStsDomainOptions lookup_mta_sts_domain_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(LookupMtaStsDomainResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;lookup_mta_sts_domain_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method lookup_mta_sts_domain&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;lookup_mta_sts_domain_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;lookup_mta_sts_domain_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;lookup_mta_sts_domain_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `lookup_mta_sts_domain_options` when calling `lookup_mta_sts_domain`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;lookup_mta_sts_domain_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;lookup_mta_sts_domain_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/lookup-mta-sts-domain&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;LookupMtaStsDomainResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def lookup_tls_reporting_domain(self, lookup_tls_reporting_domain_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Lookup a TLS reporting domain policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.lookup_tls_reporting_domain(lookup_tls_reporting_domain_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param LookupTlsReportingDomainOptions lookup_tls_reporting_domain_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: LookupTlsReportingDomainResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.lookup_tls_reporting_domain_with_http_info(lookup_tls_reporting_domain_options, **kwargs)  # noqa: E501
+
+    def lookup_tls_reporting_domain_with_http_info(self, lookup_tls_reporting_domain_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Lookup a TLS reporting domain policy  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.lookup_tls_reporting_domain_with_http_info(lookup_tls_reporting_domain_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param LookupTlsReportingDomainOptions lookup_tls_reporting_domain_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(LookupTlsReportingDomainResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;lookup_tls_reporting_domain_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method lookup_tls_reporting_domain&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;lookup_tls_reporting_domain_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;lookup_tls_reporting_domain_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;lookup_tls_reporting_domain_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `lookup_tls_reporting_domain_options` when calling `lookup_tls_reporting_domain`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;lookup_tls_reporting_domain_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;lookup_tls_reporting_domain_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/tools/lookup-tls-reporting-domain&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;LookupTlsReportingDomainResults&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.check_email_features_client_support"><code class="name flex">
+<span>def <span class="ident">check_email_features_client_support</span></span>(<span>self, check_email_features_client_support_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check email client support for email HTML and CSS features
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.check_email_features_client_support(check_email_features_client_support_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CheckEmailFeaturesClientSupportOptions check_email_features_client_support_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: CheckEmailFeaturesClientSupportResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.check_email_features_client_support_with_http_info"><code class="name flex">
+<span>def <span class="ident">check_email_features_client_support_with_http_info</span></span>(<span>self, check_email_features_client_support_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check email client support for email HTML and CSS features
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.check_email_features_client_support_with_http_info(check_email_features_client_support_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CheckEmailFeaturesClientSupportOptions check_email_features_client_support_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(CheckEmailFeaturesClientSupportResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.create_new_fake_email_address"><code class="name flex">
+<span>def <span class="ident">create_new_fake_email_address</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new email address using the fake email domains
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_new_fake_email_address(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: NewFakeEmailAddressResult
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.create_new_fake_email_address_with_http_info"><code class="name flex">
+<span>def <span class="ident">create_new_fake_email_address_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new email address using the fake email domains
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_new_fake_email_address_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(NewFakeEmailAddressResult, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.delete_new_fake_email_address"><code class="name flex">
+<span>def <span class="ident">delete_new_fake_email_address</span></span>(<span>self, email_address, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete a fake email address using the fake email domains
+# noqa: E501</p>
+<p>Delete a fake email address using the fake email domains
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_new_fake_email_address(email_address, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str email_address: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.delete_new_fake_email_address_with_http_info"><code class="name flex">
+<span>def <span class="ident">delete_new_fake_email_address_with_http_info</span></span>(<span>self, email_address, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete a fake email address using the fake email domains
+# noqa: E501</p>
+<p>Delete a fake email address using the fake email domains
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_new_fake_email_address_with_http_info(email_address, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str email_address: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_bimi_record"><code class="name flex">
+<span>def <span class="ident">generate_bimi_record</span></span>(<span>self, generate_bimi_record_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a BIMI record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.generate_bimi_record(generate_bimi_record_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param GenerateBimiRecordOptions generate_bimi_record_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: GenerateBimiRecordResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_bimi_record_with_http_info"><code class="name flex">
+<span>def <span class="ident">generate_bimi_record_with_http_info</span></span>(<span>self, generate_bimi_record_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a BIMI record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.generate_bimi_record_with_http_info(generate_bimi_record_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param GenerateBimiRecordOptions generate_bimi_record_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(GenerateBimiRecordResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_dmarc_record"><code class="name flex">
+<span>def <span class="ident">generate_dmarc_record</span></span>(<span>self, generate_dmarc_record_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a DMARC record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.generate_dmarc_record(generate_dmarc_record_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param GenerateDmarcRecordOptions generate_dmarc_record_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: GenerateDmarcRecordResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_dmarc_record_with_http_info"><code class="name flex">
+<span>def <span class="ident">generate_dmarc_record_with_http_info</span></span>(<span>self, generate_dmarc_record_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a DMARC record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.generate_dmarc_record_with_http_info(generate_dmarc_record_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param GenerateDmarcRecordOptions generate_dmarc_record_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(GenerateDmarcRecordResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_mta_sts_record"><code class="name flex">
+<span>def <span class="ident">generate_mta_sts_record</span></span>(<span>self, generate_mta_sts_record_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a TLS reporting record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.generate_mta_sts_record(generate_mta_sts_record_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param GenerateMtaStsRecordOptions generate_mta_sts_record_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: GenerateMtaStsRecordResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_mta_sts_record_with_http_info"><code class="name flex">
+<span>def <span class="ident">generate_mta_sts_record_with_http_info</span></span>(<span>self, generate_mta_sts_record_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a TLS reporting record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.generate_mta_sts_record_with_http_info(generate_mta_sts_record_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param GenerateMtaStsRecordOptions generate_mta_sts_record_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(GenerateMtaStsRecordResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_tls_reporting_record"><code class="name flex">
+<span>def <span class="ident">generate_tls_reporting_record</span></span>(<span>self, generate_tls_reporting_record_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a TLS reporting record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.generate_tls_reporting_record(generate_tls_reporting_record_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param GenerateTlsReportingRecordOptions generate_tls_reporting_record_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: GenerateTlsReportingRecordResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_tls_reporting_record_with_http_info"><code class="name flex">
+<span>def <span class="ident">generate_tls_reporting_record_with_http_info</span></span>(<span>self, generate_tls_reporting_record_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a TLS reporting record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.generate_tls_reporting_record_with_http_info(generate_tls_reporting_record_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param GenerateTlsReportingRecordOptions generate_tls_reporting_record_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(GenerateTlsReportingRecordResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_email_address"><code class="name flex">
+<span>def <span class="ident">get_fake_email_by_email_address</span></span>(<span>self, email_address, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get_fake_email_by_email_address
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_fake_email_by_email_address(email_address, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str email_address: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: FakeEmailResult
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_email_address_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_fake_email_by_email_address_with_http_info</span></span>(<span>self, email_address, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get_fake_email_by_email_address
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_fake_email_by_email_address_with_http_info(email_address, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str email_address: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(FakeEmailResult, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_id"><code class="name flex">
+<span>def <span class="ident">get_fake_email_by_id</span></span>(<span>self, id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a fake email by its ID
+# noqa: E501</p>
+<p>Get a fake email by its ID
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_fake_email_by_id(id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: FakeEmailResult
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_id_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_fake_email_by_id_with_http_info</span></span>(<span>self, id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a fake email by its ID
+# noqa: E501</p>
+<p>Get a fake email by its ID
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_fake_email_by_id_with_http_info(id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(FakeEmailResult, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_raw"><code class="name flex">
+<span>def <span class="ident">get_fake_email_raw</span></span>(<span>self, id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get raw fake email content
+# noqa: E501</p>
+<p>Retrieve the raw content of a fake email by its ID
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_fake_email_raw(id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: str
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_raw_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_fake_email_raw_with_http_info</span></span>(<span>self, id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get raw fake email content
+# noqa: E501</p>
+<p>Retrieve the raw content of a fake email by its ID
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_fake_email_raw_with_http_info(id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(str, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_emails_for_address"><code class="name flex">
+<span>def <span class="ident">get_fake_emails_for_address</span></span>(<span>self, email_address, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get fake emails for an address
+# noqa: E501</p>
+<p>Get fake emails for an address
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_fake_emails_for_address(email_address, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str email_address: (required)
+:param int page:
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: list[FakeEmailPreview]
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_emails_for_address_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_fake_emails_for_address_with_http_info</span></span>(<span>self, email_address, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get fake emails for an address
+# noqa: E501</p>
+<p>Get fake emails for an address
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_fake_emails_for_address_with_http_info(email_address, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str email_address: (required)
+:param int page:
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(list[FakeEmailPreview], status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_bimi_domain"><code class="name flex">
+<span>def <span class="ident">lookup_bimi_domain</span></span>(<span>self, lookup_bimi_domain_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lookup a BIMI record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.lookup_bimi_domain(lookup_bimi_domain_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param LookupBimiDomainOptions lookup_bimi_domain_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: LookupBimiDomainResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_bimi_domain_with_http_info"><code class="name flex">
+<span>def <span class="ident">lookup_bimi_domain_with_http_info</span></span>(<span>self, lookup_bimi_domain_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lookup a BIMI record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.lookup_bimi_domain_with_http_info(lookup_bimi_domain_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param LookupBimiDomainOptions lookup_bimi_domain_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(LookupBimiDomainResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_dmarc_domain"><code class="name flex">
+<span>def <span class="ident">lookup_dmarc_domain</span></span>(<span>self, lookup_dmarc_domain_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lookup a DMARC record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.lookup_dmarc_domain(lookup_dmarc_domain_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param LookupDmarcDomainOptions lookup_dmarc_domain_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: LookupDmarcDomainResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_dmarc_domain_with_http_info"><code class="name flex">
+<span>def <span class="ident">lookup_dmarc_domain_with_http_info</span></span>(<span>self, lookup_dmarc_domain_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lookup a DMARC record policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.lookup_dmarc_domain_with_http_info(lookup_dmarc_domain_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param LookupDmarcDomainOptions lookup_dmarc_domain_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(LookupDmarcDomainResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_mta_sts_domain"><code class="name flex">
+<span>def <span class="ident">lookup_mta_sts_domain</span></span>(<span>self, lookup_mta_sts_domain_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lookup a MTA-STS domain policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.lookup_mta_sts_domain(lookup_mta_sts_domain_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param LookupMtaStsDomainOptions lookup_mta_sts_domain_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: LookupMtaStsDomainResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_mta_sts_domain_with_http_info"><code class="name flex">
+<span>def <span class="ident">lookup_mta_sts_domain_with_http_info</span></span>(<span>self, lookup_mta_sts_domain_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lookup a MTA-STS domain policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.lookup_mta_sts_domain_with_http_info(lookup_mta_sts_domain_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param LookupMtaStsDomainOptions lookup_mta_sts_domain_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(LookupMtaStsDomainResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_tls_reporting_domain"><code class="name flex">
+<span>def <span class="ident">lookup_tls_reporting_domain</span></span>(<span>self, lookup_tls_reporting_domain_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lookup a TLS reporting domain policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.lookup_tls_reporting_domain(lookup_tls_reporting_domain_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param LookupTlsReportingDomainOptions lookup_tls_reporting_domain_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: LookupTlsReportingDomainResults
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_tls_reporting_domain_with_http_info"><code class="name flex">
+<span>def <span class="ident">lookup_tls_reporting_domain_with_http_info</span></span>(<span>self, lookup_tls_reporting_domain_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lookup a TLS reporting domain policy
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.lookup_tls_reporting_domain_with_http_info(lookup_tls_reporting_domain_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param LookupTlsReportingDomainOptions lookup_tls_reporting_domain_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(LookupTlsReportingDomainResults, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.api" href="index.html">mailslurp_client.api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi">ToolsControllerApi</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.check_email_features_client_support" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.check_email_features_client_support">check_email_features_client_support</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.check_email_features_client_support_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.check_email_features_client_support_with_http_info">check_email_features_client_support_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.create_new_fake_email_address" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.create_new_fake_email_address">create_new_fake_email_address</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.create_new_fake_email_address_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.create_new_fake_email_address_with_http_info">create_new_fake_email_address_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.delete_new_fake_email_address" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.delete_new_fake_email_address">delete_new_fake_email_address</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.delete_new_fake_email_address_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.delete_new_fake_email_address_with_http_info">delete_new_fake_email_address_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_bimi_record" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_bimi_record">generate_bimi_record</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_bimi_record_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_bimi_record_with_http_info">generate_bimi_record_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_dmarc_record" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_dmarc_record">generate_dmarc_record</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_dmarc_record_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_dmarc_record_with_http_info">generate_dmarc_record_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_mta_sts_record" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_mta_sts_record">generate_mta_sts_record</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_mta_sts_record_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_mta_sts_record_with_http_info">generate_mta_sts_record_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_tls_reporting_record" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_tls_reporting_record">generate_tls_reporting_record</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_tls_reporting_record_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.generate_tls_reporting_record_with_http_info">generate_tls_reporting_record_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_email_address" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_email_address">get_fake_email_by_email_address</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_email_address_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_email_address_with_http_info">get_fake_email_by_email_address_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_id" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_id">get_fake_email_by_id</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_id_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_by_id_with_http_info">get_fake_email_by_id_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_raw" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_raw">get_fake_email_raw</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_raw_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_email_raw_with_http_info">get_fake_email_raw_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_emails_for_address" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_emails_for_address">get_fake_emails_for_address</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_emails_for_address_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.get_fake_emails_for_address_with_http_info">get_fake_emails_for_address_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_bimi_domain" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_bimi_domain">lookup_bimi_domain</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_bimi_domain_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_bimi_domain_with_http_info">lookup_bimi_domain_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_dmarc_domain" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_dmarc_domain">lookup_dmarc_domain</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_dmarc_domain_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_dmarc_domain_with_http_info">lookup_dmarc_domain_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_mta_sts_domain" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_mta_sts_domain">lookup_mta_sts_domain</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_mta_sts_domain_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_mta_sts_domain_with_http_info">lookup_mta_sts_domain_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_tls_reporting_domain" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_tls_reporting_domain">lookup_tls_reporting_domain</a></code></li>
+<li><code><a title="mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_tls_reporting_domain_with_http_info" href="#mailslurp_client.api.tools_controller_api.ToolsControllerApi.lookup_tls_reporting_domain_with_http_info">lookup_tls_reporting_domain_with_http_info</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>
