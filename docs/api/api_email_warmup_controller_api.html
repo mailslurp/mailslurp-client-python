@@ -1,0 +1,3182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.api.api_email_warmup_controller_api API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.api.api_email_warmup_controller_api</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi"><code class="flex name class">
+<span>class <span class="ident">ApiEmailWarmupControllerApi</span></span>
+<span>(</span><span>api_client=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ApiEmailWarmupControllerApi(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
+
+    def create_email_warmup_program(self, create_email_warmup_program_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_email_warmup_program(create_email_warmup_program_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateEmailWarmupProgramOptions create_email_warmup_program_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_email_warmup_program_with_http_info(create_email_warmup_program_options, **kwargs)  # noqa: E501
+
+    def create_email_warmup_program_with_http_info(self, create_email_warmup_program_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_email_warmup_program_with_http_info(create_email_warmup_program_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateEmailWarmupProgramOptions create_email_warmup_program_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;create_email_warmup_program_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;create_email_warmup_program_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;create_email_warmup_program_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;create_email_warmup_program_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `create_email_warmup_program_options` when calling `create_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;create_email_warmup_program_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;create_email_warmup_program_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def delete_email_warmup_program(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.delete_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, **kwargs)  # noqa: E501
+
+    def delete_email_warmup_program_with_http_info(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Delete an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;email_warmup_program_command_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method delete_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `delete_email_warmup_program`&#34;)  # noqa: E501
+        # verify the required parameter &#39;email_warmup_program_command_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_warmup_program_command_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_warmup_program_command_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_warmup_program_command_options` when calling `delete_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;email_warmup_program_command_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;email_warmup_program_command_options&#39;]
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def delete_email_warmup_sender_seats(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Cancel purchased email warmup sender seats  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_email_warmup_sender_seats(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupUsageSummaryDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.delete_email_warmup_sender_seats_with_http_info(**kwargs)  # noqa: E501
+
+    def delete_email_warmup_sender_seats_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Cancel purchased email warmup sender seats  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_email_warmup_sender_seats_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupUsageSummaryDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method delete_email_warmup_sender_seats&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/sender-seats&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupUsageSummaryDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_email_warmup_overview(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get operational email warmup activity and program progress  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_overview(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param int days:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupOverviewDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_email_warmup_overview_with_http_info(**kwargs)  # noqa: E501
+
+    def get_email_warmup_overview_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get operational email warmup activity and program progress  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_overview_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param int days:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupOverviewDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;days&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_email_warmup_overview&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        if self.api_client.client_side_validation and &#39;days&#39; in local_var_params and local_var_params[&#39;days&#39;] &gt; 90:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `days` when calling `get_email_warmup_overview`, must be a value less than or equal to `90`&#34;)  # noqa: E501
+        if self.api_client.client_side_validation and &#39;days&#39; in local_var_params and local_var_params[&#39;days&#39;] &lt; 7:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `days` when calling `get_email_warmup_overview`, must be a value greater than or equal to `7`&#34;)  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;days&#39; in local_var_params and local_var_params[&#39;days&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;days&#39;, local_var_params[&#39;days&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/overview&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupOverviewDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_email_warmup_placement_checks(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List Gmail and Outlook placement checks for an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_placement_checks(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: list[EmailWarmupPlacementCheckDto]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_email_warmup_placement_checks_with_http_info(program_id, **kwargs)  # noqa: E501
+
+    def get_email_warmup_placement_checks_with_http_info(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List Gmail and Outlook placement checks for an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_placement_checks_with_http_info(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[EmailWarmupPlacementCheckDto], status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_email_warmup_placement_checks&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `get_email_warmup_placement_checks`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/placement-checks&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;list[EmailWarmupPlacementCheckDto]&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_email_warmup_program(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_program(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_email_warmup_program_with_http_info(program_id, **kwargs)  # noqa: E501
+
+    def get_email_warmup_program_with_http_info(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_program_with_http_info(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `get_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_email_warmup_program_analytics(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get email warmup program progress and daily activity  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_program_analytics(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param int days:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramAnalyticsDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_email_warmup_program_analytics_with_http_info(program_id, **kwargs)  # noqa: E501
+
+    def get_email_warmup_program_analytics_with_http_info(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get email warmup program progress and daily activity  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_program_analytics_with_http_info(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param int days:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramAnalyticsDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;days&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_email_warmup_program_analytics&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `get_email_warmup_program_analytics`&#34;)  # noqa: E501
+
+        if self.api_client.client_side_validation and &#39;days&#39; in local_var_params and local_var_params[&#39;days&#39;] &gt; 90:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `days` when calling `get_email_warmup_program_analytics`, must be a value less than or equal to `90`&#34;)  # noqa: E501
+        if self.api_client.client_side_validation and &#39;days&#39; in local_var_params and local_var_params[&#39;days&#39;] &lt; 7:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `days` when calling `get_email_warmup_program_analytics`, must be a value greater than or equal to `7`&#34;)  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+        if &#39;days&#39; in local_var_params and local_var_params[&#39;days&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;days&#39;, local_var_params[&#39;days&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/analytics&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramAnalyticsDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_email_warmup_programs(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List email warmup programs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_programs(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param int page:
+        :param int size:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramPageDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_email_warmup_programs_with_http_info(**kwargs)  # noqa: E501
+
+    def get_email_warmup_programs_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List email warmup programs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_programs_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param int page:
+        :param int size:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramPageDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;page&#39;,
+            &#39;size&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_email_warmup_programs&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        if self.api_client.client_side_validation and &#39;page&#39; in local_var_params and local_var_params[&#39;page&#39;] &lt; 0:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `page` when calling `get_email_warmup_programs`, must be a value greater than or equal to `0`&#34;)  # noqa: E501
+        if self.api_client.client_side_validation and &#39;size&#39; in local_var_params and local_var_params[&#39;size&#39;] &gt; 100:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `size` when calling `get_email_warmup_programs`, must be a value less than or equal to `100`&#34;)  # noqa: E501
+        if self.api_client.client_side_validation and &#39;size&#39; in local_var_params and local_var_params[&#39;size&#39;] &lt; 1:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `size` when calling `get_email_warmup_programs`, must be a value greater than or equal to `1`&#34;)  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if &#39;page&#39; in local_var_params and local_var_params[&#39;page&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;page&#39;, local_var_params[&#39;page&#39;]))  # noqa: E501
+        if &#39;size&#39; in local_var_params and local_var_params[&#39;size&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;size&#39;, local_var_params[&#39;size&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramPageDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_email_warmup_readiness(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get warmup readiness, adaptive pacing, and sender-health signals  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_readiness(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupReadinessDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_email_warmup_readiness_with_http_info(program_id, **kwargs)  # noqa: E501
+
+    def get_email_warmup_readiness_with_http_info(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get warmup readiness, adaptive pacing, and sender-health signals  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_readiness_with_http_info(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupReadinessDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_email_warmup_readiness&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `get_email_warmup_readiness`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/readiness&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupReadinessDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_email_warmup_slots(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List scheduled email warmup slots  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_slots(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param int page:
+        :param int size:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupSendSlotPageDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_email_warmup_slots_with_http_info(program_id, **kwargs)  # noqa: E501
+
+    def get_email_warmup_slots_with_http_info(self, program_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List scheduled email warmup slots  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_slots_with_http_info(program_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param int page:
+        :param int size:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupSendSlotPageDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;page&#39;,
+            &#39;size&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_email_warmup_slots&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `get_email_warmup_slots`&#34;)  # noqa: E501
+
+        if self.api_client.client_side_validation and &#39;page&#39; in local_var_params and local_var_params[&#39;page&#39;] &lt; 0:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `page` when calling `get_email_warmup_slots`, must be a value greater than or equal to `0`&#34;)  # noqa: E501
+        if self.api_client.client_side_validation and &#39;size&#39; in local_var_params and local_var_params[&#39;size&#39;] &gt; 100:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `size` when calling `get_email_warmup_slots`, must be a value less than or equal to `100`&#34;)  # noqa: E501
+        if self.api_client.client_side_validation and &#39;size&#39; in local_var_params and local_var_params[&#39;size&#39;] &lt; 1:  # noqa: E501
+            raise ApiValueError(&#34;Invalid value for parameter `size` when calling `get_email_warmup_slots`, must be a value greater than or equal to `1`&#34;)  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+        if &#39;page&#39; in local_var_params and local_var_params[&#39;page&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;page&#39;, local_var_params[&#39;page&#39;]))  # noqa: E501
+        if &#39;size&#39; in local_var_params and local_var_params[&#39;size&#39;] is not None:  # noqa: E501
+            query_params.append((&#39;size&#39;, local_var_params[&#39;size&#39;]))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/slots&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupSendSlotPageDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_email_warmup_usage(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get email warmup sender capacity, included credits, and billable usage  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_usage(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupUsageSummaryDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_email_warmup_usage_with_http_info(**kwargs)  # noqa: E501
+
+    def get_email_warmup_usage_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get email warmup sender capacity, included credits, and billable usage  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_email_warmup_usage_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupUsageSummaryDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_email_warmup_usage&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/usage&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupUsageSummaryDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def pause_email_warmup_program(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Pause an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.pause_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.pause_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, **kwargs)  # noqa: E501
+
+    def pause_email_warmup_program_with_http_info(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Pause an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.pause_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;email_warmup_program_command_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method pause_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `pause_email_warmup_program`&#34;)  # noqa: E501
+        # verify the required parameter &#39;email_warmup_program_command_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_warmup_program_command_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_warmup_program_command_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_warmup_program_command_options` when calling `pause_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;email_warmup_program_command_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;email_warmup_program_command_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/pause&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def resume_email_warmup_program(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Resume an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.resume_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.resume_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, **kwargs)  # noqa: E501
+
+    def resume_email_warmup_program_with_http_info(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Resume an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.resume_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;email_warmup_program_command_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method resume_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `resume_email_warmup_program`&#34;)  # noqa: E501
+        # verify the required parameter &#39;email_warmup_program_command_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_warmup_program_command_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_warmup_program_command_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_warmup_program_command_options` when calling `resume_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;email_warmup_program_command_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;email_warmup_program_command_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/resume&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def retry_email_warmup_program(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Retry a system-paused email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.retry_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.retry_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, **kwargs)  # noqa: E501
+
+    def retry_email_warmup_program_with_http_info(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Retry a system-paused email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.retry_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;email_warmup_program_command_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method retry_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `retry_email_warmup_program`&#34;)  # noqa: E501
+        # verify the required parameter &#39;email_warmup_program_command_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_warmup_program_command_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_warmup_program_command_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_warmup_program_command_options` when calling `retry_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;email_warmup_program_command_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;email_warmup_program_command_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/retry&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def start_email_warmup_program(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Start an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.start_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.start_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, **kwargs)  # noqa: E501
+
+    def start_email_warmup_program_with_http_info(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Start an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.start_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;email_warmup_program_command_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method start_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `start_email_warmup_program`&#34;)  # noqa: E501
+        # verify the required parameter &#39;email_warmup_program_command_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_warmup_program_command_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_warmup_program_command_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_warmup_program_command_options` when calling `start_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;email_warmup_program_command_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;email_warmup_program_command_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/start&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def stop_email_warmup_program(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Stop an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.stop_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.stop_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, **kwargs)  # noqa: E501
+
+    def stop_email_warmup_program_with_http_info(self, program_id, email_warmup_program_command_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Stop an email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.stop_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;email_warmup_program_command_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method stop_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `stop_email_warmup_program`&#34;)  # noqa: E501
+        # verify the required parameter &#39;email_warmup_program_command_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;email_warmup_program_command_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;email_warmup_program_command_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `email_warmup_program_command_options` when calling `stop_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;email_warmup_program_command_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;email_warmup_program_command_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}/stop&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def update_email_warmup_program(self, program_id, update_email_warmup_program_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Update a draft email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.update_email_warmup_program(program_id, update_email_warmup_program_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param UpdateEmailWarmupProgramOptions update_email_warmup_program_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupProgramDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.update_email_warmup_program_with_http_info(program_id, update_email_warmup_program_options, **kwargs)  # noqa: E501
+
+    def update_email_warmup_program_with_http_info(self, program_id, update_email_warmup_program_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Update a draft email warmup program  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.update_email_warmup_program_with_http_info(program_id, update_email_warmup_program_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str program_id: (required)
+        :param UpdateEmailWarmupProgramOptions update_email_warmup_program_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;program_id&#39;,
+            &#39;update_email_warmup_program_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method update_email_warmup_program&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;program_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;program_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;program_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `program_id` when calling `update_email_warmup_program`&#34;)  # noqa: E501
+        # verify the required parameter &#39;update_email_warmup_program_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;update_email_warmup_program_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;update_email_warmup_program_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `update_email_warmup_program_options` when calling `update_email_warmup_program`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;program_id&#39; in local_var_params:
+            path_params[&#39;programId&#39;] = local_var_params[&#39;program_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;update_email_warmup_program_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;update_email_warmup_program_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/{programId}&#39;, &#39;PUT&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupProgramDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def update_email_warmup_sender_seats(self, update_email_warmup_sender_seats_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Update purchased email warmup sender seats  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.update_email_warmup_sender_seats(update_email_warmup_sender_seats_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param UpdateEmailWarmupSenderSeatsOptions update_email_warmup_sender_seats_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: EmailWarmupUsageSummaryDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.update_email_warmup_sender_seats_with_http_info(update_email_warmup_sender_seats_options, **kwargs)  # noqa: E501
+
+    def update_email_warmup_sender_seats_with_http_info(self, update_email_warmup_sender_seats_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Update purchased email warmup sender seats  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.update_email_warmup_sender_seats_with_http_info(update_email_warmup_sender_seats_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param UpdateEmailWarmupSenderSeatsOptions update_email_warmup_sender_seats_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(EmailWarmupUsageSummaryDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;update_email_warmup_sender_seats_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method update_email_warmup_sender_seats&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;update_email_warmup_sender_seats_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;update_email_warmup_sender_seats_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;update_email_warmup_sender_seats_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `update_email_warmup_sender_seats_options` when calling `update_email_warmup_sender_seats`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;update_email_warmup_sender_seats_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;update_email_warmup_sender_seats_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/email-warmup/programs/sender-seats&#39;, &#39;PUT&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;EmailWarmupUsageSummaryDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.create_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">create_email_warmup_program</span></span>(<span>self, create_email_warmup_program_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_email_warmup_program(create_email_warmup_program_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CreateEmailWarmupProgramOptions create_email_warmup_program_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.create_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">create_email_warmup_program_with_http_info</span></span>(<span>self, create_email_warmup_program_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_email_warmup_program_with_http_info(create_email_warmup_program_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CreateEmailWarmupProgramOptions create_email_warmup_program_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">delete_email_warmup_program</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">delete_email_warmup_program_with_http_info</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_sender_seats"><code class="name flex">
+<span>def <span class="ident">delete_email_warmup_sender_seats</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cancel purchased email warmup sender seats
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_email_warmup_sender_seats(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupUsageSummaryDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_sender_seats_with_http_info"><code class="name flex">
+<span>def <span class="ident">delete_email_warmup_sender_seats_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cancel purchased email warmup sender seats
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_email_warmup_sender_seats_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupUsageSummaryDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_overview"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_overview</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get operational email warmup activity and program progress
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_overview(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param int days:
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupOverviewDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_overview_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_overview_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get operational email warmup activity and program progress
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_overview_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param int days:
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupOverviewDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_placement_checks"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_placement_checks</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List Gmail and Outlook placement checks for an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_placement_checks(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: list[EmailWarmupPlacementCheckDto]
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_placement_checks_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_placement_checks_with_http_info</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List Gmail and Outlook placement checks for an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_placement_checks_with_http_info(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(list[EmailWarmupPlacementCheckDto], status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_program</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_program(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_analytics"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_program_analytics</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get email warmup program progress and daily activity
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_program_analytics(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param int days:
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramAnalyticsDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_analytics_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_program_analytics_with_http_info</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get email warmup program progress and daily activity
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_program_analytics_with_http_info(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param int days:
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramAnalyticsDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_program_with_http_info</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_program_with_http_info(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_programs"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_programs</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List email warmup programs
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_programs(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param int page:
+:param int size:
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramPageDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_programs_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_programs_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List email warmup programs
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_programs_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param int page:
+:param int size:
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramPageDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_readiness"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_readiness</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get warmup readiness, adaptive pacing, and sender-health signals
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_readiness(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupReadinessDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_readiness_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_readiness_with_http_info</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get warmup readiness, adaptive pacing, and sender-health signals
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_readiness_with_http_info(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupReadinessDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_slots"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_slots</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List scheduled email warmup slots
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_slots(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param int page:
+:param int size:
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupSendSlotPageDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_slots_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_slots_with_http_info</span></span>(<span>self, program_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List scheduled email warmup slots
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_slots_with_http_info(program_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param int page:
+:param int size:
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupSendSlotPageDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_usage"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_usage</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get email warmup sender capacity, included credits, and billable usage
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_usage(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupUsageSummaryDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_usage_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_email_warmup_usage_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get email warmup sender capacity, included credits, and billable usage
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_email_warmup_usage_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupUsageSummaryDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.pause_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">pause_email_warmup_program</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Pause an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.pause_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.pause_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">pause_email_warmup_program_with_http_info</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Pause an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.pause_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.resume_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">resume_email_warmup_program</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resume an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.resume_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.resume_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">resume_email_warmup_program_with_http_info</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resume an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.resume_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.retry_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">retry_email_warmup_program</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retry a system-paused email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.retry_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.retry_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">retry_email_warmup_program_with_http_info</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retry a system-paused email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.retry_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.start_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">start_email_warmup_program</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Start an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.start_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.start_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">start_email_warmup_program_with_http_info</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Start an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.start_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.stop_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">stop_email_warmup_program</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Stop an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.stop_email_warmup_program(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.stop_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">stop_email_warmup_program_with_http_info</span></span>(<span>self, program_id, email_warmup_program_command_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Stop an email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.stop_email_warmup_program_with_http_info(program_id, email_warmup_program_command_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param EmailWarmupProgramCommandOptions email_warmup_program_command_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_program"><code class="name flex">
+<span>def <span class="ident">update_email_warmup_program</span></span>(<span>self, program_id, update_email_warmup_program_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update a draft email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.update_email_warmup_program(program_id, update_email_warmup_program_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param UpdateEmailWarmupProgramOptions update_email_warmup_program_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupProgramDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_program_with_http_info"><code class="name flex">
+<span>def <span class="ident">update_email_warmup_program_with_http_info</span></span>(<span>self, program_id, update_email_warmup_program_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update a draft email warmup program
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.update_email_warmup_program_with_http_info(program_id, update_email_warmup_program_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str program_id: (required)
+:param UpdateEmailWarmupProgramOptions update_email_warmup_program_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupProgramDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_sender_seats"><code class="name flex">
+<span>def <span class="ident">update_email_warmup_sender_seats</span></span>(<span>self, update_email_warmup_sender_seats_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update purchased email warmup sender seats
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.update_email_warmup_sender_seats(update_email_warmup_sender_seats_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param UpdateEmailWarmupSenderSeatsOptions update_email_warmup_sender_seats_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: EmailWarmupUsageSummaryDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_sender_seats_with_http_info"><code class="name flex">
+<span>def <span class="ident">update_email_warmup_sender_seats_with_http_info</span></span>(<span>self, update_email_warmup_sender_seats_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update purchased email warmup sender seats
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.update_email_warmup_sender_seats_with_http_info(update_email_warmup_sender_seats_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param UpdateEmailWarmupSenderSeatsOptions update_email_warmup_sender_seats_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(EmailWarmupUsageSummaryDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.api" href="index.html">mailslurp_client.api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi">ApiEmailWarmupControllerApi</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.create_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.create_email_warmup_program">create_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.create_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.create_email_warmup_program_with_http_info">create_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_program">delete_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_program_with_http_info">delete_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_sender_seats" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_sender_seats">delete_email_warmup_sender_seats</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_sender_seats_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.delete_email_warmup_sender_seats_with_http_info">delete_email_warmup_sender_seats_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_overview" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_overview">get_email_warmup_overview</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_overview_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_overview_with_http_info">get_email_warmup_overview_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_placement_checks" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_placement_checks">get_email_warmup_placement_checks</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_placement_checks_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_placement_checks_with_http_info">get_email_warmup_placement_checks_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program">get_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_analytics" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_analytics">get_email_warmup_program_analytics</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_analytics_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_analytics_with_http_info">get_email_warmup_program_analytics_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_program_with_http_info">get_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_programs" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_programs">get_email_warmup_programs</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_programs_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_programs_with_http_info">get_email_warmup_programs_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_readiness" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_readiness">get_email_warmup_readiness</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_readiness_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_readiness_with_http_info">get_email_warmup_readiness_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_slots" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_slots">get_email_warmup_slots</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_slots_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_slots_with_http_info">get_email_warmup_slots_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_usage" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_usage">get_email_warmup_usage</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_usage_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.get_email_warmup_usage_with_http_info">get_email_warmup_usage_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.pause_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.pause_email_warmup_program">pause_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.pause_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.pause_email_warmup_program_with_http_info">pause_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.resume_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.resume_email_warmup_program">resume_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.resume_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.resume_email_warmup_program_with_http_info">resume_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.retry_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.retry_email_warmup_program">retry_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.retry_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.retry_email_warmup_program_with_http_info">retry_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.start_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.start_email_warmup_program">start_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.start_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.start_email_warmup_program_with_http_info">start_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.stop_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.stop_email_warmup_program">stop_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.stop_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.stop_email_warmup_program_with_http_info">stop_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_program" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_program">update_email_warmup_program</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_program_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_program_with_http_info">update_email_warmup_program_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_sender_seats" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_sender_seats">update_email_warmup_sender_seats</a></code></li>
+<li><code><a title="mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_sender_seats_with_http_info" href="#mailslurp_client.api.api_email_warmup_controller_api.ApiEmailWarmupControllerApi.update_email_warmup_sender_seats_with_http_info">update_email_warmup_sender_seats_with_http_info</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

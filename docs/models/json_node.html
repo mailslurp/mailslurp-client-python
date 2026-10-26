@@ -1,0 +1,1379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.json_node API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.json_node</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.json_node.JsonNode"><code class="flex name class">
+<span>class <span class="ident">JsonNode</span></span>
+<span>(</span><span>string=None, object=None, float=None, empty=None, array=None, null=None, container=None, textual=None, missing_node=None, value_node=None, node_type=None, pojo=None, number=None, integral_number=None, floating_point_number=None, short=None, int=None, long=None, double=None, big_decimal=None, big_integer=None, boolean=None, binary=None, embedded_value=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>JsonNode - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class JsonNode(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;string&#39;: &#39;bool&#39;,
+        &#39;object&#39;: &#39;bool&#39;,
+        &#39;float&#39;: &#39;bool&#39;,
+        &#39;empty&#39;: &#39;bool&#39;,
+        &#39;array&#39;: &#39;bool&#39;,
+        &#39;null&#39;: &#39;bool&#39;,
+        &#39;container&#39;: &#39;bool&#39;,
+        &#39;textual&#39;: &#39;bool&#39;,
+        &#39;missing_node&#39;: &#39;bool&#39;,
+        &#39;value_node&#39;: &#39;bool&#39;,
+        &#39;node_type&#39;: &#39;str&#39;,
+        &#39;pojo&#39;: &#39;bool&#39;,
+        &#39;number&#39;: &#39;bool&#39;,
+        &#39;integral_number&#39;: &#39;bool&#39;,
+        &#39;floating_point_number&#39;: &#39;bool&#39;,
+        &#39;short&#39;: &#39;bool&#39;,
+        &#39;int&#39;: &#39;bool&#39;,
+        &#39;long&#39;: &#39;bool&#39;,
+        &#39;double&#39;: &#39;bool&#39;,
+        &#39;big_decimal&#39;: &#39;bool&#39;,
+        &#39;big_integer&#39;: &#39;bool&#39;,
+        &#39;boolean&#39;: &#39;bool&#39;,
+        &#39;binary&#39;: &#39;bool&#39;,
+        &#39;embedded_value&#39;: &#39;bool&#39;
+    }
+
+    attribute_map = {
+        &#39;string&#39;: &#39;string&#39;,
+        &#39;object&#39;: &#39;object&#39;,
+        &#39;float&#39;: &#39;float&#39;,
+        &#39;empty&#39;: &#39;empty&#39;,
+        &#39;array&#39;: &#39;array&#39;,
+        &#39;null&#39;: &#39;null&#39;,
+        &#39;container&#39;: &#39;container&#39;,
+        &#39;textual&#39;: &#39;textual&#39;,
+        &#39;missing_node&#39;: &#39;missingNode&#39;,
+        &#39;value_node&#39;: &#39;valueNode&#39;,
+        &#39;node_type&#39;: &#39;nodeType&#39;,
+        &#39;pojo&#39;: &#39;pojo&#39;,
+        &#39;number&#39;: &#39;number&#39;,
+        &#39;integral_number&#39;: &#39;integralNumber&#39;,
+        &#39;floating_point_number&#39;: &#39;floatingPointNumber&#39;,
+        &#39;short&#39;: &#39;short&#39;,
+        &#39;int&#39;: &#39;int&#39;,
+        &#39;long&#39;: &#39;long&#39;,
+        &#39;double&#39;: &#39;double&#39;,
+        &#39;big_decimal&#39;: &#39;bigDecimal&#39;,
+        &#39;big_integer&#39;: &#39;bigInteger&#39;,
+        &#39;boolean&#39;: &#39;boolean&#39;,
+        &#39;binary&#39;: &#39;binary&#39;,
+        &#39;embedded_value&#39;: &#39;embeddedValue&#39;
+    }
+
+    def __init__(self, string=None, object=None, float=None, empty=None, array=None, null=None, container=None, textual=None, missing_node=None, value_node=None, node_type=None, pojo=None, number=None, integral_number=None, floating_point_number=None, short=None, int=None, long=None, double=None, big_decimal=None, big_integer=None, boolean=None, binary=None, embedded_value=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;JsonNode - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._string = None
+        self._object = None
+        self._float = None
+        self._empty = None
+        self._array = None
+        self._null = None
+        self._container = None
+        self._textual = None
+        self._missing_node = None
+        self._value_node = None
+        self._node_type = None
+        self._pojo = None
+        self._number = None
+        self._integral_number = None
+        self._floating_point_number = None
+        self._short = None
+        self._int = None
+        self._long = None
+        self._double = None
+        self._big_decimal = None
+        self._big_integer = None
+        self._boolean = None
+        self._binary = None
+        self._embedded_value = None
+        self.discriminator = None
+
+        if string is not None:
+            self.string = string
+        if object is not None:
+            self.object = object
+        if float is not None:
+            self.float = float
+        if empty is not None:
+            self.empty = empty
+        if array is not None:
+            self.array = array
+        if null is not None:
+            self.null = null
+        if container is not None:
+            self.container = container
+        if textual is not None:
+            self.textual = textual
+        if missing_node is not None:
+            self.missing_node = missing_node
+        if value_node is not None:
+            self.value_node = value_node
+        if node_type is not None:
+            self.node_type = node_type
+        if pojo is not None:
+            self.pojo = pojo
+        if number is not None:
+            self.number = number
+        if integral_number is not None:
+            self.integral_number = integral_number
+        if floating_point_number is not None:
+            self.floating_point_number = floating_point_number
+        if short is not None:
+            self.short = short
+        if int is not None:
+            self.int = int
+        if long is not None:
+            self.long = long
+        if double is not None:
+            self.double = double
+        if big_decimal is not None:
+            self.big_decimal = big_decimal
+        if big_integer is not None:
+            self.big_integer = big_integer
+        if boolean is not None:
+            self.boolean = boolean
+        if binary is not None:
+            self.binary = binary
+        if embedded_value is not None:
+            self.embedded_value = embedded_value
+
+    @property
+    def string(self):
+        &#34;&#34;&#34;Gets the string of this JsonNode.  # noqa: E501
+
+
+        :return: The string of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._string
+
+    @string.setter
+    def string(self, string):
+        &#34;&#34;&#34;Sets the string of this JsonNode.
+
+
+        :param string: The string of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._string = string
+
+    @property
+    def object(self):
+        &#34;&#34;&#34;Gets the object of this JsonNode.  # noqa: E501
+
+
+        :return: The object of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._object
+
+    @object.setter
+    def object(self, object):
+        &#34;&#34;&#34;Sets the object of this JsonNode.
+
+
+        :param object: The object of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._object = object
+
+    @property
+    def float(self):
+        &#34;&#34;&#34;Gets the float of this JsonNode.  # noqa: E501
+
+
+        :return: The float of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._float
+
+    @float.setter
+    def float(self, float):
+        &#34;&#34;&#34;Sets the float of this JsonNode.
+
+
+        :param float: The float of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._float = float
+
+    @property
+    def empty(self):
+        &#34;&#34;&#34;Gets the empty of this JsonNode.  # noqa: E501
+
+
+        :return: The empty of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._empty
+
+    @empty.setter
+    def empty(self, empty):
+        &#34;&#34;&#34;Sets the empty of this JsonNode.
+
+
+        :param empty: The empty of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._empty = empty
+
+    @property
+    def array(self):
+        &#34;&#34;&#34;Gets the array of this JsonNode.  # noqa: E501
+
+
+        :return: The array of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._array
+
+    @array.setter
+    def array(self, array):
+        &#34;&#34;&#34;Sets the array of this JsonNode.
+
+
+        :param array: The array of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._array = array
+
+    @property
+    def null(self):
+        &#34;&#34;&#34;Gets the null of this JsonNode.  # noqa: E501
+
+
+        :return: The null of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._null
+
+    @null.setter
+    def null(self, null):
+        &#34;&#34;&#34;Sets the null of this JsonNode.
+
+
+        :param null: The null of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._null = null
+
+    @property
+    def container(self):
+        &#34;&#34;&#34;Gets the container of this JsonNode.  # noqa: E501
+
+
+        :return: The container of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._container
+
+    @container.setter
+    def container(self, container):
+        &#34;&#34;&#34;Sets the container of this JsonNode.
+
+
+        :param container: The container of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._container = container
+
+    @property
+    def textual(self):
+        &#34;&#34;&#34;Gets the textual of this JsonNode.  # noqa: E501
+
+
+        :return: The textual of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._textual
+
+    @textual.setter
+    def textual(self, textual):
+        &#34;&#34;&#34;Sets the textual of this JsonNode.
+
+
+        :param textual: The textual of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._textual = textual
+
+    @property
+    def missing_node(self):
+        &#34;&#34;&#34;Gets the missing_node of this JsonNode.  # noqa: E501
+
+
+        :return: The missing_node of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._missing_node
+
+    @missing_node.setter
+    def missing_node(self, missing_node):
+        &#34;&#34;&#34;Sets the missing_node of this JsonNode.
+
+
+        :param missing_node: The missing_node of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._missing_node = missing_node
+
+    @property
+    def value_node(self):
+        &#34;&#34;&#34;Gets the value_node of this JsonNode.  # noqa: E501
+
+
+        :return: The value_node of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._value_node
+
+    @value_node.setter
+    def value_node(self, value_node):
+        &#34;&#34;&#34;Sets the value_node of this JsonNode.
+
+
+        :param value_node: The value_node of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._value_node = value_node
+
+    @property
+    def node_type(self):
+        &#34;&#34;&#34;Gets the node_type of this JsonNode.  # noqa: E501
+
+
+        :return: The node_type of this JsonNode.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._node_type
+
+    @node_type.setter
+    def node_type(self, node_type):
+        &#34;&#34;&#34;Sets the node_type of this JsonNode.
+
+
+        :param node_type: The node_type of this JsonNode.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [&#34;ARRAY&#34;, &#34;BINARY&#34;, &#34;BOOLEAN&#34;, &#34;MISSING&#34;, &#34;NULL&#34;, &#34;NUMBER&#34;, &#34;OBJECT&#34;, &#34;POJO&#34;, &#34;STRING&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and node_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `node_type` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(node_type, allowed_values)
+            )
+
+        self._node_type = node_type
+
+    @property
+    def pojo(self):
+        &#34;&#34;&#34;Gets the pojo of this JsonNode.  # noqa: E501
+
+
+        :return: The pojo of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._pojo
+
+    @pojo.setter
+    def pojo(self, pojo):
+        &#34;&#34;&#34;Sets the pojo of this JsonNode.
+
+
+        :param pojo: The pojo of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._pojo = pojo
+
+    @property
+    def number(self):
+        &#34;&#34;&#34;Gets the number of this JsonNode.  # noqa: E501
+
+
+        :return: The number of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._number
+
+    @number.setter
+    def number(self, number):
+        &#34;&#34;&#34;Sets the number of this JsonNode.
+
+
+        :param number: The number of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._number = number
+
+    @property
+    def integral_number(self):
+        &#34;&#34;&#34;Gets the integral_number of this JsonNode.  # noqa: E501
+
+
+        :return: The integral_number of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._integral_number
+
+    @integral_number.setter
+    def integral_number(self, integral_number):
+        &#34;&#34;&#34;Sets the integral_number of this JsonNode.
+
+
+        :param integral_number: The integral_number of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._integral_number = integral_number
+
+    @property
+    def floating_point_number(self):
+        &#34;&#34;&#34;Gets the floating_point_number of this JsonNode.  # noqa: E501
+
+
+        :return: The floating_point_number of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._floating_point_number
+
+    @floating_point_number.setter
+    def floating_point_number(self, floating_point_number):
+        &#34;&#34;&#34;Sets the floating_point_number of this JsonNode.
+
+
+        :param floating_point_number: The floating_point_number of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._floating_point_number = floating_point_number
+
+    @property
+    def short(self):
+        &#34;&#34;&#34;Gets the short of this JsonNode.  # noqa: E501
+
+
+        :return: The short of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._short
+
+    @short.setter
+    def short(self, short):
+        &#34;&#34;&#34;Sets the short of this JsonNode.
+
+
+        :param short: The short of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._short = short
+
+    @property
+    def int(self):
+        &#34;&#34;&#34;Gets the int of this JsonNode.  # noqa: E501
+
+
+        :return: The int of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._int
+
+    @int.setter
+    def int(self, int):
+        &#34;&#34;&#34;Sets the int of this JsonNode.
+
+
+        :param int: The int of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._int = int
+
+    @property
+    def long(self):
+        &#34;&#34;&#34;Gets the long of this JsonNode.  # noqa: E501
+
+
+        :return: The long of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._long
+
+    @long.setter
+    def long(self, long):
+        &#34;&#34;&#34;Sets the long of this JsonNode.
+
+
+        :param long: The long of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._long = long
+
+    @property
+    def double(self):
+        &#34;&#34;&#34;Gets the double of this JsonNode.  # noqa: E501
+
+
+        :return: The double of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._double
+
+    @double.setter
+    def double(self, double):
+        &#34;&#34;&#34;Sets the double of this JsonNode.
+
+
+        :param double: The double of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._double = double
+
+    @property
+    def big_decimal(self):
+        &#34;&#34;&#34;Gets the big_decimal of this JsonNode.  # noqa: E501
+
+
+        :return: The big_decimal of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._big_decimal
+
+    @big_decimal.setter
+    def big_decimal(self, big_decimal):
+        &#34;&#34;&#34;Sets the big_decimal of this JsonNode.
+
+
+        :param big_decimal: The big_decimal of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._big_decimal = big_decimal
+
+    @property
+    def big_integer(self):
+        &#34;&#34;&#34;Gets the big_integer of this JsonNode.  # noqa: E501
+
+
+        :return: The big_integer of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._big_integer
+
+    @big_integer.setter
+    def big_integer(self, big_integer):
+        &#34;&#34;&#34;Sets the big_integer of this JsonNode.
+
+
+        :param big_integer: The big_integer of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._big_integer = big_integer
+
+    @property
+    def boolean(self):
+        &#34;&#34;&#34;Gets the boolean of this JsonNode.  # noqa: E501
+
+
+        :return: The boolean of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._boolean
+
+    @boolean.setter
+    def boolean(self, boolean):
+        &#34;&#34;&#34;Sets the boolean of this JsonNode.
+
+
+        :param boolean: The boolean of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._boolean = boolean
+
+    @property
+    def binary(self):
+        &#34;&#34;&#34;Gets the binary of this JsonNode.  # noqa: E501
+
+
+        :return: The binary of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._binary
+
+    @binary.setter
+    def binary(self, binary):
+        &#34;&#34;&#34;Sets the binary of this JsonNode.
+
+
+        :param binary: The binary of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._binary = binary
+
+    @property
+    def embedded_value(self):
+        &#34;&#34;&#34;Gets the embedded_value of this JsonNode.  # noqa: E501
+
+
+        :return: The embedded_value of this JsonNode.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._embedded_value
+
+    @embedded_value.setter
+    def embedded_value(self, embedded_value):
+        &#34;&#34;&#34;Sets the embedded_value of this JsonNode.
+
+
+        :param embedded_value: The embedded_value of this JsonNode.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._embedded_value = embedded_value
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, JsonNode):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, JsonNode):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.json_node.JsonNode.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.json_node.JsonNode.array"><code class="name">prop <span class="ident">array</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the array of this JsonNode.
+# noqa: E501</p>
+<p>:return: The array of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def array(self):
+    &#34;&#34;&#34;Gets the array of this JsonNode.  # noqa: E501
+
+
+    :return: The array of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._array</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.big_decimal"><code class="name">prop <span class="ident">big_decimal</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the big_decimal of this JsonNode.
+# noqa: E501</p>
+<p>:return: The big_decimal of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def big_decimal(self):
+    &#34;&#34;&#34;Gets the big_decimal of this JsonNode.  # noqa: E501
+
+
+    :return: The big_decimal of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._big_decimal</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.big_integer"><code class="name">prop <span class="ident">big_integer</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the big_integer of this JsonNode.
+# noqa: E501</p>
+<p>:return: The big_integer of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def big_integer(self):
+    &#34;&#34;&#34;Gets the big_integer of this JsonNode.  # noqa: E501
+
+
+    :return: The big_integer of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._big_integer</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.binary"><code class="name">prop <span class="ident">binary</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the binary of this JsonNode.
+# noqa: E501</p>
+<p>:return: The binary of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def binary(self):
+    &#34;&#34;&#34;Gets the binary of this JsonNode.  # noqa: E501
+
+
+    :return: The binary of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._binary</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.boolean"><code class="name">prop <span class="ident">boolean</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the boolean of this JsonNode.
+# noqa: E501</p>
+<p>:return: The boolean of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def boolean(self):
+    &#34;&#34;&#34;Gets the boolean of this JsonNode.  # noqa: E501
+
+
+    :return: The boolean of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._boolean</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.container"><code class="name">prop <span class="ident">container</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the container of this JsonNode.
+# noqa: E501</p>
+<p>:return: The container of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def container(self):
+    &#34;&#34;&#34;Gets the container of this JsonNode.  # noqa: E501
+
+
+    :return: The container of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._container</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.double"><code class="name">prop <span class="ident">double</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the double of this JsonNode.
+# noqa: E501</p>
+<p>:return: The double of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def double(self):
+    &#34;&#34;&#34;Gets the double of this JsonNode.  # noqa: E501
+
+
+    :return: The double of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._double</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.embedded_value"><code class="name">prop <span class="ident">embedded_value</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the embedded_value of this JsonNode.
+# noqa: E501</p>
+<p>:return: The embedded_value of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def embedded_value(self):
+    &#34;&#34;&#34;Gets the embedded_value of this JsonNode.  # noqa: E501
+
+
+    :return: The embedded_value of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._embedded_value</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.empty"><code class="name">prop <span class="ident">empty</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the empty of this JsonNode.
+# noqa: E501</p>
+<p>:return: The empty of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def empty(self):
+    &#34;&#34;&#34;Gets the empty of this JsonNode.  # noqa: E501
+
+
+    :return: The empty of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._empty</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.float"><code class="name">prop <span class="ident">float</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the float of this JsonNode.
+# noqa: E501</p>
+<p>:return: The float of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def float(self):
+    &#34;&#34;&#34;Gets the float of this JsonNode.  # noqa: E501
+
+
+    :return: The float of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._float</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.floating_point_number"><code class="name">prop <span class="ident">floating_point_number</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the floating_point_number of this JsonNode.
+# noqa: E501</p>
+<p>:return: The floating_point_number of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def floating_point_number(self):
+    &#34;&#34;&#34;Gets the floating_point_number of this JsonNode.  # noqa: E501
+
+
+    :return: The floating_point_number of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._floating_point_number</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.int"><code class="name">prop <span class="ident">int</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the int of this JsonNode.
+# noqa: E501</p>
+<p>:return: The int of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def int(self):
+    &#34;&#34;&#34;Gets the int of this JsonNode.  # noqa: E501
+
+
+    :return: The int of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._int</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.integral_number"><code class="name">prop <span class="ident">integral_number</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the integral_number of this JsonNode.
+# noqa: E501</p>
+<p>:return: The integral_number of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def integral_number(self):
+    &#34;&#34;&#34;Gets the integral_number of this JsonNode.  # noqa: E501
+
+
+    :return: The integral_number of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._integral_number</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.long"><code class="name">prop <span class="ident">long</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the long of this JsonNode.
+# noqa: E501</p>
+<p>:return: The long of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def long(self):
+    &#34;&#34;&#34;Gets the long of this JsonNode.  # noqa: E501
+
+
+    :return: The long of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._long</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.missing_node"><code class="name">prop <span class="ident">missing_node</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the missing_node of this JsonNode.
+# noqa: E501</p>
+<p>:return: The missing_node of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def missing_node(self):
+    &#34;&#34;&#34;Gets the missing_node of this JsonNode.  # noqa: E501
+
+
+    :return: The missing_node of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._missing_node</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.node_type"><code class="name">prop <span class="ident">node_type</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the node_type of this JsonNode.
+# noqa: E501</p>
+<p>:return: The node_type of this JsonNode.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def node_type(self):
+    &#34;&#34;&#34;Gets the node_type of this JsonNode.  # noqa: E501
+
+
+    :return: The node_type of this JsonNode.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._node_type</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.null"><code class="name">prop <span class="ident">null</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the null of this JsonNode.
+# noqa: E501</p>
+<p>:return: The null of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def null(self):
+    &#34;&#34;&#34;Gets the null of this JsonNode.  # noqa: E501
+
+
+    :return: The null of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._null</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.number"><code class="name">prop <span class="ident">number</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the number of this JsonNode.
+# noqa: E501</p>
+<p>:return: The number of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def number(self):
+    &#34;&#34;&#34;Gets the number of this JsonNode.  # noqa: E501
+
+
+    :return: The number of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._number</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.object"><code class="name">prop <span class="ident">object</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the object of this JsonNode.
+# noqa: E501</p>
+<p>:return: The object of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def object(self):
+    &#34;&#34;&#34;Gets the object of this JsonNode.  # noqa: E501
+
+
+    :return: The object of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._object</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.pojo"><code class="name">prop <span class="ident">pojo</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the pojo of this JsonNode.
+# noqa: E501</p>
+<p>:return: The pojo of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def pojo(self):
+    &#34;&#34;&#34;Gets the pojo of this JsonNode.  # noqa: E501
+
+
+    :return: The pojo of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._pojo</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.short"><code class="name">prop <span class="ident">short</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the short of this JsonNode.
+# noqa: E501</p>
+<p>:return: The short of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def short(self):
+    &#34;&#34;&#34;Gets the short of this JsonNode.  # noqa: E501
+
+
+    :return: The short of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._short</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.string"><code class="name">prop <span class="ident">string</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the string of this JsonNode.
+# noqa: E501</p>
+<p>:return: The string of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def string(self):
+    &#34;&#34;&#34;Gets the string of this JsonNode.  # noqa: E501
+
+
+    :return: The string of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._string</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.textual"><code class="name">prop <span class="ident">textual</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the textual of this JsonNode.
+# noqa: E501</p>
+<p>:return: The textual of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def textual(self):
+    &#34;&#34;&#34;Gets the textual of this JsonNode.  # noqa: E501
+
+
+    :return: The textual of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._textual</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.value_node"><code class="name">prop <span class="ident">value_node</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the value_node of this JsonNode.
+# noqa: E501</p>
+<p>:return: The value_node of this JsonNode.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def value_node(self):
+    &#34;&#34;&#34;Gets the value_node of this JsonNode.  # noqa: E501
+
+
+    :return: The value_node of this JsonNode.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._value_node</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.json_node.JsonNode.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.json_node.JsonNode.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.json_node.JsonNode" href="#mailslurp_client.models.json_node.JsonNode">JsonNode</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.array" href="#mailslurp_client.models.json_node.JsonNode.array">array</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.attribute_map" href="#mailslurp_client.models.json_node.JsonNode.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.big_decimal" href="#mailslurp_client.models.json_node.JsonNode.big_decimal">big_decimal</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.big_integer" href="#mailslurp_client.models.json_node.JsonNode.big_integer">big_integer</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.binary" href="#mailslurp_client.models.json_node.JsonNode.binary">binary</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.boolean" href="#mailslurp_client.models.json_node.JsonNode.boolean">boolean</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.container" href="#mailslurp_client.models.json_node.JsonNode.container">container</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.double" href="#mailslurp_client.models.json_node.JsonNode.double">double</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.embedded_value" href="#mailslurp_client.models.json_node.JsonNode.embedded_value">embedded_value</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.empty" href="#mailslurp_client.models.json_node.JsonNode.empty">empty</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.float" href="#mailslurp_client.models.json_node.JsonNode.float">float</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.floating_point_number" href="#mailslurp_client.models.json_node.JsonNode.floating_point_number">floating_point_number</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.int" href="#mailslurp_client.models.json_node.JsonNode.int">int</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.integral_number" href="#mailslurp_client.models.json_node.JsonNode.integral_number">integral_number</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.long" href="#mailslurp_client.models.json_node.JsonNode.long">long</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.missing_node" href="#mailslurp_client.models.json_node.JsonNode.missing_node">missing_node</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.node_type" href="#mailslurp_client.models.json_node.JsonNode.node_type">node_type</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.null" href="#mailslurp_client.models.json_node.JsonNode.null">null</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.number" href="#mailslurp_client.models.json_node.JsonNode.number">number</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.object" href="#mailslurp_client.models.json_node.JsonNode.object">object</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.openapi_types" href="#mailslurp_client.models.json_node.JsonNode.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.pojo" href="#mailslurp_client.models.json_node.JsonNode.pojo">pojo</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.short" href="#mailslurp_client.models.json_node.JsonNode.short">short</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.string" href="#mailslurp_client.models.json_node.JsonNode.string">string</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.textual" href="#mailslurp_client.models.json_node.JsonNode.textual">textual</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.to_dict" href="#mailslurp_client.models.json_node.JsonNode.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.to_str" href="#mailslurp_client.models.json_node.JsonNode.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.json_node.JsonNode.value_node" href="#mailslurp_client.models.json_node.JsonNode.value_node">value_node</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

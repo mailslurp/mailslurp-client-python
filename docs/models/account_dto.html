@@ -1,0 +1,1863 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.account_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.account_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.account_dto.AccountDto"><code class="flex name class">
+<span>class <span class="ident">AccountDto</span></span>
+<span>(</span><span>user=None, subscription=None, addons=None, intercom_hash=None, churnkey_hash=None, current_period=None, requires_verification=None, required_verification_types=None, default_currency=None, default_schedule=None, has_bad_subscription_item_statuses=None, trials_enabled=None, has_any_active_trial_subscription=None, can_end_trial=None, free_account_expires_in_days=None, free_account_expired=None, free_account_evaluation_denied=None, free_account_evaluation_denied_reason=None, free_account_evaluation_denied_allow_trial=None, free_account_mode=None, requires_terms_and_conditions_agreement=None, enforce_sending_agreement=None, admin_send_pause=None, organization_name=None, organization_slug=None, organization_brand_color=None, organization_logo_url=None, user_permission_role=None, environment_accounts=None, domain_plan_quantity=None, assigned_domain_count=None, effective_domain_limit=None, requires_dashboard_onboarding_v2=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>AccountDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AccountDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;user&#39;: &#39;UserDto&#39;,
+        &#39;subscription&#39;: &#39;SubscriptionDto&#39;,
+        &#39;addons&#39;: &#39;list[str]&#39;,
+        &#39;intercom_hash&#39;: &#39;str&#39;,
+        &#39;churnkey_hash&#39;: &#39;str&#39;,
+        &#39;current_period&#39;: &#39;CurrentPeriodDto&#39;,
+        &#39;requires_verification&#39;: &#39;bool&#39;,
+        &#39;required_verification_types&#39;: &#39;list[str]&#39;,
+        &#39;default_currency&#39;: &#39;str&#39;,
+        &#39;default_schedule&#39;: &#39;str&#39;,
+        &#39;has_bad_subscription_item_statuses&#39;: &#39;bool&#39;,
+        &#39;trials_enabled&#39;: &#39;bool&#39;,
+        &#39;has_any_active_trial_subscription&#39;: &#39;bool&#39;,
+        &#39;can_end_trial&#39;: &#39;bool&#39;,
+        &#39;free_account_expires_in_days&#39;: &#39;int&#39;,
+        &#39;free_account_expired&#39;: &#39;bool&#39;,
+        &#39;free_account_evaluation_denied&#39;: &#39;bool&#39;,
+        &#39;free_account_evaluation_denied_reason&#39;: &#39;str&#39;,
+        &#39;free_account_evaluation_denied_allow_trial&#39;: &#39;bool&#39;,
+        &#39;free_account_mode&#39;: &#39;str&#39;,
+        &#39;requires_terms_and_conditions_agreement&#39;: &#39;bool&#39;,
+        &#39;enforce_sending_agreement&#39;: &#39;bool&#39;,
+        &#39;admin_send_pause&#39;: &#39;AdminSendPauseDto&#39;,
+        &#39;organization_name&#39;: &#39;str&#39;,
+        &#39;organization_slug&#39;: &#39;str&#39;,
+        &#39;organization_brand_color&#39;: &#39;str&#39;,
+        &#39;organization_logo_url&#39;: &#39;str&#39;,
+        &#39;user_permission_role&#39;: &#39;str&#39;,
+        &#39;environment_accounts&#39;: &#39;EnvironmentAccountsDto&#39;,
+        &#39;domain_plan_quantity&#39;: &#39;int&#39;,
+        &#39;assigned_domain_count&#39;: &#39;int&#39;,
+        &#39;effective_domain_limit&#39;: &#39;int&#39;,
+        &#39;requires_dashboard_onboarding_v2&#39;: &#39;bool&#39;
+    }
+
+    attribute_map = {
+        &#39;user&#39;: &#39;user&#39;,
+        &#39;subscription&#39;: &#39;subscription&#39;,
+        &#39;addons&#39;: &#39;addons&#39;,
+        &#39;intercom_hash&#39;: &#39;intercomHash&#39;,
+        &#39;churnkey_hash&#39;: &#39;churnkeyHash&#39;,
+        &#39;current_period&#39;: &#39;currentPeriod&#39;,
+        &#39;requires_verification&#39;: &#39;requiresVerification&#39;,
+        &#39;required_verification_types&#39;: &#39;requiredVerificationTypes&#39;,
+        &#39;default_currency&#39;: &#39;defaultCurrency&#39;,
+        &#39;default_schedule&#39;: &#39;defaultSchedule&#39;,
+        &#39;has_bad_subscription_item_statuses&#39;: &#39;hasBadSubscriptionItemStatuses&#39;,
+        &#39;trials_enabled&#39;: &#39;trialsEnabled&#39;,
+        &#39;has_any_active_trial_subscription&#39;: &#39;hasAnyActiveTrialSubscription&#39;,
+        &#39;can_end_trial&#39;: &#39;canEndTrial&#39;,
+        &#39;free_account_expires_in_days&#39;: &#39;freeAccountExpiresInDays&#39;,
+        &#39;free_account_expired&#39;: &#39;freeAccountExpired&#39;,
+        &#39;free_account_evaluation_denied&#39;: &#39;freeAccountEvaluationDenied&#39;,
+        &#39;free_account_evaluation_denied_reason&#39;: &#39;freeAccountEvaluationDeniedReason&#39;,
+        &#39;free_account_evaluation_denied_allow_trial&#39;: &#39;freeAccountEvaluationDeniedAllowTrial&#39;,
+        &#39;free_account_mode&#39;: &#39;freeAccountMode&#39;,
+        &#39;requires_terms_and_conditions_agreement&#39;: &#39;requiresTermsAndConditionsAgreement&#39;,
+        &#39;enforce_sending_agreement&#39;: &#39;enforceSendingAgreement&#39;,
+        &#39;admin_send_pause&#39;: &#39;adminSendPause&#39;,
+        &#39;organization_name&#39;: &#39;organizationName&#39;,
+        &#39;organization_slug&#39;: &#39;organizationSlug&#39;,
+        &#39;organization_brand_color&#39;: &#39;organizationBrandColor&#39;,
+        &#39;organization_logo_url&#39;: &#39;organizationLogoUrl&#39;,
+        &#39;user_permission_role&#39;: &#39;userPermissionRole&#39;,
+        &#39;environment_accounts&#39;: &#39;environmentAccounts&#39;,
+        &#39;domain_plan_quantity&#39;: &#39;domainPlanQuantity&#39;,
+        &#39;assigned_domain_count&#39;: &#39;assignedDomainCount&#39;,
+        &#39;effective_domain_limit&#39;: &#39;effectiveDomainLimit&#39;,
+        &#39;requires_dashboard_onboarding_v2&#39;: &#39;requiresDashboardOnboardingV2&#39;
+    }
+
+    def __init__(self, user=None, subscription=None, addons=None, intercom_hash=None, churnkey_hash=None, current_period=None, requires_verification=None, required_verification_types=None, default_currency=None, default_schedule=None, has_bad_subscription_item_statuses=None, trials_enabled=None, has_any_active_trial_subscription=None, can_end_trial=None, free_account_expires_in_days=None, free_account_expired=None, free_account_evaluation_denied=None, free_account_evaluation_denied_reason=None, free_account_evaluation_denied_allow_trial=None, free_account_mode=None, requires_terms_and_conditions_agreement=None, enforce_sending_agreement=None, admin_send_pause=None, organization_name=None, organization_slug=None, organization_brand_color=None, organization_logo_url=None, user_permission_role=None, environment_accounts=None, domain_plan_quantity=None, assigned_domain_count=None, effective_domain_limit=None, requires_dashboard_onboarding_v2=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;AccountDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._user = None
+        self._subscription = None
+        self._addons = None
+        self._intercom_hash = None
+        self._churnkey_hash = None
+        self._current_period = None
+        self._requires_verification = None
+        self._required_verification_types = None
+        self._default_currency = None
+        self._default_schedule = None
+        self._has_bad_subscription_item_statuses = None
+        self._trials_enabled = None
+        self._has_any_active_trial_subscription = None
+        self._can_end_trial = None
+        self._free_account_expires_in_days = None
+        self._free_account_expired = None
+        self._free_account_evaluation_denied = None
+        self._free_account_evaluation_denied_reason = None
+        self._free_account_evaluation_denied_allow_trial = None
+        self._free_account_mode = None
+        self._requires_terms_and_conditions_agreement = None
+        self._enforce_sending_agreement = None
+        self._admin_send_pause = None
+        self._organization_name = None
+        self._organization_slug = None
+        self._organization_brand_color = None
+        self._organization_logo_url = None
+        self._user_permission_role = None
+        self._environment_accounts = None
+        self._domain_plan_quantity = None
+        self._assigned_domain_count = None
+        self._effective_domain_limit = None
+        self._requires_dashboard_onboarding_v2 = None
+        self.discriminator = None
+
+        self.user = user
+        self.subscription = subscription
+        self.addons = addons
+        self.intercom_hash = intercom_hash
+        self.churnkey_hash = churnkey_hash
+        self.current_period = current_period
+        self.requires_verification = requires_verification
+        self.required_verification_types = required_verification_types
+        self.default_currency = default_currency
+        self.default_schedule = default_schedule
+        self.has_bad_subscription_item_statuses = has_bad_subscription_item_statuses
+        self.trials_enabled = trials_enabled
+        self.has_any_active_trial_subscription = has_any_active_trial_subscription
+        self.can_end_trial = can_end_trial
+        self.free_account_expires_in_days = free_account_expires_in_days
+        self.free_account_expired = free_account_expired
+        self.free_account_evaluation_denied = free_account_evaluation_denied
+        self.free_account_evaluation_denied_reason = free_account_evaluation_denied_reason
+        self.free_account_evaluation_denied_allow_trial = free_account_evaluation_denied_allow_trial
+        self.free_account_mode = free_account_mode
+        self.requires_terms_and_conditions_agreement = requires_terms_and_conditions_agreement
+        self.enforce_sending_agreement = enforce_sending_agreement
+        self.admin_send_pause = admin_send_pause
+        self.organization_name = organization_name
+        self.organization_slug = organization_slug
+        self.organization_brand_color = organization_brand_color
+        self.organization_logo_url = organization_logo_url
+        self.user_permission_role = user_permission_role
+        self.environment_accounts = environment_accounts
+        self.domain_plan_quantity = domain_plan_quantity
+        self.assigned_domain_count = assigned_domain_count
+        self.effective_domain_limit = effective_domain_limit
+        self.requires_dashboard_onboarding_v2 = requires_dashboard_onboarding_v2
+
+    @property
+    def user(self):
+        &#34;&#34;&#34;Gets the user of this AccountDto.  # noqa: E501
+
+
+        :return: The user of this AccountDto.  # noqa: E501
+        :rtype: UserDto
+        &#34;&#34;&#34;
+        return self._user
+
+    @user.setter
+    def user(self, user):
+        &#34;&#34;&#34;Sets the user of this AccountDto.
+
+
+        :param user: The user of this AccountDto.  # noqa: E501
+        :type: UserDto
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and user is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `user`, must not be `None`&#34;)  # noqa: E501
+
+        self._user = user
+
+    @property
+    def subscription(self):
+        &#34;&#34;&#34;Gets the subscription of this AccountDto.  # noqa: E501
+
+
+        :return: The subscription of this AccountDto.  # noqa: E501
+        :rtype: SubscriptionDto
+        &#34;&#34;&#34;
+        return self._subscription
+
+    @subscription.setter
+    def subscription(self, subscription):
+        &#34;&#34;&#34;Sets the subscription of this AccountDto.
+
+
+        :param subscription: The subscription of this AccountDto.  # noqa: E501
+        :type: SubscriptionDto
+        &#34;&#34;&#34;
+
+        self._subscription = subscription
+
+    @property
+    def addons(self):
+        &#34;&#34;&#34;Gets the addons of this AccountDto.  # noqa: E501
+
+
+        :return: The addons of this AccountDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._addons
+
+    @addons.setter
+    def addons(self, addons):
+        &#34;&#34;&#34;Sets the addons of this AccountDto.
+
+
+        :param addons: The addons of this AccountDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;STORAGE&#34;, &#34;INBOXES&#34;, &#34;CONNECTORS&#34;, &#34;DOMAIN_MONITOR&#34;, &#34;DEVICE_RENDER&#34;, &#34;INBOX_PLACEMENT_TESTS&#34;, &#34;WARMUP_SENDERS&#34;, &#34;WARMUP_USAGE&#34;, &#34;EMAILS&#34;, &#34;AI&#34;, &#34;VALIDATION&#34;, &#34;GUEST&#34;]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(addons).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                &#34;Invalid values for `addons` [{0}], must be a subset of [{1}]&#34;  # noqa: E501
+                .format(&#34;, &#34;.join(map(str, set(addons) - set(allowed_values))),  # noqa: E501
+                        &#34;, &#34;.join(map(str, allowed_values)))
+            )
+
+        self._addons = addons
+
+    @property
+    def intercom_hash(self):
+        &#34;&#34;&#34;Gets the intercom_hash of this AccountDto.  # noqa: E501
+
+        disabled  # noqa: E501
+
+        :return: The intercom_hash of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._intercom_hash
+
+    @intercom_hash.setter
+    def intercom_hash(self, intercom_hash):
+        &#34;&#34;&#34;Sets the intercom_hash of this AccountDto.
+
+        disabled  # noqa: E501
+
+        :param intercom_hash: The intercom_hash of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._intercom_hash = intercom_hash
+
+    @property
+    def churnkey_hash(self):
+        &#34;&#34;&#34;Gets the churnkey_hash of this AccountDto.  # noqa: E501
+
+        disabled  # noqa: E501
+
+        :return: The churnkey_hash of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._churnkey_hash
+
+    @churnkey_hash.setter
+    def churnkey_hash(self, churnkey_hash):
+        &#34;&#34;&#34;Sets the churnkey_hash of this AccountDto.
+
+        disabled  # noqa: E501
+
+        :param churnkey_hash: The churnkey_hash of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._churnkey_hash = churnkey_hash
+
+    @property
+    def current_period(self):
+        &#34;&#34;&#34;Gets the current_period of this AccountDto.  # noqa: E501
+
+
+        :return: The current_period of this AccountDto.  # noqa: E501
+        :rtype: CurrentPeriodDto
+        &#34;&#34;&#34;
+        return self._current_period
+
+    @current_period.setter
+    def current_period(self, current_period):
+        &#34;&#34;&#34;Sets the current_period of this AccountDto.
+
+
+        :param current_period: The current_period of this AccountDto.  # noqa: E501
+        :type: CurrentPeriodDto
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and current_period is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `current_period`, must not be `None`&#34;)  # noqa: E501
+
+        self._current_period = current_period
+
+    @property
+    def requires_verification(self):
+        &#34;&#34;&#34;Gets the requires_verification of this AccountDto.  # noqa: E501
+
+
+        :return: The requires_verification of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._requires_verification
+
+    @requires_verification.setter
+    def requires_verification(self, requires_verification):
+        &#34;&#34;&#34;Sets the requires_verification of this AccountDto.
+
+
+        :param requires_verification: The requires_verification of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and requires_verification is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `requires_verification`, must not be `None`&#34;)  # noqa: E501
+
+        self._requires_verification = requires_verification
+
+    @property
+    def required_verification_types(self):
+        &#34;&#34;&#34;Gets the required_verification_types of this AccountDto.  # noqa: E501
+
+
+        :return: The required_verification_types of this AccountDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._required_verification_types
+
+    @required_verification_types.setter
+    def required_verification_types(self, required_verification_types):
+        &#34;&#34;&#34;Sets the required_verification_types of this AccountDto.
+
+
+        :param required_verification_types: The required_verification_types of this AccountDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;EMAIL_ADDRESS&#34;, &#34;PHONE_NUMBER&#34;]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(required_verification_types).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                &#34;Invalid values for `required_verification_types` [{0}], must be a subset of [{1}]&#34;  # noqa: E501
+                .format(&#34;, &#34;.join(map(str, set(required_verification_types) - set(allowed_values))),  # noqa: E501
+                        &#34;, &#34;.join(map(str, allowed_values)))
+            )
+
+        self._required_verification_types = required_verification_types
+
+    @property
+    def default_currency(self):
+        &#34;&#34;&#34;Gets the default_currency of this AccountDto.  # noqa: E501
+
+
+        :return: The default_currency of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._default_currency
+
+    @default_currency.setter
+    def default_currency(self, default_currency):
+        &#34;&#34;&#34;Sets the default_currency of this AccountDto.
+
+
+        :param default_currency: The default_currency of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and default_currency is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `default_currency`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;EUR&#34;, &#34;USD&#34;, &#34;JPY&#34;, &#34;GBP&#34;, &#34;AUD&#34;, &#34;CAD&#34;, &#34;CHF&#34;, &#34;CNY&#34;, &#34;INR&#34;, &#34;NZD&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and default_currency not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `default_currency` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(default_currency, allowed_values)
+            )
+
+        self._default_currency = default_currency
+
+    @property
+    def default_schedule(self):
+        &#34;&#34;&#34;Gets the default_schedule of this AccountDto.  # noqa: E501
+
+
+        :return: The default_schedule of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._default_schedule
+
+    @default_schedule.setter
+    def default_schedule(self, default_schedule):
+        &#34;&#34;&#34;Sets the default_schedule of this AccountDto.
+
+
+        :param default_schedule: The default_schedule of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and default_schedule is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `default_schedule`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;MONTHLY&#34;, &#34;YEARLY&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and default_schedule not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `default_schedule` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(default_schedule, allowed_values)
+            )
+
+        self._default_schedule = default_schedule
+
+    @property
+    def has_bad_subscription_item_statuses(self):
+        &#34;&#34;&#34;Gets the has_bad_subscription_item_statuses of this AccountDto.  # noqa: E501
+
+
+        :return: The has_bad_subscription_item_statuses of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._has_bad_subscription_item_statuses
+
+    @has_bad_subscription_item_statuses.setter
+    def has_bad_subscription_item_statuses(self, has_bad_subscription_item_statuses):
+        &#34;&#34;&#34;Sets the has_bad_subscription_item_statuses of this AccountDto.
+
+
+        :param has_bad_subscription_item_statuses: The has_bad_subscription_item_statuses of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._has_bad_subscription_item_statuses = has_bad_subscription_item_statuses
+
+    @property
+    def trials_enabled(self):
+        &#34;&#34;&#34;Gets the trials_enabled of this AccountDto.  # noqa: E501
+
+
+        :return: The trials_enabled of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._trials_enabled
+
+    @trials_enabled.setter
+    def trials_enabled(self, trials_enabled):
+        &#34;&#34;&#34;Sets the trials_enabled of this AccountDto.
+
+
+        :param trials_enabled: The trials_enabled of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and trials_enabled is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `trials_enabled`, must not be `None`&#34;)  # noqa: E501
+
+        self._trials_enabled = trials_enabled
+
+    @property
+    def has_any_active_trial_subscription(self):
+        &#34;&#34;&#34;Gets the has_any_active_trial_subscription of this AccountDto.  # noqa: E501
+
+
+        :return: The has_any_active_trial_subscription of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._has_any_active_trial_subscription
+
+    @has_any_active_trial_subscription.setter
+    def has_any_active_trial_subscription(self, has_any_active_trial_subscription):
+        &#34;&#34;&#34;Sets the has_any_active_trial_subscription of this AccountDto.
+
+
+        :param has_any_active_trial_subscription: The has_any_active_trial_subscription of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and has_any_active_trial_subscription is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `has_any_active_trial_subscription`, must not be `None`&#34;)  # noqa: E501
+
+        self._has_any_active_trial_subscription = has_any_active_trial_subscription
+
+    @property
+    def can_end_trial(self):
+        &#34;&#34;&#34;Gets the can_end_trial of this AccountDto.  # noqa: E501
+
+
+        :return: The can_end_trial of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._can_end_trial
+
+    @can_end_trial.setter
+    def can_end_trial(self, can_end_trial):
+        &#34;&#34;&#34;Sets the can_end_trial of this AccountDto.
+
+
+        :param can_end_trial: The can_end_trial of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and can_end_trial is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `can_end_trial`, must not be `None`&#34;)  # noqa: E501
+
+        self._can_end_trial = can_end_trial
+
+    @property
+    def free_account_expires_in_days(self):
+        &#34;&#34;&#34;Gets the free_account_expires_in_days of this AccountDto.  # noqa: E501
+
+
+        :return: The free_account_expires_in_days of this AccountDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._free_account_expires_in_days
+
+    @free_account_expires_in_days.setter
+    def free_account_expires_in_days(self, free_account_expires_in_days):
+        &#34;&#34;&#34;Sets the free_account_expires_in_days of this AccountDto.
+
+
+        :param free_account_expires_in_days: The free_account_expires_in_days of this AccountDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+
+        self._free_account_expires_in_days = free_account_expires_in_days
+
+    @property
+    def free_account_expired(self):
+        &#34;&#34;&#34;Gets the free_account_expired of this AccountDto.  # noqa: E501
+
+
+        :return: The free_account_expired of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._free_account_expired
+
+    @free_account_expired.setter
+    def free_account_expired(self, free_account_expired):
+        &#34;&#34;&#34;Sets the free_account_expired of this AccountDto.
+
+
+        :param free_account_expired: The free_account_expired of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and free_account_expired is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `free_account_expired`, must not be `None`&#34;)  # noqa: E501
+
+        self._free_account_expired = free_account_expired
+
+    @property
+    def free_account_evaluation_denied(self):
+        &#34;&#34;&#34;Gets the free_account_evaluation_denied of this AccountDto.  # noqa: E501
+
+
+        :return: The free_account_evaluation_denied of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._free_account_evaluation_denied
+
+    @free_account_evaluation_denied.setter
+    def free_account_evaluation_denied(self, free_account_evaluation_denied):
+        &#34;&#34;&#34;Sets the free_account_evaluation_denied of this AccountDto.
+
+
+        :param free_account_evaluation_denied: The free_account_evaluation_denied of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and free_account_evaluation_denied is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `free_account_evaluation_denied`, must not be `None`&#34;)  # noqa: E501
+
+        self._free_account_evaluation_denied = free_account_evaluation_denied
+
+    @property
+    def free_account_evaluation_denied_reason(self):
+        &#34;&#34;&#34;Gets the free_account_evaluation_denied_reason of this AccountDto.  # noqa: E501
+
+
+        :return: The free_account_evaluation_denied_reason of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._free_account_evaluation_denied_reason
+
+    @free_account_evaluation_denied_reason.setter
+    def free_account_evaluation_denied_reason(self, free_account_evaluation_denied_reason):
+        &#34;&#34;&#34;Sets the free_account_evaluation_denied_reason of this AccountDto.
+
+
+        :param free_account_evaluation_denied_reason: The free_account_evaluation_denied_reason of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;COUNTRY&#34;, &#34;DOMAIN&#34;, &#34;FREE_EMAIL_PROVIDER&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and free_account_evaluation_denied_reason not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `free_account_evaluation_denied_reason` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(free_account_evaluation_denied_reason, allowed_values)
+            )
+
+        self._free_account_evaluation_denied_reason = free_account_evaluation_denied_reason
+
+    @property
+    def free_account_evaluation_denied_allow_trial(self):
+        &#34;&#34;&#34;Gets the free_account_evaluation_denied_allow_trial of this AccountDto.  # noqa: E501
+
+
+        :return: The free_account_evaluation_denied_allow_trial of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._free_account_evaluation_denied_allow_trial
+
+    @free_account_evaluation_denied_allow_trial.setter
+    def free_account_evaluation_denied_allow_trial(self, free_account_evaluation_denied_allow_trial):
+        &#34;&#34;&#34;Sets the free_account_evaluation_denied_allow_trial of this AccountDto.
+
+
+        :param free_account_evaluation_denied_allow_trial: The free_account_evaluation_denied_allow_trial of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and free_account_evaluation_denied_allow_trial is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `free_account_evaluation_denied_allow_trial`, must not be `None`&#34;)  # noqa: E501
+
+        self._free_account_evaluation_denied_allow_trial = free_account_evaluation_denied_allow_trial
+
+    @property
+    def free_account_mode(self):
+        &#34;&#34;&#34;Gets the free_account_mode of this AccountDto.  # noqa: E501
+
+
+        :return: The free_account_mode of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._free_account_mode
+
+    @free_account_mode.setter
+    def free_account_mode(self, free_account_mode):
+        &#34;&#34;&#34;Sets the free_account_mode of this AccountDto.
+
+
+        :param free_account_mode: The free_account_mode of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and free_account_mode is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `free_account_mode`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;NONE&#34;, &#34;LEGACY_EVALUATION&#34;, &#34;PERMANENT_SANDBOX&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and free_account_mode not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `free_account_mode` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(free_account_mode, allowed_values)
+            )
+
+        self._free_account_mode = free_account_mode
+
+    @property
+    def requires_terms_and_conditions_agreement(self):
+        &#34;&#34;&#34;Gets the requires_terms_and_conditions_agreement of this AccountDto.  # noqa: E501
+
+
+        :return: The requires_terms_and_conditions_agreement of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._requires_terms_and_conditions_agreement
+
+    @requires_terms_and_conditions_agreement.setter
+    def requires_terms_and_conditions_agreement(self, requires_terms_and_conditions_agreement):
+        &#34;&#34;&#34;Sets the requires_terms_and_conditions_agreement of this AccountDto.
+
+
+        :param requires_terms_and_conditions_agreement: The requires_terms_and_conditions_agreement of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._requires_terms_and_conditions_agreement = requires_terms_and_conditions_agreement
+
+    @property
+    def enforce_sending_agreement(self):
+        &#34;&#34;&#34;Gets the enforce_sending_agreement of this AccountDto.  # noqa: E501
+
+
+        :return: The enforce_sending_agreement of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._enforce_sending_agreement
+
+    @enforce_sending_agreement.setter
+    def enforce_sending_agreement(self, enforce_sending_agreement):
+        &#34;&#34;&#34;Sets the enforce_sending_agreement of this AccountDto.
+
+
+        :param enforce_sending_agreement: The enforce_sending_agreement of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and enforce_sending_agreement is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `enforce_sending_agreement`, must not be `None`&#34;)  # noqa: E501
+
+        self._enforce_sending_agreement = enforce_sending_agreement
+
+    @property
+    def admin_send_pause(self):
+        &#34;&#34;&#34;Gets the admin_send_pause of this AccountDto.  # noqa: E501
+
+
+        :return: The admin_send_pause of this AccountDto.  # noqa: E501
+        :rtype: AdminSendPauseDto
+        &#34;&#34;&#34;
+        return self._admin_send_pause
+
+    @admin_send_pause.setter
+    def admin_send_pause(self, admin_send_pause):
+        &#34;&#34;&#34;Sets the admin_send_pause of this AccountDto.
+
+
+        :param admin_send_pause: The admin_send_pause of this AccountDto.  # noqa: E501
+        :type: AdminSendPauseDto
+        &#34;&#34;&#34;
+
+        self._admin_send_pause = admin_send_pause
+
+    @property
+    def organization_name(self):
+        &#34;&#34;&#34;Gets the organization_name of this AccountDto.  # noqa: E501
+
+
+        :return: The organization_name of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._organization_name
+
+    @organization_name.setter
+    def organization_name(self, organization_name):
+        &#34;&#34;&#34;Sets the organization_name of this AccountDto.
+
+
+        :param organization_name: The organization_name of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._organization_name = organization_name
+
+    @property
+    def organization_slug(self):
+        &#34;&#34;&#34;Gets the organization_slug of this AccountDto.  # noqa: E501
+
+
+        :return: The organization_slug of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._organization_slug
+
+    @organization_slug.setter
+    def organization_slug(self, organization_slug):
+        &#34;&#34;&#34;Sets the organization_slug of this AccountDto.
+
+
+        :param organization_slug: The organization_slug of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._organization_slug = organization_slug
+
+    @property
+    def organization_brand_color(self):
+        &#34;&#34;&#34;Gets the organization_brand_color of this AccountDto.  # noqa: E501
+
+
+        :return: The organization_brand_color of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._organization_brand_color
+
+    @organization_brand_color.setter
+    def organization_brand_color(self, organization_brand_color):
+        &#34;&#34;&#34;Sets the organization_brand_color of this AccountDto.
+
+
+        :param organization_brand_color: The organization_brand_color of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._organization_brand_color = organization_brand_color
+
+    @property
+    def organization_logo_url(self):
+        &#34;&#34;&#34;Gets the organization_logo_url of this AccountDto.  # noqa: E501
+
+
+        :return: The organization_logo_url of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._organization_logo_url
+
+    @organization_logo_url.setter
+    def organization_logo_url(self, organization_logo_url):
+        &#34;&#34;&#34;Sets the organization_logo_url of this AccountDto.
+
+
+        :param organization_logo_url: The organization_logo_url of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._organization_logo_url = organization_logo_url
+
+    @property
+    def user_permission_role(self):
+        &#34;&#34;&#34;Gets the user_permission_role of this AccountDto.  # noqa: E501
+
+
+        :return: The user_permission_role of this AccountDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._user_permission_role
+
+    @user_permission_role.setter
+    def user_permission_role(self, user_permission_role):
+        &#34;&#34;&#34;Sets the user_permission_role of this AccountDto.
+
+
+        :param user_permission_role: The user_permission_role of this AccountDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._user_permission_role = user_permission_role
+
+    @property
+    def environment_accounts(self):
+        &#34;&#34;&#34;Gets the environment_accounts of this AccountDto.  # noqa: E501
+
+
+        :return: The environment_accounts of this AccountDto.  # noqa: E501
+        :rtype: EnvironmentAccountsDto
+        &#34;&#34;&#34;
+        return self._environment_accounts
+
+    @environment_accounts.setter
+    def environment_accounts(self, environment_accounts):
+        &#34;&#34;&#34;Sets the environment_accounts of this AccountDto.
+
+
+        :param environment_accounts: The environment_accounts of this AccountDto.  # noqa: E501
+        :type: EnvironmentAccountsDto
+        &#34;&#34;&#34;
+
+        self._environment_accounts = environment_accounts
+
+    @property
+    def domain_plan_quantity(self):
+        &#34;&#34;&#34;Gets the domain_plan_quantity of this AccountDto.  # noqa: E501
+
+
+        :return: The domain_plan_quantity of this AccountDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._domain_plan_quantity
+
+    @domain_plan_quantity.setter
+    def domain_plan_quantity(self, domain_plan_quantity):
+        &#34;&#34;&#34;Sets the domain_plan_quantity of this AccountDto.
+
+
+        :param domain_plan_quantity: The domain_plan_quantity of this AccountDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and domain_plan_quantity is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `domain_plan_quantity`, must not be `None`&#34;)  # noqa: E501
+
+        self._domain_plan_quantity = domain_plan_quantity
+
+    @property
+    def assigned_domain_count(self):
+        &#34;&#34;&#34;Gets the assigned_domain_count of this AccountDto.  # noqa: E501
+
+
+        :return: The assigned_domain_count of this AccountDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._assigned_domain_count
+
+    @assigned_domain_count.setter
+    def assigned_domain_count(self, assigned_domain_count):
+        &#34;&#34;&#34;Sets the assigned_domain_count of this AccountDto.
+
+
+        :param assigned_domain_count: The assigned_domain_count of this AccountDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and assigned_domain_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `assigned_domain_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._assigned_domain_count = assigned_domain_count
+
+    @property
+    def effective_domain_limit(self):
+        &#34;&#34;&#34;Gets the effective_domain_limit of this AccountDto.  # noqa: E501
+
+
+        :return: The effective_domain_limit of this AccountDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._effective_domain_limit
+
+    @effective_domain_limit.setter
+    def effective_domain_limit(self, effective_domain_limit):
+        &#34;&#34;&#34;Sets the effective_domain_limit of this AccountDto.
+
+
+        :param effective_domain_limit: The effective_domain_limit of this AccountDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+
+        self._effective_domain_limit = effective_domain_limit
+
+    @property
+    def requires_dashboard_onboarding_v2(self):
+        &#34;&#34;&#34;Gets the requires_dashboard_onboarding_v2 of this AccountDto.  # noqa: E501
+
+
+        :return: The requires_dashboard_onboarding_v2 of this AccountDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._requires_dashboard_onboarding_v2
+
+    @requires_dashboard_onboarding_v2.setter
+    def requires_dashboard_onboarding_v2(self, requires_dashboard_onboarding_v2):
+        &#34;&#34;&#34;Sets the requires_dashboard_onboarding_v2 of this AccountDto.
+
+
+        :param requires_dashboard_onboarding_v2: The requires_dashboard_onboarding_v2 of this AccountDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and requires_dashboard_onboarding_v2 is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `requires_dashboard_onboarding_v2`, must not be `None`&#34;)  # noqa: E501
+
+        self._requires_dashboard_onboarding_v2 = requires_dashboard_onboarding_v2
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, AccountDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, AccountDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.account_dto.AccountDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.account_dto.AccountDto.addons"><code class="name">prop <span class="ident">addons</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the addons of this AccountDto.
+# noqa: E501</p>
+<p>:return: The addons of this AccountDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def addons(self):
+    &#34;&#34;&#34;Gets the addons of this AccountDto.  # noqa: E501
+
+
+    :return: The addons of this AccountDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._addons</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.admin_send_pause"><code class="name">prop <span class="ident">admin_send_pause</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the admin_send_pause of this AccountDto.
+# noqa: E501</p>
+<p>:return: The admin_send_pause of this AccountDto.
+# noqa: E501
+:rtype: AdminSendPauseDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def admin_send_pause(self):
+    &#34;&#34;&#34;Gets the admin_send_pause of this AccountDto.  # noqa: E501
+
+
+    :return: The admin_send_pause of this AccountDto.  # noqa: E501
+    :rtype: AdminSendPauseDto
+    &#34;&#34;&#34;
+    return self._admin_send_pause</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.assigned_domain_count"><code class="name">prop <span class="ident">assigned_domain_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the assigned_domain_count of this AccountDto.
+# noqa: E501</p>
+<p>:return: The assigned_domain_count of this AccountDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def assigned_domain_count(self):
+    &#34;&#34;&#34;Gets the assigned_domain_count of this AccountDto.  # noqa: E501
+
+
+    :return: The assigned_domain_count of this AccountDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._assigned_domain_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.can_end_trial"><code class="name">prop <span class="ident">can_end_trial</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the can_end_trial of this AccountDto.
+# noqa: E501</p>
+<p>:return: The can_end_trial of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def can_end_trial(self):
+    &#34;&#34;&#34;Gets the can_end_trial of this AccountDto.  # noqa: E501
+
+
+    :return: The can_end_trial of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._can_end_trial</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.churnkey_hash"><code class="name">prop <span class="ident">churnkey_hash</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the churnkey_hash of this AccountDto.
+# noqa: E501</p>
+<p>disabled
+# noqa: E501</p>
+<p>:return: The churnkey_hash of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def churnkey_hash(self):
+    &#34;&#34;&#34;Gets the churnkey_hash of this AccountDto.  # noqa: E501
+
+    disabled  # noqa: E501
+
+    :return: The churnkey_hash of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._churnkey_hash</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.current_period"><code class="name">prop <span class="ident">current_period</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the current_period of this AccountDto.
+# noqa: E501</p>
+<p>:return: The current_period of this AccountDto.
+# noqa: E501
+:rtype: CurrentPeriodDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def current_period(self):
+    &#34;&#34;&#34;Gets the current_period of this AccountDto.  # noqa: E501
+
+
+    :return: The current_period of this AccountDto.  # noqa: E501
+    :rtype: CurrentPeriodDto
+    &#34;&#34;&#34;
+    return self._current_period</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.default_currency"><code class="name">prop <span class="ident">default_currency</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the default_currency of this AccountDto.
+# noqa: E501</p>
+<p>:return: The default_currency of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def default_currency(self):
+    &#34;&#34;&#34;Gets the default_currency of this AccountDto.  # noqa: E501
+
+
+    :return: The default_currency of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._default_currency</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.default_schedule"><code class="name">prop <span class="ident">default_schedule</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the default_schedule of this AccountDto.
+# noqa: E501</p>
+<p>:return: The default_schedule of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def default_schedule(self):
+    &#34;&#34;&#34;Gets the default_schedule of this AccountDto.  # noqa: E501
+
+
+    :return: The default_schedule of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._default_schedule</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.domain_plan_quantity"><code class="name">prop <span class="ident">domain_plan_quantity</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the domain_plan_quantity of this AccountDto.
+# noqa: E501</p>
+<p>:return: The domain_plan_quantity of this AccountDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def domain_plan_quantity(self):
+    &#34;&#34;&#34;Gets the domain_plan_quantity of this AccountDto.  # noqa: E501
+
+
+    :return: The domain_plan_quantity of this AccountDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._domain_plan_quantity</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.effective_domain_limit"><code class="name">prop <span class="ident">effective_domain_limit</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the effective_domain_limit of this AccountDto.
+# noqa: E501</p>
+<p>:return: The effective_domain_limit of this AccountDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def effective_domain_limit(self):
+    &#34;&#34;&#34;Gets the effective_domain_limit of this AccountDto.  # noqa: E501
+
+
+    :return: The effective_domain_limit of this AccountDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._effective_domain_limit</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.enforce_sending_agreement"><code class="name">prop <span class="ident">enforce_sending_agreement</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the enforce_sending_agreement of this AccountDto.
+# noqa: E501</p>
+<p>:return: The enforce_sending_agreement of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def enforce_sending_agreement(self):
+    &#34;&#34;&#34;Gets the enforce_sending_agreement of this AccountDto.  # noqa: E501
+
+
+    :return: The enforce_sending_agreement of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._enforce_sending_agreement</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.environment_accounts"><code class="name">prop <span class="ident">environment_accounts</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the environment_accounts of this AccountDto.
+# noqa: E501</p>
+<p>:return: The environment_accounts of this AccountDto.
+# noqa: E501
+:rtype: EnvironmentAccountsDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def environment_accounts(self):
+    &#34;&#34;&#34;Gets the environment_accounts of this AccountDto.  # noqa: E501
+
+
+    :return: The environment_accounts of this AccountDto.  # noqa: E501
+    :rtype: EnvironmentAccountsDto
+    &#34;&#34;&#34;
+    return self._environment_accounts</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied"><code class="name">prop <span class="ident">free_account_evaluation_denied</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the free_account_evaluation_denied of this AccountDto.
+# noqa: E501</p>
+<p>:return: The free_account_evaluation_denied of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def free_account_evaluation_denied(self):
+    &#34;&#34;&#34;Gets the free_account_evaluation_denied of this AccountDto.  # noqa: E501
+
+
+    :return: The free_account_evaluation_denied of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._free_account_evaluation_denied</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied_allow_trial"><code class="name">prop <span class="ident">free_account_evaluation_denied_allow_trial</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the free_account_evaluation_denied_allow_trial of this AccountDto.
+# noqa: E501</p>
+<p>:return: The free_account_evaluation_denied_allow_trial of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def free_account_evaluation_denied_allow_trial(self):
+    &#34;&#34;&#34;Gets the free_account_evaluation_denied_allow_trial of this AccountDto.  # noqa: E501
+
+
+    :return: The free_account_evaluation_denied_allow_trial of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._free_account_evaluation_denied_allow_trial</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied_reason"><code class="name">prop <span class="ident">free_account_evaluation_denied_reason</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the free_account_evaluation_denied_reason of this AccountDto.
+# noqa: E501</p>
+<p>:return: The free_account_evaluation_denied_reason of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def free_account_evaluation_denied_reason(self):
+    &#34;&#34;&#34;Gets the free_account_evaluation_denied_reason of this AccountDto.  # noqa: E501
+
+
+    :return: The free_account_evaluation_denied_reason of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._free_account_evaluation_denied_reason</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.free_account_expired"><code class="name">prop <span class="ident">free_account_expired</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the free_account_expired of this AccountDto.
+# noqa: E501</p>
+<p>:return: The free_account_expired of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def free_account_expired(self):
+    &#34;&#34;&#34;Gets the free_account_expired of this AccountDto.  # noqa: E501
+
+
+    :return: The free_account_expired of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._free_account_expired</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.free_account_expires_in_days"><code class="name">prop <span class="ident">free_account_expires_in_days</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the free_account_expires_in_days of this AccountDto.
+# noqa: E501</p>
+<p>:return: The free_account_expires_in_days of this AccountDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def free_account_expires_in_days(self):
+    &#34;&#34;&#34;Gets the free_account_expires_in_days of this AccountDto.  # noqa: E501
+
+
+    :return: The free_account_expires_in_days of this AccountDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._free_account_expires_in_days</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.free_account_mode"><code class="name">prop <span class="ident">free_account_mode</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the free_account_mode of this AccountDto.
+# noqa: E501</p>
+<p>:return: The free_account_mode of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def free_account_mode(self):
+    &#34;&#34;&#34;Gets the free_account_mode of this AccountDto.  # noqa: E501
+
+
+    :return: The free_account_mode of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._free_account_mode</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.has_any_active_trial_subscription"><code class="name">prop <span class="ident">has_any_active_trial_subscription</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the has_any_active_trial_subscription of this AccountDto.
+# noqa: E501</p>
+<p>:return: The has_any_active_trial_subscription of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def has_any_active_trial_subscription(self):
+    &#34;&#34;&#34;Gets the has_any_active_trial_subscription of this AccountDto.  # noqa: E501
+
+
+    :return: The has_any_active_trial_subscription of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._has_any_active_trial_subscription</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.has_bad_subscription_item_statuses"><code class="name">prop <span class="ident">has_bad_subscription_item_statuses</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the has_bad_subscription_item_statuses of this AccountDto.
+# noqa: E501</p>
+<p>:return: The has_bad_subscription_item_statuses of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def has_bad_subscription_item_statuses(self):
+    &#34;&#34;&#34;Gets the has_bad_subscription_item_statuses of this AccountDto.  # noqa: E501
+
+
+    :return: The has_bad_subscription_item_statuses of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._has_bad_subscription_item_statuses</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.intercom_hash"><code class="name">prop <span class="ident">intercom_hash</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the intercom_hash of this AccountDto.
+# noqa: E501</p>
+<p>disabled
+# noqa: E501</p>
+<p>:return: The intercom_hash of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def intercom_hash(self):
+    &#34;&#34;&#34;Gets the intercom_hash of this AccountDto.  # noqa: E501
+
+    disabled  # noqa: E501
+
+    :return: The intercom_hash of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._intercom_hash</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.organization_brand_color"><code class="name">prop <span class="ident">organization_brand_color</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the organization_brand_color of this AccountDto.
+# noqa: E501</p>
+<p>:return: The organization_brand_color of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def organization_brand_color(self):
+    &#34;&#34;&#34;Gets the organization_brand_color of this AccountDto.  # noqa: E501
+
+
+    :return: The organization_brand_color of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._organization_brand_color</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.organization_logo_url"><code class="name">prop <span class="ident">organization_logo_url</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the organization_logo_url of this AccountDto.
+# noqa: E501</p>
+<p>:return: The organization_logo_url of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def organization_logo_url(self):
+    &#34;&#34;&#34;Gets the organization_logo_url of this AccountDto.  # noqa: E501
+
+
+    :return: The organization_logo_url of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._organization_logo_url</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.organization_name"><code class="name">prop <span class="ident">organization_name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the organization_name of this AccountDto.
+# noqa: E501</p>
+<p>:return: The organization_name of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def organization_name(self):
+    &#34;&#34;&#34;Gets the organization_name of this AccountDto.  # noqa: E501
+
+
+    :return: The organization_name of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._organization_name</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.organization_slug"><code class="name">prop <span class="ident">organization_slug</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the organization_slug of this AccountDto.
+# noqa: E501</p>
+<p>:return: The organization_slug of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def organization_slug(self):
+    &#34;&#34;&#34;Gets the organization_slug of this AccountDto.  # noqa: E501
+
+
+    :return: The organization_slug of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._organization_slug</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.required_verification_types"><code class="name">prop <span class="ident">required_verification_types</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the required_verification_types of this AccountDto.
+# noqa: E501</p>
+<p>:return: The required_verification_types of this AccountDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def required_verification_types(self):
+    &#34;&#34;&#34;Gets the required_verification_types of this AccountDto.  # noqa: E501
+
+
+    :return: The required_verification_types of this AccountDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._required_verification_types</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.requires_dashboard_onboarding_v2"><code class="name">prop <span class="ident">requires_dashboard_onboarding_v2</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the requires_dashboard_onboarding_v2 of this AccountDto.
+# noqa: E501</p>
+<p>:return: The requires_dashboard_onboarding_v2 of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def requires_dashboard_onboarding_v2(self):
+    &#34;&#34;&#34;Gets the requires_dashboard_onboarding_v2 of this AccountDto.  # noqa: E501
+
+
+    :return: The requires_dashboard_onboarding_v2 of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._requires_dashboard_onboarding_v2</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.requires_terms_and_conditions_agreement"><code class="name">prop <span class="ident">requires_terms_and_conditions_agreement</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the requires_terms_and_conditions_agreement of this AccountDto.
+# noqa: E501</p>
+<p>:return: The requires_terms_and_conditions_agreement of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def requires_terms_and_conditions_agreement(self):
+    &#34;&#34;&#34;Gets the requires_terms_and_conditions_agreement of this AccountDto.  # noqa: E501
+
+
+    :return: The requires_terms_and_conditions_agreement of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._requires_terms_and_conditions_agreement</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.requires_verification"><code class="name">prop <span class="ident">requires_verification</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the requires_verification of this AccountDto.
+# noqa: E501</p>
+<p>:return: The requires_verification of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def requires_verification(self):
+    &#34;&#34;&#34;Gets the requires_verification of this AccountDto.  # noqa: E501
+
+
+    :return: The requires_verification of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._requires_verification</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.subscription"><code class="name">prop <span class="ident">subscription</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the subscription of this AccountDto.
+# noqa: E501</p>
+<p>:return: The subscription of this AccountDto.
+# noqa: E501
+:rtype: SubscriptionDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def subscription(self):
+    &#34;&#34;&#34;Gets the subscription of this AccountDto.  # noqa: E501
+
+
+    :return: The subscription of this AccountDto.  # noqa: E501
+    :rtype: SubscriptionDto
+    &#34;&#34;&#34;
+    return self._subscription</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.trials_enabled"><code class="name">prop <span class="ident">trials_enabled</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the trials_enabled of this AccountDto.
+# noqa: E501</p>
+<p>:return: The trials_enabled of this AccountDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def trials_enabled(self):
+    &#34;&#34;&#34;Gets the trials_enabled of this AccountDto.  # noqa: E501
+
+
+    :return: The trials_enabled of this AccountDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._trials_enabled</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.user"><code class="name">prop <span class="ident">user</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the user of this AccountDto.
+# noqa: E501</p>
+<p>:return: The user of this AccountDto.
+# noqa: E501
+:rtype: UserDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def user(self):
+    &#34;&#34;&#34;Gets the user of this AccountDto.  # noqa: E501
+
+
+    :return: The user of this AccountDto.  # noqa: E501
+    :rtype: UserDto
+    &#34;&#34;&#34;
+    return self._user</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.user_permission_role"><code class="name">prop <span class="ident">user_permission_role</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the user_permission_role of this AccountDto.
+# noqa: E501</p>
+<p>:return: The user_permission_role of this AccountDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def user_permission_role(self):
+    &#34;&#34;&#34;Gets the user_permission_role of this AccountDto.  # noqa: E501
+
+
+    :return: The user_permission_role of this AccountDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._user_permission_role</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.account_dto.AccountDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.account_dto.AccountDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.account_dto.AccountDto" href="#mailslurp_client.models.account_dto.AccountDto">AccountDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.addons" href="#mailslurp_client.models.account_dto.AccountDto.addons">addons</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.admin_send_pause" href="#mailslurp_client.models.account_dto.AccountDto.admin_send_pause">admin_send_pause</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.assigned_domain_count" href="#mailslurp_client.models.account_dto.AccountDto.assigned_domain_count">assigned_domain_count</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.attribute_map" href="#mailslurp_client.models.account_dto.AccountDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.can_end_trial" href="#mailslurp_client.models.account_dto.AccountDto.can_end_trial">can_end_trial</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.churnkey_hash" href="#mailslurp_client.models.account_dto.AccountDto.churnkey_hash">churnkey_hash</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.current_period" href="#mailslurp_client.models.account_dto.AccountDto.current_period">current_period</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.default_currency" href="#mailslurp_client.models.account_dto.AccountDto.default_currency">default_currency</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.default_schedule" href="#mailslurp_client.models.account_dto.AccountDto.default_schedule">default_schedule</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.domain_plan_quantity" href="#mailslurp_client.models.account_dto.AccountDto.domain_plan_quantity">domain_plan_quantity</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.effective_domain_limit" href="#mailslurp_client.models.account_dto.AccountDto.effective_domain_limit">effective_domain_limit</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.enforce_sending_agreement" href="#mailslurp_client.models.account_dto.AccountDto.enforce_sending_agreement">enforce_sending_agreement</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.environment_accounts" href="#mailslurp_client.models.account_dto.AccountDto.environment_accounts">environment_accounts</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied" href="#mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied">free_account_evaluation_denied</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied_allow_trial" href="#mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied_allow_trial">free_account_evaluation_denied_allow_trial</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied_reason" href="#mailslurp_client.models.account_dto.AccountDto.free_account_evaluation_denied_reason">free_account_evaluation_denied_reason</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.free_account_expired" href="#mailslurp_client.models.account_dto.AccountDto.free_account_expired">free_account_expired</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.free_account_expires_in_days" href="#mailslurp_client.models.account_dto.AccountDto.free_account_expires_in_days">free_account_expires_in_days</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.free_account_mode" href="#mailslurp_client.models.account_dto.AccountDto.free_account_mode">free_account_mode</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.has_any_active_trial_subscription" href="#mailslurp_client.models.account_dto.AccountDto.has_any_active_trial_subscription">has_any_active_trial_subscription</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.has_bad_subscription_item_statuses" href="#mailslurp_client.models.account_dto.AccountDto.has_bad_subscription_item_statuses">has_bad_subscription_item_statuses</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.intercom_hash" href="#mailslurp_client.models.account_dto.AccountDto.intercom_hash">intercom_hash</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.openapi_types" href="#mailslurp_client.models.account_dto.AccountDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.organization_brand_color" href="#mailslurp_client.models.account_dto.AccountDto.organization_brand_color">organization_brand_color</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.organization_logo_url" href="#mailslurp_client.models.account_dto.AccountDto.organization_logo_url">organization_logo_url</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.organization_name" href="#mailslurp_client.models.account_dto.AccountDto.organization_name">organization_name</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.organization_slug" href="#mailslurp_client.models.account_dto.AccountDto.organization_slug">organization_slug</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.required_verification_types" href="#mailslurp_client.models.account_dto.AccountDto.required_verification_types">required_verification_types</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.requires_dashboard_onboarding_v2" href="#mailslurp_client.models.account_dto.AccountDto.requires_dashboard_onboarding_v2">requires_dashboard_onboarding_v2</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.requires_terms_and_conditions_agreement" href="#mailslurp_client.models.account_dto.AccountDto.requires_terms_and_conditions_agreement">requires_terms_and_conditions_agreement</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.requires_verification" href="#mailslurp_client.models.account_dto.AccountDto.requires_verification">requires_verification</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.subscription" href="#mailslurp_client.models.account_dto.AccountDto.subscription">subscription</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.to_dict" href="#mailslurp_client.models.account_dto.AccountDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.to_str" href="#mailslurp_client.models.account_dto.AccountDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.trials_enabled" href="#mailslurp_client.models.account_dto.AccountDto.trials_enabled">trials_enabled</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.user" href="#mailslurp_client.models.account_dto.AccountDto.user">user</a></code></li>
+<li><code><a title="mailslurp_client.models.account_dto.AccountDto.user_permission_role" href="#mailslurp_client.models.account_dto.AccountDto.user_permission_role">user_permission_role</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

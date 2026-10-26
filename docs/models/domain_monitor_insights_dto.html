@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.domain_monitor_insights_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.domain_monitor_insights_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto"><code class="flex name class">
+<span>class <span class="ident">DomainMonitorInsightsDto</span></span>
+<span>(</span><span>monitor_id=None, since=None, before=None, total_runs=None, healthy_runs=None, degraded_runs=None, critical_runs=None, failed_runs=None, success_rate=None, average_health_score=None, current_healthy_streak=None, best_healthy_streak=None, good_performance_signals=None, attention_signals=None, top_findings=None, latest_run=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>DomainMonitorInsightsDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DomainMonitorInsightsDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;monitor_id&#39;: &#39;str&#39;,
+        &#39;since&#39;: &#39;datetime&#39;,
+        &#39;before&#39;: &#39;datetime&#39;,
+        &#39;total_runs&#39;: &#39;int&#39;,
+        &#39;healthy_runs&#39;: &#39;int&#39;,
+        &#39;degraded_runs&#39;: &#39;int&#39;,
+        &#39;critical_runs&#39;: &#39;int&#39;,
+        &#39;failed_runs&#39;: &#39;int&#39;,
+        &#39;success_rate&#39;: &#39;float&#39;,
+        &#39;average_health_score&#39;: &#39;float&#39;,
+        &#39;current_healthy_streak&#39;: &#39;int&#39;,
+        &#39;best_healthy_streak&#39;: &#39;int&#39;,
+        &#39;good_performance_signals&#39;: &#39;list[str]&#39;,
+        &#39;attention_signals&#39;: &#39;list[str]&#39;,
+        &#39;top_findings&#39;: &#39;list[str]&#39;,
+        &#39;latest_run&#39;: &#39;DomainMonitorRunDto&#39;
+    }
+
+    attribute_map = {
+        &#39;monitor_id&#39;: &#39;monitorId&#39;,
+        &#39;since&#39;: &#39;since&#39;,
+        &#39;before&#39;: &#39;before&#39;,
+        &#39;total_runs&#39;: &#39;totalRuns&#39;,
+        &#39;healthy_runs&#39;: &#39;healthyRuns&#39;,
+        &#39;degraded_runs&#39;: &#39;degradedRuns&#39;,
+        &#39;critical_runs&#39;: &#39;criticalRuns&#39;,
+        &#39;failed_runs&#39;: &#39;failedRuns&#39;,
+        &#39;success_rate&#39;: &#39;successRate&#39;,
+        &#39;average_health_score&#39;: &#39;averageHealthScore&#39;,
+        &#39;current_healthy_streak&#39;: &#39;currentHealthyStreak&#39;,
+        &#39;best_healthy_streak&#39;: &#39;bestHealthyStreak&#39;,
+        &#39;good_performance_signals&#39;: &#39;goodPerformanceSignals&#39;,
+        &#39;attention_signals&#39;: &#39;attentionSignals&#39;,
+        &#39;top_findings&#39;: &#39;topFindings&#39;,
+        &#39;latest_run&#39;: &#39;latestRun&#39;
+    }
+
+    def __init__(self, monitor_id=None, since=None, before=None, total_runs=None, healthy_runs=None, degraded_runs=None, critical_runs=None, failed_runs=None, success_rate=None, average_health_score=None, current_healthy_streak=None, best_healthy_streak=None, good_performance_signals=None, attention_signals=None, top_findings=None, latest_run=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;DomainMonitorInsightsDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._monitor_id = None
+        self._since = None
+        self._before = None
+        self._total_runs = None
+        self._healthy_runs = None
+        self._degraded_runs = None
+        self._critical_runs = None
+        self._failed_runs = None
+        self._success_rate = None
+        self._average_health_score = None
+        self._current_healthy_streak = None
+        self._best_healthy_streak = None
+        self._good_performance_signals = None
+        self._attention_signals = None
+        self._top_findings = None
+        self._latest_run = None
+        self.discriminator = None
+
+        self.monitor_id = monitor_id
+        self.since = since
+        self.before = before
+        self.total_runs = total_runs
+        self.healthy_runs = healthy_runs
+        self.degraded_runs = degraded_runs
+        self.critical_runs = critical_runs
+        self.failed_runs = failed_runs
+        self.success_rate = success_rate
+        self.average_health_score = average_health_score
+        self.current_healthy_streak = current_healthy_streak
+        self.best_healthy_streak = best_healthy_streak
+        self.good_performance_signals = good_performance_signals
+        self.attention_signals = attention_signals
+        self.top_findings = top_findings
+        self.latest_run = latest_run
+
+    @property
+    def monitor_id(self):
+        &#34;&#34;&#34;Gets the monitor_id of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The monitor_id of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._monitor_id
+
+    @monitor_id.setter
+    def monitor_id(self, monitor_id):
+        &#34;&#34;&#34;Sets the monitor_id of this DomainMonitorInsightsDto.
+
+
+        :param monitor_id: The monitor_id of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and monitor_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `monitor_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._monitor_id = monitor_id
+
+    @property
+    def since(self):
+        &#34;&#34;&#34;Gets the since of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The since of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._since
+
+    @since.setter
+    def since(self, since):
+        &#34;&#34;&#34;Sets the since of this DomainMonitorInsightsDto.
+
+
+        :param since: The since of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and since is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `since`, must not be `None`&#34;)  # noqa: E501
+
+        self._since = since
+
+    @property
+    def before(self):
+        &#34;&#34;&#34;Gets the before of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The before of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._before
+
+    @before.setter
+    def before(self, before):
+        &#34;&#34;&#34;Sets the before of this DomainMonitorInsightsDto.
+
+
+        :param before: The before of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and before is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `before`, must not be `None`&#34;)  # noqa: E501
+
+        self._before = before
+
+    @property
+    def total_runs(self):
+        &#34;&#34;&#34;Gets the total_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The total_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._total_runs
+
+    @total_runs.setter
+    def total_runs(self, total_runs):
+        &#34;&#34;&#34;Sets the total_runs of this DomainMonitorInsightsDto.
+
+
+        :param total_runs: The total_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and total_runs is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `total_runs`, must not be `None`&#34;)  # noqa: E501
+
+        self._total_runs = total_runs
+
+    @property
+    def healthy_runs(self):
+        &#34;&#34;&#34;Gets the healthy_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The healthy_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._healthy_runs
+
+    @healthy_runs.setter
+    def healthy_runs(self, healthy_runs):
+        &#34;&#34;&#34;Sets the healthy_runs of this DomainMonitorInsightsDto.
+
+
+        :param healthy_runs: The healthy_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and healthy_runs is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `healthy_runs`, must not be `None`&#34;)  # noqa: E501
+
+        self._healthy_runs = healthy_runs
+
+    @property
+    def degraded_runs(self):
+        &#34;&#34;&#34;Gets the degraded_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The degraded_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._degraded_runs
+
+    @degraded_runs.setter
+    def degraded_runs(self, degraded_runs):
+        &#34;&#34;&#34;Sets the degraded_runs of this DomainMonitorInsightsDto.
+
+
+        :param degraded_runs: The degraded_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and degraded_runs is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `degraded_runs`, must not be `None`&#34;)  # noqa: E501
+
+        self._degraded_runs = degraded_runs
+
+    @property
+    def critical_runs(self):
+        &#34;&#34;&#34;Gets the critical_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The critical_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._critical_runs
+
+    @critical_runs.setter
+    def critical_runs(self, critical_runs):
+        &#34;&#34;&#34;Sets the critical_runs of this DomainMonitorInsightsDto.
+
+
+        :param critical_runs: The critical_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and critical_runs is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `critical_runs`, must not be `None`&#34;)  # noqa: E501
+
+        self._critical_runs = critical_runs
+
+    @property
+    def failed_runs(self):
+        &#34;&#34;&#34;Gets the failed_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The failed_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._failed_runs
+
+    @failed_runs.setter
+    def failed_runs(self, failed_runs):
+        &#34;&#34;&#34;Sets the failed_runs of this DomainMonitorInsightsDto.
+
+
+        :param failed_runs: The failed_runs of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and failed_runs is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `failed_runs`, must not be `None`&#34;)  # noqa: E501
+
+        self._failed_runs = failed_runs
+
+    @property
+    def success_rate(self):
+        &#34;&#34;&#34;Gets the success_rate of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The success_rate of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: float
+        &#34;&#34;&#34;
+        return self._success_rate
+
+    @success_rate.setter
+    def success_rate(self, success_rate):
+        &#34;&#34;&#34;Sets the success_rate of this DomainMonitorInsightsDto.
+
+
+        :param success_rate: The success_rate of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: float
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and success_rate is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `success_rate`, must not be `None`&#34;)  # noqa: E501
+
+        self._success_rate = success_rate
+
+    @property
+    def average_health_score(self):
+        &#34;&#34;&#34;Gets the average_health_score of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The average_health_score of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: float
+        &#34;&#34;&#34;
+        return self._average_health_score
+
+    @average_health_score.setter
+    def average_health_score(self, average_health_score):
+        &#34;&#34;&#34;Sets the average_health_score of this DomainMonitorInsightsDto.
+
+
+        :param average_health_score: The average_health_score of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: float
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and average_health_score is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `average_health_score`, must not be `None`&#34;)  # noqa: E501
+
+        self._average_health_score = average_health_score
+
+    @property
+    def current_healthy_streak(self):
+        &#34;&#34;&#34;Gets the current_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The current_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._current_healthy_streak
+
+    @current_healthy_streak.setter
+    def current_healthy_streak(self, current_healthy_streak):
+        &#34;&#34;&#34;Sets the current_healthy_streak of this DomainMonitorInsightsDto.
+
+
+        :param current_healthy_streak: The current_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and current_healthy_streak is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `current_healthy_streak`, must not be `None`&#34;)  # noqa: E501
+
+        self._current_healthy_streak = current_healthy_streak
+
+    @property
+    def best_healthy_streak(self):
+        &#34;&#34;&#34;Gets the best_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The best_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._best_healthy_streak
+
+    @best_healthy_streak.setter
+    def best_healthy_streak(self, best_healthy_streak):
+        &#34;&#34;&#34;Sets the best_healthy_streak of this DomainMonitorInsightsDto.
+
+
+        :param best_healthy_streak: The best_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and best_healthy_streak is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `best_healthy_streak`, must not be `None`&#34;)  # noqa: E501
+
+        self._best_healthy_streak = best_healthy_streak
+
+    @property
+    def good_performance_signals(self):
+        &#34;&#34;&#34;Gets the good_performance_signals of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The good_performance_signals of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._good_performance_signals
+
+    @good_performance_signals.setter
+    def good_performance_signals(self, good_performance_signals):
+        &#34;&#34;&#34;Sets the good_performance_signals of this DomainMonitorInsightsDto.
+
+
+        :param good_performance_signals: The good_performance_signals of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and good_performance_signals is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `good_performance_signals`, must not be `None`&#34;)  # noqa: E501
+
+        self._good_performance_signals = good_performance_signals
+
+    @property
+    def attention_signals(self):
+        &#34;&#34;&#34;Gets the attention_signals of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The attention_signals of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._attention_signals
+
+    @attention_signals.setter
+    def attention_signals(self, attention_signals):
+        &#34;&#34;&#34;Sets the attention_signals of this DomainMonitorInsightsDto.
+
+
+        :param attention_signals: The attention_signals of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and attention_signals is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `attention_signals`, must not be `None`&#34;)  # noqa: E501
+
+        self._attention_signals = attention_signals
+
+    @property
+    def top_findings(self):
+        &#34;&#34;&#34;Gets the top_findings of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The top_findings of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._top_findings
+
+    @top_findings.setter
+    def top_findings(self, top_findings):
+        &#34;&#34;&#34;Sets the top_findings of this DomainMonitorInsightsDto.
+
+
+        :param top_findings: The top_findings of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and top_findings is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `top_findings`, must not be `None`&#34;)  # noqa: E501
+
+        self._top_findings = top_findings
+
+    @property
+    def latest_run(self):
+        &#34;&#34;&#34;Gets the latest_run of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+        :return: The latest_run of this DomainMonitorInsightsDto.  # noqa: E501
+        :rtype: DomainMonitorRunDto
+        &#34;&#34;&#34;
+        return self._latest_run
+
+    @latest_run.setter
+    def latest_run(self, latest_run):
+        &#34;&#34;&#34;Sets the latest_run of this DomainMonitorInsightsDto.
+
+
+        :param latest_run: The latest_run of this DomainMonitorInsightsDto.  # noqa: E501
+        :type: DomainMonitorRunDto
+        &#34;&#34;&#34;
+
+        self._latest_run = latest_run
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, DomainMonitorInsightsDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, DomainMonitorInsightsDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.attention_signals"><code class="name">prop <span class="ident">attention_signals</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the attention_signals of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The attention_signals of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def attention_signals(self):
+    &#34;&#34;&#34;Gets the attention_signals of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The attention_signals of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._attention_signals</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.average_health_score"><code class="name">prop <span class="ident">average_health_score</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the average_health_score of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The average_health_score of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: float</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def average_health_score(self):
+    &#34;&#34;&#34;Gets the average_health_score of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The average_health_score of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: float
+    &#34;&#34;&#34;
+    return self._average_health_score</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.before"><code class="name">prop <span class="ident">before</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the before of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The before of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def before(self):
+    &#34;&#34;&#34;Gets the before of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The before of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._before</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.best_healthy_streak"><code class="name">prop <span class="ident">best_healthy_streak</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the best_healthy_streak of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The best_healthy_streak of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def best_healthy_streak(self):
+    &#34;&#34;&#34;Gets the best_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The best_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._best_healthy_streak</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.critical_runs"><code class="name">prop <span class="ident">critical_runs</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the critical_runs of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The critical_runs of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def critical_runs(self):
+    &#34;&#34;&#34;Gets the critical_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The critical_runs of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._critical_runs</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.current_healthy_streak"><code class="name">prop <span class="ident">current_healthy_streak</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the current_healthy_streak of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The current_healthy_streak of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def current_healthy_streak(self):
+    &#34;&#34;&#34;Gets the current_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The current_healthy_streak of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._current_healthy_streak</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.degraded_runs"><code class="name">prop <span class="ident">degraded_runs</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the degraded_runs of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The degraded_runs of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def degraded_runs(self):
+    &#34;&#34;&#34;Gets the degraded_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The degraded_runs of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._degraded_runs</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.failed_runs"><code class="name">prop <span class="ident">failed_runs</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the failed_runs of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The failed_runs of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def failed_runs(self):
+    &#34;&#34;&#34;Gets the failed_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The failed_runs of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._failed_runs</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.good_performance_signals"><code class="name">prop <span class="ident">good_performance_signals</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the good_performance_signals of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The good_performance_signals of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def good_performance_signals(self):
+    &#34;&#34;&#34;Gets the good_performance_signals of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The good_performance_signals of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._good_performance_signals</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.healthy_runs"><code class="name">prop <span class="ident">healthy_runs</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the healthy_runs of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The healthy_runs of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def healthy_runs(self):
+    &#34;&#34;&#34;Gets the healthy_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The healthy_runs of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._healthy_runs</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.latest_run"><code class="name">prop <span class="ident">latest_run</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the latest_run of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The latest_run of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: DomainMonitorRunDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def latest_run(self):
+    &#34;&#34;&#34;Gets the latest_run of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The latest_run of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: DomainMonitorRunDto
+    &#34;&#34;&#34;
+    return self._latest_run</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.monitor_id"><code class="name">prop <span class="ident">monitor_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the monitor_id of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The monitor_id of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def monitor_id(self):
+    &#34;&#34;&#34;Gets the monitor_id of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The monitor_id of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._monitor_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.since"><code class="name">prop <span class="ident">since</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the since of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The since of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def since(self):
+    &#34;&#34;&#34;Gets the since of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The since of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._since</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.success_rate"><code class="name">prop <span class="ident">success_rate</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the success_rate of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The success_rate of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: float</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def success_rate(self):
+    &#34;&#34;&#34;Gets the success_rate of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The success_rate of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: float
+    &#34;&#34;&#34;
+    return self._success_rate</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.top_findings"><code class="name">prop <span class="ident">top_findings</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the top_findings of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The top_findings of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def top_findings(self):
+    &#34;&#34;&#34;Gets the top_findings of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The top_findings of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._top_findings</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.total_runs"><code class="name">prop <span class="ident">total_runs</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the total_runs of this DomainMonitorInsightsDto.
+# noqa: E501</p>
+<p>:return: The total_runs of this DomainMonitorInsightsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_runs(self):
+    &#34;&#34;&#34;Gets the total_runs of this DomainMonitorInsightsDto.  # noqa: E501
+
+
+    :return: The total_runs of this DomainMonitorInsightsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._total_runs</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto">DomainMonitorInsightsDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.attention_signals" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.attention_signals">attention_signals</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.attribute_map" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.average_health_score" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.average_health_score">average_health_score</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.before" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.before">before</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.best_healthy_streak" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.best_healthy_streak">best_healthy_streak</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.critical_runs" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.critical_runs">critical_runs</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.current_healthy_streak" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.current_healthy_streak">current_healthy_streak</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.degraded_runs" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.degraded_runs">degraded_runs</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.failed_runs" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.failed_runs">failed_runs</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.good_performance_signals" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.good_performance_signals">good_performance_signals</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.healthy_runs" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.healthy_runs">healthy_runs</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.latest_run" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.latest_run">latest_run</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.monitor_id" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.monitor_id">monitor_id</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.openapi_types" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.since" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.since">since</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.success_rate" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.success_rate">success_rate</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.to_dict" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.to_str" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.top_findings" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.top_findings">top_findings</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.total_runs" href="#mailslurp_client.models.domain_monitor_insights_dto.DomainMonitorInsightsDto.total_runs">total_runs</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

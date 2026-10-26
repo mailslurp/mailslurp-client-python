@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.tenant_reputation_status_row_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.tenant_reputation_status_row_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto"><code class="flex name class">
+<span>class <span class="ident">TenantReputationStatusRowDto</span></span>
+<span>(</span><span>account_region=None, tenant_name=None, tenant_arn=None, sending_status=None, reputation_status=None, reputation_policy=None, customer_managed_sending_status=None, aws_managed_sending_status=None, finding_count=None, bounce_rate=None, complaint_rate=None, send_last_hour=None, metric_timestamp=None, error=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>TenantReputationStatusRowDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TenantReputationStatusRowDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;account_region&#39;: &#39;str&#39;,
+        &#39;tenant_name&#39;: &#39;str&#39;,
+        &#39;tenant_arn&#39;: &#39;str&#39;,
+        &#39;sending_status&#39;: &#39;str&#39;,
+        &#39;reputation_status&#39;: &#39;str&#39;,
+        &#39;reputation_policy&#39;: &#39;str&#39;,
+        &#39;customer_managed_sending_status&#39;: &#39;str&#39;,
+        &#39;aws_managed_sending_status&#39;: &#39;str&#39;,
+        &#39;finding_count&#39;: &#39;int&#39;,
+        &#39;bounce_rate&#39;: &#39;float&#39;,
+        &#39;complaint_rate&#39;: &#39;float&#39;,
+        &#39;send_last_hour&#39;: &#39;float&#39;,
+        &#39;metric_timestamp&#39;: &#39;datetime&#39;,
+        &#39;error&#39;: &#39;str&#39;
+    }
+
+    attribute_map = {
+        &#39;account_region&#39;: &#39;accountRegion&#39;,
+        &#39;tenant_name&#39;: &#39;tenantName&#39;,
+        &#39;tenant_arn&#39;: &#39;tenantArn&#39;,
+        &#39;sending_status&#39;: &#39;sendingStatus&#39;,
+        &#39;reputation_status&#39;: &#39;reputationStatus&#39;,
+        &#39;reputation_policy&#39;: &#39;reputationPolicy&#39;,
+        &#39;customer_managed_sending_status&#39;: &#39;customerManagedSendingStatus&#39;,
+        &#39;aws_managed_sending_status&#39;: &#39;awsManagedSendingStatus&#39;,
+        &#39;finding_count&#39;: &#39;findingCount&#39;,
+        &#39;bounce_rate&#39;: &#39;bounceRate&#39;,
+        &#39;complaint_rate&#39;: &#39;complaintRate&#39;,
+        &#39;send_last_hour&#39;: &#39;sendLastHour&#39;,
+        &#39;metric_timestamp&#39;: &#39;metricTimestamp&#39;,
+        &#39;error&#39;: &#39;error&#39;
+    }
+
+    def __init__(self, account_region=None, tenant_name=None, tenant_arn=None, sending_status=None, reputation_status=None, reputation_policy=None, customer_managed_sending_status=None, aws_managed_sending_status=None, finding_count=None, bounce_rate=None, complaint_rate=None, send_last_hour=None, metric_timestamp=None, error=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;TenantReputationStatusRowDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._account_region = None
+        self._tenant_name = None
+        self._tenant_arn = None
+        self._sending_status = None
+        self._reputation_status = None
+        self._reputation_policy = None
+        self._customer_managed_sending_status = None
+        self._aws_managed_sending_status = None
+        self._finding_count = None
+        self._bounce_rate = None
+        self._complaint_rate = None
+        self._send_last_hour = None
+        self._metric_timestamp = None
+        self._error = None
+        self.discriminator = None
+
+        self.account_region = account_region
+        self.tenant_name = tenant_name
+        self.tenant_arn = tenant_arn
+        self.sending_status = sending_status
+        self.reputation_status = reputation_status
+        self.reputation_policy = reputation_policy
+        self.customer_managed_sending_status = customer_managed_sending_status
+        self.aws_managed_sending_status = aws_managed_sending_status
+        self.finding_count = finding_count
+        self.bounce_rate = bounce_rate
+        self.complaint_rate = complaint_rate
+        self.send_last_hour = send_last_hour
+        self.metric_timestamp = metric_timestamp
+        self.error = error
+
+    @property
+    def account_region(self):
+        &#34;&#34;&#34;Gets the account_region of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The account_region of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._account_region
+
+    @account_region.setter
+    def account_region(self, account_region):
+        &#34;&#34;&#34;Sets the account_region of this TenantReputationStatusRowDto.
+
+
+        :param account_region: The account_region of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and account_region is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `account_region`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;US_WEST_2_ACCOUNT_STAGING&#34;, &#34;US_EAST_1_ACCOUNT_STAGING&#34;, &#34;EU_WEST_1_ACCOUNT_STAGING&#34;, &#34;US_WEST_2_ACCOUNT_SES_1&#34;, &#34;US_EAST_1_ACCOUNT_SES_1&#34;, &#34;EU_WEST_1_ACCOUNT_SES_1&#34;, &#34;US_WEST_2_ACCOUNT_SES_2&#34;, &#34;EU_WEST_1_ACCOUNT_SES_2&#34;, &#34;US_WEST_2_ACCOUNT_SES_3&#34;, &#34;US_WEST_2_ACCOUNT_BYTEWISE&#34;, &#34;EU_WEST_1_ACCOUNT_BYTEWISE&#34;, &#34;US_WEST_2&#34;, &#34;EU_WEST_1&#34;, &#34;US_EAST_1&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and account_region not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `account_region` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(account_region, allowed_values)
+            )
+
+        self._account_region = account_region
+
+    @property
+    def tenant_name(self):
+        &#34;&#34;&#34;Gets the tenant_name of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The tenant_name of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._tenant_name
+
+    @tenant_name.setter
+    def tenant_name(self, tenant_name):
+        &#34;&#34;&#34;Sets the tenant_name of this TenantReputationStatusRowDto.
+
+
+        :param tenant_name: The tenant_name of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and tenant_name is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `tenant_name`, must not be `None`&#34;)  # noqa: E501
+
+        self._tenant_name = tenant_name
+
+    @property
+    def tenant_arn(self):
+        &#34;&#34;&#34;Gets the tenant_arn of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The tenant_arn of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._tenant_arn
+
+    @tenant_arn.setter
+    def tenant_arn(self, tenant_arn):
+        &#34;&#34;&#34;Sets the tenant_arn of this TenantReputationStatusRowDto.
+
+
+        :param tenant_arn: The tenant_arn of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._tenant_arn = tenant_arn
+
+    @property
+    def sending_status(self):
+        &#34;&#34;&#34;Gets the sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._sending_status
+
+    @sending_status.setter
+    def sending_status(self, sending_status):
+        &#34;&#34;&#34;Sets the sending_status of this TenantReputationStatusRowDto.
+
+
+        :param sending_status: The sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._sending_status = sending_status
+
+    @property
+    def reputation_status(self):
+        &#34;&#34;&#34;Gets the reputation_status of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The reputation_status of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._reputation_status
+
+    @reputation_status.setter
+    def reputation_status(self, reputation_status):
+        &#34;&#34;&#34;Sets the reputation_status of this TenantReputationStatusRowDto.
+
+
+        :param reputation_status: The reputation_status of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._reputation_status = reputation_status
+
+    @property
+    def reputation_policy(self):
+        &#34;&#34;&#34;Gets the reputation_policy of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The reputation_policy of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._reputation_policy
+
+    @reputation_policy.setter
+    def reputation_policy(self, reputation_policy):
+        &#34;&#34;&#34;Sets the reputation_policy of this TenantReputationStatusRowDto.
+
+
+        :param reputation_policy: The reputation_policy of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._reputation_policy = reputation_policy
+
+    @property
+    def customer_managed_sending_status(self):
+        &#34;&#34;&#34;Gets the customer_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The customer_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._customer_managed_sending_status
+
+    @customer_managed_sending_status.setter
+    def customer_managed_sending_status(self, customer_managed_sending_status):
+        &#34;&#34;&#34;Sets the customer_managed_sending_status of this TenantReputationStatusRowDto.
+
+
+        :param customer_managed_sending_status: The customer_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._customer_managed_sending_status = customer_managed_sending_status
+
+    @property
+    def aws_managed_sending_status(self):
+        &#34;&#34;&#34;Gets the aws_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The aws_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._aws_managed_sending_status
+
+    @aws_managed_sending_status.setter
+    def aws_managed_sending_status(self, aws_managed_sending_status):
+        &#34;&#34;&#34;Sets the aws_managed_sending_status of this TenantReputationStatusRowDto.
+
+
+        :param aws_managed_sending_status: The aws_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._aws_managed_sending_status = aws_managed_sending_status
+
+    @property
+    def finding_count(self):
+        &#34;&#34;&#34;Gets the finding_count of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The finding_count of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._finding_count
+
+    @finding_count.setter
+    def finding_count(self, finding_count):
+        &#34;&#34;&#34;Sets the finding_count of this TenantReputationStatusRowDto.
+
+
+        :param finding_count: The finding_count of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and finding_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `finding_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._finding_count = finding_count
+
+    @property
+    def bounce_rate(self):
+        &#34;&#34;&#34;Gets the bounce_rate of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The bounce_rate of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: float
+        &#34;&#34;&#34;
+        return self._bounce_rate
+
+    @bounce_rate.setter
+    def bounce_rate(self, bounce_rate):
+        &#34;&#34;&#34;Sets the bounce_rate of this TenantReputationStatusRowDto.
+
+
+        :param bounce_rate: The bounce_rate of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: float
+        &#34;&#34;&#34;
+
+        self._bounce_rate = bounce_rate
+
+    @property
+    def complaint_rate(self):
+        &#34;&#34;&#34;Gets the complaint_rate of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The complaint_rate of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: float
+        &#34;&#34;&#34;
+        return self._complaint_rate
+
+    @complaint_rate.setter
+    def complaint_rate(self, complaint_rate):
+        &#34;&#34;&#34;Sets the complaint_rate of this TenantReputationStatusRowDto.
+
+
+        :param complaint_rate: The complaint_rate of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: float
+        &#34;&#34;&#34;
+
+        self._complaint_rate = complaint_rate
+
+    @property
+    def send_last_hour(self):
+        &#34;&#34;&#34;Gets the send_last_hour of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The send_last_hour of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: float
+        &#34;&#34;&#34;
+        return self._send_last_hour
+
+    @send_last_hour.setter
+    def send_last_hour(self, send_last_hour):
+        &#34;&#34;&#34;Sets the send_last_hour of this TenantReputationStatusRowDto.
+
+
+        :param send_last_hour: The send_last_hour of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: float
+        &#34;&#34;&#34;
+
+        self._send_last_hour = send_last_hour
+
+    @property
+    def metric_timestamp(self):
+        &#34;&#34;&#34;Gets the metric_timestamp of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The metric_timestamp of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._metric_timestamp
+
+    @metric_timestamp.setter
+    def metric_timestamp(self, metric_timestamp):
+        &#34;&#34;&#34;Sets the metric_timestamp of this TenantReputationStatusRowDto.
+
+
+        :param metric_timestamp: The metric_timestamp of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._metric_timestamp = metric_timestamp
+
+    @property
+    def error(self):
+        &#34;&#34;&#34;Gets the error of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+        :return: The error of this TenantReputationStatusRowDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._error
+
+    @error.setter
+    def error(self, error):
+        &#34;&#34;&#34;Sets the error of this TenantReputationStatusRowDto.
+
+
+        :param error: The error of this TenantReputationStatusRowDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._error = error
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, TenantReputationStatusRowDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, TenantReputationStatusRowDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.account_region"><code class="name">prop <span class="ident">account_region</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the account_region of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The account_region of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def account_region(self):
+    &#34;&#34;&#34;Gets the account_region of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The account_region of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._account_region</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.aws_managed_sending_status"><code class="name">prop <span class="ident">aws_managed_sending_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the aws_managed_sending_status of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The aws_managed_sending_status of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def aws_managed_sending_status(self):
+    &#34;&#34;&#34;Gets the aws_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The aws_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._aws_managed_sending_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.bounce_rate"><code class="name">prop <span class="ident">bounce_rate</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the bounce_rate of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The bounce_rate of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: float</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bounce_rate(self):
+    &#34;&#34;&#34;Gets the bounce_rate of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The bounce_rate of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: float
+    &#34;&#34;&#34;
+    return self._bounce_rate</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.complaint_rate"><code class="name">prop <span class="ident">complaint_rate</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the complaint_rate of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The complaint_rate of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: float</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def complaint_rate(self):
+    &#34;&#34;&#34;Gets the complaint_rate of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The complaint_rate of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: float
+    &#34;&#34;&#34;
+    return self._complaint_rate</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.customer_managed_sending_status"><code class="name">prop <span class="ident">customer_managed_sending_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the customer_managed_sending_status of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The customer_managed_sending_status of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def customer_managed_sending_status(self):
+    &#34;&#34;&#34;Gets the customer_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The customer_managed_sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._customer_managed_sending_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.error"><code class="name">prop <span class="ident">error</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the error of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The error of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def error(self):
+    &#34;&#34;&#34;Gets the error of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The error of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._error</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.finding_count"><code class="name">prop <span class="ident">finding_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the finding_count of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The finding_count of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def finding_count(self):
+    &#34;&#34;&#34;Gets the finding_count of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The finding_count of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._finding_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.metric_timestamp"><code class="name">prop <span class="ident">metric_timestamp</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the metric_timestamp of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The metric_timestamp of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def metric_timestamp(self):
+    &#34;&#34;&#34;Gets the metric_timestamp of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The metric_timestamp of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._metric_timestamp</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.reputation_policy"><code class="name">prop <span class="ident">reputation_policy</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the reputation_policy of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The reputation_policy of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def reputation_policy(self):
+    &#34;&#34;&#34;Gets the reputation_policy of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The reputation_policy of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._reputation_policy</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.reputation_status"><code class="name">prop <span class="ident">reputation_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the reputation_status of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The reputation_status of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def reputation_status(self):
+    &#34;&#34;&#34;Gets the reputation_status of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The reputation_status of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._reputation_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.send_last_hour"><code class="name">prop <span class="ident">send_last_hour</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the send_last_hour of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The send_last_hour of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: float</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def send_last_hour(self):
+    &#34;&#34;&#34;Gets the send_last_hour of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The send_last_hour of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: float
+    &#34;&#34;&#34;
+    return self._send_last_hour</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.sending_status"><code class="name">prop <span class="ident">sending_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sending_status of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The sending_status of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sending_status(self):
+    &#34;&#34;&#34;Gets the sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The sending_status of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._sending_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.tenant_arn"><code class="name">prop <span class="ident">tenant_arn</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the tenant_arn of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The tenant_arn of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def tenant_arn(self):
+    &#34;&#34;&#34;Gets the tenant_arn of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The tenant_arn of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._tenant_arn</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.tenant_name"><code class="name">prop <span class="ident">tenant_name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the tenant_name of this TenantReputationStatusRowDto.
+# noqa: E501</p>
+<p>:return: The tenant_name of this TenantReputationStatusRowDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def tenant_name(self):
+    &#34;&#34;&#34;Gets the tenant_name of this TenantReputationStatusRowDto.  # noqa: E501
+
+
+    :return: The tenant_name of this TenantReputationStatusRowDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._tenant_name</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto">TenantReputationStatusRowDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.account_region" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.account_region">account_region</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.attribute_map" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.aws_managed_sending_status" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.aws_managed_sending_status">aws_managed_sending_status</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.bounce_rate" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.bounce_rate">bounce_rate</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.complaint_rate" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.complaint_rate">complaint_rate</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.customer_managed_sending_status" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.customer_managed_sending_status">customer_managed_sending_status</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.error" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.error">error</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.finding_count" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.finding_count">finding_count</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.metric_timestamp" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.metric_timestamp">metric_timestamp</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.openapi_types" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.reputation_policy" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.reputation_policy">reputation_policy</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.reputation_status" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.reputation_status">reputation_status</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.send_last_hour" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.send_last_hour">send_last_hour</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.sending_status" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.sending_status">sending_status</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.tenant_arn" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.tenant_arn">tenant_arn</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.tenant_name" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.tenant_name">tenant_name</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.to_dict" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.to_str" href="#mailslurp_client.models.tenant_reputation_status_row_dto.TenantReputationStatusRowDto.to_str">to_str</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

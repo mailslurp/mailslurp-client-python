@@ -1,0 +1,1393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.domain_monitor_observed_auth_sample_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.domain_monitor_observed_auth_sample_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto"><code class="flex name class">
+<span>class <span class="ident">DomainMonitorObservedAuthSampleDto</span></span>
+<span>(</span><span>id=None, monitor_id=None, domain=None, recipient_address=None, source_message_id=None, message_id=None, from_address=None, from_domain=None, return_path=None, return_path_domain=None, spf_status=None, spf_evaluated_domain=None, spf_source_ip=None, dkim_status=None, dkim_signatures=None, dmarc_status=None, dmarc_aligned_identifier=None, trusted_authentication_results_source=None, provider_hints=None, accepted=None, validation_error=None, received_at=None, created_at=None, updated_at=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>DomainMonitorObservedAuthSampleDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DomainMonitorObservedAuthSampleDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;id&#39;: &#39;str&#39;,
+        &#39;monitor_id&#39;: &#39;str&#39;,
+        &#39;domain&#39;: &#39;str&#39;,
+        &#39;recipient_address&#39;: &#39;str&#39;,
+        &#39;source_message_id&#39;: &#39;str&#39;,
+        &#39;message_id&#39;: &#39;str&#39;,
+        &#39;from_address&#39;: &#39;str&#39;,
+        &#39;from_domain&#39;: &#39;str&#39;,
+        &#39;return_path&#39;: &#39;str&#39;,
+        &#39;return_path_domain&#39;: &#39;str&#39;,
+        &#39;spf_status&#39;: &#39;str&#39;,
+        &#39;spf_evaluated_domain&#39;: &#39;str&#39;,
+        &#39;spf_source_ip&#39;: &#39;str&#39;,
+        &#39;dkim_status&#39;: &#39;str&#39;,
+        &#39;dkim_signatures&#39;: &#39;list[DomainMonitorDkimSignatureDto]&#39;,
+        &#39;dmarc_status&#39;: &#39;str&#39;,
+        &#39;dmarc_aligned_identifier&#39;: &#39;str&#39;,
+        &#39;trusted_authentication_results_source&#39;: &#39;str&#39;,
+        &#39;provider_hints&#39;: &#39;list[str]&#39;,
+        &#39;accepted&#39;: &#39;bool&#39;,
+        &#39;validation_error&#39;: &#39;str&#39;,
+        &#39;received_at&#39;: &#39;datetime&#39;,
+        &#39;created_at&#39;: &#39;datetime&#39;,
+        &#39;updated_at&#39;: &#39;datetime&#39;
+    }
+
+    attribute_map = {
+        &#39;id&#39;: &#39;id&#39;,
+        &#39;monitor_id&#39;: &#39;monitorId&#39;,
+        &#39;domain&#39;: &#39;domain&#39;,
+        &#39;recipient_address&#39;: &#39;recipientAddress&#39;,
+        &#39;source_message_id&#39;: &#39;sourceMessageId&#39;,
+        &#39;message_id&#39;: &#39;messageId&#39;,
+        &#39;from_address&#39;: &#39;fromAddress&#39;,
+        &#39;from_domain&#39;: &#39;fromDomain&#39;,
+        &#39;return_path&#39;: &#39;returnPath&#39;,
+        &#39;return_path_domain&#39;: &#39;returnPathDomain&#39;,
+        &#39;spf_status&#39;: &#39;spfStatus&#39;,
+        &#39;spf_evaluated_domain&#39;: &#39;spfEvaluatedDomain&#39;,
+        &#39;spf_source_ip&#39;: &#39;spfSourceIp&#39;,
+        &#39;dkim_status&#39;: &#39;dkimStatus&#39;,
+        &#39;dkim_signatures&#39;: &#39;dkimSignatures&#39;,
+        &#39;dmarc_status&#39;: &#39;dmarcStatus&#39;,
+        &#39;dmarc_aligned_identifier&#39;: &#39;dmarcAlignedIdentifier&#39;,
+        &#39;trusted_authentication_results_source&#39;: &#39;trustedAuthenticationResultsSource&#39;,
+        &#39;provider_hints&#39;: &#39;providerHints&#39;,
+        &#39;accepted&#39;: &#39;accepted&#39;,
+        &#39;validation_error&#39;: &#39;validationError&#39;,
+        &#39;received_at&#39;: &#39;receivedAt&#39;,
+        &#39;created_at&#39;: &#39;createdAt&#39;,
+        &#39;updated_at&#39;: &#39;updatedAt&#39;
+    }
+
+    def __init__(self, id=None, monitor_id=None, domain=None, recipient_address=None, source_message_id=None, message_id=None, from_address=None, from_domain=None, return_path=None, return_path_domain=None, spf_status=None, spf_evaluated_domain=None, spf_source_ip=None, dkim_status=None, dkim_signatures=None, dmarc_status=None, dmarc_aligned_identifier=None, trusted_authentication_results_source=None, provider_hints=None, accepted=None, validation_error=None, received_at=None, created_at=None, updated_at=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;DomainMonitorObservedAuthSampleDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._id = None
+        self._monitor_id = None
+        self._domain = None
+        self._recipient_address = None
+        self._source_message_id = None
+        self._message_id = None
+        self._from_address = None
+        self._from_domain = None
+        self._return_path = None
+        self._return_path_domain = None
+        self._spf_status = None
+        self._spf_evaluated_domain = None
+        self._spf_source_ip = None
+        self._dkim_status = None
+        self._dkim_signatures = None
+        self._dmarc_status = None
+        self._dmarc_aligned_identifier = None
+        self._trusted_authentication_results_source = None
+        self._provider_hints = None
+        self._accepted = None
+        self._validation_error = None
+        self._received_at = None
+        self._created_at = None
+        self._updated_at = None
+        self.discriminator = None
+
+        self.id = id
+        self.monitor_id = monitor_id
+        self.domain = domain
+        self.recipient_address = recipient_address
+        self.source_message_id = source_message_id
+        self.message_id = message_id
+        self.from_address = from_address
+        self.from_domain = from_domain
+        self.return_path = return_path
+        self.return_path_domain = return_path_domain
+        self.spf_status = spf_status
+        self.spf_evaluated_domain = spf_evaluated_domain
+        self.spf_source_ip = spf_source_ip
+        self.dkim_status = dkim_status
+        self.dkim_signatures = dkim_signatures
+        self.dmarc_status = dmarc_status
+        self.dmarc_aligned_identifier = dmarc_aligned_identifier
+        self.trusted_authentication_results_source = trusted_authentication_results_source
+        self.provider_hints = provider_hints
+        self.accepted = accepted
+        self.validation_error = validation_error
+        self.received_at = received_at
+        self.created_at = created_at
+        self.updated_at = updated_at
+
+    @property
+    def id(self):
+        &#34;&#34;&#34;Gets the id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        &#34;&#34;&#34;Sets the id of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param id: The id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `id`, must not be `None`&#34;)  # noqa: E501
+
+        self._id = id
+
+    @property
+    def monitor_id(self):
+        &#34;&#34;&#34;Gets the monitor_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The monitor_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._monitor_id
+
+    @monitor_id.setter
+    def monitor_id(self, monitor_id):
+        &#34;&#34;&#34;Sets the monitor_id of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param monitor_id: The monitor_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and monitor_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `monitor_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._monitor_id = monitor_id
+
+    @property
+    def domain(self):
+        &#34;&#34;&#34;Gets the domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        &#34;&#34;&#34;Sets the domain of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param domain: The domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and domain is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `domain`, must not be `None`&#34;)  # noqa: E501
+
+        self._domain = domain
+
+    @property
+    def recipient_address(self):
+        &#34;&#34;&#34;Gets the recipient_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The recipient_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._recipient_address
+
+    @recipient_address.setter
+    def recipient_address(self, recipient_address):
+        &#34;&#34;&#34;Sets the recipient_address of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param recipient_address: The recipient_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and recipient_address is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `recipient_address`, must not be `None`&#34;)  # noqa: E501
+
+        self._recipient_address = recipient_address
+
+    @property
+    def source_message_id(self):
+        &#34;&#34;&#34;Gets the source_message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The source_message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._source_message_id
+
+    @source_message_id.setter
+    def source_message_id(self, source_message_id):
+        &#34;&#34;&#34;Sets the source_message_id of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param source_message_id: The source_message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._source_message_id = source_message_id
+
+    @property
+    def message_id(self):
+        &#34;&#34;&#34;Gets the message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._message_id
+
+    @message_id.setter
+    def message_id(self, message_id):
+        &#34;&#34;&#34;Sets the message_id of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param message_id: The message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._message_id = message_id
+
+    @property
+    def from_address(self):
+        &#34;&#34;&#34;Gets the from_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The from_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._from_address
+
+    @from_address.setter
+    def from_address(self, from_address):
+        &#34;&#34;&#34;Sets the from_address of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param from_address: The from_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._from_address = from_address
+
+    @property
+    def from_domain(self):
+        &#34;&#34;&#34;Gets the from_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The from_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._from_domain
+
+    @from_domain.setter
+    def from_domain(self, from_domain):
+        &#34;&#34;&#34;Sets the from_domain of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param from_domain: The from_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._from_domain = from_domain
+
+    @property
+    def return_path(self):
+        &#34;&#34;&#34;Gets the return_path of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The return_path of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._return_path
+
+    @return_path.setter
+    def return_path(self, return_path):
+        &#34;&#34;&#34;Sets the return_path of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param return_path: The return_path of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._return_path = return_path
+
+    @property
+    def return_path_domain(self):
+        &#34;&#34;&#34;Gets the return_path_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The return_path_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._return_path_domain
+
+    @return_path_domain.setter
+    def return_path_domain(self, return_path_domain):
+        &#34;&#34;&#34;Sets the return_path_domain of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param return_path_domain: The return_path_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._return_path_domain = return_path_domain
+
+    @property
+    def spf_status(self):
+        &#34;&#34;&#34;Gets the spf_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The spf_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._spf_status
+
+    @spf_status.setter
+    def spf_status(self, spf_status):
+        &#34;&#34;&#34;Sets the spf_status of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param spf_status: The spf_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and spf_status is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `spf_status`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;PASS&#34;, &#34;FAIL&#34;, &#34;WARNING&#34;, &#34;NOT_CHECKED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and spf_status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `spf_status` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(spf_status, allowed_values)
+            )
+
+        self._spf_status = spf_status
+
+    @property
+    def spf_evaluated_domain(self):
+        &#34;&#34;&#34;Gets the spf_evaluated_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The spf_evaluated_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._spf_evaluated_domain
+
+    @spf_evaluated_domain.setter
+    def spf_evaluated_domain(self, spf_evaluated_domain):
+        &#34;&#34;&#34;Sets the spf_evaluated_domain of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param spf_evaluated_domain: The spf_evaluated_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._spf_evaluated_domain = spf_evaluated_domain
+
+    @property
+    def spf_source_ip(self):
+        &#34;&#34;&#34;Gets the spf_source_ip of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The spf_source_ip of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._spf_source_ip
+
+    @spf_source_ip.setter
+    def spf_source_ip(self, spf_source_ip):
+        &#34;&#34;&#34;Sets the spf_source_ip of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param spf_source_ip: The spf_source_ip of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._spf_source_ip = spf_source_ip
+
+    @property
+    def dkim_status(self):
+        &#34;&#34;&#34;Gets the dkim_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The dkim_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._dkim_status
+
+    @dkim_status.setter
+    def dkim_status(self, dkim_status):
+        &#34;&#34;&#34;Sets the dkim_status of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param dkim_status: The dkim_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and dkim_status is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `dkim_status`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;PASS&#34;, &#34;FAIL&#34;, &#34;WARNING&#34;, &#34;NOT_CHECKED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and dkim_status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `dkim_status` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(dkim_status, allowed_values)
+            )
+
+        self._dkim_status = dkim_status
+
+    @property
+    def dkim_signatures(self):
+        &#34;&#34;&#34;Gets the dkim_signatures of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The dkim_signatures of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: list[DomainMonitorDkimSignatureDto]
+        &#34;&#34;&#34;
+        return self._dkim_signatures
+
+    @dkim_signatures.setter
+    def dkim_signatures(self, dkim_signatures):
+        &#34;&#34;&#34;Sets the dkim_signatures of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param dkim_signatures: The dkim_signatures of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: list[DomainMonitorDkimSignatureDto]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and dkim_signatures is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `dkim_signatures`, must not be `None`&#34;)  # noqa: E501
+
+        self._dkim_signatures = dkim_signatures
+
+    @property
+    def dmarc_status(self):
+        &#34;&#34;&#34;Gets the dmarc_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The dmarc_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._dmarc_status
+
+    @dmarc_status.setter
+    def dmarc_status(self, dmarc_status):
+        &#34;&#34;&#34;Sets the dmarc_status of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param dmarc_status: The dmarc_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and dmarc_status is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `dmarc_status`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;PASS&#34;, &#34;FAIL&#34;, &#34;WARNING&#34;, &#34;NOT_CHECKED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and dmarc_status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `dmarc_status` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(dmarc_status, allowed_values)
+            )
+
+        self._dmarc_status = dmarc_status
+
+    @property
+    def dmarc_aligned_identifier(self):
+        &#34;&#34;&#34;Gets the dmarc_aligned_identifier of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The dmarc_aligned_identifier of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._dmarc_aligned_identifier
+
+    @dmarc_aligned_identifier.setter
+    def dmarc_aligned_identifier(self, dmarc_aligned_identifier):
+        &#34;&#34;&#34;Sets the dmarc_aligned_identifier of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param dmarc_aligned_identifier: The dmarc_aligned_identifier of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._dmarc_aligned_identifier = dmarc_aligned_identifier
+
+    @property
+    def trusted_authentication_results_source(self):
+        &#34;&#34;&#34;Gets the trusted_authentication_results_source of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The trusted_authentication_results_source of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._trusted_authentication_results_source
+
+    @trusted_authentication_results_source.setter
+    def trusted_authentication_results_source(self, trusted_authentication_results_source):
+        &#34;&#34;&#34;Sets the trusted_authentication_results_source of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param trusted_authentication_results_source: The trusted_authentication_results_source of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._trusted_authentication_results_source = trusted_authentication_results_source
+
+    @property
+    def provider_hints(self):
+        &#34;&#34;&#34;Gets the provider_hints of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The provider_hints of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._provider_hints
+
+    @provider_hints.setter
+    def provider_hints(self, provider_hints):
+        &#34;&#34;&#34;Sets the provider_hints of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param provider_hints: The provider_hints of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and provider_hints is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `provider_hints`, must not be `None`&#34;)  # noqa: E501
+
+        self._provider_hints = provider_hints
+
+    @property
+    def accepted(self):
+        &#34;&#34;&#34;Gets the accepted of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The accepted of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._accepted
+
+    @accepted.setter
+    def accepted(self, accepted):
+        &#34;&#34;&#34;Sets the accepted of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param accepted: The accepted of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and accepted is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `accepted`, must not be `None`&#34;)  # noqa: E501
+
+        self._accepted = accepted
+
+    @property
+    def validation_error(self):
+        &#34;&#34;&#34;Gets the validation_error of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The validation_error of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._validation_error
+
+    @validation_error.setter
+    def validation_error(self, validation_error):
+        &#34;&#34;&#34;Sets the validation_error of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param validation_error: The validation_error of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._validation_error = validation_error
+
+    @property
+    def received_at(self):
+        &#34;&#34;&#34;Gets the received_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The received_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._received_at
+
+    @received_at.setter
+    def received_at(self, received_at):
+        &#34;&#34;&#34;Sets the received_at of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param received_at: The received_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and received_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `received_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._received_at = received_at
+
+    @property
+    def created_at(self):
+        &#34;&#34;&#34;Gets the created_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The created_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        &#34;&#34;&#34;Sets the created_at of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param created_at: The created_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and created_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `created_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        &#34;&#34;&#34;Gets the updated_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+        :return: The updated_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        &#34;&#34;&#34;Sets the updated_at of this DomainMonitorObservedAuthSampleDto.
+
+
+        :param updated_at: The updated_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and updated_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `updated_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._updated_at = updated_at
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, DomainMonitorObservedAuthSampleDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, DomainMonitorObservedAuthSampleDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.accepted"><code class="name">prop <span class="ident">accepted</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the accepted of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The accepted of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def accepted(self):
+    &#34;&#34;&#34;Gets the accepted of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The accepted of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._accepted</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.created_at"><code class="name">prop <span class="ident">created_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the created_at of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The created_at of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def created_at(self):
+    &#34;&#34;&#34;Gets the created_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The created_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._created_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dkim_signatures"><code class="name">prop <span class="ident">dkim_signatures</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the dkim_signatures of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The dkim_signatures of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: list[DomainMonitorDkimSignatureDto]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dkim_signatures(self):
+    &#34;&#34;&#34;Gets the dkim_signatures of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The dkim_signatures of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: list[DomainMonitorDkimSignatureDto]
+    &#34;&#34;&#34;
+    return self._dkim_signatures</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dkim_status"><code class="name">prop <span class="ident">dkim_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the dkim_status of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The dkim_status of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dkim_status(self):
+    &#34;&#34;&#34;Gets the dkim_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The dkim_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._dkim_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dmarc_aligned_identifier"><code class="name">prop <span class="ident">dmarc_aligned_identifier</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the dmarc_aligned_identifier of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The dmarc_aligned_identifier of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dmarc_aligned_identifier(self):
+    &#34;&#34;&#34;Gets the dmarc_aligned_identifier of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The dmarc_aligned_identifier of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._dmarc_aligned_identifier</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dmarc_status"><code class="name">prop <span class="ident">dmarc_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the dmarc_status of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The dmarc_status of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dmarc_status(self):
+    &#34;&#34;&#34;Gets the dmarc_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The dmarc_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._dmarc_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.domain"><code class="name">prop <span class="ident">domain</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the domain of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The domain of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def domain(self):
+    &#34;&#34;&#34;Gets the domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._domain</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.from_address"><code class="name">prop <span class="ident">from_address</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the from_address of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The from_address of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def from_address(self):
+    &#34;&#34;&#34;Gets the from_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The from_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._from_address</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.from_domain"><code class="name">prop <span class="ident">from_domain</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the from_domain of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The from_domain of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def from_domain(self):
+    &#34;&#34;&#34;Gets the from_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The from_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._from_domain</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.id"><code class="name">prop <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the id of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The id of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def id(self):
+    &#34;&#34;&#34;Gets the id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.message_id"><code class="name">prop <span class="ident">message_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the message_id of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The message_id of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def message_id(self):
+    &#34;&#34;&#34;Gets the message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._message_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.monitor_id"><code class="name">prop <span class="ident">monitor_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the monitor_id of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The monitor_id of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def monitor_id(self):
+    &#34;&#34;&#34;Gets the monitor_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The monitor_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._monitor_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.provider_hints"><code class="name">prop <span class="ident">provider_hints</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the provider_hints of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The provider_hints of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def provider_hints(self):
+    &#34;&#34;&#34;Gets the provider_hints of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The provider_hints of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._provider_hints</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.received_at"><code class="name">prop <span class="ident">received_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the received_at of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The received_at of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def received_at(self):
+    &#34;&#34;&#34;Gets the received_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The received_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._received_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.recipient_address"><code class="name">prop <span class="ident">recipient_address</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the recipient_address of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The recipient_address of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def recipient_address(self):
+    &#34;&#34;&#34;Gets the recipient_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The recipient_address of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._recipient_address</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.return_path"><code class="name">prop <span class="ident">return_path</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the return_path of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The return_path of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def return_path(self):
+    &#34;&#34;&#34;Gets the return_path of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The return_path of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._return_path</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.return_path_domain"><code class="name">prop <span class="ident">return_path_domain</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the return_path_domain of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The return_path_domain of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def return_path_domain(self):
+    &#34;&#34;&#34;Gets the return_path_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The return_path_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._return_path_domain</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.source_message_id"><code class="name">prop <span class="ident">source_message_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the source_message_id of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The source_message_id of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def source_message_id(self):
+    &#34;&#34;&#34;Gets the source_message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The source_message_id of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._source_message_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_evaluated_domain"><code class="name">prop <span class="ident">spf_evaluated_domain</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the spf_evaluated_domain of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The spf_evaluated_domain of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def spf_evaluated_domain(self):
+    &#34;&#34;&#34;Gets the spf_evaluated_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The spf_evaluated_domain of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._spf_evaluated_domain</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_source_ip"><code class="name">prop <span class="ident">spf_source_ip</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the spf_source_ip of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The spf_source_ip of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def spf_source_ip(self):
+    &#34;&#34;&#34;Gets the spf_source_ip of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The spf_source_ip of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._spf_source_ip</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_status"><code class="name">prop <span class="ident">spf_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the spf_status of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The spf_status of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def spf_status(self):
+    &#34;&#34;&#34;Gets the spf_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The spf_status of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._spf_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.trusted_authentication_results_source"><code class="name">prop <span class="ident">trusted_authentication_results_source</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the trusted_authentication_results_source of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The trusted_authentication_results_source of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def trusted_authentication_results_source(self):
+    &#34;&#34;&#34;Gets the trusted_authentication_results_source of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The trusted_authentication_results_source of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._trusted_authentication_results_source</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.updated_at"><code class="name">prop <span class="ident">updated_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the updated_at of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The updated_at of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def updated_at(self):
+    &#34;&#34;&#34;Gets the updated_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The updated_at of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._updated_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.validation_error"><code class="name">prop <span class="ident">validation_error</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the validation_error of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501</p>
+<p>:return: The validation_error of this DomainMonitorObservedAuthSampleDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def validation_error(self):
+    &#34;&#34;&#34;Gets the validation_error of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+
+
+    :return: The validation_error of this DomainMonitorObservedAuthSampleDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._validation_error</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto">DomainMonitorObservedAuthSampleDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.accepted" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.accepted">accepted</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.attribute_map" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.created_at" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.created_at">created_at</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dkim_signatures" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dkim_signatures">dkim_signatures</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dkim_status" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dkim_status">dkim_status</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dmarc_aligned_identifier" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dmarc_aligned_identifier">dmarc_aligned_identifier</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dmarc_status" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.dmarc_status">dmarc_status</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.domain" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.domain">domain</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.from_address" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.from_address">from_address</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.from_domain" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.from_domain">from_domain</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.id" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.id">id</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.message_id" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.message_id">message_id</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.monitor_id" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.monitor_id">monitor_id</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.openapi_types" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.provider_hints" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.provider_hints">provider_hints</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.received_at" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.received_at">received_at</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.recipient_address" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.recipient_address">recipient_address</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.return_path" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.return_path">return_path</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.return_path_domain" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.return_path_domain">return_path_domain</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.source_message_id" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.source_message_id">source_message_id</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_evaluated_domain" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_evaluated_domain">spf_evaluated_domain</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_source_ip" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_source_ip">spf_source_ip</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_status" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.spf_status">spf_status</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.to_dict" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.to_str" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.trusted_authentication_results_source" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.trusted_authentication_results_source">trusted_authentication_results_source</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.updated_at" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.updated_at">updated_at</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.validation_error" href="#mailslurp_client.models.domain_monitor_observed_auth_sample_dto.DomainMonitorObservedAuthSampleDto.validation_error">validation_error</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

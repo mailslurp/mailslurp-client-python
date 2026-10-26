@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.email_warmup_program_analytics_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.email_warmup_program_analytics_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto"><code class="flex name class">
+<span>class <span class="ident">EmailWarmupProgramAnalyticsDto</span></span>
+<span>(</span><span>program_id=None, from_date=None, through_date=None, progress=None, total_scheduled_sends=None, total_accepted_sends=None, total_observed_sends=None, total_failed_sends=None, attention_required_sends=None, daily_activity=None, placement_checks=None, readiness=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>EmailWarmupProgramAnalyticsDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EmailWarmupProgramAnalyticsDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;program_id&#39;: &#39;str&#39;,
+        &#39;from_date&#39;: &#39;date&#39;,
+        &#39;through_date&#39;: &#39;date&#39;,
+        &#39;progress&#39;: &#39;EmailWarmupProgramProgressDto&#39;,
+        &#39;total_scheduled_sends&#39;: &#39;int&#39;,
+        &#39;total_accepted_sends&#39;: &#39;int&#39;,
+        &#39;total_observed_sends&#39;: &#39;int&#39;,
+        &#39;total_failed_sends&#39;: &#39;int&#39;,
+        &#39;attention_required_sends&#39;: &#39;int&#39;,
+        &#39;daily_activity&#39;: &#39;list[EmailWarmupDailyActivityDto]&#39;,
+        &#39;placement_checks&#39;: &#39;list[EmailWarmupPlacementCheckDto]&#39;,
+        &#39;readiness&#39;: &#39;EmailWarmupReadinessDto&#39;
+    }
+
+    attribute_map = {
+        &#39;program_id&#39;: &#39;programId&#39;,
+        &#39;from_date&#39;: &#39;fromDate&#39;,
+        &#39;through_date&#39;: &#39;throughDate&#39;,
+        &#39;progress&#39;: &#39;progress&#39;,
+        &#39;total_scheduled_sends&#39;: &#39;totalScheduledSends&#39;,
+        &#39;total_accepted_sends&#39;: &#39;totalAcceptedSends&#39;,
+        &#39;total_observed_sends&#39;: &#39;totalObservedSends&#39;,
+        &#39;total_failed_sends&#39;: &#39;totalFailedSends&#39;,
+        &#39;attention_required_sends&#39;: &#39;attentionRequiredSends&#39;,
+        &#39;daily_activity&#39;: &#39;dailyActivity&#39;,
+        &#39;placement_checks&#39;: &#39;placementChecks&#39;,
+        &#39;readiness&#39;: &#39;readiness&#39;
+    }
+
+    def __init__(self, program_id=None, from_date=None, through_date=None, progress=None, total_scheduled_sends=None, total_accepted_sends=None, total_observed_sends=None, total_failed_sends=None, attention_required_sends=None, daily_activity=None, placement_checks=None, readiness=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;EmailWarmupProgramAnalyticsDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._program_id = None
+        self._from_date = None
+        self._through_date = None
+        self._progress = None
+        self._total_scheduled_sends = None
+        self._total_accepted_sends = None
+        self._total_observed_sends = None
+        self._total_failed_sends = None
+        self._attention_required_sends = None
+        self._daily_activity = None
+        self._placement_checks = None
+        self._readiness = None
+        self.discriminator = None
+
+        self.program_id = program_id
+        self.from_date = from_date
+        self.through_date = through_date
+        self.progress = progress
+        self.total_scheduled_sends = total_scheduled_sends
+        self.total_accepted_sends = total_accepted_sends
+        self.total_observed_sends = total_observed_sends
+        self.total_failed_sends = total_failed_sends
+        self.attention_required_sends = attention_required_sends
+        self.daily_activity = daily_activity
+        self.placement_checks = placement_checks
+        self.readiness = readiness
+
+    @property
+    def program_id(self):
+        &#34;&#34;&#34;Gets the program_id of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The program_id of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._program_id
+
+    @program_id.setter
+    def program_id(self, program_id):
+        &#34;&#34;&#34;Sets the program_id of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param program_id: The program_id of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and program_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `program_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._program_id = program_id
+
+    @property
+    def from_date(self):
+        &#34;&#34;&#34;Gets the from_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The from_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: date
+        &#34;&#34;&#34;
+        return self._from_date
+
+    @from_date.setter
+    def from_date(self, from_date):
+        &#34;&#34;&#34;Sets the from_date of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param from_date: The from_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: date
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and from_date is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `from_date`, must not be `None`&#34;)  # noqa: E501
+
+        self._from_date = from_date
+
+    @property
+    def through_date(self):
+        &#34;&#34;&#34;Gets the through_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The through_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: date
+        &#34;&#34;&#34;
+        return self._through_date
+
+    @through_date.setter
+    def through_date(self, through_date):
+        &#34;&#34;&#34;Sets the through_date of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param through_date: The through_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: date
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and through_date is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `through_date`, must not be `None`&#34;)  # noqa: E501
+
+        self._through_date = through_date
+
+    @property
+    def progress(self):
+        &#34;&#34;&#34;Gets the progress of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The progress of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: EmailWarmupProgramProgressDto
+        &#34;&#34;&#34;
+        return self._progress
+
+    @progress.setter
+    def progress(self, progress):
+        &#34;&#34;&#34;Sets the progress of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param progress: The progress of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: EmailWarmupProgramProgressDto
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and progress is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `progress`, must not be `None`&#34;)  # noqa: E501
+
+        self._progress = progress
+
+    @property
+    def total_scheduled_sends(self):
+        &#34;&#34;&#34;Gets the total_scheduled_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The total_scheduled_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._total_scheduled_sends
+
+    @total_scheduled_sends.setter
+    def total_scheduled_sends(self, total_scheduled_sends):
+        &#34;&#34;&#34;Sets the total_scheduled_sends of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param total_scheduled_sends: The total_scheduled_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and total_scheduled_sends is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `total_scheduled_sends`, must not be `None`&#34;)  # noqa: E501
+
+        self._total_scheduled_sends = total_scheduled_sends
+
+    @property
+    def total_accepted_sends(self):
+        &#34;&#34;&#34;Gets the total_accepted_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The total_accepted_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._total_accepted_sends
+
+    @total_accepted_sends.setter
+    def total_accepted_sends(self, total_accepted_sends):
+        &#34;&#34;&#34;Sets the total_accepted_sends of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param total_accepted_sends: The total_accepted_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and total_accepted_sends is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `total_accepted_sends`, must not be `None`&#34;)  # noqa: E501
+
+        self._total_accepted_sends = total_accepted_sends
+
+    @property
+    def total_observed_sends(self):
+        &#34;&#34;&#34;Gets the total_observed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The total_observed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._total_observed_sends
+
+    @total_observed_sends.setter
+    def total_observed_sends(self, total_observed_sends):
+        &#34;&#34;&#34;Sets the total_observed_sends of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param total_observed_sends: The total_observed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and total_observed_sends is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `total_observed_sends`, must not be `None`&#34;)  # noqa: E501
+
+        self._total_observed_sends = total_observed_sends
+
+    @property
+    def total_failed_sends(self):
+        &#34;&#34;&#34;Gets the total_failed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The total_failed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._total_failed_sends
+
+    @total_failed_sends.setter
+    def total_failed_sends(self, total_failed_sends):
+        &#34;&#34;&#34;Sets the total_failed_sends of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param total_failed_sends: The total_failed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and total_failed_sends is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `total_failed_sends`, must not be `None`&#34;)  # noqa: E501
+
+        self._total_failed_sends = total_failed_sends
+
+    @property
+    def attention_required_sends(self):
+        &#34;&#34;&#34;Gets the attention_required_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The attention_required_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._attention_required_sends
+
+    @attention_required_sends.setter
+    def attention_required_sends(self, attention_required_sends):
+        &#34;&#34;&#34;Sets the attention_required_sends of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param attention_required_sends: The attention_required_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and attention_required_sends is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `attention_required_sends`, must not be `None`&#34;)  # noqa: E501
+
+        self._attention_required_sends = attention_required_sends
+
+    @property
+    def daily_activity(self):
+        &#34;&#34;&#34;Gets the daily_activity of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The daily_activity of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: list[EmailWarmupDailyActivityDto]
+        &#34;&#34;&#34;
+        return self._daily_activity
+
+    @daily_activity.setter
+    def daily_activity(self, daily_activity):
+        &#34;&#34;&#34;Sets the daily_activity of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param daily_activity: The daily_activity of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: list[EmailWarmupDailyActivityDto]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and daily_activity is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `daily_activity`, must not be `None`&#34;)  # noqa: E501
+
+        self._daily_activity = daily_activity
+
+    @property
+    def placement_checks(self):
+        &#34;&#34;&#34;Gets the placement_checks of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The placement_checks of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: list[EmailWarmupPlacementCheckDto]
+        &#34;&#34;&#34;
+        return self._placement_checks
+
+    @placement_checks.setter
+    def placement_checks(self, placement_checks):
+        &#34;&#34;&#34;Sets the placement_checks of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param placement_checks: The placement_checks of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: list[EmailWarmupPlacementCheckDto]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and placement_checks is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `placement_checks`, must not be `None`&#34;)  # noqa: E501
+
+        self._placement_checks = placement_checks
+
+    @property
+    def readiness(self):
+        &#34;&#34;&#34;Gets the readiness of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+        :return: The readiness of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :rtype: EmailWarmupReadinessDto
+        &#34;&#34;&#34;
+        return self._readiness
+
+    @readiness.setter
+    def readiness(self, readiness):
+        &#34;&#34;&#34;Sets the readiness of this EmailWarmupProgramAnalyticsDto.
+
+
+        :param readiness: The readiness of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+        :type: EmailWarmupReadinessDto
+        &#34;&#34;&#34;
+
+        self._readiness = readiness
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, EmailWarmupProgramAnalyticsDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, EmailWarmupProgramAnalyticsDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.attention_required_sends"><code class="name">prop <span class="ident">attention_required_sends</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the attention_required_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The attention_required_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def attention_required_sends(self):
+    &#34;&#34;&#34;Gets the attention_required_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The attention_required_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._attention_required_sends</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.daily_activity"><code class="name">prop <span class="ident">daily_activity</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the daily_activity of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The daily_activity of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: list[EmailWarmupDailyActivityDto]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def daily_activity(self):
+    &#34;&#34;&#34;Gets the daily_activity of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The daily_activity of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: list[EmailWarmupDailyActivityDto]
+    &#34;&#34;&#34;
+    return self._daily_activity</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.from_date"><code class="name">prop <span class="ident">from_date</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the from_date of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The from_date of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: date</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def from_date(self):
+    &#34;&#34;&#34;Gets the from_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The from_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: date
+    &#34;&#34;&#34;
+    return self._from_date</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.placement_checks"><code class="name">prop <span class="ident">placement_checks</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the placement_checks of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The placement_checks of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: list[EmailWarmupPlacementCheckDto]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def placement_checks(self):
+    &#34;&#34;&#34;Gets the placement_checks of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The placement_checks of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: list[EmailWarmupPlacementCheckDto]
+    &#34;&#34;&#34;
+    return self._placement_checks</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.program_id"><code class="name">prop <span class="ident">program_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the program_id of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The program_id of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def program_id(self):
+    &#34;&#34;&#34;Gets the program_id of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The program_id of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._program_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.progress"><code class="name">prop <span class="ident">progress</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the progress of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The progress of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: EmailWarmupProgramProgressDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def progress(self):
+    &#34;&#34;&#34;Gets the progress of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The progress of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: EmailWarmupProgramProgressDto
+    &#34;&#34;&#34;
+    return self._progress</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.readiness"><code class="name">prop <span class="ident">readiness</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the readiness of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The readiness of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: EmailWarmupReadinessDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def readiness(self):
+    &#34;&#34;&#34;Gets the readiness of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The readiness of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: EmailWarmupReadinessDto
+    &#34;&#34;&#34;
+    return self._readiness</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.through_date"><code class="name">prop <span class="ident">through_date</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the through_date of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The through_date of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: date</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def through_date(self):
+    &#34;&#34;&#34;Gets the through_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The through_date of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: date
+    &#34;&#34;&#34;
+    return self._through_date</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_accepted_sends"><code class="name">prop <span class="ident">total_accepted_sends</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the total_accepted_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The total_accepted_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_accepted_sends(self):
+    &#34;&#34;&#34;Gets the total_accepted_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The total_accepted_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._total_accepted_sends</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_failed_sends"><code class="name">prop <span class="ident">total_failed_sends</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the total_failed_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The total_failed_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_failed_sends(self):
+    &#34;&#34;&#34;Gets the total_failed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The total_failed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._total_failed_sends</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_observed_sends"><code class="name">prop <span class="ident">total_observed_sends</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the total_observed_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The total_observed_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_observed_sends(self):
+    &#34;&#34;&#34;Gets the total_observed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The total_observed_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._total_observed_sends</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_scheduled_sends"><code class="name">prop <span class="ident">total_scheduled_sends</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the total_scheduled_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501</p>
+<p>:return: The total_scheduled_sends of this EmailWarmupProgramAnalyticsDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_scheduled_sends(self):
+    &#34;&#34;&#34;Gets the total_scheduled_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+
+
+    :return: The total_scheduled_sends of this EmailWarmupProgramAnalyticsDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._total_scheduled_sends</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto">EmailWarmupProgramAnalyticsDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.attention_required_sends" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.attention_required_sends">attention_required_sends</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.attribute_map" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.daily_activity" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.daily_activity">daily_activity</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.from_date" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.from_date">from_date</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.openapi_types" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.placement_checks" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.placement_checks">placement_checks</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.program_id" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.program_id">program_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.progress" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.progress">progress</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.readiness" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.readiness">readiness</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.through_date" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.through_date">through_date</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.to_dict" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.to_str" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_accepted_sends" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_accepted_sends">total_accepted_sends</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_failed_sends" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_failed_sends">total_failed_sends</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_observed_sends" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_observed_sends">total_observed_sends</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_scheduled_sends" href="#mailslurp_client.models.email_warmup_program_analytics_dto.EmailWarmupProgramAnalyticsDto.total_scheduled_sends">total_scheduled_sends</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

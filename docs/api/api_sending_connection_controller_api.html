@@ -1,0 +1,2425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.api.api_sending_connection_controller_api API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.api.api_sending_connection_controller_api</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi"><code class="flex name class">
+<span>class <span class="ident">ApiSendingConnectionControllerApi</span></span>
+<span>(</span><span>api_client=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ApiSendingConnectionControllerApi(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
+
+    def create_sending_connection(self, create_sending_connection_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a sending connection  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_sending_connection(create_sending_connection_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateSendingConnectionOptions create_sending_connection_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SendingConnectionDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.create_sending_connection_with_http_info(create_sending_connection_options, **kwargs)  # noqa: E501
+
+    def create_sending_connection_with_http_info(self, create_sending_connection_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Create a sending connection  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.create_sending_connection_with_http_info(create_sending_connection_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateSendingConnectionOptions create_sending_connection_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;create_sending_connection_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method create_sending_connection&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;create_sending_connection_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;create_sending_connection_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;create_sending_connection_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `create_sending_connection_options` when calling `create_sending_connection`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;create_sending_connection_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;create_sending_connection_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;SendingConnectionDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def delete_delivery_sender_seats(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Cancel purchased Delivery Sender seats  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_delivery_sender_seats(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: DeliverySenderCapacityDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.delete_delivery_sender_seats_with_http_info(**kwargs)  # noqa: E501
+
+    def delete_delivery_sender_seats_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Cancel purchased Delivery Sender seats  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_delivery_sender_seats_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(DeliverySenderCapacityDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method delete_delivery_sender_seats&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/sender-seats&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;DeliverySenderCapacityDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def delete_sending_connection(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Disconnect a sending connection  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_sending_connection(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.delete_sending_connection_with_http_info(connection_id, **kwargs)  # noqa: E501
+
+    def delete_sending_connection_with_http_info(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Disconnect a sending connection  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.delete_sending_connection_with_http_info(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;connection_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method delete_sending_connection&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;connection_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;connection_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;connection_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `connection_id` when calling `delete_sending_connection`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;connection_id&#39; in local_var_params:
+            path_params[&#39;connectionId&#39;] = local_var_params[&#39;connection_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/{connectionId}&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def disable_sending_connection(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Disable Delivery Sender capacity  # noqa: E501
+
+        Releases this connection&#39;s shared sender allocation while retaining its verified credentials.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.disable_sending_connection(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SendingConnectionDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.disable_sending_connection_with_http_info(connection_id, **kwargs)  # noqa: E501
+
+    def disable_sending_connection_with_http_info(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Disable Delivery Sender capacity  # noqa: E501
+
+        Releases this connection&#39;s shared sender allocation while retaining its verified credentials.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.disable_sending_connection_with_http_info(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;connection_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method disable_sending_connection&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;connection_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;connection_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;connection_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `connection_id` when calling `disable_sending_connection`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;connection_id&#39; in local_var_params:
+            path_params[&#39;connectionId&#39;] = local_var_params[&#39;connection_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/{connectionId}/enable&#39;, &#39;DELETE&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;SendingConnectionDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def enable_sending_connection(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Enable a verified Delivery Sender  # noqa: E501
+
+        Allocates shared sender capacity. Included capacity is used first and supported additional capacity is added to the existing subscription when possible.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.enable_sending_connection(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SendingConnectionDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.enable_sending_connection_with_http_info(connection_id, **kwargs)  # noqa: E501
+
+    def enable_sending_connection_with_http_info(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Enable a verified Delivery Sender  # noqa: E501
+
+        Allocates shared sender capacity. Included capacity is used first and supported additional capacity is added to the existing subscription when possible.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.enable_sending_connection_with_http_info(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;connection_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method enable_sending_connection&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;connection_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;connection_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;connection_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `connection_id` when calling `enable_sending_connection`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;connection_id&#39; in local_var_params:
+            path_params[&#39;connectionId&#39;] = local_var_params[&#39;connection_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/{connectionId}/enable&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;SendingConnectionDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_delivery_sender_capacity(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get shared Delivery Sender capacity  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_delivery_sender_capacity(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: DeliverySenderCapacityDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_delivery_sender_capacity_with_http_info(**kwargs)  # noqa: E501
+
+    def get_delivery_sender_capacity_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get shared Delivery Sender capacity  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_delivery_sender_capacity_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(DeliverySenderCapacityDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_delivery_sender_capacity&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/capacity&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;DeliverySenderCapacityDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_sending_connection(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a sending connection  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_sending_connection(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SendingConnectionDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_sending_connection_with_http_info(connection_id, **kwargs)  # noqa: E501
+
+    def get_sending_connection_with_http_info(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Get a sending connection  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_sending_connection_with_http_info(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;connection_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_sending_connection&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;connection_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;connection_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;connection_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `connection_id` when calling `get_sending_connection`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;connection_id&#39; in local_var_params:
+            path_params[&#39;connectionId&#39;] = local_var_params[&#39;connection_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/{connectionId}&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;SendingConnectionDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_sending_connection_providers(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List sending connection providers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_sending_connection_providers(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: list[SendingConnectionProviderDto]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_sending_connection_providers_with_http_info(**kwargs)  # noqa: E501
+
+    def get_sending_connection_providers_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List sending connection providers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_sending_connection_providers_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[SendingConnectionProviderDto], status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_sending_connection_providers&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/providers&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;list[SendingConnectionProviderDto]&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def get_sending_connections(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List sending connections  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_sending_connections(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: list[SendingConnectionDto]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.get_sending_connections_with_http_info(**kwargs)  # noqa: E501
+
+    def get_sending_connections_with_http_info(self, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;List sending connections  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.get_sending_connections_with_http_info(async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[SendingConnectionDto], status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method get_sending_connections&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections&#39;, &#39;GET&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;list[SendingConnectionDto]&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def probe_sending_connection_delivery(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an unbilled delivery test to a temporary MailSlurp inbox  # noqa: E501
+
+        Uses only the selected customer-owned connection. A successful receipt proves provider acceptance and delivery to MailSlurp, not Gmail or Outlook placement.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.probe_sending_connection_delivery(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SendingConnectionDeliveryProbeDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.probe_sending_connection_delivery_with_http_info(connection_id, **kwargs)  # noqa: E501
+
+    def probe_sending_connection_delivery_with_http_info(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Send an unbilled delivery test to a temporary MailSlurp inbox  # noqa: E501
+
+        Uses only the selected customer-owned connection. A successful receipt proves provider acceptance and delivery to MailSlurp, not Gmail or Outlook placement.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.probe_sending_connection_delivery_with_http_info(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SendingConnectionDeliveryProbeDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;connection_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method probe_sending_connection_delivery&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;connection_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;connection_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;connection_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `connection_id` when calling `probe_sending_connection_delivery`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;connection_id&#39; in local_var_params:
+            path_params[&#39;connectionId&#39;] = local_var_params[&#39;connection_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/{connectionId}/delivery-probe&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;SendingConnectionDeliveryProbeDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def rotate_sending_connection_credentials(self, connection_id, rotate_sending_connection_credentials_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Rotate sending connection credentials  # noqa: E501
+
+        Verifies supported replacement credentials before atomically replacing the encrypted credential envelope.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.rotate_sending_connection_credentials(connection_id, rotate_sending_connection_credentials_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param RotateSendingConnectionCredentialsOptions rotate_sending_connection_credentials_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SendingConnectionDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.rotate_sending_connection_credentials_with_http_info(connection_id, rotate_sending_connection_credentials_options, **kwargs)  # noqa: E501
+
+    def rotate_sending_connection_credentials_with_http_info(self, connection_id, rotate_sending_connection_credentials_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Rotate sending connection credentials  # noqa: E501
+
+        Verifies supported replacement credentials before atomically replacing the encrypted credential envelope.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.rotate_sending_connection_credentials_with_http_info(connection_id, rotate_sending_connection_credentials_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param RotateSendingConnectionCredentialsOptions rotate_sending_connection_credentials_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;connection_id&#39;,
+            &#39;rotate_sending_connection_credentials_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method rotate_sending_connection_credentials&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;connection_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;connection_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;connection_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `connection_id` when calling `rotate_sending_connection_credentials`&#34;)  # noqa: E501
+        # verify the required parameter &#39;rotate_sending_connection_credentials_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;rotate_sending_connection_credentials_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;rotate_sending_connection_credentials_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `rotate_sending_connection_credentials_options` when calling `rotate_sending_connection_credentials`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;connection_id&#39; in local_var_params:
+            path_params[&#39;connectionId&#39;] = local_var_params[&#39;connection_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;rotate_sending_connection_credentials_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;rotate_sending_connection_credentials_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/{connectionId}/credentials&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;SendingConnectionDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def update_delivery_sender_seats(self, update_delivery_sender_seats_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Update purchased Delivery Sender seats  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.update_delivery_sender_seats(update_delivery_sender_seats_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param UpdateDeliverySenderSeatsOptions update_delivery_sender_seats_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: DeliverySenderCapacityDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.update_delivery_sender_seats_with_http_info(update_delivery_sender_seats_options, **kwargs)  # noqa: E501
+
+    def update_delivery_sender_seats_with_http_info(self, update_delivery_sender_seats_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Update purchased Delivery Sender seats  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.update_delivery_sender_seats_with_http_info(update_delivery_sender_seats_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param UpdateDeliverySenderSeatsOptions update_delivery_sender_seats_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(DeliverySenderCapacityDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;update_delivery_sender_seats_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method update_delivery_sender_seats&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;update_delivery_sender_seats_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;update_delivery_sender_seats_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;update_delivery_sender_seats_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `update_delivery_sender_seats_options` when calling `update_delivery_sender_seats`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;update_delivery_sender_seats_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;update_delivery_sender_seats_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/sender-seats&#39;, &#39;PUT&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;DeliverySenderCapacityDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def update_sending_connection(self, connection_id, update_sending_connection_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Update a sending connection  # noqa: E501
+
+        Updates non-secret connection metadata. Use the credentials endpoint to replace supported SMTP or API-key credentials.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.update_sending_connection(connection_id, update_sending_connection_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param UpdateSendingConnectionOptions update_sending_connection_options: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SendingConnectionDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.update_sending_connection_with_http_info(connection_id, update_sending_connection_options, **kwargs)  # noqa: E501
+
+    def update_sending_connection_with_http_info(self, connection_id, update_sending_connection_options, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Update a sending connection  # noqa: E501
+
+        Updates non-secret connection metadata. Use the credentials endpoint to replace supported SMTP or API-key credentials.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.update_sending_connection_with_http_info(connection_id, update_sending_connection_options, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param UpdateSendingConnectionOptions update_sending_connection_options: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;connection_id&#39;,
+            &#39;update_sending_connection_options&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method update_sending_connection&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;connection_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;connection_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;connection_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `connection_id` when calling `update_sending_connection`&#34;)  # noqa: E501
+        # verify the required parameter &#39;update_sending_connection_options&#39; is set
+        if self.api_client.client_side_validation and (&#39;update_sending_connection_options&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;update_sending_connection_options&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `update_sending_connection_options` when calling `update_sending_connection`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;connection_id&#39; in local_var_params:
+            path_params[&#39;connectionId&#39;] = local_var_params[&#39;connection_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if &#39;update_sending_connection_options&#39; in local_var_params:
+            body_params = local_var_params[&#39;update_sending_connection_options&#39;]
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params[&#39;Content-Type&#39;] = self.api_client.select_header_content_type(  # noqa: E501
+            [&#39;application/json&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/{connectionId}&#39;, &#39;PATCH&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;SendingConnectionDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)
+
+    def verify_sending_connection(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Verify a sending connection  # noqa: E501
+
+        Verifies the customer credential without enabling billable sender capacity. A consuming product enables the shared Delivery Sender seat when sending starts.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.verify_sending_connection(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SendingConnectionDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+        kwargs[&#39;_return_http_data_only&#39;] = True
+        return self.verify_sending_connection_with_http_info(connection_id, **kwargs)  # noqa: E501
+
+    def verify_sending_connection_with_http_info(self, connection_id, **kwargs):  # noqa: E501
+        &#34;&#34;&#34;Verify a sending connection  # noqa: E501
+
+        Verifies the customer credential without enabling billable sender capacity. A consuming product enables the shared Delivery Sender seat when sending starts.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        &gt;&gt;&gt; thread = api.verify_sending_connection_with_http_info(connection_id, async_req=True)
+        &gt;&gt;&gt; result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str connection_id: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        &#34;&#34;&#34;
+
+        local_var_params = locals()
+
+        all_params = [
+            &#39;connection_id&#39;
+        ]
+        all_params.extend(
+            [
+                &#39;async_req&#39;,
+                &#39;_return_http_data_only&#39;,
+                &#39;_preload_content&#39;,
+                &#39;_request_timeout&#39;
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params[&#39;kwargs&#39;]):
+            if key not in all_params:
+                raise ApiTypeError(
+                    &#34;Got an unexpected keyword argument &#39;%s&#39;&#34;
+                    &#34; to method verify_sending_connection&#34; % key
+                )
+            local_var_params[key] = val
+        del local_var_params[&#39;kwargs&#39;]
+        # verify the required parameter &#39;connection_id&#39; is set
+        if self.api_client.client_side_validation and (&#39;connection_id&#39; not in local_var_params or  # noqa: E501
+                                                        local_var_params[&#39;connection_id&#39;] is None):  # noqa: E501
+            raise ApiValueError(&#34;Missing the required parameter `connection_id` when calling `verify_sending_connection`&#34;)  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if &#39;connection_id&#39; in local_var_params:
+            path_params[&#39;connectionId&#39;] = local_var_params[&#39;connection_id&#39;]  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params[&#39;Accept&#39;] = self.api_client.select_header_accept(
+            [&#39;*/*&#39;])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = [&#39;API_KEY&#39;]  # noqa: E501
+
+        return self.api_client.call_api(
+            &#39;/sending-connections/{connectionId}/verify&#39;, &#39;POST&#39;,
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=&#39;SendingConnectionDto&#39;,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get(&#39;async_req&#39;),
+            _return_http_data_only=local_var_params.get(&#39;_return_http_data_only&#39;),  # noqa: E501
+            _preload_content=local_var_params.get(&#39;_preload_content&#39;, True),
+            _request_timeout=local_var_params.get(&#39;_request_timeout&#39;),
+            collection_formats=collection_formats)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.create_sending_connection"><code class="name flex">
+<span>def <span class="ident">create_sending_connection</span></span>(<span>self, create_sending_connection_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a sending connection
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_sending_connection(create_sending_connection_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CreateSendingConnectionOptions create_sending_connection_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: SendingConnectionDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.create_sending_connection_with_http_info"><code class="name flex">
+<span>def <span class="ident">create_sending_connection_with_http_info</span></span>(<span>self, create_sending_connection_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a sending connection
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.create_sending_connection_with_http_info(create_sending_connection_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param CreateSendingConnectionOptions create_sending_connection_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_delivery_sender_seats"><code class="name flex">
+<span>def <span class="ident">delete_delivery_sender_seats</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cancel purchased Delivery Sender seats
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_delivery_sender_seats(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: DeliverySenderCapacityDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_delivery_sender_seats_with_http_info"><code class="name flex">
+<span>def <span class="ident">delete_delivery_sender_seats_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cancel purchased Delivery Sender seats
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_delivery_sender_seats_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(DeliverySenderCapacityDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_sending_connection"><code class="name flex">
+<span>def <span class="ident">delete_sending_connection</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Disconnect a sending connection
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_sending_connection(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_sending_connection_with_http_info"><code class="name flex">
+<span>def <span class="ident">delete_sending_connection_with_http_info</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Disconnect a sending connection
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.delete_sending_connection_with_http_info(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: None
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.disable_sending_connection"><code class="name flex">
+<span>def <span class="ident">disable_sending_connection</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Disable Delivery Sender capacity
+# noqa: E501</p>
+<p>Releases this connection's shared sender allocation while retaining its verified credentials.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.disable_sending_connection(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: SendingConnectionDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.disable_sending_connection_with_http_info"><code class="name flex">
+<span>def <span class="ident">disable_sending_connection_with_http_info</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Disable Delivery Sender capacity
+# noqa: E501</p>
+<p>Releases this connection's shared sender allocation while retaining its verified credentials.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.disable_sending_connection_with_http_info(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.enable_sending_connection"><code class="name flex">
+<span>def <span class="ident">enable_sending_connection</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Enable a verified Delivery Sender
+# noqa: E501</p>
+<p>Allocates shared sender capacity. Included capacity is used first and supported additional capacity is added to the existing subscription when possible.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.enable_sending_connection(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: SendingConnectionDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.enable_sending_connection_with_http_info"><code class="name flex">
+<span>def <span class="ident">enable_sending_connection_with_http_info</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Enable a verified Delivery Sender
+# noqa: E501</p>
+<p>Allocates shared sender capacity. Included capacity is used first and supported additional capacity is added to the existing subscription when possible.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.enable_sending_connection_with_http_info(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_delivery_sender_capacity"><code class="name flex">
+<span>def <span class="ident">get_delivery_sender_capacity</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get shared Delivery Sender capacity
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_delivery_sender_capacity(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: DeliverySenderCapacityDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_delivery_sender_capacity_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_delivery_sender_capacity_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get shared Delivery Sender capacity
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_delivery_sender_capacity_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(DeliverySenderCapacityDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection"><code class="name flex">
+<span>def <span class="ident">get_sending_connection</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a sending connection
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_sending_connection(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: SendingConnectionDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_providers"><code class="name flex">
+<span>def <span class="ident">get_sending_connection_providers</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List sending connection providers
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_sending_connection_providers(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: list[SendingConnectionProviderDto]
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_providers_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_sending_connection_providers_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List sending connection providers
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_sending_connection_providers_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(list[SendingConnectionProviderDto], status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_sending_connection_with_http_info</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get a sending connection
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_sending_connection_with_http_info(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connections"><code class="name flex">
+<span>def <span class="ident">get_sending_connections</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List sending connections
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_sending_connections(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: list[SendingConnectionDto]
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connections_with_http_info"><code class="name flex">
+<span>def <span class="ident">get_sending_connections_with_http_info</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List sending connections
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.get_sending_connections_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(list[SendingConnectionDto], status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.probe_sending_connection_delivery"><code class="name flex">
+<span>def <span class="ident">probe_sending_connection_delivery</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send an unbilled delivery test to a temporary MailSlurp inbox
+# noqa: E501</p>
+<p>Uses only the selected customer-owned connection. A successful receipt proves provider acceptance and delivery to MailSlurp, not Gmail or Outlook placement.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.probe_sending_connection_delivery(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: SendingConnectionDeliveryProbeDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.probe_sending_connection_delivery_with_http_info"><code class="name flex">
+<span>def <span class="ident">probe_sending_connection_delivery_with_http_info</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send an unbilled delivery test to a temporary MailSlurp inbox
+# noqa: E501</p>
+<p>Uses only the selected customer-owned connection. A successful receipt proves provider acceptance and delivery to MailSlurp, not Gmail or Outlook placement.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.probe_sending_connection_delivery_with_http_info(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(SendingConnectionDeliveryProbeDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.rotate_sending_connection_credentials"><code class="name flex">
+<span>def <span class="ident">rotate_sending_connection_credentials</span></span>(<span>self, connection_id, rotate_sending_connection_credentials_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rotate sending connection credentials
+# noqa: E501</p>
+<p>Verifies supported replacement credentials before atomically replacing the encrypted credential envelope.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.rotate_sending_connection_credentials(connection_id, rotate_sending_connection_credentials_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param RotateSendingConnectionCredentialsOptions rotate_sending_connection_credentials_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: SendingConnectionDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.rotate_sending_connection_credentials_with_http_info"><code class="name flex">
+<span>def <span class="ident">rotate_sending_connection_credentials_with_http_info</span></span>(<span>self, connection_id, rotate_sending_connection_credentials_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rotate sending connection credentials
+# noqa: E501</p>
+<p>Verifies supported replacement credentials before atomically replacing the encrypted credential envelope.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.rotate_sending_connection_credentials_with_http_info(connection_id, rotate_sending_connection_credentials_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param RotateSendingConnectionCredentialsOptions rotate_sending_connection_credentials_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_delivery_sender_seats"><code class="name flex">
+<span>def <span class="ident">update_delivery_sender_seats</span></span>(<span>self, update_delivery_sender_seats_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update purchased Delivery Sender seats
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.update_delivery_sender_seats(update_delivery_sender_seats_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param UpdateDeliverySenderSeatsOptions update_delivery_sender_seats_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: DeliverySenderCapacityDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_delivery_sender_seats_with_http_info"><code class="name flex">
+<span>def <span class="ident">update_delivery_sender_seats_with_http_info</span></span>(<span>self, update_delivery_sender_seats_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update purchased Delivery Sender seats
+# noqa: E501</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.update_delivery_sender_seats_with_http_info(update_delivery_sender_seats_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param UpdateDeliverySenderSeatsOptions update_delivery_sender_seats_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(DeliverySenderCapacityDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_sending_connection"><code class="name flex">
+<span>def <span class="ident">update_sending_connection</span></span>(<span>self, connection_id, update_sending_connection_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update a sending connection
+# noqa: E501</p>
+<p>Updates non-secret connection metadata. Use the credentials endpoint to replace supported SMTP or API-key credentials.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.update_sending_connection(connection_id, update_sending_connection_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param UpdateSendingConnectionOptions update_sending_connection_options: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: SendingConnectionDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_sending_connection_with_http_info"><code class="name flex">
+<span>def <span class="ident">update_sending_connection_with_http_info</span></span>(<span>self, connection_id, update_sending_connection_options, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update a sending connection
+# noqa: E501</p>
+<p>Updates non-secret connection metadata. Use the credentials endpoint to replace supported SMTP or API-key credentials.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.update_sending_connection_with_http_info(connection_id, update_sending_connection_options, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param UpdateSendingConnectionOptions update_sending_connection_options: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.verify_sending_connection"><code class="name flex">
+<span>def <span class="ident">verify_sending_connection</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Verify a sending connection
+# noqa: E501</p>
+<p>Verifies the customer credential without enabling billable sender capacity. A consuming product enables the shared Delivery Sender seat when sending starts.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.verify_sending_connection(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: SendingConnectionDto
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+<dt id="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.verify_sending_connection_with_http_info"><code class="name flex">
+<span>def <span class="ident">verify_sending_connection_with_http_info</span></span>(<span>self, connection_id, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Verify a sending connection
+# noqa: E501</p>
+<p>Verifies the customer credential without enabling billable sender capacity. A consuming product enables the shared Delivery Sender seat when sending starts.
+# noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; thread = api.verify_sending_connection_with_http_info(connection_id, async_req=True)
+&gt;&gt;&gt; result = thread.get()
+</code></pre>
+<p>:param async_req bool: execute request asynchronously
+:param str connection_id: (required)
+:param _return_http_data_only: response data without head status code
+and headers
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.
+:return: tuple(SendingConnectionDto, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.api" href="index.html">mailslurp_client.api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi">ApiSendingConnectionControllerApi</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.create_sending_connection" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.create_sending_connection">create_sending_connection</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.create_sending_connection_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.create_sending_connection_with_http_info">create_sending_connection_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_delivery_sender_seats" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_delivery_sender_seats">delete_delivery_sender_seats</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_delivery_sender_seats_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_delivery_sender_seats_with_http_info">delete_delivery_sender_seats_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_sending_connection" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_sending_connection">delete_sending_connection</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_sending_connection_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.delete_sending_connection_with_http_info">delete_sending_connection_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.disable_sending_connection" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.disable_sending_connection">disable_sending_connection</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.disable_sending_connection_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.disable_sending_connection_with_http_info">disable_sending_connection_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.enable_sending_connection" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.enable_sending_connection">enable_sending_connection</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.enable_sending_connection_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.enable_sending_connection_with_http_info">enable_sending_connection_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_delivery_sender_capacity" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_delivery_sender_capacity">get_delivery_sender_capacity</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_delivery_sender_capacity_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_delivery_sender_capacity_with_http_info">get_delivery_sender_capacity_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection">get_sending_connection</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_providers" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_providers">get_sending_connection_providers</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_providers_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_providers_with_http_info">get_sending_connection_providers_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connection_with_http_info">get_sending_connection_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connections" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connections">get_sending_connections</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connections_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.get_sending_connections_with_http_info">get_sending_connections_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.probe_sending_connection_delivery" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.probe_sending_connection_delivery">probe_sending_connection_delivery</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.probe_sending_connection_delivery_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.probe_sending_connection_delivery_with_http_info">probe_sending_connection_delivery_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.rotate_sending_connection_credentials" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.rotate_sending_connection_credentials">rotate_sending_connection_credentials</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.rotate_sending_connection_credentials_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.rotate_sending_connection_credentials_with_http_info">rotate_sending_connection_credentials_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_delivery_sender_seats" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_delivery_sender_seats">update_delivery_sender_seats</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_delivery_sender_seats_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_delivery_sender_seats_with_http_info">update_delivery_sender_seats_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_sending_connection" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_sending_connection">update_sending_connection</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_sending_connection_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.update_sending_connection_with_http_info">update_sending_connection_with_http_info</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.verify_sending_connection" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.verify_sending_connection">verify_sending_connection</a></code></li>
+<li><code><a title="mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.verify_sending_connection_with_http_info" href="#mailslurp_client.api.api_sending_connection_controller_api.ApiSendingConnectionControllerApi.verify_sending_connection_with_http_info">verify_sending_connection_with_http_info</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

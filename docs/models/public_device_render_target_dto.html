@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.public_device_render_target_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.public_device_render_target_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto"><code class="flex name class">
+<span>class <span class="ident">PublicDeviceRenderTargetDto</span></span>
+<span>(</span><span>target=None, base_target=None, provider=None, client=None, surface=None, platform=None, form_factor=None, engine=None, appearance=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>PublicDeviceRenderTargetDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PublicDeviceRenderTargetDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;target&#39;: &#39;str&#39;,
+        &#39;base_target&#39;: &#39;str&#39;,
+        &#39;provider&#39;: &#39;str&#39;,
+        &#39;client&#39;: &#39;str&#39;,
+        &#39;surface&#39;: &#39;str&#39;,
+        &#39;platform&#39;: &#39;str&#39;,
+        &#39;form_factor&#39;: &#39;str&#39;,
+        &#39;engine&#39;: &#39;str&#39;,
+        &#39;appearance&#39;: &#39;str&#39;
+    }
+
+    attribute_map = {
+        &#39;target&#39;: &#39;target&#39;,
+        &#39;base_target&#39;: &#39;baseTarget&#39;,
+        &#39;provider&#39;: &#39;provider&#39;,
+        &#39;client&#39;: &#39;client&#39;,
+        &#39;surface&#39;: &#39;surface&#39;,
+        &#39;platform&#39;: &#39;platform&#39;,
+        &#39;form_factor&#39;: &#39;formFactor&#39;,
+        &#39;engine&#39;: &#39;engine&#39;,
+        &#39;appearance&#39;: &#39;appearance&#39;
+    }
+
+    def __init__(self, target=None, base_target=None, provider=None, client=None, surface=None, platform=None, form_factor=None, engine=None, appearance=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;PublicDeviceRenderTargetDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._target = None
+        self._base_target = None
+        self._provider = None
+        self._client = None
+        self._surface = None
+        self._platform = None
+        self._form_factor = None
+        self._engine = None
+        self._appearance = None
+        self.discriminator = None
+
+        self.target = target
+        self.base_target = base_target
+        self.provider = provider
+        self.client = client
+        self.surface = surface
+        self.platform = platform
+        self.form_factor = form_factor
+        self.engine = engine
+        self.appearance = appearance
+
+    @property
+    def target(self):
+        &#34;&#34;&#34;Gets the target of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The target of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        &#34;&#34;&#34;Sets the target of this PublicDeviceRenderTargetDto.
+
+
+        :param target: The target of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and target is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `target`, must not be `None`&#34;)  # noqa: E501
+
+        self._target = target
+
+    @property
+    def base_target(self):
+        &#34;&#34;&#34;Gets the base_target of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The base_target of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._base_target
+
+    @base_target.setter
+    def base_target(self, base_target):
+        &#34;&#34;&#34;Sets the base_target of this PublicDeviceRenderTargetDto.
+
+
+        :param base_target: The base_target of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and base_target is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `base_target`, must not be `None`&#34;)  # noqa: E501
+
+        self._base_target = base_target
+
+    @property
+    def provider(self):
+        &#34;&#34;&#34;Gets the provider of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The provider of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        &#34;&#34;&#34;Sets the provider of this PublicDeviceRenderTargetDto.
+
+
+        :param provider: The provider of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._provider = provider
+
+    @property
+    def client(self):
+        &#34;&#34;&#34;Gets the client of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The client of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._client
+
+    @client.setter
+    def client(self, client):
+        &#34;&#34;&#34;Sets the client of this PublicDeviceRenderTargetDto.
+
+
+        :param client: The client of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and client is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `client`, must not be `None`&#34;)  # noqa: E501
+
+        self._client = client
+
+    @property
+    def surface(self):
+        &#34;&#34;&#34;Gets the surface of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The surface of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._surface
+
+    @surface.setter
+    def surface(self, surface):
+        &#34;&#34;&#34;Sets the surface of this PublicDeviceRenderTargetDto.
+
+
+        :param surface: The surface of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and surface is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `surface`, must not be `None`&#34;)  # noqa: E501
+
+        self._surface = surface
+
+    @property
+    def platform(self):
+        &#34;&#34;&#34;Gets the platform of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The platform of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._platform
+
+    @platform.setter
+    def platform(self, platform):
+        &#34;&#34;&#34;Sets the platform of this PublicDeviceRenderTargetDto.
+
+
+        :param platform: The platform of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and platform is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `platform`, must not be `None`&#34;)  # noqa: E501
+
+        self._platform = platform
+
+    @property
+    def form_factor(self):
+        &#34;&#34;&#34;Gets the form_factor of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The form_factor of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._form_factor
+
+    @form_factor.setter
+    def form_factor(self, form_factor):
+        &#34;&#34;&#34;Sets the form_factor of this PublicDeviceRenderTargetDto.
+
+
+        :param form_factor: The form_factor of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and form_factor is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `form_factor`, must not be `None`&#34;)  # noqa: E501
+
+        self._form_factor = form_factor
+
+    @property
+    def engine(self):
+        &#34;&#34;&#34;Gets the engine of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The engine of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._engine
+
+    @engine.setter
+    def engine(self, engine):
+        &#34;&#34;&#34;Sets the engine of this PublicDeviceRenderTargetDto.
+
+
+        :param engine: The engine of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and engine is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `engine`, must not be `None`&#34;)  # noqa: E501
+
+        self._engine = engine
+
+    @property
+    def appearance(self):
+        &#34;&#34;&#34;Gets the appearance of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+        :return: The appearance of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._appearance
+
+    @appearance.setter
+    def appearance(self, appearance):
+        &#34;&#34;&#34;Sets the appearance of this PublicDeviceRenderTargetDto.
+
+
+        :param appearance: The appearance of this PublicDeviceRenderTargetDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and appearance is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `appearance`, must not be `None`&#34;)  # noqa: E501
+
+        self._appearance = appearance
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, PublicDeviceRenderTargetDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, PublicDeviceRenderTargetDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.appearance"><code class="name">prop <span class="ident">appearance</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the appearance of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The appearance of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def appearance(self):
+    &#34;&#34;&#34;Gets the appearance of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The appearance of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._appearance</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.base_target"><code class="name">prop <span class="ident">base_target</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the base_target of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The base_target of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def base_target(self):
+    &#34;&#34;&#34;Gets the base_target of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The base_target of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._base_target</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.client"><code class="name">prop <span class="ident">client</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the client of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The client of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def client(self):
+    &#34;&#34;&#34;Gets the client of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The client of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._client</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.engine"><code class="name">prop <span class="ident">engine</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the engine of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The engine of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def engine(self):
+    &#34;&#34;&#34;Gets the engine of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The engine of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._engine</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.form_factor"><code class="name">prop <span class="ident">form_factor</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the form_factor of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The form_factor of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def form_factor(self):
+    &#34;&#34;&#34;Gets the form_factor of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The form_factor of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._form_factor</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.platform"><code class="name">prop <span class="ident">platform</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the platform of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The platform of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def platform(self):
+    &#34;&#34;&#34;Gets the platform of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The platform of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._platform</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.provider"><code class="name">prop <span class="ident">provider</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the provider of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The provider of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def provider(self):
+    &#34;&#34;&#34;Gets the provider of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The provider of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._provider</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.surface"><code class="name">prop <span class="ident">surface</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the surface of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The surface of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def surface(self):
+    &#34;&#34;&#34;Gets the surface of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The surface of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._surface</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.target"><code class="name">prop <span class="ident">target</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the target of this PublicDeviceRenderTargetDto.
+# noqa: E501</p>
+<p>:return: The target of this PublicDeviceRenderTargetDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def target(self):
+    &#34;&#34;&#34;Gets the target of this PublicDeviceRenderTargetDto.  # noqa: E501
+
+
+    :return: The target of this PublicDeviceRenderTargetDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._target</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto">PublicDeviceRenderTargetDto</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.appearance" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.appearance">appearance</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.attribute_map" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.base_target" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.base_target">base_target</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.client" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.client">client</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.engine" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.engine">engine</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.form_factor" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.form_factor">form_factor</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.openapi_types" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.platform" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.platform">platform</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.provider" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.provider">provider</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.surface" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.surface">surface</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.target" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.target">target</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.to_dict" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.to_str" href="#mailslurp_client.models.public_device_render_target_dto.PublicDeviceRenderTargetDto.to_str">to_str</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

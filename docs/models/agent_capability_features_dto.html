@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.agent_capability_features_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.agent_capability_features_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto"><code class="flex name class">
+<span>class <span class="ident">AgentCapabilityFeaturesDto</span></span>
+<span>(</span><span>conversation_queue=None, durable_events=None, conversation_claims=None, human_handoff=None, internal_notes=None, threaded_reply_drafts=None, webhook_subscriptions_managed_by_owner=None, virtual_totp_devices=None, phone_number_sms_read=None, phone_number_sms_send=None, sms_conversation_queue=None, sms_durable_events=None, sms_conversation_claims=None, sms_human_handoff=None, sms_internal_notes=None, sms_idempotent_send=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>AgentCapabilityFeaturesDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AgentCapabilityFeaturesDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;conversation_queue&#39;: &#39;bool&#39;,
+        &#39;durable_events&#39;: &#39;bool&#39;,
+        &#39;conversation_claims&#39;: &#39;bool&#39;,
+        &#39;human_handoff&#39;: &#39;bool&#39;,
+        &#39;internal_notes&#39;: &#39;bool&#39;,
+        &#39;threaded_reply_drafts&#39;: &#39;bool&#39;,
+        &#39;webhook_subscriptions_managed_by_owner&#39;: &#39;bool&#39;,
+        &#39;virtual_totp_devices&#39;: &#39;bool&#39;,
+        &#39;phone_number_sms_read&#39;: &#39;bool&#39;,
+        &#39;phone_number_sms_send&#39;: &#39;bool&#39;,
+        &#39;sms_conversation_queue&#39;: &#39;bool&#39;,
+        &#39;sms_durable_events&#39;: &#39;bool&#39;,
+        &#39;sms_conversation_claims&#39;: &#39;bool&#39;,
+        &#39;sms_human_handoff&#39;: &#39;bool&#39;,
+        &#39;sms_internal_notes&#39;: &#39;bool&#39;,
+        &#39;sms_idempotent_send&#39;: &#39;bool&#39;
+    }
+
+    attribute_map = {
+        &#39;conversation_queue&#39;: &#39;conversationQueue&#39;,
+        &#39;durable_events&#39;: &#39;durableEvents&#39;,
+        &#39;conversation_claims&#39;: &#39;conversationClaims&#39;,
+        &#39;human_handoff&#39;: &#39;humanHandoff&#39;,
+        &#39;internal_notes&#39;: &#39;internalNotes&#39;,
+        &#39;threaded_reply_drafts&#39;: &#39;threadedReplyDrafts&#39;,
+        &#39;webhook_subscriptions_managed_by_owner&#39;: &#39;webhookSubscriptionsManagedByOwner&#39;,
+        &#39;virtual_totp_devices&#39;: &#39;virtualTotpDevices&#39;,
+        &#39;phone_number_sms_read&#39;: &#39;phoneNumberSmsRead&#39;,
+        &#39;phone_number_sms_send&#39;: &#39;phoneNumberSmsSend&#39;,
+        &#39;sms_conversation_queue&#39;: &#39;smsConversationQueue&#39;,
+        &#39;sms_durable_events&#39;: &#39;smsDurableEvents&#39;,
+        &#39;sms_conversation_claims&#39;: &#39;smsConversationClaims&#39;,
+        &#39;sms_human_handoff&#39;: &#39;smsHumanHandoff&#39;,
+        &#39;sms_internal_notes&#39;: &#39;smsInternalNotes&#39;,
+        &#39;sms_idempotent_send&#39;: &#39;smsIdempotentSend&#39;
+    }
+
+    def __init__(self, conversation_queue=None, durable_events=None, conversation_claims=None, human_handoff=None, internal_notes=None, threaded_reply_drafts=None, webhook_subscriptions_managed_by_owner=None, virtual_totp_devices=None, phone_number_sms_read=None, phone_number_sms_send=None, sms_conversation_queue=None, sms_durable_events=None, sms_conversation_claims=None, sms_human_handoff=None, sms_internal_notes=None, sms_idempotent_send=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;AgentCapabilityFeaturesDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._conversation_queue = None
+        self._durable_events = None
+        self._conversation_claims = None
+        self._human_handoff = None
+        self._internal_notes = None
+        self._threaded_reply_drafts = None
+        self._webhook_subscriptions_managed_by_owner = None
+        self._virtual_totp_devices = None
+        self._phone_number_sms_read = None
+        self._phone_number_sms_send = None
+        self._sms_conversation_queue = None
+        self._sms_durable_events = None
+        self._sms_conversation_claims = None
+        self._sms_human_handoff = None
+        self._sms_internal_notes = None
+        self._sms_idempotent_send = None
+        self.discriminator = None
+
+        self.conversation_queue = conversation_queue
+        self.durable_events = durable_events
+        self.conversation_claims = conversation_claims
+        self.human_handoff = human_handoff
+        self.internal_notes = internal_notes
+        self.threaded_reply_drafts = threaded_reply_drafts
+        self.webhook_subscriptions_managed_by_owner = webhook_subscriptions_managed_by_owner
+        self.virtual_totp_devices = virtual_totp_devices
+        self.phone_number_sms_read = phone_number_sms_read
+        self.phone_number_sms_send = phone_number_sms_send
+        self.sms_conversation_queue = sms_conversation_queue
+        self.sms_durable_events = sms_durable_events
+        self.sms_conversation_claims = sms_conversation_claims
+        self.sms_human_handoff = sms_human_handoff
+        self.sms_internal_notes = sms_internal_notes
+        self.sms_idempotent_send = sms_idempotent_send
+
+    @property
+    def conversation_queue(self):
+        &#34;&#34;&#34;Gets the conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._conversation_queue
+
+    @conversation_queue.setter
+    def conversation_queue(self, conversation_queue):
+        &#34;&#34;&#34;Sets the conversation_queue of this AgentCapabilityFeaturesDto.
+
+
+        :param conversation_queue: The conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and conversation_queue is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `conversation_queue`, must not be `None`&#34;)  # noqa: E501
+
+        self._conversation_queue = conversation_queue
+
+    @property
+    def durable_events(self):
+        &#34;&#34;&#34;Gets the durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._durable_events
+
+    @durable_events.setter
+    def durable_events(self, durable_events):
+        &#34;&#34;&#34;Sets the durable_events of this AgentCapabilityFeaturesDto.
+
+
+        :param durable_events: The durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and durable_events is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `durable_events`, must not be `None`&#34;)  # noqa: E501
+
+        self._durable_events = durable_events
+
+    @property
+    def conversation_claims(self):
+        &#34;&#34;&#34;Gets the conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._conversation_claims
+
+    @conversation_claims.setter
+    def conversation_claims(self, conversation_claims):
+        &#34;&#34;&#34;Sets the conversation_claims of this AgentCapabilityFeaturesDto.
+
+
+        :param conversation_claims: The conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and conversation_claims is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `conversation_claims`, must not be `None`&#34;)  # noqa: E501
+
+        self._conversation_claims = conversation_claims
+
+    @property
+    def human_handoff(self):
+        &#34;&#34;&#34;Gets the human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._human_handoff
+
+    @human_handoff.setter
+    def human_handoff(self, human_handoff):
+        &#34;&#34;&#34;Sets the human_handoff of this AgentCapabilityFeaturesDto.
+
+
+        :param human_handoff: The human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and human_handoff is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `human_handoff`, must not be `None`&#34;)  # noqa: E501
+
+        self._human_handoff = human_handoff
+
+    @property
+    def internal_notes(self):
+        &#34;&#34;&#34;Gets the internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._internal_notes
+
+    @internal_notes.setter
+    def internal_notes(self, internal_notes):
+        &#34;&#34;&#34;Sets the internal_notes of this AgentCapabilityFeaturesDto.
+
+
+        :param internal_notes: The internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and internal_notes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `internal_notes`, must not be `None`&#34;)  # noqa: E501
+
+        self._internal_notes = internal_notes
+
+    @property
+    def threaded_reply_drafts(self):
+        &#34;&#34;&#34;Gets the threaded_reply_drafts of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The threaded_reply_drafts of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._threaded_reply_drafts
+
+    @threaded_reply_drafts.setter
+    def threaded_reply_drafts(self, threaded_reply_drafts):
+        &#34;&#34;&#34;Sets the threaded_reply_drafts of this AgentCapabilityFeaturesDto.
+
+
+        :param threaded_reply_drafts: The threaded_reply_drafts of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and threaded_reply_drafts is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `threaded_reply_drafts`, must not be `None`&#34;)  # noqa: E501
+
+        self._threaded_reply_drafts = threaded_reply_drafts
+
+    @property
+    def webhook_subscriptions_managed_by_owner(self):
+        &#34;&#34;&#34;Gets the webhook_subscriptions_managed_by_owner of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The webhook_subscriptions_managed_by_owner of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._webhook_subscriptions_managed_by_owner
+
+    @webhook_subscriptions_managed_by_owner.setter
+    def webhook_subscriptions_managed_by_owner(self, webhook_subscriptions_managed_by_owner):
+        &#34;&#34;&#34;Sets the webhook_subscriptions_managed_by_owner of this AgentCapabilityFeaturesDto.
+
+
+        :param webhook_subscriptions_managed_by_owner: The webhook_subscriptions_managed_by_owner of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and webhook_subscriptions_managed_by_owner is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `webhook_subscriptions_managed_by_owner`, must not be `None`&#34;)  # noqa: E501
+
+        self._webhook_subscriptions_managed_by_owner = webhook_subscriptions_managed_by_owner
+
+    @property
+    def virtual_totp_devices(self):
+        &#34;&#34;&#34;Gets the virtual_totp_devices of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The virtual_totp_devices of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._virtual_totp_devices
+
+    @virtual_totp_devices.setter
+    def virtual_totp_devices(self, virtual_totp_devices):
+        &#34;&#34;&#34;Sets the virtual_totp_devices of this AgentCapabilityFeaturesDto.
+
+
+        :param virtual_totp_devices: The virtual_totp_devices of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and virtual_totp_devices is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `virtual_totp_devices`, must not be `None`&#34;)  # noqa: E501
+
+        self._virtual_totp_devices = virtual_totp_devices
+
+    @property
+    def phone_number_sms_read(self):
+        &#34;&#34;&#34;Gets the phone_number_sms_read of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The phone_number_sms_read of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._phone_number_sms_read
+
+    @phone_number_sms_read.setter
+    def phone_number_sms_read(self, phone_number_sms_read):
+        &#34;&#34;&#34;Sets the phone_number_sms_read of this AgentCapabilityFeaturesDto.
+
+
+        :param phone_number_sms_read: The phone_number_sms_read of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and phone_number_sms_read is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `phone_number_sms_read`, must not be `None`&#34;)  # noqa: E501
+
+        self._phone_number_sms_read = phone_number_sms_read
+
+    @property
+    def phone_number_sms_send(self):
+        &#34;&#34;&#34;Gets the phone_number_sms_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The phone_number_sms_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._phone_number_sms_send
+
+    @phone_number_sms_send.setter
+    def phone_number_sms_send(self, phone_number_sms_send):
+        &#34;&#34;&#34;Sets the phone_number_sms_send of this AgentCapabilityFeaturesDto.
+
+
+        :param phone_number_sms_send: The phone_number_sms_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and phone_number_sms_send is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `phone_number_sms_send`, must not be `None`&#34;)  # noqa: E501
+
+        self._phone_number_sms_send = phone_number_sms_send
+
+    @property
+    def sms_conversation_queue(self):
+        &#34;&#34;&#34;Gets the sms_conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The sms_conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._sms_conversation_queue
+
+    @sms_conversation_queue.setter
+    def sms_conversation_queue(self, sms_conversation_queue):
+        &#34;&#34;&#34;Sets the sms_conversation_queue of this AgentCapabilityFeaturesDto.
+
+
+        :param sms_conversation_queue: The sms_conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and sms_conversation_queue is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `sms_conversation_queue`, must not be `None`&#34;)  # noqa: E501
+
+        self._sms_conversation_queue = sms_conversation_queue
+
+    @property
+    def sms_durable_events(self):
+        &#34;&#34;&#34;Gets the sms_durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The sms_durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._sms_durable_events
+
+    @sms_durable_events.setter
+    def sms_durable_events(self, sms_durable_events):
+        &#34;&#34;&#34;Sets the sms_durable_events of this AgentCapabilityFeaturesDto.
+
+
+        :param sms_durable_events: The sms_durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and sms_durable_events is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `sms_durable_events`, must not be `None`&#34;)  # noqa: E501
+
+        self._sms_durable_events = sms_durable_events
+
+    @property
+    def sms_conversation_claims(self):
+        &#34;&#34;&#34;Gets the sms_conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The sms_conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._sms_conversation_claims
+
+    @sms_conversation_claims.setter
+    def sms_conversation_claims(self, sms_conversation_claims):
+        &#34;&#34;&#34;Sets the sms_conversation_claims of this AgentCapabilityFeaturesDto.
+
+
+        :param sms_conversation_claims: The sms_conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and sms_conversation_claims is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `sms_conversation_claims`, must not be `None`&#34;)  # noqa: E501
+
+        self._sms_conversation_claims = sms_conversation_claims
+
+    @property
+    def sms_human_handoff(self):
+        &#34;&#34;&#34;Gets the sms_human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The sms_human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._sms_human_handoff
+
+    @sms_human_handoff.setter
+    def sms_human_handoff(self, sms_human_handoff):
+        &#34;&#34;&#34;Sets the sms_human_handoff of this AgentCapabilityFeaturesDto.
+
+
+        :param sms_human_handoff: The sms_human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and sms_human_handoff is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `sms_human_handoff`, must not be `None`&#34;)  # noqa: E501
+
+        self._sms_human_handoff = sms_human_handoff
+
+    @property
+    def sms_internal_notes(self):
+        &#34;&#34;&#34;Gets the sms_internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The sms_internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._sms_internal_notes
+
+    @sms_internal_notes.setter
+    def sms_internal_notes(self, sms_internal_notes):
+        &#34;&#34;&#34;Sets the sms_internal_notes of this AgentCapabilityFeaturesDto.
+
+
+        :param sms_internal_notes: The sms_internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and sms_internal_notes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `sms_internal_notes`, must not be `None`&#34;)  # noqa: E501
+
+        self._sms_internal_notes = sms_internal_notes
+
+    @property
+    def sms_idempotent_send(self):
+        &#34;&#34;&#34;Gets the sms_idempotent_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+        :return: The sms_idempotent_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._sms_idempotent_send
+
+    @sms_idempotent_send.setter
+    def sms_idempotent_send(self, sms_idempotent_send):
+        &#34;&#34;&#34;Sets the sms_idempotent_send of this AgentCapabilityFeaturesDto.
+
+
+        :param sms_idempotent_send: The sms_idempotent_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and sms_idempotent_send is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `sms_idempotent_send`, must not be `None`&#34;)  # noqa: E501
+
+        self._sms_idempotent_send = sms_idempotent_send
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, AgentCapabilityFeaturesDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, AgentCapabilityFeaturesDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.conversation_claims"><code class="name">prop <span class="ident">conversation_claims</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the conversation_claims of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The conversation_claims of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def conversation_claims(self):
+    &#34;&#34;&#34;Gets the conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._conversation_claims</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.conversation_queue"><code class="name">prop <span class="ident">conversation_queue</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the conversation_queue of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The conversation_queue of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def conversation_queue(self):
+    &#34;&#34;&#34;Gets the conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._conversation_queue</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.durable_events"><code class="name">prop <span class="ident">durable_events</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the durable_events of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The durable_events of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def durable_events(self):
+    &#34;&#34;&#34;Gets the durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._durable_events</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.human_handoff"><code class="name">prop <span class="ident">human_handoff</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the human_handoff of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The human_handoff of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def human_handoff(self):
+    &#34;&#34;&#34;Gets the human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._human_handoff</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.internal_notes"><code class="name">prop <span class="ident">internal_notes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the internal_notes of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The internal_notes of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def internal_notes(self):
+    &#34;&#34;&#34;Gets the internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._internal_notes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.phone_number_sms_read"><code class="name">prop <span class="ident">phone_number_sms_read</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the phone_number_sms_read of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The phone_number_sms_read of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def phone_number_sms_read(self):
+    &#34;&#34;&#34;Gets the phone_number_sms_read of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The phone_number_sms_read of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._phone_number_sms_read</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.phone_number_sms_send"><code class="name">prop <span class="ident">phone_number_sms_send</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the phone_number_sms_send of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The phone_number_sms_send of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def phone_number_sms_send(self):
+    &#34;&#34;&#34;Gets the phone_number_sms_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The phone_number_sms_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._phone_number_sms_send</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_conversation_claims"><code class="name">prop <span class="ident">sms_conversation_claims</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sms_conversation_claims of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The sms_conversation_claims of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sms_conversation_claims(self):
+    &#34;&#34;&#34;Gets the sms_conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The sms_conversation_claims of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._sms_conversation_claims</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_conversation_queue"><code class="name">prop <span class="ident">sms_conversation_queue</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sms_conversation_queue of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The sms_conversation_queue of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sms_conversation_queue(self):
+    &#34;&#34;&#34;Gets the sms_conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The sms_conversation_queue of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._sms_conversation_queue</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_durable_events"><code class="name">prop <span class="ident">sms_durable_events</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sms_durable_events of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The sms_durable_events of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sms_durable_events(self):
+    &#34;&#34;&#34;Gets the sms_durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The sms_durable_events of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._sms_durable_events</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_human_handoff"><code class="name">prop <span class="ident">sms_human_handoff</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sms_human_handoff of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The sms_human_handoff of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sms_human_handoff(self):
+    &#34;&#34;&#34;Gets the sms_human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The sms_human_handoff of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._sms_human_handoff</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_idempotent_send"><code class="name">prop <span class="ident">sms_idempotent_send</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sms_idempotent_send of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The sms_idempotent_send of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sms_idempotent_send(self):
+    &#34;&#34;&#34;Gets the sms_idempotent_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The sms_idempotent_send of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._sms_idempotent_send</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_internal_notes"><code class="name">prop <span class="ident">sms_internal_notes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sms_internal_notes of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The sms_internal_notes of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sms_internal_notes(self):
+    &#34;&#34;&#34;Gets the sms_internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The sms_internal_notes of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._sms_internal_notes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.threaded_reply_drafts"><code class="name">prop <span class="ident">threaded_reply_drafts</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the threaded_reply_drafts of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The threaded_reply_drafts of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def threaded_reply_drafts(self):
+    &#34;&#34;&#34;Gets the threaded_reply_drafts of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The threaded_reply_drafts of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._threaded_reply_drafts</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.virtual_totp_devices"><code class="name">prop <span class="ident">virtual_totp_devices</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the virtual_totp_devices of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The virtual_totp_devices of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def virtual_totp_devices(self):
+    &#34;&#34;&#34;Gets the virtual_totp_devices of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The virtual_totp_devices of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._virtual_totp_devices</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.webhook_subscriptions_managed_by_owner"><code class="name">prop <span class="ident">webhook_subscriptions_managed_by_owner</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the webhook_subscriptions_managed_by_owner of this AgentCapabilityFeaturesDto.
+# noqa: E501</p>
+<p>:return: The webhook_subscriptions_managed_by_owner of this AgentCapabilityFeaturesDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def webhook_subscriptions_managed_by_owner(self):
+    &#34;&#34;&#34;Gets the webhook_subscriptions_managed_by_owner of this AgentCapabilityFeaturesDto.  # noqa: E501
+
+
+    :return: The webhook_subscriptions_managed_by_owner of this AgentCapabilityFeaturesDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._webhook_subscriptions_managed_by_owner</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto">AgentCapabilityFeaturesDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.attribute_map" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.conversation_claims" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.conversation_claims">conversation_claims</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.conversation_queue" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.conversation_queue">conversation_queue</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.durable_events" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.durable_events">durable_events</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.human_handoff" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.human_handoff">human_handoff</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.internal_notes" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.internal_notes">internal_notes</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.openapi_types" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.phone_number_sms_read" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.phone_number_sms_read">phone_number_sms_read</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.phone_number_sms_send" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.phone_number_sms_send">phone_number_sms_send</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_conversation_claims" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_conversation_claims">sms_conversation_claims</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_conversation_queue" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_conversation_queue">sms_conversation_queue</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_durable_events" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_durable_events">sms_durable_events</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_human_handoff" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_human_handoff">sms_human_handoff</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_idempotent_send" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_idempotent_send">sms_idempotent_send</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_internal_notes" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.sms_internal_notes">sms_internal_notes</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.threaded_reply_drafts" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.threaded_reply_drafts">threaded_reply_drafts</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.to_dict" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.to_str" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.virtual_totp_devices" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.virtual_totp_devices">virtual_totp_devices</a></code></li>
+<li><code><a title="mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.webhook_subscriptions_managed_by_owner" href="#mailslurp_client.models.agent_capability_features_dto.AgentCapabilityFeaturesDto.webhook_subscriptions_managed_by_owner">webhook_subscriptions_managed_by_owner</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

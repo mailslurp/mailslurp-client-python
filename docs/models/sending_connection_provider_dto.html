@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.sending_connection_provider_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.sending_connection_provider_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto"><code class="flex name class">
+<span>class <span class="ident">SendingConnectionProviderDto</span></span>
+<span>(</span><span>provider_preset=None, provider=None, display_name=None, category=None, availability=None, setup_type=None, native_integration=None, smtp_defaults=None, supported_api_regions=None, requires_sending_domain=None, setup_notes=None, credential_type=None, capabilities=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>SendingConnectionProviderDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SendingConnectionProviderDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;provider_preset&#39;: &#39;str&#39;,
+        &#39;provider&#39;: &#39;str&#39;,
+        &#39;display_name&#39;: &#39;str&#39;,
+        &#39;category&#39;: &#39;str&#39;,
+        &#39;availability&#39;: &#39;str&#39;,
+        &#39;setup_type&#39;: &#39;str&#39;,
+        &#39;native_integration&#39;: &#39;bool&#39;,
+        &#39;smtp_defaults&#39;: &#39;SendingConnectionSmtpDefaults&#39;,
+        &#39;supported_api_regions&#39;: &#39;list[str]&#39;,
+        &#39;requires_sending_domain&#39;: &#39;bool&#39;,
+        &#39;setup_notes&#39;: &#39;list[str]&#39;,
+        &#39;credential_type&#39;: &#39;str&#39;,
+        &#39;capabilities&#39;: &#39;list[str]&#39;
+    }
+
+    attribute_map = {
+        &#39;provider_preset&#39;: &#39;providerPreset&#39;,
+        &#39;provider&#39;: &#39;provider&#39;,
+        &#39;display_name&#39;: &#39;displayName&#39;,
+        &#39;category&#39;: &#39;category&#39;,
+        &#39;availability&#39;: &#39;availability&#39;,
+        &#39;setup_type&#39;: &#39;setupType&#39;,
+        &#39;native_integration&#39;: &#39;nativeIntegration&#39;,
+        &#39;smtp_defaults&#39;: &#39;smtpDefaults&#39;,
+        &#39;supported_api_regions&#39;: &#39;supportedApiRegions&#39;,
+        &#39;requires_sending_domain&#39;: &#39;requiresSendingDomain&#39;,
+        &#39;setup_notes&#39;: &#39;setupNotes&#39;,
+        &#39;credential_type&#39;: &#39;credentialType&#39;,
+        &#39;capabilities&#39;: &#39;capabilities&#39;
+    }
+
+    def __init__(self, provider_preset=None, provider=None, display_name=None, category=None, availability=None, setup_type=None, native_integration=None, smtp_defaults=None, supported_api_regions=None, requires_sending_domain=None, setup_notes=None, credential_type=None, capabilities=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;SendingConnectionProviderDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._provider_preset = None
+        self._provider = None
+        self._display_name = None
+        self._category = None
+        self._availability = None
+        self._setup_type = None
+        self._native_integration = None
+        self._smtp_defaults = None
+        self._supported_api_regions = None
+        self._requires_sending_domain = None
+        self._setup_notes = None
+        self._credential_type = None
+        self._capabilities = None
+        self.discriminator = None
+
+        self.provider_preset = provider_preset
+        self.provider = provider
+        self.display_name = display_name
+        self.category = category
+        self.availability = availability
+        self.setup_type = setup_type
+        self.native_integration = native_integration
+        self.smtp_defaults = smtp_defaults
+        self.supported_api_regions = supported_api_regions
+        self.requires_sending_domain = requires_sending_domain
+        self.setup_notes = setup_notes
+        self.credential_type = credential_type
+        self.capabilities = capabilities
+
+    @property
+    def provider_preset(self):
+        &#34;&#34;&#34;Gets the provider_preset of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The provider_preset of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._provider_preset
+
+    @provider_preset.setter
+    def provider_preset(self, provider_preset):
+        &#34;&#34;&#34;Sets the provider_preset of this SendingConnectionProviderDto.
+
+
+        :param provider_preset: The provider_preset of this SendingConnectionProviderDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and provider_preset is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `provider_preset`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;GENERIC_SMTP&#34;, &#34;GMAIL&#34;, &#34;GOOGLE_WORKSPACE&#34;, &#34;MICROSOFT_365&#34;, &#34;OUTLOOK_COM&#34;, &#34;YAHOO_MAIL&#34;, &#34;APPLE_ICLOUD&#34;, &#34;FASTMAIL&#34;, &#34;ZOHO_MAIL&#34;, &#34;AOL_MAIL&#34;, &#34;GMX_MAIL&#34;, &#34;MAIL_COM&#34;, &#34;PROTON_MAIL&#34;, &#34;AMAZON_SES&#34;, &#34;SENDGRID&#34;, &#34;RESEND&#34;, &#34;MAILGUN&#34;, &#34;POSTMARK&#34;, &#34;BREVO&#34;, &#34;MAILJET&#34;, &#34;SPARKPOST&#34;, &#34;SMTP2GO&#34;, &#34;SENDPULSE&#34;, &#34;SOCKETLABS&#34;, &#34;MAILERSEND&#34;, &#34;MANDRILL&#34;, &#34;ELASTIC_EMAIL&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and provider_preset not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `provider_preset` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(provider_preset, allowed_values)
+            )
+
+        self._provider_preset = provider_preset
+
+    @property
+    def provider(self):
+        &#34;&#34;&#34;Gets the provider of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The provider of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        &#34;&#34;&#34;Sets the provider of this SendingConnectionProviderDto.
+
+
+        :param provider: The provider of this SendingConnectionProviderDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and provider is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `provider`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;SMTP&#34;, &#34;AMAZON_SES&#34;, &#34;SENDGRID&#34;, &#34;RESEND&#34;, &#34;MAILGUN&#34;, &#34;POSTMARK&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and provider not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `provider` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(provider, allowed_values)
+            )
+
+        self._provider = provider
+
+    @property
+    def display_name(self):
+        &#34;&#34;&#34;Gets the display_name of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The display_name of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        &#34;&#34;&#34;Sets the display_name of this SendingConnectionProviderDto.
+
+
+        :param display_name: The display_name of this SendingConnectionProviderDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and display_name is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `display_name`, must not be `None`&#34;)  # noqa: E501
+
+        self._display_name = display_name
+
+    @property
+    def category(self):
+        &#34;&#34;&#34;Gets the category of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The category of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        &#34;&#34;&#34;Sets the category of this SendingConnectionProviderDto.
+
+
+        :param category: The category of this SendingConnectionProviderDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and category is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `category`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;CUSTOM&#34;, &#34;MAILBOX&#34;, &#34;TRANSACTIONAL&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and category not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `category` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(category, allowed_values)
+            )
+
+        self._category = category
+
+    @property
+    def availability(self):
+        &#34;&#34;&#34;Gets the availability of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The availability of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._availability
+
+    @availability.setter
+    def availability(self, availability):
+        &#34;&#34;&#34;Sets the availability of this SendingConnectionProviderDto.
+
+
+        :param availability: The availability of this SendingConnectionProviderDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and availability is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `availability`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;AVAILABLE&#34;, &#34;PLANNED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and availability not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `availability` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(availability, allowed_values)
+            )
+
+        self._availability = availability
+
+    @property
+    def setup_type(self):
+        &#34;&#34;&#34;Gets the setup_type of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The setup_type of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._setup_type
+
+    @setup_type.setter
+    def setup_type(self, setup_type):
+        &#34;&#34;&#34;Sets the setup_type of this SendingConnectionProviderDto.
+
+
+        :param setup_type: The setup_type of this SendingConnectionProviderDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and setup_type is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `setup_type`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;SMTP&#34;, &#34;API_KEY&#34;, &#34;AWS_CREDENTIALS&#34;, &#34;OAUTH&#34;, &#34;UNAVAILABLE&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and setup_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `setup_type` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(setup_type, allowed_values)
+            )
+
+        self._setup_type = setup_type
+
+    @property
+    def native_integration(self):
+        &#34;&#34;&#34;Gets the native_integration of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The native_integration of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._native_integration
+
+    @native_integration.setter
+    def native_integration(self, native_integration):
+        &#34;&#34;&#34;Sets the native_integration of this SendingConnectionProviderDto.
+
+
+        :param native_integration: The native_integration of this SendingConnectionProviderDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and native_integration is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `native_integration`, must not be `None`&#34;)  # noqa: E501
+
+        self._native_integration = native_integration
+
+    @property
+    def smtp_defaults(self):
+        &#34;&#34;&#34;Gets the smtp_defaults of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The smtp_defaults of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: SendingConnectionSmtpDefaults
+        &#34;&#34;&#34;
+        return self._smtp_defaults
+
+    @smtp_defaults.setter
+    def smtp_defaults(self, smtp_defaults):
+        &#34;&#34;&#34;Sets the smtp_defaults of this SendingConnectionProviderDto.
+
+
+        :param smtp_defaults: The smtp_defaults of this SendingConnectionProviderDto.  # noqa: E501
+        :type: SendingConnectionSmtpDefaults
+        &#34;&#34;&#34;
+
+        self._smtp_defaults = smtp_defaults
+
+    @property
+    def supported_api_regions(self):
+        &#34;&#34;&#34;Gets the supported_api_regions of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The supported_api_regions of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._supported_api_regions
+
+    @supported_api_regions.setter
+    def supported_api_regions(self, supported_api_regions):
+        &#34;&#34;&#34;Sets the supported_api_regions of this SendingConnectionProviderDto.
+
+
+        :param supported_api_regions: The supported_api_regions of this SendingConnectionProviderDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and supported_api_regions is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `supported_api_regions`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;US&#34;, &#34;EU&#34;]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(supported_api_regions).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                &#34;Invalid values for `supported_api_regions` [{0}], must be a subset of [{1}]&#34;  # noqa: E501
+                .format(&#34;, &#34;.join(map(str, set(supported_api_regions) - set(allowed_values))),  # noqa: E501
+                        &#34;, &#34;.join(map(str, allowed_values)))
+            )
+
+        self._supported_api_regions = supported_api_regions
+
+    @property
+    def requires_sending_domain(self):
+        &#34;&#34;&#34;Gets the requires_sending_domain of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The requires_sending_domain of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._requires_sending_domain
+
+    @requires_sending_domain.setter
+    def requires_sending_domain(self, requires_sending_domain):
+        &#34;&#34;&#34;Sets the requires_sending_domain of this SendingConnectionProviderDto.
+
+
+        :param requires_sending_domain: The requires_sending_domain of this SendingConnectionProviderDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and requires_sending_domain is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `requires_sending_domain`, must not be `None`&#34;)  # noqa: E501
+
+        self._requires_sending_domain = requires_sending_domain
+
+    @property
+    def setup_notes(self):
+        &#34;&#34;&#34;Gets the setup_notes of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The setup_notes of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._setup_notes
+
+    @setup_notes.setter
+    def setup_notes(self, setup_notes):
+        &#34;&#34;&#34;Sets the setup_notes of this SendingConnectionProviderDto.
+
+
+        :param setup_notes: The setup_notes of this SendingConnectionProviderDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and setup_notes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `setup_notes`, must not be `None`&#34;)  # noqa: E501
+
+        self._setup_notes = setup_notes
+
+    @property
+    def credential_type(self):
+        &#34;&#34;&#34;Gets the credential_type of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The credential_type of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._credential_type
+
+    @credential_type.setter
+    def credential_type(self, credential_type):
+        &#34;&#34;&#34;Sets the credential_type of this SendingConnectionProviderDto.
+
+
+        :param credential_type: The credential_type of this SendingConnectionProviderDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and credential_type is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `credential_type`, must not be `None`&#34;)  # noqa: E501
+
+        self._credential_type = credential_type
+
+    @property
+    def capabilities(self):
+        &#34;&#34;&#34;Gets the capabilities of this SendingConnectionProviderDto.  # noqa: E501
+
+
+        :return: The capabilities of this SendingConnectionProviderDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._capabilities
+
+    @capabilities.setter
+    def capabilities(self, capabilities):
+        &#34;&#34;&#34;Sets the capabilities of this SendingConnectionProviderDto.
+
+
+        :param capabilities: The capabilities of this SendingConnectionProviderDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and capabilities is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `capabilities`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;SEND_EMAIL&#34;, &#34;VERIFY_CONNECTION&#34;, &#34;ROTATE_CREDENTIALS&#34;, &#34;DELIVERY_PROBE&#34;]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(capabilities).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                &#34;Invalid values for `capabilities` [{0}], must be a subset of [{1}]&#34;  # noqa: E501
+                .format(&#34;, &#34;.join(map(str, set(capabilities) - set(allowed_values))),  # noqa: E501
+                        &#34;, &#34;.join(map(str, allowed_values)))
+            )
+
+        self._capabilities = capabilities
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, SendingConnectionProviderDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, SendingConnectionProviderDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.availability"><code class="name">prop <span class="ident">availability</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the availability of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The availability of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def availability(self):
+    &#34;&#34;&#34;Gets the availability of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The availability of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._availability</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.capabilities"><code class="name">prop <span class="ident">capabilities</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the capabilities of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The capabilities of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def capabilities(self):
+    &#34;&#34;&#34;Gets the capabilities of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The capabilities of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._capabilities</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.category"><code class="name">prop <span class="ident">category</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the category of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The category of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def category(self):
+    &#34;&#34;&#34;Gets the category of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The category of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._category</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.credential_type"><code class="name">prop <span class="ident">credential_type</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the credential_type of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The credential_type of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def credential_type(self):
+    &#34;&#34;&#34;Gets the credential_type of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The credential_type of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._credential_type</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.display_name"><code class="name">prop <span class="ident">display_name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the display_name of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The display_name of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def display_name(self):
+    &#34;&#34;&#34;Gets the display_name of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The display_name of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._display_name</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.native_integration"><code class="name">prop <span class="ident">native_integration</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the native_integration of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The native_integration of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def native_integration(self):
+    &#34;&#34;&#34;Gets the native_integration of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The native_integration of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._native_integration</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.provider"><code class="name">prop <span class="ident">provider</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the provider of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The provider of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def provider(self):
+    &#34;&#34;&#34;Gets the provider of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The provider of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._provider</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.provider_preset"><code class="name">prop <span class="ident">provider_preset</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the provider_preset of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The provider_preset of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def provider_preset(self):
+    &#34;&#34;&#34;Gets the provider_preset of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The provider_preset of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._provider_preset</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.requires_sending_domain"><code class="name">prop <span class="ident">requires_sending_domain</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the requires_sending_domain of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The requires_sending_domain of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def requires_sending_domain(self):
+    &#34;&#34;&#34;Gets the requires_sending_domain of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The requires_sending_domain of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._requires_sending_domain</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.setup_notes"><code class="name">prop <span class="ident">setup_notes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the setup_notes of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The setup_notes of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def setup_notes(self):
+    &#34;&#34;&#34;Gets the setup_notes of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The setup_notes of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._setup_notes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.setup_type"><code class="name">prop <span class="ident">setup_type</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the setup_type of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The setup_type of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def setup_type(self):
+    &#34;&#34;&#34;Gets the setup_type of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The setup_type of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._setup_type</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.smtp_defaults"><code class="name">prop <span class="ident">smtp_defaults</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the smtp_defaults of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The smtp_defaults of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: SendingConnectionSmtpDefaults</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def smtp_defaults(self):
+    &#34;&#34;&#34;Gets the smtp_defaults of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The smtp_defaults of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: SendingConnectionSmtpDefaults
+    &#34;&#34;&#34;
+    return self._smtp_defaults</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.supported_api_regions"><code class="name">prop <span class="ident">supported_api_regions</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the supported_api_regions of this SendingConnectionProviderDto.
+# noqa: E501</p>
+<p>:return: The supported_api_regions of this SendingConnectionProviderDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def supported_api_regions(self):
+    &#34;&#34;&#34;Gets the supported_api_regions of this SendingConnectionProviderDto.  # noqa: E501
+
+
+    :return: The supported_api_regions of this SendingConnectionProviderDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._supported_api_regions</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto">SendingConnectionProviderDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.attribute_map" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.availability" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.availability">availability</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.capabilities" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.capabilities">capabilities</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.category" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.category">category</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.credential_type" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.credential_type">credential_type</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.display_name" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.display_name">display_name</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.native_integration" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.native_integration">native_integration</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.openapi_types" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.provider" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.provider">provider</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.provider_preset" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.provider_preset">provider_preset</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.requires_sending_domain" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.requires_sending_domain">requires_sending_domain</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.setup_notes" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.setup_notes">setup_notes</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.setup_type" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.setup_type">setup_type</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.smtp_defaults" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.smtp_defaults">smtp_defaults</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.supported_api_regions" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.supported_api_regions">supported_api_regions</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.to_dict" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.to_str" href="#mailslurp_client.models.sending_connection_provider_dto.SendingConnectionProviderDto.to_str">to_str</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

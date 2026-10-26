@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.rest API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.rest</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.rest.RESTClientObject"><code class="flex name class">
+<span>class <span class="ident">RESTClientObject</span></span>
+<span>(</span><span>configuration, pools_size=4, maxsize=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RESTClientObject(object):
+
+    def __init__(self, configuration, pools_size=4, maxsize=None):
+        # urllib3.PoolManager will pass all kw parameters to connectionpool
+        # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/poolmanager.py#L75  # noqa: E501
+        # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/connectionpool.py#L680  # noqa: E501
+        # maxsize is the number of requests to host that are allowed in parallel  # noqa: E501
+        # Custom SSL certificates and client certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html  # noqa: E501
+
+        # cert_reqs
+        if configuration.verify_ssl:
+            cert_reqs = ssl.CERT_REQUIRED
+        else:
+            cert_reqs = ssl.CERT_NONE
+
+        # ca_certs
+        if configuration.ssl_ca_cert:
+            ca_certs = configuration.ssl_ca_cert
+        else:
+            # if not set certificate file, use Mozilla&#39;s root certificates.
+            ca_certs = certifi.where()
+
+        addition_pool_args = {}
+        if configuration.assert_hostname is not None:
+            addition_pool_args[&#39;assert_hostname&#39;] = configuration.assert_hostname  # noqa: E501
+
+        if configuration.retries is not None:
+            addition_pool_args[&#39;retries&#39;] = configuration.retries
+
+        if maxsize is None:
+            if configuration.connection_pool_maxsize is not None:
+                maxsize = configuration.connection_pool_maxsize
+            else:
+                maxsize = 4
+
+        # https pool manager
+        if configuration.proxy:
+            self.pool_manager = urllib3.ProxyManager(
+                num_pools=pools_size,
+                maxsize=maxsize,
+                cert_reqs=cert_reqs,
+                ca_certs=ca_certs,
+                cert_file=configuration.cert_file,
+                key_file=configuration.key_file,
+                proxy_url=configuration.proxy,
+                proxy_headers=configuration.proxy_headers,
+                **addition_pool_args
+            )
+        else:
+            self.pool_manager = urllib3.PoolManager(
+                num_pools=pools_size,
+                maxsize=maxsize,
+                cert_reqs=cert_reqs,
+                ca_certs=ca_certs,
+                cert_file=configuration.cert_file,
+                key_file=configuration.key_file,
+                **addition_pool_args
+            )
+
+    def request(self, method, url, query_params=None, headers=None,
+                body=None, post_params=None, _preload_content=True,
+                _request_timeout=None):
+        &#34;&#34;&#34;Perform requests.
+
+        :param method: http request method
+        :param url: http request url
+        :param query_params: query parameters in the url
+        :param headers: http request headers
+        :param body: request json body, for `application/json`
+        :param post_params: request post parameters,
+                            `application/x-www-form-urlencoded`
+                            and `multipart/form-data`
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        &#34;&#34;&#34;
+        method = method.upper()
+        assert method in [&#39;GET&#39;, &#39;HEAD&#39;, &#39;DELETE&#39;, &#39;POST&#39;, &#39;PUT&#39;,
+                          &#39;PATCH&#39;, &#39;OPTIONS&#39;]
+
+        if post_params and body:
+            raise ApiValueError(
+                &#34;body parameter cannot be used with post_params parameter.&#34;
+            )
+
+        post_params = post_params or {}
+        headers = headers or {}
+
+        timeout = None
+        if _request_timeout:
+            if isinstance(_request_timeout, (int, ) if six.PY3 else (int, long)):  # noqa: E501,F821
+                timeout = urllib3.Timeout(total=_request_timeout)
+            elif (isinstance(_request_timeout, tuple) and
+                  len(_request_timeout) == 2):
+                timeout = urllib3.Timeout(
+                    connect=_request_timeout[0], read=_request_timeout[1])
+
+        if &#39;Content-Type&#39; not in headers:
+            headers[&#39;Content-Type&#39;] = &#39;application/json&#39;
+
+        try:
+            # For `POST`, `PUT`, `PATCH`, `OPTIONS`, `DELETE`
+            if method in [&#39;POST&#39;, &#39;PUT&#39;, &#39;PATCH&#39;, &#39;OPTIONS&#39;, &#39;DELETE&#39;]:
+                if query_params:
+                    url += &#39;?&#39; + urlencode(query_params)
+                if re.search(&#39;json&#39;, headers[&#39;Content-Type&#39;], re.IGNORECASE):
+                    request_body = None
+                    if body is not None:
+                        request_body = json.dumps(body)
+                    r = self.pool_manager.request(
+                        method, url,
+                        body=request_body,
+                        preload_content=_preload_content,
+                        timeout=timeout,
+                        headers=headers)
+                elif headers[&#39;Content-Type&#39;] == &#39;application/x-www-form-urlencoded&#39;:  # noqa: E501
+                    r = self.pool_manager.request(
+                        method, url,
+                        fields=post_params,
+                        encode_multipart=False,
+                        preload_content=_preload_content,
+                        timeout=timeout,
+                        headers=headers)
+                elif headers[&#39;Content-Type&#39;] == &#39;multipart/form-data&#39;:
+                    # must del headers[&#39;Content-Type&#39;], or the correct
+                    # Content-Type which generated by urllib3 will be
+                    # overwritten.
+                    del headers[&#39;Content-Type&#39;]
+                    r = self.pool_manager.request(
+                        method, url,
+                        fields=post_params,
+                        encode_multipart=True,
+                        preload_content=_preload_content,
+                        timeout=timeout,
+                        headers=headers)
+                # Pass a `string` parameter directly in the body to support
+                # other content types than Json when `body` argument is
+                # provided in serialized form
+                elif isinstance(body, str) or isinstance(body, bytes):
+                    request_body = body
+                    r = self.pool_manager.request(
+                        method, url,
+                        body=request_body,
+                        preload_content=_preload_content,
+                        timeout=timeout,
+                        headers=headers)
+                else:
+                    # Cannot generate the request from given parameters
+                    msg = &#34;&#34;&#34;Cannot prepare a request message for provided
+                             arguments. Please check that your arguments match
+                             declared content type.&#34;&#34;&#34;
+                    raise ApiException(status=0, reason=msg)
+            # For `GET`, `HEAD`
+            else:
+                r = self.pool_manager.request(method, url,
+                                              fields=query_params,
+                                              preload_content=_preload_content,
+                                              timeout=timeout,
+                                              headers=headers)
+        except urllib3.exceptions.SSLError as e:
+            msg = &#34;{0}\n{1}&#34;.format(type(e).__name__, str(e))
+            raise ApiException(status=0, reason=msg)
+
+        if _preload_content:
+            r = RESTResponse(r)
+
+            # log response body
+            logger.debug(&#34;response body: %s&#34;, r.data)
+
+        if not 200 &lt;= r.status &lt;= 299:
+            raise ApiException(http_resp=r)
+
+        return r
+
+    def GET(self, url, headers=None, query_params=None, _preload_content=True,
+            _request_timeout=None):
+        return self.request(&#34;GET&#34;, url,
+                            headers=headers,
+                            _preload_content=_preload_content,
+                            _request_timeout=_request_timeout,
+                            query_params=query_params)
+
+    def HEAD(self, url, headers=None, query_params=None, _preload_content=True,
+             _request_timeout=None):
+        return self.request(&#34;HEAD&#34;, url,
+                            headers=headers,
+                            _preload_content=_preload_content,
+                            _request_timeout=_request_timeout,
+                            query_params=query_params)
+
+    def OPTIONS(self, url, headers=None, query_params=None, post_params=None,
+                body=None, _preload_content=True, _request_timeout=None):
+        return self.request(&#34;OPTIONS&#34;, url,
+                            headers=headers,
+                            query_params=query_params,
+                            post_params=post_params,
+                            _preload_content=_preload_content,
+                            _request_timeout=_request_timeout,
+                            body=body)
+
+    def DELETE(self, url, headers=None, query_params=None, body=None,
+               _preload_content=True, _request_timeout=None):
+        return self.request(&#34;DELETE&#34;, url,
+                            headers=headers,
+                            query_params=query_params,
+                            _preload_content=_preload_content,
+                            _request_timeout=_request_timeout,
+                            body=body)
+
+    def POST(self, url, headers=None, query_params=None, post_params=None,
+             body=None, _preload_content=True, _request_timeout=None):
+        return self.request(&#34;POST&#34;, url,
+                            headers=headers,
+                            query_params=query_params,
+                            post_params=post_params,
+                            _preload_content=_preload_content,
+                            _request_timeout=_request_timeout,
+                            body=body)
+
+    def PUT(self, url, headers=None, query_params=None, post_params=None,
+            body=None, _preload_content=True, _request_timeout=None):
+        return self.request(&#34;PUT&#34;, url,
+                            headers=headers,
+                            query_params=query_params,
+                            post_params=post_params,
+                            _preload_content=_preload_content,
+                            _request_timeout=_request_timeout,
+                            body=body)
+
+    def PATCH(self, url, headers=None, query_params=None, post_params=None,
+              body=None, _preload_content=True, _request_timeout=None):
+        return self.request(&#34;PATCH&#34;, url,
+                            headers=headers,
+                            query_params=query_params,
+                            post_params=post_params,
+                            _preload_content=_preload_content,
+                            _request_timeout=_request_timeout,
+                            body=body)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.rest.RESTClientObject.DELETE"><code class="name flex">
+<span>def <span class="ident">DELETE</span></span>(<span>self, url, headers=None, query_params=None, body=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.rest.RESTClientObject.GET"><code class="name flex">
+<span>def <span class="ident">GET</span></span>(<span>self, url, headers=None, query_params=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.rest.RESTClientObject.HEAD"><code class="name flex">
+<span>def <span class="ident">HEAD</span></span>(<span>self, url, headers=None, query_params=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.rest.RESTClientObject.OPTIONS"><code class="name flex">
+<span>def <span class="ident">OPTIONS</span></span>(<span>self, url, headers=None, query_params=None, post_params=None, body=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.rest.RESTClientObject.PATCH"><code class="name flex">
+<span>def <span class="ident">PATCH</span></span>(<span>self, url, headers=None, query_params=None, post_params=None, body=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.rest.RESTClientObject.POST"><code class="name flex">
+<span>def <span class="ident">POST</span></span>(<span>self, url, headers=None, query_params=None, post_params=None, body=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.rest.RESTClientObject.PUT"><code class="name flex">
+<span>def <span class="ident">PUT</span></span>(<span>self, url, headers=None, query_params=None, post_params=None, body=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.rest.RESTClientObject.request"><code class="name flex">
+<span>def <span class="ident">request</span></span>(<span>self, method, url, query_params=None, headers=None, body=None, post_params=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Perform requests.</p>
+<p>:param method: http request method
+:param url: http request url
+:param query_params: query parameters in the url
+:param headers: http request headers
+:param body: request json body, for <code>application/json</code>
+:param post_params: request post parameters,
+<code>application/x-www-form-urlencoded</code>
+and <code>multipart/form-data</code>
+:param _preload_content: if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.
+:param _request_timeout: timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="mailslurp_client.rest.RESTResponse"><code class="flex name class">
+<span>class <span class="ident">RESTResponse</span></span>
+<span>(</span><span>resp)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The abstract base class for all I/O classes, acting on streams of
+bytes. There is no public constructor.</p>
+<p>This class provides dummy implementations for many methods that
+derived classes can override selectively; the default implementations
+represent a file that cannot be read, written or seeked.</p>
+<p>Even though IOBase does not declare read, readinto, or write because
+their signatures will vary, implementations and clients should
+consider those methods part of the interface. Also, implementations
+may raise UnsupportedOperation when operations they do not support are
+called.</p>
+<p>The basic type used for binary data read from or written to a file is
+bytes. Other bytes-like objects are accepted as method arguments too.
+In some cases (such as readinto), a writable object is required. Text
+I/O classes work with str data.</p>
+<p>Note that calling any method (except additional calls to close(),
+which are ignored) on a closed stream should raise a ValueError.</p>
+<p>IOBase (and its subclasses) support the iterator protocol, meaning
+that an IOBase object can be iterated over yielding the lines in a
+stream.</p>
+<p>IOBase also supports the :keyword:<code>with</code> statement. In this example,
+fp is closed after the suite of the with statement is complete:</p>
+<p>with open('spam.txt', 'r') as fp:
+fp.write('Spam and eggs!')</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RESTResponse(io.IOBase):
+
+    def __init__(self, resp):
+        self.urllib3_response = resp
+        self.status = resp.status
+        self.reason = resp.reason
+        self.data = resp.data
+
+    def getheaders(self):
+        &#34;&#34;&#34;Returns a dictionary of the response headers.&#34;&#34;&#34;
+        return self.urllib3_response.getheaders()
+
+    def getheader(self, name, default=None):
+        &#34;&#34;&#34;Returns a given response header.&#34;&#34;&#34;
+        return self.urllib3_response.getheader(name, default)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>io.IOBase</li>
+<li>_io._IOBase</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.rest.RESTResponse.getheader"><code class="name flex">
+<span>def <span class="ident">getheader</span></span>(<span>self, name, default=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a given response header.</p></div>
+</dd>
+<dt id="mailslurp_client.rest.RESTResponse.getheaders"><code class="name flex">
+<span>def <span class="ident">getheaders</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a dictionary of the response headers.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client" href="index.html">mailslurp_client</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.rest.RESTClientObject" href="#mailslurp_client.rest.RESTClientObject">RESTClientObject</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mailslurp_client.rest.RESTClientObject.DELETE" href="#mailslurp_client.rest.RESTClientObject.DELETE">DELETE</a></code></li>
+<li><code><a title="mailslurp_client.rest.RESTClientObject.GET" href="#mailslurp_client.rest.RESTClientObject.GET">GET</a></code></li>
+<li><code><a title="mailslurp_client.rest.RESTClientObject.HEAD" href="#mailslurp_client.rest.RESTClientObject.HEAD">HEAD</a></code></li>
+<li><code><a title="mailslurp_client.rest.RESTClientObject.OPTIONS" href="#mailslurp_client.rest.RESTClientObject.OPTIONS">OPTIONS</a></code></li>
+<li><code><a title="mailslurp_client.rest.RESTClientObject.PATCH" href="#mailslurp_client.rest.RESTClientObject.PATCH">PATCH</a></code></li>
+<li><code><a title="mailslurp_client.rest.RESTClientObject.POST" href="#mailslurp_client.rest.RESTClientObject.POST">POST</a></code></li>
+<li><code><a title="mailslurp_client.rest.RESTClientObject.PUT" href="#mailslurp_client.rest.RESTClientObject.PUT">PUT</a></code></li>
+<li><code><a title="mailslurp_client.rest.RESTClientObject.request" href="#mailslurp_client.rest.RESTClientObject.request">request</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="mailslurp_client.rest.RESTResponse" href="#mailslurp_client.rest.RESTResponse">RESTResponse</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.rest.RESTResponse.getheader" href="#mailslurp_client.rest.RESTResponse.getheader">getheader</a></code></li>
+<li><code><a title="mailslurp_client.rest.RESTResponse.getheaders" href="#mailslurp_client.rest.RESTResponse.getheaders">getheaders</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

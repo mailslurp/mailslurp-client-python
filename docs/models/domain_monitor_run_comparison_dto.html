@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.domain_monitor_run_comparison_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.domain_monitor_run_comparison_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto"><code class="flex name class">
+<span>class <span class="ident">DomainMonitorRunComparisonDto</span></span>
+<span>(</span><span>baseline=None, current=None, health_score_delta=None, status_changed=None, passing_checks_delta=None, failing_checks_delta=None, spf_changed=None, dmarc_changed=None, dmarc_enforced_changed=None, mx_changed=None, dkim_changed=None, bimi_changed=None, mta_sts_changed=None, tls_reporting_changed=None, blacklist_changed=None, added_insights=None, removed_insights=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>DomainMonitorRunComparisonDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DomainMonitorRunComparisonDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;baseline&#39;: &#39;DomainMonitorRunDto&#39;,
+        &#39;current&#39;: &#39;DomainMonitorRunDto&#39;,
+        &#39;health_score_delta&#39;: &#39;int&#39;,
+        &#39;status_changed&#39;: &#39;bool&#39;,
+        &#39;passing_checks_delta&#39;: &#39;int&#39;,
+        &#39;failing_checks_delta&#39;: &#39;int&#39;,
+        &#39;spf_changed&#39;: &#39;bool&#39;,
+        &#39;dmarc_changed&#39;: &#39;bool&#39;,
+        &#39;dmarc_enforced_changed&#39;: &#39;bool&#39;,
+        &#39;mx_changed&#39;: &#39;bool&#39;,
+        &#39;dkim_changed&#39;: &#39;bool&#39;,
+        &#39;bimi_changed&#39;: &#39;bool&#39;,
+        &#39;mta_sts_changed&#39;: &#39;bool&#39;,
+        &#39;tls_reporting_changed&#39;: &#39;bool&#39;,
+        &#39;blacklist_changed&#39;: &#39;bool&#39;,
+        &#39;added_insights&#39;: &#39;list[str]&#39;,
+        &#39;removed_insights&#39;: &#39;list[str]&#39;
+    }
+
+    attribute_map = {
+        &#39;baseline&#39;: &#39;baseline&#39;,
+        &#39;current&#39;: &#39;current&#39;,
+        &#39;health_score_delta&#39;: &#39;healthScoreDelta&#39;,
+        &#39;status_changed&#39;: &#39;statusChanged&#39;,
+        &#39;passing_checks_delta&#39;: &#39;passingChecksDelta&#39;,
+        &#39;failing_checks_delta&#39;: &#39;failingChecksDelta&#39;,
+        &#39;spf_changed&#39;: &#39;spfChanged&#39;,
+        &#39;dmarc_changed&#39;: &#39;dmarcChanged&#39;,
+        &#39;dmarc_enforced_changed&#39;: &#39;dmarcEnforcedChanged&#39;,
+        &#39;mx_changed&#39;: &#39;mxChanged&#39;,
+        &#39;dkim_changed&#39;: &#39;dkimChanged&#39;,
+        &#39;bimi_changed&#39;: &#39;bimiChanged&#39;,
+        &#39;mta_sts_changed&#39;: &#39;mtaStsChanged&#39;,
+        &#39;tls_reporting_changed&#39;: &#39;tlsReportingChanged&#39;,
+        &#39;blacklist_changed&#39;: &#39;blacklistChanged&#39;,
+        &#39;added_insights&#39;: &#39;addedInsights&#39;,
+        &#39;removed_insights&#39;: &#39;removedInsights&#39;
+    }
+
+    def __init__(self, baseline=None, current=None, health_score_delta=None, status_changed=None, passing_checks_delta=None, failing_checks_delta=None, spf_changed=None, dmarc_changed=None, dmarc_enforced_changed=None, mx_changed=None, dkim_changed=None, bimi_changed=None, mta_sts_changed=None, tls_reporting_changed=None, blacklist_changed=None, added_insights=None, removed_insights=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;DomainMonitorRunComparisonDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._baseline = None
+        self._current = None
+        self._health_score_delta = None
+        self._status_changed = None
+        self._passing_checks_delta = None
+        self._failing_checks_delta = None
+        self._spf_changed = None
+        self._dmarc_changed = None
+        self._dmarc_enforced_changed = None
+        self._mx_changed = None
+        self._dkim_changed = None
+        self._bimi_changed = None
+        self._mta_sts_changed = None
+        self._tls_reporting_changed = None
+        self._blacklist_changed = None
+        self._added_insights = None
+        self._removed_insights = None
+        self.discriminator = None
+
+        self.baseline = baseline
+        self.current = current
+        self.health_score_delta = health_score_delta
+        self.status_changed = status_changed
+        self.passing_checks_delta = passing_checks_delta
+        self.failing_checks_delta = failing_checks_delta
+        self.spf_changed = spf_changed
+        self.dmarc_changed = dmarc_changed
+        self.dmarc_enforced_changed = dmarc_enforced_changed
+        self.mx_changed = mx_changed
+        self.dkim_changed = dkim_changed
+        self.bimi_changed = bimi_changed
+        self.mta_sts_changed = mta_sts_changed
+        self.tls_reporting_changed = tls_reporting_changed
+        self.blacklist_changed = blacklist_changed
+        self.added_insights = added_insights
+        self.removed_insights = removed_insights
+
+    @property
+    def baseline(self):
+        &#34;&#34;&#34;Gets the baseline of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The baseline of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: DomainMonitorRunDto
+        &#34;&#34;&#34;
+        return self._baseline
+
+    @baseline.setter
+    def baseline(self, baseline):
+        &#34;&#34;&#34;Sets the baseline of this DomainMonitorRunComparisonDto.
+
+
+        :param baseline: The baseline of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: DomainMonitorRunDto
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and baseline is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `baseline`, must not be `None`&#34;)  # noqa: E501
+
+        self._baseline = baseline
+
+    @property
+    def current(self):
+        &#34;&#34;&#34;Gets the current of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The current of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: DomainMonitorRunDto
+        &#34;&#34;&#34;
+        return self._current
+
+    @current.setter
+    def current(self, current):
+        &#34;&#34;&#34;Sets the current of this DomainMonitorRunComparisonDto.
+
+
+        :param current: The current of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: DomainMonitorRunDto
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and current is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `current`, must not be `None`&#34;)  # noqa: E501
+
+        self._current = current
+
+    @property
+    def health_score_delta(self):
+        &#34;&#34;&#34;Gets the health_score_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The health_score_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._health_score_delta
+
+    @health_score_delta.setter
+    def health_score_delta(self, health_score_delta):
+        &#34;&#34;&#34;Sets the health_score_delta of this DomainMonitorRunComparisonDto.
+
+
+        :param health_score_delta: The health_score_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and health_score_delta is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `health_score_delta`, must not be `None`&#34;)  # noqa: E501
+
+        self._health_score_delta = health_score_delta
+
+    @property
+    def status_changed(self):
+        &#34;&#34;&#34;Gets the status_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The status_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._status_changed
+
+    @status_changed.setter
+    def status_changed(self, status_changed):
+        &#34;&#34;&#34;Sets the status_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param status_changed: The status_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and status_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `status_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._status_changed = status_changed
+
+    @property
+    def passing_checks_delta(self):
+        &#34;&#34;&#34;Gets the passing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The passing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._passing_checks_delta
+
+    @passing_checks_delta.setter
+    def passing_checks_delta(self, passing_checks_delta):
+        &#34;&#34;&#34;Sets the passing_checks_delta of this DomainMonitorRunComparisonDto.
+
+
+        :param passing_checks_delta: The passing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and passing_checks_delta is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `passing_checks_delta`, must not be `None`&#34;)  # noqa: E501
+
+        self._passing_checks_delta = passing_checks_delta
+
+    @property
+    def failing_checks_delta(self):
+        &#34;&#34;&#34;Gets the failing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The failing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._failing_checks_delta
+
+    @failing_checks_delta.setter
+    def failing_checks_delta(self, failing_checks_delta):
+        &#34;&#34;&#34;Sets the failing_checks_delta of this DomainMonitorRunComparisonDto.
+
+
+        :param failing_checks_delta: The failing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and failing_checks_delta is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `failing_checks_delta`, must not be `None`&#34;)  # noqa: E501
+
+        self._failing_checks_delta = failing_checks_delta
+
+    @property
+    def spf_changed(self):
+        &#34;&#34;&#34;Gets the spf_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The spf_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._spf_changed
+
+    @spf_changed.setter
+    def spf_changed(self, spf_changed):
+        &#34;&#34;&#34;Sets the spf_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param spf_changed: The spf_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and spf_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `spf_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._spf_changed = spf_changed
+
+    @property
+    def dmarc_changed(self):
+        &#34;&#34;&#34;Gets the dmarc_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The dmarc_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._dmarc_changed
+
+    @dmarc_changed.setter
+    def dmarc_changed(self, dmarc_changed):
+        &#34;&#34;&#34;Sets the dmarc_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param dmarc_changed: The dmarc_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and dmarc_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `dmarc_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._dmarc_changed = dmarc_changed
+
+    @property
+    def dmarc_enforced_changed(self):
+        &#34;&#34;&#34;Gets the dmarc_enforced_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The dmarc_enforced_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._dmarc_enforced_changed
+
+    @dmarc_enforced_changed.setter
+    def dmarc_enforced_changed(self, dmarc_enforced_changed):
+        &#34;&#34;&#34;Sets the dmarc_enforced_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param dmarc_enforced_changed: The dmarc_enforced_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and dmarc_enforced_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `dmarc_enforced_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._dmarc_enforced_changed = dmarc_enforced_changed
+
+    @property
+    def mx_changed(self):
+        &#34;&#34;&#34;Gets the mx_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The mx_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._mx_changed
+
+    @mx_changed.setter
+    def mx_changed(self, mx_changed):
+        &#34;&#34;&#34;Sets the mx_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param mx_changed: The mx_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and mx_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `mx_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._mx_changed = mx_changed
+
+    @property
+    def dkim_changed(self):
+        &#34;&#34;&#34;Gets the dkim_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The dkim_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._dkim_changed
+
+    @dkim_changed.setter
+    def dkim_changed(self, dkim_changed):
+        &#34;&#34;&#34;Sets the dkim_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param dkim_changed: The dkim_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and dkim_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `dkim_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._dkim_changed = dkim_changed
+
+    @property
+    def bimi_changed(self):
+        &#34;&#34;&#34;Gets the bimi_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The bimi_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._bimi_changed
+
+    @bimi_changed.setter
+    def bimi_changed(self, bimi_changed):
+        &#34;&#34;&#34;Sets the bimi_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param bimi_changed: The bimi_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and bimi_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `bimi_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._bimi_changed = bimi_changed
+
+    @property
+    def mta_sts_changed(self):
+        &#34;&#34;&#34;Gets the mta_sts_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The mta_sts_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._mta_sts_changed
+
+    @mta_sts_changed.setter
+    def mta_sts_changed(self, mta_sts_changed):
+        &#34;&#34;&#34;Sets the mta_sts_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param mta_sts_changed: The mta_sts_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and mta_sts_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `mta_sts_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._mta_sts_changed = mta_sts_changed
+
+    @property
+    def tls_reporting_changed(self):
+        &#34;&#34;&#34;Gets the tls_reporting_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The tls_reporting_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._tls_reporting_changed
+
+    @tls_reporting_changed.setter
+    def tls_reporting_changed(self, tls_reporting_changed):
+        &#34;&#34;&#34;Sets the tls_reporting_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param tls_reporting_changed: The tls_reporting_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and tls_reporting_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `tls_reporting_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._tls_reporting_changed = tls_reporting_changed
+
+    @property
+    def blacklist_changed(self):
+        &#34;&#34;&#34;Gets the blacklist_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The blacklist_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._blacklist_changed
+
+    @blacklist_changed.setter
+    def blacklist_changed(self, blacklist_changed):
+        &#34;&#34;&#34;Sets the blacklist_changed of this DomainMonitorRunComparisonDto.
+
+
+        :param blacklist_changed: The blacklist_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and blacklist_changed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `blacklist_changed`, must not be `None`&#34;)  # noqa: E501
+
+        self._blacklist_changed = blacklist_changed
+
+    @property
+    def added_insights(self):
+        &#34;&#34;&#34;Gets the added_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The added_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._added_insights
+
+    @added_insights.setter
+    def added_insights(self, added_insights):
+        &#34;&#34;&#34;Sets the added_insights of this DomainMonitorRunComparisonDto.
+
+
+        :param added_insights: The added_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and added_insights is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `added_insights`, must not be `None`&#34;)  # noqa: E501
+
+        self._added_insights = added_insights
+
+    @property
+    def removed_insights(self):
+        &#34;&#34;&#34;Gets the removed_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+        :return: The removed_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._removed_insights
+
+    @removed_insights.setter
+    def removed_insights(self, removed_insights):
+        &#34;&#34;&#34;Sets the removed_insights of this DomainMonitorRunComparisonDto.
+
+
+        :param removed_insights: The removed_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and removed_insights is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `removed_insights`, must not be `None`&#34;)  # noqa: E501
+
+        self._removed_insights = removed_insights
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, DomainMonitorRunComparisonDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, DomainMonitorRunComparisonDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.added_insights"><code class="name">prop <span class="ident">added_insights</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the added_insights of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The added_insights of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def added_insights(self):
+    &#34;&#34;&#34;Gets the added_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The added_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._added_insights</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.baseline"><code class="name">prop <span class="ident">baseline</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the baseline of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The baseline of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: DomainMonitorRunDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def baseline(self):
+    &#34;&#34;&#34;Gets the baseline of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The baseline of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: DomainMonitorRunDto
+    &#34;&#34;&#34;
+    return self._baseline</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.bimi_changed"><code class="name">prop <span class="ident">bimi_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the bimi_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The bimi_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bimi_changed(self):
+    &#34;&#34;&#34;Gets the bimi_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The bimi_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._bimi_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.blacklist_changed"><code class="name">prop <span class="ident">blacklist_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the blacklist_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The blacklist_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def blacklist_changed(self):
+    &#34;&#34;&#34;Gets the blacklist_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The blacklist_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._blacklist_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.current"><code class="name">prop <span class="ident">current</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the current of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The current of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: DomainMonitorRunDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def current(self):
+    &#34;&#34;&#34;Gets the current of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The current of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: DomainMonitorRunDto
+    &#34;&#34;&#34;
+    return self._current</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dkim_changed"><code class="name">prop <span class="ident">dkim_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the dkim_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The dkim_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dkim_changed(self):
+    &#34;&#34;&#34;Gets the dkim_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The dkim_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._dkim_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dmarc_changed"><code class="name">prop <span class="ident">dmarc_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the dmarc_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The dmarc_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dmarc_changed(self):
+    &#34;&#34;&#34;Gets the dmarc_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The dmarc_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._dmarc_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dmarc_enforced_changed"><code class="name">prop <span class="ident">dmarc_enforced_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the dmarc_enforced_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The dmarc_enforced_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dmarc_enforced_changed(self):
+    &#34;&#34;&#34;Gets the dmarc_enforced_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The dmarc_enforced_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._dmarc_enforced_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.failing_checks_delta"><code class="name">prop <span class="ident">failing_checks_delta</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the failing_checks_delta of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The failing_checks_delta of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def failing_checks_delta(self):
+    &#34;&#34;&#34;Gets the failing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The failing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._failing_checks_delta</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.health_score_delta"><code class="name">prop <span class="ident">health_score_delta</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the health_score_delta of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The health_score_delta of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def health_score_delta(self):
+    &#34;&#34;&#34;Gets the health_score_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The health_score_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._health_score_delta</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.mta_sts_changed"><code class="name">prop <span class="ident">mta_sts_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the mta_sts_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The mta_sts_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def mta_sts_changed(self):
+    &#34;&#34;&#34;Gets the mta_sts_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The mta_sts_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._mta_sts_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.mx_changed"><code class="name">prop <span class="ident">mx_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the mx_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The mx_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def mx_changed(self):
+    &#34;&#34;&#34;Gets the mx_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The mx_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._mx_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.passing_checks_delta"><code class="name">prop <span class="ident">passing_checks_delta</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the passing_checks_delta of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The passing_checks_delta of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def passing_checks_delta(self):
+    &#34;&#34;&#34;Gets the passing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The passing_checks_delta of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._passing_checks_delta</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.removed_insights"><code class="name">prop <span class="ident">removed_insights</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the removed_insights of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The removed_insights of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def removed_insights(self):
+    &#34;&#34;&#34;Gets the removed_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The removed_insights of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._removed_insights</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.spf_changed"><code class="name">prop <span class="ident">spf_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the spf_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The spf_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def spf_changed(self):
+    &#34;&#34;&#34;Gets the spf_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The spf_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._spf_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.status_changed"><code class="name">prop <span class="ident">status_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the status_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The status_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def status_changed(self):
+    &#34;&#34;&#34;Gets the status_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The status_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._status_changed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.tls_reporting_changed"><code class="name">prop <span class="ident">tls_reporting_changed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the tls_reporting_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501</p>
+<p>:return: The tls_reporting_changed of this DomainMonitorRunComparisonDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def tls_reporting_changed(self):
+    &#34;&#34;&#34;Gets the tls_reporting_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+
+
+    :return: The tls_reporting_changed of this DomainMonitorRunComparisonDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._tls_reporting_changed</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto">DomainMonitorRunComparisonDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.added_insights" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.added_insights">added_insights</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.attribute_map" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.baseline" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.baseline">baseline</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.bimi_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.bimi_changed">bimi_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.blacklist_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.blacklist_changed">blacklist_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.current" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.current">current</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dkim_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dkim_changed">dkim_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dmarc_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dmarc_changed">dmarc_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dmarc_enforced_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.dmarc_enforced_changed">dmarc_enforced_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.failing_checks_delta" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.failing_checks_delta">failing_checks_delta</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.health_score_delta" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.health_score_delta">health_score_delta</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.mta_sts_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.mta_sts_changed">mta_sts_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.mx_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.mx_changed">mx_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.openapi_types" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.passing_checks_delta" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.passing_checks_delta">passing_checks_delta</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.removed_insights" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.removed_insights">removed_insights</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.spf_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.spf_changed">spf_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.status_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.status_changed">status_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.tls_reporting_changed" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.tls_reporting_changed">tls_reporting_changed</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.to_dict" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.to_str" href="#mailslurp_client.models.domain_monitor_run_comparison_dto.DomainMonitorRunComparisonDto.to_str">to_str</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

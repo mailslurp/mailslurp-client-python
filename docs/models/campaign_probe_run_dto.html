@@ -1,0 +1,1745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.campaign_probe_run_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.campaign_probe_run_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto"><code class="flex name class">
+<span>class <span class="ident">CampaignProbeRunDto</span></span>
+<span>(</span><span>id=None, probe_id=None, user_id=None, status=None, source=None, health_score=None, total_checks=None, passing_checks=None, failing_checks=None, checked_links=None, checked_images=None, link_issue_count=None, image_issue_count=None, compatibility_warning_count=None, compatibility_not_supported_count=None, compatibility_unknown_count=None, html_error_count=None, html_warning_count=None, html_info_count=None, reputation_failure_count=None, attachment_mention_issue_count=None, insights=None, error_message=None, from_address=None, recipient=None, subject=None, message_id=None, source_message_id=None, processing_ms=None, created_at=None, updated_at=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>CampaignProbeRunDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CampaignProbeRunDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;id&#39;: &#39;str&#39;,
+        &#39;probe_id&#39;: &#39;str&#39;,
+        &#39;user_id&#39;: &#39;str&#39;,
+        &#39;status&#39;: &#39;str&#39;,
+        &#39;source&#39;: &#39;str&#39;,
+        &#39;health_score&#39;: &#39;int&#39;,
+        &#39;total_checks&#39;: &#39;int&#39;,
+        &#39;passing_checks&#39;: &#39;int&#39;,
+        &#39;failing_checks&#39;: &#39;int&#39;,
+        &#39;checked_links&#39;: &#39;int&#39;,
+        &#39;checked_images&#39;: &#39;int&#39;,
+        &#39;link_issue_count&#39;: &#39;int&#39;,
+        &#39;image_issue_count&#39;: &#39;int&#39;,
+        &#39;compatibility_warning_count&#39;: &#39;int&#39;,
+        &#39;compatibility_not_supported_count&#39;: &#39;int&#39;,
+        &#39;compatibility_unknown_count&#39;: &#39;int&#39;,
+        &#39;html_error_count&#39;: &#39;int&#39;,
+        &#39;html_warning_count&#39;: &#39;int&#39;,
+        &#39;html_info_count&#39;: &#39;int&#39;,
+        &#39;reputation_failure_count&#39;: &#39;int&#39;,
+        &#39;attachment_mention_issue_count&#39;: &#39;int&#39;,
+        &#39;insights&#39;: &#39;list[str]&#39;,
+        &#39;error_message&#39;: &#39;str&#39;,
+        &#39;from_address&#39;: &#39;str&#39;,
+        &#39;recipient&#39;: &#39;str&#39;,
+        &#39;subject&#39;: &#39;str&#39;,
+        &#39;message_id&#39;: &#39;str&#39;,
+        &#39;source_message_id&#39;: &#39;str&#39;,
+        &#39;processing_ms&#39;: &#39;int&#39;,
+        &#39;created_at&#39;: &#39;datetime&#39;,
+        &#39;updated_at&#39;: &#39;datetime&#39;
+    }
+
+    attribute_map = {
+        &#39;id&#39;: &#39;id&#39;,
+        &#39;probe_id&#39;: &#39;probeId&#39;,
+        &#39;user_id&#39;: &#39;userId&#39;,
+        &#39;status&#39;: &#39;status&#39;,
+        &#39;source&#39;: &#39;source&#39;,
+        &#39;health_score&#39;: &#39;healthScore&#39;,
+        &#39;total_checks&#39;: &#39;totalChecks&#39;,
+        &#39;passing_checks&#39;: &#39;passingChecks&#39;,
+        &#39;failing_checks&#39;: &#39;failingChecks&#39;,
+        &#39;checked_links&#39;: &#39;checkedLinks&#39;,
+        &#39;checked_images&#39;: &#39;checkedImages&#39;,
+        &#39;link_issue_count&#39;: &#39;linkIssueCount&#39;,
+        &#39;image_issue_count&#39;: &#39;imageIssueCount&#39;,
+        &#39;compatibility_warning_count&#39;: &#39;compatibilityWarningCount&#39;,
+        &#39;compatibility_not_supported_count&#39;: &#39;compatibilityNotSupportedCount&#39;,
+        &#39;compatibility_unknown_count&#39;: &#39;compatibilityUnknownCount&#39;,
+        &#39;html_error_count&#39;: &#39;htmlErrorCount&#39;,
+        &#39;html_warning_count&#39;: &#39;htmlWarningCount&#39;,
+        &#39;html_info_count&#39;: &#39;htmlInfoCount&#39;,
+        &#39;reputation_failure_count&#39;: &#39;reputationFailureCount&#39;,
+        &#39;attachment_mention_issue_count&#39;: &#39;attachmentMentionIssueCount&#39;,
+        &#39;insights&#39;: &#39;insights&#39;,
+        &#39;error_message&#39;: &#39;errorMessage&#39;,
+        &#39;from_address&#39;: &#39;fromAddress&#39;,
+        &#39;recipient&#39;: &#39;recipient&#39;,
+        &#39;subject&#39;: &#39;subject&#39;,
+        &#39;message_id&#39;: &#39;messageId&#39;,
+        &#39;source_message_id&#39;: &#39;sourceMessageId&#39;,
+        &#39;processing_ms&#39;: &#39;processingMs&#39;,
+        &#39;created_at&#39;: &#39;createdAt&#39;,
+        &#39;updated_at&#39;: &#39;updatedAt&#39;
+    }
+
+    def __init__(self, id=None, probe_id=None, user_id=None, status=None, source=None, health_score=None, total_checks=None, passing_checks=None, failing_checks=None, checked_links=None, checked_images=None, link_issue_count=None, image_issue_count=None, compatibility_warning_count=None, compatibility_not_supported_count=None, compatibility_unknown_count=None, html_error_count=None, html_warning_count=None, html_info_count=None, reputation_failure_count=None, attachment_mention_issue_count=None, insights=None, error_message=None, from_address=None, recipient=None, subject=None, message_id=None, source_message_id=None, processing_ms=None, created_at=None, updated_at=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;CampaignProbeRunDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._id = None
+        self._probe_id = None
+        self._user_id = None
+        self._status = None
+        self._source = None
+        self._health_score = None
+        self._total_checks = None
+        self._passing_checks = None
+        self._failing_checks = None
+        self._checked_links = None
+        self._checked_images = None
+        self._link_issue_count = None
+        self._image_issue_count = None
+        self._compatibility_warning_count = None
+        self._compatibility_not_supported_count = None
+        self._compatibility_unknown_count = None
+        self._html_error_count = None
+        self._html_warning_count = None
+        self._html_info_count = None
+        self._reputation_failure_count = None
+        self._attachment_mention_issue_count = None
+        self._insights = None
+        self._error_message = None
+        self._from_address = None
+        self._recipient = None
+        self._subject = None
+        self._message_id = None
+        self._source_message_id = None
+        self._processing_ms = None
+        self._created_at = None
+        self._updated_at = None
+        self.discriminator = None
+
+        self.id = id
+        self.probe_id = probe_id
+        self.user_id = user_id
+        self.status = status
+        self.source = source
+        self.health_score = health_score
+        self.total_checks = total_checks
+        self.passing_checks = passing_checks
+        self.failing_checks = failing_checks
+        self.checked_links = checked_links
+        self.checked_images = checked_images
+        self.link_issue_count = link_issue_count
+        self.image_issue_count = image_issue_count
+        self.compatibility_warning_count = compatibility_warning_count
+        self.compatibility_not_supported_count = compatibility_not_supported_count
+        self.compatibility_unknown_count = compatibility_unknown_count
+        self.html_error_count = html_error_count
+        self.html_warning_count = html_warning_count
+        self.html_info_count = html_info_count
+        self.reputation_failure_count = reputation_failure_count
+        self.attachment_mention_issue_count = attachment_mention_issue_count
+        self.insights = insights
+        self.error_message = error_message
+        self.from_address = from_address
+        self.recipient = recipient
+        self.subject = subject
+        self.message_id = message_id
+        self.source_message_id = source_message_id
+        self.processing_ms = processing_ms
+        self.created_at = created_at
+        self.updated_at = updated_at
+
+    @property
+    def id(self):
+        &#34;&#34;&#34;Gets the id of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The id of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        &#34;&#34;&#34;Sets the id of this CampaignProbeRunDto.
+
+
+        :param id: The id of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `id`, must not be `None`&#34;)  # noqa: E501
+
+        self._id = id
+
+    @property
+    def probe_id(self):
+        &#34;&#34;&#34;Gets the probe_id of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The probe_id of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._probe_id
+
+    @probe_id.setter
+    def probe_id(self, probe_id):
+        &#34;&#34;&#34;Sets the probe_id of this CampaignProbeRunDto.
+
+
+        :param probe_id: The probe_id of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and probe_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `probe_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._probe_id = probe_id
+
+    @property
+    def user_id(self):
+        &#34;&#34;&#34;Gets the user_id of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The user_id of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        &#34;&#34;&#34;Sets the user_id of this CampaignProbeRunDto.
+
+
+        :param user_id: The user_id of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and user_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `user_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._user_id = user_id
+
+    @property
+    def status(self):
+        &#34;&#34;&#34;Gets the status of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The status of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        &#34;&#34;&#34;Sets the status of this CampaignProbeRunDto.
+
+
+        :param status: The status of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `status`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;HEALTHY&#34;, &#34;WARNING&#34;, &#34;FAILED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `status` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
+
+    @property
+    def source(self):
+        &#34;&#34;&#34;Gets the source of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The source of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._source
+
+    @source.setter
+    def source(self, source):
+        &#34;&#34;&#34;Sets the source of this CampaignProbeRunDto.
+
+
+        :param source: The source of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and source is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `source`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;DIRECT_API&#34;, &#34;SES_MONITOR&#34;, &#34;USER_SCHEDULE&#34;, &#34;CRON&#34;, &#34;SCHEDULER&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and source not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `source` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(source, allowed_values)
+            )
+
+        self._source = source
+
+    @property
+    def health_score(self):
+        &#34;&#34;&#34;Gets the health_score of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The health_score of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._health_score
+
+    @health_score.setter
+    def health_score(self, health_score):
+        &#34;&#34;&#34;Sets the health_score of this CampaignProbeRunDto.
+
+
+        :param health_score: The health_score of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and health_score is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `health_score`, must not be `None`&#34;)  # noqa: E501
+
+        self._health_score = health_score
+
+    @property
+    def total_checks(self):
+        &#34;&#34;&#34;Gets the total_checks of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The total_checks of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._total_checks
+
+    @total_checks.setter
+    def total_checks(self, total_checks):
+        &#34;&#34;&#34;Sets the total_checks of this CampaignProbeRunDto.
+
+
+        :param total_checks: The total_checks of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and total_checks is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `total_checks`, must not be `None`&#34;)  # noqa: E501
+
+        self._total_checks = total_checks
+
+    @property
+    def passing_checks(self):
+        &#34;&#34;&#34;Gets the passing_checks of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The passing_checks of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._passing_checks
+
+    @passing_checks.setter
+    def passing_checks(self, passing_checks):
+        &#34;&#34;&#34;Sets the passing_checks of this CampaignProbeRunDto.
+
+
+        :param passing_checks: The passing_checks of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and passing_checks is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `passing_checks`, must not be `None`&#34;)  # noqa: E501
+
+        self._passing_checks = passing_checks
+
+    @property
+    def failing_checks(self):
+        &#34;&#34;&#34;Gets the failing_checks of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The failing_checks of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._failing_checks
+
+    @failing_checks.setter
+    def failing_checks(self, failing_checks):
+        &#34;&#34;&#34;Sets the failing_checks of this CampaignProbeRunDto.
+
+
+        :param failing_checks: The failing_checks of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and failing_checks is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `failing_checks`, must not be `None`&#34;)  # noqa: E501
+
+        self._failing_checks = failing_checks
+
+    @property
+    def checked_links(self):
+        &#34;&#34;&#34;Gets the checked_links of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The checked_links of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._checked_links
+
+    @checked_links.setter
+    def checked_links(self, checked_links):
+        &#34;&#34;&#34;Sets the checked_links of this CampaignProbeRunDto.
+
+
+        :param checked_links: The checked_links of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and checked_links is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `checked_links`, must not be `None`&#34;)  # noqa: E501
+
+        self._checked_links = checked_links
+
+    @property
+    def checked_images(self):
+        &#34;&#34;&#34;Gets the checked_images of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The checked_images of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._checked_images
+
+    @checked_images.setter
+    def checked_images(self, checked_images):
+        &#34;&#34;&#34;Sets the checked_images of this CampaignProbeRunDto.
+
+
+        :param checked_images: The checked_images of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and checked_images is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `checked_images`, must not be `None`&#34;)  # noqa: E501
+
+        self._checked_images = checked_images
+
+    @property
+    def link_issue_count(self):
+        &#34;&#34;&#34;Gets the link_issue_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The link_issue_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._link_issue_count
+
+    @link_issue_count.setter
+    def link_issue_count(self, link_issue_count):
+        &#34;&#34;&#34;Sets the link_issue_count of this CampaignProbeRunDto.
+
+
+        :param link_issue_count: The link_issue_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and link_issue_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `link_issue_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._link_issue_count = link_issue_count
+
+    @property
+    def image_issue_count(self):
+        &#34;&#34;&#34;Gets the image_issue_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The image_issue_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._image_issue_count
+
+    @image_issue_count.setter
+    def image_issue_count(self, image_issue_count):
+        &#34;&#34;&#34;Sets the image_issue_count of this CampaignProbeRunDto.
+
+
+        :param image_issue_count: The image_issue_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and image_issue_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `image_issue_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._image_issue_count = image_issue_count
+
+    @property
+    def compatibility_warning_count(self):
+        &#34;&#34;&#34;Gets the compatibility_warning_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The compatibility_warning_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._compatibility_warning_count
+
+    @compatibility_warning_count.setter
+    def compatibility_warning_count(self, compatibility_warning_count):
+        &#34;&#34;&#34;Sets the compatibility_warning_count of this CampaignProbeRunDto.
+
+
+        :param compatibility_warning_count: The compatibility_warning_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and compatibility_warning_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `compatibility_warning_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._compatibility_warning_count = compatibility_warning_count
+
+    @property
+    def compatibility_not_supported_count(self):
+        &#34;&#34;&#34;Gets the compatibility_not_supported_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The compatibility_not_supported_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._compatibility_not_supported_count
+
+    @compatibility_not_supported_count.setter
+    def compatibility_not_supported_count(self, compatibility_not_supported_count):
+        &#34;&#34;&#34;Sets the compatibility_not_supported_count of this CampaignProbeRunDto.
+
+
+        :param compatibility_not_supported_count: The compatibility_not_supported_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and compatibility_not_supported_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `compatibility_not_supported_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._compatibility_not_supported_count = compatibility_not_supported_count
+
+    @property
+    def compatibility_unknown_count(self):
+        &#34;&#34;&#34;Gets the compatibility_unknown_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The compatibility_unknown_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._compatibility_unknown_count
+
+    @compatibility_unknown_count.setter
+    def compatibility_unknown_count(self, compatibility_unknown_count):
+        &#34;&#34;&#34;Sets the compatibility_unknown_count of this CampaignProbeRunDto.
+
+
+        :param compatibility_unknown_count: The compatibility_unknown_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and compatibility_unknown_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `compatibility_unknown_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._compatibility_unknown_count = compatibility_unknown_count
+
+    @property
+    def html_error_count(self):
+        &#34;&#34;&#34;Gets the html_error_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The html_error_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._html_error_count
+
+    @html_error_count.setter
+    def html_error_count(self, html_error_count):
+        &#34;&#34;&#34;Sets the html_error_count of this CampaignProbeRunDto.
+
+
+        :param html_error_count: The html_error_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and html_error_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `html_error_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._html_error_count = html_error_count
+
+    @property
+    def html_warning_count(self):
+        &#34;&#34;&#34;Gets the html_warning_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The html_warning_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._html_warning_count
+
+    @html_warning_count.setter
+    def html_warning_count(self, html_warning_count):
+        &#34;&#34;&#34;Sets the html_warning_count of this CampaignProbeRunDto.
+
+
+        :param html_warning_count: The html_warning_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and html_warning_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `html_warning_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._html_warning_count = html_warning_count
+
+    @property
+    def html_info_count(self):
+        &#34;&#34;&#34;Gets the html_info_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The html_info_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._html_info_count
+
+    @html_info_count.setter
+    def html_info_count(self, html_info_count):
+        &#34;&#34;&#34;Sets the html_info_count of this CampaignProbeRunDto.
+
+
+        :param html_info_count: The html_info_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and html_info_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `html_info_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._html_info_count = html_info_count
+
+    @property
+    def reputation_failure_count(self):
+        &#34;&#34;&#34;Gets the reputation_failure_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The reputation_failure_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._reputation_failure_count
+
+    @reputation_failure_count.setter
+    def reputation_failure_count(self, reputation_failure_count):
+        &#34;&#34;&#34;Sets the reputation_failure_count of this CampaignProbeRunDto.
+
+
+        :param reputation_failure_count: The reputation_failure_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and reputation_failure_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `reputation_failure_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._reputation_failure_count = reputation_failure_count
+
+    @property
+    def attachment_mention_issue_count(self):
+        &#34;&#34;&#34;Gets the attachment_mention_issue_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The attachment_mention_issue_count of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._attachment_mention_issue_count
+
+    @attachment_mention_issue_count.setter
+    def attachment_mention_issue_count(self, attachment_mention_issue_count):
+        &#34;&#34;&#34;Sets the attachment_mention_issue_count of this CampaignProbeRunDto.
+
+
+        :param attachment_mention_issue_count: The attachment_mention_issue_count of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and attachment_mention_issue_count is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `attachment_mention_issue_count`, must not be `None`&#34;)  # noqa: E501
+
+        self._attachment_mention_issue_count = attachment_mention_issue_count
+
+    @property
+    def insights(self):
+        &#34;&#34;&#34;Gets the insights of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The insights of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._insights
+
+    @insights.setter
+    def insights(self, insights):
+        &#34;&#34;&#34;Sets the insights of this CampaignProbeRunDto.
+
+
+        :param insights: The insights of this CampaignProbeRunDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and insights is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `insights`, must not be `None`&#34;)  # noqa: E501
+
+        self._insights = insights
+
+    @property
+    def error_message(self):
+        &#34;&#34;&#34;Gets the error_message of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The error_message of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._error_message
+
+    @error_message.setter
+    def error_message(self, error_message):
+        &#34;&#34;&#34;Sets the error_message of this CampaignProbeRunDto.
+
+
+        :param error_message: The error_message of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._error_message = error_message
+
+    @property
+    def from_address(self):
+        &#34;&#34;&#34;Gets the from_address of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The from_address of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._from_address
+
+    @from_address.setter
+    def from_address(self, from_address):
+        &#34;&#34;&#34;Sets the from_address of this CampaignProbeRunDto.
+
+
+        :param from_address: The from_address of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._from_address = from_address
+
+    @property
+    def recipient(self):
+        &#34;&#34;&#34;Gets the recipient of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The recipient of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._recipient
+
+    @recipient.setter
+    def recipient(self, recipient):
+        &#34;&#34;&#34;Sets the recipient of this CampaignProbeRunDto.
+
+
+        :param recipient: The recipient of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._recipient = recipient
+
+    @property
+    def subject(self):
+        &#34;&#34;&#34;Gets the subject of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The subject of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject):
+        &#34;&#34;&#34;Sets the subject of this CampaignProbeRunDto.
+
+
+        :param subject: The subject of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._subject = subject
+
+    @property
+    def message_id(self):
+        &#34;&#34;&#34;Gets the message_id of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The message_id of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._message_id
+
+    @message_id.setter
+    def message_id(self, message_id):
+        &#34;&#34;&#34;Sets the message_id of this CampaignProbeRunDto.
+
+
+        :param message_id: The message_id of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._message_id = message_id
+
+    @property
+    def source_message_id(self):
+        &#34;&#34;&#34;Gets the source_message_id of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The source_message_id of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._source_message_id
+
+    @source_message_id.setter
+    def source_message_id(self, source_message_id):
+        &#34;&#34;&#34;Sets the source_message_id of this CampaignProbeRunDto.
+
+
+        :param source_message_id: The source_message_id of this CampaignProbeRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._source_message_id = source_message_id
+
+    @property
+    def processing_ms(self):
+        &#34;&#34;&#34;Gets the processing_ms of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The processing_ms of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._processing_ms
+
+    @processing_ms.setter
+    def processing_ms(self, processing_ms):
+        &#34;&#34;&#34;Sets the processing_ms of this CampaignProbeRunDto.
+
+
+        :param processing_ms: The processing_ms of this CampaignProbeRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+
+        self._processing_ms = processing_ms
+
+    @property
+    def created_at(self):
+        &#34;&#34;&#34;Gets the created_at of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The created_at of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        &#34;&#34;&#34;Sets the created_at of this CampaignProbeRunDto.
+
+
+        :param created_at: The created_at of this CampaignProbeRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and created_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `created_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        &#34;&#34;&#34;Gets the updated_at of this CampaignProbeRunDto.  # noqa: E501
+
+
+        :return: The updated_at of this CampaignProbeRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        &#34;&#34;&#34;Sets the updated_at of this CampaignProbeRunDto.
+
+
+        :param updated_at: The updated_at of this CampaignProbeRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and updated_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `updated_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._updated_at = updated_at
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, CampaignProbeRunDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, CampaignProbeRunDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.attachment_mention_issue_count"><code class="name">prop <span class="ident">attachment_mention_issue_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the attachment_mention_issue_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The attachment_mention_issue_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def attachment_mention_issue_count(self):
+    &#34;&#34;&#34;Gets the attachment_mention_issue_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The attachment_mention_issue_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._attachment_mention_issue_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.checked_images"><code class="name">prop <span class="ident">checked_images</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the checked_images of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The checked_images of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def checked_images(self):
+    &#34;&#34;&#34;Gets the checked_images of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The checked_images of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._checked_images</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.checked_links"><code class="name">prop <span class="ident">checked_links</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the checked_links of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The checked_links of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def checked_links(self):
+    &#34;&#34;&#34;Gets the checked_links of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The checked_links of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._checked_links</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_not_supported_count"><code class="name">prop <span class="ident">compatibility_not_supported_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the compatibility_not_supported_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The compatibility_not_supported_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def compatibility_not_supported_count(self):
+    &#34;&#34;&#34;Gets the compatibility_not_supported_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The compatibility_not_supported_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._compatibility_not_supported_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_unknown_count"><code class="name">prop <span class="ident">compatibility_unknown_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the compatibility_unknown_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The compatibility_unknown_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def compatibility_unknown_count(self):
+    &#34;&#34;&#34;Gets the compatibility_unknown_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The compatibility_unknown_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._compatibility_unknown_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_warning_count"><code class="name">prop <span class="ident">compatibility_warning_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the compatibility_warning_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The compatibility_warning_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def compatibility_warning_count(self):
+    &#34;&#34;&#34;Gets the compatibility_warning_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The compatibility_warning_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._compatibility_warning_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.created_at"><code class="name">prop <span class="ident">created_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the created_at of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The created_at of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def created_at(self):
+    &#34;&#34;&#34;Gets the created_at of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The created_at of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._created_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.error_message"><code class="name">prop <span class="ident">error_message</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the error_message of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The error_message of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def error_message(self):
+    &#34;&#34;&#34;Gets the error_message of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The error_message of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._error_message</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.failing_checks"><code class="name">prop <span class="ident">failing_checks</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the failing_checks of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The failing_checks of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def failing_checks(self):
+    &#34;&#34;&#34;Gets the failing_checks of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The failing_checks of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._failing_checks</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.from_address"><code class="name">prop <span class="ident">from_address</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the from_address of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The from_address of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def from_address(self):
+    &#34;&#34;&#34;Gets the from_address of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The from_address of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._from_address</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.health_score"><code class="name">prop <span class="ident">health_score</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the health_score of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The health_score of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def health_score(self):
+    &#34;&#34;&#34;Gets the health_score of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The health_score of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._health_score</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_error_count"><code class="name">prop <span class="ident">html_error_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the html_error_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The html_error_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def html_error_count(self):
+    &#34;&#34;&#34;Gets the html_error_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The html_error_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._html_error_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_info_count"><code class="name">prop <span class="ident">html_info_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the html_info_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The html_info_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def html_info_count(self):
+    &#34;&#34;&#34;Gets the html_info_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The html_info_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._html_info_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_warning_count"><code class="name">prop <span class="ident">html_warning_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the html_warning_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The html_warning_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def html_warning_count(self):
+    &#34;&#34;&#34;Gets the html_warning_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The html_warning_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._html_warning_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.id"><code class="name">prop <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the id of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The id of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def id(self):
+    &#34;&#34;&#34;Gets the id of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The id of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.image_issue_count"><code class="name">prop <span class="ident">image_issue_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the image_issue_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The image_issue_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def image_issue_count(self):
+    &#34;&#34;&#34;Gets the image_issue_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The image_issue_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._image_issue_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.insights"><code class="name">prop <span class="ident">insights</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the insights of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The insights of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def insights(self):
+    &#34;&#34;&#34;Gets the insights of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The insights of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._insights</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.link_issue_count"><code class="name">prop <span class="ident">link_issue_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the link_issue_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The link_issue_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def link_issue_count(self):
+    &#34;&#34;&#34;Gets the link_issue_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The link_issue_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._link_issue_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.message_id"><code class="name">prop <span class="ident">message_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the message_id of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The message_id of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def message_id(self):
+    &#34;&#34;&#34;Gets the message_id of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The message_id of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._message_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.passing_checks"><code class="name">prop <span class="ident">passing_checks</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the passing_checks of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The passing_checks of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def passing_checks(self):
+    &#34;&#34;&#34;Gets the passing_checks of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The passing_checks of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._passing_checks</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.probe_id"><code class="name">prop <span class="ident">probe_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the probe_id of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The probe_id of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def probe_id(self):
+    &#34;&#34;&#34;Gets the probe_id of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The probe_id of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._probe_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.processing_ms"><code class="name">prop <span class="ident">processing_ms</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the processing_ms of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The processing_ms of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def processing_ms(self):
+    &#34;&#34;&#34;Gets the processing_ms of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The processing_ms of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._processing_ms</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.recipient"><code class="name">prop <span class="ident">recipient</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the recipient of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The recipient of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def recipient(self):
+    &#34;&#34;&#34;Gets the recipient of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The recipient of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._recipient</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.reputation_failure_count"><code class="name">prop <span class="ident">reputation_failure_count</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the reputation_failure_count of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The reputation_failure_count of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def reputation_failure_count(self):
+    &#34;&#34;&#34;Gets the reputation_failure_count of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The reputation_failure_count of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._reputation_failure_count</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.source"><code class="name">prop <span class="ident">source</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the source of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The source of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def source(self):
+    &#34;&#34;&#34;Gets the source of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The source of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._source</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.source_message_id"><code class="name">prop <span class="ident">source_message_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the source_message_id of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The source_message_id of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def source_message_id(self):
+    &#34;&#34;&#34;Gets the source_message_id of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The source_message_id of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._source_message_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.status"><code class="name">prop <span class="ident">status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the status of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The status of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def status(self):
+    &#34;&#34;&#34;Gets the status of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The status of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.subject"><code class="name">prop <span class="ident">subject</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the subject of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The subject of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def subject(self):
+    &#34;&#34;&#34;Gets the subject of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The subject of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._subject</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.total_checks"><code class="name">prop <span class="ident">total_checks</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the total_checks of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The total_checks of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_checks(self):
+    &#34;&#34;&#34;Gets the total_checks of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The total_checks of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._total_checks</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.updated_at"><code class="name">prop <span class="ident">updated_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the updated_at of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The updated_at of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def updated_at(self):
+    &#34;&#34;&#34;Gets the updated_at of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The updated_at of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._updated_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.user_id"><code class="name">prop <span class="ident">user_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the user_id of this CampaignProbeRunDto.
+# noqa: E501</p>
+<p>:return: The user_id of this CampaignProbeRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def user_id(self):
+    &#34;&#34;&#34;Gets the user_id of this CampaignProbeRunDto.  # noqa: E501
+
+
+    :return: The user_id of this CampaignProbeRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._user_id</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto">CampaignProbeRunDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.attachment_mention_issue_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.attachment_mention_issue_count">attachment_mention_issue_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.attribute_map" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.checked_images" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.checked_images">checked_images</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.checked_links" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.checked_links">checked_links</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_not_supported_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_not_supported_count">compatibility_not_supported_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_unknown_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_unknown_count">compatibility_unknown_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_warning_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.compatibility_warning_count">compatibility_warning_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.created_at" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.created_at">created_at</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.error_message" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.error_message">error_message</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.failing_checks" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.failing_checks">failing_checks</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.from_address" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.from_address">from_address</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.health_score" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.health_score">health_score</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_error_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_error_count">html_error_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_info_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_info_count">html_info_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_warning_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.html_warning_count">html_warning_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.id" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.id">id</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.image_issue_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.image_issue_count">image_issue_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.insights" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.insights">insights</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.link_issue_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.link_issue_count">link_issue_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.message_id" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.message_id">message_id</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.openapi_types" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.passing_checks" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.passing_checks">passing_checks</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.probe_id" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.probe_id">probe_id</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.processing_ms" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.processing_ms">processing_ms</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.recipient" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.recipient">recipient</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.reputation_failure_count" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.reputation_failure_count">reputation_failure_count</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.source" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.source">source</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.source_message_id" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.source_message_id">source_message_id</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.status" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.status">status</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.subject" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.subject">subject</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.to_dict" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.to_str" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.total_checks" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.total_checks">total_checks</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.updated_at" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.updated_at">updated_at</a></code></li>
+<li><code><a title="mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.user_id" href="#mailslurp_client.models.campaign_probe_run_dto.CampaignProbeRunDto.user_id">user_id</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

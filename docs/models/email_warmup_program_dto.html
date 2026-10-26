@@ -1,0 +1,2149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.email_warmup_program_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.email_warmup_program_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto"><code class="flex name class">
+<span>class <span class="ident">EmailWarmupProgramDto</span></span>
+<span>(</span><span>id=None, connection_id=None, sender_email=None, name=None, customer_intent=None, execution_policy=None, program_mode=None, status=None, blockers=None, current_daily_volume=None, goal_daily_volume=None, schedule_preset=None, ramp_duration_days=None, maintenance_enabled=None, maintenance_daily_volume=None, send_window_start=None, send_window_end=None, time_zone=None, requested_coverage=None, resolved_coverage=None, baseline_test_id=None, baseline_source=None, content_source=None, content=None, content_hash=None, sender_ownership_attested_at=None, permission_based_sending_attested_at=None, attestation_policy_version=None, policy_version=None, content_policy_version=None, recipient_policy_version=None, next_action_at=None, started_at=None, completed_at=None, completion_code=None, version=None, created_at=None, updated_at=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>EmailWarmupProgramDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EmailWarmupProgramDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;id&#39;: &#39;str&#39;,
+        &#39;connection_id&#39;: &#39;str&#39;,
+        &#39;sender_email&#39;: &#39;str&#39;,
+        &#39;name&#39;: &#39;str&#39;,
+        &#39;customer_intent&#39;: &#39;str&#39;,
+        &#39;execution_policy&#39;: &#39;str&#39;,
+        &#39;program_mode&#39;: &#39;str&#39;,
+        &#39;status&#39;: &#39;str&#39;,
+        &#39;blockers&#39;: &#39;list[str]&#39;,
+        &#39;current_daily_volume&#39;: &#39;int&#39;,
+        &#39;goal_daily_volume&#39;: &#39;int&#39;,
+        &#39;schedule_preset&#39;: &#39;str&#39;,
+        &#39;ramp_duration_days&#39;: &#39;int&#39;,
+        &#39;maintenance_enabled&#39;: &#39;bool&#39;,
+        &#39;maintenance_daily_volume&#39;: &#39;int&#39;,
+        &#39;send_window_start&#39;: &#39;str&#39;,
+        &#39;send_window_end&#39;: &#39;str&#39;,
+        &#39;time_zone&#39;: &#39;str&#39;,
+        &#39;requested_coverage&#39;: &#39;str&#39;,
+        &#39;resolved_coverage&#39;: &#39;str&#39;,
+        &#39;baseline_test_id&#39;: &#39;str&#39;,
+        &#39;baseline_source&#39;: &#39;str&#39;,
+        &#39;content_source&#39;: &#39;str&#39;,
+        &#39;content&#39;: &#39;EmailWarmupContentOptions&#39;,
+        &#39;content_hash&#39;: &#39;str&#39;,
+        &#39;sender_ownership_attested_at&#39;: &#39;datetime&#39;,
+        &#39;permission_based_sending_attested_at&#39;: &#39;datetime&#39;,
+        &#39;attestation_policy_version&#39;: &#39;str&#39;,
+        &#39;policy_version&#39;: &#39;str&#39;,
+        &#39;content_policy_version&#39;: &#39;str&#39;,
+        &#39;recipient_policy_version&#39;: &#39;str&#39;,
+        &#39;next_action_at&#39;: &#39;datetime&#39;,
+        &#39;started_at&#39;: &#39;datetime&#39;,
+        &#39;completed_at&#39;: &#39;datetime&#39;,
+        &#39;completion_code&#39;: &#39;str&#39;,
+        &#39;version&#39;: &#39;int&#39;,
+        &#39;created_at&#39;: &#39;datetime&#39;,
+        &#39;updated_at&#39;: &#39;datetime&#39;
+    }
+
+    attribute_map = {
+        &#39;id&#39;: &#39;id&#39;,
+        &#39;connection_id&#39;: &#39;connectionId&#39;,
+        &#39;sender_email&#39;: &#39;senderEmail&#39;,
+        &#39;name&#39;: &#39;name&#39;,
+        &#39;customer_intent&#39;: &#39;customerIntent&#39;,
+        &#39;execution_policy&#39;: &#39;executionPolicy&#39;,
+        &#39;program_mode&#39;: &#39;programMode&#39;,
+        &#39;status&#39;: &#39;status&#39;,
+        &#39;blockers&#39;: &#39;blockers&#39;,
+        &#39;current_daily_volume&#39;: &#39;currentDailyVolume&#39;,
+        &#39;goal_daily_volume&#39;: &#39;goalDailyVolume&#39;,
+        &#39;schedule_preset&#39;: &#39;schedulePreset&#39;,
+        &#39;ramp_duration_days&#39;: &#39;rampDurationDays&#39;,
+        &#39;maintenance_enabled&#39;: &#39;maintenanceEnabled&#39;,
+        &#39;maintenance_daily_volume&#39;: &#39;maintenanceDailyVolume&#39;,
+        &#39;send_window_start&#39;: &#39;sendWindowStart&#39;,
+        &#39;send_window_end&#39;: &#39;sendWindowEnd&#39;,
+        &#39;time_zone&#39;: &#39;timeZone&#39;,
+        &#39;requested_coverage&#39;: &#39;requestedCoverage&#39;,
+        &#39;resolved_coverage&#39;: &#39;resolvedCoverage&#39;,
+        &#39;baseline_test_id&#39;: &#39;baselineTestId&#39;,
+        &#39;baseline_source&#39;: &#39;baselineSource&#39;,
+        &#39;content_source&#39;: &#39;contentSource&#39;,
+        &#39;content&#39;: &#39;content&#39;,
+        &#39;content_hash&#39;: &#39;contentHash&#39;,
+        &#39;sender_ownership_attested_at&#39;: &#39;senderOwnershipAttestedAt&#39;,
+        &#39;permission_based_sending_attested_at&#39;: &#39;permissionBasedSendingAttestedAt&#39;,
+        &#39;attestation_policy_version&#39;: &#39;attestationPolicyVersion&#39;,
+        &#39;policy_version&#39;: &#39;policyVersion&#39;,
+        &#39;content_policy_version&#39;: &#39;contentPolicyVersion&#39;,
+        &#39;recipient_policy_version&#39;: &#39;recipientPolicyVersion&#39;,
+        &#39;next_action_at&#39;: &#39;nextActionAt&#39;,
+        &#39;started_at&#39;: &#39;startedAt&#39;,
+        &#39;completed_at&#39;: &#39;completedAt&#39;,
+        &#39;completion_code&#39;: &#39;completionCode&#39;,
+        &#39;version&#39;: &#39;version&#39;,
+        &#39;created_at&#39;: &#39;createdAt&#39;,
+        &#39;updated_at&#39;: &#39;updatedAt&#39;
+    }
+
+    def __init__(self, id=None, connection_id=None, sender_email=None, name=None, customer_intent=None, execution_policy=None, program_mode=None, status=None, blockers=None, current_daily_volume=None, goal_daily_volume=None, schedule_preset=None, ramp_duration_days=None, maintenance_enabled=None, maintenance_daily_volume=None, send_window_start=None, send_window_end=None, time_zone=None, requested_coverage=None, resolved_coverage=None, baseline_test_id=None, baseline_source=None, content_source=None, content=None, content_hash=None, sender_ownership_attested_at=None, permission_based_sending_attested_at=None, attestation_policy_version=None, policy_version=None, content_policy_version=None, recipient_policy_version=None, next_action_at=None, started_at=None, completed_at=None, completion_code=None, version=None, created_at=None, updated_at=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;EmailWarmupProgramDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._id = None
+        self._connection_id = None
+        self._sender_email = None
+        self._name = None
+        self._customer_intent = None
+        self._execution_policy = None
+        self._program_mode = None
+        self._status = None
+        self._blockers = None
+        self._current_daily_volume = None
+        self._goal_daily_volume = None
+        self._schedule_preset = None
+        self._ramp_duration_days = None
+        self._maintenance_enabled = None
+        self._maintenance_daily_volume = None
+        self._send_window_start = None
+        self._send_window_end = None
+        self._time_zone = None
+        self._requested_coverage = None
+        self._resolved_coverage = None
+        self._baseline_test_id = None
+        self._baseline_source = None
+        self._content_source = None
+        self._content = None
+        self._content_hash = None
+        self._sender_ownership_attested_at = None
+        self._permission_based_sending_attested_at = None
+        self._attestation_policy_version = None
+        self._policy_version = None
+        self._content_policy_version = None
+        self._recipient_policy_version = None
+        self._next_action_at = None
+        self._started_at = None
+        self._completed_at = None
+        self._completion_code = None
+        self._version = None
+        self._created_at = None
+        self._updated_at = None
+        self.discriminator = None
+
+        self.id = id
+        self.connection_id = connection_id
+        self.sender_email = sender_email
+        self.name = name
+        self.customer_intent = customer_intent
+        self.execution_policy = execution_policy
+        self.program_mode = program_mode
+        self.status = status
+        self.blockers = blockers
+        self.current_daily_volume = current_daily_volume
+        self.goal_daily_volume = goal_daily_volume
+        self.schedule_preset = schedule_preset
+        self.ramp_duration_days = ramp_duration_days
+        self.maintenance_enabled = maintenance_enabled
+        self.maintenance_daily_volume = maintenance_daily_volume
+        self.send_window_start = send_window_start
+        self.send_window_end = send_window_end
+        self.time_zone = time_zone
+        self.requested_coverage = requested_coverage
+        self.resolved_coverage = resolved_coverage
+        self.baseline_test_id = baseline_test_id
+        self.baseline_source = baseline_source
+        self.content_source = content_source
+        self.content = content
+        self.content_hash = content_hash
+        self.sender_ownership_attested_at = sender_ownership_attested_at
+        self.permission_based_sending_attested_at = permission_based_sending_attested_at
+        self.attestation_policy_version = attestation_policy_version
+        self.policy_version = policy_version
+        self.content_policy_version = content_policy_version
+        self.recipient_policy_version = recipient_policy_version
+        self.next_action_at = next_action_at
+        self.started_at = started_at
+        self.completed_at = completed_at
+        self.completion_code = completion_code
+        self.version = version
+        self.created_at = created_at
+        self.updated_at = updated_at
+
+    @property
+    def id(self):
+        &#34;&#34;&#34;Gets the id of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The id of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        &#34;&#34;&#34;Sets the id of this EmailWarmupProgramDto.
+
+
+        :param id: The id of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `id`, must not be `None`&#34;)  # noqa: E501
+
+        self._id = id
+
+    @property
+    def connection_id(self):
+        &#34;&#34;&#34;Gets the connection_id of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The connection_id of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._connection_id
+
+    @connection_id.setter
+    def connection_id(self, connection_id):
+        &#34;&#34;&#34;Sets the connection_id of this EmailWarmupProgramDto.
+
+
+        :param connection_id: The connection_id of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and connection_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `connection_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._connection_id = connection_id
+
+    @property
+    def sender_email(self):
+        &#34;&#34;&#34;Gets the sender_email of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The sender_email of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._sender_email
+
+    @sender_email.setter
+    def sender_email(self, sender_email):
+        &#34;&#34;&#34;Sets the sender_email of this EmailWarmupProgramDto.
+
+
+        :param sender_email: The sender_email of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and sender_email is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `sender_email`, must not be `None`&#34;)  # noqa: E501
+
+        self._sender_email = sender_email
+
+    @property
+    def name(self):
+        &#34;&#34;&#34;Gets the name of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The name of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        &#34;&#34;&#34;Sets the name of this EmailWarmupProgramDto.
+
+
+        :param name: The name of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `name`, must not be `None`&#34;)  # noqa: E501
+
+        self._name = name
+
+    @property
+    def customer_intent(self):
+        &#34;&#34;&#34;Gets the customer_intent of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The customer_intent of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._customer_intent
+
+    @customer_intent.setter
+    def customer_intent(self, customer_intent):
+        &#34;&#34;&#34;Sets the customer_intent of this EmailWarmupProgramDto.
+
+
+        :param customer_intent: The customer_intent of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and customer_intent is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `customer_intent`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;NEW_SENDER_WARMUP&#34;, &#34;EXISTING_SENDER_REPAIR&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and customer_intent not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `customer_intent` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(customer_intent, allowed_values)
+            )
+
+        self._customer_intent = customer_intent
+
+    @property
+    def execution_policy(self):
+        &#34;&#34;&#34;Gets the execution_policy of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The execution_policy of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._execution_policy
+
+    @execution_policy.setter
+    def execution_policy(self, execution_policy):
+        &#34;&#34;&#34;Sets the execution_policy of this EmailWarmupProgramDto.
+
+
+        :param execution_policy: The execution_policy of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and execution_policy is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `execution_policy`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;LOW_VOLUME_MAILBOX_RAMP&#34;, &#34;HIGH_VOLUME_INFRASTRUCTURE_RAMP&#34;, &#34;ASSISTED_CAMPAIGN_RAMP&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and execution_policy not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `execution_policy` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(execution_policy, allowed_values)
+            )
+
+        self._execution_policy = execution_policy
+
+    @property
+    def program_mode(self):
+        &#34;&#34;&#34;Gets the program_mode of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The program_mode of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._program_mode
+
+    @program_mode.setter
+    def program_mode(self, program_mode):
+        &#34;&#34;&#34;Sets the program_mode of this EmailWarmupProgramDto.
+
+
+        :param program_mode: The program_mode of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and program_mode is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `program_mode`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;ASSISTED&#34;, &#34;NATIVE_SEND&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and program_mode not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `program_mode` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(program_mode, allowed_values)
+            )
+
+        self._program_mode = program_mode
+
+    @property
+    def status(self):
+        &#34;&#34;&#34;Gets the status of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The status of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        &#34;&#34;&#34;Sets the status of this EmailWarmupProgramDto.
+
+
+        :param status: The status of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `status`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;DRAFT&#34;, &#34;ESTABLISHING_BASELINE&#34;, &#34;READY&#34;, &#34;ACTIVE&#34;, &#34;VERIFYING&#34;, &#34;PAUSED_CUSTOMER&#34;, &#34;PAUSED_CONNECTION&#34;, &#34;PAUSED_SAFETY&#34;, &#34;PAUSED_BILLING&#34;, &#34;PAUSED_CAPACITY&#34;, &#34;COMPLETED&#34;, &#34;MONITORING&#34;, &#34;STOPPED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `status` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
+
+    @property
+    def blockers(self):
+        &#34;&#34;&#34;Gets the blockers of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The blockers of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._blockers
+
+    @blockers.setter
+    def blockers(self, blockers):
+        &#34;&#34;&#34;Sets the blockers of this EmailWarmupProgramDto.
+
+
+        :param blockers: The blockers of this EmailWarmupProgramDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and blockers is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `blockers`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;API_DISABLED&#34;, &#34;PROVIDER_DISABLED&#34;, &#34;CONNECTION_NOT_VERIFIED&#34;, &#34;CONNECTION_VERIFICATION_STALE&#34;, &#34;SENDER_IDENTITY_CHANGED&#34;, &#34;CONTROLLED_MX_UNAVAILABLE&#34;, &#34;CHECKPOINTS_DISABLED&#34;, &#34;PREMIUM_COVERAGE_REQUIRED&#34;, &#34;EXECUTION_DISABLED&#34;, &#34;BILLING_NOT_READY&#34;]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(blockers).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                &#34;Invalid values for `blockers` [{0}], must be a subset of [{1}]&#34;  # noqa: E501
+                .format(&#34;, &#34;.join(map(str, set(blockers) - set(allowed_values))),  # noqa: E501
+                        &#34;, &#34;.join(map(str, allowed_values)))
+            )
+
+        self._blockers = blockers
+
+    @property
+    def current_daily_volume(self):
+        &#34;&#34;&#34;Gets the current_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The current_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._current_daily_volume
+
+    @current_daily_volume.setter
+    def current_daily_volume(self, current_daily_volume):
+        &#34;&#34;&#34;Sets the current_daily_volume of this EmailWarmupProgramDto.
+
+
+        :param current_daily_volume: The current_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and current_daily_volume is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `current_daily_volume`, must not be `None`&#34;)  # noqa: E501
+
+        self._current_daily_volume = current_daily_volume
+
+    @property
+    def goal_daily_volume(self):
+        &#34;&#34;&#34;Gets the goal_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The goal_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._goal_daily_volume
+
+    @goal_daily_volume.setter
+    def goal_daily_volume(self, goal_daily_volume):
+        &#34;&#34;&#34;Sets the goal_daily_volume of this EmailWarmupProgramDto.
+
+
+        :param goal_daily_volume: The goal_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and goal_daily_volume is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `goal_daily_volume`, must not be `None`&#34;)  # noqa: E501
+
+        self._goal_daily_volume = goal_daily_volume
+
+    @property
+    def schedule_preset(self):
+        &#34;&#34;&#34;Gets the schedule_preset of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The schedule_preset of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._schedule_preset
+
+    @schedule_preset.setter
+    def schedule_preset(self, schedule_preset):
+        &#34;&#34;&#34;Sets the schedule_preset of this EmailWarmupProgramDto.
+
+
+        :param schedule_preset: The schedule_preset of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and schedule_preset is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `schedule_preset`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;GENTLE&#34;, &#34;STANDARD&#34;, &#34;REPAIR&#34;, &#34;CUSTOM&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and schedule_preset not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `schedule_preset` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(schedule_preset, allowed_values)
+            )
+
+        self._schedule_preset = schedule_preset
+
+    @property
+    def ramp_duration_days(self):
+        &#34;&#34;&#34;Gets the ramp_duration_days of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The ramp_duration_days of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._ramp_duration_days
+
+    @ramp_duration_days.setter
+    def ramp_duration_days(self, ramp_duration_days):
+        &#34;&#34;&#34;Sets the ramp_duration_days of this EmailWarmupProgramDto.
+
+
+        :param ramp_duration_days: The ramp_duration_days of this EmailWarmupProgramDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and ramp_duration_days is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `ramp_duration_days`, must not be `None`&#34;)  # noqa: E501
+
+        self._ramp_duration_days = ramp_duration_days
+
+    @property
+    def maintenance_enabled(self):
+        &#34;&#34;&#34;Gets the maintenance_enabled of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The maintenance_enabled of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._maintenance_enabled
+
+    @maintenance_enabled.setter
+    def maintenance_enabled(self, maintenance_enabled):
+        &#34;&#34;&#34;Sets the maintenance_enabled of this EmailWarmupProgramDto.
+
+
+        :param maintenance_enabled: The maintenance_enabled of this EmailWarmupProgramDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and maintenance_enabled is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `maintenance_enabled`, must not be `None`&#34;)  # noqa: E501
+
+        self._maintenance_enabled = maintenance_enabled
+
+    @property
+    def maintenance_daily_volume(self):
+        &#34;&#34;&#34;Gets the maintenance_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The maintenance_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._maintenance_daily_volume
+
+    @maintenance_daily_volume.setter
+    def maintenance_daily_volume(self, maintenance_daily_volume):
+        &#34;&#34;&#34;Sets the maintenance_daily_volume of this EmailWarmupProgramDto.
+
+
+        :param maintenance_daily_volume: The maintenance_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and maintenance_daily_volume is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `maintenance_daily_volume`, must not be `None`&#34;)  # noqa: E501
+
+        self._maintenance_daily_volume = maintenance_daily_volume
+
+    @property
+    def send_window_start(self):
+        &#34;&#34;&#34;Gets the send_window_start of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The send_window_start of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._send_window_start
+
+    @send_window_start.setter
+    def send_window_start(self, send_window_start):
+        &#34;&#34;&#34;Sets the send_window_start of this EmailWarmupProgramDto.
+
+
+        :param send_window_start: The send_window_start of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and send_window_start is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `send_window_start`, must not be `None`&#34;)  # noqa: E501
+
+        self._send_window_start = send_window_start
+
+    @property
+    def send_window_end(self):
+        &#34;&#34;&#34;Gets the send_window_end of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The send_window_end of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._send_window_end
+
+    @send_window_end.setter
+    def send_window_end(self, send_window_end):
+        &#34;&#34;&#34;Sets the send_window_end of this EmailWarmupProgramDto.
+
+
+        :param send_window_end: The send_window_end of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and send_window_end is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `send_window_end`, must not be `None`&#34;)  # noqa: E501
+
+        self._send_window_end = send_window_end
+
+    @property
+    def time_zone(self):
+        &#34;&#34;&#34;Gets the time_zone of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The time_zone of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        &#34;&#34;&#34;Sets the time_zone of this EmailWarmupProgramDto.
+
+
+        :param time_zone: The time_zone of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and time_zone is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `time_zone`, must not be `None`&#34;)  # noqa: E501
+
+        self._time_zone = time_zone
+
+    @property
+    def requested_coverage(self):
+        &#34;&#34;&#34;Gets the requested_coverage of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The requested_coverage of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._requested_coverage
+
+    @requested_coverage.setter
+    def requested_coverage(self, requested_coverage):
+        &#34;&#34;&#34;Sets the requested_coverage of this EmailWarmupProgramDto.
+
+
+        :param requested_coverage: The requested_coverage of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and requested_coverage is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `requested_coverage`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;AUTO&#34;, &#34;CONTROLLED&#34;, &#34;CORE&#34;, &#34;EXPANDED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and requested_coverage not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `requested_coverage` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(requested_coverage, allowed_values)
+            )
+
+        self._requested_coverage = requested_coverage
+
+    @property
+    def resolved_coverage(self):
+        &#34;&#34;&#34;Gets the resolved_coverage of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The resolved_coverage of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._resolved_coverage
+
+    @resolved_coverage.setter
+    def resolved_coverage(self, resolved_coverage):
+        &#34;&#34;&#34;Sets the resolved_coverage of this EmailWarmupProgramDto.
+
+
+        :param resolved_coverage: The resolved_coverage of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and resolved_coverage is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `resolved_coverage`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;AUTO&#34;, &#34;CONTROLLED&#34;, &#34;CORE&#34;, &#34;EXPANDED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and resolved_coverage not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `resolved_coverage` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(resolved_coverage, allowed_values)
+            )
+
+        self._resolved_coverage = resolved_coverage
+
+    @property
+    def baseline_test_id(self):
+        &#34;&#34;&#34;Gets the baseline_test_id of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The baseline_test_id of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._baseline_test_id
+
+    @baseline_test_id.setter
+    def baseline_test_id(self, baseline_test_id):
+        &#34;&#34;&#34;Sets the baseline_test_id of this EmailWarmupProgramDto.
+
+
+        :param baseline_test_id: The baseline_test_id of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._baseline_test_id = baseline_test_id
+
+    @property
+    def baseline_source(self):
+        &#34;&#34;&#34;Gets the baseline_source of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The baseline_source of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._baseline_source
+
+    @baseline_source.setter
+    def baseline_source(self, baseline_source):
+        &#34;&#34;&#34;Sets the baseline_source of this EmailWarmupProgramDto.
+
+
+        :param baseline_source: The baseline_source of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and baseline_source is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `baseline_source`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;SUPPLIED&#34;, &#34;PROGRAM_CHECKPOINT&#34;, &#34;NONE&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and baseline_source not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `baseline_source` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(baseline_source, allowed_values)
+            )
+
+        self._baseline_source = baseline_source
+
+    @property
+    def content_source(self):
+        &#34;&#34;&#34;Gets the content_source of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The content_source of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._content_source
+
+    @content_source.setter
+    def content_source(self, content_source):
+        &#34;&#34;&#34;Sets the content_source of this EmailWarmupProgramDto.
+
+
+        :param content_source: The content_source of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and content_source is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `content_source`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;MANAGED_CONTROL&#34;, &#34;CUSTOM_TEMPLATE&#34;, &#34;AI_ASSISTED_TEMPLATE&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and content_source not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `content_source` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(content_source, allowed_values)
+            )
+
+        self._content_source = content_source
+
+    @property
+    def content(self):
+        &#34;&#34;&#34;Gets the content of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The content of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: EmailWarmupContentOptions
+        &#34;&#34;&#34;
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        &#34;&#34;&#34;Sets the content of this EmailWarmupProgramDto.
+
+
+        :param content: The content of this EmailWarmupProgramDto.  # noqa: E501
+        :type: EmailWarmupContentOptions
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and content is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `content`, must not be `None`&#34;)  # noqa: E501
+
+        self._content = content
+
+    @property
+    def content_hash(self):
+        &#34;&#34;&#34;Gets the content_hash of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The content_hash of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._content_hash
+
+    @content_hash.setter
+    def content_hash(self, content_hash):
+        &#34;&#34;&#34;Sets the content_hash of this EmailWarmupProgramDto.
+
+
+        :param content_hash: The content_hash of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and content_hash is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `content_hash`, must not be `None`&#34;)  # noqa: E501
+
+        self._content_hash = content_hash
+
+    @property
+    def sender_ownership_attested_at(self):
+        &#34;&#34;&#34;Gets the sender_ownership_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The sender_ownership_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._sender_ownership_attested_at
+
+    @sender_ownership_attested_at.setter
+    def sender_ownership_attested_at(self, sender_ownership_attested_at):
+        &#34;&#34;&#34;Sets the sender_ownership_attested_at of this EmailWarmupProgramDto.
+
+
+        :param sender_ownership_attested_at: The sender_ownership_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and sender_ownership_attested_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `sender_ownership_attested_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._sender_ownership_attested_at = sender_ownership_attested_at
+
+    @property
+    def permission_based_sending_attested_at(self):
+        &#34;&#34;&#34;Gets the permission_based_sending_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The permission_based_sending_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._permission_based_sending_attested_at
+
+    @permission_based_sending_attested_at.setter
+    def permission_based_sending_attested_at(self, permission_based_sending_attested_at):
+        &#34;&#34;&#34;Sets the permission_based_sending_attested_at of this EmailWarmupProgramDto.
+
+
+        :param permission_based_sending_attested_at: The permission_based_sending_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and permission_based_sending_attested_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `permission_based_sending_attested_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._permission_based_sending_attested_at = permission_based_sending_attested_at
+
+    @property
+    def attestation_policy_version(self):
+        &#34;&#34;&#34;Gets the attestation_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The attestation_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._attestation_policy_version
+
+    @attestation_policy_version.setter
+    def attestation_policy_version(self, attestation_policy_version):
+        &#34;&#34;&#34;Sets the attestation_policy_version of this EmailWarmupProgramDto.
+
+
+        :param attestation_policy_version: The attestation_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and attestation_policy_version is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `attestation_policy_version`, must not be `None`&#34;)  # noqa: E501
+
+        self._attestation_policy_version = attestation_policy_version
+
+    @property
+    def policy_version(self):
+        &#34;&#34;&#34;Gets the policy_version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The policy_version of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._policy_version
+
+    @policy_version.setter
+    def policy_version(self, policy_version):
+        &#34;&#34;&#34;Sets the policy_version of this EmailWarmupProgramDto.
+
+
+        :param policy_version: The policy_version of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and policy_version is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `policy_version`, must not be `None`&#34;)  # noqa: E501
+
+        self._policy_version = policy_version
+
+    @property
+    def content_policy_version(self):
+        &#34;&#34;&#34;Gets the content_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The content_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._content_policy_version
+
+    @content_policy_version.setter
+    def content_policy_version(self, content_policy_version):
+        &#34;&#34;&#34;Sets the content_policy_version of this EmailWarmupProgramDto.
+
+
+        :param content_policy_version: The content_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and content_policy_version is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `content_policy_version`, must not be `None`&#34;)  # noqa: E501
+
+        self._content_policy_version = content_policy_version
+
+    @property
+    def recipient_policy_version(self):
+        &#34;&#34;&#34;Gets the recipient_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The recipient_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._recipient_policy_version
+
+    @recipient_policy_version.setter
+    def recipient_policy_version(self, recipient_policy_version):
+        &#34;&#34;&#34;Sets the recipient_policy_version of this EmailWarmupProgramDto.
+
+
+        :param recipient_policy_version: The recipient_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and recipient_policy_version is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `recipient_policy_version`, must not be `None`&#34;)  # noqa: E501
+
+        self._recipient_policy_version = recipient_policy_version
+
+    @property
+    def next_action_at(self):
+        &#34;&#34;&#34;Gets the next_action_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The next_action_at of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._next_action_at
+
+    @next_action_at.setter
+    def next_action_at(self, next_action_at):
+        &#34;&#34;&#34;Sets the next_action_at of this EmailWarmupProgramDto.
+
+
+        :param next_action_at: The next_action_at of this EmailWarmupProgramDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._next_action_at = next_action_at
+
+    @property
+    def started_at(self):
+        &#34;&#34;&#34;Gets the started_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The started_at of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._started_at
+
+    @started_at.setter
+    def started_at(self, started_at):
+        &#34;&#34;&#34;Sets the started_at of this EmailWarmupProgramDto.
+
+
+        :param started_at: The started_at of this EmailWarmupProgramDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._started_at = started_at
+
+    @property
+    def completed_at(self):
+        &#34;&#34;&#34;Gets the completed_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The completed_at of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._completed_at
+
+    @completed_at.setter
+    def completed_at(self, completed_at):
+        &#34;&#34;&#34;Sets the completed_at of this EmailWarmupProgramDto.
+
+
+        :param completed_at: The completed_at of this EmailWarmupProgramDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._completed_at = completed_at
+
+    @property
+    def completion_code(self):
+        &#34;&#34;&#34;Gets the completion_code of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The completion_code of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._completion_code
+
+    @completion_code.setter
+    def completion_code(self, completion_code):
+        &#34;&#34;&#34;Sets the completion_code of this EmailWarmupProgramDto.
+
+
+        :param completion_code: The completion_code of this EmailWarmupProgramDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._completion_code = completion_code
+
+    @property
+    def version(self):
+        &#34;&#34;&#34;Gets the version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The version of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        &#34;&#34;&#34;Sets the version of this EmailWarmupProgramDto.
+
+
+        :param version: The version of this EmailWarmupProgramDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and version is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `version`, must not be `None`&#34;)  # noqa: E501
+
+        self._version = version
+
+    @property
+    def created_at(self):
+        &#34;&#34;&#34;Gets the created_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The created_at of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        &#34;&#34;&#34;Sets the created_at of this EmailWarmupProgramDto.
+
+
+        :param created_at: The created_at of this EmailWarmupProgramDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and created_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `created_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        &#34;&#34;&#34;Gets the updated_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+        :return: The updated_at of this EmailWarmupProgramDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        &#34;&#34;&#34;Sets the updated_at of this EmailWarmupProgramDto.
+
+
+        :param updated_at: The updated_at of this EmailWarmupProgramDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and updated_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `updated_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._updated_at = updated_at
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, EmailWarmupProgramDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, EmailWarmupProgramDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.attestation_policy_version"><code class="name">prop <span class="ident">attestation_policy_version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the attestation_policy_version of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The attestation_policy_version of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def attestation_policy_version(self):
+    &#34;&#34;&#34;Gets the attestation_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The attestation_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._attestation_policy_version</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.baseline_source"><code class="name">prop <span class="ident">baseline_source</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the baseline_source of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The baseline_source of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def baseline_source(self):
+    &#34;&#34;&#34;Gets the baseline_source of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The baseline_source of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._baseline_source</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.baseline_test_id"><code class="name">prop <span class="ident">baseline_test_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the baseline_test_id of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The baseline_test_id of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def baseline_test_id(self):
+    &#34;&#34;&#34;Gets the baseline_test_id of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The baseline_test_id of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._baseline_test_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.blockers"><code class="name">prop <span class="ident">blockers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the blockers of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The blockers of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def blockers(self):
+    &#34;&#34;&#34;Gets the blockers of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The blockers of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._blockers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.completed_at"><code class="name">prop <span class="ident">completed_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the completed_at of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The completed_at of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def completed_at(self):
+    &#34;&#34;&#34;Gets the completed_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The completed_at of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._completed_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.completion_code"><code class="name">prop <span class="ident">completion_code</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the completion_code of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The completion_code of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def completion_code(self):
+    &#34;&#34;&#34;Gets the completion_code of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The completion_code of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._completion_code</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.connection_id"><code class="name">prop <span class="ident">connection_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the connection_id of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The connection_id of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def connection_id(self):
+    &#34;&#34;&#34;Gets the connection_id of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The connection_id of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._connection_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content"><code class="name">prop <span class="ident">content</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the content of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The content of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: EmailWarmupContentOptions</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def content(self):
+    &#34;&#34;&#34;Gets the content of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The content of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: EmailWarmupContentOptions
+    &#34;&#34;&#34;
+    return self._content</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_hash"><code class="name">prop <span class="ident">content_hash</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the content_hash of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The content_hash of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def content_hash(self):
+    &#34;&#34;&#34;Gets the content_hash of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The content_hash of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._content_hash</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_policy_version"><code class="name">prop <span class="ident">content_policy_version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the content_policy_version of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The content_policy_version of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def content_policy_version(self):
+    &#34;&#34;&#34;Gets the content_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The content_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._content_policy_version</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_source"><code class="name">prop <span class="ident">content_source</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the content_source of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The content_source of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def content_source(self):
+    &#34;&#34;&#34;Gets the content_source of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The content_source of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._content_source</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.created_at"><code class="name">prop <span class="ident">created_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the created_at of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The created_at of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def created_at(self):
+    &#34;&#34;&#34;Gets the created_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The created_at of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._created_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.current_daily_volume"><code class="name">prop <span class="ident">current_daily_volume</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the current_daily_volume of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The current_daily_volume of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def current_daily_volume(self):
+    &#34;&#34;&#34;Gets the current_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The current_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._current_daily_volume</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.customer_intent"><code class="name">prop <span class="ident">customer_intent</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the customer_intent of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The customer_intent of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def customer_intent(self):
+    &#34;&#34;&#34;Gets the customer_intent of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The customer_intent of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._customer_intent</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.execution_policy"><code class="name">prop <span class="ident">execution_policy</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the execution_policy of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The execution_policy of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def execution_policy(self):
+    &#34;&#34;&#34;Gets the execution_policy of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The execution_policy of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._execution_policy</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.goal_daily_volume"><code class="name">prop <span class="ident">goal_daily_volume</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the goal_daily_volume of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The goal_daily_volume of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def goal_daily_volume(self):
+    &#34;&#34;&#34;Gets the goal_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The goal_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._goal_daily_volume</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.id"><code class="name">prop <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the id of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The id of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def id(self):
+    &#34;&#34;&#34;Gets the id of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The id of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.maintenance_daily_volume"><code class="name">prop <span class="ident">maintenance_daily_volume</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the maintenance_daily_volume of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The maintenance_daily_volume of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def maintenance_daily_volume(self):
+    &#34;&#34;&#34;Gets the maintenance_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The maintenance_daily_volume of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._maintenance_daily_volume</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.maintenance_enabled"><code class="name">prop <span class="ident">maintenance_enabled</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the maintenance_enabled of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The maintenance_enabled of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def maintenance_enabled(self):
+    &#34;&#34;&#34;Gets the maintenance_enabled of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The maintenance_enabled of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._maintenance_enabled</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.name"><code class="name">prop <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the name of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The name of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def name(self):
+    &#34;&#34;&#34;Gets the name of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The name of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._name</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.next_action_at"><code class="name">prop <span class="ident">next_action_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the next_action_at of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The next_action_at of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def next_action_at(self):
+    &#34;&#34;&#34;Gets the next_action_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The next_action_at of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._next_action_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.permission_based_sending_attested_at"><code class="name">prop <span class="ident">permission_based_sending_attested_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the permission_based_sending_attested_at of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The permission_based_sending_attested_at of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def permission_based_sending_attested_at(self):
+    &#34;&#34;&#34;Gets the permission_based_sending_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The permission_based_sending_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._permission_based_sending_attested_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.policy_version"><code class="name">prop <span class="ident">policy_version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the policy_version of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The policy_version of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def policy_version(self):
+    &#34;&#34;&#34;Gets the policy_version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The policy_version of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._policy_version</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.program_mode"><code class="name">prop <span class="ident">program_mode</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the program_mode of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The program_mode of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def program_mode(self):
+    &#34;&#34;&#34;Gets the program_mode of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The program_mode of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._program_mode</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.ramp_duration_days"><code class="name">prop <span class="ident">ramp_duration_days</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the ramp_duration_days of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The ramp_duration_days of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ramp_duration_days(self):
+    &#34;&#34;&#34;Gets the ramp_duration_days of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The ramp_duration_days of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._ramp_duration_days</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.recipient_policy_version"><code class="name">prop <span class="ident">recipient_policy_version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the recipient_policy_version of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The recipient_policy_version of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def recipient_policy_version(self):
+    &#34;&#34;&#34;Gets the recipient_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The recipient_policy_version of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._recipient_policy_version</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.requested_coverage"><code class="name">prop <span class="ident">requested_coverage</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the requested_coverage of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The requested_coverage of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def requested_coverage(self):
+    &#34;&#34;&#34;Gets the requested_coverage of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The requested_coverage of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._requested_coverage</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.resolved_coverage"><code class="name">prop <span class="ident">resolved_coverage</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the resolved_coverage of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The resolved_coverage of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def resolved_coverage(self):
+    &#34;&#34;&#34;Gets the resolved_coverage of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The resolved_coverage of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._resolved_coverage</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.schedule_preset"><code class="name">prop <span class="ident">schedule_preset</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the schedule_preset of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The schedule_preset of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def schedule_preset(self):
+    &#34;&#34;&#34;Gets the schedule_preset of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The schedule_preset of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._schedule_preset</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.send_window_end"><code class="name">prop <span class="ident">send_window_end</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the send_window_end of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The send_window_end of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def send_window_end(self):
+    &#34;&#34;&#34;Gets the send_window_end of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The send_window_end of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._send_window_end</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.send_window_start"><code class="name">prop <span class="ident">send_window_start</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the send_window_start of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The send_window_start of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def send_window_start(self):
+    &#34;&#34;&#34;Gets the send_window_start of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The send_window_start of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._send_window_start</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.sender_email"><code class="name">prop <span class="ident">sender_email</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sender_email of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The sender_email of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sender_email(self):
+    &#34;&#34;&#34;Gets the sender_email of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The sender_email of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._sender_email</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.sender_ownership_attested_at"><code class="name">prop <span class="ident">sender_ownership_attested_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sender_ownership_attested_at of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The sender_ownership_attested_at of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sender_ownership_attested_at(self):
+    &#34;&#34;&#34;Gets the sender_ownership_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The sender_ownership_attested_at of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._sender_ownership_attested_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.started_at"><code class="name">prop <span class="ident">started_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the started_at of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The started_at of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def started_at(self):
+    &#34;&#34;&#34;Gets the started_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The started_at of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._started_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.status"><code class="name">prop <span class="ident">status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the status of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The status of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def status(self):
+    &#34;&#34;&#34;Gets the status of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The status of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.time_zone"><code class="name">prop <span class="ident">time_zone</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the time_zone of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The time_zone of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def time_zone(self):
+    &#34;&#34;&#34;Gets the time_zone of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The time_zone of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._time_zone</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.updated_at"><code class="name">prop <span class="ident">updated_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the updated_at of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The updated_at of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def updated_at(self):
+    &#34;&#34;&#34;Gets the updated_at of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The updated_at of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._updated_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.version"><code class="name">prop <span class="ident">version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the version of this EmailWarmupProgramDto.
+# noqa: E501</p>
+<p>:return: The version of this EmailWarmupProgramDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def version(self):
+    &#34;&#34;&#34;Gets the version of this EmailWarmupProgramDto.  # noqa: E501
+
+
+    :return: The version of this EmailWarmupProgramDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._version</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto">EmailWarmupProgramDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.attestation_policy_version" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.attestation_policy_version">attestation_policy_version</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.attribute_map" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.baseline_source" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.baseline_source">baseline_source</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.baseline_test_id" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.baseline_test_id">baseline_test_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.blockers" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.blockers">blockers</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.completed_at" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.completed_at">completed_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.completion_code" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.completion_code">completion_code</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.connection_id" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.connection_id">connection_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content">content</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_hash" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_hash">content_hash</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_policy_version" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_policy_version">content_policy_version</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_source" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.content_source">content_source</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.created_at" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.created_at">created_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.current_daily_volume" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.current_daily_volume">current_daily_volume</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.customer_intent" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.customer_intent">customer_intent</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.execution_policy" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.execution_policy">execution_policy</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.goal_daily_volume" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.goal_daily_volume">goal_daily_volume</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.id" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.id">id</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.maintenance_daily_volume" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.maintenance_daily_volume">maintenance_daily_volume</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.maintenance_enabled" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.maintenance_enabled">maintenance_enabled</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.name" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.name">name</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.next_action_at" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.next_action_at">next_action_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.openapi_types" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.permission_based_sending_attested_at" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.permission_based_sending_attested_at">permission_based_sending_attested_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.policy_version" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.policy_version">policy_version</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.program_mode" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.program_mode">program_mode</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.ramp_duration_days" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.ramp_duration_days">ramp_duration_days</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.recipient_policy_version" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.recipient_policy_version">recipient_policy_version</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.requested_coverage" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.requested_coverage">requested_coverage</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.resolved_coverage" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.resolved_coverage">resolved_coverage</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.schedule_preset" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.schedule_preset">schedule_preset</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.send_window_end" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.send_window_end">send_window_end</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.send_window_start" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.send_window_start">send_window_start</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.sender_email" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.sender_email">sender_email</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.sender_ownership_attested_at" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.sender_ownership_attested_at">sender_ownership_attested_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.started_at" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.started_at">started_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.status" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.status">status</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.time_zone" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.time_zone">time_zone</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.to_dict" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.to_str" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.updated_at" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.updated_at">updated_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.version" href="#mailslurp_client.models.email_warmup_program_dto.EmailWarmupProgramDto.version">version</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

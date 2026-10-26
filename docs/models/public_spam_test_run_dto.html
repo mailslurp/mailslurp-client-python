@@ -1,0 +1,1523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.public_spam_test_run_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.public_spam_test_run_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto"><code class="flex name class">
+<span>class <span class="ident">PublicSpamTestRunDto</span></span>
+<span>(</span><span>id=None, source=None, status=None, report_status=None, requested_segment=None, seedlist_profile=None, sender_domain=None, from_email=None, tracking_token=None, seed_addresses=None, seed_address_formats=None, total_targets=None, matched_targets=None, inbox_targets=None, spam_targets=None, not_received_targets=None, submitted_at=None, started_at=None, first_match_at=None, completed_at=None, expires_at=None, last_event_at=None, last_synced_at=None, free_limit_reached=None, error_code=None, created_at=None, updated_at=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>PublicSpamTestRunDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PublicSpamTestRunDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;id&#39;: &#39;str&#39;,
+        &#39;source&#39;: &#39;str&#39;,
+        &#39;status&#39;: &#39;str&#39;,
+        &#39;report_status&#39;: &#39;str&#39;,
+        &#39;requested_segment&#39;: &#39;str&#39;,
+        &#39;seedlist_profile&#39;: &#39;str&#39;,
+        &#39;sender_domain&#39;: &#39;str&#39;,
+        &#39;from_email&#39;: &#39;str&#39;,
+        &#39;tracking_token&#39;: &#39;str&#39;,
+        &#39;seed_addresses&#39;: &#39;list[str]&#39;,
+        &#39;seed_address_formats&#39;: &#39;dict(str, str)&#39;,
+        &#39;total_targets&#39;: &#39;int&#39;,
+        &#39;matched_targets&#39;: &#39;int&#39;,
+        &#39;inbox_targets&#39;: &#39;int&#39;,
+        &#39;spam_targets&#39;: &#39;int&#39;,
+        &#39;not_received_targets&#39;: &#39;int&#39;,
+        &#39;submitted_at&#39;: &#39;datetime&#39;,
+        &#39;started_at&#39;: &#39;datetime&#39;,
+        &#39;first_match_at&#39;: &#39;datetime&#39;,
+        &#39;completed_at&#39;: &#39;datetime&#39;,
+        &#39;expires_at&#39;: &#39;datetime&#39;,
+        &#39;last_event_at&#39;: &#39;datetime&#39;,
+        &#39;last_synced_at&#39;: &#39;datetime&#39;,
+        &#39;free_limit_reached&#39;: &#39;bool&#39;,
+        &#39;error_code&#39;: &#39;str&#39;,
+        &#39;created_at&#39;: &#39;datetime&#39;,
+        &#39;updated_at&#39;: &#39;datetime&#39;
+    }
+
+    attribute_map = {
+        &#39;id&#39;: &#39;id&#39;,
+        &#39;source&#39;: &#39;source&#39;,
+        &#39;status&#39;: &#39;status&#39;,
+        &#39;report_status&#39;: &#39;reportStatus&#39;,
+        &#39;requested_segment&#39;: &#39;requestedSegment&#39;,
+        &#39;seedlist_profile&#39;: &#39;seedlistProfile&#39;,
+        &#39;sender_domain&#39;: &#39;senderDomain&#39;,
+        &#39;from_email&#39;: &#39;fromEmail&#39;,
+        &#39;tracking_token&#39;: &#39;trackingToken&#39;,
+        &#39;seed_addresses&#39;: &#39;seedAddresses&#39;,
+        &#39;seed_address_formats&#39;: &#39;seedAddressFormats&#39;,
+        &#39;total_targets&#39;: &#39;totalTargets&#39;,
+        &#39;matched_targets&#39;: &#39;matchedTargets&#39;,
+        &#39;inbox_targets&#39;: &#39;inboxTargets&#39;,
+        &#39;spam_targets&#39;: &#39;spamTargets&#39;,
+        &#39;not_received_targets&#39;: &#39;notReceivedTargets&#39;,
+        &#39;submitted_at&#39;: &#39;submittedAt&#39;,
+        &#39;started_at&#39;: &#39;startedAt&#39;,
+        &#39;first_match_at&#39;: &#39;firstMatchAt&#39;,
+        &#39;completed_at&#39;: &#39;completedAt&#39;,
+        &#39;expires_at&#39;: &#39;expiresAt&#39;,
+        &#39;last_event_at&#39;: &#39;lastEventAt&#39;,
+        &#39;last_synced_at&#39;: &#39;lastSyncedAt&#39;,
+        &#39;free_limit_reached&#39;: &#39;freeLimitReached&#39;,
+        &#39;error_code&#39;: &#39;errorCode&#39;,
+        &#39;created_at&#39;: &#39;createdAt&#39;,
+        &#39;updated_at&#39;: &#39;updatedAt&#39;
+    }
+
+    def __init__(self, id=None, source=None, status=None, report_status=None, requested_segment=None, seedlist_profile=None, sender_domain=None, from_email=None, tracking_token=None, seed_addresses=None, seed_address_formats=None, total_targets=None, matched_targets=None, inbox_targets=None, spam_targets=None, not_received_targets=None, submitted_at=None, started_at=None, first_match_at=None, completed_at=None, expires_at=None, last_event_at=None, last_synced_at=None, free_limit_reached=None, error_code=None, created_at=None, updated_at=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;PublicSpamTestRunDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._id = None
+        self._source = None
+        self._status = None
+        self._report_status = None
+        self._requested_segment = None
+        self._seedlist_profile = None
+        self._sender_domain = None
+        self._from_email = None
+        self._tracking_token = None
+        self._seed_addresses = None
+        self._seed_address_formats = None
+        self._total_targets = None
+        self._matched_targets = None
+        self._inbox_targets = None
+        self._spam_targets = None
+        self._not_received_targets = None
+        self._submitted_at = None
+        self._started_at = None
+        self._first_match_at = None
+        self._completed_at = None
+        self._expires_at = None
+        self._last_event_at = None
+        self._last_synced_at = None
+        self._free_limit_reached = None
+        self._error_code = None
+        self._created_at = None
+        self._updated_at = None
+        self.discriminator = None
+
+        self.id = id
+        self.source = source
+        self.status = status
+        self.report_status = report_status
+        self.requested_segment = requested_segment
+        self.seedlist_profile = seedlist_profile
+        self.sender_domain = sender_domain
+        self.from_email = from_email
+        self.tracking_token = tracking_token
+        self.seed_addresses = seed_addresses
+        self.seed_address_formats = seed_address_formats
+        self.total_targets = total_targets
+        self.matched_targets = matched_targets
+        self.inbox_targets = inbox_targets
+        self.spam_targets = spam_targets
+        self.not_received_targets = not_received_targets
+        self.submitted_at = submitted_at
+        self.started_at = started_at
+        self.first_match_at = first_match_at
+        self.completed_at = completed_at
+        self.expires_at = expires_at
+        self.last_event_at = last_event_at
+        self.last_synced_at = last_synced_at
+        self.free_limit_reached = free_limit_reached
+        self.error_code = error_code
+        self.created_at = created_at
+        self.updated_at = updated_at
+
+    @property
+    def id(self):
+        &#34;&#34;&#34;Gets the id of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The id of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        &#34;&#34;&#34;Sets the id of this PublicSpamTestRunDto.
+
+
+        :param id: The id of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `id`, must not be `None`&#34;)  # noqa: E501
+
+        self._id = id
+
+    @property
+    def source(self):
+        &#34;&#34;&#34;Gets the source of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The source of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._source
+
+    @source.setter
+    def source(self, source):
+        &#34;&#34;&#34;Sets the source of this PublicSpamTestRunDto.
+
+
+        :param source: The source of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and source is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `source`, must not be `None`&#34;)  # noqa: E501
+
+        self._source = source
+
+    @property
+    def status(self):
+        &#34;&#34;&#34;Gets the status of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The status of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        &#34;&#34;&#34;Sets the status of this PublicSpamTestRunDto.
+
+
+        :param status: The status of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._status = status
+
+    @property
+    def report_status(self):
+        &#34;&#34;&#34;Gets the report_status of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The report_status of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._report_status
+
+    @report_status.setter
+    def report_status(self, report_status):
+        &#34;&#34;&#34;Sets the report_status of this PublicSpamTestRunDto.
+
+
+        :param report_status: The report_status of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._report_status = report_status
+
+    @property
+    def requested_segment(self):
+        &#34;&#34;&#34;Gets the requested_segment of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The requested_segment of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._requested_segment
+
+    @requested_segment.setter
+    def requested_segment(self, requested_segment):
+        &#34;&#34;&#34;Sets the requested_segment of this PublicSpamTestRunDto.
+
+
+        :param requested_segment: The requested_segment of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._requested_segment = requested_segment
+
+    @property
+    def seedlist_profile(self):
+        &#34;&#34;&#34;Gets the seedlist_profile of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The seedlist_profile of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._seedlist_profile
+
+    @seedlist_profile.setter
+    def seedlist_profile(self, seedlist_profile):
+        &#34;&#34;&#34;Sets the seedlist_profile of this PublicSpamTestRunDto.
+
+
+        :param seedlist_profile: The seedlist_profile of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._seedlist_profile = seedlist_profile
+
+    @property
+    def sender_domain(self):
+        &#34;&#34;&#34;Gets the sender_domain of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The sender_domain of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._sender_domain
+
+    @sender_domain.setter
+    def sender_domain(self, sender_domain):
+        &#34;&#34;&#34;Sets the sender_domain of this PublicSpamTestRunDto.
+
+
+        :param sender_domain: The sender_domain of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._sender_domain = sender_domain
+
+    @property
+    def from_email(self):
+        &#34;&#34;&#34;Gets the from_email of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The from_email of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._from_email
+
+    @from_email.setter
+    def from_email(self, from_email):
+        &#34;&#34;&#34;Sets the from_email of this PublicSpamTestRunDto.
+
+
+        :param from_email: The from_email of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._from_email = from_email
+
+    @property
+    def tracking_token(self):
+        &#34;&#34;&#34;Gets the tracking_token of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The tracking_token of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._tracking_token
+
+    @tracking_token.setter
+    def tracking_token(self, tracking_token):
+        &#34;&#34;&#34;Sets the tracking_token of this PublicSpamTestRunDto.
+
+
+        :param tracking_token: The tracking_token of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._tracking_token = tracking_token
+
+    @property
+    def seed_addresses(self):
+        &#34;&#34;&#34;Gets the seed_addresses of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The seed_addresses of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._seed_addresses
+
+    @seed_addresses.setter
+    def seed_addresses(self, seed_addresses):
+        &#34;&#34;&#34;Sets the seed_addresses of this PublicSpamTestRunDto.
+
+
+        :param seed_addresses: The seed_addresses of this PublicSpamTestRunDto.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and seed_addresses is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `seed_addresses`, must not be `None`&#34;)  # noqa: E501
+
+        self._seed_addresses = seed_addresses
+
+    @property
+    def seed_address_formats(self):
+        &#34;&#34;&#34;Gets the seed_address_formats of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The seed_address_formats of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: dict(str, str)
+        &#34;&#34;&#34;
+        return self._seed_address_formats
+
+    @seed_address_formats.setter
+    def seed_address_formats(self, seed_address_formats):
+        &#34;&#34;&#34;Sets the seed_address_formats of this PublicSpamTestRunDto.
+
+
+        :param seed_address_formats: The seed_address_formats of this PublicSpamTestRunDto.  # noqa: E501
+        :type: dict(str, str)
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and seed_address_formats is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `seed_address_formats`, must not be `None`&#34;)  # noqa: E501
+
+        self._seed_address_formats = seed_address_formats
+
+    @property
+    def total_targets(self):
+        &#34;&#34;&#34;Gets the total_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The total_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._total_targets
+
+    @total_targets.setter
+    def total_targets(self, total_targets):
+        &#34;&#34;&#34;Sets the total_targets of this PublicSpamTestRunDto.
+
+
+        :param total_targets: The total_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and total_targets is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `total_targets`, must not be `None`&#34;)  # noqa: E501
+
+        self._total_targets = total_targets
+
+    @property
+    def matched_targets(self):
+        &#34;&#34;&#34;Gets the matched_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The matched_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._matched_targets
+
+    @matched_targets.setter
+    def matched_targets(self, matched_targets):
+        &#34;&#34;&#34;Sets the matched_targets of this PublicSpamTestRunDto.
+
+
+        :param matched_targets: The matched_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and matched_targets is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `matched_targets`, must not be `None`&#34;)  # noqa: E501
+
+        self._matched_targets = matched_targets
+
+    @property
+    def inbox_targets(self):
+        &#34;&#34;&#34;Gets the inbox_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The inbox_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._inbox_targets
+
+    @inbox_targets.setter
+    def inbox_targets(self, inbox_targets):
+        &#34;&#34;&#34;Sets the inbox_targets of this PublicSpamTestRunDto.
+
+
+        :param inbox_targets: The inbox_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and inbox_targets is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `inbox_targets`, must not be `None`&#34;)  # noqa: E501
+
+        self._inbox_targets = inbox_targets
+
+    @property
+    def spam_targets(self):
+        &#34;&#34;&#34;Gets the spam_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The spam_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._spam_targets
+
+    @spam_targets.setter
+    def spam_targets(self, spam_targets):
+        &#34;&#34;&#34;Sets the spam_targets of this PublicSpamTestRunDto.
+
+
+        :param spam_targets: The spam_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and spam_targets is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `spam_targets`, must not be `None`&#34;)  # noqa: E501
+
+        self._spam_targets = spam_targets
+
+    @property
+    def not_received_targets(self):
+        &#34;&#34;&#34;Gets the not_received_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The not_received_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._not_received_targets
+
+    @not_received_targets.setter
+    def not_received_targets(self, not_received_targets):
+        &#34;&#34;&#34;Sets the not_received_targets of this PublicSpamTestRunDto.
+
+
+        :param not_received_targets: The not_received_targets of this PublicSpamTestRunDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and not_received_targets is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `not_received_targets`, must not be `None`&#34;)  # noqa: E501
+
+        self._not_received_targets = not_received_targets
+
+    @property
+    def submitted_at(self):
+        &#34;&#34;&#34;Gets the submitted_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The submitted_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._submitted_at
+
+    @submitted_at.setter
+    def submitted_at(self, submitted_at):
+        &#34;&#34;&#34;Sets the submitted_at of this PublicSpamTestRunDto.
+
+
+        :param submitted_at: The submitted_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._submitted_at = submitted_at
+
+    @property
+    def started_at(self):
+        &#34;&#34;&#34;Gets the started_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The started_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._started_at
+
+    @started_at.setter
+    def started_at(self, started_at):
+        &#34;&#34;&#34;Sets the started_at of this PublicSpamTestRunDto.
+
+
+        :param started_at: The started_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._started_at = started_at
+
+    @property
+    def first_match_at(self):
+        &#34;&#34;&#34;Gets the first_match_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The first_match_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._first_match_at
+
+    @first_match_at.setter
+    def first_match_at(self, first_match_at):
+        &#34;&#34;&#34;Sets the first_match_at of this PublicSpamTestRunDto.
+
+
+        :param first_match_at: The first_match_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._first_match_at = first_match_at
+
+    @property
+    def completed_at(self):
+        &#34;&#34;&#34;Gets the completed_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The completed_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._completed_at
+
+    @completed_at.setter
+    def completed_at(self, completed_at):
+        &#34;&#34;&#34;Sets the completed_at of this PublicSpamTestRunDto.
+
+
+        :param completed_at: The completed_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._completed_at = completed_at
+
+    @property
+    def expires_at(self):
+        &#34;&#34;&#34;Gets the expires_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The expires_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._expires_at
+
+    @expires_at.setter
+    def expires_at(self, expires_at):
+        &#34;&#34;&#34;Sets the expires_at of this PublicSpamTestRunDto.
+
+
+        :param expires_at: The expires_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._expires_at = expires_at
+
+    @property
+    def last_event_at(self):
+        &#34;&#34;&#34;Gets the last_event_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The last_event_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._last_event_at
+
+    @last_event_at.setter
+    def last_event_at(self, last_event_at):
+        &#34;&#34;&#34;Sets the last_event_at of this PublicSpamTestRunDto.
+
+
+        :param last_event_at: The last_event_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._last_event_at = last_event_at
+
+    @property
+    def last_synced_at(self):
+        &#34;&#34;&#34;Gets the last_synced_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The last_synced_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._last_synced_at
+
+    @last_synced_at.setter
+    def last_synced_at(self, last_synced_at):
+        &#34;&#34;&#34;Sets the last_synced_at of this PublicSpamTestRunDto.
+
+
+        :param last_synced_at: The last_synced_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._last_synced_at = last_synced_at
+
+    @property
+    def free_limit_reached(self):
+        &#34;&#34;&#34;Gets the free_limit_reached of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The free_limit_reached of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._free_limit_reached
+
+    @free_limit_reached.setter
+    def free_limit_reached(self, free_limit_reached):
+        &#34;&#34;&#34;Sets the free_limit_reached of this PublicSpamTestRunDto.
+
+
+        :param free_limit_reached: The free_limit_reached of this PublicSpamTestRunDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and free_limit_reached is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `free_limit_reached`, must not be `None`&#34;)  # noqa: E501
+
+        self._free_limit_reached = free_limit_reached
+
+    @property
+    def error_code(self):
+        &#34;&#34;&#34;Gets the error_code of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The error_code of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code):
+        &#34;&#34;&#34;Sets the error_code of this PublicSpamTestRunDto.
+
+
+        :param error_code: The error_code of this PublicSpamTestRunDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;I_001_UPGRADE_REQUIRED&#34;, &#34;W_404_ENTITY_NOT_FOUND&#34;, &#34;W_404_USER_NOT_FOUND_FOR_ACCESS_LINK&#34;, &#34;W_404_USER_NOT_FOUND_FOR_PASSWORD&#34;, &#34;W_409_USER_ALREADY_EXISTS&#34;, &#34;W_404_USER_NOT_FOUND_FOR_PASSWORD_RESET&#34;, &#34;W_400_BAD_REQUEST&#34;, &#34;W_400_CAPTCHA_REJECTED&#34;, &#34;W_400_OPT_IN_REQUIRED&#34;, &#34;W_400_SMS_US_A2P_10DLC_REGISTRATION_REQUIRED&#34;, &#34;W_401_UNAUTHORIZED&#34;, &#34;W_401_CHALLENGE_INVALID&#34;, &#34;W_401_REQUIRES_VERIFICATION&#34;, &#34;W_401_MULTIPLE_ACCOUNTS&#34;, &#34;W_402_ACCOUNT_PAYMENT_OVERDUE&#34;, &#34;W_403_FORBIDDEN&#34;, &#34;W_403_FORBIDDEN_PHONE_NUMBER&#34;, &#34;W_403_PHONE_VERIFICATION_GEO_BLOCKED&#34;, &#34;W_403_SAML_IP_ADDRESS_NOT_ALLOWED&#34;, &#34;W_403_ORGANIZATION_LOGIN_IP_ADDRESS_NOT_ALLOWED&#34;, &#34;W_403_SELF_SERVE_EMAIL_NOT_ELIGIBLE&#34;, &#34;W_409_CONFLICT&#34;, &#34;W_409_ORGANIZATION_EMAIL_LOGIN_DISABLED&#34;, &#34;W_409_PERSONAL_ACCOUNT_RESTRICTED_BY_ORGANIZATION&#34;, &#34;W_409_LINK_ACCESS_BLOCKED&#34;, &#34;W_409_SUBSCRIPTION_TRIAL_NOT_AVAILABLE&#34;, &#34;W_409_SUBSCRIPTION_TRIAL_ACCOUNT_INELIGIBLE&#34;, &#34;W_409_SUBSCRIPTION_TRIAL_ALREADY_USED&#34;, &#34;W_409_SUBSCRIPTION_TRIAL_PAYMENT_METHOD_ALREADY_USED&#34;, &#34;W_409_SUBSCRIPTION_TRIAL_PLAN_INELIGIBLE&#34;, &#34;W_429_RATE_LIMITED&#34;, &#34;W_429_SEND_DESTINATION_THROTTLED&#34;, &#34;W_429_SEND_BLOCK&#34;, &#34;W_429_SEND_BLOCK_TRIAL&#34;, &#34;W_429_SEND_BLOCK_ADMIN_PAUSED&#34;, &#34;W_429_SEND_BLOCK_PAYMENT_VALIDATION&#34;, &#34;W_429_SEND_BLOCK_ACCOUNT_VALIDATION&#34;, &#34;W_429_SEND_EVALUATION_LIMIT_REACHED&#34;, &#34;W_429_SEND_BLOCK_EVALUATION_RECIPIENT&#34;, &#34;W_400_SEND_EVALUATION_OPTIONS_UNSUPPORTED&#34;, &#34;W_429_SENDING_AGREEMENT_REQUIRED&#34;, &#34;W_429_ACCOUNT_FROZEN&#34;, &#34;E_001_UNEXPECTED_ERROR&#34;, &#34;E_400_BAD_REQUEST&#34;, &#34;E_500_INTERNAL_ERROR&#34;, &#34;W_429_SUBSCRIPTION_ADDON_REQUIRED_VALIDATION&#34;, &#34;W_429_SUBSCRIPTION_ADDON_REQUIRED_CONNECTOR&#34;, &#34;W_429_SUBSCRIPTION_ADDON_REQUIRED_DOMAIN_MONITOR&#34;, &#34;W_429_SUBSCRIPTION_ADDON_REQUIRED_INBOX_PLACEMENT_TEST&#34;, &#34;W_429_SUBSCRIPTION_ADDON_REQUIRED_AI&#34;, &#34;W_429_SUBSCRIPTION_ADDON_REQUIRED_DEVICE_PREVIEW&#34;, &#34;W_429_PHONE_NUMBER_LIMIT_REACHED&#34;, &#34;W_429_AGENT_CONNECTION_LIMIT_REACHED&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_BULK_CREATE&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_BULK_SEND&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_BULK_DELETE&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_CONTACTS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_PERMANENT_INBOXES&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_USER_PASSWORD&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_WEBHOOKS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_INBOX_RULESETS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_ATTACHMENTS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_ZAPIER&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_TRACKING_PIXELS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_INBOX_FORWARDERS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_INBOX_REPLIERS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_ATTACHMENT_AUTOMATIONS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_TEAM_INBOX&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_SAML_SSO&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_OIDC_SSO&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_SCIM_PROVISIONING&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_EMAIL_VALIDATION&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_SEND_WITH_QUEUE&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_CONNECTORS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_AI&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_GUEST_PORTALS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_EMAIL_FEATURE_CHECK&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_BACKUPS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_SCREENSHOTS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_DEVICE_PREVIEWS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_USER_PERMISSIONS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_ENVIRONMENTS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_IMPORT_EXPORT&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_AUDIT_LOGS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_DELIVERABILITY_TEST&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_LOAD_TEST&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_EMAIL_AUDIT&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_INBOX_WARM_UP&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_CAMPAIGN_PROBE&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_VIRTUAL_TOTP_DEVICES&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_DEVICE_PREVIEW&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_DOMAIN_MONITOR&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_FEATURE_INBOX_PLACEMENT_TESTS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_OAUTH_CONNECTIONS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_GMAIL_INBOXES&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_MONTHLY_INBOXES&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_TOTAL_INBOXES&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_PERMANENT_INBOXES&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_TEMPORARY_INBOXES&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_MAIL_SERVER_RECORDS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_DAILY_RECEIVE&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_MONTHLY_RECEIVE&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_DAILY_SEND&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_MONTHLY_SEND&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_EMAIL_VALIDATIONS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_ORGANIZATIONS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_DOMAINS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_ALIASES&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_THREADS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_ORGANIZATION_MANAGEMENT&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_ORGANIZATION_USERS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_STORAGE&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_UNIQUE_RECIPIENTS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_RECIPIENTS_PER_EMAIL&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_EMAIL_SIZE&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_PHONE_NUMBERS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_PHONE_PROVISION_REQUEST&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_AGENT_CONNECTIONS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_DEVICE_RENDERS&#34;, &#34;W_429_SUBSCRIPTION_LIMIT_REACHED_LIMIT_AUTOMATED_INBOX_PLACEMENT_SCHEDULES&#34;, &#34;W_429_SUBSCRIPTION_PAYMENT_FAILURES&#34;, &#34;W_429_SUBSCRIPTION_TRIAL_LIMIT&#34;, &#34;W_429_SUBSCRIPTION_REQUIRED&#34;, &#34;W_429_SUBSCRIPTION_OUT_OF_DATE&#34;, &#34;W_429_SUBSCRIPTION_FREE_LIMIT&#34;, &#34;W_429_PUBLIC_DEVICE_RENDER_ACCOUNT_REQUIRED&#34;, &#34;W_429_FREE_ACCOUNT_EXPIRED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and error_code not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `error_code` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(error_code, allowed_values)
+            )
+
+        self._error_code = error_code
+
+    @property
+    def created_at(self):
+        &#34;&#34;&#34;Gets the created_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The created_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        &#34;&#34;&#34;Sets the created_at of this PublicSpamTestRunDto.
+
+
+        :param created_at: The created_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and created_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `created_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        &#34;&#34;&#34;Gets the updated_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+        :return: The updated_at of this PublicSpamTestRunDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        &#34;&#34;&#34;Sets the updated_at of this PublicSpamTestRunDto.
+
+
+        :param updated_at: The updated_at of this PublicSpamTestRunDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and updated_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `updated_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._updated_at = updated_at
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, PublicSpamTestRunDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, PublicSpamTestRunDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.completed_at"><code class="name">prop <span class="ident">completed_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the completed_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The completed_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def completed_at(self):
+    &#34;&#34;&#34;Gets the completed_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The completed_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._completed_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.created_at"><code class="name">prop <span class="ident">created_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the created_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The created_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def created_at(self):
+    &#34;&#34;&#34;Gets the created_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The created_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._created_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.error_code"><code class="name">prop <span class="ident">error_code</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the error_code of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The error_code of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def error_code(self):
+    &#34;&#34;&#34;Gets the error_code of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The error_code of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._error_code</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.expires_at"><code class="name">prop <span class="ident">expires_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the expires_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The expires_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def expires_at(self):
+    &#34;&#34;&#34;Gets the expires_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The expires_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._expires_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.first_match_at"><code class="name">prop <span class="ident">first_match_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the first_match_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The first_match_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def first_match_at(self):
+    &#34;&#34;&#34;Gets the first_match_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The first_match_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._first_match_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.free_limit_reached"><code class="name">prop <span class="ident">free_limit_reached</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the free_limit_reached of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The free_limit_reached of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def free_limit_reached(self):
+    &#34;&#34;&#34;Gets the free_limit_reached of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The free_limit_reached of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._free_limit_reached</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.from_email"><code class="name">prop <span class="ident">from_email</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the from_email of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The from_email of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def from_email(self):
+    &#34;&#34;&#34;Gets the from_email of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The from_email of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._from_email</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.id"><code class="name">prop <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the id of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The id of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def id(self):
+    &#34;&#34;&#34;Gets the id of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The id of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.inbox_targets"><code class="name">prop <span class="ident">inbox_targets</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the inbox_targets of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The inbox_targets of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def inbox_targets(self):
+    &#34;&#34;&#34;Gets the inbox_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The inbox_targets of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._inbox_targets</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.last_event_at"><code class="name">prop <span class="ident">last_event_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the last_event_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The last_event_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def last_event_at(self):
+    &#34;&#34;&#34;Gets the last_event_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The last_event_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._last_event_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.last_synced_at"><code class="name">prop <span class="ident">last_synced_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the last_synced_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The last_synced_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def last_synced_at(self):
+    &#34;&#34;&#34;Gets the last_synced_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The last_synced_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._last_synced_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.matched_targets"><code class="name">prop <span class="ident">matched_targets</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the matched_targets of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The matched_targets of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def matched_targets(self):
+    &#34;&#34;&#34;Gets the matched_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The matched_targets of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._matched_targets</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.not_received_targets"><code class="name">prop <span class="ident">not_received_targets</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the not_received_targets of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The not_received_targets of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def not_received_targets(self):
+    &#34;&#34;&#34;Gets the not_received_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The not_received_targets of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._not_received_targets</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.report_status"><code class="name">prop <span class="ident">report_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the report_status of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The report_status of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def report_status(self):
+    &#34;&#34;&#34;Gets the report_status of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The report_status of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._report_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.requested_segment"><code class="name">prop <span class="ident">requested_segment</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the requested_segment of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The requested_segment of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def requested_segment(self):
+    &#34;&#34;&#34;Gets the requested_segment of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The requested_segment of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._requested_segment</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seed_address_formats"><code class="name">prop <span class="ident">seed_address_formats</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the seed_address_formats of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The seed_address_formats of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: dict(str, str)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def seed_address_formats(self):
+    &#34;&#34;&#34;Gets the seed_address_formats of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The seed_address_formats of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: dict(str, str)
+    &#34;&#34;&#34;
+    return self._seed_address_formats</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seed_addresses"><code class="name">prop <span class="ident">seed_addresses</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the seed_addresses of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The seed_addresses of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def seed_addresses(self):
+    &#34;&#34;&#34;Gets the seed_addresses of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The seed_addresses of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._seed_addresses</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seedlist_profile"><code class="name">prop <span class="ident">seedlist_profile</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the seedlist_profile of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The seedlist_profile of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def seedlist_profile(self):
+    &#34;&#34;&#34;Gets the seedlist_profile of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The seedlist_profile of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._seedlist_profile</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.sender_domain"><code class="name">prop <span class="ident">sender_domain</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sender_domain of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The sender_domain of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sender_domain(self):
+    &#34;&#34;&#34;Gets the sender_domain of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The sender_domain of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._sender_domain</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.source"><code class="name">prop <span class="ident">source</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the source of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The source of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def source(self):
+    &#34;&#34;&#34;Gets the source of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The source of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._source</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.spam_targets"><code class="name">prop <span class="ident">spam_targets</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the spam_targets of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The spam_targets of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def spam_targets(self):
+    &#34;&#34;&#34;Gets the spam_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The spam_targets of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._spam_targets</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.started_at"><code class="name">prop <span class="ident">started_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the started_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The started_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def started_at(self):
+    &#34;&#34;&#34;Gets the started_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The started_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._started_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.status"><code class="name">prop <span class="ident">status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the status of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The status of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def status(self):
+    &#34;&#34;&#34;Gets the status of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The status of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.submitted_at"><code class="name">prop <span class="ident">submitted_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the submitted_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The submitted_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def submitted_at(self):
+    &#34;&#34;&#34;Gets the submitted_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The submitted_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._submitted_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.total_targets"><code class="name">prop <span class="ident">total_targets</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the total_targets of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The total_targets of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_targets(self):
+    &#34;&#34;&#34;Gets the total_targets of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The total_targets of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._total_targets</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.tracking_token"><code class="name">prop <span class="ident">tracking_token</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the tracking_token of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The tracking_token of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def tracking_token(self):
+    &#34;&#34;&#34;Gets the tracking_token of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The tracking_token of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._tracking_token</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.updated_at"><code class="name">prop <span class="ident">updated_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the updated_at of this PublicSpamTestRunDto.
+# noqa: E501</p>
+<p>:return: The updated_at of this PublicSpamTestRunDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def updated_at(self):
+    &#34;&#34;&#34;Gets the updated_at of this PublicSpamTestRunDto.  # noqa: E501
+
+
+    :return: The updated_at of this PublicSpamTestRunDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._updated_at</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto">PublicSpamTestRunDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.attribute_map" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.completed_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.completed_at">completed_at</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.created_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.created_at">created_at</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.error_code" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.error_code">error_code</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.expires_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.expires_at">expires_at</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.first_match_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.first_match_at">first_match_at</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.free_limit_reached" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.free_limit_reached">free_limit_reached</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.from_email" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.from_email">from_email</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.id" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.id">id</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.inbox_targets" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.inbox_targets">inbox_targets</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.last_event_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.last_event_at">last_event_at</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.last_synced_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.last_synced_at">last_synced_at</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.matched_targets" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.matched_targets">matched_targets</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.not_received_targets" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.not_received_targets">not_received_targets</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.openapi_types" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.report_status" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.report_status">report_status</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.requested_segment" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.requested_segment">requested_segment</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seed_address_formats" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seed_address_formats">seed_address_formats</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seed_addresses" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seed_addresses">seed_addresses</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seedlist_profile" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.seedlist_profile">seedlist_profile</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.sender_domain" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.sender_domain">sender_domain</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.source" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.source">source</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.spam_targets" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.spam_targets">spam_targets</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.started_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.started_at">started_at</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.status" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.status">status</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.submitted_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.submitted_at">submitted_at</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.to_dict" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.to_str" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.total_targets" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.total_targets">total_targets</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.tracking_token" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.tracking_token">tracking_token</a></code></li>
+<li><code><a title="mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.updated_at" href="#mailslurp_client.models.public_spam_test_run_dto.PublicSpamTestRunDto.updated_at">updated_at</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

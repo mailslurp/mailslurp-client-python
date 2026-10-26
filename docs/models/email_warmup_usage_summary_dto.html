@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.email_warmup_usage_summary_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.email_warmup_usage_summary_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto"><code class="flex name class">
+<span>class <span class="ident">EmailWarmupUsageSummaryDto</span></span>
+<span>(</span><span>billing_month=None, billing_month_end_exclusive=None, included_sender_seats=None, purchased_sender_seats=None, total_sender_capacity=None, active_sender_assignments=None, included_credits_per_sender=None, included_credits_total=None, included_credits_consumed=None, included_credits_remaining=None, reserved_credits=None, accepted_credits=None, ambiguous_credits=None, billable_accepted_credits=None, billable_pending_credits=None, controlled_recipient_credit_weight=None, premium_recipient_credit_weight=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>EmailWarmupUsageSummaryDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EmailWarmupUsageSummaryDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;billing_month&#39;: &#39;date&#39;,
+        &#39;billing_month_end_exclusive&#39;: &#39;date&#39;,
+        &#39;included_sender_seats&#39;: &#39;int&#39;,
+        &#39;purchased_sender_seats&#39;: &#39;int&#39;,
+        &#39;total_sender_capacity&#39;: &#39;int&#39;,
+        &#39;active_sender_assignments&#39;: &#39;int&#39;,
+        &#39;included_credits_per_sender&#39;: &#39;int&#39;,
+        &#39;included_credits_total&#39;: &#39;int&#39;,
+        &#39;included_credits_consumed&#39;: &#39;int&#39;,
+        &#39;included_credits_remaining&#39;: &#39;int&#39;,
+        &#39;reserved_credits&#39;: &#39;int&#39;,
+        &#39;accepted_credits&#39;: &#39;int&#39;,
+        &#39;ambiguous_credits&#39;: &#39;int&#39;,
+        &#39;billable_accepted_credits&#39;: &#39;int&#39;,
+        &#39;billable_pending_credits&#39;: &#39;int&#39;,
+        &#39;controlled_recipient_credit_weight&#39;: &#39;int&#39;,
+        &#39;premium_recipient_credit_weight&#39;: &#39;int&#39;
+    }
+
+    attribute_map = {
+        &#39;billing_month&#39;: &#39;billingMonth&#39;,
+        &#39;billing_month_end_exclusive&#39;: &#39;billingMonthEndExclusive&#39;,
+        &#39;included_sender_seats&#39;: &#39;includedSenderSeats&#39;,
+        &#39;purchased_sender_seats&#39;: &#39;purchasedSenderSeats&#39;,
+        &#39;total_sender_capacity&#39;: &#39;totalSenderCapacity&#39;,
+        &#39;active_sender_assignments&#39;: &#39;activeSenderAssignments&#39;,
+        &#39;included_credits_per_sender&#39;: &#39;includedCreditsPerSender&#39;,
+        &#39;included_credits_total&#39;: &#39;includedCreditsTotal&#39;,
+        &#39;included_credits_consumed&#39;: &#39;includedCreditsConsumed&#39;,
+        &#39;included_credits_remaining&#39;: &#39;includedCreditsRemaining&#39;,
+        &#39;reserved_credits&#39;: &#39;reservedCredits&#39;,
+        &#39;accepted_credits&#39;: &#39;acceptedCredits&#39;,
+        &#39;ambiguous_credits&#39;: &#39;ambiguousCredits&#39;,
+        &#39;billable_accepted_credits&#39;: &#39;billableAcceptedCredits&#39;,
+        &#39;billable_pending_credits&#39;: &#39;billablePendingCredits&#39;,
+        &#39;controlled_recipient_credit_weight&#39;: &#39;controlledRecipientCreditWeight&#39;,
+        &#39;premium_recipient_credit_weight&#39;: &#39;premiumRecipientCreditWeight&#39;
+    }
+
+    def __init__(self, billing_month=None, billing_month_end_exclusive=None, included_sender_seats=None, purchased_sender_seats=None, total_sender_capacity=None, active_sender_assignments=None, included_credits_per_sender=None, included_credits_total=None, included_credits_consumed=None, included_credits_remaining=None, reserved_credits=None, accepted_credits=None, ambiguous_credits=None, billable_accepted_credits=None, billable_pending_credits=None, controlled_recipient_credit_weight=None, premium_recipient_credit_weight=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;EmailWarmupUsageSummaryDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._billing_month = None
+        self._billing_month_end_exclusive = None
+        self._included_sender_seats = None
+        self._purchased_sender_seats = None
+        self._total_sender_capacity = None
+        self._active_sender_assignments = None
+        self._included_credits_per_sender = None
+        self._included_credits_total = None
+        self._included_credits_consumed = None
+        self._included_credits_remaining = None
+        self._reserved_credits = None
+        self._accepted_credits = None
+        self._ambiguous_credits = None
+        self._billable_accepted_credits = None
+        self._billable_pending_credits = None
+        self._controlled_recipient_credit_weight = None
+        self._premium_recipient_credit_weight = None
+        self.discriminator = None
+
+        self.billing_month = billing_month
+        self.billing_month_end_exclusive = billing_month_end_exclusive
+        self.included_sender_seats = included_sender_seats
+        self.purchased_sender_seats = purchased_sender_seats
+        self.total_sender_capacity = total_sender_capacity
+        self.active_sender_assignments = active_sender_assignments
+        self.included_credits_per_sender = included_credits_per_sender
+        self.included_credits_total = included_credits_total
+        self.included_credits_consumed = included_credits_consumed
+        self.included_credits_remaining = included_credits_remaining
+        self.reserved_credits = reserved_credits
+        self.accepted_credits = accepted_credits
+        self.ambiguous_credits = ambiguous_credits
+        self.billable_accepted_credits = billable_accepted_credits
+        self.billable_pending_credits = billable_pending_credits
+        self.controlled_recipient_credit_weight = controlled_recipient_credit_weight
+        self.premium_recipient_credit_weight = premium_recipient_credit_weight
+
+    @property
+    def billing_month(self):
+        &#34;&#34;&#34;Gets the billing_month of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The billing_month of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: date
+        &#34;&#34;&#34;
+        return self._billing_month
+
+    @billing_month.setter
+    def billing_month(self, billing_month):
+        &#34;&#34;&#34;Sets the billing_month of this EmailWarmupUsageSummaryDto.
+
+
+        :param billing_month: The billing_month of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: date
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and billing_month is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `billing_month`, must not be `None`&#34;)  # noqa: E501
+
+        self._billing_month = billing_month
+
+    @property
+    def billing_month_end_exclusive(self):
+        &#34;&#34;&#34;Gets the billing_month_end_exclusive of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The billing_month_end_exclusive of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: date
+        &#34;&#34;&#34;
+        return self._billing_month_end_exclusive
+
+    @billing_month_end_exclusive.setter
+    def billing_month_end_exclusive(self, billing_month_end_exclusive):
+        &#34;&#34;&#34;Sets the billing_month_end_exclusive of this EmailWarmupUsageSummaryDto.
+
+
+        :param billing_month_end_exclusive: The billing_month_end_exclusive of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: date
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and billing_month_end_exclusive is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `billing_month_end_exclusive`, must not be `None`&#34;)  # noqa: E501
+
+        self._billing_month_end_exclusive = billing_month_end_exclusive
+
+    @property
+    def included_sender_seats(self):
+        &#34;&#34;&#34;Gets the included_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The included_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._included_sender_seats
+
+    @included_sender_seats.setter
+    def included_sender_seats(self, included_sender_seats):
+        &#34;&#34;&#34;Sets the included_sender_seats of this EmailWarmupUsageSummaryDto.
+
+
+        :param included_sender_seats: The included_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and included_sender_seats is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `included_sender_seats`, must not be `None`&#34;)  # noqa: E501
+
+        self._included_sender_seats = included_sender_seats
+
+    @property
+    def purchased_sender_seats(self):
+        &#34;&#34;&#34;Gets the purchased_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The purchased_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._purchased_sender_seats
+
+    @purchased_sender_seats.setter
+    def purchased_sender_seats(self, purchased_sender_seats):
+        &#34;&#34;&#34;Sets the purchased_sender_seats of this EmailWarmupUsageSummaryDto.
+
+
+        :param purchased_sender_seats: The purchased_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and purchased_sender_seats is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `purchased_sender_seats`, must not be `None`&#34;)  # noqa: E501
+
+        self._purchased_sender_seats = purchased_sender_seats
+
+    @property
+    def total_sender_capacity(self):
+        &#34;&#34;&#34;Gets the total_sender_capacity of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The total_sender_capacity of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._total_sender_capacity
+
+    @total_sender_capacity.setter
+    def total_sender_capacity(self, total_sender_capacity):
+        &#34;&#34;&#34;Sets the total_sender_capacity of this EmailWarmupUsageSummaryDto.
+
+
+        :param total_sender_capacity: The total_sender_capacity of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and total_sender_capacity is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `total_sender_capacity`, must not be `None`&#34;)  # noqa: E501
+
+        self._total_sender_capacity = total_sender_capacity
+
+    @property
+    def active_sender_assignments(self):
+        &#34;&#34;&#34;Gets the active_sender_assignments of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The active_sender_assignments of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._active_sender_assignments
+
+    @active_sender_assignments.setter
+    def active_sender_assignments(self, active_sender_assignments):
+        &#34;&#34;&#34;Sets the active_sender_assignments of this EmailWarmupUsageSummaryDto.
+
+
+        :param active_sender_assignments: The active_sender_assignments of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and active_sender_assignments is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `active_sender_assignments`, must not be `None`&#34;)  # noqa: E501
+
+        self._active_sender_assignments = active_sender_assignments
+
+    @property
+    def included_credits_per_sender(self):
+        &#34;&#34;&#34;Gets the included_credits_per_sender of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The included_credits_per_sender of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._included_credits_per_sender
+
+    @included_credits_per_sender.setter
+    def included_credits_per_sender(self, included_credits_per_sender):
+        &#34;&#34;&#34;Sets the included_credits_per_sender of this EmailWarmupUsageSummaryDto.
+
+
+        :param included_credits_per_sender: The included_credits_per_sender of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and included_credits_per_sender is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `included_credits_per_sender`, must not be `None`&#34;)  # noqa: E501
+
+        self._included_credits_per_sender = included_credits_per_sender
+
+    @property
+    def included_credits_total(self):
+        &#34;&#34;&#34;Gets the included_credits_total of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The included_credits_total of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._included_credits_total
+
+    @included_credits_total.setter
+    def included_credits_total(self, included_credits_total):
+        &#34;&#34;&#34;Sets the included_credits_total of this EmailWarmupUsageSummaryDto.
+
+
+        :param included_credits_total: The included_credits_total of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and included_credits_total is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `included_credits_total`, must not be `None`&#34;)  # noqa: E501
+
+        self._included_credits_total = included_credits_total
+
+    @property
+    def included_credits_consumed(self):
+        &#34;&#34;&#34;Gets the included_credits_consumed of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The included_credits_consumed of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._included_credits_consumed
+
+    @included_credits_consumed.setter
+    def included_credits_consumed(self, included_credits_consumed):
+        &#34;&#34;&#34;Sets the included_credits_consumed of this EmailWarmupUsageSummaryDto.
+
+
+        :param included_credits_consumed: The included_credits_consumed of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and included_credits_consumed is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `included_credits_consumed`, must not be `None`&#34;)  # noqa: E501
+
+        self._included_credits_consumed = included_credits_consumed
+
+    @property
+    def included_credits_remaining(self):
+        &#34;&#34;&#34;Gets the included_credits_remaining of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The included_credits_remaining of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._included_credits_remaining
+
+    @included_credits_remaining.setter
+    def included_credits_remaining(self, included_credits_remaining):
+        &#34;&#34;&#34;Sets the included_credits_remaining of this EmailWarmupUsageSummaryDto.
+
+
+        :param included_credits_remaining: The included_credits_remaining of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and included_credits_remaining is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `included_credits_remaining`, must not be `None`&#34;)  # noqa: E501
+
+        self._included_credits_remaining = included_credits_remaining
+
+    @property
+    def reserved_credits(self):
+        &#34;&#34;&#34;Gets the reserved_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The reserved_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._reserved_credits
+
+    @reserved_credits.setter
+    def reserved_credits(self, reserved_credits):
+        &#34;&#34;&#34;Sets the reserved_credits of this EmailWarmupUsageSummaryDto.
+
+
+        :param reserved_credits: The reserved_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and reserved_credits is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `reserved_credits`, must not be `None`&#34;)  # noqa: E501
+
+        self._reserved_credits = reserved_credits
+
+    @property
+    def accepted_credits(self):
+        &#34;&#34;&#34;Gets the accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._accepted_credits
+
+    @accepted_credits.setter
+    def accepted_credits(self, accepted_credits):
+        &#34;&#34;&#34;Sets the accepted_credits of this EmailWarmupUsageSummaryDto.
+
+
+        :param accepted_credits: The accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and accepted_credits is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `accepted_credits`, must not be `None`&#34;)  # noqa: E501
+
+        self._accepted_credits = accepted_credits
+
+    @property
+    def ambiguous_credits(self):
+        &#34;&#34;&#34;Gets the ambiguous_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The ambiguous_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._ambiguous_credits
+
+    @ambiguous_credits.setter
+    def ambiguous_credits(self, ambiguous_credits):
+        &#34;&#34;&#34;Sets the ambiguous_credits of this EmailWarmupUsageSummaryDto.
+
+
+        :param ambiguous_credits: The ambiguous_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and ambiguous_credits is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `ambiguous_credits`, must not be `None`&#34;)  # noqa: E501
+
+        self._ambiguous_credits = ambiguous_credits
+
+    @property
+    def billable_accepted_credits(self):
+        &#34;&#34;&#34;Gets the billable_accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The billable_accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._billable_accepted_credits
+
+    @billable_accepted_credits.setter
+    def billable_accepted_credits(self, billable_accepted_credits):
+        &#34;&#34;&#34;Sets the billable_accepted_credits of this EmailWarmupUsageSummaryDto.
+
+
+        :param billable_accepted_credits: The billable_accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and billable_accepted_credits is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `billable_accepted_credits`, must not be `None`&#34;)  # noqa: E501
+
+        self._billable_accepted_credits = billable_accepted_credits
+
+    @property
+    def billable_pending_credits(self):
+        &#34;&#34;&#34;Gets the billable_pending_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The billable_pending_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._billable_pending_credits
+
+    @billable_pending_credits.setter
+    def billable_pending_credits(self, billable_pending_credits):
+        &#34;&#34;&#34;Sets the billable_pending_credits of this EmailWarmupUsageSummaryDto.
+
+
+        :param billable_pending_credits: The billable_pending_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and billable_pending_credits is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `billable_pending_credits`, must not be `None`&#34;)  # noqa: E501
+
+        self._billable_pending_credits = billable_pending_credits
+
+    @property
+    def controlled_recipient_credit_weight(self):
+        &#34;&#34;&#34;Gets the controlled_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The controlled_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._controlled_recipient_credit_weight
+
+    @controlled_recipient_credit_weight.setter
+    def controlled_recipient_credit_weight(self, controlled_recipient_credit_weight):
+        &#34;&#34;&#34;Sets the controlled_recipient_credit_weight of this EmailWarmupUsageSummaryDto.
+
+
+        :param controlled_recipient_credit_weight: The controlled_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and controlled_recipient_credit_weight is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `controlled_recipient_credit_weight`, must not be `None`&#34;)  # noqa: E501
+
+        self._controlled_recipient_credit_weight = controlled_recipient_credit_weight
+
+    @property
+    def premium_recipient_credit_weight(self):
+        &#34;&#34;&#34;Gets the premium_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+        :return: The premium_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._premium_recipient_credit_weight
+
+    @premium_recipient_credit_weight.setter
+    def premium_recipient_credit_weight(self, premium_recipient_credit_weight):
+        &#34;&#34;&#34;Sets the premium_recipient_credit_weight of this EmailWarmupUsageSummaryDto.
+
+
+        :param premium_recipient_credit_weight: The premium_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and premium_recipient_credit_weight is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `premium_recipient_credit_weight`, must not be `None`&#34;)  # noqa: E501
+
+        self._premium_recipient_credit_weight = premium_recipient_credit_weight
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, EmailWarmupUsageSummaryDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, EmailWarmupUsageSummaryDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.accepted_credits"><code class="name">prop <span class="ident">accepted_credits</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the accepted_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The accepted_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def accepted_credits(self):
+    &#34;&#34;&#34;Gets the accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._accepted_credits</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.active_sender_assignments"><code class="name">prop <span class="ident">active_sender_assignments</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the active_sender_assignments of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The active_sender_assignments of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def active_sender_assignments(self):
+    &#34;&#34;&#34;Gets the active_sender_assignments of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The active_sender_assignments of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._active_sender_assignments</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.ambiguous_credits"><code class="name">prop <span class="ident">ambiguous_credits</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the ambiguous_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The ambiguous_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ambiguous_credits(self):
+    &#34;&#34;&#34;Gets the ambiguous_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The ambiguous_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._ambiguous_credits</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billable_accepted_credits"><code class="name">prop <span class="ident">billable_accepted_credits</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the billable_accepted_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The billable_accepted_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def billable_accepted_credits(self):
+    &#34;&#34;&#34;Gets the billable_accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The billable_accepted_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._billable_accepted_credits</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billable_pending_credits"><code class="name">prop <span class="ident">billable_pending_credits</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the billable_pending_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The billable_pending_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def billable_pending_credits(self):
+    &#34;&#34;&#34;Gets the billable_pending_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The billable_pending_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._billable_pending_credits</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billing_month"><code class="name">prop <span class="ident">billing_month</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the billing_month of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The billing_month of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: date</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def billing_month(self):
+    &#34;&#34;&#34;Gets the billing_month of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The billing_month of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: date
+    &#34;&#34;&#34;
+    return self._billing_month</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billing_month_end_exclusive"><code class="name">prop <span class="ident">billing_month_end_exclusive</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the billing_month_end_exclusive of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The billing_month_end_exclusive of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: date</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def billing_month_end_exclusive(self):
+    &#34;&#34;&#34;Gets the billing_month_end_exclusive of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The billing_month_end_exclusive of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: date
+    &#34;&#34;&#34;
+    return self._billing_month_end_exclusive</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.controlled_recipient_credit_weight"><code class="name">prop <span class="ident">controlled_recipient_credit_weight</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the controlled_recipient_credit_weight of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The controlled_recipient_credit_weight of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def controlled_recipient_credit_weight(self):
+    &#34;&#34;&#34;Gets the controlled_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The controlled_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._controlled_recipient_credit_weight</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_consumed"><code class="name">prop <span class="ident">included_credits_consumed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the included_credits_consumed of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The included_credits_consumed of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def included_credits_consumed(self):
+    &#34;&#34;&#34;Gets the included_credits_consumed of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The included_credits_consumed of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._included_credits_consumed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_per_sender"><code class="name">prop <span class="ident">included_credits_per_sender</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the included_credits_per_sender of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The included_credits_per_sender of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def included_credits_per_sender(self):
+    &#34;&#34;&#34;Gets the included_credits_per_sender of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The included_credits_per_sender of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._included_credits_per_sender</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_remaining"><code class="name">prop <span class="ident">included_credits_remaining</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the included_credits_remaining of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The included_credits_remaining of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def included_credits_remaining(self):
+    &#34;&#34;&#34;Gets the included_credits_remaining of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The included_credits_remaining of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._included_credits_remaining</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_total"><code class="name">prop <span class="ident">included_credits_total</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the included_credits_total of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The included_credits_total of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def included_credits_total(self):
+    &#34;&#34;&#34;Gets the included_credits_total of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The included_credits_total of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._included_credits_total</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_sender_seats"><code class="name">prop <span class="ident">included_sender_seats</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the included_sender_seats of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The included_sender_seats of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def included_sender_seats(self):
+    &#34;&#34;&#34;Gets the included_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The included_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._included_sender_seats</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.premium_recipient_credit_weight"><code class="name">prop <span class="ident">premium_recipient_credit_weight</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the premium_recipient_credit_weight of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The premium_recipient_credit_weight of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def premium_recipient_credit_weight(self):
+    &#34;&#34;&#34;Gets the premium_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The premium_recipient_credit_weight of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._premium_recipient_credit_weight</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.purchased_sender_seats"><code class="name">prop <span class="ident">purchased_sender_seats</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the purchased_sender_seats of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The purchased_sender_seats of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def purchased_sender_seats(self):
+    &#34;&#34;&#34;Gets the purchased_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The purchased_sender_seats of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._purchased_sender_seats</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.reserved_credits"><code class="name">prop <span class="ident">reserved_credits</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the reserved_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The reserved_credits of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def reserved_credits(self):
+    &#34;&#34;&#34;Gets the reserved_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The reserved_credits of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._reserved_credits</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.total_sender_capacity"><code class="name">prop <span class="ident">total_sender_capacity</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the total_sender_capacity of this EmailWarmupUsageSummaryDto.
+# noqa: E501</p>
+<p>:return: The total_sender_capacity of this EmailWarmupUsageSummaryDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_sender_capacity(self):
+    &#34;&#34;&#34;Gets the total_sender_capacity of this EmailWarmupUsageSummaryDto.  # noqa: E501
+
+
+    :return: The total_sender_capacity of this EmailWarmupUsageSummaryDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._total_sender_capacity</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto">EmailWarmupUsageSummaryDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.accepted_credits" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.accepted_credits">accepted_credits</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.active_sender_assignments" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.active_sender_assignments">active_sender_assignments</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.ambiguous_credits" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.ambiguous_credits">ambiguous_credits</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.attribute_map" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billable_accepted_credits" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billable_accepted_credits">billable_accepted_credits</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billable_pending_credits" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billable_pending_credits">billable_pending_credits</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billing_month" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billing_month">billing_month</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billing_month_end_exclusive" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.billing_month_end_exclusive">billing_month_end_exclusive</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.controlled_recipient_credit_weight" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.controlled_recipient_credit_weight">controlled_recipient_credit_weight</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_consumed" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_consumed">included_credits_consumed</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_per_sender" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_per_sender">included_credits_per_sender</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_remaining" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_remaining">included_credits_remaining</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_total" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_credits_total">included_credits_total</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_sender_seats" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.included_sender_seats">included_sender_seats</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.openapi_types" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.premium_recipient_credit_weight" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.premium_recipient_credit_weight">premium_recipient_credit_weight</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.purchased_sender_seats" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.purchased_sender_seats">purchased_sender_seats</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.reserved_credits" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.reserved_credits">reserved_credits</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.to_dict" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.to_str" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.total_sender_capacity" href="#mailslurp_client.models.email_warmup_usage_summary_dto.EmailWarmupUsageSummaryDto.total_sender_capacity">total_sender_capacity</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

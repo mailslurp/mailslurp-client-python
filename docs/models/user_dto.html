@@ -1,0 +1,1655 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.user_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.user_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.user_dto.UserDto"><code class="flex name class">
+<span>class <span class="ident">UserDto</span></span>
+<span>(</span><span>id=None, api_key=None, email_address=None, email_address_md5=None, created=None, user_type=None, organization=None, verified=None, has_password=None, is_frozen=None, frozen_message=None, add_new_contacts=None, sso_provider=None, customer_id=None, has_onboarded=None, imap_username=None, imap_password=None, smtp_username=None, smtp_password=None, charge_pending=None, enable_sms=None, vendor_email_address=None, unsubscribed=None, api_access_token=None, phone_number=None, verified_phone=None, account_region=None, name=None, access_link_send_result=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>UserDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UserDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;id&#39;: &#39;str&#39;,
+        &#39;api_key&#39;: &#39;str&#39;,
+        &#39;email_address&#39;: &#39;str&#39;,
+        &#39;email_address_md5&#39;: &#39;str&#39;,
+        &#39;created&#39;: &#39;datetime&#39;,
+        &#39;user_type&#39;: &#39;str&#39;,
+        &#39;organization&#39;: &#39;str&#39;,
+        &#39;verified&#39;: &#39;str&#39;,
+        &#39;has_password&#39;: &#39;bool&#39;,
+        &#39;is_frozen&#39;: &#39;bool&#39;,
+        &#39;frozen_message&#39;: &#39;str&#39;,
+        &#39;add_new_contacts&#39;: &#39;bool&#39;,
+        &#39;sso_provider&#39;: &#39;str&#39;,
+        &#39;customer_id&#39;: &#39;str&#39;,
+        &#39;has_onboarded&#39;: &#39;bool&#39;,
+        &#39;imap_username&#39;: &#39;str&#39;,
+        &#39;imap_password&#39;: &#39;str&#39;,
+        &#39;smtp_username&#39;: &#39;str&#39;,
+        &#39;smtp_password&#39;: &#39;str&#39;,
+        &#39;charge_pending&#39;: &#39;bool&#39;,
+        &#39;enable_sms&#39;: &#39;bool&#39;,
+        &#39;vendor_email_address&#39;: &#39;str&#39;,
+        &#39;unsubscribed&#39;: &#39;bool&#39;,
+        &#39;api_access_token&#39;: &#39;TemporaryAccessKeyDto&#39;,
+        &#39;phone_number&#39;: &#39;str&#39;,
+        &#39;verified_phone&#39;: &#39;str&#39;,
+        &#39;account_region&#39;: &#39;str&#39;,
+        &#39;name&#39;: &#39;str&#39;,
+        &#39;access_link_send_result&#39;: &#39;AccessLinkSendResultDto&#39;
+    }
+
+    attribute_map = {
+        &#39;id&#39;: &#39;id&#39;,
+        &#39;api_key&#39;: &#39;apiKey&#39;,
+        &#39;email_address&#39;: &#39;emailAddress&#39;,
+        &#39;email_address_md5&#39;: &#39;emailAddressMd5&#39;,
+        &#39;created&#39;: &#39;created&#39;,
+        &#39;user_type&#39;: &#39;userType&#39;,
+        &#39;organization&#39;: &#39;organization&#39;,
+        &#39;verified&#39;: &#39;verified&#39;,
+        &#39;has_password&#39;: &#39;hasPassword&#39;,
+        &#39;is_frozen&#39;: &#39;isFrozen&#39;,
+        &#39;frozen_message&#39;: &#39;frozenMessage&#39;,
+        &#39;add_new_contacts&#39;: &#39;addNewContacts&#39;,
+        &#39;sso_provider&#39;: &#39;ssoProvider&#39;,
+        &#39;customer_id&#39;: &#39;customerId&#39;,
+        &#39;has_onboarded&#39;: &#39;hasOnboarded&#39;,
+        &#39;imap_username&#39;: &#39;imapUsername&#39;,
+        &#39;imap_password&#39;: &#39;imapPassword&#39;,
+        &#39;smtp_username&#39;: &#39;smtpUsername&#39;,
+        &#39;smtp_password&#39;: &#39;smtpPassword&#39;,
+        &#39;charge_pending&#39;: &#39;chargePending&#39;,
+        &#39;enable_sms&#39;: &#39;enableSms&#39;,
+        &#39;vendor_email_address&#39;: &#39;vendorEmailAddress&#39;,
+        &#39;unsubscribed&#39;: &#39;unsubscribed&#39;,
+        &#39;api_access_token&#39;: &#39;apiAccessToken&#39;,
+        &#39;phone_number&#39;: &#39;phoneNumber&#39;,
+        &#39;verified_phone&#39;: &#39;verifiedPhone&#39;,
+        &#39;account_region&#39;: &#39;accountRegion&#39;,
+        &#39;name&#39;: &#39;name&#39;,
+        &#39;access_link_send_result&#39;: &#39;accessLinkSendResult&#39;
+    }
+
+    def __init__(self, id=None, api_key=None, email_address=None, email_address_md5=None, created=None, user_type=None, organization=None, verified=None, has_password=None, is_frozen=None, frozen_message=None, add_new_contacts=None, sso_provider=None, customer_id=None, has_onboarded=None, imap_username=None, imap_password=None, smtp_username=None, smtp_password=None, charge_pending=None, enable_sms=None, vendor_email_address=None, unsubscribed=None, api_access_token=None, phone_number=None, verified_phone=None, account_region=None, name=None, access_link_send_result=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;UserDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._id = None
+        self._api_key = None
+        self._email_address = None
+        self._email_address_md5 = None
+        self._created = None
+        self._user_type = None
+        self._organization = None
+        self._verified = None
+        self._has_password = None
+        self._is_frozen = None
+        self._frozen_message = None
+        self._add_new_contacts = None
+        self._sso_provider = None
+        self._customer_id = None
+        self._has_onboarded = None
+        self._imap_username = None
+        self._imap_password = None
+        self._smtp_username = None
+        self._smtp_password = None
+        self._charge_pending = None
+        self._enable_sms = None
+        self._vendor_email_address = None
+        self._unsubscribed = None
+        self._api_access_token = None
+        self._phone_number = None
+        self._verified_phone = None
+        self._account_region = None
+        self._name = None
+        self._access_link_send_result = None
+        self.discriminator = None
+
+        self.id = id
+        self.api_key = api_key
+        self.email_address = email_address
+        self.email_address_md5 = email_address_md5
+        self.created = created
+        self.user_type = user_type
+        self.organization = organization
+        self.verified = verified
+        self.has_password = has_password
+        self.is_frozen = is_frozen
+        self.frozen_message = frozen_message
+        self.add_new_contacts = add_new_contacts
+        self.sso_provider = sso_provider
+        self.customer_id = customer_id
+        self.has_onboarded = has_onboarded
+        self.imap_username = imap_username
+        self.imap_password = imap_password
+        self.smtp_username = smtp_username
+        self.smtp_password = smtp_password
+        self.charge_pending = charge_pending
+        self.enable_sms = enable_sms
+        self.vendor_email_address = vendor_email_address
+        self.unsubscribed = unsubscribed
+        self.api_access_token = api_access_token
+        self.phone_number = phone_number
+        self.verified_phone = verified_phone
+        self.account_region = account_region
+        self.name = name
+        self.access_link_send_result = access_link_send_result
+
+    @property
+    def id(self):
+        &#34;&#34;&#34;Gets the id of this UserDto.  # noqa: E501
+
+
+        :return: The id of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        &#34;&#34;&#34;Sets the id of this UserDto.
+
+
+        :param id: The id of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `id`, must not be `None`&#34;)  # noqa: E501
+
+        self._id = id
+
+    @property
+    def api_key(self):
+        &#34;&#34;&#34;Gets the api_key of this UserDto.  # noqa: E501
+
+        Deprecate api key use entity instead  # noqa: E501
+
+        :return: The api_key of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._api_key
+
+    @api_key.setter
+    def api_key(self, api_key):
+        &#34;&#34;&#34;Sets the api_key of this UserDto.
+
+        Deprecate api key use entity instead  # noqa: E501
+
+        :param api_key: The api_key of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and api_key is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `api_key`, must not be `None`&#34;)  # noqa: E501
+
+        self._api_key = api_key
+
+    @property
+    def email_address(self):
+        &#34;&#34;&#34;Gets the email_address of this UserDto.  # noqa: E501
+
+
+        :return: The email_address of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._email_address
+
+    @email_address.setter
+    def email_address(self, email_address):
+        &#34;&#34;&#34;Sets the email_address of this UserDto.
+
+
+        :param email_address: The email_address of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and email_address is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `email_address`, must not be `None`&#34;)  # noqa: E501
+
+        self._email_address = email_address
+
+    @property
+    def email_address_md5(self):
+        &#34;&#34;&#34;Gets the email_address_md5 of this UserDto.  # noqa: E501
+
+
+        :return: The email_address_md5 of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._email_address_md5
+
+    @email_address_md5.setter
+    def email_address_md5(self, email_address_md5):
+        &#34;&#34;&#34;Sets the email_address_md5 of this UserDto.
+
+
+        :param email_address_md5: The email_address_md5 of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and email_address_md5 is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `email_address_md5`, must not be `None`&#34;)  # noqa: E501
+
+        self._email_address_md5 = email_address_md5
+
+    @property
+    def created(self):
+        &#34;&#34;&#34;Gets the created of this UserDto.  # noqa: E501
+
+
+        :return: The created of this UserDto.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        &#34;&#34;&#34;Sets the created of this UserDto.
+
+
+        :param created: The created of this UserDto.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+
+        self._created = created
+
+    @property
+    def user_type(self):
+        &#34;&#34;&#34;Gets the user_type of this UserDto.  # noqa: E501
+
+
+        :return: The user_type of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._user_type
+
+    @user_type.setter
+    def user_type(self, user_type):
+        &#34;&#34;&#34;Sets the user_type of this UserDto.
+
+
+        :param user_type: The user_type of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;SOLO&#34;, &#34;CHILD_SOLO&#34;, &#34;CHILD_TEAM&#34;, &#34;CHILD_ADMIN&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and user_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `user_type` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(user_type, allowed_values)
+            )
+
+        self._user_type = user_type
+
+    @property
+    def organization(self):
+        &#34;&#34;&#34;Gets the organization of this UserDto.  # noqa: E501
+
+        Does user belong to an organization  # noqa: E501
+
+        :return: The organization of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._organization
+
+    @organization.setter
+    def organization(self, organization):
+        &#34;&#34;&#34;Sets the organization of this UserDto.
+
+        Does user belong to an organization  # noqa: E501
+
+        :param organization: The organization of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._organization = organization
+
+    @property
+    def verified(self):
+        &#34;&#34;&#34;Gets the verified of this UserDto.  # noqa: E501
+
+        Has user accepted an organization invite  # noqa: E501
+
+        :return: The verified of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._verified
+
+    @verified.setter
+    def verified(self, verified):
+        &#34;&#34;&#34;Sets the verified of this UserDto.
+
+        Has user accepted an organization invite  # noqa: E501
+
+        :param verified: The verified of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;VERIFIED&#34;, &#34;PENDING&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and verified not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `verified` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(verified, allowed_values)
+            )
+
+        self._verified = verified
+
+    @property
+    def has_password(self):
+        &#34;&#34;&#34;Gets the has_password of this UserDto.  # noqa: E501
+
+
+        :return: The has_password of this UserDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._has_password
+
+    @has_password.setter
+    def has_password(self, has_password):
+        &#34;&#34;&#34;Sets the has_password of this UserDto.
+
+
+        :param has_password: The has_password of this UserDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and has_password is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `has_password`, must not be `None`&#34;)  # noqa: E501
+
+        self._has_password = has_password
+
+    @property
+    def is_frozen(self):
+        &#34;&#34;&#34;Gets the is_frozen of this UserDto.  # noqa: E501
+
+
+        :return: The is_frozen of this UserDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._is_frozen
+
+    @is_frozen.setter
+    def is_frozen(self, is_frozen):
+        &#34;&#34;&#34;Sets the is_frozen of this UserDto.
+
+
+        :param is_frozen: The is_frozen of this UserDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and is_frozen is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `is_frozen`, must not be `None`&#34;)  # noqa: E501
+
+        self._is_frozen = is_frozen
+
+    @property
+    def frozen_message(self):
+        &#34;&#34;&#34;Gets the frozen_message of this UserDto.  # noqa: E501
+
+
+        :return: The frozen_message of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._frozen_message
+
+    @frozen_message.setter
+    def frozen_message(self, frozen_message):
+        &#34;&#34;&#34;Sets the frozen_message of this UserDto.
+
+
+        :param frozen_message: The frozen_message of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._frozen_message = frozen_message
+
+    @property
+    def add_new_contacts(self):
+        &#34;&#34;&#34;Gets the add_new_contacts of this UserDto.  # noqa: E501
+
+
+        :return: The add_new_contacts of this UserDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._add_new_contacts
+
+    @add_new_contacts.setter
+    def add_new_contacts(self, add_new_contacts):
+        &#34;&#34;&#34;Sets the add_new_contacts of this UserDto.
+
+
+        :param add_new_contacts: The add_new_contacts of this UserDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._add_new_contacts = add_new_contacts
+
+    @property
+    def sso_provider(self):
+        &#34;&#34;&#34;Gets the sso_provider of this UserDto.  # noqa: E501
+
+
+        :return: The sso_provider of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._sso_provider
+
+    @sso_provider.setter
+    def sso_provider(self, sso_provider):
+        &#34;&#34;&#34;Sets the sso_provider of this UserDto.
+
+
+        :param sso_provider: The sso_provider of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._sso_provider = sso_provider
+
+    @property
+    def customer_id(self):
+        &#34;&#34;&#34;Gets the customer_id of this UserDto.  # noqa: E501
+
+
+        :return: The customer_id of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._customer_id
+
+    @customer_id.setter
+    def customer_id(self, customer_id):
+        &#34;&#34;&#34;Sets the customer_id of this UserDto.
+
+
+        :param customer_id: The customer_id of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._customer_id = customer_id
+
+    @property
+    def has_onboarded(self):
+        &#34;&#34;&#34;Gets the has_onboarded of this UserDto.  # noqa: E501
+
+
+        :return: The has_onboarded of this UserDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._has_onboarded
+
+    @has_onboarded.setter
+    def has_onboarded(self, has_onboarded):
+        &#34;&#34;&#34;Sets the has_onboarded of this UserDto.
+
+
+        :param has_onboarded: The has_onboarded of this UserDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._has_onboarded = has_onboarded
+
+    @property
+    def imap_username(self):
+        &#34;&#34;&#34;Gets the imap_username of this UserDto.  # noqa: E501
+
+
+        :return: The imap_username of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._imap_username
+
+    @imap_username.setter
+    def imap_username(self, imap_username):
+        &#34;&#34;&#34;Sets the imap_username of this UserDto.
+
+
+        :param imap_username: The imap_username of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._imap_username = imap_username
+
+    @property
+    def imap_password(self):
+        &#34;&#34;&#34;Gets the imap_password of this UserDto.  # noqa: E501
+
+
+        :return: The imap_password of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._imap_password
+
+    @imap_password.setter
+    def imap_password(self, imap_password):
+        &#34;&#34;&#34;Sets the imap_password of this UserDto.
+
+
+        :param imap_password: The imap_password of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._imap_password = imap_password
+
+    @property
+    def smtp_username(self):
+        &#34;&#34;&#34;Gets the smtp_username of this UserDto.  # noqa: E501
+
+
+        :return: The smtp_username of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._smtp_username
+
+    @smtp_username.setter
+    def smtp_username(self, smtp_username):
+        &#34;&#34;&#34;Sets the smtp_username of this UserDto.
+
+
+        :param smtp_username: The smtp_username of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._smtp_username = smtp_username
+
+    @property
+    def smtp_password(self):
+        &#34;&#34;&#34;Gets the smtp_password of this UserDto.  # noqa: E501
+
+
+        :return: The smtp_password of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._smtp_password
+
+    @smtp_password.setter
+    def smtp_password(self, smtp_password):
+        &#34;&#34;&#34;Sets the smtp_password of this UserDto.
+
+
+        :param smtp_password: The smtp_password of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._smtp_password = smtp_password
+
+    @property
+    def charge_pending(self):
+        &#34;&#34;&#34;Gets the charge_pending of this UserDto.  # noqa: E501
+
+
+        :return: The charge_pending of this UserDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._charge_pending
+
+    @charge_pending.setter
+    def charge_pending(self, charge_pending):
+        &#34;&#34;&#34;Sets the charge_pending of this UserDto.
+
+
+        :param charge_pending: The charge_pending of this UserDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._charge_pending = charge_pending
+
+    @property
+    def enable_sms(self):
+        &#34;&#34;&#34;Gets the enable_sms of this UserDto.  # noqa: E501
+
+
+        :return: The enable_sms of this UserDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._enable_sms
+
+    @enable_sms.setter
+    def enable_sms(self, enable_sms):
+        &#34;&#34;&#34;Sets the enable_sms of this UserDto.
+
+
+        :param enable_sms: The enable_sms of this UserDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._enable_sms = enable_sms
+
+    @property
+    def vendor_email_address(self):
+        &#34;&#34;&#34;Gets the vendor_email_address of this UserDto.  # noqa: E501
+
+
+        :return: The vendor_email_address of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._vendor_email_address
+
+    @vendor_email_address.setter
+    def vendor_email_address(self, vendor_email_address):
+        &#34;&#34;&#34;Sets the vendor_email_address of this UserDto.
+
+
+        :param vendor_email_address: The vendor_email_address of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._vendor_email_address = vendor_email_address
+
+    @property
+    def unsubscribed(self):
+        &#34;&#34;&#34;Gets the unsubscribed of this UserDto.  # noqa: E501
+
+
+        :return: The unsubscribed of this UserDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._unsubscribed
+
+    @unsubscribed.setter
+    def unsubscribed(self, unsubscribed):
+        &#34;&#34;&#34;Sets the unsubscribed of this UserDto.
+
+
+        :param unsubscribed: The unsubscribed of this UserDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._unsubscribed = unsubscribed
+
+    @property
+    def api_access_token(self):
+        &#34;&#34;&#34;Gets the api_access_token of this UserDto.  # noqa: E501
+
+
+        :return: The api_access_token of this UserDto.  # noqa: E501
+        :rtype: TemporaryAccessKeyDto
+        &#34;&#34;&#34;
+        return self._api_access_token
+
+    @api_access_token.setter
+    def api_access_token(self, api_access_token):
+        &#34;&#34;&#34;Sets the api_access_token of this UserDto.
+
+
+        :param api_access_token: The api_access_token of this UserDto.  # noqa: E501
+        :type: TemporaryAccessKeyDto
+        &#34;&#34;&#34;
+
+        self._api_access_token = api_access_token
+
+    @property
+    def phone_number(self):
+        &#34;&#34;&#34;Gets the phone_number of this UserDto.  # noqa: E501
+
+
+        :return: The phone_number of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number):
+        &#34;&#34;&#34;Sets the phone_number of this UserDto.
+
+
+        :param phone_number: The phone_number of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._phone_number = phone_number
+
+    @property
+    def verified_phone(self):
+        &#34;&#34;&#34;Gets the verified_phone of this UserDto.  # noqa: E501
+
+        Has user accepted an organization invite  # noqa: E501
+
+        :return: The verified_phone of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._verified_phone
+
+    @verified_phone.setter
+    def verified_phone(self, verified_phone):
+        &#34;&#34;&#34;Sets the verified_phone of this UserDto.
+
+        Has user accepted an organization invite  # noqa: E501
+
+        :param verified_phone: The verified_phone of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;VERIFIED&#34;, &#34;PENDING&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and verified_phone not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `verified_phone` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(verified_phone, allowed_values)
+            )
+
+        self._verified_phone = verified_phone
+
+    @property
+    def account_region(self):
+        &#34;&#34;&#34;Gets the account_region of this UserDto.  # noqa: E501
+
+        Default account region  # noqa: E501
+
+        :return: The account_region of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._account_region
+
+    @account_region.setter
+    def account_region(self, account_region):
+        &#34;&#34;&#34;Sets the account_region of this UserDto.
+
+        Default account region  # noqa: E501
+
+        :param account_region: The account_region of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;US_WEST_2_ACCOUNT_STAGING&#34;, &#34;US_EAST_1_ACCOUNT_STAGING&#34;, &#34;EU_WEST_1_ACCOUNT_STAGING&#34;, &#34;US_WEST_2_ACCOUNT_SES_1&#34;, &#34;US_EAST_1_ACCOUNT_SES_1&#34;, &#34;EU_WEST_1_ACCOUNT_SES_1&#34;, &#34;US_WEST_2_ACCOUNT_SES_2&#34;, &#34;EU_WEST_1_ACCOUNT_SES_2&#34;, &#34;US_WEST_2_ACCOUNT_SES_3&#34;, &#34;US_WEST_2_ACCOUNT_BYTEWISE&#34;, &#34;EU_WEST_1_ACCOUNT_BYTEWISE&#34;, &#34;US_WEST_2&#34;, &#34;EU_WEST_1&#34;, &#34;US_EAST_1&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and account_region not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `account_region` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(account_region, allowed_values)
+            )
+
+        self._account_region = account_region
+
+    @property
+    def name(self):
+        &#34;&#34;&#34;Gets the name of this UserDto.  # noqa: E501
+
+        User display name  # noqa: E501
+
+        :return: The name of this UserDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        &#34;&#34;&#34;Sets the name of this UserDto.
+
+        User display name  # noqa: E501
+
+        :param name: The name of this UserDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._name = name
+
+    @property
+    def access_link_send_result(self):
+        &#34;&#34;&#34;Gets the access_link_send_result of this UserDto.  # noqa: E501
+
+
+        :return: The access_link_send_result of this UserDto.  # noqa: E501
+        :rtype: AccessLinkSendResultDto
+        &#34;&#34;&#34;
+        return self._access_link_send_result
+
+    @access_link_send_result.setter
+    def access_link_send_result(self, access_link_send_result):
+        &#34;&#34;&#34;Sets the access_link_send_result of this UserDto.
+
+
+        :param access_link_send_result: The access_link_send_result of this UserDto.  # noqa: E501
+        :type: AccessLinkSendResultDto
+        &#34;&#34;&#34;
+
+        self._access_link_send_result = access_link_send_result
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, UserDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, UserDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.user_dto.UserDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.user_dto.UserDto.access_link_send_result"><code class="name">prop <span class="ident">access_link_send_result</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the access_link_send_result of this UserDto.
+# noqa: E501</p>
+<p>:return: The access_link_send_result of this UserDto.
+# noqa: E501
+:rtype: AccessLinkSendResultDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def access_link_send_result(self):
+    &#34;&#34;&#34;Gets the access_link_send_result of this UserDto.  # noqa: E501
+
+
+    :return: The access_link_send_result of this UserDto.  # noqa: E501
+    :rtype: AccessLinkSendResultDto
+    &#34;&#34;&#34;
+    return self._access_link_send_result</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.account_region"><code class="name">prop <span class="ident">account_region</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the account_region of this UserDto.
+# noqa: E501</p>
+<p>Default account region
+# noqa: E501</p>
+<p>:return: The account_region of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def account_region(self):
+    &#34;&#34;&#34;Gets the account_region of this UserDto.  # noqa: E501
+
+    Default account region  # noqa: E501
+
+    :return: The account_region of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._account_region</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.add_new_contacts"><code class="name">prop <span class="ident">add_new_contacts</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the add_new_contacts of this UserDto.
+# noqa: E501</p>
+<p>:return: The add_new_contacts of this UserDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def add_new_contacts(self):
+    &#34;&#34;&#34;Gets the add_new_contacts of this UserDto.  # noqa: E501
+
+
+    :return: The add_new_contacts of this UserDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._add_new_contacts</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.api_access_token"><code class="name">prop <span class="ident">api_access_token</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the api_access_token of this UserDto.
+# noqa: E501</p>
+<p>:return: The api_access_token of this UserDto.
+# noqa: E501
+:rtype: TemporaryAccessKeyDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def api_access_token(self):
+    &#34;&#34;&#34;Gets the api_access_token of this UserDto.  # noqa: E501
+
+
+    :return: The api_access_token of this UserDto.  # noqa: E501
+    :rtype: TemporaryAccessKeyDto
+    &#34;&#34;&#34;
+    return self._api_access_token</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.api_key"><code class="name">prop <span class="ident">api_key</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the api_key of this UserDto.
+# noqa: E501</p>
+<p>Deprecate api key use entity instead
+# noqa: E501</p>
+<p>:return: The api_key of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def api_key(self):
+    &#34;&#34;&#34;Gets the api_key of this UserDto.  # noqa: E501
+
+    Deprecate api key use entity instead  # noqa: E501
+
+    :return: The api_key of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._api_key</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.charge_pending"><code class="name">prop <span class="ident">charge_pending</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the charge_pending of this UserDto.
+# noqa: E501</p>
+<p>:return: The charge_pending of this UserDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def charge_pending(self):
+    &#34;&#34;&#34;Gets the charge_pending of this UserDto.  # noqa: E501
+
+
+    :return: The charge_pending of this UserDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._charge_pending</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.created"><code class="name">prop <span class="ident">created</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the created of this UserDto.
+# noqa: E501</p>
+<p>:return: The created of this UserDto.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def created(self):
+    &#34;&#34;&#34;Gets the created of this UserDto.  # noqa: E501
+
+
+    :return: The created of this UserDto.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._created</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.customer_id"><code class="name">prop <span class="ident">customer_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the customer_id of this UserDto.
+# noqa: E501</p>
+<p>:return: The customer_id of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def customer_id(self):
+    &#34;&#34;&#34;Gets the customer_id of this UserDto.  # noqa: E501
+
+
+    :return: The customer_id of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._customer_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.email_address"><code class="name">prop <span class="ident">email_address</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the email_address of this UserDto.
+# noqa: E501</p>
+<p>:return: The email_address of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def email_address(self):
+    &#34;&#34;&#34;Gets the email_address of this UserDto.  # noqa: E501
+
+
+    :return: The email_address of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._email_address</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.email_address_md5"><code class="name">prop <span class="ident">email_address_md5</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the email_address_md5 of this UserDto.
+# noqa: E501</p>
+<p>:return: The email_address_md5 of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def email_address_md5(self):
+    &#34;&#34;&#34;Gets the email_address_md5 of this UserDto.  # noqa: E501
+
+
+    :return: The email_address_md5 of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._email_address_md5</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.enable_sms"><code class="name">prop <span class="ident">enable_sms</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the enable_sms of this UserDto.
+# noqa: E501</p>
+<p>:return: The enable_sms of this UserDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def enable_sms(self):
+    &#34;&#34;&#34;Gets the enable_sms of this UserDto.  # noqa: E501
+
+
+    :return: The enable_sms of this UserDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._enable_sms</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.frozen_message"><code class="name">prop <span class="ident">frozen_message</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the frozen_message of this UserDto.
+# noqa: E501</p>
+<p>:return: The frozen_message of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def frozen_message(self):
+    &#34;&#34;&#34;Gets the frozen_message of this UserDto.  # noqa: E501
+
+
+    :return: The frozen_message of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._frozen_message</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.has_onboarded"><code class="name">prop <span class="ident">has_onboarded</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the has_onboarded of this UserDto.
+# noqa: E501</p>
+<p>:return: The has_onboarded of this UserDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def has_onboarded(self):
+    &#34;&#34;&#34;Gets the has_onboarded of this UserDto.  # noqa: E501
+
+
+    :return: The has_onboarded of this UserDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._has_onboarded</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.has_password"><code class="name">prop <span class="ident">has_password</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the has_password of this UserDto.
+# noqa: E501</p>
+<p>:return: The has_password of this UserDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def has_password(self):
+    &#34;&#34;&#34;Gets the has_password of this UserDto.  # noqa: E501
+
+
+    :return: The has_password of this UserDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._has_password</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.id"><code class="name">prop <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the id of this UserDto.
+# noqa: E501</p>
+<p>:return: The id of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def id(self):
+    &#34;&#34;&#34;Gets the id of this UserDto.  # noqa: E501
+
+
+    :return: The id of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.imap_password"><code class="name">prop <span class="ident">imap_password</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the imap_password of this UserDto.
+# noqa: E501</p>
+<p>:return: The imap_password of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def imap_password(self):
+    &#34;&#34;&#34;Gets the imap_password of this UserDto.  # noqa: E501
+
+
+    :return: The imap_password of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._imap_password</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.imap_username"><code class="name">prop <span class="ident">imap_username</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the imap_username of this UserDto.
+# noqa: E501</p>
+<p>:return: The imap_username of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def imap_username(self):
+    &#34;&#34;&#34;Gets the imap_username of this UserDto.  # noqa: E501
+
+
+    :return: The imap_username of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._imap_username</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.is_frozen"><code class="name">prop <span class="ident">is_frozen</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the is_frozen of this UserDto.
+# noqa: E501</p>
+<p>:return: The is_frozen of this UserDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_frozen(self):
+    &#34;&#34;&#34;Gets the is_frozen of this UserDto.  # noqa: E501
+
+
+    :return: The is_frozen of this UserDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._is_frozen</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.name"><code class="name">prop <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the name of this UserDto.
+# noqa: E501</p>
+<p>User display name
+# noqa: E501</p>
+<p>:return: The name of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def name(self):
+    &#34;&#34;&#34;Gets the name of this UserDto.  # noqa: E501
+
+    User display name  # noqa: E501
+
+    :return: The name of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._name</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.organization"><code class="name">prop <span class="ident">organization</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the organization of this UserDto.
+# noqa: E501</p>
+<p>Does user belong to an organization
+# noqa: E501</p>
+<p>:return: The organization of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def organization(self):
+    &#34;&#34;&#34;Gets the organization of this UserDto.  # noqa: E501
+
+    Does user belong to an organization  # noqa: E501
+
+    :return: The organization of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._organization</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.phone_number"><code class="name">prop <span class="ident">phone_number</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the phone_number of this UserDto.
+# noqa: E501</p>
+<p>:return: The phone_number of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def phone_number(self):
+    &#34;&#34;&#34;Gets the phone_number of this UserDto.  # noqa: E501
+
+
+    :return: The phone_number of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._phone_number</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.smtp_password"><code class="name">prop <span class="ident">smtp_password</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the smtp_password of this UserDto.
+# noqa: E501</p>
+<p>:return: The smtp_password of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def smtp_password(self):
+    &#34;&#34;&#34;Gets the smtp_password of this UserDto.  # noqa: E501
+
+
+    :return: The smtp_password of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._smtp_password</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.smtp_username"><code class="name">prop <span class="ident">smtp_username</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the smtp_username of this UserDto.
+# noqa: E501</p>
+<p>:return: The smtp_username of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def smtp_username(self):
+    &#34;&#34;&#34;Gets the smtp_username of this UserDto.  # noqa: E501
+
+
+    :return: The smtp_username of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._smtp_username</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.sso_provider"><code class="name">prop <span class="ident">sso_provider</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sso_provider of this UserDto.
+# noqa: E501</p>
+<p>:return: The sso_provider of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sso_provider(self):
+    &#34;&#34;&#34;Gets the sso_provider of this UserDto.  # noqa: E501
+
+
+    :return: The sso_provider of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._sso_provider</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.unsubscribed"><code class="name">prop <span class="ident">unsubscribed</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the unsubscribed of this UserDto.
+# noqa: E501</p>
+<p>:return: The unsubscribed of this UserDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def unsubscribed(self):
+    &#34;&#34;&#34;Gets the unsubscribed of this UserDto.  # noqa: E501
+
+
+    :return: The unsubscribed of this UserDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._unsubscribed</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.user_type"><code class="name">prop <span class="ident">user_type</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the user_type of this UserDto.
+# noqa: E501</p>
+<p>:return: The user_type of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def user_type(self):
+    &#34;&#34;&#34;Gets the user_type of this UserDto.  # noqa: E501
+
+
+    :return: The user_type of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._user_type</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.vendor_email_address"><code class="name">prop <span class="ident">vendor_email_address</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the vendor_email_address of this UserDto.
+# noqa: E501</p>
+<p>:return: The vendor_email_address of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def vendor_email_address(self):
+    &#34;&#34;&#34;Gets the vendor_email_address of this UserDto.  # noqa: E501
+
+
+    :return: The vendor_email_address of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._vendor_email_address</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.verified"><code class="name">prop <span class="ident">verified</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the verified of this UserDto.
+# noqa: E501</p>
+<p>Has user accepted an organization invite
+# noqa: E501</p>
+<p>:return: The verified of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def verified(self):
+    &#34;&#34;&#34;Gets the verified of this UserDto.  # noqa: E501
+
+    Has user accepted an organization invite  # noqa: E501
+
+    :return: The verified of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._verified</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.verified_phone"><code class="name">prop <span class="ident">verified_phone</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the verified_phone of this UserDto.
+# noqa: E501</p>
+<p>Has user accepted an organization invite
+# noqa: E501</p>
+<p>:return: The verified_phone of this UserDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def verified_phone(self):
+    &#34;&#34;&#34;Gets the verified_phone of this UserDto.  # noqa: E501
+
+    Has user accepted an organization invite  # noqa: E501
+
+    :return: The verified_phone of this UserDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._verified_phone</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.user_dto.UserDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.user_dto.UserDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.user_dto.UserDto" href="#mailslurp_client.models.user_dto.UserDto">UserDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.access_link_send_result" href="#mailslurp_client.models.user_dto.UserDto.access_link_send_result">access_link_send_result</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.account_region" href="#mailslurp_client.models.user_dto.UserDto.account_region">account_region</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.add_new_contacts" href="#mailslurp_client.models.user_dto.UserDto.add_new_contacts">add_new_contacts</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.api_access_token" href="#mailslurp_client.models.user_dto.UserDto.api_access_token">api_access_token</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.api_key" href="#mailslurp_client.models.user_dto.UserDto.api_key">api_key</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.attribute_map" href="#mailslurp_client.models.user_dto.UserDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.charge_pending" href="#mailslurp_client.models.user_dto.UserDto.charge_pending">charge_pending</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.created" href="#mailslurp_client.models.user_dto.UserDto.created">created</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.customer_id" href="#mailslurp_client.models.user_dto.UserDto.customer_id">customer_id</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.email_address" href="#mailslurp_client.models.user_dto.UserDto.email_address">email_address</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.email_address_md5" href="#mailslurp_client.models.user_dto.UserDto.email_address_md5">email_address_md5</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.enable_sms" href="#mailslurp_client.models.user_dto.UserDto.enable_sms">enable_sms</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.frozen_message" href="#mailslurp_client.models.user_dto.UserDto.frozen_message">frozen_message</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.has_onboarded" href="#mailslurp_client.models.user_dto.UserDto.has_onboarded">has_onboarded</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.has_password" href="#mailslurp_client.models.user_dto.UserDto.has_password">has_password</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.id" href="#mailslurp_client.models.user_dto.UserDto.id">id</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.imap_password" href="#mailslurp_client.models.user_dto.UserDto.imap_password">imap_password</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.imap_username" href="#mailslurp_client.models.user_dto.UserDto.imap_username">imap_username</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.is_frozen" href="#mailslurp_client.models.user_dto.UserDto.is_frozen">is_frozen</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.name" href="#mailslurp_client.models.user_dto.UserDto.name">name</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.openapi_types" href="#mailslurp_client.models.user_dto.UserDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.organization" href="#mailslurp_client.models.user_dto.UserDto.organization">organization</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.phone_number" href="#mailslurp_client.models.user_dto.UserDto.phone_number">phone_number</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.smtp_password" href="#mailslurp_client.models.user_dto.UserDto.smtp_password">smtp_password</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.smtp_username" href="#mailslurp_client.models.user_dto.UserDto.smtp_username">smtp_username</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.sso_provider" href="#mailslurp_client.models.user_dto.UserDto.sso_provider">sso_provider</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.to_dict" href="#mailslurp_client.models.user_dto.UserDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.to_str" href="#mailslurp_client.models.user_dto.UserDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.unsubscribed" href="#mailslurp_client.models.user_dto.UserDto.unsubscribed">unsubscribed</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.user_type" href="#mailslurp_client.models.user_dto.UserDto.user_type">user_type</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.vendor_email_address" href="#mailslurp_client.models.user_dto.UserDto.vendor_email_address">vendor_email_address</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.verified" href="#mailslurp_client.models.user_dto.UserDto.verified">verified</a></code></li>
+<li><code><a title="mailslurp_client.models.user_dto.UserDto.verified_phone" href="#mailslurp_client.models.user_dto.UserDto.verified_phone">verified_phone</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

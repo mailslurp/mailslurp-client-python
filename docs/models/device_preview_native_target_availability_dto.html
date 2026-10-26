@@ -1,0 +1,1947 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.device_preview_native_target_availability_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.device_preview_native_target_availability_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto"><code class="flex name class">
+<span>class <span class="ident">DevicePreviewNativeTargetAvailabilityDto</span></span>
+<span>(</span><span>target=None, base_target=None, provider=None, client=None, surface=None, platform=None, form_factor=None, engine=None, appearance=None, visible=None, credit_cost=None, tier=None, enabled=None, request_queue_configured=None, status=None, status_reason=None, healthy_workers=None, recent_workers=None, timeout_seconds=None, available_slots=None, public_polling_workers=None, minimum_worker_release_version=None, desired_worker_release_version=None, desired_release_workers=None, desired_release_public_polling_workers=None, release_versions=None, desired_lanes=None, matched_live_lanes=None, identity_mismatch_lanes=None, serving_lanes=None, spare_lanes=None, busy_lanes=None, degraded_lanes=None, quarantined_lanes=None, zero_capacity_lanes=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>DevicePreviewNativeTargetAvailabilityDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DevicePreviewNativeTargetAvailabilityDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;target&#39;: &#39;str&#39;,
+        &#39;base_target&#39;: &#39;str&#39;,
+        &#39;provider&#39;: &#39;str&#39;,
+        &#39;client&#39;: &#39;str&#39;,
+        &#39;surface&#39;: &#39;str&#39;,
+        &#39;platform&#39;: &#39;str&#39;,
+        &#39;form_factor&#39;: &#39;str&#39;,
+        &#39;engine&#39;: &#39;str&#39;,
+        &#39;appearance&#39;: &#39;str&#39;,
+        &#39;visible&#39;: &#39;bool&#39;,
+        &#39;credit_cost&#39;: &#39;int&#39;,
+        &#39;tier&#39;: &#39;str&#39;,
+        &#39;enabled&#39;: &#39;bool&#39;,
+        &#39;request_queue_configured&#39;: &#39;bool&#39;,
+        &#39;status&#39;: &#39;str&#39;,
+        &#39;status_reason&#39;: &#39;str&#39;,
+        &#39;healthy_workers&#39;: &#39;int&#39;,
+        &#39;recent_workers&#39;: &#39;int&#39;,
+        &#39;timeout_seconds&#39;: &#39;int&#39;,
+        &#39;available_slots&#39;: &#39;int&#39;,
+        &#39;public_polling_workers&#39;: &#39;int&#39;,
+        &#39;minimum_worker_release_version&#39;: &#39;str&#39;,
+        &#39;desired_worker_release_version&#39;: &#39;str&#39;,
+        &#39;desired_release_workers&#39;: &#39;int&#39;,
+        &#39;desired_release_public_polling_workers&#39;: &#39;int&#39;,
+        &#39;release_versions&#39;: &#39;dict(str, int)&#39;,
+        &#39;desired_lanes&#39;: &#39;int&#39;,
+        &#39;matched_live_lanes&#39;: &#39;int&#39;,
+        &#39;identity_mismatch_lanes&#39;: &#39;int&#39;,
+        &#39;serving_lanes&#39;: &#39;int&#39;,
+        &#39;spare_lanes&#39;: &#39;int&#39;,
+        &#39;busy_lanes&#39;: &#39;int&#39;,
+        &#39;degraded_lanes&#39;: &#39;int&#39;,
+        &#39;quarantined_lanes&#39;: &#39;int&#39;,
+        &#39;zero_capacity_lanes&#39;: &#39;int&#39;
+    }
+
+    attribute_map = {
+        &#39;target&#39;: &#39;target&#39;,
+        &#39;base_target&#39;: &#39;baseTarget&#39;,
+        &#39;provider&#39;: &#39;provider&#39;,
+        &#39;client&#39;: &#39;client&#39;,
+        &#39;surface&#39;: &#39;surface&#39;,
+        &#39;platform&#39;: &#39;platform&#39;,
+        &#39;form_factor&#39;: &#39;formFactor&#39;,
+        &#39;engine&#39;: &#39;engine&#39;,
+        &#39;appearance&#39;: &#39;appearance&#39;,
+        &#39;visible&#39;: &#39;visible&#39;,
+        &#39;credit_cost&#39;: &#39;creditCost&#39;,
+        &#39;tier&#39;: &#39;tier&#39;,
+        &#39;enabled&#39;: &#39;enabled&#39;,
+        &#39;request_queue_configured&#39;: &#39;requestQueueConfigured&#39;,
+        &#39;status&#39;: &#39;status&#39;,
+        &#39;status_reason&#39;: &#39;statusReason&#39;,
+        &#39;healthy_workers&#39;: &#39;healthyWorkers&#39;,
+        &#39;recent_workers&#39;: &#39;recentWorkers&#39;,
+        &#39;timeout_seconds&#39;: &#39;timeoutSeconds&#39;,
+        &#39;available_slots&#39;: &#39;availableSlots&#39;,
+        &#39;public_polling_workers&#39;: &#39;publicPollingWorkers&#39;,
+        &#39;minimum_worker_release_version&#39;: &#39;minimumWorkerReleaseVersion&#39;,
+        &#39;desired_worker_release_version&#39;: &#39;desiredWorkerReleaseVersion&#39;,
+        &#39;desired_release_workers&#39;: &#39;desiredReleaseWorkers&#39;,
+        &#39;desired_release_public_polling_workers&#39;: &#39;desiredReleasePublicPollingWorkers&#39;,
+        &#39;release_versions&#39;: &#39;releaseVersions&#39;,
+        &#39;desired_lanes&#39;: &#39;desiredLanes&#39;,
+        &#39;matched_live_lanes&#39;: &#39;matchedLiveLanes&#39;,
+        &#39;identity_mismatch_lanes&#39;: &#39;identityMismatchLanes&#39;,
+        &#39;serving_lanes&#39;: &#39;servingLanes&#39;,
+        &#39;spare_lanes&#39;: &#39;spareLanes&#39;,
+        &#39;busy_lanes&#39;: &#39;busyLanes&#39;,
+        &#39;degraded_lanes&#39;: &#39;degradedLanes&#39;,
+        &#39;quarantined_lanes&#39;: &#39;quarantinedLanes&#39;,
+        &#39;zero_capacity_lanes&#39;: &#39;zeroCapacityLanes&#39;
+    }
+
+    def __init__(self, target=None, base_target=None, provider=None, client=None, surface=None, platform=None, form_factor=None, engine=None, appearance=None, visible=None, credit_cost=None, tier=None, enabled=None, request_queue_configured=None, status=None, status_reason=None, healthy_workers=None, recent_workers=None, timeout_seconds=None, available_slots=None, public_polling_workers=None, minimum_worker_release_version=None, desired_worker_release_version=None, desired_release_workers=None, desired_release_public_polling_workers=None, release_versions=None, desired_lanes=None, matched_live_lanes=None, identity_mismatch_lanes=None, serving_lanes=None, spare_lanes=None, busy_lanes=None, degraded_lanes=None, quarantined_lanes=None, zero_capacity_lanes=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;DevicePreviewNativeTargetAvailabilityDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._target = None
+        self._base_target = None
+        self._provider = None
+        self._client = None
+        self._surface = None
+        self._platform = None
+        self._form_factor = None
+        self._engine = None
+        self._appearance = None
+        self._visible = None
+        self._credit_cost = None
+        self._tier = None
+        self._enabled = None
+        self._request_queue_configured = None
+        self._status = None
+        self._status_reason = None
+        self._healthy_workers = None
+        self._recent_workers = None
+        self._timeout_seconds = None
+        self._available_slots = None
+        self._public_polling_workers = None
+        self._minimum_worker_release_version = None
+        self._desired_worker_release_version = None
+        self._desired_release_workers = None
+        self._desired_release_public_polling_workers = None
+        self._release_versions = None
+        self._desired_lanes = None
+        self._matched_live_lanes = None
+        self._identity_mismatch_lanes = None
+        self._serving_lanes = None
+        self._spare_lanes = None
+        self._busy_lanes = None
+        self._degraded_lanes = None
+        self._quarantined_lanes = None
+        self._zero_capacity_lanes = None
+        self.discriminator = None
+
+        self.target = target
+        self.base_target = base_target
+        self.provider = provider
+        self.client = client
+        self.surface = surface
+        self.platform = platform
+        self.form_factor = form_factor
+        self.engine = engine
+        self.appearance = appearance
+        self.visible = visible
+        self.credit_cost = credit_cost
+        self.tier = tier
+        self.enabled = enabled
+        self.request_queue_configured = request_queue_configured
+        self.status = status
+        self.status_reason = status_reason
+        self.healthy_workers = healthy_workers
+        self.recent_workers = recent_workers
+        self.timeout_seconds = timeout_seconds
+        self.available_slots = available_slots
+        self.public_polling_workers = public_polling_workers
+        self.minimum_worker_release_version = minimum_worker_release_version
+        self.desired_worker_release_version = desired_worker_release_version
+        self.desired_release_workers = desired_release_workers
+        self.desired_release_public_polling_workers = desired_release_public_polling_workers
+        self.release_versions = release_versions
+        self.desired_lanes = desired_lanes
+        self.matched_live_lanes = matched_live_lanes
+        self.identity_mismatch_lanes = identity_mismatch_lanes
+        self.serving_lanes = serving_lanes
+        self.spare_lanes = spare_lanes
+        self.busy_lanes = busy_lanes
+        self.degraded_lanes = degraded_lanes
+        self.quarantined_lanes = quarantined_lanes
+        self.zero_capacity_lanes = zero_capacity_lanes
+
+    @property
+    def target(self):
+        &#34;&#34;&#34;Gets the target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        &#34;&#34;&#34;Sets the target of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param target: The target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and target is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `target`, must not be `None`&#34;)  # noqa: E501
+
+        self._target = target
+
+    @property
+    def base_target(self):
+        &#34;&#34;&#34;Gets the base_target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The base_target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._base_target
+
+    @base_target.setter
+    def base_target(self, base_target):
+        &#34;&#34;&#34;Sets the base_target of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param base_target: The base_target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and base_target is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `base_target`, must not be `None`&#34;)  # noqa: E501
+
+        self._base_target = base_target
+
+    @property
+    def provider(self):
+        &#34;&#34;&#34;Gets the provider of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The provider of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        &#34;&#34;&#34;Sets the provider of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param provider: The provider of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._provider = provider
+
+    @property
+    def client(self):
+        &#34;&#34;&#34;Gets the client of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The client of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._client
+
+    @client.setter
+    def client(self, client):
+        &#34;&#34;&#34;Sets the client of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param client: The client of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and client is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `client`, must not be `None`&#34;)  # noqa: E501
+
+        self._client = client
+
+    @property
+    def surface(self):
+        &#34;&#34;&#34;Gets the surface of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The surface of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._surface
+
+    @surface.setter
+    def surface(self, surface):
+        &#34;&#34;&#34;Sets the surface of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param surface: The surface of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and surface is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `surface`, must not be `None`&#34;)  # noqa: E501
+
+        self._surface = surface
+
+    @property
+    def platform(self):
+        &#34;&#34;&#34;Gets the platform of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The platform of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._platform
+
+    @platform.setter
+    def platform(self, platform):
+        &#34;&#34;&#34;Sets the platform of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param platform: The platform of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and platform is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `platform`, must not be `None`&#34;)  # noqa: E501
+
+        self._platform = platform
+
+    @property
+    def form_factor(self):
+        &#34;&#34;&#34;Gets the form_factor of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The form_factor of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._form_factor
+
+    @form_factor.setter
+    def form_factor(self, form_factor):
+        &#34;&#34;&#34;Sets the form_factor of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param form_factor: The form_factor of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and form_factor is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `form_factor`, must not be `None`&#34;)  # noqa: E501
+
+        self._form_factor = form_factor
+
+    @property
+    def engine(self):
+        &#34;&#34;&#34;Gets the engine of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The engine of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._engine
+
+    @engine.setter
+    def engine(self, engine):
+        &#34;&#34;&#34;Sets the engine of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param engine: The engine of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and engine is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `engine`, must not be `None`&#34;)  # noqa: E501
+
+        self._engine = engine
+
+    @property
+    def appearance(self):
+        &#34;&#34;&#34;Gets the appearance of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The appearance of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._appearance
+
+    @appearance.setter
+    def appearance(self, appearance):
+        &#34;&#34;&#34;Sets the appearance of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param appearance: The appearance of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and appearance is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `appearance`, must not be `None`&#34;)  # noqa: E501
+
+        self._appearance = appearance
+
+    @property
+    def visible(self):
+        &#34;&#34;&#34;Gets the visible of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The visible of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._visible
+
+    @visible.setter
+    def visible(self, visible):
+        &#34;&#34;&#34;Sets the visible of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param visible: The visible of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and visible is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `visible`, must not be `None`&#34;)  # noqa: E501
+
+        self._visible = visible
+
+    @property
+    def credit_cost(self):
+        &#34;&#34;&#34;Gets the credit_cost of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The credit_cost of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._credit_cost
+
+    @credit_cost.setter
+    def credit_cost(self, credit_cost):
+        &#34;&#34;&#34;Sets the credit_cost of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param credit_cost: The credit_cost of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and credit_cost is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `credit_cost`, must not be `None`&#34;)  # noqa: E501
+
+        self._credit_cost = credit_cost
+
+    @property
+    def tier(self):
+        &#34;&#34;&#34;Gets the tier of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The tier of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._tier
+
+    @tier.setter
+    def tier(self, tier):
+        &#34;&#34;&#34;Sets the tier of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param tier: The tier of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and tier is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `tier`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;STANDARD&#34;, &#34;PREMIUM&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and tier not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `tier` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(tier, allowed_values)
+            )
+
+        self._tier = tier
+
+    @property
+    def enabled(self):
+        &#34;&#34;&#34;Gets the enabled of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The enabled of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, enabled):
+        &#34;&#34;&#34;Sets the enabled of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param enabled: The enabled of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and enabled is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `enabled`, must not be `None`&#34;)  # noqa: E501
+
+        self._enabled = enabled
+
+    @property
+    def request_queue_configured(self):
+        &#34;&#34;&#34;Gets the request_queue_configured of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The request_queue_configured of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._request_queue_configured
+
+    @request_queue_configured.setter
+    def request_queue_configured(self, request_queue_configured):
+        &#34;&#34;&#34;Sets the request_queue_configured of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param request_queue_configured: The request_queue_configured of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and request_queue_configured is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `request_queue_configured`, must not be `None`&#34;)  # noqa: E501
+
+        self._request_queue_configured = request_queue_configured
+
+    @property
+    def status(self):
+        &#34;&#34;&#34;Gets the status of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The status of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        &#34;&#34;&#34;Sets the status of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param status: The status of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `status`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;AVAILABLE&#34;, &#34;DEGRADED&#34;, &#34;OFFLINE&#34;, &#34;SETUP_REQUIRED&#34;, &#34;DISABLED&#34;, &#34;NOT_CONFIGURED&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `status` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
+
+    @property
+    def status_reason(self):
+        &#34;&#34;&#34;Gets the status_reason of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The status_reason of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._status_reason
+
+    @status_reason.setter
+    def status_reason(self, status_reason):
+        &#34;&#34;&#34;Sets the status_reason of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param status_reason: The status_reason of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._status_reason = status_reason
+
+    @property
+    def healthy_workers(self):
+        &#34;&#34;&#34;Gets the healthy_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The healthy_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._healthy_workers
+
+    @healthy_workers.setter
+    def healthy_workers(self, healthy_workers):
+        &#34;&#34;&#34;Sets the healthy_workers of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param healthy_workers: The healthy_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and healthy_workers is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `healthy_workers`, must not be `None`&#34;)  # noqa: E501
+
+        self._healthy_workers = healthy_workers
+
+    @property
+    def recent_workers(self):
+        &#34;&#34;&#34;Gets the recent_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The recent_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._recent_workers
+
+    @recent_workers.setter
+    def recent_workers(self, recent_workers):
+        &#34;&#34;&#34;Sets the recent_workers of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param recent_workers: The recent_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and recent_workers is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `recent_workers`, must not be `None`&#34;)  # noqa: E501
+
+        self._recent_workers = recent_workers
+
+    @property
+    def timeout_seconds(self):
+        &#34;&#34;&#34;Gets the timeout_seconds of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The timeout_seconds of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._timeout_seconds
+
+    @timeout_seconds.setter
+    def timeout_seconds(self, timeout_seconds):
+        &#34;&#34;&#34;Sets the timeout_seconds of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param timeout_seconds: The timeout_seconds of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and timeout_seconds is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `timeout_seconds`, must not be `None`&#34;)  # noqa: E501
+
+        self._timeout_seconds = timeout_seconds
+
+    @property
+    def available_slots(self):
+        &#34;&#34;&#34;Gets the available_slots of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The available_slots of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._available_slots
+
+    @available_slots.setter
+    def available_slots(self, available_slots):
+        &#34;&#34;&#34;Sets the available_slots of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param available_slots: The available_slots of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and available_slots is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `available_slots`, must not be `None`&#34;)  # noqa: E501
+
+        self._available_slots = available_slots
+
+    @property
+    def public_polling_workers(self):
+        &#34;&#34;&#34;Gets the public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._public_polling_workers
+
+    @public_polling_workers.setter
+    def public_polling_workers(self, public_polling_workers):
+        &#34;&#34;&#34;Sets the public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param public_polling_workers: The public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and public_polling_workers is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `public_polling_workers`, must not be `None`&#34;)  # noqa: E501
+
+        self._public_polling_workers = public_polling_workers
+
+    @property
+    def minimum_worker_release_version(self):
+        &#34;&#34;&#34;Gets the minimum_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The minimum_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._minimum_worker_release_version
+
+    @minimum_worker_release_version.setter
+    def minimum_worker_release_version(self, minimum_worker_release_version):
+        &#34;&#34;&#34;Sets the minimum_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param minimum_worker_release_version: The minimum_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._minimum_worker_release_version = minimum_worker_release_version
+
+    @property
+    def desired_worker_release_version(self):
+        &#34;&#34;&#34;Gets the desired_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The desired_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._desired_worker_release_version
+
+    @desired_worker_release_version.setter
+    def desired_worker_release_version(self, desired_worker_release_version):
+        &#34;&#34;&#34;Sets the desired_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param desired_worker_release_version: The desired_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._desired_worker_release_version = desired_worker_release_version
+
+    @property
+    def desired_release_workers(self):
+        &#34;&#34;&#34;Gets the desired_release_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The desired_release_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._desired_release_workers
+
+    @desired_release_workers.setter
+    def desired_release_workers(self, desired_release_workers):
+        &#34;&#34;&#34;Sets the desired_release_workers of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param desired_release_workers: The desired_release_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+
+        self._desired_release_workers = desired_release_workers
+
+    @property
+    def desired_release_public_polling_workers(self):
+        &#34;&#34;&#34;Gets the desired_release_public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The desired_release_public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._desired_release_public_polling_workers
+
+    @desired_release_public_polling_workers.setter
+    def desired_release_public_polling_workers(self, desired_release_public_polling_workers):
+        &#34;&#34;&#34;Sets the desired_release_public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param desired_release_public_polling_workers: The desired_release_public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+
+        self._desired_release_public_polling_workers = desired_release_public_polling_workers
+
+    @property
+    def release_versions(self):
+        &#34;&#34;&#34;Gets the release_versions of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The release_versions of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: dict(str, int)
+        &#34;&#34;&#34;
+        return self._release_versions
+
+    @release_versions.setter
+    def release_versions(self, release_versions):
+        &#34;&#34;&#34;Sets the release_versions of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param release_versions: The release_versions of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: dict(str, int)
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and release_versions is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `release_versions`, must not be `None`&#34;)  # noqa: E501
+
+        self._release_versions = release_versions
+
+    @property
+    def desired_lanes(self):
+        &#34;&#34;&#34;Gets the desired_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The desired_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._desired_lanes
+
+    @desired_lanes.setter
+    def desired_lanes(self, desired_lanes):
+        &#34;&#34;&#34;Sets the desired_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param desired_lanes: The desired_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and desired_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `desired_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._desired_lanes = desired_lanes
+
+    @property
+    def matched_live_lanes(self):
+        &#34;&#34;&#34;Gets the matched_live_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The matched_live_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._matched_live_lanes
+
+    @matched_live_lanes.setter
+    def matched_live_lanes(self, matched_live_lanes):
+        &#34;&#34;&#34;Sets the matched_live_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param matched_live_lanes: The matched_live_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and matched_live_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `matched_live_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._matched_live_lanes = matched_live_lanes
+
+    @property
+    def identity_mismatch_lanes(self):
+        &#34;&#34;&#34;Gets the identity_mismatch_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The identity_mismatch_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._identity_mismatch_lanes
+
+    @identity_mismatch_lanes.setter
+    def identity_mismatch_lanes(self, identity_mismatch_lanes):
+        &#34;&#34;&#34;Sets the identity_mismatch_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param identity_mismatch_lanes: The identity_mismatch_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and identity_mismatch_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `identity_mismatch_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._identity_mismatch_lanes = identity_mismatch_lanes
+
+    @property
+    def serving_lanes(self):
+        &#34;&#34;&#34;Gets the serving_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The serving_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._serving_lanes
+
+    @serving_lanes.setter
+    def serving_lanes(self, serving_lanes):
+        &#34;&#34;&#34;Sets the serving_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param serving_lanes: The serving_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and serving_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `serving_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._serving_lanes = serving_lanes
+
+    @property
+    def spare_lanes(self):
+        &#34;&#34;&#34;Gets the spare_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The spare_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._spare_lanes
+
+    @spare_lanes.setter
+    def spare_lanes(self, spare_lanes):
+        &#34;&#34;&#34;Sets the spare_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param spare_lanes: The spare_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and spare_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `spare_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._spare_lanes = spare_lanes
+
+    @property
+    def busy_lanes(self):
+        &#34;&#34;&#34;Gets the busy_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The busy_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._busy_lanes
+
+    @busy_lanes.setter
+    def busy_lanes(self, busy_lanes):
+        &#34;&#34;&#34;Sets the busy_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param busy_lanes: The busy_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and busy_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `busy_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._busy_lanes = busy_lanes
+
+    @property
+    def degraded_lanes(self):
+        &#34;&#34;&#34;Gets the degraded_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The degraded_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._degraded_lanes
+
+    @degraded_lanes.setter
+    def degraded_lanes(self, degraded_lanes):
+        &#34;&#34;&#34;Sets the degraded_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param degraded_lanes: The degraded_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and degraded_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `degraded_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._degraded_lanes = degraded_lanes
+
+    @property
+    def quarantined_lanes(self):
+        &#34;&#34;&#34;Gets the quarantined_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The quarantined_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._quarantined_lanes
+
+    @quarantined_lanes.setter
+    def quarantined_lanes(self, quarantined_lanes):
+        &#34;&#34;&#34;Sets the quarantined_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param quarantined_lanes: The quarantined_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and quarantined_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `quarantined_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._quarantined_lanes = quarantined_lanes
+
+    @property
+    def zero_capacity_lanes(self):
+        &#34;&#34;&#34;Gets the zero_capacity_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+        :return: The zero_capacity_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._zero_capacity_lanes
+
+    @zero_capacity_lanes.setter
+    def zero_capacity_lanes(self, zero_capacity_lanes):
+        &#34;&#34;&#34;Sets the zero_capacity_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+
+
+        :param zero_capacity_lanes: The zero_capacity_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and zero_capacity_lanes is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `zero_capacity_lanes`, must not be `None`&#34;)  # noqa: E501
+
+        self._zero_capacity_lanes = zero_capacity_lanes
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, DevicePreviewNativeTargetAvailabilityDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, DevicePreviewNativeTargetAvailabilityDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.appearance"><code class="name">prop <span class="ident">appearance</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the appearance of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The appearance of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def appearance(self):
+    &#34;&#34;&#34;Gets the appearance of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The appearance of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._appearance</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.available_slots"><code class="name">prop <span class="ident">available_slots</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the available_slots of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The available_slots of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def available_slots(self):
+    &#34;&#34;&#34;Gets the available_slots of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The available_slots of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._available_slots</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.base_target"><code class="name">prop <span class="ident">base_target</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the base_target of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The base_target of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def base_target(self):
+    &#34;&#34;&#34;Gets the base_target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The base_target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._base_target</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.busy_lanes"><code class="name">prop <span class="ident">busy_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the busy_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The busy_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def busy_lanes(self):
+    &#34;&#34;&#34;Gets the busy_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The busy_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._busy_lanes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.client"><code class="name">prop <span class="ident">client</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the client of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The client of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def client(self):
+    &#34;&#34;&#34;Gets the client of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The client of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._client</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.credit_cost"><code class="name">prop <span class="ident">credit_cost</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the credit_cost of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The credit_cost of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def credit_cost(self):
+    &#34;&#34;&#34;Gets the credit_cost of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The credit_cost of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._credit_cost</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.degraded_lanes"><code class="name">prop <span class="ident">degraded_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the degraded_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The degraded_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def degraded_lanes(self):
+    &#34;&#34;&#34;Gets the degraded_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The degraded_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._degraded_lanes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_lanes"><code class="name">prop <span class="ident">desired_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the desired_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The desired_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def desired_lanes(self):
+    &#34;&#34;&#34;Gets the desired_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The desired_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._desired_lanes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_release_public_polling_workers"><code class="name">prop <span class="ident">desired_release_public_polling_workers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the desired_release_public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The desired_release_public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def desired_release_public_polling_workers(self):
+    &#34;&#34;&#34;Gets the desired_release_public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The desired_release_public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._desired_release_public_polling_workers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_release_workers"><code class="name">prop <span class="ident">desired_release_workers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the desired_release_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The desired_release_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def desired_release_workers(self):
+    &#34;&#34;&#34;Gets the desired_release_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The desired_release_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._desired_release_workers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_worker_release_version"><code class="name">prop <span class="ident">desired_worker_release_version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the desired_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The desired_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def desired_worker_release_version(self):
+    &#34;&#34;&#34;Gets the desired_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The desired_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._desired_worker_release_version</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.enabled"><code class="name">prop <span class="ident">enabled</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the enabled of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The enabled of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def enabled(self):
+    &#34;&#34;&#34;Gets the enabled of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The enabled of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._enabled</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.engine"><code class="name">prop <span class="ident">engine</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the engine of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The engine of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def engine(self):
+    &#34;&#34;&#34;Gets the engine of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The engine of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._engine</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.form_factor"><code class="name">prop <span class="ident">form_factor</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the form_factor of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The form_factor of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def form_factor(self):
+    &#34;&#34;&#34;Gets the form_factor of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The form_factor of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._form_factor</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.healthy_workers"><code class="name">prop <span class="ident">healthy_workers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the healthy_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The healthy_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def healthy_workers(self):
+    &#34;&#34;&#34;Gets the healthy_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The healthy_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._healthy_workers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.identity_mismatch_lanes"><code class="name">prop <span class="ident">identity_mismatch_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the identity_mismatch_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The identity_mismatch_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def identity_mismatch_lanes(self):
+    &#34;&#34;&#34;Gets the identity_mismatch_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The identity_mismatch_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._identity_mismatch_lanes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.matched_live_lanes"><code class="name">prop <span class="ident">matched_live_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the matched_live_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The matched_live_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def matched_live_lanes(self):
+    &#34;&#34;&#34;Gets the matched_live_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The matched_live_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._matched_live_lanes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.minimum_worker_release_version"><code class="name">prop <span class="ident">minimum_worker_release_version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the minimum_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The minimum_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def minimum_worker_release_version(self):
+    &#34;&#34;&#34;Gets the minimum_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The minimum_worker_release_version of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._minimum_worker_release_version</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.platform"><code class="name">prop <span class="ident">platform</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the platform of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The platform of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def platform(self):
+    &#34;&#34;&#34;Gets the platform of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The platform of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._platform</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.provider"><code class="name">prop <span class="ident">provider</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the provider of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The provider of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def provider(self):
+    &#34;&#34;&#34;Gets the provider of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The provider of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._provider</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.public_polling_workers"><code class="name">prop <span class="ident">public_polling_workers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def public_polling_workers(self):
+    &#34;&#34;&#34;Gets the public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The public_polling_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._public_polling_workers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.quarantined_lanes"><code class="name">prop <span class="ident">quarantined_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the quarantined_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The quarantined_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def quarantined_lanes(self):
+    &#34;&#34;&#34;Gets the quarantined_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The quarantined_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._quarantined_lanes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.recent_workers"><code class="name">prop <span class="ident">recent_workers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the recent_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The recent_workers of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def recent_workers(self):
+    &#34;&#34;&#34;Gets the recent_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The recent_workers of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._recent_workers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.release_versions"><code class="name">prop <span class="ident">release_versions</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the release_versions of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The release_versions of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: dict(str, int)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def release_versions(self):
+    &#34;&#34;&#34;Gets the release_versions of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The release_versions of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: dict(str, int)
+    &#34;&#34;&#34;
+    return self._release_versions</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.request_queue_configured"><code class="name">prop <span class="ident">request_queue_configured</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the request_queue_configured of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The request_queue_configured of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def request_queue_configured(self):
+    &#34;&#34;&#34;Gets the request_queue_configured of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The request_queue_configured of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._request_queue_configured</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.serving_lanes"><code class="name">prop <span class="ident">serving_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the serving_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The serving_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def serving_lanes(self):
+    &#34;&#34;&#34;Gets the serving_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The serving_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._serving_lanes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.spare_lanes"><code class="name">prop <span class="ident">spare_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the spare_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The spare_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def spare_lanes(self):
+    &#34;&#34;&#34;Gets the spare_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The spare_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._spare_lanes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.status"><code class="name">prop <span class="ident">status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the status of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The status of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def status(self):
+    &#34;&#34;&#34;Gets the status of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The status of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.status_reason"><code class="name">prop <span class="ident">status_reason</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the status_reason of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The status_reason of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def status_reason(self):
+    &#34;&#34;&#34;Gets the status_reason of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The status_reason of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._status_reason</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.surface"><code class="name">prop <span class="ident">surface</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the surface of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The surface of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def surface(self):
+    &#34;&#34;&#34;Gets the surface of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The surface of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._surface</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.target"><code class="name">prop <span class="ident">target</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the target of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The target of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def target(self):
+    &#34;&#34;&#34;Gets the target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The target of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._target</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.tier"><code class="name">prop <span class="ident">tier</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the tier of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The tier of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def tier(self):
+    &#34;&#34;&#34;Gets the tier of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The tier of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._tier</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.timeout_seconds"><code class="name">prop <span class="ident">timeout_seconds</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the timeout_seconds of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The timeout_seconds of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def timeout_seconds(self):
+    &#34;&#34;&#34;Gets the timeout_seconds of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The timeout_seconds of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._timeout_seconds</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.visible"><code class="name">prop <span class="ident">visible</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the visible of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The visible of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def visible(self):
+    &#34;&#34;&#34;Gets the visible of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The visible of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._visible</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.zero_capacity_lanes"><code class="name">prop <span class="ident">zero_capacity_lanes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the zero_capacity_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501</p>
+<p>:return: The zero_capacity_lanes of this DevicePreviewNativeTargetAvailabilityDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def zero_capacity_lanes(self):
+    &#34;&#34;&#34;Gets the zero_capacity_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+
+
+    :return: The zero_capacity_lanes of this DevicePreviewNativeTargetAvailabilityDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._zero_capacity_lanes</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto">DevicePreviewNativeTargetAvailabilityDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.appearance" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.appearance">appearance</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.attribute_map" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.available_slots" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.available_slots">available_slots</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.base_target" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.base_target">base_target</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.busy_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.busy_lanes">busy_lanes</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.client" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.client">client</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.credit_cost" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.credit_cost">credit_cost</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.degraded_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.degraded_lanes">degraded_lanes</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_lanes">desired_lanes</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_release_public_polling_workers" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_release_public_polling_workers">desired_release_public_polling_workers</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_release_workers" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_release_workers">desired_release_workers</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_worker_release_version" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.desired_worker_release_version">desired_worker_release_version</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.enabled" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.enabled">enabled</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.engine" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.engine">engine</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.form_factor" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.form_factor">form_factor</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.healthy_workers" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.healthy_workers">healthy_workers</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.identity_mismatch_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.identity_mismatch_lanes">identity_mismatch_lanes</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.matched_live_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.matched_live_lanes">matched_live_lanes</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.minimum_worker_release_version" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.minimum_worker_release_version">minimum_worker_release_version</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.openapi_types" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.platform" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.platform">platform</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.provider" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.provider">provider</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.public_polling_workers" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.public_polling_workers">public_polling_workers</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.quarantined_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.quarantined_lanes">quarantined_lanes</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.recent_workers" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.recent_workers">recent_workers</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.release_versions" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.release_versions">release_versions</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.request_queue_configured" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.request_queue_configured">request_queue_configured</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.serving_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.serving_lanes">serving_lanes</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.spare_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.spare_lanes">spare_lanes</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.status" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.status">status</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.status_reason" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.status_reason">status_reason</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.surface" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.surface">surface</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.target" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.target">target</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.tier" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.tier">tier</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.timeout_seconds" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.timeout_seconds">timeout_seconds</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.to_dict" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.to_str" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.visible" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.visible">visible</a></code></li>
+<li><code><a title="mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.zero_capacity_lanes" href="#mailslurp_client.models.device_preview_native_target_availability_dto.DevicePreviewNativeTargetAvailabilityDto.zero_capacity_lanes">zero_capacity_lanes</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

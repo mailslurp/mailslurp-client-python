@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.inbox_placement_provider_analysis_check_dto API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.inbox_placement_provider_analysis_check_dto</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto"><code class="flex name class">
+<span>class <span class="ident">InboxPlacementProviderAnalysisCheckDto</span></span>
+<span>(</span><span>key=None, label=None, finding_code=None, analysis_version=None, status=None, severity=None, confidence_percent=None, confidence_label=None, evidence_schema_version=None, evidence_kind=None, auto_verifiable=None, verification_method=None, summary=None, details=None, evidence=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>InboxPlacementProviderAnalysisCheckDto - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InboxPlacementProviderAnalysisCheckDto(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;key&#39;: &#39;str&#39;,
+        &#39;label&#39;: &#39;str&#39;,
+        &#39;finding_code&#39;: &#39;str&#39;,
+        &#39;analysis_version&#39;: &#39;str&#39;,
+        &#39;status&#39;: &#39;str&#39;,
+        &#39;severity&#39;: &#39;str&#39;,
+        &#39;confidence_percent&#39;: &#39;int&#39;,
+        &#39;confidence_label&#39;: &#39;str&#39;,
+        &#39;evidence_schema_version&#39;: &#39;int&#39;,
+        &#39;evidence_kind&#39;: &#39;str&#39;,
+        &#39;auto_verifiable&#39;: &#39;bool&#39;,
+        &#39;verification_method&#39;: &#39;str&#39;,
+        &#39;summary&#39;: &#39;str&#39;,
+        &#39;details&#39;: &#39;dict(str, str)&#39;,
+        &#39;evidence&#39;: &#39;dict(str, str)&#39;
+    }
+
+    attribute_map = {
+        &#39;key&#39;: &#39;key&#39;,
+        &#39;label&#39;: &#39;label&#39;,
+        &#39;finding_code&#39;: &#39;findingCode&#39;,
+        &#39;analysis_version&#39;: &#39;analysisVersion&#39;,
+        &#39;status&#39;: &#39;status&#39;,
+        &#39;severity&#39;: &#39;severity&#39;,
+        &#39;confidence_percent&#39;: &#39;confidencePercent&#39;,
+        &#39;confidence_label&#39;: &#39;confidenceLabel&#39;,
+        &#39;evidence_schema_version&#39;: &#39;evidenceSchemaVersion&#39;,
+        &#39;evidence_kind&#39;: &#39;evidenceKind&#39;,
+        &#39;auto_verifiable&#39;: &#39;autoVerifiable&#39;,
+        &#39;verification_method&#39;: &#39;verificationMethod&#39;,
+        &#39;summary&#39;: &#39;summary&#39;,
+        &#39;details&#39;: &#39;details&#39;,
+        &#39;evidence&#39;: &#39;evidence&#39;
+    }
+
+    def __init__(self, key=None, label=None, finding_code=None, analysis_version=None, status=None, severity=None, confidence_percent=None, confidence_label=None, evidence_schema_version=None, evidence_kind=None, auto_verifiable=None, verification_method=None, summary=None, details=None, evidence=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;InboxPlacementProviderAnalysisCheckDto - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._key = None
+        self._label = None
+        self._finding_code = None
+        self._analysis_version = None
+        self._status = None
+        self._severity = None
+        self._confidence_percent = None
+        self._confidence_label = None
+        self._evidence_schema_version = None
+        self._evidence_kind = None
+        self._auto_verifiable = None
+        self._verification_method = None
+        self._summary = None
+        self._details = None
+        self._evidence = None
+        self.discriminator = None
+
+        self.key = key
+        self.label = label
+        self.finding_code = finding_code
+        self.analysis_version = analysis_version
+        self.status = status
+        self.severity = severity
+        self.confidence_percent = confidence_percent
+        self.confidence_label = confidence_label
+        self.evidence_schema_version = evidence_schema_version
+        self.evidence_kind = evidence_kind
+        self.auto_verifiable = auto_verifiable
+        self.verification_method = verification_method
+        self.summary = summary
+        self.details = details
+        self.evidence = evidence
+
+    @property
+    def key(self):
+        &#34;&#34;&#34;Gets the key of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The key of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._key
+
+    @key.setter
+    def key(self, key):
+        &#34;&#34;&#34;Sets the key of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param key: The key of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `key`, must not be `None`&#34;)  # noqa: E501
+
+        self._key = key
+
+    @property
+    def label(self):
+        &#34;&#34;&#34;Gets the label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._label
+
+    @label.setter
+    def label(self, label):
+        &#34;&#34;&#34;Sets the label of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param label: The label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and label is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `label`, must not be `None`&#34;)  # noqa: E501
+
+        self._label = label
+
+    @property
+    def finding_code(self):
+        &#34;&#34;&#34;Gets the finding_code of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The finding_code of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._finding_code
+
+    @finding_code.setter
+    def finding_code(self, finding_code):
+        &#34;&#34;&#34;Sets the finding_code of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param finding_code: The finding_code of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and finding_code is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `finding_code`, must not be `None`&#34;)  # noqa: E501
+
+        self._finding_code = finding_code
+
+    @property
+    def analysis_version(self):
+        &#34;&#34;&#34;Gets the analysis_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The analysis_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._analysis_version
+
+    @analysis_version.setter
+    def analysis_version(self, analysis_version):
+        &#34;&#34;&#34;Sets the analysis_version of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param analysis_version: The analysis_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and analysis_version is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `analysis_version`, must not be `None`&#34;)  # noqa: E501
+
+        self._analysis_version = analysis_version
+
+    @property
+    def status(self):
+        &#34;&#34;&#34;Gets the status of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The status of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        &#34;&#34;&#34;Sets the status of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param status: The status of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `status`, must not be `None`&#34;)  # noqa: E501
+
+        self._status = status
+
+    @property
+    def severity(self):
+        &#34;&#34;&#34;Gets the severity of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The severity of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._severity
+
+    @severity.setter
+    def severity(self, severity):
+        &#34;&#34;&#34;Sets the severity of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param severity: The severity of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and severity is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `severity`, must not be `None`&#34;)  # noqa: E501
+
+        self._severity = severity
+
+    @property
+    def confidence_percent(self):
+        &#34;&#34;&#34;Gets the confidence_percent of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The confidence_percent of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._confidence_percent
+
+    @confidence_percent.setter
+    def confidence_percent(self, confidence_percent):
+        &#34;&#34;&#34;Sets the confidence_percent of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param confidence_percent: The confidence_percent of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and confidence_percent is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `confidence_percent`, must not be `None`&#34;)  # noqa: E501
+
+        self._confidence_percent = confidence_percent
+
+    @property
+    def confidence_label(self):
+        &#34;&#34;&#34;Gets the confidence_label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The confidence_label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._confidence_label
+
+    @confidence_label.setter
+    def confidence_label(self, confidence_label):
+        &#34;&#34;&#34;Sets the confidence_label of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param confidence_label: The confidence_label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and confidence_label is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `confidence_label`, must not be `None`&#34;)  # noqa: E501
+
+        self._confidence_label = confidence_label
+
+    @property
+    def evidence_schema_version(self):
+        &#34;&#34;&#34;Gets the evidence_schema_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The evidence_schema_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._evidence_schema_version
+
+    @evidence_schema_version.setter
+    def evidence_schema_version(self, evidence_schema_version):
+        &#34;&#34;&#34;Sets the evidence_schema_version of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param evidence_schema_version: The evidence_schema_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and evidence_schema_version is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `evidence_schema_version`, must not be `None`&#34;)  # noqa: E501
+
+        self._evidence_schema_version = evidence_schema_version
+
+    @property
+    def evidence_kind(self):
+        &#34;&#34;&#34;Gets the evidence_kind of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The evidence_kind of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._evidence_kind
+
+    @evidence_kind.setter
+    def evidence_kind(self, evidence_kind):
+        &#34;&#34;&#34;Sets the evidence_kind of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param evidence_kind: The evidence_kind of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and evidence_kind is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `evidence_kind`, must not be `None`&#34;)  # noqa: E501
+
+        self._evidence_kind = evidence_kind
+
+    @property
+    def auto_verifiable(self):
+        &#34;&#34;&#34;Gets the auto_verifiable of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The auto_verifiable of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._auto_verifiable
+
+    @auto_verifiable.setter
+    def auto_verifiable(self, auto_verifiable):
+        &#34;&#34;&#34;Sets the auto_verifiable of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param auto_verifiable: The auto_verifiable of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and auto_verifiable is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `auto_verifiable`, must not be `None`&#34;)  # noqa: E501
+
+        self._auto_verifiable = auto_verifiable
+
+    @property
+    def verification_method(self):
+        &#34;&#34;&#34;Gets the verification_method of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The verification_method of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._verification_method
+
+    @verification_method.setter
+    def verification_method(self, verification_method):
+        &#34;&#34;&#34;Sets the verification_method of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param verification_method: The verification_method of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and verification_method is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `verification_method`, must not be `None`&#34;)  # noqa: E501
+
+        self._verification_method = verification_method
+
+    @property
+    def summary(self):
+        &#34;&#34;&#34;Gets the summary of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The summary of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._summary
+
+    @summary.setter
+    def summary(self, summary):
+        &#34;&#34;&#34;Sets the summary of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param summary: The summary of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and summary is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `summary`, must not be `None`&#34;)  # noqa: E501
+
+        self._summary = summary
+
+    @property
+    def details(self):
+        &#34;&#34;&#34;Gets the details of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The details of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: dict(str, str)
+        &#34;&#34;&#34;
+        return self._details
+
+    @details.setter
+    def details(self, details):
+        &#34;&#34;&#34;Sets the details of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param details: The details of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: dict(str, str)
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and details is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `details`, must not be `None`&#34;)  # noqa: E501
+
+        self._details = details
+
+    @property
+    def evidence(self):
+        &#34;&#34;&#34;Gets the evidence of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+        :return: The evidence of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :rtype: dict(str, str)
+        &#34;&#34;&#34;
+        return self._evidence
+
+    @evidence.setter
+    def evidence(self, evidence):
+        &#34;&#34;&#34;Sets the evidence of this InboxPlacementProviderAnalysisCheckDto.
+
+
+        :param evidence: The evidence of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+        :type: dict(str, str)
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and evidence is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `evidence`, must not be `None`&#34;)  # noqa: E501
+
+        self._evidence = evidence
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, InboxPlacementProviderAnalysisCheckDto):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, InboxPlacementProviderAnalysisCheckDto):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.analysis_version"><code class="name">prop <span class="ident">analysis_version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the analysis_version of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The analysis_version of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def analysis_version(self):
+    &#34;&#34;&#34;Gets the analysis_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The analysis_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._analysis_version</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.auto_verifiable"><code class="name">prop <span class="ident">auto_verifiable</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the auto_verifiable of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The auto_verifiable of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def auto_verifiable(self):
+    &#34;&#34;&#34;Gets the auto_verifiable of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The auto_verifiable of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._auto_verifiable</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.confidence_label"><code class="name">prop <span class="ident">confidence_label</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the confidence_label of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The confidence_label of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def confidence_label(self):
+    &#34;&#34;&#34;Gets the confidence_label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The confidence_label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._confidence_label</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.confidence_percent"><code class="name">prop <span class="ident">confidence_percent</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the confidence_percent of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The confidence_percent of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def confidence_percent(self):
+    &#34;&#34;&#34;Gets the confidence_percent of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The confidence_percent of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._confidence_percent</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.details"><code class="name">prop <span class="ident">details</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the details of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The details of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: dict(str, str)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def details(self):
+    &#34;&#34;&#34;Gets the details of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The details of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: dict(str, str)
+    &#34;&#34;&#34;
+    return self._details</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence"><code class="name">prop <span class="ident">evidence</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the evidence of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The evidence of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: dict(str, str)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def evidence(self):
+    &#34;&#34;&#34;Gets the evidence of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The evidence of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: dict(str, str)
+    &#34;&#34;&#34;
+    return self._evidence</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence_kind"><code class="name">prop <span class="ident">evidence_kind</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the evidence_kind of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The evidence_kind of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def evidence_kind(self):
+    &#34;&#34;&#34;Gets the evidence_kind of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The evidence_kind of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._evidence_kind</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence_schema_version"><code class="name">prop <span class="ident">evidence_schema_version</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the evidence_schema_version of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The evidence_schema_version of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def evidence_schema_version(self):
+    &#34;&#34;&#34;Gets the evidence_schema_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The evidence_schema_version of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._evidence_schema_version</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.finding_code"><code class="name">prop <span class="ident">finding_code</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the finding_code of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The finding_code of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def finding_code(self):
+    &#34;&#34;&#34;Gets the finding_code of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The finding_code of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._finding_code</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.key"><code class="name">prop <span class="ident">key</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the key of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The key of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def key(self):
+    &#34;&#34;&#34;Gets the key of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The key of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._key</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.label"><code class="name">prop <span class="ident">label</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the label of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The label of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def label(self):
+    &#34;&#34;&#34;Gets the label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The label of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._label</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.severity"><code class="name">prop <span class="ident">severity</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the severity of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The severity of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def severity(self):
+    &#34;&#34;&#34;Gets the severity of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The severity of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._severity</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.status"><code class="name">prop <span class="ident">status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the status of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The status of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def status(self):
+    &#34;&#34;&#34;Gets the status of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The status of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.summary"><code class="name">prop <span class="ident">summary</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the summary of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The summary of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def summary(self):
+    &#34;&#34;&#34;Gets the summary of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The summary of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._summary</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.verification_method"><code class="name">prop <span class="ident">verification_method</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the verification_method of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501</p>
+<p>:return: The verification_method of this InboxPlacementProviderAnalysisCheckDto.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def verification_method(self):
+    &#34;&#34;&#34;Gets the verification_method of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+
+
+    :return: The verification_method of this InboxPlacementProviderAnalysisCheckDto.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._verification_method</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto">InboxPlacementProviderAnalysisCheckDto</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.analysis_version" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.analysis_version">analysis_version</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.attribute_map" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.auto_verifiable" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.auto_verifiable">auto_verifiable</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.confidence_label" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.confidence_label">confidence_label</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.confidence_percent" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.confidence_percent">confidence_percent</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.details" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.details">details</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence">evidence</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence_kind" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence_kind">evidence_kind</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence_schema_version" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.evidence_schema_version">evidence_schema_version</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.finding_code" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.finding_code">finding_code</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.key" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.key">key</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.label" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.label">label</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.openapi_types" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.severity" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.severity">severity</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.status" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.status">status</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.summary" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.summary">summary</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.to_dict" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.to_str" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.verification_method" href="#mailslurp_client.models.inbox_placement_provider_analysis_check_dto.InboxPlacementProviderAnalysisCheckDto.verification_method">verification_method</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

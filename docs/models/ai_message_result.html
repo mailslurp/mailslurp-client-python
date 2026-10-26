@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.ai_message_result API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.ai_message_result</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult"><code class="flex name class">
+<span>class <span class="ident">AIMessageResult</span></span>
+<span>(</span><span>evaluation_id=None, status=None, summary=None, model=None, usage=None, elapsed_ms=None, message=None, email=None, sms=None, match=None, assertion_status=None, assertions=None, data=None, extraction_evidence=None, candidates=None, extraction_reason=None, successful=None, failed_assertion_ids=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>AIMessageResult - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AIMessageResult(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;evaluation_id&#39;: &#39;str&#39;,
+        &#39;status&#39;: &#39;str&#39;,
+        &#39;summary&#39;: &#39;str&#39;,
+        &#39;model&#39;: &#39;AIMessageModelDto&#39;,
+        &#39;usage&#39;: &#39;AIMessageUsage&#39;,
+        &#39;elapsed_ms&#39;: &#39;int&#39;,
+        &#39;message&#39;: &#39;AIMessageReference&#39;,
+        &#39;email&#39;: &#39;Email&#39;,
+        &#39;sms&#39;: &#39;SmsDto&#39;,
+        &#39;match&#39;: &#39;AIMessageMatchResult&#39;,
+        &#39;assertion_status&#39;: &#39;str&#39;,
+        &#39;assertions&#39;: &#39;list[AIMessageAssertionResult]&#39;,
+        &#39;data&#39;: &#39;object&#39;,
+        &#39;extraction_evidence&#39;: &#39;dict(str, list[AIMessageEvidence])&#39;,
+        &#39;candidates&#39;: &#39;list[AIMessageCandidateResult]&#39;,
+        &#39;extraction_reason&#39;: &#39;str&#39;,
+        &#39;successful&#39;: &#39;bool&#39;,
+        &#39;failed_assertion_ids&#39;: &#39;list[str]&#39;
+    }
+
+    attribute_map = {
+        &#39;evaluation_id&#39;: &#39;evaluationId&#39;,
+        &#39;status&#39;: &#39;status&#39;,
+        &#39;summary&#39;: &#39;summary&#39;,
+        &#39;model&#39;: &#39;model&#39;,
+        &#39;usage&#39;: &#39;usage&#39;,
+        &#39;elapsed_ms&#39;: &#39;elapsedMs&#39;,
+        &#39;message&#39;: &#39;message&#39;,
+        &#39;email&#39;: &#39;email&#39;,
+        &#39;sms&#39;: &#39;sms&#39;,
+        &#39;match&#39;: &#39;match&#39;,
+        &#39;assertion_status&#39;: &#39;assertionStatus&#39;,
+        &#39;assertions&#39;: &#39;assertions&#39;,
+        &#39;data&#39;: &#39;data&#39;,
+        &#39;extraction_evidence&#39;: &#39;extractionEvidence&#39;,
+        &#39;candidates&#39;: &#39;candidates&#39;,
+        &#39;extraction_reason&#39;: &#39;extractionReason&#39;,
+        &#39;successful&#39;: &#39;successful&#39;,
+        &#39;failed_assertion_ids&#39;: &#39;failedAssertionIds&#39;
+    }
+
+    def __init__(self, evaluation_id=None, status=None, summary=None, model=None, usage=None, elapsed_ms=None, message=None, email=None, sms=None, match=None, assertion_status=None, assertions=None, data=None, extraction_evidence=None, candidates=None, extraction_reason=None, successful=None, failed_assertion_ids=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;AIMessageResult - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._evaluation_id = None
+        self._status = None
+        self._summary = None
+        self._model = None
+        self._usage = None
+        self._elapsed_ms = None
+        self._message = None
+        self._email = None
+        self._sms = None
+        self._match = None
+        self._assertion_status = None
+        self._assertions = None
+        self._data = None
+        self._extraction_evidence = None
+        self._candidates = None
+        self._extraction_reason = None
+        self._successful = None
+        self._failed_assertion_ids = None
+        self.discriminator = None
+
+        self.evaluation_id = evaluation_id
+        self.status = status
+        self.summary = summary
+        self.model = model
+        self.usage = usage
+        self.elapsed_ms = elapsed_ms
+        self.message = message
+        self.email = email
+        self.sms = sms
+        self.match = match
+        self.assertion_status = assertion_status
+        self.assertions = assertions
+        self.data = data
+        self.extraction_evidence = extraction_evidence
+        self.candidates = candidates
+        self.extraction_reason = extraction_reason
+        self.successful = successful
+        self.failed_assertion_ids = failed_assertion_ids
+
+    @property
+    def evaluation_id(self):
+        &#34;&#34;&#34;Gets the evaluation_id of this AIMessageResult.  # noqa: E501
+
+
+        :return: The evaluation_id of this AIMessageResult.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._evaluation_id
+
+    @evaluation_id.setter
+    def evaluation_id(self, evaluation_id):
+        &#34;&#34;&#34;Sets the evaluation_id of this AIMessageResult.
+
+
+        :param evaluation_id: The evaluation_id of this AIMessageResult.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and evaluation_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `evaluation_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._evaluation_id = evaluation_id
+
+    @property
+    def status(self):
+        &#34;&#34;&#34;Gets the status of this AIMessageResult.  # noqa: E501
+
+
+        :return: The status of this AIMessageResult.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        &#34;&#34;&#34;Sets the status of this AIMessageResult.
+
+
+        :param status: The status of this AIMessageResult.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `status`, must not be `None`&#34;)  # noqa: E501
+        allowed_values = [&#34;MATCHED&#34;, &#34;PASS&#34;, &#34;FAIL&#34;, &#34;EXTRACTED&#34;, &#34;INCONCLUSIVE&#34;, &#34;TIMED_OUT&#34;, &#34;TOKEN_LIMIT&#34;, &#34;CANDIDATE_LIMIT&#34;, &#34;PROVIDER_ERROR&#34;, &#34;PROVIDER_TIMEOUT&#34;, &#34;INVALID_OUTPUT&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `status` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
+
+    @property
+    def summary(self):
+        &#34;&#34;&#34;Gets the summary of this AIMessageResult.  # noqa: E501
+
+
+        :return: The summary of this AIMessageResult.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._summary
+
+    @summary.setter
+    def summary(self, summary):
+        &#34;&#34;&#34;Sets the summary of this AIMessageResult.
+
+
+        :param summary: The summary of this AIMessageResult.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and summary is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `summary`, must not be `None`&#34;)  # noqa: E501
+
+        self._summary = summary
+
+    @property
+    def model(self):
+        &#34;&#34;&#34;Gets the model of this AIMessageResult.  # noqa: E501
+
+
+        :return: The model of this AIMessageResult.  # noqa: E501
+        :rtype: AIMessageModelDto
+        &#34;&#34;&#34;
+        return self._model
+
+    @model.setter
+    def model(self, model):
+        &#34;&#34;&#34;Sets the model of this AIMessageResult.
+
+
+        :param model: The model of this AIMessageResult.  # noqa: E501
+        :type: AIMessageModelDto
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and model is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `model`, must not be `None`&#34;)  # noqa: E501
+
+        self._model = model
+
+    @property
+    def usage(self):
+        &#34;&#34;&#34;Gets the usage of this AIMessageResult.  # noqa: E501
+
+
+        :return: The usage of this AIMessageResult.  # noqa: E501
+        :rtype: AIMessageUsage
+        &#34;&#34;&#34;
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        &#34;&#34;&#34;Sets the usage of this AIMessageResult.
+
+
+        :param usage: The usage of this AIMessageResult.  # noqa: E501
+        :type: AIMessageUsage
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and usage is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `usage`, must not be `None`&#34;)  # noqa: E501
+
+        self._usage = usage
+
+    @property
+    def elapsed_ms(self):
+        &#34;&#34;&#34;Gets the elapsed_ms of this AIMessageResult.  # noqa: E501
+
+
+        :return: The elapsed_ms of this AIMessageResult.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._elapsed_ms
+
+    @elapsed_ms.setter
+    def elapsed_ms(self, elapsed_ms):
+        &#34;&#34;&#34;Sets the elapsed_ms of this AIMessageResult.
+
+
+        :param elapsed_ms: The elapsed_ms of this AIMessageResult.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and elapsed_ms is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `elapsed_ms`, must not be `None`&#34;)  # noqa: E501
+
+        self._elapsed_ms = elapsed_ms
+
+    @property
+    def message(self):
+        &#34;&#34;&#34;Gets the message of this AIMessageResult.  # noqa: E501
+
+
+        :return: The message of this AIMessageResult.  # noqa: E501
+        :rtype: AIMessageReference
+        &#34;&#34;&#34;
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        &#34;&#34;&#34;Sets the message of this AIMessageResult.
+
+
+        :param message: The message of this AIMessageResult.  # noqa: E501
+        :type: AIMessageReference
+        &#34;&#34;&#34;
+
+        self._message = message
+
+    @property
+    def email(self):
+        &#34;&#34;&#34;Gets the email of this AIMessageResult.  # noqa: E501
+
+
+        :return: The email of this AIMessageResult.  # noqa: E501
+        :rtype: Email
+        &#34;&#34;&#34;
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        &#34;&#34;&#34;Sets the email of this AIMessageResult.
+
+
+        :param email: The email of this AIMessageResult.  # noqa: E501
+        :type: Email
+        &#34;&#34;&#34;
+
+        self._email = email
+
+    @property
+    def sms(self):
+        &#34;&#34;&#34;Gets the sms of this AIMessageResult.  # noqa: E501
+
+
+        :return: The sms of this AIMessageResult.  # noqa: E501
+        :rtype: SmsDto
+        &#34;&#34;&#34;
+        return self._sms
+
+    @sms.setter
+    def sms(self, sms):
+        &#34;&#34;&#34;Sets the sms of this AIMessageResult.
+
+
+        :param sms: The sms of this AIMessageResult.  # noqa: E501
+        :type: SmsDto
+        &#34;&#34;&#34;
+
+        self._sms = sms
+
+    @property
+    def match(self):
+        &#34;&#34;&#34;Gets the match of this AIMessageResult.  # noqa: E501
+
+
+        :return: The match of this AIMessageResult.  # noqa: E501
+        :rtype: AIMessageMatchResult
+        &#34;&#34;&#34;
+        return self._match
+
+    @match.setter
+    def match(self, match):
+        &#34;&#34;&#34;Sets the match of this AIMessageResult.
+
+
+        :param match: The match of this AIMessageResult.  # noqa: E501
+        :type: AIMessageMatchResult
+        &#34;&#34;&#34;
+
+        self._match = match
+
+    @property
+    def assertion_status(self):
+        &#34;&#34;&#34;Gets the assertion_status of this AIMessageResult.  # noqa: E501
+
+
+        :return: The assertion_status of this AIMessageResult.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._assertion_status
+
+    @assertion_status.setter
+    def assertion_status(self, assertion_status):
+        &#34;&#34;&#34;Sets the assertion_status of this AIMessageResult.
+
+
+        :param assertion_status: The assertion_status of this AIMessageResult.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;PASS&#34;, &#34;FAIL&#34;, &#34;INCONCLUSIVE&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and assertion_status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `assertion_status` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(assertion_status, allowed_values)
+            )
+
+        self._assertion_status = assertion_status
+
+    @property
+    def assertions(self):
+        &#34;&#34;&#34;Gets the assertions of this AIMessageResult.  # noqa: E501
+
+
+        :return: The assertions of this AIMessageResult.  # noqa: E501
+        :rtype: list[AIMessageAssertionResult]
+        &#34;&#34;&#34;
+        return self._assertions
+
+    @assertions.setter
+    def assertions(self, assertions):
+        &#34;&#34;&#34;Sets the assertions of this AIMessageResult.
+
+
+        :param assertions: The assertions of this AIMessageResult.  # noqa: E501
+        :type: list[AIMessageAssertionResult]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and assertions is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `assertions`, must not be `None`&#34;)  # noqa: E501
+
+        self._assertions = assertions
+
+    @property
+    def data(self):
+        &#34;&#34;&#34;Gets the data of this AIMessageResult.  # noqa: E501
+
+        Extracted JSON value conforming to the requested schema or extraction preset. Null when extraction is inconclusive or unavailable.  # noqa: E501
+
+        :return: The data of this AIMessageResult.  # noqa: E501
+        :rtype: object
+        &#34;&#34;&#34;
+        return self._data
+
+    @data.setter
+    def data(self, data):
+        &#34;&#34;&#34;Sets the data of this AIMessageResult.
+
+        Extracted JSON value conforming to the requested schema or extraction preset. Null when extraction is inconclusive or unavailable.  # noqa: E501
+
+        :param data: The data of this AIMessageResult.  # noqa: E501
+        :type: object
+        &#34;&#34;&#34;
+
+        self._data = data
+
+    @property
+    def extraction_evidence(self):
+        &#34;&#34;&#34;Gets the extraction_evidence of this AIMessageResult.  # noqa: E501
+
+
+        :return: The extraction_evidence of this AIMessageResult.  # noqa: E501
+        :rtype: dict(str, list[AIMessageEvidence])
+        &#34;&#34;&#34;
+        return self._extraction_evidence
+
+    @extraction_evidence.setter
+    def extraction_evidence(self, extraction_evidence):
+        &#34;&#34;&#34;Sets the extraction_evidence of this AIMessageResult.
+
+
+        :param extraction_evidence: The extraction_evidence of this AIMessageResult.  # noqa: E501
+        :type: dict(str, list[AIMessageEvidence])
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and extraction_evidence is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `extraction_evidence`, must not be `None`&#34;)  # noqa: E501
+
+        self._extraction_evidence = extraction_evidence
+
+    @property
+    def candidates(self):
+        &#34;&#34;&#34;Gets the candidates of this AIMessageResult.  # noqa: E501
+
+
+        :return: The candidates of this AIMessageResult.  # noqa: E501
+        :rtype: list[AIMessageCandidateResult]
+        &#34;&#34;&#34;
+        return self._candidates
+
+    @candidates.setter
+    def candidates(self, candidates):
+        &#34;&#34;&#34;Sets the candidates of this AIMessageResult.
+
+
+        :param candidates: The candidates of this AIMessageResult.  # noqa: E501
+        :type: list[AIMessageCandidateResult]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and candidates is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `candidates`, must not be `None`&#34;)  # noqa: E501
+
+        self._candidates = candidates
+
+    @property
+    def extraction_reason(self):
+        &#34;&#34;&#34;Gets the extraction_reason of this AIMessageResult.  # noqa: E501
+
+        Explanation when extraction is inconclusive. May contain a model-reported explanation of missing or ambiguous fields, or a server evidence-validation failure. Diagnostic text, not a stable machine-readable status.  # noqa: E501
+
+        :return: The extraction_reason of this AIMessageResult.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._extraction_reason
+
+    @extraction_reason.setter
+    def extraction_reason(self, extraction_reason):
+        &#34;&#34;&#34;Sets the extraction_reason of this AIMessageResult.
+
+        Explanation when extraction is inconclusive. May contain a model-reported explanation of missing or ambiguous fields, or a server evidence-validation failure. Diagnostic text, not a stable machine-readable status.  # noqa: E501
+
+        :param extraction_reason: The extraction_reason of this AIMessageResult.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._extraction_reason = extraction_reason
+
+    @property
+    def successful(self):
+        &#34;&#34;&#34;Gets the successful of this AIMessageResult.  # noqa: E501
+
+        True only when all requested work succeeded. Assert this in tests and use summary as the assertion failure message.  # noqa: E501
+
+        :return: The successful of this AIMessageResult.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._successful
+
+    @successful.setter
+    def successful(self, successful):
+        &#34;&#34;&#34;Sets the successful of this AIMessageResult.
+
+        True only when all requested work succeeded. Assert this in tests and use summary as the assertion failure message.  # noqa: E501
+
+        :param successful: The successful of this AIMessageResult.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and successful is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `successful`, must not be `None`&#34;)  # noqa: E501
+
+        self._successful = successful
+
+    @property
+    def failed_assertion_ids(self):
+        &#34;&#34;&#34;Gets the failed_assertion_ids of this AIMessageResult.  # noqa: E501
+
+
+        :return: The failed_assertion_ids of this AIMessageResult.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._failed_assertion_ids
+
+    @failed_assertion_ids.setter
+    def failed_assertion_ids(self, failed_assertion_ids):
+        &#34;&#34;&#34;Sets the failed_assertion_ids of this AIMessageResult.
+
+
+        :param failed_assertion_ids: The failed_assertion_ids of this AIMessageResult.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and failed_assertion_ids is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `failed_assertion_ids`, must not be `None`&#34;)  # noqa: E501
+
+        self._failed_assertion_ids = failed_assertion_ids
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, AIMessageResult):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, AIMessageResult):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.assertion_status"><code class="name">prop <span class="ident">assertion_status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the assertion_status of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The assertion_status of this AIMessageResult.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def assertion_status(self):
+    &#34;&#34;&#34;Gets the assertion_status of this AIMessageResult.  # noqa: E501
+
+
+    :return: The assertion_status of this AIMessageResult.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._assertion_status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.assertions"><code class="name">prop <span class="ident">assertions</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the assertions of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The assertions of this AIMessageResult.
+# noqa: E501
+:rtype: list[AIMessageAssertionResult]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def assertions(self):
+    &#34;&#34;&#34;Gets the assertions of this AIMessageResult.  # noqa: E501
+
+
+    :return: The assertions of this AIMessageResult.  # noqa: E501
+    :rtype: list[AIMessageAssertionResult]
+    &#34;&#34;&#34;
+    return self._assertions</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.candidates"><code class="name">prop <span class="ident">candidates</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the candidates of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The candidates of this AIMessageResult.
+# noqa: E501
+:rtype: list[AIMessageCandidateResult]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def candidates(self):
+    &#34;&#34;&#34;Gets the candidates of this AIMessageResult.  # noqa: E501
+
+
+    :return: The candidates of this AIMessageResult.  # noqa: E501
+    :rtype: list[AIMessageCandidateResult]
+    &#34;&#34;&#34;
+    return self._candidates</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.data"><code class="name">prop <span class="ident">data</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the data of this AIMessageResult.
+# noqa: E501</p>
+<p>Extracted JSON value conforming to the requested schema or extraction preset. Null when extraction is inconclusive or unavailable.
+# noqa: E501</p>
+<p>:return: The data of this AIMessageResult.
+# noqa: E501
+:rtype: object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data(self):
+    &#34;&#34;&#34;Gets the data of this AIMessageResult.  # noqa: E501
+
+    Extracted JSON value conforming to the requested schema or extraction preset. Null when extraction is inconclusive or unavailable.  # noqa: E501
+
+    :return: The data of this AIMessageResult.  # noqa: E501
+    :rtype: object
+    &#34;&#34;&#34;
+    return self._data</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.elapsed_ms"><code class="name">prop <span class="ident">elapsed_ms</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the elapsed_ms of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The elapsed_ms of this AIMessageResult.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def elapsed_ms(self):
+    &#34;&#34;&#34;Gets the elapsed_ms of this AIMessageResult.  # noqa: E501
+
+
+    :return: The elapsed_ms of this AIMessageResult.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._elapsed_ms</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.email"><code class="name">prop <span class="ident">email</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the email of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The email of this AIMessageResult.
+# noqa: E501
+:rtype: Email</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def email(self):
+    &#34;&#34;&#34;Gets the email of this AIMessageResult.  # noqa: E501
+
+
+    :return: The email of this AIMessageResult.  # noqa: E501
+    :rtype: Email
+    &#34;&#34;&#34;
+    return self._email</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.evaluation_id"><code class="name">prop <span class="ident">evaluation_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the evaluation_id of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The evaluation_id of this AIMessageResult.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def evaluation_id(self):
+    &#34;&#34;&#34;Gets the evaluation_id of this AIMessageResult.  # noqa: E501
+
+
+    :return: The evaluation_id of this AIMessageResult.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._evaluation_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.extraction_evidence"><code class="name">prop <span class="ident">extraction_evidence</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the extraction_evidence of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The extraction_evidence of this AIMessageResult.
+# noqa: E501
+:rtype: dict(str, list[AIMessageEvidence])</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def extraction_evidence(self):
+    &#34;&#34;&#34;Gets the extraction_evidence of this AIMessageResult.  # noqa: E501
+
+
+    :return: The extraction_evidence of this AIMessageResult.  # noqa: E501
+    :rtype: dict(str, list[AIMessageEvidence])
+    &#34;&#34;&#34;
+    return self._extraction_evidence</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.extraction_reason"><code class="name">prop <span class="ident">extraction_reason</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the extraction_reason of this AIMessageResult.
+# noqa: E501</p>
+<p>Explanation when extraction is inconclusive. May contain a model-reported explanation of missing or ambiguous fields, or a server evidence-validation failure. Diagnostic text, not a stable machine-readable status.
+# noqa: E501</p>
+<p>:return: The extraction_reason of this AIMessageResult.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def extraction_reason(self):
+    &#34;&#34;&#34;Gets the extraction_reason of this AIMessageResult.  # noqa: E501
+
+    Explanation when extraction is inconclusive. May contain a model-reported explanation of missing or ambiguous fields, or a server evidence-validation failure. Diagnostic text, not a stable machine-readable status.  # noqa: E501
+
+    :return: The extraction_reason of this AIMessageResult.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._extraction_reason</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.failed_assertion_ids"><code class="name">prop <span class="ident">failed_assertion_ids</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the failed_assertion_ids of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The failed_assertion_ids of this AIMessageResult.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def failed_assertion_ids(self):
+    &#34;&#34;&#34;Gets the failed_assertion_ids of this AIMessageResult.  # noqa: E501
+
+
+    :return: The failed_assertion_ids of this AIMessageResult.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._failed_assertion_ids</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.match"><code class="name">prop <span class="ident">match</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the match of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The match of this AIMessageResult.
+# noqa: E501
+:rtype: AIMessageMatchResult</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def match(self):
+    &#34;&#34;&#34;Gets the match of this AIMessageResult.  # noqa: E501
+
+
+    :return: The match of this AIMessageResult.  # noqa: E501
+    :rtype: AIMessageMatchResult
+    &#34;&#34;&#34;
+    return self._match</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.message"><code class="name">prop <span class="ident">message</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the message of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The message of this AIMessageResult.
+# noqa: E501
+:rtype: AIMessageReference</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def message(self):
+    &#34;&#34;&#34;Gets the message of this AIMessageResult.  # noqa: E501
+
+
+    :return: The message of this AIMessageResult.  # noqa: E501
+    :rtype: AIMessageReference
+    &#34;&#34;&#34;
+    return self._message</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.model"><code class="name">prop <span class="ident">model</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the model of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The model of this AIMessageResult.
+# noqa: E501
+:rtype: AIMessageModelDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def model(self):
+    &#34;&#34;&#34;Gets the model of this AIMessageResult.  # noqa: E501
+
+
+    :return: The model of this AIMessageResult.  # noqa: E501
+    :rtype: AIMessageModelDto
+    &#34;&#34;&#34;
+    return self._model</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.sms"><code class="name">prop <span class="ident">sms</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sms of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The sms of this AIMessageResult.
+# noqa: E501
+:rtype: SmsDto</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sms(self):
+    &#34;&#34;&#34;Gets the sms of this AIMessageResult.  # noqa: E501
+
+
+    :return: The sms of this AIMessageResult.  # noqa: E501
+    :rtype: SmsDto
+    &#34;&#34;&#34;
+    return self._sms</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.status"><code class="name">prop <span class="ident">status</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the status of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The status of this AIMessageResult.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def status(self):
+    &#34;&#34;&#34;Gets the status of this AIMessageResult.  # noqa: E501
+
+
+    :return: The status of this AIMessageResult.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._status</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.successful"><code class="name">prop <span class="ident">successful</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the successful of this AIMessageResult.
+# noqa: E501</p>
+<p>True only when all requested work succeeded. Assert this in tests and use summary as the assertion failure message.
+# noqa: E501</p>
+<p>:return: The successful of this AIMessageResult.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def successful(self):
+    &#34;&#34;&#34;Gets the successful of this AIMessageResult.  # noqa: E501
+
+    True only when all requested work succeeded. Assert this in tests and use summary as the assertion failure message.  # noqa: E501
+
+    :return: The successful of this AIMessageResult.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._successful</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.summary"><code class="name">prop <span class="ident">summary</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the summary of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The summary of this AIMessageResult.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def summary(self):
+    &#34;&#34;&#34;Gets the summary of this AIMessageResult.  # noqa: E501
+
+
+    :return: The summary of this AIMessageResult.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._summary</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.usage"><code class="name">prop <span class="ident">usage</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the usage of this AIMessageResult.
+# noqa: E501</p>
+<p>:return: The usage of this AIMessageResult.
+# noqa: E501
+:rtype: AIMessageUsage</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def usage(self):
+    &#34;&#34;&#34;Gets the usage of this AIMessageResult.  # noqa: E501
+
+
+    :return: The usage of this AIMessageResult.  # noqa: E501
+    :rtype: AIMessageUsage
+    &#34;&#34;&#34;
+    return self._usage</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.ai_message_result.AIMessageResult.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult" href="#mailslurp_client.models.ai_message_result.AIMessageResult">AIMessageResult</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.assertion_status" href="#mailslurp_client.models.ai_message_result.AIMessageResult.assertion_status">assertion_status</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.assertions" href="#mailslurp_client.models.ai_message_result.AIMessageResult.assertions">assertions</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.attribute_map" href="#mailslurp_client.models.ai_message_result.AIMessageResult.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.candidates" href="#mailslurp_client.models.ai_message_result.AIMessageResult.candidates">candidates</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.data" href="#mailslurp_client.models.ai_message_result.AIMessageResult.data">data</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.elapsed_ms" href="#mailslurp_client.models.ai_message_result.AIMessageResult.elapsed_ms">elapsed_ms</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.email" href="#mailslurp_client.models.ai_message_result.AIMessageResult.email">email</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.evaluation_id" href="#mailslurp_client.models.ai_message_result.AIMessageResult.evaluation_id">evaluation_id</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.extraction_evidence" href="#mailslurp_client.models.ai_message_result.AIMessageResult.extraction_evidence">extraction_evidence</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.extraction_reason" href="#mailslurp_client.models.ai_message_result.AIMessageResult.extraction_reason">extraction_reason</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.failed_assertion_ids" href="#mailslurp_client.models.ai_message_result.AIMessageResult.failed_assertion_ids">failed_assertion_ids</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.match" href="#mailslurp_client.models.ai_message_result.AIMessageResult.match">match</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.message" href="#mailslurp_client.models.ai_message_result.AIMessageResult.message">message</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.model" href="#mailslurp_client.models.ai_message_result.AIMessageResult.model">model</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.openapi_types" href="#mailslurp_client.models.ai_message_result.AIMessageResult.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.sms" href="#mailslurp_client.models.ai_message_result.AIMessageResult.sms">sms</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.status" href="#mailslurp_client.models.ai_message_result.AIMessageResult.status">status</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.successful" href="#mailslurp_client.models.ai_message_result.AIMessageResult.successful">successful</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.summary" href="#mailslurp_client.models.ai_message_result.AIMessageResult.summary">summary</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.to_dict" href="#mailslurp_client.models.ai_message_result.AIMessageResult.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.to_str" href="#mailslurp_client.models.ai_message_result.AIMessageResult.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.ai_message_result.AIMessageResult.usage" href="#mailslurp_client.models.ai_message_result.AIMessageResult.usage">usage</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

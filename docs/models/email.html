@@ -1,0 +1,2072 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.email API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.email</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.email.Email"><code class="flex name class">
+<span>class <span class="ident">Email</span></span>
+<span>(</span><span>id=None, user_id=None, inbox_id=None, domain_id=None, to=None, sender=None, recipients=None, reply_to=None, cc=None, bcc=None, headers=None, headers_map=None, attachments=None, subject=None, body=None, body_excerpt=None, text_excerpt=None, body_md5_hash=None, is_html=None, charset=None, analysis=None, created_at=None, updated_at=None, read=None, team_access=None, is_x_amp_html=None, body_part_content_types=None, external_id=None, message_id=None, thread_id=None, in_reply_to=None, favourite=None, size_bytes=None, html=None, xamp_html=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>Email - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Email(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;id&#39;: &#39;str&#39;,
+        &#39;user_id&#39;: &#39;str&#39;,
+        &#39;inbox_id&#39;: &#39;str&#39;,
+        &#39;domain_id&#39;: &#39;str&#39;,
+        &#39;to&#39;: &#39;list[str]&#39;,
+        &#39;_from&#39;: &#39;str&#39;,
+        &#39;sender&#39;: &#39;Sender&#39;,
+        &#39;recipients&#39;: &#39;EmailRecipients&#39;,
+        &#39;reply_to&#39;: &#39;str&#39;,
+        &#39;cc&#39;: &#39;list[str]&#39;,
+        &#39;bcc&#39;: &#39;list[str]&#39;,
+        &#39;headers&#39;: &#39;dict(str, str)&#39;,
+        &#39;headers_map&#39;: &#39;dict(str, list[str])&#39;,
+        &#39;attachments&#39;: &#39;list[str]&#39;,
+        &#39;subject&#39;: &#39;str&#39;,
+        &#39;body&#39;: &#39;str&#39;,
+        &#39;body_excerpt&#39;: &#39;str&#39;,
+        &#39;text_excerpt&#39;: &#39;str&#39;,
+        &#39;body_md5_hash&#39;: &#39;str&#39;,
+        &#39;is_html&#39;: &#39;bool&#39;,
+        &#39;charset&#39;: &#39;str&#39;,
+        &#39;analysis&#39;: &#39;EmailAnalysis&#39;,
+        &#39;created_at&#39;: &#39;datetime&#39;,
+        &#39;updated_at&#39;: &#39;datetime&#39;,
+        &#39;read&#39;: &#39;bool&#39;,
+        &#39;team_access&#39;: &#39;bool&#39;,
+        &#39;is_x_amp_html&#39;: &#39;bool&#39;,
+        &#39;body_part_content_types&#39;: &#39;list[str]&#39;,
+        &#39;external_id&#39;: &#39;str&#39;,
+        &#39;message_id&#39;: &#39;str&#39;,
+        &#39;thread_id&#39;: &#39;str&#39;,
+        &#39;in_reply_to&#39;: &#39;str&#39;,
+        &#39;favourite&#39;: &#39;bool&#39;,
+        &#39;size_bytes&#39;: &#39;int&#39;,
+        &#39;html&#39;: &#39;bool&#39;,
+        &#39;xamp_html&#39;: &#39;bool&#39;
+    }
+
+    attribute_map = {
+        &#39;id&#39;: &#39;id&#39;,
+        &#39;user_id&#39;: &#39;userId&#39;,
+        &#39;inbox_id&#39;: &#39;inboxId&#39;,
+        &#39;domain_id&#39;: &#39;domainId&#39;,
+        &#39;to&#39;: &#39;to&#39;,
+        &#39;_from&#39;: &#39;from&#39;,
+        &#39;sender&#39;: &#39;sender&#39;,
+        &#39;recipients&#39;: &#39;recipients&#39;,
+        &#39;reply_to&#39;: &#39;replyTo&#39;,
+        &#39;cc&#39;: &#39;cc&#39;,
+        &#39;bcc&#39;: &#39;bcc&#39;,
+        &#39;headers&#39;: &#39;headers&#39;,
+        &#39;headers_map&#39;: &#39;headersMap&#39;,
+        &#39;attachments&#39;: &#39;attachments&#39;,
+        &#39;subject&#39;: &#39;subject&#39;,
+        &#39;body&#39;: &#39;body&#39;,
+        &#39;body_excerpt&#39;: &#39;bodyExcerpt&#39;,
+        &#39;text_excerpt&#39;: &#39;textExcerpt&#39;,
+        &#39;body_md5_hash&#39;: &#39;bodyMD5Hash&#39;,
+        &#39;is_html&#39;: &#39;isHTML&#39;,
+        &#39;charset&#39;: &#39;charset&#39;,
+        &#39;analysis&#39;: &#39;analysis&#39;,
+        &#39;created_at&#39;: &#39;createdAt&#39;,
+        &#39;updated_at&#39;: &#39;updatedAt&#39;,
+        &#39;read&#39;: &#39;read&#39;,
+        &#39;team_access&#39;: &#39;teamAccess&#39;,
+        &#39;is_x_amp_html&#39;: &#39;isXAmpHtml&#39;,
+        &#39;body_part_content_types&#39;: &#39;bodyPartContentTypes&#39;,
+        &#39;external_id&#39;: &#39;externalId&#39;,
+        &#39;message_id&#39;: &#39;messageId&#39;,
+        &#39;thread_id&#39;: &#39;threadId&#39;,
+        &#39;in_reply_to&#39;: &#39;inReplyTo&#39;,
+        &#39;favourite&#39;: &#39;favourite&#39;,
+        &#39;size_bytes&#39;: &#39;sizeBytes&#39;,
+        &#39;html&#39;: &#39;html&#39;,
+        &#39;xamp_html&#39;: &#39;xampHtml&#39;
+    }
+
+    def __init__(self, id=None, user_id=None, inbox_id=None, domain_id=None, to=None, _from=None, sender=None, recipients=None, reply_to=None, cc=None, bcc=None, headers=None, headers_map=None, attachments=None, subject=None, body=None, body_excerpt=None, text_excerpt=None, body_md5_hash=None, is_html=None, charset=None, analysis=None, created_at=None, updated_at=None, read=None, team_access=None, is_x_amp_html=None, body_part_content_types=None, external_id=None, message_id=None, thread_id=None, in_reply_to=None, favourite=None, size_bytes=None, html=None, xamp_html=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;Email - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._id = None
+        self._user_id = None
+        self._inbox_id = None
+        self._domain_id = None
+        self._to = None
+        self.__from = None
+        self._sender = None
+        self._recipients = None
+        self._reply_to = None
+        self._cc = None
+        self._bcc = None
+        self._headers = None
+        self._headers_map = None
+        self._attachments = None
+        self._subject = None
+        self._body = None
+        self._body_excerpt = None
+        self._text_excerpt = None
+        self._body_md5_hash = None
+        self._is_html = None
+        self._charset = None
+        self._analysis = None
+        self._created_at = None
+        self._updated_at = None
+        self._read = None
+        self._team_access = None
+        self._is_x_amp_html = None
+        self._body_part_content_types = None
+        self._external_id = None
+        self._message_id = None
+        self._thread_id = None
+        self._in_reply_to = None
+        self._favourite = None
+        self._size_bytes = None
+        self._html = None
+        self._xamp_html = None
+        self.discriminator = None
+
+        self.id = id
+        self.user_id = user_id
+        self.inbox_id = inbox_id
+        self.domain_id = domain_id
+        self.to = to
+        self._from = _from
+        self.sender = sender
+        self.recipients = recipients
+        self.reply_to = reply_to
+        self.cc = cc
+        self.bcc = bcc
+        self.headers = headers
+        self.headers_map = headers_map
+        self.attachments = attachments
+        self.subject = subject
+        self.body = body
+        self.body_excerpt = body_excerpt
+        self.text_excerpt = text_excerpt
+        self.body_md5_hash = body_md5_hash
+        self.is_html = is_html
+        self.charset = charset
+        self.analysis = analysis
+        self.created_at = created_at
+        self.updated_at = updated_at
+        self.read = read
+        self.team_access = team_access
+        self.is_x_amp_html = is_x_amp_html
+        self.body_part_content_types = body_part_content_types
+        self.external_id = external_id
+        self.message_id = message_id
+        self.thread_id = thread_id
+        self.in_reply_to = in_reply_to
+        self.favourite = favourite
+        self.size_bytes = size_bytes
+        if html is not None:
+            self.html = html
+        if xamp_html is not None:
+            self.xamp_html = xamp_html
+
+    @property
+    def id(self):
+        &#34;&#34;&#34;Gets the id of this Email.  # noqa: E501
+
+        ID of the email entity  # noqa: E501
+
+        :return: The id of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        &#34;&#34;&#34;Sets the id of this Email.
+
+        ID of the email entity  # noqa: E501
+
+        :param id: The id of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `id`, must not be `None`&#34;)  # noqa: E501
+
+        self._id = id
+
+    @property
+    def user_id(self):
+        &#34;&#34;&#34;Gets the user_id of this Email.  # noqa: E501
+
+        ID of user that email belongs to  # noqa: E501
+
+        :return: The user_id of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        &#34;&#34;&#34;Sets the user_id of this Email.
+
+        ID of user that email belongs to  # noqa: E501
+
+        :param user_id: The user_id of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and user_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `user_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._user_id = user_id
+
+    @property
+    def inbox_id(self):
+        &#34;&#34;&#34;Gets the inbox_id of this Email.  # noqa: E501
+
+        ID of the inbox that received the email  # noqa: E501
+
+        :return: The inbox_id of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._inbox_id
+
+    @inbox_id.setter
+    def inbox_id(self, inbox_id):
+        &#34;&#34;&#34;Sets the inbox_id of this Email.
+
+        ID of the inbox that received the email  # noqa: E501
+
+        :param inbox_id: The inbox_id of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and inbox_id is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `inbox_id`, must not be `None`&#34;)  # noqa: E501
+
+        self._inbox_id = inbox_id
+
+    @property
+    def domain_id(self):
+        &#34;&#34;&#34;Gets the domain_id of this Email.  # noqa: E501
+
+        ID of the domain that received the email  # noqa: E501
+
+        :return: The domain_id of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._domain_id
+
+    @domain_id.setter
+    def domain_id(self, domain_id):
+        &#34;&#34;&#34;Sets the domain_id of this Email.
+
+        ID of the domain that received the email  # noqa: E501
+
+        :param domain_id: The domain_id of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._domain_id = domain_id
+
+    @property
+    def to(self):
+        &#34;&#34;&#34;Gets the to of this Email.  # noqa: E501
+
+        List of `To` recipient email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+        :return: The to of this Email.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._to
+
+    @to.setter
+    def to(self, to):
+        &#34;&#34;&#34;Sets the to of this Email.
+
+        List of `To` recipient email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+        :param to: The to of this Email.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and to is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `to`, must not be `None`&#34;)  # noqa: E501
+
+        self._to = to
+
+    @property
+    def _from(self):
+        &#34;&#34;&#34;Gets the _from of this Email.  # noqa: E501
+
+        Who the email was sent from. An email address - see fromName for the sender name.  # noqa: E501
+
+        :return: The _from of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self.__from
+
+    @_from.setter
+    def _from(self, _from):
+        &#34;&#34;&#34;Sets the _from of this Email.
+
+        Who the email was sent from. An email address - see fromName for the sender name.  # noqa: E501
+
+        :param _from: The _from of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self.__from = _from
+
+    @property
+    def sender(self):
+        &#34;&#34;&#34;Gets the sender of this Email.  # noqa: E501
+
+
+        :return: The sender of this Email.  # noqa: E501
+        :rtype: Sender
+        &#34;&#34;&#34;
+        return self._sender
+
+    @sender.setter
+    def sender(self, sender):
+        &#34;&#34;&#34;Sets the sender of this Email.
+
+
+        :param sender: The sender of this Email.  # noqa: E501
+        :type: Sender
+        &#34;&#34;&#34;
+
+        self._sender = sender
+
+    @property
+    def recipients(self):
+        &#34;&#34;&#34;Gets the recipients of this Email.  # noqa: E501
+
+
+        :return: The recipients of this Email.  # noqa: E501
+        :rtype: EmailRecipients
+        &#34;&#34;&#34;
+        return self._recipients
+
+    @recipients.setter
+    def recipients(self, recipients):
+        &#34;&#34;&#34;Sets the recipients of this Email.
+
+
+        :param recipients: The recipients of this Email.  # noqa: E501
+        :type: EmailRecipients
+        &#34;&#34;&#34;
+
+        self._recipients = recipients
+
+    @property
+    def reply_to(self):
+        &#34;&#34;&#34;Gets the reply_to of this Email.  # noqa: E501
+
+        The `replyTo` field on the received email message  # noqa: E501
+
+        :return: The reply_to of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._reply_to
+
+    @reply_to.setter
+    def reply_to(self, reply_to):
+        &#34;&#34;&#34;Sets the reply_to of this Email.
+
+        The `replyTo` field on the received email message  # noqa: E501
+
+        :param reply_to: The reply_to of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._reply_to = reply_to
+
+    @property
+    def cc(self):
+        &#34;&#34;&#34;Gets the cc of this Email.  # noqa: E501
+
+        List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+        :return: The cc of this Email.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._cc
+
+    @cc.setter
+    def cc(self, cc):
+        &#34;&#34;&#34;Sets the cc of this Email.
+
+        List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+        :param cc: The cc of this Email.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._cc = cc
+
+    @property
+    def bcc(self):
+        &#34;&#34;&#34;Gets the bcc of this Email.  # noqa: E501
+
+        List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+        :return: The bcc of this Email.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._bcc
+
+    @bcc.setter
+    def bcc(self, bcc):
+        &#34;&#34;&#34;Sets the bcc of this Email.
+
+        List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+        :param bcc: The bcc of this Email.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._bcc = bcc
+
+    @property
+    def headers(self):
+        &#34;&#34;&#34;Gets the headers of this Email.  # noqa: E501
+
+        Collection of SMTP headers attached to email  # noqa: E501
+
+        :return: The headers of this Email.  # noqa: E501
+        :rtype: dict(str, str)
+        &#34;&#34;&#34;
+        return self._headers
+
+    @headers.setter
+    def headers(self, headers):
+        &#34;&#34;&#34;Sets the headers of this Email.
+
+        Collection of SMTP headers attached to email  # noqa: E501
+
+        :param headers: The headers of this Email.  # noqa: E501
+        :type: dict(str, str)
+        &#34;&#34;&#34;
+
+        self._headers = headers
+
+    @property
+    def headers_map(self):
+        &#34;&#34;&#34;Gets the headers_map of this Email.  # noqa: E501
+
+        Multi-value map of SMTP headers attached to email  # noqa: E501
+
+        :return: The headers_map of this Email.  # noqa: E501
+        :rtype: dict(str, list[str])
+        &#34;&#34;&#34;
+        return self._headers_map
+
+    @headers_map.setter
+    def headers_map(self, headers_map):
+        &#34;&#34;&#34;Sets the headers_map of this Email.
+
+        Multi-value map of SMTP headers attached to email  # noqa: E501
+
+        :param headers_map: The headers_map of this Email.  # noqa: E501
+        :type: dict(str, list[str])
+        &#34;&#34;&#34;
+
+        self._headers_map = headers_map
+
+    @property
+    def attachments(self):
+        &#34;&#34;&#34;Gets the attachments of this Email.  # noqa: E501
+
+        List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.  # noqa: E501
+
+        :return: The attachments of this Email.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        &#34;&#34;&#34;Sets the attachments of this Email.
+
+        List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.  # noqa: E501
+
+        :param attachments: The attachments of this Email.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._attachments = attachments
+
+    @property
+    def subject(self):
+        &#34;&#34;&#34;Gets the subject of this Email.  # noqa: E501
+
+        The subject line of the email message as specified by SMTP subject header  # noqa: E501
+
+        :return: The subject of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject):
+        &#34;&#34;&#34;Sets the subject of this Email.
+
+        The subject line of the email message as specified by SMTP subject header  # noqa: E501
+
+        :param subject: The subject of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._subject = subject
+
+    @property
+    def body(self):
+        &#34;&#34;&#34;Gets the body of this Email.  # noqa: E501
+
+        The body of the email message as text parsed from the SMTP message body (does not include attachments). Fetch the raw content to access the SMTP message and use the attachments property to access attachments. The body is stored separately to the email entity so the body is not returned in paginated results only in full single email or wait requests.  # noqa: E501
+
+        :return: The body of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._body
+
+    @body.setter
+    def body(self, body):
+        &#34;&#34;&#34;Sets the body of this Email.
+
+        The body of the email message as text parsed from the SMTP message body (does not include attachments). Fetch the raw content to access the SMTP message and use the attachments property to access attachments. The body is stored separately to the email entity so the body is not returned in paginated results only in full single email or wait requests.  # noqa: E501
+
+        :param body: The body of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._body = body
+
+    @property
+    def body_excerpt(self):
+        &#34;&#34;&#34;Gets the body_excerpt of this Email.  # noqa: E501
+
+        An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not  # noqa: E501
+
+        :return: The body_excerpt of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._body_excerpt
+
+    @body_excerpt.setter
+    def body_excerpt(self, body_excerpt):
+        &#34;&#34;&#34;Sets the body_excerpt of this Email.
+
+        An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not  # noqa: E501
+
+        :param body_excerpt: The body_excerpt of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._body_excerpt = body_excerpt
+
+    @property
+    def text_excerpt(self):
+        &#34;&#34;&#34;Gets the text_excerpt of this Email.  # noqa: E501
+
+        An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists  # noqa: E501
+
+        :return: The text_excerpt of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._text_excerpt
+
+    @text_excerpt.setter
+    def text_excerpt(self, text_excerpt):
+        &#34;&#34;&#34;Sets the text_excerpt of this Email.
+
+        An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists  # noqa: E501
+
+        :param text_excerpt: The text_excerpt of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._text_excerpt = text_excerpt
+
+    @property
+    def body_md5_hash(self):
+        &#34;&#34;&#34;Gets the body_md5_hash of this Email.  # noqa: E501
+
+        A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.  # noqa: E501
+
+        :return: The body_md5_hash of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._body_md5_hash
+
+    @body_md5_hash.setter
+    def body_md5_hash(self, body_md5_hash):
+        &#34;&#34;&#34;Sets the body_md5_hash of this Email.
+
+        A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.  # noqa: E501
+
+        :param body_md5_hash: The body_md5_hash of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._body_md5_hash = body_md5_hash
+
+    @property
+    def is_html(self):
+        &#34;&#34;&#34;Gets the is_html of this Email.  # noqa: E501
+
+        Is the email body content type HTML?  # noqa: E501
+
+        :return: The is_html of this Email.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._is_html
+
+    @is_html.setter
+    def is_html(self, is_html):
+        &#34;&#34;&#34;Sets the is_html of this Email.
+
+        Is the email body content type HTML?  # noqa: E501
+
+        :param is_html: The is_html of this Email.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._is_html = is_html
+
+    @property
+    def charset(self):
+        &#34;&#34;&#34;Gets the charset of this Email.  # noqa: E501
+
+        Detected character set of the email body such as UTF-8  # noqa: E501
+
+        :return: The charset of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._charset
+
+    @charset.setter
+    def charset(self, charset):
+        &#34;&#34;&#34;Sets the charset of this Email.
+
+        Detected character set of the email body such as UTF-8  # noqa: E501
+
+        :param charset: The charset of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._charset = charset
+
+    @property
+    def analysis(self):
+        &#34;&#34;&#34;Gets the analysis of this Email.  # noqa: E501
+
+
+        :return: The analysis of this Email.  # noqa: E501
+        :rtype: EmailAnalysis
+        &#34;&#34;&#34;
+        return self._analysis
+
+    @analysis.setter
+    def analysis(self, analysis):
+        &#34;&#34;&#34;Sets the analysis of this Email.
+
+
+        :param analysis: The analysis of this Email.  # noqa: E501
+        :type: EmailAnalysis
+        &#34;&#34;&#34;
+
+        self._analysis = analysis
+
+    @property
+    def created_at(self):
+        &#34;&#34;&#34;Gets the created_at of this Email.  # noqa: E501
+
+        When was the email received by MailSlurp  # noqa: E501
+
+        :return: The created_at of this Email.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        &#34;&#34;&#34;Sets the created_at of this Email.
+
+        When was the email received by MailSlurp  # noqa: E501
+
+        :param created_at: The created_at of this Email.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and created_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `created_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        &#34;&#34;&#34;Gets the updated_at of this Email.  # noqa: E501
+
+        When was the email last updated  # noqa: E501
+
+        :return: The updated_at of this Email.  # noqa: E501
+        :rtype: datetime
+        &#34;&#34;&#34;
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        &#34;&#34;&#34;Sets the updated_at of this Email.
+
+        When was the email last updated  # noqa: E501
+
+        :param updated_at: The updated_at of this Email.  # noqa: E501
+        :type: datetime
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and updated_at is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `updated_at`, must not be `None`&#34;)  # noqa: E501
+
+        self._updated_at = updated_at
+
+    @property
+    def read(self):
+        &#34;&#34;&#34;Gets the read of this Email.  # noqa: E501
+
+        Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.  # noqa: E501
+
+        :return: The read of this Email.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._read
+
+    @read.setter
+    def read(self, read):
+        &#34;&#34;&#34;Sets the read of this Email.
+
+        Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.  # noqa: E501
+
+        :param read: The read of this Email.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and read is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `read`, must not be `None`&#34;)  # noqa: E501
+
+        self._read = read
+
+    @property
+    def team_access(self):
+        &#34;&#34;&#34;Gets the team_access of this Email.  # noqa: E501
+
+        Can the email be accessed by organization team members  # noqa: E501
+
+        :return: The team_access of this Email.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._team_access
+
+    @team_access.setter
+    def team_access(self, team_access):
+        &#34;&#34;&#34;Sets the team_access of this Email.
+
+        Can the email be accessed by organization team members  # noqa: E501
+
+        :param team_access: The team_access of this Email.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and team_access is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `team_access`, must not be `None`&#34;)  # noqa: E501
+
+        self._team_access = team_access
+
+    @property
+    def is_x_amp_html(self):
+        &#34;&#34;&#34;Gets the is_x_amp_html of this Email.  # noqa: E501
+
+        Is the email body content type x-amp-html Amp4Email?  # noqa: E501
+
+        :return: The is_x_amp_html of this Email.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._is_x_amp_html
+
+    @is_x_amp_html.setter
+    def is_x_amp_html(self, is_x_amp_html):
+        &#34;&#34;&#34;Sets the is_x_amp_html of this Email.
+
+        Is the email body content type x-amp-html Amp4Email?  # noqa: E501
+
+        :param is_x_amp_html: The is_x_amp_html of this Email.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._is_x_amp_html = is_x_amp_html
+
+    @property
+    def body_part_content_types(self):
+        &#34;&#34;&#34;Gets the body_part_content_types of this Email.  # noqa: E501
+
+        A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.  # noqa: E501
+
+        :return: The body_part_content_types of this Email.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._body_part_content_types
+
+    @body_part_content_types.setter
+    def body_part_content_types(self, body_part_content_types):
+        &#34;&#34;&#34;Sets the body_part_content_types of this Email.
+
+        A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.  # noqa: E501
+
+        :param body_part_content_types: The body_part_content_types of this Email.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._body_part_content_types = body_part_content_types
+
+    @property
+    def external_id(self):
+        &#34;&#34;&#34;Gets the external_id of this Email.  # noqa: E501
+
+        UID used by external IMAP server to identify email  # noqa: E501
+
+        :return: The external_id of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        &#34;&#34;&#34;Sets the external_id of this Email.
+
+        UID used by external IMAP server to identify email  # noqa: E501
+
+        :param external_id: The external_id of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._external_id = external_id
+
+    @property
+    def message_id(self):
+        &#34;&#34;&#34;Gets the message_id of this Email.  # noqa: E501
+
+        RFC 5322 Message-ID header value without angle brackets.  # noqa: E501
+
+        :return: The message_id of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._message_id
+
+    @message_id.setter
+    def message_id(self, message_id):
+        &#34;&#34;&#34;Sets the message_id of this Email.
+
+        RFC 5322 Message-ID header value without angle brackets.  # noqa: E501
+
+        :param message_id: The message_id of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._message_id = message_id
+
+    @property
+    def thread_id(self):
+        &#34;&#34;&#34;Gets the thread_id of this Email.  # noqa: E501
+
+        MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.  # noqa: E501
+
+        :return: The thread_id of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._thread_id
+
+    @thread_id.setter
+    def thread_id(self, thread_id):
+        &#34;&#34;&#34;Sets the thread_id of this Email.
+
+        MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.  # noqa: E501
+
+        :param thread_id: The thread_id of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._thread_id = thread_id
+
+    @property
+    def in_reply_to(self):
+        &#34;&#34;&#34;Gets the in_reply_to of this Email.  # noqa: E501
+
+        Parsed value of In-Reply-To header. A Message-ID in a thread.  # noqa: E501
+
+        :return: The in_reply_to of this Email.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._in_reply_to
+
+    @in_reply_to.setter
+    def in_reply_to(self, in_reply_to):
+        &#34;&#34;&#34;Sets the in_reply_to of this Email.
+
+        Parsed value of In-Reply-To header. A Message-ID in a thread.  # noqa: E501
+
+        :param in_reply_to: The in_reply_to of this Email.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._in_reply_to = in_reply_to
+
+    @property
+    def favourite(self):
+        &#34;&#34;&#34;Gets the favourite of this Email.  # noqa: E501
+
+        Is email favourited  # noqa: E501
+
+        :return: The favourite of this Email.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._favourite
+
+    @favourite.setter
+    def favourite(self, favourite):
+        &#34;&#34;&#34;Sets the favourite of this Email.
+
+        Is email favourited  # noqa: E501
+
+        :param favourite: The favourite of this Email.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._favourite = favourite
+
+    @property
+    def size_bytes(self):
+        &#34;&#34;&#34;Gets the size_bytes of this Email.  # noqa: E501
+
+        Size of raw email message in bytes  # noqa: E501
+
+        :return: The size_bytes of this Email.  # noqa: E501
+        :rtype: int
+        &#34;&#34;&#34;
+        return self._size_bytes
+
+    @size_bytes.setter
+    def size_bytes(self, size_bytes):
+        &#34;&#34;&#34;Sets the size_bytes of this Email.
+
+        Size of raw email message in bytes  # noqa: E501
+
+        :param size_bytes: The size_bytes of this Email.  # noqa: E501
+        :type: int
+        &#34;&#34;&#34;
+
+        self._size_bytes = size_bytes
+
+    @property
+    def html(self):
+        &#34;&#34;&#34;Gets the html of this Email.  # noqa: E501
+
+
+        :return: The html of this Email.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._html
+
+    @html.setter
+    def html(self, html):
+        &#34;&#34;&#34;Sets the html of this Email.
+
+
+        :param html: The html of this Email.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._html = html
+
+    @property
+    def xamp_html(self):
+        &#34;&#34;&#34;Gets the xamp_html of this Email.  # noqa: E501
+
+
+        :return: The xamp_html of this Email.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._xamp_html
+
+    @xamp_html.setter
+    def xamp_html(self, xamp_html):
+        &#34;&#34;&#34;Sets the xamp_html of this Email.
+
+
+        :param xamp_html: The xamp_html of this Email.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._xamp_html = xamp_html
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, Email):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, Email):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email.Email.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.email.Email.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.email.Email.analysis"><code class="name">prop <span class="ident">analysis</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the analysis of this Email.
+# noqa: E501</p>
+<p>:return: The analysis of this Email.
+# noqa: E501
+:rtype: EmailAnalysis</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def analysis(self):
+    &#34;&#34;&#34;Gets the analysis of this Email.  # noqa: E501
+
+
+    :return: The analysis of this Email.  # noqa: E501
+    :rtype: EmailAnalysis
+    &#34;&#34;&#34;
+    return self._analysis</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.attachments"><code class="name">prop <span class="ident">attachments</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the attachments of this Email.
+# noqa: E501</p>
+<p>List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
+# noqa: E501</p>
+<p>:return: The attachments of this Email.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def attachments(self):
+    &#34;&#34;&#34;Gets the attachments of this Email.  # noqa: E501
+
+    List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.  # noqa: E501
+
+    :return: The attachments of this Email.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._attachments</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.bcc"><code class="name">prop <span class="ident">bcc</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the bcc of this Email.
+# noqa: E501</p>
+<p>List of <code>BCC</code> recipients email addresses that the email was addressed to. See recipients object for names.
+# noqa: E501</p>
+<p>:return: The bcc of this Email.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bcc(self):
+    &#34;&#34;&#34;Gets the bcc of this Email.  # noqa: E501
+
+    List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+    :return: The bcc of this Email.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._bcc</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.body"><code class="name">prop <span class="ident">body</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the body of this Email.
+# noqa: E501</p>
+<p>The body of the email message as text parsed from the SMTP message body (does not include attachments). Fetch the raw content to access the SMTP message and use the attachments property to access attachments. The body is stored separately to the email entity so the body is not returned in paginated results only in full single email or wait requests.
+# noqa: E501</p>
+<p>:return: The body of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def body(self):
+    &#34;&#34;&#34;Gets the body of this Email.  # noqa: E501
+
+    The body of the email message as text parsed from the SMTP message body (does not include attachments). Fetch the raw content to access the SMTP message and use the attachments property to access attachments. The body is stored separately to the email entity so the body is not returned in paginated results only in full single email or wait requests.  # noqa: E501
+
+    :return: The body of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._body</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.body_excerpt"><code class="name">prop <span class="ident">body_excerpt</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the body_excerpt of this Email.
+# noqa: E501</p>
+<p>An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
+# noqa: E501</p>
+<p>:return: The body_excerpt of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def body_excerpt(self):
+    &#34;&#34;&#34;Gets the body_excerpt of this Email.  # noqa: E501
+
+    An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not  # noqa: E501
+
+    :return: The body_excerpt of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._body_excerpt</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.body_md5_hash"><code class="name">prop <span class="ident">body_md5_hash</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the body_md5_hash of this Email.
+# noqa: E501</p>
+<p>A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.
+# noqa: E501</p>
+<p>:return: The body_md5_hash of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def body_md5_hash(self):
+    &#34;&#34;&#34;Gets the body_md5_hash of this Email.  # noqa: E501
+
+    A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.  # noqa: E501
+
+    :return: The body_md5_hash of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._body_md5_hash</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.body_part_content_types"><code class="name">prop <span class="ident">body_part_content_types</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the body_part_content_types of this Email.
+# noqa: E501</p>
+<p>A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.
+# noqa: E501</p>
+<p>:return: The body_part_content_types of this Email.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def body_part_content_types(self):
+    &#34;&#34;&#34;Gets the body_part_content_types of this Email.  # noqa: E501
+
+    A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.  # noqa: E501
+
+    :return: The body_part_content_types of this Email.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._body_part_content_types</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.cc"><code class="name">prop <span class="ident">cc</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the cc of this Email.
+# noqa: E501</p>
+<p>List of <code>CC</code> recipients email addresses that the email was addressed to. See recipients object for names.
+# noqa: E501</p>
+<p>:return: The cc of this Email.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def cc(self):
+    &#34;&#34;&#34;Gets the cc of this Email.  # noqa: E501
+
+    List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+    :return: The cc of this Email.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._cc</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.charset"><code class="name">prop <span class="ident">charset</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the charset of this Email.
+# noqa: E501</p>
+<p>Detected character set of the email body such as UTF-8
+# noqa: E501</p>
+<p>:return: The charset of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def charset(self):
+    &#34;&#34;&#34;Gets the charset of this Email.  # noqa: E501
+
+    Detected character set of the email body such as UTF-8  # noqa: E501
+
+    :return: The charset of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._charset</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.created_at"><code class="name">prop <span class="ident">created_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the created_at of this Email.
+# noqa: E501</p>
+<p>When was the email received by MailSlurp
+# noqa: E501</p>
+<p>:return: The created_at of this Email.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def created_at(self):
+    &#34;&#34;&#34;Gets the created_at of this Email.  # noqa: E501
+
+    When was the email received by MailSlurp  # noqa: E501
+
+    :return: The created_at of this Email.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._created_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.domain_id"><code class="name">prop <span class="ident">domain_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the domain_id of this Email.
+# noqa: E501</p>
+<p>ID of the domain that received the email
+# noqa: E501</p>
+<p>:return: The domain_id of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def domain_id(self):
+    &#34;&#34;&#34;Gets the domain_id of this Email.  # noqa: E501
+
+    ID of the domain that received the email  # noqa: E501
+
+    :return: The domain_id of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._domain_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.external_id"><code class="name">prop <span class="ident">external_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the external_id of this Email.
+# noqa: E501</p>
+<p>UID used by external IMAP server to identify email
+# noqa: E501</p>
+<p>:return: The external_id of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def external_id(self):
+    &#34;&#34;&#34;Gets the external_id of this Email.  # noqa: E501
+
+    UID used by external IMAP server to identify email  # noqa: E501
+
+    :return: The external_id of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._external_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.favourite"><code class="name">prop <span class="ident">favourite</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the favourite of this Email.
+# noqa: E501</p>
+<p>Is email favourited
+# noqa: E501</p>
+<p>:return: The favourite of this Email.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def favourite(self):
+    &#34;&#34;&#34;Gets the favourite of this Email.  # noqa: E501
+
+    Is email favourited  # noqa: E501
+
+    :return: The favourite of this Email.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._favourite</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.headers"><code class="name">prop <span class="ident">headers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the headers of this Email.
+# noqa: E501</p>
+<p>Collection of SMTP headers attached to email
+# noqa: E501</p>
+<p>:return: The headers of this Email.
+# noqa: E501
+:rtype: dict(str, str)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def headers(self):
+    &#34;&#34;&#34;Gets the headers of this Email.  # noqa: E501
+
+    Collection of SMTP headers attached to email  # noqa: E501
+
+    :return: The headers of this Email.  # noqa: E501
+    :rtype: dict(str, str)
+    &#34;&#34;&#34;
+    return self._headers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.headers_map"><code class="name">prop <span class="ident">headers_map</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the headers_map of this Email.
+# noqa: E501</p>
+<p>Multi-value map of SMTP headers attached to email
+# noqa: E501</p>
+<p>:return: The headers_map of this Email.
+# noqa: E501
+:rtype: dict(str, list[str])</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def headers_map(self):
+    &#34;&#34;&#34;Gets the headers_map of this Email.  # noqa: E501
+
+    Multi-value map of SMTP headers attached to email  # noqa: E501
+
+    :return: The headers_map of this Email.  # noqa: E501
+    :rtype: dict(str, list[str])
+    &#34;&#34;&#34;
+    return self._headers_map</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.html"><code class="name">prop <span class="ident">html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the html of this Email.
+# noqa: E501</p>
+<p>:return: The html of this Email.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def html(self):
+    &#34;&#34;&#34;Gets the html of this Email.  # noqa: E501
+
+
+    :return: The html of this Email.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._html</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.id"><code class="name">prop <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the id of this Email.
+# noqa: E501</p>
+<p>ID of the email entity
+# noqa: E501</p>
+<p>:return: The id of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def id(self):
+    &#34;&#34;&#34;Gets the id of this Email.  # noqa: E501
+
+    ID of the email entity  # noqa: E501
+
+    :return: The id of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.in_reply_to"><code class="name">prop <span class="ident">in_reply_to</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the in_reply_to of this Email.
+# noqa: E501</p>
+<p>Parsed value of In-Reply-To header. A Message-ID in a thread.
+# noqa: E501</p>
+<p>:return: The in_reply_to of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def in_reply_to(self):
+    &#34;&#34;&#34;Gets the in_reply_to of this Email.  # noqa: E501
+
+    Parsed value of In-Reply-To header. A Message-ID in a thread.  # noqa: E501
+
+    :return: The in_reply_to of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._in_reply_to</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.inbox_id"><code class="name">prop <span class="ident">inbox_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the inbox_id of this Email.
+# noqa: E501</p>
+<p>ID of the inbox that received the email
+# noqa: E501</p>
+<p>:return: The inbox_id of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def inbox_id(self):
+    &#34;&#34;&#34;Gets the inbox_id of this Email.  # noqa: E501
+
+    ID of the inbox that received the email  # noqa: E501
+
+    :return: The inbox_id of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._inbox_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.is_html"><code class="name">prop <span class="ident">is_html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the is_html of this Email.
+# noqa: E501</p>
+<p>Is the email body content type HTML?
+# noqa: E501</p>
+<p>:return: The is_html of this Email.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_html(self):
+    &#34;&#34;&#34;Gets the is_html of this Email.  # noqa: E501
+
+    Is the email body content type HTML?  # noqa: E501
+
+    :return: The is_html of this Email.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._is_html</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.is_x_amp_html"><code class="name">prop <span class="ident">is_x_amp_html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the is_x_amp_html of this Email.
+# noqa: E501</p>
+<p>Is the email body content type x-amp-html Amp4Email?
+# noqa: E501</p>
+<p>:return: The is_x_amp_html of this Email.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_x_amp_html(self):
+    &#34;&#34;&#34;Gets the is_x_amp_html of this Email.  # noqa: E501
+
+    Is the email body content type x-amp-html Amp4Email?  # noqa: E501
+
+    :return: The is_x_amp_html of this Email.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._is_x_amp_html</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.message_id"><code class="name">prop <span class="ident">message_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the message_id of this Email.
+# noqa: E501</p>
+<p>RFC 5322 Message-ID header value without angle brackets.
+# noqa: E501</p>
+<p>:return: The message_id of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def message_id(self):
+    &#34;&#34;&#34;Gets the message_id of this Email.  # noqa: E501
+
+    RFC 5322 Message-ID header value without angle brackets.  # noqa: E501
+
+    :return: The message_id of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._message_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.read"><code class="name">prop <span class="ident">read</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the read of this Email.
+# noqa: E501</p>
+<p>Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
+# noqa: E501</p>
+<p>:return: The read of this Email.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def read(self):
+    &#34;&#34;&#34;Gets the read of this Email.  # noqa: E501
+
+    Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.  # noqa: E501
+
+    :return: The read of this Email.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._read</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.recipients"><code class="name">prop <span class="ident">recipients</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the recipients of this Email.
+# noqa: E501</p>
+<p>:return: The recipients of this Email.
+# noqa: E501
+:rtype: EmailRecipients</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def recipients(self):
+    &#34;&#34;&#34;Gets the recipients of this Email.  # noqa: E501
+
+
+    :return: The recipients of this Email.  # noqa: E501
+    :rtype: EmailRecipients
+    &#34;&#34;&#34;
+    return self._recipients</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.reply_to"><code class="name">prop <span class="ident">reply_to</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the reply_to of this Email.
+# noqa: E501</p>
+<p>The <code>replyTo</code> field on the received email message
+# noqa: E501</p>
+<p>:return: The reply_to of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def reply_to(self):
+    &#34;&#34;&#34;Gets the reply_to of this Email.  # noqa: E501
+
+    The `replyTo` field on the received email message  # noqa: E501
+
+    :return: The reply_to of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._reply_to</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.sender"><code class="name">prop <span class="ident">sender</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the sender of this Email.
+# noqa: E501</p>
+<p>:return: The sender of this Email.
+# noqa: E501
+:rtype: Sender</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def sender(self):
+    &#34;&#34;&#34;Gets the sender of this Email.  # noqa: E501
+
+
+    :return: The sender of this Email.  # noqa: E501
+    :rtype: Sender
+    &#34;&#34;&#34;
+    return self._sender</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.size_bytes"><code class="name">prop <span class="ident">size_bytes</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the size_bytes of this Email.
+# noqa: E501</p>
+<p>Size of raw email message in bytes
+# noqa: E501</p>
+<p>:return: The size_bytes of this Email.
+# noqa: E501
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def size_bytes(self):
+    &#34;&#34;&#34;Gets the size_bytes of this Email.  # noqa: E501
+
+    Size of raw email message in bytes  # noqa: E501
+
+    :return: The size_bytes of this Email.  # noqa: E501
+    :rtype: int
+    &#34;&#34;&#34;
+    return self._size_bytes</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.subject"><code class="name">prop <span class="ident">subject</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the subject of this Email.
+# noqa: E501</p>
+<p>The subject line of the email message as specified by SMTP subject header
+# noqa: E501</p>
+<p>:return: The subject of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def subject(self):
+    &#34;&#34;&#34;Gets the subject of this Email.  # noqa: E501
+
+    The subject line of the email message as specified by SMTP subject header  # noqa: E501
+
+    :return: The subject of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._subject</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.team_access"><code class="name">prop <span class="ident">team_access</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the team_access of this Email.
+# noqa: E501</p>
+<p>Can the email be accessed by organization team members
+# noqa: E501</p>
+<p>:return: The team_access of this Email.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def team_access(self):
+    &#34;&#34;&#34;Gets the team_access of this Email.  # noqa: E501
+
+    Can the email be accessed by organization team members  # noqa: E501
+
+    :return: The team_access of this Email.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._team_access</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.text_excerpt"><code class="name">prop <span class="ident">text_excerpt</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the text_excerpt of this Email.
+# noqa: E501</p>
+<p>An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+# noqa: E501</p>
+<p>:return: The text_excerpt of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def text_excerpt(self):
+    &#34;&#34;&#34;Gets the text_excerpt of this Email.  # noqa: E501
+
+    An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists  # noqa: E501
+
+    :return: The text_excerpt of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._text_excerpt</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.thread_id"><code class="name">prop <span class="ident">thread_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the thread_id of this Email.
+# noqa: E501</p>
+<p>MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+# noqa: E501</p>
+<p>:return: The thread_id of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def thread_id(self):
+    &#34;&#34;&#34;Gets the thread_id of this Email.  # noqa: E501
+
+    MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.  # noqa: E501
+
+    :return: The thread_id of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._thread_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.to"><code class="name">prop <span class="ident">to</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the to of this Email.
+# noqa: E501</p>
+<p>List of <code>To</code> recipient email addresses that the email was addressed to. See recipients object for names.
+# noqa: E501</p>
+<p>:return: The to of this Email.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def to(self):
+    &#34;&#34;&#34;Gets the to of this Email.  # noqa: E501
+
+    List of `To` recipient email addresses that the email was addressed to. See recipients object for names.  # noqa: E501
+
+    :return: The to of this Email.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._to</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.updated_at"><code class="name">prop <span class="ident">updated_at</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the updated_at of this Email.
+# noqa: E501</p>
+<p>When was the email last updated
+# noqa: E501</p>
+<p>:return: The updated_at of this Email.
+# noqa: E501
+:rtype: datetime</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def updated_at(self):
+    &#34;&#34;&#34;Gets the updated_at of this Email.  # noqa: E501
+
+    When was the email last updated  # noqa: E501
+
+    :return: The updated_at of this Email.  # noqa: E501
+    :rtype: datetime
+    &#34;&#34;&#34;
+    return self._updated_at</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.user_id"><code class="name">prop <span class="ident">user_id</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the user_id of this Email.
+# noqa: E501</p>
+<p>ID of user that email belongs to
+# noqa: E501</p>
+<p>:return: The user_id of this Email.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def user_id(self):
+    &#34;&#34;&#34;Gets the user_id of this Email.  # noqa: E501
+
+    ID of user that email belongs to  # noqa: E501
+
+    :return: The user_id of this Email.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._user_id</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.email.Email.xamp_html"><code class="name">prop <span class="ident">xamp_html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the xamp_html of this Email.
+# noqa: E501</p>
+<p>:return: The xamp_html of this Email.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def xamp_html(self):
+    &#34;&#34;&#34;Gets the xamp_html of this Email.  # noqa: E501
+
+
+    :return: The xamp_html of this Email.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._xamp_html</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.email.Email.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.email.Email.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.email.Email" href="#mailslurp_client.models.email.Email">Email</a></code></h4>
+<ul class="">
+<li><code><a title="mailslurp_client.models.email.Email.analysis" href="#mailslurp_client.models.email.Email.analysis">analysis</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.attachments" href="#mailslurp_client.models.email.Email.attachments">attachments</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.attribute_map" href="#mailslurp_client.models.email.Email.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.bcc" href="#mailslurp_client.models.email.Email.bcc">bcc</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.body" href="#mailslurp_client.models.email.Email.body">body</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.body_excerpt" href="#mailslurp_client.models.email.Email.body_excerpt">body_excerpt</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.body_md5_hash" href="#mailslurp_client.models.email.Email.body_md5_hash">body_md5_hash</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.body_part_content_types" href="#mailslurp_client.models.email.Email.body_part_content_types">body_part_content_types</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.cc" href="#mailslurp_client.models.email.Email.cc">cc</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.charset" href="#mailslurp_client.models.email.Email.charset">charset</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.created_at" href="#mailslurp_client.models.email.Email.created_at">created_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.domain_id" href="#mailslurp_client.models.email.Email.domain_id">domain_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.external_id" href="#mailslurp_client.models.email.Email.external_id">external_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.favourite" href="#mailslurp_client.models.email.Email.favourite">favourite</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.headers" href="#mailslurp_client.models.email.Email.headers">headers</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.headers_map" href="#mailslurp_client.models.email.Email.headers_map">headers_map</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.html" href="#mailslurp_client.models.email.Email.html">html</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.id" href="#mailslurp_client.models.email.Email.id">id</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.in_reply_to" href="#mailslurp_client.models.email.Email.in_reply_to">in_reply_to</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.inbox_id" href="#mailslurp_client.models.email.Email.inbox_id">inbox_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.is_html" href="#mailslurp_client.models.email.Email.is_html">is_html</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.is_x_amp_html" href="#mailslurp_client.models.email.Email.is_x_amp_html">is_x_amp_html</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.message_id" href="#mailslurp_client.models.email.Email.message_id">message_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.openapi_types" href="#mailslurp_client.models.email.Email.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.read" href="#mailslurp_client.models.email.Email.read">read</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.recipients" href="#mailslurp_client.models.email.Email.recipients">recipients</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.reply_to" href="#mailslurp_client.models.email.Email.reply_to">reply_to</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.sender" href="#mailslurp_client.models.email.Email.sender">sender</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.size_bytes" href="#mailslurp_client.models.email.Email.size_bytes">size_bytes</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.subject" href="#mailslurp_client.models.email.Email.subject">subject</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.team_access" href="#mailslurp_client.models.email.Email.team_access">team_access</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.text_excerpt" href="#mailslurp_client.models.email.Email.text_excerpt">text_excerpt</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.thread_id" href="#mailslurp_client.models.email.Email.thread_id">thread_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.to" href="#mailslurp_client.models.email.Email.to">to</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.to_dict" href="#mailslurp_client.models.email.Email.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.to_str" href="#mailslurp_client.models.email.Email.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.updated_at" href="#mailslurp_client.models.email.Email.updated_at">updated_at</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.user_id" href="#mailslurp_client.models.email.Email.user_id">user_id</a></code></li>
+<li><code><a title="mailslurp_client.models.email.Email.xamp_html" href="#mailslurp_client.models.email.Email.xamp_html">xamp_html</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>

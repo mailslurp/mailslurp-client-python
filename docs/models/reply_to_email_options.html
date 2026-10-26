@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.0">
+<title>mailslurp_client.models.reply_to_email_options API documentation</title>
+<meta name="description" content="MailSlurp API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailslurp_client.models.reply_to_email_options</code></h1>
+</header>
+<section id="section-intro">
+<p>MailSlurp API</p>
+<p>MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
+## Resources
+- <a href="https://www.mailslurp.com">Homepage</a> - Get an <a href="https://app.mailslurp.com/sign-up/">API KEY</a> - Generated <a href="https://docs.mailslurp.com/">SDK Clients</a> - <a href="https://github.com/mailslurp/examples">Examples</a> repository
+# noqa: E501</p>
+<p>The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
+Generated by: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions"><code class="flex name class">
+<span>class <span class="ident">ReplyToEmailOptions</span></span>
+<span>(</span><span>body=None, is_html=None, reply_to=None, custom_headers=None, charset=None, attachments=None, template_variables=None, template=None, send_strategy=None, use_inbox_name=None, html=None, local_vars_configuration=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>NOTE: This class is auto generated by OpenAPI Generator.
+Ref: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<p>ReplyToEmailOptions - a model defined in OpenAPI</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ReplyToEmailOptions(object):
+    &#34;&#34;&#34;NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    &#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    &#34;&#34;&#34;
+    openapi_types = {
+        &#39;body&#39;: &#39;str&#39;,
+        &#39;is_html&#39;: &#39;bool&#39;,
+        &#39;_from&#39;: &#39;str&#39;,
+        &#39;reply_to&#39;: &#39;str&#39;,
+        &#39;custom_headers&#39;: &#39;dict(str, str)&#39;,
+        &#39;charset&#39;: &#39;str&#39;,
+        &#39;attachments&#39;: &#39;list[str]&#39;,
+        &#39;template_variables&#39;: &#39;dict(str, object)&#39;,
+        &#39;template&#39;: &#39;str&#39;,
+        &#39;send_strategy&#39;: &#39;str&#39;,
+        &#39;use_inbox_name&#39;: &#39;bool&#39;,
+        &#39;html&#39;: &#39;bool&#39;
+    }
+
+    attribute_map = {
+        &#39;body&#39;: &#39;body&#39;,
+        &#39;is_html&#39;: &#39;isHTML&#39;,
+        &#39;_from&#39;: &#39;from&#39;,
+        &#39;reply_to&#39;: &#39;replyTo&#39;,
+        &#39;custom_headers&#39;: &#39;customHeaders&#39;,
+        &#39;charset&#39;: &#39;charset&#39;,
+        &#39;attachments&#39;: &#39;attachments&#39;,
+        &#39;template_variables&#39;: &#39;templateVariables&#39;,
+        &#39;template&#39;: &#39;template&#39;,
+        &#39;send_strategy&#39;: &#39;sendStrategy&#39;,
+        &#39;use_inbox_name&#39;: &#39;useInboxName&#39;,
+        &#39;html&#39;: &#39;html&#39;
+    }
+
+    def __init__(self, body=None, is_html=None, _from=None, reply_to=None, custom_headers=None, charset=None, attachments=None, template_variables=None, template=None, send_strategy=None, use_inbox_name=None, html=None, local_vars_configuration=None):  # noqa: E501
+        &#34;&#34;&#34;ReplyToEmailOptions - a model defined in OpenAPI&#34;&#34;&#34;  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._body = None
+        self._is_html = None
+        self.__from = None
+        self._reply_to = None
+        self._custom_headers = None
+        self._charset = None
+        self._attachments = None
+        self._template_variables = None
+        self._template = None
+        self._send_strategy = None
+        self._use_inbox_name = None
+        self._html = None
+        self.discriminator = None
+
+        self.body = body
+        self.is_html = is_html
+        self._from = _from
+        self.reply_to = reply_to
+        self.custom_headers = custom_headers
+        self.charset = charset
+        self.attachments = attachments
+        self.template_variables = template_variables
+        self.template = template
+        self.send_strategy = send_strategy
+        self.use_inbox_name = use_inbox_name
+        if html is not None:
+            self.html = html
+
+    @property
+    def body(self):
+        &#34;&#34;&#34;Gets the body of this ReplyToEmailOptions.  # noqa: E501
+
+        Body of the reply email you want to send  # noqa: E501
+
+        :return: The body of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._body
+
+    @body.setter
+    def body(self, body):
+        &#34;&#34;&#34;Sets the body of this ReplyToEmailOptions.
+
+        Body of the reply email you want to send  # noqa: E501
+
+        :param body: The body of this ReplyToEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and body is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `body`, must not be `None`&#34;)  # noqa: E501
+
+        self._body = body
+
+    @property
+    def is_html(self):
+        &#34;&#34;&#34;Gets the is_html of this ReplyToEmailOptions.  # noqa: E501
+
+        Is the reply HTML  # noqa: E501
+
+        :return: The is_html of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._is_html
+
+    @is_html.setter
+    def is_html(self, is_html):
+        &#34;&#34;&#34;Sets the is_html of this ReplyToEmailOptions.
+
+        Is the reply HTML  # noqa: E501
+
+        :param is_html: The is_html of this ReplyToEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+        if self.local_vars_configuration.client_side_validation and is_html is None:  # noqa: E501
+            raise ValueError(&#34;Invalid value for `is_html`, must not be `None`&#34;)  # noqa: E501
+
+        self._is_html = is_html
+
+    @property
+    def _from(self):
+        &#34;&#34;&#34;Gets the _from of this ReplyToEmailOptions.  # noqa: E501
+
+        The from header that should be used. Optional  # noqa: E501
+
+        :return: The _from of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self.__from
+
+    @_from.setter
+    def _from(self, _from):
+        &#34;&#34;&#34;Sets the _from of this ReplyToEmailOptions.
+
+        The from header that should be used. Optional  # noqa: E501
+
+        :param _from: The _from of this ReplyToEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self.__from = _from
+
+    @property
+    def reply_to(self):
+        &#34;&#34;&#34;Gets the reply_to of this ReplyToEmailOptions.  # noqa: E501
+
+        The replyTo header that should be used. Optional  # noqa: E501
+
+        :return: The reply_to of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._reply_to
+
+    @reply_to.setter
+    def reply_to(self, reply_to):
+        &#34;&#34;&#34;Sets the reply_to of this ReplyToEmailOptions.
+
+        The replyTo header that should be used. Optional  # noqa: E501
+
+        :param reply_to: The reply_to of this ReplyToEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._reply_to = reply_to
+
+    @property
+    def custom_headers(self):
+        &#34;&#34;&#34;Gets the custom_headers of this ReplyToEmailOptions.  # noqa: E501
+
+        Optional custom headers  # noqa: E501
+
+        :return: The custom_headers of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: dict(str, str)
+        &#34;&#34;&#34;
+        return self._custom_headers
+
+    @custom_headers.setter
+    def custom_headers(self, custom_headers):
+        &#34;&#34;&#34;Sets the custom_headers of this ReplyToEmailOptions.
+
+        Optional custom headers  # noqa: E501
+
+        :param custom_headers: The custom_headers of this ReplyToEmailOptions.  # noqa: E501
+        :type: dict(str, str)
+        &#34;&#34;&#34;
+
+        self._custom_headers = custom_headers
+
+    @property
+    def charset(self):
+        &#34;&#34;&#34;Gets the charset of this ReplyToEmailOptions.  # noqa: E501
+
+        The charset that your message should be sent with. Optional. Default is UTF-8  # noqa: E501
+
+        :return: The charset of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._charset
+
+    @charset.setter
+    def charset(self, charset):
+        &#34;&#34;&#34;Sets the charset of this ReplyToEmailOptions.
+
+        The charset that your message should be sent with. Optional. Default is UTF-8  # noqa: E501
+
+        :param charset: The charset of this ReplyToEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._charset = charset
+
+    @property
+    def attachments(self):
+        &#34;&#34;&#34;Gets the attachments of this ReplyToEmailOptions.  # noqa: E501
+
+        List of uploaded attachments to send with the reply. Optional.  # noqa: E501
+
+        :return: The attachments of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: list[str]
+        &#34;&#34;&#34;
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        &#34;&#34;&#34;Sets the attachments of this ReplyToEmailOptions.
+
+        List of uploaded attachments to send with the reply. Optional.  # noqa: E501
+
+        :param attachments: The attachments of this ReplyToEmailOptions.  # noqa: E501
+        :type: list[str]
+        &#34;&#34;&#34;
+
+        self._attachments = attachments
+
+    @property
+    def template_variables(self):
+        &#34;&#34;&#34;Gets the template_variables of this ReplyToEmailOptions.  # noqa: E501
+
+        Template variables if using a template  # noqa: E501
+
+        :return: The template_variables of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: dict(str, object)
+        &#34;&#34;&#34;
+        return self._template_variables
+
+    @template_variables.setter
+    def template_variables(self, template_variables):
+        &#34;&#34;&#34;Sets the template_variables of this ReplyToEmailOptions.
+
+        Template variables if using a template  # noqa: E501
+
+        :param template_variables: The template_variables of this ReplyToEmailOptions.  # noqa: E501
+        :type: dict(str, object)
+        &#34;&#34;&#34;
+
+        self._template_variables = template_variables
+
+    @property
+    def template(self):
+        &#34;&#34;&#34;Gets the template of this ReplyToEmailOptions.  # noqa: E501
+
+        Template ID to use instead of body. Will use template variable map to fill defined variable slots.  # noqa: E501
+
+        :return: The template of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._template
+
+    @template.setter
+    def template(self, template):
+        &#34;&#34;&#34;Sets the template of this ReplyToEmailOptions.
+
+        Template ID to use instead of body. Will use template variable map to fill defined variable slots.  # noqa: E501
+
+        :param template: The template of this ReplyToEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+
+        self._template = template
+
+    @property
+    def send_strategy(self):
+        &#34;&#34;&#34;Gets the send_strategy of this ReplyToEmailOptions.  # noqa: E501
+
+        How an email should be sent based on its recipients  # noqa: E501
+
+        :return: The send_strategy of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: str
+        &#34;&#34;&#34;
+        return self._send_strategy
+
+    @send_strategy.setter
+    def send_strategy(self, send_strategy):
+        &#34;&#34;&#34;Sets the send_strategy of this ReplyToEmailOptions.
+
+        How an email should be sent based on its recipients  # noqa: E501
+
+        :param send_strategy: The send_strategy of this ReplyToEmailOptions.  # noqa: E501
+        :type: str
+        &#34;&#34;&#34;
+        allowed_values = [None,&#34;SINGLE_MESSAGE&#34;]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and send_strategy not in allowed_values:  # noqa: E501
+            raise ValueError(
+                &#34;Invalid value for `send_strategy` ({0}), must be one of {1}&#34;  # noqa: E501
+                .format(send_strategy, allowed_values)
+            )
+
+        self._send_strategy = send_strategy
+
+    @property
+    def use_inbox_name(self):
+        &#34;&#34;&#34;Gets the use_inbox_name of this ReplyToEmailOptions.  # noqa: E501
+
+        Optionally use inbox name as display name for sender email address  # noqa: E501
+
+        :return: The use_inbox_name of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._use_inbox_name
+
+    @use_inbox_name.setter
+    def use_inbox_name(self, use_inbox_name):
+        &#34;&#34;&#34;Sets the use_inbox_name of this ReplyToEmailOptions.
+
+        Optionally use inbox name as display name for sender email address  # noqa: E501
+
+        :param use_inbox_name: The use_inbox_name of this ReplyToEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._use_inbox_name = use_inbox_name
+
+    @property
+    def html(self):
+        &#34;&#34;&#34;Gets the html of this ReplyToEmailOptions.  # noqa: E501
+
+
+        :return: The html of this ReplyToEmailOptions.  # noqa: E501
+        :rtype: bool
+        &#34;&#34;&#34;
+        return self._html
+
+    @html.setter
+    def html(self, html):
+        &#34;&#34;&#34;Sets the html of this ReplyToEmailOptions.
+
+
+        :param html: The html of this ReplyToEmailOptions.  # noqa: E501
+        :type: bool
+        &#34;&#34;&#34;
+
+        self._html = html
+
+    def to_dict(self):
+        &#34;&#34;&#34;Returns the model properties as a dict&#34;&#34;&#34;
+        result = {}
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, &#34;to_dict&#34;) else x,
+                    value
+                ))
+            elif hasattr(value, &#34;to_dict&#34;):
+                result[attr] = value.to_dict()
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], &#34;to_dict&#34;) else item,
+                    value.items()
+                ))
+            else:
+                result[attr] = value
+
+        return result
+
+    def to_str(self):
+        &#34;&#34;&#34;Returns the string representation of the model&#34;&#34;&#34;
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        &#34;&#34;&#34;For `print` and `pprint`&#34;&#34;&#34;
+        return self.to_str()
+
+    def __eq__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are equal&#34;&#34;&#34;
+        if not isinstance(other, ReplyToEmailOptions):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        &#34;&#34;&#34;Returns true if both objects are not equal&#34;&#34;&#34;
+        if not isinstance(other, ReplyToEmailOptions):
+            return True
+
+        return self.to_dict() != other.to_dict()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.attribute_map"><code class="name">var <span class="ident">attribute_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.openapi_types"><code class="name">var <span class="ident">openapi_types</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.attachments"><code class="name">prop <span class="ident">attachments</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the attachments of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>List of uploaded attachments to send with the reply. Optional.
+# noqa: E501</p>
+<p>:return: The attachments of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def attachments(self):
+    &#34;&#34;&#34;Gets the attachments of this ReplyToEmailOptions.  # noqa: E501
+
+    List of uploaded attachments to send with the reply. Optional.  # noqa: E501
+
+    :return: The attachments of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: list[str]
+    &#34;&#34;&#34;
+    return self._attachments</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.body"><code class="name">prop <span class="ident">body</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the body of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>Body of the reply email you want to send
+# noqa: E501</p>
+<p>:return: The body of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def body(self):
+    &#34;&#34;&#34;Gets the body of this ReplyToEmailOptions.  # noqa: E501
+
+    Body of the reply email you want to send  # noqa: E501
+
+    :return: The body of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._body</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.charset"><code class="name">prop <span class="ident">charset</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the charset of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>The charset that your message should be sent with. Optional. Default is UTF-8
+# noqa: E501</p>
+<p>:return: The charset of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def charset(self):
+    &#34;&#34;&#34;Gets the charset of this ReplyToEmailOptions.  # noqa: E501
+
+    The charset that your message should be sent with. Optional. Default is UTF-8  # noqa: E501
+
+    :return: The charset of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._charset</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.custom_headers"><code class="name">prop <span class="ident">custom_headers</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the custom_headers of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>Optional custom headers
+# noqa: E501</p>
+<p>:return: The custom_headers of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: dict(str, str)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def custom_headers(self):
+    &#34;&#34;&#34;Gets the custom_headers of this ReplyToEmailOptions.  # noqa: E501
+
+    Optional custom headers  # noqa: E501
+
+    :return: The custom_headers of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: dict(str, str)
+    &#34;&#34;&#34;
+    return self._custom_headers</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.html"><code class="name">prop <span class="ident">html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the html of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>:return: The html of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def html(self):
+    &#34;&#34;&#34;Gets the html of this ReplyToEmailOptions.  # noqa: E501
+
+
+    :return: The html of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._html</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.is_html"><code class="name">prop <span class="ident">is_html</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the is_html of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>Is the reply HTML
+# noqa: E501</p>
+<p>:return: The is_html of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_html(self):
+    &#34;&#34;&#34;Gets the is_html of this ReplyToEmailOptions.  # noqa: E501
+
+    Is the reply HTML  # noqa: E501
+
+    :return: The is_html of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._is_html</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.reply_to"><code class="name">prop <span class="ident">reply_to</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the reply_to of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>The replyTo header that should be used. Optional
+# noqa: E501</p>
+<p>:return: The reply_to of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def reply_to(self):
+    &#34;&#34;&#34;Gets the reply_to of this ReplyToEmailOptions.  # noqa: E501
+
+    The replyTo header that should be used. Optional  # noqa: E501
+
+    :return: The reply_to of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._reply_to</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.send_strategy"><code class="name">prop <span class="ident">send_strategy</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the send_strategy of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>How an email should be sent based on its recipients
+# noqa: E501</p>
+<p>:return: The send_strategy of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def send_strategy(self):
+    &#34;&#34;&#34;Gets the send_strategy of this ReplyToEmailOptions.  # noqa: E501
+
+    How an email should be sent based on its recipients  # noqa: E501
+
+    :return: The send_strategy of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._send_strategy</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.template"><code class="name">prop <span class="ident">template</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the template of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>Template ID to use instead of body. Will use template variable map to fill defined variable slots.
+# noqa: E501</p>
+<p>:return: The template of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def template(self):
+    &#34;&#34;&#34;Gets the template of this ReplyToEmailOptions.  # noqa: E501
+
+    Template ID to use instead of body. Will use template variable map to fill defined variable slots.  # noqa: E501
+
+    :return: The template of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: str
+    &#34;&#34;&#34;
+    return self._template</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.template_variables"><code class="name">prop <span class="ident">template_variables</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the template_variables of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>Template variables if using a template
+# noqa: E501</p>
+<p>:return: The template_variables of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: dict(str, object)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def template_variables(self):
+    &#34;&#34;&#34;Gets the template_variables of this ReplyToEmailOptions.  # noqa: E501
+
+    Template variables if using a template  # noqa: E501
+
+    :return: The template_variables of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: dict(str, object)
+    &#34;&#34;&#34;
+    return self._template_variables</code></pre>
+</details>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.use_inbox_name"><code class="name">prop <span class="ident">use_inbox_name</span></code></dt>
+<dd>
+<div class="desc"><p>Gets the use_inbox_name of this ReplyToEmailOptions.
+# noqa: E501</p>
+<p>Optionally use inbox name as display name for sender email address
+# noqa: E501</p>
+<p>:return: The use_inbox_name of this ReplyToEmailOptions.
+# noqa: E501
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def use_inbox_name(self):
+    &#34;&#34;&#34;Gets the use_inbox_name of this ReplyToEmailOptions.  # noqa: E501
+
+    Optionally use inbox name as display name for sender email address  # noqa: E501
+
+    :return: The use_inbox_name of this ReplyToEmailOptions.  # noqa: E501
+    :rtype: bool
+    &#34;&#34;&#34;
+    return self._use_inbox_name</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the model properties as a dict</p></div>
+</dd>
+<dt id="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the string representation of the model</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailslurp_client.models" href="index.html">mailslurp_client.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions">ReplyToEmailOptions</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.attachments" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.attachments">attachments</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.attribute_map" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.attribute_map">attribute_map</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.body" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.body">body</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.charset" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.charset">charset</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.custom_headers" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.custom_headers">custom_headers</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.html" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.html">html</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.is_html" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.is_html">is_html</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.openapi_types" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.openapi_types">openapi_types</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.reply_to" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.reply_to">reply_to</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.send_strategy" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.send_strategy">send_strategy</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.template" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.template">template</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.template_variables" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.template_variables">template_variables</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.to_dict" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.to_dict">to_dict</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.to_str" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.to_str">to_str</a></code></li>
+<li><code><a title="mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.use_inbox_name" href="#mailslurp_client.models.reply_to_email_options.ReplyToEmailOptions.use_inbox_name">use_inbox_name</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.0</a>.</p>
+</footer>
+</body>
+</html>
